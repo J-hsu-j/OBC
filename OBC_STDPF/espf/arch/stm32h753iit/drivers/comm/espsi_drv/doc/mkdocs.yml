@@ -1,0 +1,110 @@
+site_name: ESPS I Drivers Integration Manual
+site_url: https://endurosat.com/
+site_dir: esps_drv_user_guide
+theme:
+  name: material
+  custom_dir: theme
+  logo: assets/img/EnduroSat_horLogo_symbol@2x-min.png
+  palette:
+    primary: black
+  features:
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+    - search.share
+    # - navigation.instant
+    - navigation.tabs
+    - navigation.top
+    # - navigation.sections
+    - toc.integrate
+copyright: <i>Privileged and confidential</i>
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      linenums: true
+  - footnotes
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+  - pymdownx.critic
+  - pymdownx.keys
+  - abbr
+  - admonition
+  - pymdownx.tabbed
+  - pymdownx.snippets
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.smartsymbols
+  - def_list
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      toc_depth: 2
+  - pymdownx.arithmatex:
+        generic: true
+extra_javascript:
+  - javascripts/katex.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+
+nav:
+  - Home: index.md
+  - MAC Drivers:
+    - Introduction: 'mac_layer/mac_introduction.md'
+    - Modules: 'mac_layer/mac_modules.md'
+    - Configuration: 'mac_layer/mac_configuration.md'
+    - Libraries: 'mac_layer/mac_lib.md'
+  - Integration Guide:
+    - Introduction: 'guide/int_introduction.md'
+    - Directory structure: 'guide/int_dir_structure.md'
+    - Configuration: 'guide/int_configuration.md'
+    - ESPS I: 'guide/int_esps_i_stack.md'
+    - Function Protocol: 'guide/int_function_protocol.md'
+    - Debug and trace: 'guide/int_debug_trace.md'
+  - Inter-Module Only:
+    - Introduction: 'im_only/im_introduction.md'
+    - ESPS I: 'im_only/im_esps_i_stack.md'
+  - Source Code Reference: doxygen.md
+  - Change history: change_history.md
+  - Contacts: contacts.md
+
+plugins:
+  - offline:
+      enabled: !ENV [OFFLINE, true]
+  - search
+  - build_plantuml:
+      render: "server" # or "local" for local rendering
+      bin_path: "plantuml.bat" # ignored when render: server
+      server: "http://www.plantuml.com/plantuml" # "https://plantuml.endurosatlab.com/" # EnduroSat plantuml server
+      # disable_ssl_certificate_validation: true
+      output_format: "svg" # or "png"
+      diagram_root: "docs/assets/plantuml" # should reside under docs_dir
+      output_folder: "img"
+      input_folder: ""
+      input_extensions: "puml" # comma separated list of extensions to parse, by default every file is parsed
+  - glightbox
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/endurosat/
+      name: EnduroSat on LinkedIn

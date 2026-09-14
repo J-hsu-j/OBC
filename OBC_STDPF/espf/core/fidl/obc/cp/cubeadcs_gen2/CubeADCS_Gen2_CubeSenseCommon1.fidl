@@ -1,0 +1,292 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+package endurosat.macif
+
+
+<** @description: Interface for Cube ADCS Gen2 - CubeSenseCommon1
+    @details: id = 317
+**>
+
+interface CubeADCS_Gen2_CubeSenseCommon1
+{
+    version {major 6 minor 0}
+    
+    <** @description: This enumeration holds the IDs of CubeADCS Gen2 nodes for which this interface is applicable.
+        @details: size = 1 
+    **>
+    enumeration CmdTargetNode
+    {
+        NodeInvalid = 0
+        NodeFss0 = 4
+        NodeFss1 = 5
+        NodeFss2 = 6
+        NodeFss3 = 7
+        
+    }
+
+    <** @description: Return status type of the CubeADCS Gen2 API operations. Possible values are:
+                     0 - No error
+                     1 - NULL pointer
+                     2 - Size incorrect
+                     3 - Size too low
+                     4 - Size too high
+                     5 - Overrun
+                     6 - Parameter error (out of range)
+                     7 - Timeout
+                     8 - TCTLM comms Nack
+                     9 - Busy
+                     10 - Frame
+                     11 - CRC
+                     12 - Read
+                     13 - Write
+                     14 - CAN ID type error
+                     15 - CAN frame error
+                     16 - Unknown NACK
+                     17 - Invalid node type
+                     18 - CubeSpace file upload internal error
+                     19 - Usage error
+                     20 - Auto-Discovery error
+                     21 - Image error
+                     22 - Does not exist error
+                     23 - User data error
+                     24 - Commit error
+                     25 - TCTLM protocol error
+                     26 - General unexpected/unknown error
+                     27 - Telemetry response size error
+                     28 - TCTLM response ID does not match the request
+
+                     50 - TCTLM Nack - invalid ID
+                     51 - TCTLM Nack - invalid length
+                     52 - TCTLM Nack - invalid parameter data
+                     53 - TCTLM Nack - CRC failed
+                     54 - TCTLM Nack - not implemented
+                     55 - TCTLM Nack - busy
+                     56 - TCTLM Nack - sequence
+                     57 - TCTLM Nack - internal
+                     58 - TCTLM Nack - pass-through timeout
+                     59 - TCTLM Nack - pass-through target
+
+                     70 - CSP - receive timeout
+                     71 - CSP - failed to acquire a buffer
+
+                     65535 - Not implemented / TODO
+    **>
+    typedef AdcsErrorCode is Int32
+    
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeSenseCommon1_OvercurrentResult
+    {
+        
+        <** @description: No Overcurrent **>
+        NoOvercurrent = 0
+        
+        <** @description: Overcurrent detected **>
+        Overcurrent = 1
+        
+    }
+    
+    
+    
+    <** @description: Parameter structure for interface CamAutoAdjust
+    **>
+    struct CamAutoAdjust
+    {
+        
+        <** @description: Automatic exposure adjustment **>
+        Boolean Enabled
+        
+    }
+    
+    <** @description: Parameter structure for interface CamSettings
+    **>
+    struct CamSettings
+    {
+        
+        <** @description: Value for exposure register **>
+        UInt16 Exposure
+        
+        <** @description: Value for Gain Control register **>
+        UInt8 AGC
+        
+        <** @description: Value for Blue Gain register **>
+        UInt8 BlueGain
+        
+        <** @description: Value for Red Gain register **>
+        UInt8 RedGain
+        
+    }
+    
+    <** @description: Parameter structure for interface Config
+    **>
+    struct Config
+    {
+        
+        <** @description: Byte value 0-255 indicating light threshold level **>
+        UInt8 CamThreshold
+        
+        <** @description: 0 = disabled, 1 = enabled **>
+        Boolean CamAutoAdjust
+        
+        <** @description: exposure time register value **>
+        UInt16 CamExposure
+        
+        <** @description: Common Gain **>
+        UInt8 CamAgc
+        
+        <** @description: Blue Gain **>
+        UInt8 CamBlueGain
+        
+        <** @description: Red Gain **>
+        UInt8 CamRedGain
+        
+    }
+    
+    <** @description: Parameter structure for interface HealthTlm
+    **>
+    struct HealthTlm
+    {
+        
+        <** @description: MCU current **>
+        UInt16 McuCurrent
+        
+        <** @description: MCU temperature in deg C **>
+        Int16 McuTemp
+        
+        <** @description: MCU supply voltage **>
+        UInt16 McuVoltage
+        
+        <** @description: Camera current **>
+        UInt16 CurrentCam
+        
+        <** @description: SRAM current **>
+        UInt16 CurrentSram
+        
+        <** @description: Max recorded Camera current **>
+        UInt16 CurrentCamMax
+        
+        <** @description: Max recorded SRAM current **>
+        UInt16 CurrentSramMax
+        
+        <** @description: CAM overcurrent detected **>
+        CubeSenseCommon1_OvercurrentResult OvercurrentCam
+        
+        <** @description: SRAM overcurrent detected **>
+        CubeSenseCommon1_OvercurrentResult OvercurrentSram
+        
+        <** @description: Bitmask representing virtual watchdog region warning counters.  
+            @details: size = 5**>
+        UInt8[] WatchdogCount
+        
+    }
+    
+    
+    
+    <**
+        @description: Enable or disable auto-adjust for camera exposure
+        @details: id = 0
+    **>
+    method setCamAutoAdjust
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            CamAutoAdjust setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Change camera settings
+        @details: id = 1
+    **>
+    method setCamSettings
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            CamSettings setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Configuration data for the CubeSense
+        @details: id = 2
+    **>
+    method getConfig
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Config returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Health Telemetry for CubeSense
+        @details: id = 3
+    **>
+    method getHealthTlm
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            HealthTlm returnVal
+            
+            
+        }
+    }
+    
+}

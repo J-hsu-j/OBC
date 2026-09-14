@@ -1,0 +1,7 @@
+package org.endurosat.deploy
+
+import "../../../../fidl/spec/PlatformSpec.fdepl"
+import "../../../../fidl/obc/fp/payload_ctrl.fidl"
+
+define org.endurosat.spec.PlatformSpec for interface endurosat.pf.payload.payload_ctrl               		   { IsClient = false }
+

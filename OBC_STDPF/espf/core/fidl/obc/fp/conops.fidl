@@ -1,0 +1,374 @@
+package endurosat.macif
+
+<** @description: Concept of Operations control and configuration interface
+    @details: id = 0x10 
+**>
+interface conops
+{
+    version { major 2 minor 0 }
+    
+    <** @description: Standard result enumeration which can be used in most situations as a return code **>
+    enumeration StandardResult
+    {
+        <** @description: The operation finished successfully **>
+        SUCCESS,
+        <** @description: The operation failed **>
+        ERROR,
+        <** @description: One or more input arguments of the method are invalid **>
+        INVALID_ARGS,
+        <** @description: The operation is not supported by the firmware implementation **>
+        NOT_SUPPORTED
+    }
+    
+    <** @description: The enumeration defines the different threshold types configurable for the ConOps feature **>
+    enumeration ThresholdValueTypes
+    {
+        <** @description: Default threshold multiplier **> 
+        DEFAULT,
+        
+        <** @description: Limit for the battery bus voltage [V] to enter SAFE mode from IDLE or MISSION **> 
+        VBATT_SAFE,
+        
+        <** @description: Lower limit for the battery temperature [˚C] to enter SAFE mode **> 
+        TBATT_SAFE_LOWER,
+        
+        <** @description: Upper limit for the battery temperature [˚C] to enter SAFE mode **> 
+        TBATT_SAFE_UPPER,
+        
+        <** @description: See ThresholdValues::ang_vel_max **>
+        ANGVEL_MAX,
+        
+        <** @description: See ThresholdValues::ang_vel_low **>
+        ANGVEL_MIN,
+        
+        <** @description: See ThresholdValues::ang_vel_range **>
+        ANGVEL_Y_THOMSON_HIGH,
+        
+        <** @description: See ThresholdValues::ang_vel_range **>
+        ANGVEL_Y_THOMSON_LOW
+    }
+    
+    <** @description: Contains the threshold settings for the ConOps **>
+    struct ThresholdValues
+    {
+        <** @description: Battery voltage in [mV] below which the ConOps shall enter Safe mode **>
+        Int32 v_batt_safe
+        
+        <** @description: Temperature in degrees Celsius below which the ConOps shall enter Safe mode **>
+        Int32 t_batt_safe_lower
+        
+        <** @description: Temperature in degrees Celsius above which the ConOps shall enter Safe mode **>
+        Int32 t_batt_safe_upper
+        
+        <** @description: Angular velocity in [mrad/s] above which the OBC can start detumbling, ex. 1200 == 1.2 rad/s **>
+        Int32 ang_vel_max
+        
+        <** @description: Angular velocity in [mrad/s] after which the OBC can stop detumbling, ex. 1200 == 1.2 rad/s **>
+        Int32 ang_vel_low
+        
+        <** @description: Upper threshold for angular velocity in [mrad/s] to determine stable Y-Thomson spin, ex. 1200 == 1.2 rad/s **>
+        Int32 ang_vel_y_thom_high
+        
+        <** @description: Lower threshold for angular velocity in [mrad/s] to determine stable Y-Thomson spin, ex. 1200 == 1.2 rad/s **>
+        Int32 ang_vel_y_thom_low
+    }
+    
+    <** @description: Defines the set of supported ConOps modes in the system **>
+    enumeration OpModes
+    {
+        <** @description: Default mode of the OBC, which supports minimal communication capabilities **>
+        MODE_SAFE = 1,
+        
+        <** @description: Transient initial sub-mode of the Safe mode **>
+        MODE_SAFE_ENTRY,
+        
+        <** @description: Sub-mode of the Safe mode in which ADCS control is possible **>
+        MODE_SAFE_CONTROL,
+        
+        <** @description: Sub-mode of the Safe mode in which ADCS control is not possible **>
+        MODE_SAFE_NO_CONTROL,
+        
+        <** @description: Mode in which the OBC is waiting for payload activation **>
+        MODE_IDLE,
+        
+        <** @description: Mode in which payloads are executing commands **>
+        MODE_MISSION
+    }
+    
+    <** @description: Defines the set of supported ConOps state machine events **>
+    enumeration Events
+    {
+        <** @description: Reset the ConOps state machine to its initial state **>
+        RESET,
+        <** @description: Standard periodic event **>
+        PERIODIC,
+        <** @description: Enter Idle event **>
+        ENTER_IDLE,
+        <** @description: Enter Safe event **>
+        ENTER_SAFE,
+        <** @description: Enter Mission event **>
+        ENTER_MISSION
+    }
+    
+    <** @description: Control modes of the AOCS service **>
+    enumeration AocsState
+    {
+        AOCS_STATE_UNDEFINED,
+        AOCS_STATE_EXISTING_CONTROL,
+        AOCS_STATE_NO_CONTROL,
+        AOCS_STATE_NORMAL_DETUMBLING,
+        AOCS_STATE_Y_THOMSON,
+        AOCS_STATE_Y_THOMSON_MEMS_RATE,
+        AOCS_STATE_FAST_DETUMBLING,
+        AOCS_STATE_VERY_FAST_DETUMBLING,
+        AOCS_STATE_Y_MOMENTUM,
+        AOCS_STATE_Y_MOMENTUM_FULL_STATE_EKF,
+        AOCS_STATE_3AXIS,
+        AOCS_STATE_SUN_TRACKING,
+        AOCS_STATE_TARGET_TRACKING,
+        AOCS_STATE_USER1,
+        AOCS_STATE_USER2,
+        AOCS_STATE_USER3
+    }
+    
+    <** @description: Parameters of control modes of the AOCS service **>
+    struct AocsRefParams
+    {
+        Float refParam1
+        Float refParam2
+        Float refParam3
+    }
+    
+    <** @description: ConOps modes that have control mode configuration applied automatically when the mode is entered **>
+    enumeration ModesWithDefCtrl
+    {
+        SAFE,
+        IDLE     
+    }
+    
+    <** @description: Enumeration for SAFE booleans**>
+	enumeration SafeBool
+    {
+        FALSE = 0,
+        TRUE = 255 
+    }
+    
+    <** @description: Data used for default mode configuration **>
+    struct ControlMode
+    {
+        AocsState mode
+        AocsRefParams params
+    }
+    
+    <** @description: Send a new event to the ConOps State Machine 
+        @details: id = 0x0000000
+    **>
+    method send_new_event
+    {
+        in
+        {
+            <** @description: The event to send **>
+            Events event_type
+        }
+        out
+        {
+            <** @description: Result of the operation **>
+            StandardResult op_result
+        }
+    }
+    
+    <** @description: Get the current operational mode number from the ConOps State Machine 
+        @details: id = 0x0000001
+    **>
+    method get_op_mode
+    {
+        out
+        {
+            <** @description: Result of the operation **>
+            StandardResult op_result
+            
+            <** @description: Currently active operational mode **>
+            OpModes op_mode
+        }
+    }
+    
+    <** @description: Set a new value for a threshold type
+        @details: id = 0x0000002
+    **>
+    method set_thresh_val
+    {
+        in
+        {
+            <** @description: Value of the threshold to set **>
+            Int32 thresh_value
+            
+            <** @description: Type of threshold to set **>
+            ThresholdValueTypes thresh_type
+        }
+        out
+        { 
+            <** @description: Result of the operation **>
+            StandardResult op_result
+        }
+    }
+    
+    <** @description: Get the current value for a threshold type
+        @details: id = 0x0000003
+    **>
+    method get_thresh_val
+    {
+        in
+        {
+            <** @description: Type of threshold to get **>
+            ThresholdValueTypes thresh_type
+        }
+        out
+        {   
+            <** @description: Result of the operation **>
+            StandardResult op_result
+            
+            <** @description: Threshold value which is set in the system (units depend on the type of threshold specified) **>
+            Int32 thresh_value
+        }
+    }
+
+    <** @description: Update all threshold values
+      @details: id = 0x0000004
+    **>
+    method set_all_thresh_val
+    {
+        in
+        {
+            <** @description: Specifies threshold settings to update **>
+            ThresholdValues thresh_vals
+        }
+        out
+        { 
+            <** @description: Result of the operation **>
+            StandardResult op_result
+        }
+    }
+    
+    <** @description: Get all threshold values
+        @details: id = 0x0000005
+    **>
+    method get_all_thresh_val
+    {
+        out
+        { 
+            <** @description: Result of the operation **>
+            StandardResult op_result
+            
+            <** @description: Contains the settings for all threshold values set in the system **>
+            ThresholdValues thresh_vals
+        }
+    }
+    
+    <** @description: Request entry into mission mode of the satellite
+        @details: id = 0x0000006
+    **>
+    method request_mission_mode_enter
+    {
+        in
+        {
+            <** @description: Maximum time in [ms] to spend in mission mode. On expiry, ConOps transitions to Idle mode.
+                              Note that the current implementation checks for elapsed time at the period of the main ConOps
+                              task (default is 1s). Therefore, timeout values with finer resolution than this period will be
+                              "rounded up" to the period. **>
+            UInt32 timeout
+        }
+        out
+        {
+            <** @description: Result of the operation **>
+            StandardResult op_result
+        }
+    }
+    
+    <** @description: Request exit from mission mode of the satellite
+        @details: id = 0x0000007
+    **>
+    method request_mission_mode_exit
+    {
+        out
+        {
+            <** @description: Result of the operation **>
+            StandardResult op_result
+        }
+    }
+    
+    <** @description: Retrieve default AOCS control mode for a given ConOps mode
+        @details: id = 0x0000008
+    **>
+    method get_default_control_mode
+    {
+        in
+        {
+            <** @description: ConOps mode for which the default control mode is requested **>
+            ModesWithDefCtrl conops_mode
+        }
+        
+        out
+        {
+            <** @description: Result of the operation **>
+            StandardResult op_result
+            
+            <** @description: Default control mode for the provided ConOps mode **>
+            ControlMode control_mode
+        }
+    }
+    
+    <** @description: Retrieve default AOCS control mode for a given ConOps mode
+        @details: id = 0x0000009
+    **>
+    method set_default_control_mode
+    {
+        in
+        {
+            <** @description: ConOps mode for which the default control mode is set **>
+            ModesWithDefCtrl conops_mode
+            
+            <** @description: Default control mode to be set **>
+            ControlMode control_mode
+        }
+        
+        out
+        {
+            <** @description: Result of the operation **>
+            StandardResult op_result
+            
+            <** @description: Default control mode after the set operation **>
+            ControlMode set_control_mode
+        }
+    }
+    
+    <** @description: Set a flag to allow running payloads in any ConOps mode
+        @details: id = 0x000000A
+    **>
+    method set_force_allow_payloads
+    {
+        in
+        {
+            <** @description: New value to set **>
+            SafeBool is_allowed
+        }
+        
+        out
+        {
+            <** @description: Result of the operation **>
+            StandardResult op_result
+        }
+    }
+    
+    <** @description: Retrieve the flag that allows running payloads in any ConOps mode
+    @details: id = 0x000000B
+    **>
+    method get_force_allow_payloads
+    {   
+        out
+        {
+            <** @description: Value of the flag that enables payloads in non-Mission modes **>
+            SafeBool set_is_allowed
+        }
+    }
+}
+    

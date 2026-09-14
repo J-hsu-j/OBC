@@ -1,0 +1,126 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CubeSenseCommon1.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CubeSenseCommon1 as CubeADCS_Gen2_CubeSenseCommon1_Definitions
+{    
+    
+    struct CamAutoAdjust
+    {
+        DisplayName = "Set Camera Auto Adjust"
+        
+        Enabled {
+            DisplayName = "Enabled"
+        }
+        
+    }
+    
+    struct CamSettings
+    {
+        DisplayName = "Set Camera Settings"
+        
+        Exposure {
+            DisplayName = "Exposure"
+        }
+        
+        AGC {
+            DisplayName = "Gain Control"
+        }
+        
+        BlueGain {
+            DisplayName = "Blue Gain"
+        }
+        
+        RedGain {
+            DisplayName = "Red Gain"
+        }
+        
+    }
+    
+    struct Config
+    {
+        DisplayName = "Configuration"
+        
+        CamThreshold {
+            DisplayName = "Cam detection threshold"
+        }
+        
+        CamAutoAdjust {
+            DisplayName = "Cam sensor auto adjust mode"
+        }
+        
+        CamExposure {
+            DisplayName = "Cam sensor exposure time"
+        }
+        
+        CamAgc {
+            DisplayName = "Cam sensor AGC"
+        }
+        
+        CamBlueGain {
+            DisplayName = "Cam blue gain"
+        }
+        
+        CamRedGain {
+            DisplayName = "Cam red gain"
+        }
+        
+    }
+    
+    struct HealthTlm
+    {
+        DisplayName = "Health Telemetry"
+        
+        McuCurrent {
+            DisplayName = "Current"
+            Unit = "mA"
+        }
+        
+        McuTemp {
+            DisplayName = "Temperature"
+            Unit = "deg C"
+        }
+        
+        McuVoltage {
+            DisplayName = "MCU Voltage"
+            Unit = "mV"
+        }
+        
+        CurrentCam {
+            DisplayName = "CAM current"
+            Unit = "mA"
+        }
+        
+        CurrentSram {
+            DisplayName = "SRAM current"
+            Unit = "mA"
+        }
+        
+        CurrentCamMax {
+            DisplayName = "Max recorded CAM current"
+            Unit = "mA"
+        }
+        
+        CurrentSramMax {
+            DisplayName = "Max recorded SRAM current"
+            Unit = "mA"
+        }
+        
+        OvercurrentCam {
+            DisplayName = "CAM overcurrent"
+        }
+        
+        OvercurrentSram {
+            DisplayName = "SRAM overcurrent"
+        }
+        
+        WatchdogCount {
+            DisplayName = "Watchdog Counters"
+        }
+        
+    }
+    
+}

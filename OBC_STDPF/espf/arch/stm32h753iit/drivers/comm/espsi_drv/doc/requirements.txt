@@ -1,0 +1,4 @@
+mkdocs
+mkdocs-material>=9.4.7
+mkdocs-build-plantuml-plugin
+mkdocs-glightbox

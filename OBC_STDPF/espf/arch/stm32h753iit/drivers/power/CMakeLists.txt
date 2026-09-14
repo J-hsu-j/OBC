@@ -1,0 +1,7 @@
+message(STATUS "Processing EPS_GEN")
+include(gen_eps_inst.cmake)
+add_subdirectory(common)
+add_subdirectory(eps_i)
+add_subdirectory(eps_ii)
+add_subdirectory(eps_iii)
+add_subdirectory(eps_m)

@@ -1,0 +1,76 @@
+package endurosat.macif
+
+<** @description: Control and configuration CSP SERVICE
+    @details: id = 0x66
+**>
+interface csp_service
+{
+    version { major 0 minor 1 }
+ 
+     <** @description: General status type used for SW-related communication and/or settings. **>
+    enumeration StandardResult
+    {
+        <** @description: The operation is successful **>
+        SUCCESS,
+        <** @description: An error has occurred **>
+        ERROR,
+        <** @description: Invalid input arguments provided to the operation **>
+        INVALID_ARGS,
+        <** @description: The action related to the input data is not supported by the firmware **>
+        NOT_SUPPORTED
+    }
+ 
+ 
+     <**@description: Structure for trace_debug_levels.**>
+    struct debug_levels
+    {
+        <** @description: Debug trace level CSP_ERROR_FLAG **>
+        Boolean CSP_ERROR_FLAG
+        <** @description: Debug trace level CSP_WARN_FLAG **>
+        Boolean CSP_WARN_FLAG
+        <** @description: Debug trace level CSP_INFO_FLAG **>
+        Boolean CSP_INFO_FLAG
+        <** @description: Debug trace level CSP_BUFFER_FLAG **>
+        Boolean CSP_BUFFER_FLAG
+	    <** @description: Debug trace level CSP_PACKET_FLAG **>
+        Boolean CSP_PACKET_FLAG
+        <** @description: Debug trace level CSP_PROTOCOL_FLAG **>
+        Boolean CSP_PROTOCOL_FLAG
+        <** @description: Debug trace level CSP_LOCK_FLAG **>
+        Boolean CSP_LOCK_FLAG
+    }
+ 
+ 
+    <** @description: get_trace_debug_level 
+        @details: id = 0x00000000
+    **>
+    method get_trace_debug_level
+    {
+        out
+        {
+            <** @description: get_trace_debug_level **>
+            debug_levels trace_debug_level
+        }
+    }
+	
+    <** @description: set_trace_debug_level 
+        @details: id = 0x00000001
+    **>
+    method set_trace_debug_level
+    {
+        in
+        {
+            <** @description: get_trace_debug_level **>
+            debug_levels trace_debug_level
+        }
+		out
+        {
+            <** @description: Clear operation result **>
+            StandardResult op_result
+        }
+    }
+		
+	
+	
+	
+}

@@ -1,0 +1,440 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramNssrwlCommon1.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CubeNodeControlProgramNssrwlCommon1 as CubeADCS_Gen2_CubeNodeControlProgramNssrwlCommon1_Definitions
+{    
+    
+    struct CubeNodeControlProgramNssrwlCommon1_PowerState
+    {
+        
+        
+        Power {
+            DisplayName = "Power State RWL"
+        }
+        
+    }
+    
+    struct CubeNodeControlProgramNssrwlCommon1_BootError
+    {
+        
+        
+        ErrorCode {
+            DisplayName = "Boot Error Code"
+        }
+        
+    }
+    
+    struct CubeNodeControlProgramNssrwlCommon1_RwlStatus
+    {
+        
+        
+        State {
+            DisplayName = "Service State"
+        }
+        
+        FailCount {
+            DisplayName = "Req Failure Count"
+        }
+        
+        FailCountLastSuccess {
+            DisplayName = "Req Last Success Failure Count"
+        }
+        
+        LastReq {
+            DisplayName = "Last Req"
+        }
+        
+        LastReqResult {
+            DisplayName = "Last Req Result"
+        }
+        
+    }
+    
+    struct CubeNodeControlProgramNssrwlCommon1_RwlSpeed
+    {
+        
+        
+        Speed {
+            DisplayName = "Speed"
+            Unit = "RPM"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+    }
+    
+    struct CubeNodeControlProgramNssrwlCommon1_TlmStandard
+    {
+        
+        
+        SerialNumber {
+            DisplayName = "Serial Number"
+        }
+        
+        TargetValue {
+            DisplayName = "Target Value"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        ActualWheelSpeed {
+            DisplayName = "Actual Wheel Speed"
+            Unit = "RPM"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        ActualMotorCurrent {
+            DisplayName = "Actual Motor Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "20000.0001"
+        }
+        
+        Temperature {
+            DisplayName = "Temperature"
+            Unit = "C"
+			AlarmNumericMinInclusive = "-273.0001"
+			AlarmNumericMaxInclusive = "273.0001"
+        }
+        
+        ISignal {
+            DisplayName = "I-Signal (loop)"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        ReactionWheelMode {
+            DisplayName = "Reaction Wheel Mode"
+        }
+        
+        CurrentControlMode {
+            DisplayName = "Current Control Mode"
+        }
+        
+        SpeedControlMode {
+            DisplayName = "Speed Control Mode"
+        }
+        
+        TorqueMode {
+            DisplayName = "Torque Mode"
+        }
+        
+        WheelGyroMode {
+            DisplayName = "Wheel Gyro Mode"
+        }
+        
+        OmegaPiControlLoop {
+            DisplayName = "Omega-PI Control Loop"
+        }
+        
+        AnglePdControlLoop {
+            DisplayName = "Angle-PD Control Loop"
+        }
+        
+        BootControl {
+            DisplayName = "Boot Control"
+        }
+        
+        GyroConnected {
+            DisplayName = "Gyro Connected"
+        }
+        
+        GyroTelemetry {
+            DisplayName = "Gyro Telemetry"
+        }
+        
+        GyroFlagRegister {
+            DisplayName = "Gyro Flag Register"
+        }
+        
+        CrcError {
+            DisplayName = "CRC Error"
+        }
+        
+        WrongLlCommand {
+            DisplayName = "Wrong Low-Level Command"
+        }
+        
+        WrongHlCommand {
+            DisplayName = "Wrong High-Level Command"
+        }
+        
+        ToutSci1Main {
+            DisplayName = "Timeout SCI1 Main Interface"
+        }
+        
+        ToutSci2Gyro {
+            DisplayName = "Timeout SCI2 Gyro Interface"
+        }
+        
+    }
+    
+    struct CubeNodeControlProgramNssrwlCommon1_TlmExtended
+    {
+        
+        
+        SerialNumber {
+            DisplayName = "Serial Number"
+        }
+        
+        ActualWheelSpeed {
+            DisplayName = "Actual Wheel Speed"
+            Unit = "RPM"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+    }
+    
+    struct CubeNodeControlProgramNssrwlCommon1_TlmSystem
+    {
+        
+        
+        SerialNumber {
+            DisplayName = "Serial Number"
+        }
+        
+        DeviceType {
+            DisplayName = "Devie Type"
+        }
+        
+        DeviceId {
+            DisplayName = "Device ID"
+        }
+        
+        Month {
+            DisplayName = "Month"
+        }
+        
+        Year {
+            DisplayName = "Year"
+        }
+        
+        StatusRegister {
+            DisplayName = "Status Register"
+        }
+        
+        AcsRegister {
+            DisplayName = "ACS Flag Register"
+        }
+        
+        SystemRegister {
+            DisplayName = "System Flag Register"
+        }
+        
+        RwaRegister {
+            DisplayName = "RWA Flag Register"
+        }
+        
+        GyroRegister {
+            DisplayName = "Gyro Flag Register"
+        }
+        
+        BootFlag {
+            DisplayName = "Boot Flag"
+        }
+        
+        BootVector {
+            DisplayName = "Boot Vector"
+        }
+        
+        AcsControlInterval {
+            DisplayName = "ACS Control Interval"
+            Unit = "10.24ms"
+        }
+        
+        AcsStartAddr {
+            DisplayName = "ACS Start Address"
+        }
+        
+        TachoStartAddr {
+            DisplayName = "Tacho Start Address"
+        }
+        
+    }
+    
+    struct NodeSvcSettings
+    {
+        DisplayName = "Node Service Settings"
+        
+        NssRwlAutoBoot {
+            DisplayName = "NSSRWL Auto Boot"
+        }
+        
+    }
+    
+    struct NssRwlSvcSettings
+    {
+        DisplayName = "NSSRWL Service Settings"
+        
+        MaxTcTlmErrors {
+            DisplayName = "Max TcTlm Errors"
+        }
+        
+        SampleFrequency {
+            DisplayName = "Sample Frequency"
+            Unit = "Hz"
+			AlarmNumericMinInclusive = "0.9999"
+			AlarmNumericMaxInclusive = "50.0001"
+        }
+        
+        AutoSample {
+            DisplayName = "Auto Sample"
+        }
+        
+        SampleSource {
+            DisplayName = "Sample Source"
+        }
+        
+    }
+    
+    struct NssRwlPower
+    {
+        DisplayName = "NSSRWL Power State"
+        
+        PowerRwl {
+            DisplayName = "Power State RWL"
+        }
+        
+    }
+    
+    struct NssRwlWheelSpeedRef
+    {
+        DisplayName = "Wheel Reference Speed"
+        
+        Port {
+            DisplayName = "Port Handle"
+        }
+        
+        SpeedRef {
+            DisplayName = "Reference Speed"
+            Unit = "RPM"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+    }
+    
+    struct NssRwlTorque
+    {
+        DisplayName = "Torque"
+        
+        Port {
+            DisplayName = "Port Handle"
+        }
+        
+        Torque {
+            DisplayName = "Torque"
+            Unit = "mNm"
+			AlarmNumericMinInclusive = "-25.0001"
+			AlarmNumericMaxInclusive = "25.0001"
+        }
+        
+    }
+    
+    struct NssRwlMotorCurrent
+    {
+        DisplayName = "Motor Current"
+        
+        Port {
+            DisplayName = "Port Handle"
+        }
+        
+        Current {
+            DisplayName = "Current"
+            Unit = "mA"
+			AlarmNumericMinInclusive = "-3000.0001"
+			AlarmNumericMaxInclusive = "3000.0001"
+        }
+        
+    }
+    
+    struct NssRwlSoftwareReset
+    {
+        DisplayName = "NSSRWL Software Reset"
+        
+        Port {
+            DisplayName = "Port Handle"
+        }
+        
+    }
+    
+    struct NodeSvcStatus
+    {
+        DisplayName = "Node Service Status"
+        
+        NodeState {
+            DisplayName = "Node State"
+        }
+        
+        BootError {
+            DisplayName = "Boot Error"
+        }
+        
+    }
+    
+    struct NssRwlSvcStatus
+    {
+        DisplayName = "NSSRWL Service Status"
+        
+        Status {
+            DisplayName = "RWL Status"
+        }
+        
+    }
+    
+    struct NssRwlWheelSpeed1
+    {
+        DisplayName = "Wheel Speed Port 1"
+        
+        Speed {
+            DisplayName = "Speed"
+        }
+        
+    }
+    
+    struct NssRwlTlmStandard1
+    {
+        DisplayName = "Raw NSSRWL Standard TLM Port 1"
+        
+        Tlm {
+            DisplayName = "Standard Tlm"
+        }
+        
+    }
+    
+    struct NssRwlTlmExtended1
+    {
+        DisplayName = "Raw NSSRWL Extended TLM Port 1"
+        
+        Tlm {
+            DisplayName = "Extended Tlm"
+        }
+        
+    }
+    
+    struct NssRwlTlmSystem1
+    {
+        DisplayName = "Raw NSSRWL System TLM Port 1"
+        
+        Tlm {
+            DisplayName = "System Tlm"
+        }
+        
+    }
+    
+    struct NssRwlWheelSpeedAll
+    {
+        DisplayName = "Wheel Speed All"
+        
+        Speed {
+            DisplayName = "Speed"
+        }
+        
+    }
+    
+}

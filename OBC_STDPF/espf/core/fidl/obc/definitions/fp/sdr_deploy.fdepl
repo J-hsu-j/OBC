@@ -1,0 +1,64 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/sdr.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.pf.sdr as sdr_Definitions {
+
+	enumeration FileStatus {
+		AlarmInvalidRegexValues = {
+			"ERR", "NOT", "FAILED", "MISMATCH", "EMPTY"
+		}
+	}
+
+	struct FileOp {
+		obc_file {
+			DisplayName = "OBC File"
+		}
+		sdr_file {
+			DisplayName = "SDR File"
+		}
+	}
+
+	method sdr_upload {
+		in {
+			file {
+				DisplayName = "Files"
+			}
+		}
+		out {
+			status {
+				DisplayName = "Status"
+			}
+		}
+	}
+
+	method sdr_download {
+		in {
+			file {
+				DisplayName = "Files"
+			}
+		}
+		out {
+			status {
+				DisplayName = "Status"
+			}
+		}
+	}
+
+	method sdr_poll_latest_ft_status {
+		out {
+			status {
+				DisplayName = "Status"
+			}
+		}
+	}
+
+	method sdr_get_state {
+		out {
+			sm_state {
+				DisplayName = "State Machine State"
+			}
+		}
+	}
+
+}

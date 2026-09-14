@@ -1,0 +1,33 @@
+package org.endurosat.spec
+import "PlatformSpec.fdepl"
+
+/**
+ * Deployment model for decorations: customizing names, units and descriptions.
+ * Goal is to be able to customize display units, description (free text?) and names (also free text)
+ */
+specification DecoratorSpec extends org.endurosat.spec.PlatformSpec {
+    for struct_fields {
+        DisplayName : String ( default: "" ) ;
+        Unit : String ( default: "" ) ;
+        Description : String ( default: "" ) ;
+        DefaultValue : String ( default: "0" ) ;
+    }
+    for structs {
+        DisplayName : String ( default: "" ) ;
+        Unit : String ( default: "" ) ;
+        Description : String ( default: "" ) ;
+        DefaultValue : String ( default: "0" ) ;
+    }
+    for arguments {
+        DisplayName : String ( default: "" ) ;
+        Unit : String ( default: "" ) ;
+        Description : String ( default: "" ) ;
+        DefaultValue : String ( default: "0" ) ;
+    }
+    for attributes {
+        DisplayName : String ( default: "" ) ;
+        Unit : String ( default: "" ) ;
+        Description : String ( default: "" ) ;
+        DefaultValue : String ( default: "0" ) ;
+    }
+}

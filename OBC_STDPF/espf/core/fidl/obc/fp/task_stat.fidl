@@ -1,0 +1,239 @@
+package endurosat.macif
+
+<** @description: Interface for configuring and acquiring task statistics.
+    @details: id = 0x22
+**>
+interface task_stat
+{
+    version { major 0 minor 1 }
+
+    <** @description: operation status **>
+    enumeration OpStatus
+    {
+        <** @description: Operation successful **>
+        SUCCESS
+        <** @description: Operation failed **>
+        ERROR
+    }
+
+    <** @description: General configurations for the task statistics **>
+    struct StatsConfig
+    {
+        <** @description: Enable task statistics in general ; logging won't work if this is disabled **>
+        Boolean enable
+        <** @description: Enable logging task stats to file(s). The file pattern is "task_stats.XXX.log". Task stats must be enabled for this to work **>
+        Boolean logging
+        <** @description: Set the priority of the task statistics gathering and logging task. 8 is default (LowPriority), 55 is highest (not recommended) **>
+        UInt8   priority
+        <** @description: The time period between sampling statistics **>
+        UInt32  period
+        <** @description: The name of the file storing the task id table. This file is filled upon MCU reset or on update of this field
+            @details: size = 47
+        **>
+        String  task_id_table_file
+    }
+
+    <** @description: Configuration for a specific task **>
+    struct TaskStatConfig
+    {
+        <** @description: The id of the task; See task_id_table_file in get/set_configuration methods **>
+        UInt8   id
+        <** @description: Enable sampling for this specific task **>
+        Boolean enabled
+        <** @description: Enable logging for this specific task. If sampling is not enabled logging is ignored **>
+        Boolean logging
+    }
+
+    <** @description: A sample staticstics for a specific task id **>
+    struct TaskStatSample
+    {
+        <** @description: The id of the task; See task_id_table_file in get/set_configuration methods **>
+        UInt8   id
+        <** @description: The lowest amount of free stack reached for this task since reset **>
+        UInt16  free_stack
+        <** @description: The runtime in processor clock cycles for this task. The runtime overflows, so it does not display absolute runtime.  **>
+        UInt32  run_time
+    }
+
+    <** @description: Get general configuration for the task statistics
+        @details: id = 0x00000001
+    **>
+    method get_configuration
+    {
+        out
+        {
+            <** @description: Status of the operation **>
+            OpStatus status
+            <** @description: The current task statistics configuration. **>
+            StatsConfig config
+        }
+    }
+
+    <** @description: Set general configuration for the task statistics.
+        @details: id = 0x00000010
+    **>
+    method set_configuration_global_enable
+    {
+        in
+        {
+            <** @description: Enable task statistics in general ; logging won't work if this is disabled **>
+            Boolean enable
+        }
+        out
+        {
+            <** @description: Status of the operation **>
+            Boolean status
+        }
+    }
+
+    <** @description: Set general configuration for the task statistics. See flags in StatsConfig.
+        @details: id = 0x00000011
+    **>
+    method set_configuration_global_logging
+    {
+        in
+        {
+            <** @description: Enable logging task stats to file(s). The file pattern is "task_stats.XXX.log". Task stats must be enabled for this to work **>
+            Boolean logging
+        }
+        out
+        {
+            <** @description: Status of the operation **>
+            Boolean status
+        }
+    }
+
+    <** @description: Set general configuration for the task statistics. See flags in StatsConfig.
+        @details: id = 0x00000012
+    **>
+    method set_configuration_global_priority
+    {
+        in
+        {
+            <** @description: Set the priority of the task statistics gathering and logging task. 8 is default (LowPriority), 55 is highest (not recommended) **>
+            UInt8 priority
+        }
+        out
+        {
+            <** @description: Status of the operation **>
+            Boolean status
+        }
+    }
+
+    <** @description: Set general configuration for the task statistics. See flags in StatsConfig.
+        @details: id = 0x00000014
+    **>
+    method set_configuration_global_sampling_period
+    {
+        in
+        {
+            <** @description: The time period between sampling statistics **>
+            UInt32 sampling_period
+        }
+        out
+        {
+            <** @description: Status of the operation **>
+            Boolean status
+        }
+    }
+
+    <** @description: Set general configuration for the task statistics. See flags in StatsConfig.
+        @details: id = 0x00000015
+    **>
+    method set_configuration_global_id_file
+    {
+        in
+        {
+            <** @description: The name of the file storing the task id table. This file is filled upon MCU reset or on update of this field
+                @details: size = 47
+            **>
+            String  task_id_table_file
+        }
+        out
+        {
+            <** @description: Status of the operation **>
+            Boolean status
+        }
+    }
+
+    <** @description: Set general configuration for the task statistics. See flags in StatsConfig.
+        @details: id = 0x0000001F
+    **>
+    method set_configuration_global_defaults
+    {
+        out
+        {
+            <** @description: Status of the operation **>
+            Boolean status
+        }
+    }
+
+    <** @description: Get the configuration for a specific task id
+        @details: id = 0x00000003
+    **>
+    method get_configuration_per_task_id
+    {
+        in
+        {
+            <** @description: The id of the task; See task_id_table_file in get/set_configuration methods **>
+            UInt8   id
+        }
+        out
+        {
+            <** @description: Status of the operation **>
+            OpStatus status
+            <** @description: The current configuration for the given task id. **>
+            TaskStatConfig task_cfg
+        }
+    }
+
+    <** @description: Set the configuration for a specific task id
+        @details: id = 0x00000004
+    **>
+    method set_configuration_per_task_id
+    {
+        in
+        {
+            <** @description: The new configuration for the given task id. All the parameters are applied for this id **>
+            TaskStatConfig task_cfg
+        }
+        out
+        {
+            <** @description: Status of the operation **>
+            OpStatus status
+        }
+    }
+
+    <** @description: Get the free heap avialable for new tasks
+        @details: id = 0x00000006
+    **>
+    method get_free_heap
+    {
+        out
+        {
+            <** @description: Status of the operation **>
+            OpStatus status
+            <** @description: The available heap for new tasks in FreeRTOS **>
+            UInt32 free_heap
+        }
+    }
+
+    <** @description: Get the latest sample for a specific task id
+        @details: id = 0x00000005
+    **>
+    method get_latest_task_stat
+    {
+        in
+        {
+            <** @description: The id of the task; See task_id_table_file in get/set_configuration methods **>
+            UInt8   id
+        }
+        out
+        {
+            <** @description: Status of the operation **>
+            OpStatus status
+            <** @description: The latest sample staticstics for the input task id **>
+            TaskStatSample stat
+        }
+    }
+}

@@ -1,0 +1,271 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CubeMagControlProgramCommon1.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CubeMagControlProgramCommon1 as CubeADCS_Gen2_CubeMagControlProgramCommon1_Definitions
+{    
+    
+    struct MmcConfig
+    {
+        DisplayName = "MMC Magnetometer Config"
+        
+        AutoSample {
+            DisplayName = "MMC Auto-Sample"
+        }
+        
+        AutoSamplePeriod {
+            DisplayName = "MMC Sample Period"
+        }
+        
+        SampleFilterType {
+            DisplayName = "MMC Sample Filter Type"
+        }
+        
+        SampleFilterOrder {
+            DisplayName = "MMC Sample Filter Order"
+        }
+        
+        SampleFilterDepth {
+            DisplayName = "MMC Sample Filter Depth"
+        }
+        
+        SingleSampleTime {
+            DisplayName = "MMC Single-Sample Time"
+        }
+        
+        SampleBusyAction {
+            DisplayName = "MMC Sample Busy Action"
+        }
+        
+        MaxErrorsMag {
+            DisplayName = "MMC Max Errors Magnetometer"
+        }
+        
+        MaxErrorsTmp {
+            DisplayName = "MMC Max Errors Temperature"
+        }
+        
+    }
+    
+    struct Config
+    {
+        DisplayName = "CubeMag Config"
+        
+        PrimaryMagnetometerPref {
+            DisplayName = "Prefered Primary Magnetometer"
+        }
+        
+        PrimaryMagnetometerCurr {
+            DisplayName = "Current Primary Magnetometer"
+        }
+        
+        DeployTimeout {
+            DisplayName = "Deploy Timeout"
+            Unit = "mS"
+			AlarmNumericMinInclusive = "1999.9999"
+			AlarmNumericMaxInclusive = "30000.0001"
+        }
+        
+        PrimaryAutoSelect {
+            DisplayName = "Primary Auto-Select"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+    }
+    
+    struct MmcCalibration
+    {
+        DisplayName = "MMC Calibration Parameters"
+        
+        Xd1 {
+            DisplayName = "X-d1"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Xd2 {
+            DisplayName = "X-d2"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Xs1 {
+            DisplayName = "X-s1"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Xs2 {
+            DisplayName = "X-s2"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Yd1 {
+            DisplayName = "Y-d1"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Yd2 {
+            DisplayName = "Y-d2"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Ys1 {
+            DisplayName = "Y-s1"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Ys2 {
+            DisplayName = "Y-s2"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Zd1 {
+            DisplayName = "Z-d1"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Zd2 {
+            DisplayName = "Z-d2"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Zs1 {
+            DisplayName = "Z-s1"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Zs2 {
+            DisplayName = "Z-s2"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+    }
+    
+    struct State
+    {
+        DisplayName = "State"
+        
+        MagState {
+            DisplayName = "MagSvc State"
+        }
+        
+        PrimaryMagState {
+            DisplayName = "Primary Mag State"
+        }
+        
+        RedMagState {
+            DisplayName = "Red Mag State"
+        }
+        
+    }
+    
+    struct PrimaryMagMeasurement
+    {
+        DisplayName = "Primary Magnetometer Measurement"
+        
+        X_axis {
+            DisplayName = "X_axis"
+            Unit = "nT"
+			AlarmNumericMinInclusive = "-800000.0001"
+			AlarmNumericMaxInclusive = "800000.0001"
+        }
+        
+        Y_axis {
+            DisplayName = "Y_axis"
+            Unit = "nT"
+			AlarmNumericMinInclusive = "-800000.0001"
+			AlarmNumericMaxInclusive = "800000.0001"
+        }
+        
+        Z_axis {
+            DisplayName = "Z_axis"
+            Unit = "nT"
+			AlarmNumericMinInclusive = "-800000.0001"
+			AlarmNumericMaxInclusive = "800000.0001"
+        }
+        
+        DataValid {
+            DisplayName = "Data Valid"
+        }
+        
+    }
+    
+    struct PrimaryMagMeasurementRaw
+    {
+        DisplayName = "Primary Magnetometer Measurement Raw"
+        
+        X_axis {
+            DisplayName = "X_axis"
+            Unit = "nT"
+			AlarmNumericMinInclusive = "-800000.0001"
+			AlarmNumericMaxInclusive = "800000.0001"
+        }
+        
+        Y_axis {
+            DisplayName = "Y_axis"
+            Unit = "nT"
+			AlarmNumericMinInclusive = "-800000.0001"
+			AlarmNumericMaxInclusive = "800000.0001"
+        }
+        
+        Z_axis {
+            DisplayName = "Z_axis"
+            Unit = "nT"
+			AlarmNumericMinInclusive = "-800000.0001"
+			AlarmNumericMaxInclusive = "800000.0001"
+        }
+        
+        DataValid {
+            DisplayName = "Data Valid"
+        }
+        
+    }
+    
+    struct PrimaryMagTemp
+    {
+        DisplayName = "Primary Magnetometer Temperature"
+        
+        Temp {
+            DisplayName = "Temperature"
+			AlarmNumericMinInclusive = "-75.0001"
+			AlarmNumericMaxInclusive = "150.0001"
+        }
+        
+    }
+    
+    struct PrimaryMagDiagnostics
+    {
+        DisplayName = "Primary Magnetometer Diagnostics"
+        
+        lastErrorMag {
+            DisplayName = "Last Error Magnetometer"
+        }
+        
+        errorCountMag {
+            DisplayName = "Error Count Magnetometer"
+        }
+        
+        lastErrorTmp {
+            DisplayName = "Last Error Temperature"
+        }
+        
+        errorCountTmp {
+            DisplayName = "Error Count Temperature"
+        }
+        
+    }
+    
+}

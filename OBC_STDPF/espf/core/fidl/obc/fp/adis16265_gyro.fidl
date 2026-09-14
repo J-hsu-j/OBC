@@ -1,0 +1,98 @@
+package endurosat.macif
+
+<** @description: EnduroSat Gyroscope panel-axis configuration
+    @details: id = 72
+**>
+interface adis16265_gyro
+{
+    version { major 1 minor 0 }
+
+    <** @description: Result of operation **>
+    enumeration Result
+    {
+        <** @description: Function execution successful **>
+        OK,
+        <** @description: Function execution failed **>
+        FAIL
+    }
+
+    <** @description: This corresponds to enum Panel_Number_t from panels.h **>
+    enumeration Panel
+    {
+        <** @description: Panel connected to output connector designated PAN_1 **>
+        ONE = 1,
+        <** @description: Panel connected to output connector designated PAN_2 **>
+        TWO,
+        <** @description: Panel connected to output connector designated PAN_3 **>
+        THREE,
+        <** @description: Panel connected to output connector designated PAN_4 **>
+        FOUR,
+        <** @description: Panel connected to output connector designated PAN_5 **>
+        FIVE,
+        <** @description: Panel connected to output connector designated PAN_6 **>
+        SIX
+    }
+
+    <** @description: Attempt to change the gyroscope panel-axis configuration. Each satellite axis should correspond to a (solar) panel.
+        @details: id = 0x00000001
+    **>
+    method set_gyroscope_config
+    {
+        in
+        {
+            <** @description: Determines which physical connector of the OBC is connected to gyroscope 1 **>
+            Panel gyroscope_1
+            <** @description: Determines which physical connector of the OBC is connected to gyroscope 2 **>
+            Panel gyroscope_2
+            <** @description: Determines which physical connector of the OBC is connected to gyroscope 3 **>
+            Panel gyroscope_3
+        }
+        out
+        {
+            <** @description: Operation status, can be OK or FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Get the currently active gyroscope panel-axis configuration. This shows which satellite axis is connected to which (solar) panel.
+        @details: id = 0x00000002
+    **>
+    method get_gyroscope_config
+    {
+        out
+        {
+            <** @description: Returns which physical connector of the OBC is considered as connected to gyroscope 1 **>
+            Panel gyroscope_1
+            <** @description: Returns which physical connector of the OBC is considered as connected to gyroscope 2 **>
+            Panel gyroscope_2
+            <** @description: Returns which physical connector of the OBC is considered as connected to gyroscope 3 **>
+            Panel gyroscope_3
+            <** @description: Operation status, can be OK or FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Save the active gyroscope panel-axis configuration to nvm. THIS SHOULD ONLY BE DONE WHEN YOU ARE SURE THE CONFIG HAS GOOD PERFORMANCE.
+        @details: id = 0x00000003
+    **>
+    method save_gyroscope_config
+    {
+        out
+        {
+            <** @description: Operation status, can be OK or FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Load the active gyroscope panel-axis configuration from nvm.
+        @details: id = 0x00000004
+    **>
+    method load_gyroscope_config
+    {
+        out
+        {
+            <** @description: Operation status, can be OK or FAIL **>
+            Result op_result
+        }
+    }
+}

@@ -1,0 +1,430 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CommonFramework1.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CommonFramework1 as CubeADCS_Gen2_CommonFramework1_Definitions
+{    
+    
+    struct Reset
+    {
+        DisplayName = "Reset"
+        
+        ResetType {
+            DisplayName = "Reset Type"
+        }
+        
+    }
+    
+    struct UnixTime
+    {
+        DisplayName = "Current Unix time"
+        
+        UnixTimeSeconds {
+            DisplayName = "Current Unix seconds"
+            Unit = "s"
+        }
+        
+        UnixTimeNanoSeconds {
+            DisplayName = "Current Unix Nanoseconds"
+            Unit = "ns"
+			AlarmNumericMaxInclusive = "999999999.0001"
+        }
+        
+    }
+    
+    struct ErrorLogIndex
+    {
+        DisplayName = "Error Log Index"
+        
+        ErrorLogIndexReference {
+            DisplayName = "Error Log Index Reference"
+        }
+        
+        ErrorLogIndexValue {
+            DisplayName = "Error Log Index Value"
+			AlarmNumericMaxInclusive = "256.0001"
+        }
+        
+        ErrorLogEntries {
+            DisplayName = "Error Log Entries"
+			AlarmNumericMaxInclusive = "256.0001"
+        }
+        
+    }
+    
+    struct ErrorLogEntry
+    {
+        DisplayName = "Error Log Entry"
+        
+        ErrorLogEntryTimestamp {
+            DisplayName = "Error Log Entry Timestamp"
+        }
+        
+        ErrorLogEntryErrorCode {
+            DisplayName = "ErrorLogEntryErrorCode"
+        }
+        
+    }
+    
+    struct ErrorLogSettings
+    {
+        DisplayName = "Error Log Settings"
+        
+        ActiveState {
+            DisplayName = "Active State"
+        }
+        
+        BufferFullAction {
+            DisplayName = "Buffer Full Action"
+        }
+        
+    }
+    
+    struct Identification
+    {
+        DisplayName = "Identification"
+        
+        NodeType {
+            DisplayName = "Node type identifier"
+        }
+        
+        ProgramType {
+            DisplayName = "Program type identifier"
+        }
+        
+        InterfaceVersion {
+            DisplayName = "Interface version"
+        }
+        
+        FirmwareMajorVersion {
+            DisplayName = "Firmware version (Major)"
+        }
+        
+        FirmwareMinorVersion {
+            DisplayName = "Firmware version (Minor)"
+        }
+        
+        RuntimeSeconds {
+            DisplayName = "Runtime (seconds)"
+        }
+        
+        RuntimeMilliseconds {
+            DisplayName = "Runtime (milliseconds)"
+        }
+        
+    }
+    
+    struct SerialNumber
+    {
+        DisplayName = "Serial Number"
+        
+        OtpSerial {
+            DisplayName = "OTP Serial"
+        }
+        
+        CfgSerial {
+            DisplayName = "Config Serial"
+        }
+        
+        NodeType {
+            DisplayName = "Node type identifier"
+        }
+        
+        SerialInt {
+            DisplayName = "Serial Integer"
+        }
+        
+        ActiveSerial {
+            DisplayName = "Active Serial Number"
+        }
+        
+    }
+    
+    struct ConfigPersistDiagnostics
+    {
+        DisplayName = "Persist Config Diagnostics"
+        
+        State {
+            DisplayName = "State"
+        }
+        
+        LastResult {
+            DisplayName = "Last Result"
+        }
+        
+        Timestamp {
+            DisplayName = "Timestamp"
+            Unit = "s"
+        }
+        
+    }
+    
+    struct CommsStatus
+    {
+        DisplayName = "Communication Status"
+        
+        uartTcCounter {
+            DisplayName = "UART Telecommand counter"
+        }
+        
+        uartTlmCounter {
+            DisplayName = "UART Telemetry request counter"
+        }
+        
+        uartSoftwareProtoErrors {
+            DisplayName = "UART Errors reported in SW checks"
+        }
+        
+        uartHardwareFlagErrors {
+            DisplayName = "UART Errors reported by HW Flags"
+        }
+        
+        uart2TcCounter {
+            DisplayName = "UART2 Telecommand counter"
+        }
+        
+        uart2TlmCounter {
+            DisplayName = "UART2 Telemetry request counter"
+        }
+        
+        uart2SoftwareProtoErrors {
+            DisplayName = "UART2 Errors reported in SW checks"
+        }
+        
+        uart2HardwareFlagErrors {
+            DisplayName = "UART2 Errors reported by HW Flags"
+        }
+        
+        canTcCounter {
+            DisplayName = "CAN Telecommand counter"
+        }
+        
+        canTlmCounter {
+            DisplayName = "CAN Telemetry request counter"
+        }
+        
+        canSoftwareProtoErrors {
+            DisplayName = "CAN Errors reported in SW checks"
+        }
+        
+        canHardwareFlagErrors {
+            DisplayName = "CAN Errors reported by HW Flags"
+        }
+        
+        i2cTcCounter {
+            DisplayName = "I2C Telecommand counter"
+        }
+        
+        i2cTlmCounter {
+            DisplayName = "I2C Telemetry request counter"
+        }
+        
+        i2cSoftwareProtoErrors {
+            DisplayName = "I2C Errors reported in SW checks"
+        }
+        
+        i2cHardwareFlagErrors {
+            DisplayName = "I2C Errors reported by HW Flags"
+        }
+        
+    }
+    
+    struct Version
+    {
+        DisplayName = "Version"
+        
+        FirmwareMajorVersion {
+            DisplayName = "Firmware version (Major)"
+        }
+        
+        FirmwareMinorVersion {
+            DisplayName = "Firmware version (Minor)"
+        }
+        
+        FirmwarePatchVersion {
+            DisplayName = "Firmware version (Patch)"
+        }
+        
+        SystemMajorVersion {
+            DisplayName = "System version (Major)"
+        }
+        
+        SystemMinorVersion {
+            DisplayName = "System version (Minor)"
+        }
+        
+        SystemPatchVersion {
+            DisplayName = "System version (Patch)"
+        }
+        
+        GitBranch {
+            DisplayName = "Git Branch"
+        }
+        
+        GitHash {
+            DisplayName = "Git Hash"
+        }
+        
+        BuildHash {
+            DisplayName = "Build Hash"
+        }
+        
+        BuildTimeSeconds {
+            DisplayName = "Build Time (seconds)"
+            Unit = "s"
+        }
+        
+        HardwareMinorVersion {
+            DisplayName = "Hardware version (Minor)"
+        }
+        
+    }
+    
+    struct BootStatus
+    {
+        DisplayName = "Boot Status"
+        
+        State {
+            DisplayName = "State"
+        }
+        
+        ResetReason {
+            DisplayName = "Reset Reason"
+        }
+        
+        SharedParamsError {
+            DisplayName = "Shared Params Error"
+        }
+        
+        PortValidationError {
+            DisplayName = "Port Validation Error"
+        }
+        
+        PortDiscoveryError {
+            DisplayName = "Port Discovery Error"
+        }
+        
+        OtpSerialError {
+            DisplayName = "OTP Serial Number Error"
+        }
+        
+        CfgSerialError {
+            DisplayName = "Config Serial Number Error"
+        }
+        
+        SerialMismatchError {
+            DisplayName = "Serial Number Mismatch Error"
+        }
+        
+        ConfigInvalidError {
+            DisplayName = "Config invalid error"
+        }
+        
+    }
+    
+    struct TelecommandAcknowledge
+    {
+        DisplayName = "Telecommand Acknowledge"
+        
+        Id {
+            DisplayName = "TCTLM ID"
+        }
+        
+        Error {
+            DisplayName = "Error"
+        }
+        
+        ErrorIndex {
+            DisplayName = "ErrorIndex"
+        }
+        
+        Read {
+            DisplayName = "Read"
+        }
+        
+    }
+    
+    struct CommonErrorCodes
+    {
+        DisplayName = "Common Error Codes"
+        
+        SlaveSvcCan {
+            DisplayName = "Slave Service - CAN"
+        }
+        
+        SlaveSvcUart {
+            DisplayName = "Slave Service - UART"
+        }
+        
+        SlaveSvcI2c {
+            DisplayName = "Slave Service - I2C"
+        }
+        
+        ErrorLogSvc {
+            DisplayName = "Error Log Service"
+        }
+        
+    }
+    
+    struct Identification2
+    {
+        DisplayName = "Identification2"
+        
+        NodeType {
+            DisplayName = "Node type identifier"
+        }
+        
+        ProgramType {
+            DisplayName = "Program type identifier"
+        }
+        
+        SerialInt {
+            DisplayName = "Serial Integer"
+        }
+        
+        InterfaceVersion {
+            DisplayName = "Interface version"
+        }
+        
+        FirmwareMajorVersion {
+            DisplayName = "Firmware version (Major)"
+        }
+        
+        FirmwareMinorVersion {
+            DisplayName = "Firmware version (Minor)"
+        }
+        
+        FirmwarePatchVersion {
+            DisplayName = "Firmware version (Patch)"
+        }
+        
+        SystemMajorVersion {
+            DisplayName = "System version (Major)"
+        }
+        
+        SystemMinorVersion {
+            DisplayName = "System version (Minor)"
+        }
+        
+        SystemPatchVersion {
+            DisplayName = "System version (Patch)"
+        }
+        
+        HardwareMinorVersion {
+            DisplayName = "Hardware version (Minor)"
+        }
+        
+        RuntimeSeconds {
+            DisplayName = "Runtime (seconds)"
+        }
+        
+        RuntimeMilliseconds {
+            DisplayName = "Runtime (milliseconds)"
+        }
+        
+    }
+    
+}

@@ -1,0 +1,555 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/es_adcs.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.es_adcs as es_adcs_Definitions
+{
+
+	enumeration Result {
+		AlarmInvalidRegexValues = {
+			"FAILURE"
+		}
+	}
+
+	enumeration EstimatorWarning {
+		AlarmInvalidRegexValues = {
+			"DATA_CACHE_GET", "MATH_FAIL"
+		}
+	}
+
+	enumeration EstimatorError {
+		AlarmInvalidRegexValues = {
+			"DATA_CACHE_GET", "MATH_FAIL", "INVALID_ALGO", "ALGO_IDENTICAL", "GENERAL"
+		}
+	}
+
+	enumeration ControllerError {
+		AlarmInvalidRegexValues = {
+			"DATA_CACHE_GET", "INVALID_ALGO", "GENERAL"
+		}
+	}
+
+	enumeration GuidanceError {
+		AlarmInvalidRegexValues = {
+			"DATA_CACHE_GET", "INVALID_ALGO", "GENERAL"
+		}
+	}
+
+	struct EstimatorAlgoStatus {
+		last_warning_algo {
+			DisplayName = "Last Warning - Algorithm"
+		}
+		last_error_algo {
+			DisplayName = "Last Error - Algorithm"
+		}
+	}
+
+	struct EstimatorStatus {
+		last_warning_general {
+			DisplayName = "Last Warning - General"
+		}
+		last_error_general {
+			DisplayName = "Last Error - General"
+		}
+	}
+
+	struct EstimatorEkfConfig {
+		ekf_P_matrix_diagonal_values_init {
+			DisplayName = "EKF P Matrix Diagonal Values - Initial"
+		}
+		ekf_Q_matrix_diagonal_values {
+			DisplayName = "EKF Q Matrix Diagonal Values"
+		}
+		ekf_R_matrix_diagonal_values {
+			DisplayName = "EKF R Matrix Diagonal Values"
+		}
+	}
+
+	struct EstimatorConfig {
+		active_estimators {
+			DisplayName = "Active Estimators"
+		}
+		active_ekf_config {
+			DisplayName = "Active EKF Configuration"
+		}
+	}
+
+	struct GuidanceAlgoStatus {
+		last_warning_algo {
+			DisplayName = "Last Warning - Algorithm"
+		}
+		last_error_algo {
+			DisplayName = "Last Error - Algorithm"
+		}
+	}
+
+	struct GuidanceStatus {
+		last_warning_general {
+			DisplayName = "Last Warning - General"
+		}
+		last_error_general {
+			DisplayName = "Last Error - General"
+		}
+		algo_status {
+			DisplayName = "Algorithm Status"
+		}
+	}
+
+	struct GuidanceConfig {
+		active_guidance {
+			DisplayName = "Active Guidance"
+		}
+	}
+
+	struct ControllerAlgoStatus {
+		last_warning_algo {
+			DisplayName = "Last Warning - Algorithm"
+		}
+		last_error_algo {
+			DisplayName = "Last Error - Algorithm"
+		}
+	}
+
+	struct ControllerStatus {
+		last_warning_general {
+			DisplayName = "Last Warning - General"
+		}
+		last_error_general {
+			DisplayName = "Last Error - General"
+		}
+		algo_status {
+			DisplayName = "Algorithm Status"
+		}
+	}
+
+	struct ControllerBdotConfig {
+		bdot_gain_coeff_x {
+			DisplayName = "B-Dot Gain Coefficient - X"
+		}
+		bdot_gain_coeff_y {
+			DisplayName = "B-Dot Gain Coefficient - Y"
+		}
+		bdot_gain_coeff_z {
+			DisplayName = "B-Dot Gain Coefficient - Z"
+		}
+	}
+
+	struct ControllerNadirConfig {
+		nadir_gain_coeff_kp_axis_1 {
+			DisplayName = "Nadir Gain Coefficient (Kp) - Axis 1"
+		}
+		nadir_gain_coeff_kp_axis_2 {
+			DisplayName = "Nadir Gain Coefficient (Kp) - Axis 2"
+		}
+		nadir_gain_coeff_kp_axis_3 {
+			DisplayName = "Nadir Gain Coefficient (Kp) - Axis 3"
+		}
+		nadir_gain_coeff_kd_axis_x {
+			DisplayName = "Nadir Gain Coefficient (Kd) - Axis X"
+		}
+		nadir_gain_coeff_kd_axis_y {
+			DisplayName = "Nadir Gain Coefficient (Kd) - Axis Y"
+		}
+		nadir_gain_coeff_kd_axis_z {
+			DisplayName = "Nadir Gain Coefficient (Kd) - Axis Z"
+		}
+	}
+
+	struct ControllerConfig {
+		active_controller {
+			DisplayName = "Active Controller"
+		}
+		active_bdot_config {
+			DisplayName = "Active B-Dot Configuration"
+		}
+		active_nadir_config {
+			DisplayName = "Active Nadir Configuration"
+		}
+	}
+
+	struct Status {
+		estimator_result {
+			DisplayName = "Estimator Result"
+		}
+		guidance_result {
+			DisplayName = "Guidance Result"
+		}
+		controller_result {
+			DisplayName = "Controller Result"
+		}
+		active_mode {
+			DisplayName = "Active Mode"
+		}
+	}
+
+	struct Config {
+		estimator_config {
+			DisplayName = "Estimator Configuration"
+		}
+		guidance_config {
+			DisplayName = "Guidance Configuration"
+		}
+		controller_config {
+			DisplayName = "Controller Configuration"
+		}
+		used_magnetometer {
+			DisplayName = "Used Magnetometer"
+		}
+	}
+
+	method get_op_mode {
+		out {
+			active_mode {
+				DisplayName = "Active Mode"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_estimators {
+		in {
+			desired_estimator_1 {
+				DisplayName = "Desired Estimator - 1"
+			}
+			desired_estimator_2 {
+				DisplayName = "Desired Estimator - 2"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_estimators {
+		out {
+			active_estimator_1 {
+				DisplayName = "Active Estimator - 1"
+			}
+			active_estimator_2 {
+				DisplayName = "Active Estimator - 2"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_guidance {
+		in {
+			desired_guidance {
+				DisplayName = "Desired Guidance"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_guidance {
+		out {
+			active_guidance {
+				DisplayName = "Active Guidance"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_controller {
+		in {
+			desired_controller {
+				DisplayName = "Desired Controller"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_controller {
+		out {
+			active_controller {
+				DisplayName = "Active Controller"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_status {
+		out {
+			current_status {
+				DisplayName = "Current Status"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_status_estimators {
+		out {
+			current_status_estimators {
+				DisplayName = "Current Status - Estimators"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_status_guidance {
+		out {
+			current_status_guidance {
+				DisplayName = "Current Status - Guidance"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_status_controller {
+		out {
+			current_status_controller {
+				DisplayName = "Current Status - Controller"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_estimator_ekf_config {
+		in {
+			desired_ekf_config {
+				DisplayName = "Desired EKF Configuration"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_estimator_ekf_config {
+		out {
+			active_ekf_config {
+				DisplayName = "Active EKF Configuration"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_controller_bdot_config {
+		in {
+			desired_bdot_config {
+				DisplayName = "Desired B-Dot Configuration"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_controller_bdot_config {
+		out {
+			active_bdot_config {
+				DisplayName = "Active B-Dot Configuration"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_controller_nadir_config {
+		in {
+			desired_nadir_config {
+				DisplayName = "Desired Nadir Configuration"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_controller_nadir_config {
+		out {
+			active_nadir_config {
+				DisplayName = "Active Nadir Configuration"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_magnetometer {
+		in {
+			desired_magnetometer {
+				DisplayName = "Desired Magnetometer"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_magnetometer {
+		out {
+			active_magnetometer {
+				DisplayName = "Active Magnetometer"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_adcs_config {
+		in {
+			desired_config {
+				DisplayName = "Desired Configuration"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_adcs_config {
+		out {
+			active_config {
+				DisplayName = "Active Configuration"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method save_adcs_config {
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method load_adcs_config {
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_sgp4_orbit_params {
+		in {
+			ftdmm {
+				DisplayName = "FTDMM"
+			}
+			stdmm {
+				DisplayName = "STDMM"
+			}
+			bstar {
+				DisplayName = "BSTAR"
+			}
+			incl {
+				DisplayName = "Inclination"
+				Unit = "deg"
+			}
+			raan {
+				DisplayName = "RAAN"
+			}
+			ecc {
+				DisplayName = "Eccentricity"
+			}
+			aop {
+				DisplayName = "Argument of Perigee"
+				Unit = "deg"
+			}
+			manomaly {
+				DisplayName = "Mean Anomaly"
+				Unit = "deg"
+			}
+			mmotion {
+				DisplayName = "Mean Motion"
+				Unit = "rev/day"
+			}
+			epoch {
+				DisplayName = "Epoch"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_sgp4_orbit_params {
+		out {
+			ftdmm {
+				DisplayName = "FTDMM"
+			}
+			stdmm {
+				DisplayName = "STDMM"
+			}
+			bstar {
+				DisplayName = "BSTAR"
+			}
+			incl {
+				DisplayName = "Inclination"
+				Unit = "deg"
+			}
+			raan {
+				DisplayName = "RAAN"
+			}
+			ecc {
+				DisplayName = "Eccentricity"
+			}
+			aop {
+				DisplayName = "Argument of Perigee"
+				Unit = "deg"
+			}
+			manomaly {
+				DisplayName = "Mean Anomaly"
+				Unit = "deg"
+			}
+			mmotion {
+				DisplayName = "Mean Motion"
+				Unit = "rev/day"
+			}
+			epoch {
+				DisplayName = "Epoch"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+}

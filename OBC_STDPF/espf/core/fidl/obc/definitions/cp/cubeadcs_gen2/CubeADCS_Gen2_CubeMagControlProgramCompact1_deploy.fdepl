@@ -1,0 +1,43 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CubeMagControlProgramCompact1.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CubeMagControlProgramCompact1 as CubeADCS_Gen2_CubeMagControlProgramCompact1_Definitions
+{    
+    
+    struct HealthTlm
+    {
+        DisplayName = "Health Telemetry"
+        
+        McuCurrent {
+            DisplayName = "MCU Current"
+            Unit = "mA"
+        }
+        
+        McuTemp {
+            DisplayName = "MCU Temperature"
+            Unit = "deg C"
+        }
+        
+        McuVoltage {
+            DisplayName = "MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        MagTemp {
+            DisplayName = "Mag Temperature"
+			AlarmNumericMinInclusive = "-75.0001"
+			AlarmNumericMaxInclusive = "150.0001"
+        }
+        
+        WatchdogCount {
+            DisplayName = "Watchdog Counters"
+        }
+        
+    }
+    
+}

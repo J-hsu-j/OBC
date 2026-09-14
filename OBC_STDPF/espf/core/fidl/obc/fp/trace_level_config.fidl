@@ -1,0 +1,198 @@
+package endurosat.pf
+
+
+<** @description: Interface for trace channel severity level config
+    @details: id = 261
+**>
+interface trace_level_config
+{
+    version { major 0 minor 1 }
+    <** @description: Result status enumeration **>
+    enumeration Result
+    {
+        <** @description: The operation is successful **>
+        SUCCESS,
+        <** @description: The operation has failed **>
+        FAILED
+    }
+
+    <** @description: Enumeration containing the list of all trace levels **>
+    enumeration TraceLevels
+    {
+        <** @description: DEBGUG level-when turned on, all trace levels are on **>
+        DEBUG,
+        <** @description: INFO level-when turned on, all trace levels except DEBUG are on **>
+        INFO,
+        <** @description: WARN level-when turned on, only WARN, ERROR and FATAL levels are on **>
+        WARN,
+        <** @description: ERROR level-when turned on, only ERROR and FATAL levels are on **>
+        ERROR,
+        <** @description: FATAL level-when turned on, no other trace level is on **>
+        FATAL
+    }
+
+    <** @description: Enumeration containing the list of all trace channels **>
+    enumeration Channels
+    {
+        <** @description: Used to apply changes to the UART trace channel **>
+        UART,
+        <** @description: Used to apply changes to the file trace channel **>
+        FILE,
+        <** @description: Used to apply changes to the single wire viewer trace channel **>
+        SWV,
+        <** @description: Used to apply changes to all trace channels **>
+        ALL
+    }
+
+    <** @description: Struct containing information about a particular trace channel **>
+    struct ChannelInfo
+    {
+        <** @description: Trace channel enum **>
+        Channels channel
+        <** @description: Trace levels enumeration **>
+        TraceLevels level
+        <** @description: Used to specify whether tracing is active for this channel **>
+        Boolean active
+    }
+
+    <** @description: Struct containing information about a particular system module **>
+    struct ModuleInfo
+    {
+        <** @description: String containing the name of the module
+        @details: size = 100 **>
+        String module_name
+        <** @description: Trace levels enumeration **>
+        TraceLevels level
+        <** @description: Used to specify whether tracing is active for this module **>
+        Boolean active
+    }
+
+    <**
+        @description: Sets the trace level of a specified channel or of all of the channels at once. When a level is set
+        for a channel, only the traces with severity equal or higher than the specified trace level will be sent
+        to this channel.
+        @details: id = 0x00000000
+    **>
+    method set_channel_trace_level
+    {
+        in
+        {
+            <**@description: Used to specify trace channel **>
+            Channels channel
+            <**@description: Used to specify severity level of the trace channel **>
+            TraceLevels level
+        }
+        out
+        {
+            <** @description: Result status enumeration **>
+            Result res
+        }
+    }
+
+    <**
+        @description: Returns name, level and status of all available trace channels.
+        This method does not guarantee that the trace levels, higher than the one returned,
+        are active in the channel.
+        @details: id = 0x00000001
+    **>
+    method get_channel_info
+    {
+        out
+        {
+            <** @description: Array of structs containing information about the trace channel
+            @details: size = 3 **>
+            ChannelInfo[] channels
+            <** @description: Result status enumeration **>
+            Result res
+        }
+    }
+
+    <**
+        @description: Sets the active status (active/inactive) of a trace channel. When a trace channel is inactive
+        no traces are sent to it.
+        @details: id = 0x00000002
+    **>
+    method set_channel_active_status
+    {
+        in
+        {
+            <**@description: Used to specify trace channel **>
+            Channels channel
+            <**@description: Used to specify acttive status**>
+            Boolean is_active
+        }
+        out
+        {
+            <** @description: Result status enumeration **>
+            Result res
+        }
+    }
+
+    <**
+        @description: Sets the active status (active/inactive) of a module (a source file which implements tracing).
+        Note, that wildcards can be used to specify the file name. In case that a wildcard is used, the changes
+        will apply to every file, which has a name that corresponds to the specified wildcard.
+        @details: id = 0x00000003
+    **>
+    method set_module_active_status
+    {
+        in
+        {
+            <**@description: Used to specify system module
+            @details: size = 100 **>
+            String module
+            <**@description: Used to specify active status**>
+            Boolean is_active
+        }
+        out
+        {
+            <** @description: Result status enumeration **>
+            Result res
+        }
+    }
+
+    <**
+        @description: Sets the trace level of a module (a source file which implements tracing). When a level is set for
+        a module, only the traces with severity equal or higher than the trace channel level will be sent
+        to the currently utilized trace channel/channels. Note, that wildcards can be used to specify the file name.
+        @details: id = 0x00000004
+    **>
+    method set_module_trace_level
+    {
+        in
+        {
+            <**@description: Used to specify system module
+            @details: size = 100 **>
+            String module
+            <**@description: Used to specify severity level of the system module **>
+            TraceLevels level
+        }
+        out
+        {
+            <** @description: Result status enumeration **>
+            Result res
+        }
+    }
+
+    <**
+        @description: Displays the trace level and status (active/inactive) of a module (a source file which implements tracing),
+        specified by the user.
+        @details: id = 0x00000005
+    **>
+    method get_module_info
+    {
+        in
+        {
+            <**@description: Used to specify system module
+            @details: size = 100 **>
+            String module_name_input
+        }
+        out
+        {
+            <** @description: Struct containing information about a particular module **>
+            ModuleInfo module_output
+            <** @description: Result status enumeration **>
+            Result res
+        }
+    }
+}

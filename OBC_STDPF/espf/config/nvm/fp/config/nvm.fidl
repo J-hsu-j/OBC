@@ -1,0 +1,91 @@
+package endurosat.pf
+
+<** @description: Non-volatile memory services
+    @details: id = 259
+**>
+
+interface nvm
+{
+    version { major 1 minor 0 }
+
+    enumeration StandardResult
+    {
+        SUCCESS
+        ERROR
+        INVALID_ARGS
+        NOT_SUPPORTED
+    }
+
+    enumeration BlockId
+    {
+        // The following enumeration list is generated! Do not modify manually!
+        BOOTLAYOUTVERSION
+        BOOTDATA
+        MODULEID
+        MACCONFIG
+        NVM_RESERVED
+        BEACONS_GENERAL
+        BEACONS_PRESETS
+        NVM_APP_BLOCK_CONOPS_CONFIG
+        TELEMETRY_GENERAL_0
+        TELEMETRY_PRESETS_0
+        TELEMETRY_FILE_CFG_0
+        TELEMETRY_PERSISTENT_DATA_0
+        TELEMETRY_GENERAL_1
+        TELEMETRY_PRESETS_1
+        TELEMETRY_FILE_CFG_1
+        TELEMETRY_PERSISTENT_DATA_1
+        EPS_M_CONFIG
+        CUBEADCS_ERR_HANDL_CONFIG
+        CUBEADCS_STATUS
+        I2C_CONFIG
+        CUBEADCS_ANGLE_LIMITS
+        AOCS_PM_CONFIG
+        AOCS_PM_THRESHOLDS
+        COORDINATE_FRAMES
+        SDS_SENS_READ_FREQ_CFG
+        CRYPTO_CFG
+        CUBEADCS_SIMULATION_MODE
+        RTC_CALIB_DATA
+        GYROSCOPE_CONFIG
+        NVM_FM_STATS
+        CUBEADCS_SYS_STATE_CFG
+        NVM_MAC_ADDRESS_BOOK
+        CUBEADCS_GEN2_SYS_STATE_CFG
+        CUBEADCS_GEN2_TLM_CFG
+        ADCS_CMS_STATUS
+        FAULT_INDEX
+        FAULT_DATA0
+        FAULT_DATA1
+        FAULT_DATA2
+        FAULT_DATA3
+        FAULT_DATA4
+        GPO_CONFIG
+        SCHEDULER_DATA
+        FDIR_SRV_DATA
+        CONOPS_DATA
+        XBAND_FE_CFG
+        GNSS_COMM_SETTINGS
+        COMM_LOSS_WD
+        CUBEADCS_GEN2_FDIR_CNT
+        TASK_STATS_CONFIG
+        TASK_STATS_CONFIG_PER_TASK
+    }
+
+    <** @description: Restore NVM defaults from FLASH
+      @details: id = 0x000000
+    **>
+    method restore_defaults
+    {
+        in
+        {
+            <** @description: ID of the NVM block to restore defaults to **>
+            BlockId block_id
+        }
+        out
+        {
+            StandardResult op_result
+        }
+    }
+
+}

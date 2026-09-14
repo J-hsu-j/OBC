@@ -1,0 +1,373 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CubeWheelControlProgram3.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CubeWheelControlProgram3 as CubeADCS_Gen2_CubeWheelControlProgram3_Definitions
+{    
+    
+    struct WheelSpeedRef
+    {
+        DisplayName = "Wheel Reference Speed"
+        
+        SpeedRef {
+            DisplayName = "Reference Speed"
+            Unit = "RPM"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+    }
+    
+    struct WheelTorqueRef
+    {
+        DisplayName = "Wheel Reference Torque"
+        
+        TorqueRef {
+            DisplayName = "Reference Torque"
+            Unit = "mNm"
+			AlarmNumericMinInclusive = "-50.0001"
+			AlarmNumericMaxInclusive = "50.0001"
+        }
+        
+    }
+    
+    struct WheelTravelRef
+    {
+        DisplayName = "Wheel Reference Distance"
+        
+        SpeedRef {
+            DisplayName = "Reference Speed"
+            Unit = "RPM"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        DistanceRef {
+            DisplayName = "Reference Distance"
+            Unit = "Rot"
+			AlarmNumericMinInclusive = "-2000000000.0001"
+			AlarmNumericMaxInclusive = "2000000000.0001"
+        }
+        
+    }
+    
+    struct WheelRefRampRateLimit
+    {
+        DisplayName = "Wheel Reference Speed Ramp Rate Limit"
+        
+        RampRateLimit {
+            DisplayName = "Ramp Rate Limit"
+            Unit = "RPM/ms"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+    }
+    
+    struct BackupWheelMode
+    {
+        DisplayName = "Backup Wheel Mode"
+        
+        BackupMode {
+            DisplayName = "BackupMode"
+        }
+        
+    }
+    
+    struct MainGain
+    {
+        DisplayName = "Main Gain"
+        
+        Kp {
+            DisplayName = "Kp"
+			AlarmNumericMaxInclusive = "2.0001"
+        }
+        
+        Ki {
+            DisplayName = "Ki"
+			AlarmNumericMaxInclusive = "2.0001"
+        }
+        
+        Kd {
+            DisplayName = "Kd"
+			AlarmNumericMaxInclusive = "2.0001"
+        }
+        
+    }
+    
+    struct BackupGain
+    {
+        DisplayName = "Backup Gain"
+        
+        Kp {
+            DisplayName = "Kp"
+			AlarmNumericMaxInclusive = "2.0001"
+        }
+        
+        Ki {
+            DisplayName = "Ki"
+			AlarmNumericMaxInclusive = "2.0001"
+        }
+        
+        Kd {
+            DisplayName = "Kd"
+			AlarmNumericMaxInclusive = "2.0001"
+        }
+        
+    }
+    
+    struct PWMGain
+    {
+        DisplayName = "PWM Gain"
+        
+        K {
+            DisplayName = "K"
+			AlarmNumericMaxInclusive = "2.0001"
+        }
+        
+    }
+    
+    struct MotorPower
+    {
+        DisplayName = "Motor Power"
+        
+        MotorPowerSwitch {
+            DisplayName = "Motor Power Switch"
+        }
+        
+    }
+    
+    struct Stator
+    {
+        DisplayName = "Stator Data"
+        
+        Coilcurrent {
+            DisplayName = "Coil current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Statortemp {
+            DisplayName = "Stator temperature"
+            Unit = "C"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "200.0001"
+        }
+        
+    }
+    
+    struct WheelTorque
+    {
+        DisplayName = "Wheel Torque"
+        
+        wheelTorque {
+            DisplayName = "Wheel Torque"
+            Unit = "mNm"
+			AlarmNumericMinInclusive = "-50.0001"
+			AlarmNumericMaxInclusive = "50.0001"
+        }
+        
+        WheelErrorState {
+            DisplayName = "Wheel Error State"
+        }
+        
+    }
+    
+    struct StatusErrorFlags
+    {
+        DisplayName = "Status and Error Flags"
+        
+        InvalidTelemetry {
+            DisplayName = "Invalid Telemetry"
+        }
+        
+        InvalidTelecommand {
+            DisplayName = "Invalid Telecommand"
+        }
+        
+        EncoderError {
+            DisplayName = "Encoder Error"
+        }
+        
+        UARTError {
+            DisplayName = "Uart Error"
+        }
+        
+        I2CError {
+            DisplayName = "I2C Error"
+        }
+        
+        CANError {
+            DisplayName = "CAN Error"
+        }
+        
+        ConfigError {
+            DisplayName = "Configuration Error"
+        }
+        
+        SpeedError {
+            DisplayName = "Speed Error"
+        }
+        
+    }
+    
+    struct WheelData
+    {
+        DisplayName = "Wheel Data"
+        
+        WheelSpeed {
+            DisplayName = "Wheel Speed"
+            Unit = "RPM"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        WheelSpeedBackup {
+            DisplayName = "Wheel Backup Speed"
+            Unit = "RPM"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        WheelReference {
+            DisplayName = "Wheel Reference"
+            Unit = "RPM"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        BatteryCurrent {
+            DisplayName = "Battery Current"
+            Unit = "mA"
+        }
+        
+        WheelErrorState {
+            DisplayName = "Wheel Data Status"
+        }
+        
+    }
+    
+    struct WheelDuty
+    {
+        DisplayName = "Wheel Duty Cycle"
+        
+        DutyCycle {
+            DisplayName = "Duty Cycle"
+            Unit = "%"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+    }
+    
+    struct HealthTlm
+    {
+        DisplayName = "Health Telemetry"
+        
+        BatteryCurrent {
+            DisplayName = "Battery Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "500.0001"
+        }
+        
+        BatteryVoltage {
+            DisplayName = "Battery Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "36000.0001"
+        }
+        
+        DigitalCurrent {
+            DisplayName = "Digital Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        McuTemperature {
+            DisplayName = "MCU Temperature"
+            Unit = "C"
+			AlarmNumericMinInclusive = "-50.0001"
+			AlarmNumericMaxInclusive = "120.0001"
+        }
+        
+        WatchdogCount {
+            DisplayName = "Watchdog Counters"
+        }
+        
+    }
+    
+    struct WheelSpeed
+    {
+        DisplayName = "Wheel Speed"
+        
+        wheelSpeed {
+            DisplayName = "Wheel Speed"
+            Unit = "RPM"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        WheelErrorState {
+            DisplayName = "Wheel Error State"
+        }
+        
+    }
+    
+    struct ControlMode
+    {
+        DisplayName = "Control Mode"
+        
+        controlMode {
+            DisplayName = "Control Mode"
+        }
+        
+    }
+    
+    struct WheelModel
+    {
+        DisplayName = "Wheel Model"
+        
+        MotorWheelType {
+            DisplayName = "Wheel type"
+        }
+        
+    }
+    
+    struct WheelPosData
+    {
+        DisplayName = "Wheel Position Data"
+        
+        WheelPosition {
+            DisplayName = "Wheel Position"
+            Unit = "Rotations"
+			AlarmNumericMinInclusive = "-200000000.0001"
+			AlarmNumericMaxInclusive = "2000000000.0001"
+        }
+        
+        WheelSpeed {
+            DisplayName = "Wheel Speed"
+            Unit = "RPM"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        WheelReference {
+            DisplayName = "Wheel Reference"
+            Unit = "RPM"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        BatteryCurrent {
+            DisplayName = "Battery Current"
+            Unit = "mA"
+        }
+        
+        WheelErrorState {
+            DisplayName = "Wheel Data Status"
+        }
+        
+    }
+    
+}

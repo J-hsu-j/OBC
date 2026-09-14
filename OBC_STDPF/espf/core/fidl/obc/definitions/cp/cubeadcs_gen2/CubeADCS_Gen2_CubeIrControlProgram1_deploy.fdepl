@@ -1,0 +1,411 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CubeIrControlProgram1.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CubeIrControlProgram1 as CubeADCS_Gen2_CubeIrControlProgram1_Definitions
+{    
+    
+    struct Configuration
+    {
+        DisplayName = "Configuration"
+        
+        CalibrateImageFull {
+            DisplayName = "Detector image calibration"
+        }
+        
+        UseCalibrationRig {
+            DisplayName = "Device installed on calibration rig"
+        }
+        
+        CircularMaskRadius {
+            DisplayName = "Circular Mask Radius"
+        }
+        
+        MinimumTempDiff {
+            DisplayName = "Minimum Temperature Difference"
+        }
+        
+        ExpectedEarthRadius {
+            DisplayName = "Expected Earth Radius"
+			AlarmNumericMaxInclusive = "300.0001"
+        }
+        
+        AllowedRadiusDeviation {
+            DisplayName = "Allowed Radius Deviation"
+			AlarmNumericMaxInclusive = "50.0001"
+        }
+        
+        MaxSpaceTemp {
+            DisplayName = "Max Space Temperature"
+        }
+        
+        MaxEarthTempOffset {
+            DisplayName = "Maximum Earth Temperature Offset"
+        }
+        
+        MinSpaceTempOffset {
+            DisplayName = "Minimum Space Temperature Offset"
+        }
+        
+        MaxEarthTempThresholdOffset {
+            DisplayName = "Max Earth Temp Threshold Offset"
+        }
+        
+        HorizonCrossOverOffset {
+            DisplayName = "Horizon Cross-over Offset"
+        }
+        
+        GradientOutlierThreshold {
+            DisplayName = "Gradient Outlier Threshold"
+        }
+        
+        ValidBinPeak {
+            DisplayName = "Valid Bin Peak"
+        }
+        
+        BinWidth {
+            DisplayName = "Bin Width"
+        }
+        
+        MinimumGradient {
+            DisplayName = "Minimum Gradient"
+        }
+        
+        MinimumEdgePointsRequired {
+            DisplayName = "Minimum Edge Points Required"
+        }
+        
+        CircRadiusMin {
+            DisplayName = "Circular Radius Minimum"
+        }
+        
+        CircRadiusMax {
+            DisplayName = "Circular Radius Maximum"
+        }
+        
+        HorElevBias {
+            DisplayName = "Horizontal Elevation Bias"
+			AlarmNumericMinInclusive = "-1.5711"
+			AlarmNumericMaxInclusive = "1.5711"
+        }
+        
+        OutlierRejMaxSeg {
+            DisplayName = "Outlier Rejection Maximum Segment"
+        }
+        
+        OutlierRejTol {
+            DisplayName = "Outlier Rejection Tolerance"
+        }
+        
+        BoresightX {
+            DisplayName = "Bore-sight X"
+			AlarmNumericMaxInclusive = "80.0001"
+        }
+        
+        BoresightY {
+            DisplayName = "Bore-sight Y"
+			AlarmNumericMaxInclusive = "64.0001"
+        }
+        
+        FocalLength {
+            DisplayName = "Focal Length"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        DistK1 {
+            DisplayName = "Distortion Coefficient K1"
+			AlarmNumericMinInclusive = "-300.0001"
+			AlarmNumericMaxInclusive = "300.0001"
+        }
+        
+        DistK2 {
+            DisplayName = "Distortion Coefficient K2"
+			AlarmNumericMinInclusive = "-300.0001"
+			AlarmNumericMaxInclusive = "300.0001"
+        }
+        
+        DistK3 {
+            DisplayName = "Distortion Coefficient K3"
+			AlarmNumericMinInclusive = "-300.0001"
+			AlarmNumericMaxInclusive = "300.0001"
+        }
+        
+        DistK4 {
+            DisplayName = "Distortion Coefficient K4"
+			AlarmNumericMinInclusive = "-300.0001"
+			AlarmNumericMaxInclusive = "300.0001"
+        }
+        
+        DistK5 {
+            DisplayName = "Distortion Coefficient K5"
+			AlarmNumericMinInclusive = "-300.0001"
+			AlarmNumericMaxInclusive = "300.0001"
+        }
+        
+        DistK6 {
+            DisplayName = "Distortion Coefficient K6"
+			AlarmNumericMinInclusive = "-300.0001"
+			AlarmNumericMaxInclusive = "300.0001"
+        }
+        
+        DistP1 {
+            DisplayName = "Distortion Coefficient P1"
+			AlarmNumericMinInclusive = "-300.0001"
+			AlarmNumericMaxInclusive = "300.0001"
+        }
+        
+        DistP2 {
+            DisplayName = "Distortion Coefficient P2"
+			AlarmNumericMinInclusive = "-300.0001"
+			AlarmNumericMaxInclusive = "300.0001"
+        }
+        
+    }
+    
+    struct ImageTransferSetup
+    {
+        DisplayName = "Setup Image Transfer"
+        
+        DataSelect {
+            DisplayName = "Data selection"
+        }
+        
+        Direction {
+            DisplayName = "Download or Upload"
+        }
+        
+    }
+    
+    struct DeadPixels
+    {
+        DisplayName = "DeadPixels"
+        
+        DeadPixelIndex {
+            DisplayName = "DeadPixelIndex"
+        }
+        
+        PixelX {
+            DisplayName = "PixelX"
+        }
+        
+        PixelY {
+            DisplayName = "PixelY"
+        }
+        
+        PixelMask {
+            DisplayName = "PixelMask"
+        }
+        
+    }
+    
+    struct RequestDeadPixel
+    {
+        DisplayName = "RequestDeadPixel"
+        
+        DeadPixelIndex {
+            DisplayName = "DeadPixelIndex"
+        }
+        
+    }
+    
+    struct MeasurementAndTrigger
+    {
+        DisplayName = "Sensor Measurement Trigger"
+        
+        Elevation {
+            DisplayName = "Elevation Angle"
+            Unit = "deg"
+			AlarmNumericMinInclusive = "-9000.0001"
+			AlarmNumericMaxInclusive = "9000.0001"
+        }
+        
+        Rotation {
+            DisplayName = "Rotation Angle"
+            Unit = "deg"
+			AlarmNumericMinInclusive = "-18000.0001"
+			AlarmNumericMaxInclusive = "18000.0001"
+        }
+        
+        CaptureResult {
+            DisplayName = "Capture Result"
+        }
+        
+        DetectionResult {
+            DisplayName = "Detection Result"
+        }
+        
+    }
+    
+    struct Measurement
+    {
+        DisplayName = "Sensor Measurement"
+        
+        Elevation {
+            DisplayName = "Elevation Angle"
+            Unit = "deg"
+			AlarmNumericMinInclusive = "-9000.0001"
+			AlarmNumericMaxInclusive = "9000.0001"
+        }
+        
+        Rotation {
+            DisplayName = "Rotation Angle"
+            Unit = "deg"
+			AlarmNumericMinInclusive = "-18000.0001"
+			AlarmNumericMaxInclusive = "18000.0001"
+        }
+        
+        CaptureResult {
+            DisplayName = "Capture Result"
+        }
+        
+        DetectionResult {
+            DisplayName = "Detection Result"
+        }
+        
+    }
+    
+    struct MeasurementMetadata
+    {
+        DisplayName = "Measurement Meta-data"
+        
+        MinPix {
+            DisplayName = "Minimum pixel value"
+        }
+        
+        MaxPix {
+            DisplayName = "Maximum pixel value"
+        }
+        
+        AvgPix {
+            DisplayName = "Average pixel value"
+        }
+        
+        NumEdgesRaw {
+            DisplayName = "Number of Raw Edges"
+        }
+        
+        NumEdgesCalib {
+            DisplayName = "Number of Edges"
+        }
+        
+        NumWarmPix {
+            DisplayName = "Number Warm Pixels"
+        }
+        
+        NumColdPix {
+            DisplayName = "Number Cold Pixels"
+        }
+        
+        CircleCenterX {
+            DisplayName = "Circle Center X-Coordinate"
+            Unit = "pixels"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        CircleCenterY {
+            DisplayName = "Circle Center Y-Coordinate"
+            Unit = "pixels"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        CircleRadius {
+            DisplayName = "Circle Radius"
+            Unit = "pixels"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+    }
+    
+    struct HealthTlm
+    {
+        DisplayName = "Health Telemetry"
+        
+        McuTemp {
+            DisplayName = "MCU Temperature"
+            Unit = "°C"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "200.0001"
+        }
+        
+        DetectorTemp {
+            DisplayName = "Detector Temperature"
+            Unit = "dK"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        McuCurrent {
+            DisplayName = "MCU Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        DetectorCurrent {
+            DisplayName = "Detector Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        McuVoltage {
+            DisplayName = "MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        WatchdogCount {
+            DisplayName = "Watchdog Counters"
+        }
+        
+    }
+    
+    struct ProfileTiming
+    {
+        DisplayName = "Profile Timing"
+        
+        TimeCapture {
+            DisplayName = "Time Capture"
+            Unit = "ms"
+			AlarmNumericMaxInclusive = "2000.0001"
+        }
+        
+        TimeCalibrate {
+            DisplayName = "Time Calibrate"
+            Unit = "ms"
+			AlarmNumericMaxInclusive = "2000.0001"
+        }
+        
+        TimeDetect {
+            DisplayName = "Time Detect"
+            Unit = "ms"
+			AlarmNumericMaxInclusive = "2000.0001"
+        }
+        
+    }
+    
+    struct RequestedDeadPixel
+    {
+        DisplayName = "RequestedDeadPixel"
+        
+        DeadPixelIndex {
+            DisplayName = "DeadPixelIndex"
+        }
+        
+        PixelX {
+            DisplayName = "PixelX"
+        }
+        
+        PixelY {
+            DisplayName = "PixelY"
+        }
+        
+        PixelMask {
+            DisplayName = "PixelMask"
+        }
+        
+    }
+    
+}

@@ -1,0 +1,63 @@
+.metadata/
+
+# Build outputs
+OBC_STDPF/build/
+*.o
+*.obj
+*.a
+*.elf
+*.bin
+*.map
+*.list
+*.dot
+*.log
+
+# Eclipse/STM32CubeIDE workspace
+.metadata/
+
+# Build outputs
+OBC_STDPF/build/
+*.o
+*.obj
+*.a
+*.elf
+*.bin
+*.map
+*.list
+*.dot
+*.log
+
+# Eclipse/STM32CubeIDE workspace
+.metadata/
+
+# Build outputs
+OBC_STDPF/build/
+*.o
+*.obj
+*.a
+*.elf
+*.bin
+*.map
+*.list
+*.dot
+*.log
+
+# Eclipse/STM32CubeIDE workspace
+.metadata/
+
+# Build outputs
+OBC_STDPF/build/
+*.o
+*.obj
+*.a
+*.elf
+*.bin
+*.map
+*.list
+*.dot
+*.log
+
+# Eclipse/STM32CubeIDE workspace
+.metadata/
+pre_endurosat_FSW/
+pre_endurosat_FSW/

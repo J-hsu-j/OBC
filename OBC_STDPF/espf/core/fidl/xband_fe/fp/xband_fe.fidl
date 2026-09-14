@@ -1,0 +1,259 @@
+package endurosat.pf.radio
+
+<** @description: XBand Front-End control interface 
+    @details: id = 0x23
+**>
+interface xband_fe
+{
+    version { major 0 minor 1 }
+    
+    <** @description: XBand FE system state
+        @details: size = 1 
+    **>
+    enumeration SysState
+    {
+        AFTER_RESET = 0x01
+        LOAD_MODE = 0x02
+        TX_MODE = 0x03
+    }
+
+    <** @description: XBand FE System Manager commands
+        @details: size = 2 
+    **>
+    enumeration SysMngrCmd
+    {
+        RUN_MODE = 0x00B2
+        STANDBY_MODE = 0x00B3
+    }
+
+    <** @description: XBand FE standard response codes
+        @details: size = 1 
+    **>
+    enumeration StdResponse
+    {
+        OK = 0
+        SYS_ERR = 1
+    }
+    
+    <** @description: Response wrapper structure required for use by OBC manual code **>
+    struct StdResponseWrapper
+    {
+        StdResponse std_resp
+    }
+
+    <** @description: Comm GW result code
+        @details: size = 1
+    **>
+    enumeration CommRes
+    {
+        <** @description: the request was executed successfully **>
+        OK
+        <** @description: the request executed successfully but there is no space in the response buffer to hold the complete response **>
+        OK_PARTIAL
+        <** @description: the request was sent but a response was not received due to communication error **>
+        ERR
+        <** @description: invalid arguments passed to send operation **>
+        INVALID_ARGS
+        <** @description: send confirmation callback reported an error (see node trace for details) **>
+        SEND_ERR
+        <** @description: request sending timed out **>
+        SND_TIMEOUT
+        <** @description: response reception timed out **>
+        RCV_TIMEOUT
+    }
+    
+    <** @description: XBand FE module status report parameters **>    
+    struct ModStatusReportParams
+    {
+        SysState system_state
+        UInt8 status_flags
+        Int16 pa_temperature
+        Int16 pa_pwr_det
+        UInt16 powsup_5v_rf_drv
+        UInt16 pa_idd
+        UInt16 pa_vdd
+        UInt16 powsup_5v_vco_drv
+        UInt16 powsup_3v3_pll
+        UInt16 powsup_5v_if_amp
+        UInt16 powsup_5v_att
+        Int16 pa_vgg
+        UInt16 cpu_vdd
+        Int16 cpu_temperature
+        UInt16 adc_vref_internal
+        UInt32 fw_version      
+    }
+    
+    <** @description: Response wrapper structure required for use by OBC manual code **>
+    struct ModStatusReportParamsWrapper
+    {
+        ModStatusReportParams status_report
+    }
+    
+    <** @description: XBand FE configuration parameters **>
+    struct ModCfgParams
+    {
+        <** @description: Valid values are between 27-34 dBm **>
+        UInt8 target_output_power
+        UInt8 pll_output_mux
+        UInt8 pll_channel_divider_on_off
+        UInt8 pll_channel_divider
+        UInt32 pll_divider
+    }
+    
+    <** @description: Response wrapper structure required for use by OBC manual code **>
+    struct ModCfgParamsWrapper
+    {
+        ModCfgParams mod_params
+    }
+    
+    <** @description: TX power information returned by the XBand FE module **>
+    struct XBandFeTxPowerInfo
+    {
+        UInt8 tx_power
+    }
+    
+    <** @description: Response wrapper structure required for use by OBC manual code **>
+    struct XBandFeTxPowerInfoWrapper
+    {
+        XBandFeTxPowerInfo pwr_info
+    }
+    
+    <** @description: XBand FE NVM configuration parameters used by the OBC for the communication **>
+    struct ObcXBandFeNvmCfg
+    {
+        <** @description: CSP node address of the XBand FE module **>
+        UInt8  target_node_addr
+        <** @description: CSP target port for XBand FE module requests **>
+        UInt8  port
+        <** @description: CSP message priority to use when sending requests to XBand FE module **>
+        UInt8  prio
+        <** @description: CSP connection options for XBand FE module **>
+        UInt32 opts
+    }
+    
+    <** @description: Get the OBC NVM communication parameters used for the XBand FE interactions
+        @details: id = 0x0000
+    **>
+    method get_obc_xband_fe_nvm_cfg
+    {
+        out
+        {
+            ObcXBandFeNvmCfg nvm_params
+        }
+    }
+
+    <** @description: Set the OBC NVM communication parameters used for the XBand FE interactions
+        @details: id = 0x0001
+    **>
+    method set_obc_xband_fe_nvm_cfg
+    {
+        in
+        {
+            ObcXBandFeNvmCfg nvm_params_in
+        }
+        out
+        {
+            <** @description: True if the operation was successful, otherwise - False **>
+            Boolean success
+        }
+    }
+    
+    <** @description: Get the module status report
+        @details: id = 0x004B
+    **>
+    method get_status_report
+    {
+        out
+        {
+            <** @description: Result from the CSP communication. If it is not OK, the rest of the output fields shall be assumed as invalid. **>
+            CommRes comm_res
+            ModStatusReportParamsWrapper status_params
+        }
+    }
+    
+    <** @description: Execute a Sys Manager Run Mode command
+        @details: id = 0x00B2
+    **>
+    method set_sys_mngr_run_mode
+    {
+        out
+        {
+            <** @description: Result from the CSP communication. If it is not OK, the rest of the output fields shall be assumed as invalid. **>
+            CommRes comm_res
+            StdResponseWrapper cmd_resp
+        }
+    }
+    
+    <** @description: Execute a Sys Manager Stand-by Mode command
+        @details: id = 0x00B3
+    **>
+    method set_sys_mngr_standby_mode
+    {
+        out
+        {
+            <** @description: Result from the CSP communication. If it is not OK, the rest of the output fields shall be assumed as invalid. **>
+            CommRes comm_res
+            StdResponseWrapper cmd_resp
+        }
+    }
+    
+    <** @description: Set the XBand FE module configuration parameters
+        @details: id = 0x00BA
+    **>
+    method set_mod_all_params
+    {
+        in
+        {
+            ModCfgParams cfg_params
+        }
+        out
+        {
+            <** @description: Result from the CSP communication. If it is not OK, the rest of the output fields shall be assumed as invalid. **>
+            CommRes comm_res
+            StdResponseWrapper cmd_resp
+        }
+    }
+    
+    <** @description: Get the XBand FE module configuration parameters
+        @details: id = 0x00BB
+    **>
+    method get_mod_all_params
+    {
+        out
+        {
+            <** @description: Result from the CSP communication. If it is not OK, the rest of the output fields shall be assumed as invalid. **>
+            CommRes comm_res
+            ModCfgParamsWrapper cfg_params
+        }
+    }
+    
+    <** @description: Set XBand FE module Tx power
+        @details: id = 0x00BD
+    **>
+    method set_tx_power
+    {
+        in
+        {
+            UInt8 tx_power
+        }
+        out
+        {
+            <** @description: Result from the CSP communication. If it is not OK, the rest of the output fields shall be assumed as invalid. **>
+            CommRes comm_res
+            StdResponseWrapper cmd_resp
+        }
+    }
+
+    <** @description: Get XBand FE module Tx power
+        @details: id = 0x00BE
+    **>
+    method get_tx_power
+    {
+        out
+        {
+            <** @description: Result from the CSP communication. If it is not OK, the rest of the output fields shall be assumed as invalid. **>
+            CommRes comm_res
+            XBandFeTxPowerInfoWrapper tx_power_info
+        }
+    }
+}

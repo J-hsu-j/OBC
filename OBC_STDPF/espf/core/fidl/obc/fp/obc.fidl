@@ -1,0 +1,302 @@
+package endurosat.macif
+
+<** @description: This is the Onboard Computer (OBC) general interface. It hosts the majority
+of OBC methods - configuring the onboard computer, accessing sensors, clocks, other operational modes,
+triggering firmware updates & controlling telemetry. The interface is provided as a smoother transition
+from ESTTC protocol which is more or less deprecated.
+    @details: id = 14
+**>
+interface obc
+{
+    version { major 4 minor 1 }
+
+    <** @description: General status type used for SW-related communication and/or settings. **>
+    enumeration StandardResult
+    {
+        <** @description: The operation is successful **>
+        SUCCESS,
+        <** @description: An error has occurred **>
+        ERROR,
+        <** @description: Invalid input arguments provided to the operation **>
+        INVALID_ARGS,
+        <** @description: The action related to the input data is not supported by the firmware **>
+        NOT_SUPPORTED
+    }
+
+    <** @description: Onboard Computer Application mode **>
+    enumeration ApplicationMode
+    {
+        <** @description: OBC is executing its regular application **>
+        APPLICATION
+        <** @description: OBC is executing its bootloader application **>
+        BOOTLOADER
+    }
+
+    <**@description: Structure for getting GPO ports current configuration values SET/RESET.**>
+    struct GpoGetPortsType
+    {
+        Boolean gpo_port_nvm
+        Boolean gpo_port_active
+    }
+
+    <** @description: Enumeration of the GPO setup states SET/RESET/DONT_TOUCH.**>
+    enumeration GpoSetTypes
+    {
+        DONT_TOUCH
+        SET
+        RESET
+    }
+
+    <**@description: Possible output set ports options, both nvm stored and temporary set.**>
+    struct GpoSetPortsType
+    {
+        GpoSetTypes gpo_port_nvm
+        GpoSetTypes gpo_port_active
+    }
+
+    <**@description: Structure for getting all output ports, both nvm(default) and current(active).**>
+    struct GpoPortsGetStruct
+    {
+        GpoGetPortsType gpo_1
+        GpoGetPortsType gpo_2
+        GpoGetPortsType gpo_3
+        GpoGetPortsType gpo_5
+        GpoGetPortsType gpo_4_6
+        GpoGetPortsType gpo_7
+        GpoGetPortsType gpo_8
+    }
+
+    <**@description: Structure for setting all output ports, both nvm (default) and current(active).**>
+    struct GpoPortsSetStruct
+    {
+        GpoSetPortsType gpo_1
+        GpoSetPortsType gpo_2
+        GpoSetPortsType gpo_3
+        GpoSetPortsType gpo_5
+        GpoSetPortsType gpo_4_6
+        GpoSetPortsType gpo_7
+        GpoSetPortsType gpo_8
+    }
+
+    <**@description: Structure for the I2C Pull-Up Resistors.**>
+    struct I2CPullUpsState
+    {
+        <** @description: State of the 4.7K pull-up for the I2C system bus **>
+        Boolean system_bus_4K7
+        <** @description: State of the 10K pull-up for the I2C system bus **>
+        Boolean system_bus_10K
+        <** @description: State of the 4.7K pull-up for the I2C payload bus **>
+        Boolean payload_bus_4K7
+        <** @description: State of the 10K pull-up for the I2C payload bus **>
+        Boolean payload_bus_10K
+    }
+
+    <** @description: This structure keeps information about the OBC reset counters.
+                      Each counter represents the number of specific resets which took place since last
+                      clear operation.
+    **>
+    struct ResetCountersInfo
+    {
+        <** @description: System Window Watchdog reset count **>
+        UInt32 wwd
+        <** @description: Independent Watchdog reset count **>
+        UInt32 iwd
+        <** @description: Low power mode reset count **>
+        UInt32 lpr
+        <** @description: Power-on-reset reset count **>
+        UInt32 por
+        <** @description: External Reset pin reset count **>
+        UInt32 rst_pin
+        <** @description: Brown-out-detector reset count **>
+        UInt32 bor
+        <** @description: Hard faults reset count **>
+        UInt32 hard_fault
+        <** @description: Memory faults reset count **>
+        UInt32 mem_fault
+        <** @description: Bus faults reset count **>
+        UInt32 bus_fault
+        <** @description: Usage faults reset count **>
+        UInt32 usage_fault
+    }
+
+    <** @description: This enumeration maps to the individual fields of the ResetCountersInfo structure **>
+    enumeration ResetCntrId
+    {
+        WWD
+        IWD
+        LPR
+        POR
+        RST_PIN
+        BOR
+        HARD_FAULT
+        MEM_FAULT
+        BUS_FAULT
+        USAGE_FAULT
+        <** @description: When used, it refers to all of the previously defined counter values **>
+        ALL
+    }
+    
+    <** @description: Provides all OBC general purpose outputs 1-8
+        @details: id = 0x0000000E
+    **>
+    method get_all_gpo_values
+    {
+        out
+        {
+            <** @description: Get all GPOs request result **>
+            GpoPortsGetStruct gpo
+            
+            <** @description: Set GPO request result **>
+            StandardResult result
+        }
+    }
+
+    <** @description: Sets all GPOs both active and nvm persistant
+        @details: id = 0x0000000F
+    **>
+    method set_all_gpo_values
+    {
+        in
+        {
+            <** @description: All GPOs 1-8 to be set both active and nvm persistant**>
+            GpoPortsSetStruct gpo
+        }
+
+        out
+        {
+            <** @description: Set GPO request result **>
+            StandardResult result
+        }
+    }
+    
+    <** @description: Obtains information on state of the I2C Pull-Up resistors for system and
+                      customer payload buses
+        @details: id = 0x00000012
+    **>
+    method get_i2c_pull_ups_state
+    {
+        out
+        {
+            <** @description: Pull-up resistor state as configured in NVM **>
+            I2CPullUpsState nvm_pull_ups_state
+            <** @description: Pull-up resistor state as read from the MCU input data registers **>
+            I2CPullUpsState io_pull_ups_state
+        }
+    }
+
+    <** @description: Reconfigures the state of the I2C Pull-Up resistors for system and
+                      customer payload buses
+        @details: id = 0x00000013
+    **>
+    method set_i2c_pull_ups_state
+    {
+        in
+        {
+            <** @description: Pull-up resistor state **>
+            I2CPullUpsState pull_up_state
+        }
+        out
+        {
+            <** @description: Pull-up resistor physical state obtained from the MCU output registers **>
+            I2CPullUpsState pull_ups_io_state
+        }
+    }
+
+    <** @description: Obtains the up time of the OBC since last reset.
+        @details: id = 0x00000018
+    **>
+    method get_uptime
+    {
+        out
+        {
+            <** @description: Time since last reset, in seconds. **>
+            UInt32 uptime
+        }
+    }
+
+    <** @description: Obtains the current values of the MCU reset counters
+        @details: id = 0x0000002A
+    **>
+    method get_reset_counters
+    {
+        out
+        {
+            <** @description: Reset counters statistics **>
+            ResetCountersInfo status
+        }
+    }
+
+    <** @description: Clears a given MCU reset counter
+        @details: id = 0x0000002B
+    **>
+    method clear_reset_counter
+    {
+        in
+        {
+            <** @description: ID of the reset counter to clear **>
+            ResetCntrId id
+        }
+
+        out
+        {
+            <** @description: Clear operation result **>
+            StandardResult op_result
+        }
+    }
+
+    <** @description: Triggers a reset of the OBC starting with the specified APP mode
+        @details: id = 0x00000036
+    **>
+    method trigger_reset_in_mode
+    {
+        in
+        {
+            <** @description: Mode for OBC to start with after the reset **>
+            ApplicationMode start_mode
+        }
+
+        out
+        {
+            <** @description: Reset request result **>
+            StandardResult op_result
+        }
+    }
+
+    <** @description: Update the MAC addres in the mac address book of the OBC NVM.
+        @details: id = 0x00000040
+    **>
+    method set_device_mac_address
+    {
+        in
+        {
+            <** @description: New MAC address. **>
+            UInt8 new_mac_address
+            <** @description: Device. See the list of device IDs in the NVM fidl. **>
+            UInt8 device_id
+        }
+        out
+        {
+            <** @description: Set request result **>
+            StandardResult op_result
+        }
+    }
+
+    <** @description: Read the MAC addres in the mac address book of the OBC NVM.
+        @details: id = 0x00000041
+    **>
+    method get_device_mac_address
+    {
+        in
+        {
+            <** @description: Device. See the list of device IDs in the NVM fidl. **>
+            UInt8 device_id
+        }
+        out
+        {
+            <** @description: MAC address read from NVM. **>
+            UInt8 mac_address
+            <** @description: Get request result **>
+            StandardResult op_result
+        }
+    }
+}

@@ -1,0 +1,116 @@
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+
+import "../../fp/arducam.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.pf.arducam as arducam_Definitions {
+	
+	enumeration StandardResult {
+		AlarmInvalidRegexValues = {"CONNECTION_FAILURE", "ERROR"}
+	}
+	
+	enumeration ArducamState {
+		AlarmInvalidRegexValues = {"ERROR"}
+	}
+	
+	method capture {
+		in {
+			image_format {
+				DisplayName = "Image Format"
+			}
+			jpeg_compress_quality {
+				DisplayName = "JPEG Compress Quality"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method settings {
+		in {
+			light_mode {
+				DisplayName = "Light Mode"
+			}
+			saturation {
+				DisplayName = "Saturation"
+			}
+			brightness {
+				DisplayName = "Brightness"
+			}
+			contrast {
+				DisplayName = "Contrast"
+			}
+			hue {
+				DisplayName = "Hue"
+			}
+			effect {
+				DisplayName = "Effect"
+			}
+			exposure {
+				DisplayName = "Exposure"
+			}
+			sharpness {
+				DisplayName = "Sharpness"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method shut_down {
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method status {
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+			camera_state {
+				DisplayName = "Camera State"
+			}
+			last_image_name {
+				DisplayName = "Last Image Name"
+			}
+			image_format {
+				DisplayName = "Image Format"
+			}
+			jpeg_compress_quality {
+				DisplayName = "JPEG Compress Quality"
+			}
+			light_mode {
+				DisplayName = "Light Mode"
+			}
+			saturation {
+				DisplayName = "Saturation"
+			}
+			brightness {
+				DisplayName = "Brightness"
+			}
+			contrast {
+				DisplayName = "Contrast"
+			}
+			hue {
+				DisplayName = "Hue"
+			}
+			effect {
+				DisplayName = "Effect"
+			}
+			exposure {
+				DisplayName = "Exposure"
+			}
+			sharpness {
+				DisplayName = "Sharpness"
+			}
+		}
+	}
+}

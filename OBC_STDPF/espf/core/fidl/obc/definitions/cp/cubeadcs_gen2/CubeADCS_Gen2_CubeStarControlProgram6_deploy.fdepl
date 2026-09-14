@@ -1,0 +1,889 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CubeStarControlProgram6.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CubeStarControlProgram6 as CubeADCS_Gen2_CubeStarControlProgram6_Definitions
+{    
+    
+    struct CaptureDetect
+    {
+        DisplayName = "Capture and detect"
+        
+        ForceLostInSpace {
+            DisplayName = "Force Lost in Space"
+        }
+        
+    }
+    
+    struct LensDistortion
+    {
+        DisplayName = "Lens Distortion"
+        
+        FocalLength {
+            DisplayName = "Focal Length"
+            Unit = "px"
+			AlarmNumericMaxInclusive = "2000.0001"
+        }
+        
+        Cx {
+            DisplayName = "Cx"
+            Unit = "px"
+			AlarmNumericMaxInclusive = "1280.0001"
+        }
+        
+        Cy {
+            DisplayName = "Cy"
+            Unit = "px"
+			AlarmNumericMaxInclusive = "1038.0001"
+        }
+        
+        K1 {
+            DisplayName = "K1"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        K2 {
+            DisplayName = "K2"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        K3 {
+            DisplayName = "K3"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        InvK1 {
+            DisplayName = "InvK1"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        InvK2 {
+            DisplayName = "InvK2"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        InvK3 {
+            DisplayName = "InvK3"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+    }
+    
+    struct DetectionSettings
+    {
+        DisplayName = "Detection Settings"
+        
+        StepSize {
+            DisplayName = "Step Size"
+        }
+        
+        Threshold {
+            DisplayName = "Detection threshold"
+        }
+        
+        MinSurroundCount {
+            DisplayName = "Minimum Surround Count"
+			AlarmNumericMaxInclusive = "8.0001"
+        }
+        
+        MinStarPixels {
+            DisplayName = "Minimum Star Pixels"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        MaxStarPixels {
+            DisplayName = "Maximum Star Pixels"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        XStart {
+            DisplayName = "X Start"
+			AlarmNumericMaxInclusive = "1280.0001"
+        }
+        
+        YStart {
+            DisplayName = "Y Start"
+			AlarmNumericMaxInclusive = "1038.0001"
+        }
+        
+        XEnd {
+            DisplayName = "X End"
+			AlarmNumericMaxInclusive = "1280.0001"
+        }
+        
+        YEnd {
+            DisplayName = "Y End"
+			AlarmNumericMaxInclusive = "1038.0001"
+        }
+        
+        AdTolFixed {
+            DisplayName = "Fixed AD Tolerance"
+            Unit = "arcsec"
+        }
+        
+        AdTolR {
+            DisplayName = "AD Tolerance Scale"
+            Unit = "milli-arcsec/px"
+        }
+        
+        AdTolRelaxed {
+            DisplayName = "Relaxed AD Tolerance"
+            Unit = "arcsec"
+        }
+        
+        MaxTrackTime {
+            DisplayName = "Maximum Tracking Time"
+            Unit = "ms"
+        }
+        
+        TrackWindowSize {
+            DisplayName = "Tracking Window Size"
+            Unit = "px"
+        }
+        
+        TrackUseAngRate {
+            DisplayName = "Tracking Use Rate"
+        }
+        
+    }
+    
+    struct SensorSettings
+    {
+        DisplayName = "Sensor Settings"
+        
+        AutoBlackLevel {
+            DisplayName = "Automatic Black Level"
+        }
+        
+        RangeCompression {
+            DisplayName = "Range Compression"
+        }
+        
+        IntTimeMultiply {
+            DisplayName = "Integration Time Multiplier"
+        }
+        
+        TestPattern {
+            DisplayName = "Test Pattern"
+        }
+        
+        ClampLockEnable {
+            DisplayName = "Clamp Lock Enable"
+        }
+        
+        ClampDigitalCorrect {
+            DisplayName = "Clamp Digital Correction Enable"
+        }
+        
+        RangeCoefficient {
+            DisplayName = "Range Compression Coefficient"
+        }
+        
+        IntTimeNumLines {
+            DisplayName = "Integration Time"
+        }
+        
+        AnalogGain {
+            DisplayName = "Analog Gain"
+        }
+        
+        RoiDigitalGain {
+            DisplayName = "ROI Digital Gain"
+        }
+        
+        GlobalDigitalGain {
+            DisplayName = "Global Digital Gain"
+        }
+        
+        AutoClampAddOffset {
+            DisplayName = "Auto-clamp Additional Offset"
+        }
+        
+        ManualClampOffset {
+            DisplayName = "Manual Clamp Offset"
+        }
+        
+        ClampInitLines {
+            DisplayName = "Clamp Number of Init Lines"
+			AlarmNumericMaxInclusive = "7.0001"
+        }
+        
+        ClampLockThreshold {
+            DisplayName = "Clamp Lock Threshold"
+			AlarmNumericMaxInclusive = "15.0001"
+        }
+        
+        ClampV0Gain {
+            DisplayName = "Clamp V0 Gain"
+			AlarmNumericMaxInclusive = "63.0001"
+        }
+        
+    }
+    
+    struct ImageTransferSetup
+    {
+        DisplayName = "Setup Image Transfer"
+        
+        Direction {
+            DisplayName = "Direction"
+        }
+        
+        Compression {
+            DisplayName = "Compression"
+        }
+        
+        WindowX {
+            DisplayName = "Window X"
+			AlarmNumericMaxInclusive = "1279.0001"
+        }
+        
+        WindowY {
+            DisplayName = "Window Y"
+			AlarmNumericMaxInclusive = "1037.0001"
+        }
+        
+        WindowWidth {
+            DisplayName = "Window Width"
+			AlarmNumericMinInclusive = "0.9999"
+			AlarmNumericMaxInclusive = "1280.0001"
+        }
+        
+        WindowHeight {
+            DisplayName = "Window Height"
+			AlarmNumericMinInclusive = "0.9999"
+			AlarmNumericMaxInclusive = "1038.0001"
+        }
+        
+    }
+    
+    struct SensorRegisterRead
+    {
+        DisplayName = "Read Sensor Register"
+        
+        RegAddr {
+            DisplayName = "Address"
+        }
+        
+    }
+    
+    struct SensorRegisterWrite
+    {
+        DisplayName = "Write Sensor Register"
+        
+        RegAddr {
+            DisplayName = "Address"
+        }
+        
+        RegValue {
+            DisplayName = "Value"
+        }
+        
+    }
+    
+    struct SubsystemPower
+    {
+        DisplayName = "Subsystem Power"
+        
+        SubsystemPwr {
+            DisplayName = "Subsystem Power"
+        }
+        
+    }
+    
+    struct Status
+    {
+        DisplayName = "Status"
+        
+        CaptureStatus {
+            DisplayName = "Capture Status"
+        }
+        
+        DetectStatus {
+            DisplayName = "Star Detection Status"
+        }
+        
+        IdentStatus {
+            DisplayName = "Star Identification Status"
+        }
+        
+        Idle {
+            DisplayName = "Idle"
+        }
+        
+        Tracking {
+            DisplayName = "Tracking"
+        }
+        
+        NumDetected {
+            DisplayName = "Number Detected Stars"
+        }
+        
+        NumIdentified {
+            DisplayName = "Number Identified Stars"
+        }
+        
+    }
+    
+    struct DetectionMetaData
+    {
+        DisplayName = "Detection Meta-data"
+        
+        CaptureTime {
+            DisplayName = "Capture Duration"
+            Unit = "ms"
+        }
+        
+        DetectTime {
+            DisplayName = "Star Detection Duration"
+            Unit = "ms"
+        }
+        
+        IdentTime {
+            DisplayName = "Star Identification Duration"
+            Unit = "ms"
+        }
+        
+        DarkVal {
+            DisplayName = "Image Dark Value"
+        }
+        
+        NumStarsDetected {
+            DisplayName = "Number Stars Detected"
+        }
+        
+        RegionsTooSmall {
+            DisplayName = "Too-small Region Count"
+        }
+        
+        RegionsTooLarge {
+            DisplayName = "Too-large Region Count"
+        }
+        
+        AvgAdError {
+            DisplayName = "Average AD Error"
+            Unit = "arcsec"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        AvgPredictError {
+            DisplayName = "Average Predict Error"
+            Unit = "px"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+    }
+    
+    struct DetectedStars
+    {
+        DisplayName = "Detected Stars"
+        
+        Star1x {
+            DisplayName = "Star 1 X"
+        }
+        
+        Star1y {
+            DisplayName = "Star 1 Y"
+        }
+        
+        Star1Mvi {
+            DisplayName = "Star 1 Mvi"
+        }
+        
+        Star1CatI {
+            DisplayName = "Star 1 Cat Ix"
+        }
+        
+        Star2x {
+            DisplayName = "Star 2 X"
+        }
+        
+        Star2y {
+            DisplayName = "Star 2 Y"
+        }
+        
+        Star2Mvi {
+            DisplayName = "Star 2 Mvi"
+        }
+        
+        Star2CatI {
+            DisplayName = "Star 2 Cat Ix"
+        }
+        
+        Star3x {
+            DisplayName = "Star 3 X"
+        }
+        
+        Star3y {
+            DisplayName = "Star 3 Y"
+        }
+        
+        Star3Mvi {
+            DisplayName = "Star 3 Mvi"
+        }
+        
+        Star3CatI {
+            DisplayName = "Star 3 Cat Ix"
+        }
+        
+        Star4x {
+            DisplayName = "Star 4 X"
+        }
+        
+        Star4y {
+            DisplayName = "Star 4 Y"
+        }
+        
+        Star4Mvi {
+            DisplayName = "Star 4 Mvi"
+        }
+        
+        Star4CatI {
+            DisplayName = "Star 4 Cat Ix"
+        }
+        
+        Star5x {
+            DisplayName = "Star 5 X"
+        }
+        
+        Star5y {
+            DisplayName = "Star 5 Y"
+        }
+        
+        Star5Mvi {
+            DisplayName = "Star 5 Mvi"
+        }
+        
+        Star5CatI {
+            DisplayName = "Star 5 Cat Ix"
+        }
+        
+        Star6x {
+            DisplayName = "Star 6 X"
+        }
+        
+        Star6y {
+            DisplayName = "Star 6 Y"
+        }
+        
+        Star6Mvi {
+            DisplayName = "Star 6 Mvi"
+        }
+        
+        Star6CatI {
+            DisplayName = "Star 6 Cat Ix"
+        }
+        
+        Star7x {
+            DisplayName = "Star 7 X"
+        }
+        
+        Star7y {
+            DisplayName = "Star 7 Y"
+        }
+        
+        Star7Mvi {
+            DisplayName = "Star 7 Mvi"
+        }
+        
+        Star7CatI {
+            DisplayName = "Star 7 Cat Ix"
+        }
+        
+        Star8x {
+            DisplayName = "Star 8 X"
+        }
+        
+        Star8y {
+            DisplayName = "Star 8 Y"
+        }
+        
+        Star8Mvi {
+            DisplayName = "Star 8 Mvi"
+        }
+        
+        Star8CatI {
+            DisplayName = "Star 8 Cat Ix"
+        }
+        
+        Star9x {
+            DisplayName = "Star 9 X"
+        }
+        
+        Star9y {
+            DisplayName = "Star 9 Y"
+        }
+        
+        Star9Mvi {
+            DisplayName = "Star 9 Mvi"
+        }
+        
+        Star9CatI {
+            DisplayName = "Star 9 Cat Ix"
+        }
+        
+        Star10x {
+            DisplayName = "Star 10 X"
+        }
+        
+        Star10y {
+            DisplayName = "Star 10 Y"
+        }
+        
+        Star10Mvi {
+            DisplayName = "Star 10 Mvi"
+        }
+        
+        Star10CatI {
+            DisplayName = "Star 10 Cat Ix"
+        }
+        
+    }
+    
+    struct HealthTlm
+    {
+        DisplayName = "Health Telemetry"
+        
+        McuTemp {
+            DisplayName = "MCU Temperature"
+            Unit = "°C"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "200.0001"
+        }
+        
+        McuCurrent {
+            DisplayName = "MCU Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        SystemCurrent {
+            DisplayName = "System Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        SystemCurrentPk {
+            DisplayName = "Peak System Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        McuVoltage {
+            DisplayName = "MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        DetectorTemp {
+            DisplayName = "Detector temperature"
+            Unit = "°C"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "200.0001"
+        }
+        
+        SensorInitOk {
+            DisplayName = "Sensor Initialised"
+        }
+        
+        SensorConfigOk {
+            DisplayName = "Sensor Configured"
+        }
+        
+        TempSensorOk {
+            DisplayName = "Temperature Sensor OK"
+        }
+        
+        SubsytemOn {
+            DisplayName = "Subsystem Power On"
+        }
+        
+        ErrorCode {
+            DisplayName = "Error Code"
+        }
+        
+        WatchdogCount {
+            DisplayName = "Watchdog Counters"
+        }
+        
+    }
+    
+    struct SensorRegisterValue
+    {
+        DisplayName = "Sensor Register Value"
+        
+        RegAddr {
+            DisplayName = "Address"
+        }
+        
+        RegValue {
+            DisplayName = "Value"
+        }
+        
+        Completed {
+            DisplayName = "Completed"
+        }
+        
+        Error {
+            DisplayName = "Error"
+        }
+        
+    }
+    
+    struct BestStars
+    {
+        DisplayName = "Matching Stars Detection Result"
+        
+        CaptureStatus {
+            DisplayName = "Capture Status"
+        }
+        
+        DetectStatus {
+            DisplayName = "Star Detection Status"
+        }
+        
+        IdentStatus {
+            DisplayName = "Star Identification Status"
+        }
+        
+        Idle {
+            DisplayName = "Idle"
+        }
+        
+        Tracking {
+            DisplayName = "Tracking"
+        }
+        
+        NumDetected {
+            DisplayName = "Number Detected Stars"
+        }
+        
+        NumIdentified {
+            DisplayName = "Number Identified Stars"
+        }
+        
+        Cam1x {
+            DisplayName = "Star 1 Body Vector X"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Cam1y {
+            DisplayName = "Star 1 Body Vector Y"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Cam1z {
+            DisplayName = "Star 1 Body Vector Z"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Ref1x {
+            DisplayName = "Star 1 Inertial Vector X"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Ref1y {
+            DisplayName = "Star 1 Inertial Vector Y"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Ref1z {
+            DisplayName = "Star 1 Inertial Vector Z"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Cam2x {
+            DisplayName = "Star 2 Body Vector X"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Cam2y {
+            DisplayName = "Star 2 Body Vector Y"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Cam2z {
+            DisplayName = "Star 2 Body Vector Z"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Ref2x {
+            DisplayName = "Star 2 Inertial Vector X"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Ref2y {
+            DisplayName = "Star 2 Inertial Vector Y"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Ref2z {
+            DisplayName = "Star 2 Inertial Vector Z"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Cam3x {
+            DisplayName = "Star 3 Body Vector X"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Cam3y {
+            DisplayName = "Star 3 Body Vector Y"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Cam3z {
+            DisplayName = "Star 3 Body Vector Z"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Ref3x {
+            DisplayName = "Star 3 Inertial Vector X"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Ref3y {
+            DisplayName = "Star 3 Inertial Vector Y"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Ref3z {
+            DisplayName = "Star 3 Inertial Vector Z"
+            Unit = "unit vector component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        xRate {
+            DisplayName = "Angular Rate X"
+            Unit = "deg/s"
+        }
+        
+        yRate {
+            DisplayName = "Angular Rate Y"
+            Unit = "deg/s"
+        }
+        
+        zRate {
+            DisplayName = "Angular Rate Z"
+            Unit = "deg/s"
+        }
+        
+    }
+    
+    struct Attitude
+    {
+        DisplayName = "Measured Quaternion Detection Result"
+        
+        CaptureStatus {
+            DisplayName = "Capture Status"
+        }
+        
+        DetectStatus {
+            DisplayName = "Star Detection Status"
+        }
+        
+        IdentStatus {
+            DisplayName = "Star Identification Status"
+        }
+        
+        Idle {
+            DisplayName = "Idle"
+        }
+        
+        Tracking {
+            DisplayName = "Tracking"
+        }
+        
+        NumDetected {
+            DisplayName = "Number Detected Stars"
+        }
+        
+        NumIdentified {
+            DisplayName = "Number Identified Stars"
+        }
+        
+        Q1 {
+            DisplayName = "Attitude Q1"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Q2 {
+            DisplayName = "Attitude Q2"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Q3 {
+            DisplayName = "Attitude Q3"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Q4 {
+            DisplayName = "Attitude Q4"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        xRate {
+            DisplayName = "Angular Rate X"
+            Unit = "deg/s"
+        }
+        
+        yRate {
+            DisplayName = "Angular Rate Y"
+            Unit = "deg/s"
+        }
+        
+        zRate {
+            DisplayName = "Angular Rate Z"
+            Unit = "deg/s"
+        }
+        
+    }
+    
+}

@@ -1,0 +1,113 @@
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+
+import "../../fp/Beacons.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.pf.Beacons as Beacons_Definitions {
+	enumeration StandardResult {
+		AlarmInvalidRegexValues = {"ERROR", "INVALID_ARGS", "NOT_SUPPORTED"}
+	} 
+	
+	struct bcn_general_cfg {
+		DisplayName = "Beacon General Configuration"
+		beacons_en {
+			DisplayName = "Beacons Enabled"
+		}
+		chunk_based_transfer_en {
+			DisplayName = "Beacons Chunking Enabled"
+		}
+		bcn_tx_period {
+			DisplayName = "Beacons Burst Duration"
+			Unit = "ms"
+		}
+		bcn_inter_frame_period {
+			DisplayName = "Period between Beacons Transmissions"
+			Unit = "ms"
+		}
+	}
+	
+	method getBeaconGeneralConfig {
+		out {
+			cfg {
+				DisplayName = "Configuration"
+			}			
+		}
+	}
+	
+	method setBeaconGeneralConfig {
+		in {
+			cfg {
+				DisplayName = "Configuration"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method getBeaconPresetConfig {
+		out {
+			slot_preset_cnt {
+				DisplayName = "Number of Beacon Slot Presets"
+			}
+			max_bcn_msg_cnt {
+				DisplayName = "Maximum Number of Beacon Messages per Burst"
+			}
+			beacon_preset_cfg {
+				DisplayName = "Beacon Preset Configuration"
+			}
+		}
+	}
+	
+	method setBeaconPresetConfig {
+		in {
+			beacon_preset_cfg {
+				DisplayName = ""
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+			preset_error_slot_index {
+				DisplayName = "Beacon Preset Configuration"
+			}
+			preset_error_slot_index {
+				DisplayName = "Preset Error Slot Index"
+			}
+		}
+	}
+	
+	method setActivePreset {
+		in {
+			req_active_preset {
+				DisplayName = "Preset to Activate"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+			avail_presets_cnt {
+				DisplayName = "Number of Available Presets"
+			}
+		}
+	}
+	
+	method getActivePreset {
+		out {
+			active_preset_id {
+				DisplayName = "Active Preset ID"
+			}
+		}
+	}
+	
+	method restoreActivePreset {
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+}

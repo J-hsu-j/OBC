@@ -1,0 +1,70 @@
+package org.endurosat.deploy
+
+import "../../../../../../../../espf/core/fidl/spec/PlatformSpec.fdepl"
+
+import "../../../../../../../../espf/core/fidl/eps_ii/fp/EPSII_BP_v1.fidl"
+import "../../../../../../../../espf/core/fidl/eps_ii/fp/EPSII_PDM_v1.fidl"
+
+// Client generation
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.EPSII_BP_1    { 
+	IsClient = true
+
+	method GetDeviceInfo { InUse = false }
+	method GetRAWSensors { InUse = true }
+	method GetBatteryInfo { InUse = true }
+	method GetDeviceHealthInfo { InUse = true }
+	method SetBatHeaterSettings { InUse = false }
+	method GetBatHeaterSettings { InUse = false }
+	method SetBasicSettings { InUse = false }
+	method GetBasicSettings { InUse = false }
+	method GetBasicAppExceptions { InUse = false }
+	method GetBasicAppErrCounters { InUse = false }
+	method GetMainAppExceptions { InUse = false }
+	method GetMainAppErrCounters { InUse = false }
+	method GetMainAppErrCounters2 { InUse = false }
+	method OnESCP_ResetMainAppErrCounters { InUse = false }
+	method OnESCP_ResetMainAppExceptions { InUse = false }
+	method OnESCP_ResetBasicAppErrCounters { InUse = false }
+	method OnESCP_ResetBasicAppExceptions { InUse = false }
+	method GetBalancerStatus { InUse = false }
+	method ResetDevice { InUse = false }
+	method ForceInstallMainApp { InUse = false }
+	method ForceInstallBasicApp { InUse = false }
+	method GetBootLoaderErrCounters { InUse = false }
+	method ResetBootLdrErrCounters { InUse = false }
+	method SetChargerSettings { InUse = false }
+	method SetRTC { InUse = false }
+	method GetRTC { InUse = false }
+	method LeaveNoHibMode { InUse = false }
+	method RequestPowerDown { InUse = false }
+	method GetBpModeSmRollingTrace { InUse = false }	 
+}
+
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.EPSII_PDM_1  { 
+	IsClient = true
+	
+	method GetDeviceInfo { InUse = false }
+	method GetPowerDistributionInfo { InUse = true }
+	method GetDeviceHealthInfo { InUse = true }
+	method SetPC104GPIO { InUse = true }
+	method GetPC104GPIO { InUse = true }
+	method GetRAWSensors { InUse = true }
+	method SetPowerOutputs { InUse = true }
+	method GetPowerOutputs { InUse = true }
+	method SetBasicSettings { InUse = false }
+	method GetBasicSettings { InUse = false }
+	method GetBasicAppExceptions { InUse = false }
+	method GetBasicAppErrCounters { InUse = false }
+	method GetMainAppExceptions { InUse = false }
+	method GetMainAppErrCounters { InUse = false }
+	method OnESCP_ResetMainAppErrCounters { InUse = false }
+	method OnESCP_ResetMainAppExceptions { InUse = false }
+	method OnESCP_ResetBasicAppErrCounters { InUse = false }
+	method OnESCP_ResetBasicAppExceptions { InUse = false }
+	method GetBulkTelemetry { InUse = false }
+	method ResetDevice { InUse = false }
+	method ForceInstallMainApp { InUse = false }
+	method ForceInstallBasicApp { InUse = false }
+	method GetBootLoaderErrCounters { InUse = false }
+	method ResetBootLdrErrCounters { InUse = false }	 
+}

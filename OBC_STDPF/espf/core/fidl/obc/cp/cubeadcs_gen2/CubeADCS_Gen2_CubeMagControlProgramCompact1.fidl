@@ -1,0 +1,129 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+package endurosat.macif
+
+
+<** @description: Interface for Cube ADCS Gen2 - CubeMagControlProgramCompact1
+    @details: id = 308
+**>
+
+interface CubeADCS_Gen2_CubeMagControlProgramCompact1
+{
+    version {major 6 minor 0}
+    
+    <** @description: This enumeration holds the IDs of CubeADCS Gen2 nodes for which this interface is applicable.
+        @details: size = 1 
+    **>
+    enumeration CmdTargetNode
+    {
+        NodeInvalid = 0
+        NodeMag0 = 10
+        NodeMag1 = 11
+        
+    }
+
+    <** @description: Return status type of the CubeADCS Gen2 API operations. Possible values are:
+                     0 - No error
+                     1 - NULL pointer
+                     2 - Size incorrect
+                     3 - Size too low
+                     4 - Size too high
+                     5 - Overrun
+                     6 - Parameter error (out of range)
+                     7 - Timeout
+                     8 - TCTLM comms Nack
+                     9 - Busy
+                     10 - Frame
+                     11 - CRC
+                     12 - Read
+                     13 - Write
+                     14 - CAN ID type error
+                     15 - CAN frame error
+                     16 - Unknown NACK
+                     17 - Invalid node type
+                     18 - CubeSpace file upload internal error
+                     19 - Usage error
+                     20 - Auto-Discovery error
+                     21 - Image error
+                     22 - Does not exist error
+                     23 - User data error
+                     24 - Commit error
+                     25 - TCTLM protocol error
+                     26 - General unexpected/unknown error
+                     27 - Telemetry response size error
+                     28 - TCTLM response ID does not match the request
+
+                     50 - TCTLM Nack - invalid ID
+                     51 - TCTLM Nack - invalid length
+                     52 - TCTLM Nack - invalid parameter data
+                     53 - TCTLM Nack - CRC failed
+                     54 - TCTLM Nack - not implemented
+                     55 - TCTLM Nack - busy
+                     56 - TCTLM Nack - sequence
+                     57 - TCTLM Nack - internal
+                     58 - TCTLM Nack - pass-through timeout
+                     59 - TCTLM Nack - pass-through target
+
+                     70 - CSP - receive timeout
+                     71 - CSP - failed to acquire a buffer
+
+                     65535 - Not implemented / TODO
+    **>
+    typedef AdcsErrorCode is Int32
+    
+    
+    
+    
+    <** @description: Parameter structure for interface HealthTlm
+    **>
+    struct HealthTlm
+    {
+        
+        <** @description: MCU current **>
+        UInt16 McuCurrent
+        
+        <** @description: MCU temperature in deg C **>
+        Int16 McuTemp
+        
+        <** @description: MCU supply voltage **>
+        UInt16 McuVoltage
+        
+        <** @description: Magnetometer Temperature **>
+        Float MagTemp
+        
+        <** @description: Bitmask representing virtual watchdog region warning counters.  
+            @details: size = 5**>
+        UInt8[] WatchdogCount
+        
+    }
+    
+    
+    
+    <**
+        @description: Health Telemetry for CubeMagCompact
+        @details: id = 0
+    **>
+    method getHealthTlm
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            HealthTlm returnVal
+            
+            
+        }
+    }
+    
+}

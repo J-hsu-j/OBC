@@ -1,0 +1,8522 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../cp/OBC_CP_CUBEADCS_GATEWAY.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.macif.cp.OBC_CP_CUBEADCS_GATEWAY as OBC_CP_CUBEADCS_GATEWAY_Definitions {
+
+	enumeration CAPTURERESULT {
+		AlarmInvalidRegexValues = {
+			"TIMEOUT", "SRAM_EROOR"
+		}
+	}
+
+	enumeration TCRply_ErrFlag {
+		AlarmInvalidRegexValues = {
+			"(^(?!NO_ERR$).*$)"
+		}
+	}
+
+	enumeration IMSAVE_STATUS {
+		AlarmInvalidRegexValues = {
+			"(^(?!NO_ERR$).*$)"
+		}
+	}
+
+	enumeration CONTROL_Mode {
+		AlarmInvalidRegexValues = {
+			"DETUMB_CNTRL", "VERY_FAST_DETUMB"
+		}
+	}
+
+	enumeration JPG_CONV_RESULT {
+		AlarmInvalidRegexValues = {
+			"FILE_LOAD_ERR"
+		}
+	}
+
+	struct Boot_Config {
+		Boot_Index {
+			DisplayName = "Boot Index"
+		}
+	}
+
+	struct TCRply_Struct {
+		TC_ID {
+			DisplayName = "TC ID"
+		}
+		TC_ErrFlag {
+			DisplayName = "TC Error Flag"
+		}
+	}
+
+	struct EST_PARAMS_Struct {
+		MTM_RateFilt_Sys_Noise {
+			DisplayName = "MTM Rate Filter System Noise"
+		}
+		EKF_Sys_Noise {
+			DisplayName = "EKF System Noise"
+		}
+		CSS_Meas_Noise {
+			DisplayName = "CSS Measurement Noise"
+		}
+		SunSens_Meas_Noise {
+			DisplayName = "Sun Sensor Measurement Noise"
+		}
+		NadirSens_Meas_Noise {
+			DisplayName = "Nadir Sensor Measurement Noise"
+		}
+		MTM_Meas_Noise {
+			DisplayName = "Magnetometer Measurement Noise"
+		}
+		StarTrack_Meas_Noise {
+			DisplayName = "Star Track Measurement Noise"
+		}
+		Byte29 {
+			DisplayName = "Byte29"
+		}
+		Byte30 {
+			DisplayName = "Byte30"
+		}
+		Byte31 {
+			DisplayName = "Byte31"
+		}
+	}
+
+	struct RATE_GYRO_CFG_Struct {
+		Description = "Rate Gyroscope Configuration Message Format"
+		Gyro1 {
+			DisplayName = "Gyroscope 1"
+		}
+		Gyro2 {
+			DisplayName = "Gyroscope 2"
+		}
+		Gyro3 {
+			DisplayName = "Gyroscope 3"
+		}
+		X_Sens_Offset {
+			DisplayName = "X Sensor Offset"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+		Y_Sens_Offset {
+			DisplayName = "Y Sensor Offset"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+		Z_Sens_Offset {
+			DisplayName = "Z Sensor Offset"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+		RateSensMult {
+			DisplayName = "Rate Sensor Multiplier"
+		}
+	}
+
+	struct CUBESENSE_Struct {
+		Description = "Set CubeSense configuration parameters"
+		Cam1_Mount_Alpha_Angle {
+			DisplayName = "Cam1 Mounting Alpha Angle"
+			Description = "Cam1 Sensor Mounting Transform Alpha Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		Cam1_Mount_Beta_Angle {
+			DisplayName = "Cam1 Mounting Beta Angle"
+			Description = "Cam1 Sensor Mounting Transform Beta Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		Cam1_Mount_Gamma_Angle {
+			DisplayName = "Cam1 Mounting Gamma Angle"
+			Description = "Cam1 Sensor Mounting Transform Gamma Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		Cam1_Detect_Thresh {
+			DisplayName = "Cam1 Detection Threshold"
+		}
+		Cam1_Auto_Adj_Mode {
+			DisplayName = "Cam1 Auto Adjust Mode"
+			Description = "Cam1 sensor auto adjust mode \n 0 = disabled and 1 = enabled"
+		}
+		Cam1_Exposure_Time {
+			DisplayName = "Cam1 Exposure Time"
+		}
+		Cam1_BoreSight_X {
+			DisplayName = "Cam1 Boresight X"
+			Description = "X Pixel location of Cam1 boresight."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "pixels"
+		}
+		Cam1_BoreSight_Y {
+			DisplayName = "Cam1 Bore Sight Y"
+			Description = "Y Pixel location of Cam1 boresight."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "pixels"
+		}
+		Cam2_Mount_Alpha_Angle {
+			DisplayName = "Cam2 Mounting Alpha Angle"
+			Description = "Cam2 Sensor Mounting Transform Alpha Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		Cam2_Mount_Beta_Angle {
+			DisplayName = "Cam2 Mounting Beta Angle"
+			Description = "Cam2 Sensor Mounting Transform Beta Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		Cam2_Mount_Gamma_Angle {
+			DisplayName = "Cam2 Mounting Gamma Angle"
+			Description = "Cam2 Sensor Mounting Transform Gamma Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		Cam2_Detect_Thresh {
+			DisplayName = "Cam2 Detection Threshold"
+		}
+		Cam2_Auto_Adj_Mode {
+			DisplayName = "Cam2 Auto Adjust Mode"
+			Description = "Cam2 sensor auto adjust mode \n 0 = disabled and 1 = enabled"
+		}
+		Cam2_Exposure_Time {
+			DisplayName = "Cam2 Exposure Time"
+		}
+		Cam2_BoreSight_X {
+			DisplayName = "Cam2 Boresight X"
+			Description = "X Pixel location of Cam2 boresight."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "pixels"
+		}
+		Cam2_BoreSight_Y {
+			DisplayName = "Cam2 Bore Sight Y"
+			Description = "Y Pixel location of Cam2 boresight."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "pixels"
+		}
+		Nadir_Max_Dev_Perc {
+			DisplayName = "Nadir Maximum Deviation Percentage"
+			Description =
+			"Percentage of measured angular radius as edge's maximum allowable deviation"
+			Unit = "%"
+		}
+		Nadir_Max_Bad_Edges {
+			DisplayName = "Nadir Maximum Bad Edges"
+			Description =
+			"Maximum amount of edges allowed outside maximum deviation (>50 to disable)"
+		}
+		Nadir_Max_Radius {
+			DisplayName = "Nadir Maximum Radius"
+			Unit = "°"
+		}
+		Nadir_Min_Radius {
+			DisplayName = "Nadir Minimum Radius"
+			Unit = "°"
+		}
+		Cam1_MinX_Area_1 {
+			DisplayName = "Cam1 Minimum X Area 1"
+		}
+		Cam1_MaxX_Area_1 {
+			DisplayName = "Cam1 Maximum X Area 1"
+		}
+		Cam1_MinY_Area_1 {
+			DisplayName = "Cam1 Minimum Y Area 1"
+		}
+		Cam1_MaxY_Area_1 {
+			DisplayName = "Cam1 Maximum Y Area 1"
+		}
+		Cam1_MinX_Area_2 {
+			DisplayName = "Cam1 Minimum X Area 2"
+		}
+		Cam1_MaxX_Area_2 {
+			DisplayName = "Cam1 Maximum X Area 2"
+		}
+		Cam1_MinY_Area_2 {
+			DisplayName = "Cam1 Minimum Y Area 2"
+		}
+		Cam1_MaxY_Area_2 {
+			DisplayName = "Cam1 Maximum Y Area 2"
+		}
+		Cam1_MinX_Area_3 {
+			DisplayName = "Cam1 Minimum X Area 3"
+		}
+		Cam1_MaxX_Area_3 {
+			DisplayName = "Cam1 Maximum X Area 3"
+		}
+		Cam1_MinY_Area_3 {
+			DisplayName = "Cam1 Minimum Y Area 3"
+		}
+		Cam1_MaxY_Area_3 {
+			DisplayName = "Cam1 Maximum Y Area 3"
+		}
+		Cam1_MinX_Area_4 {
+			DisplayName = "Cam1 Minimum X Area 4"
+		}
+		Cam1_MaxX_Area_4 {
+			DisplayName = "Cam1 Maximum X Area 4"
+		}
+		Cam1_MinY_Area_4 {
+			DisplayName = "Cam1 Minimum Y Area 4"
+		}
+		Cam1_MaxY_Area_4 {
+			DisplayName = "Cam1 Maximum Y Area 4"
+		}
+		Cam1_MinX_Area_5 {
+			DisplayName = "Cam1 Minimum X Area 5"
+		}
+		Cam1_MaxX_Area_5 {
+			DisplayName = "Cam1 Maximum X Area 5"
+		}
+		Cam1_MinY_Area_5 {
+			DisplayName = "Cam1 Minimum Y Area 5"
+		}
+		Cam1_MaxY_Area_5 {
+			DisplayName = "Cam1 Maximum Y Area 5"
+		}
+		Cam2_MinX_Area_1 {
+			DisplayName = "Cam2 Minimum X Area 1"
+		}
+		Cam2_MaxX_Area_1 {
+			DisplayName = "Cam2 Maximum X Area 1"
+		}
+		Cam2_MinY_Area_1 {
+			DisplayName = "Cam2 Minimum Y Area 1"
+		}
+		Cam2_MaxY_Area_1 {
+			DisplayName = "Cam2 Maximum Y Area 1"
+		}
+		Cam2_MinX_Area_2 {
+			DisplayName = "Cam2 Minimum X Area 2"
+		}
+		Cam2_MaxX_Area_2 {
+			DisplayName = "Cam2 Maximum X Area 2"
+		}
+		Cam2_MinY_Area_2 {
+			DisplayName = "Cam2 Minimum Y Area 2"
+		}
+		Cam2_MaxY_Area_2 {
+			DisplayName = "Cam2 Maximum Y Area 2"
+		}
+		Cam2_MinX_Area_3 {
+			DisplayName = "Cam2 Minimum X Area 3"
+		}
+		Cam2_MaxX_Area_3 {
+			DisplayName = "Cam2 Maximum X Area 3"
+		}
+		Cam2_MinY_Area_3 {
+			DisplayName = "Cam2 Minimum Y Area 3"
+		}
+		Cam2_MaxY_Area_3 {
+			DisplayName = "Cam2 Maximum Y Area 3"
+		}
+		Cam2_MinX_Area_4 {
+			DisplayName = "Cam2 Minimum X Area 4"
+		}
+		Cam2_MaxX_Area_4 {
+			DisplayName = "Cam2 Maximum X Area 4"
+		}
+		Cam2_MinY_Area_4 {
+			DisplayName = "Cam2 Minimum Y Area 4"
+		}
+		Cam2_MaxY_Area_4 {
+			DisplayName = "Cam2 Maximum Y Area 4"
+		}
+		Cam2_MinX_Area_5 {
+			DisplayName = "Cam2 Minimum X Area 5"
+		}
+		Cam2_MaxX_Area_5 {
+			DisplayName = "Cam2 Maximum X Area 5"
+		}
+		Cam2_MinY_Area_5 {
+			DisplayName = "Cam2 Minimum Y Area 5"
+		}
+		Cam2_MaxY_Area_5 {
+			DisplayName = "Cam2 Maximum Y Area 5"
+		}
+	}
+
+	struct CUBESTAR_Struct {
+		Description = "Set Star Tracker Configuration Message Format"
+		StarTracker_Mount_Alpha_Angle {
+			DisplayName = "Star Tracker Mounting Alpha Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		StarTracker_Mount_Beta_Angle {
+			DisplayName = "Star Tracker Mounting Beta Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		StarTracker_Mount_Gamma_Angle {
+			DisplayName = "Star Tracker Mounting Gamma Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		StarTracker_Exposure_Time {
+			DisplayName = "Star Tracker Exposure Time"
+			Description = "exposure time register value"
+		}
+		StarTracker_Analog_Gain {
+			DisplayName = "Star Tracker Analog Gain"
+			Description = "analog gain register value"
+		}
+		StarTracker_Detection_Thresh {
+			DisplayName = "StarTracker Detection Threshold"
+		}
+		StarTracker_Star_Threshold {
+			DisplayName = "StarTracker Star Threshold"
+		}
+		StarTracker_Max_Star_Matched {
+			DisplayName = "StarTracker Maximum Star Matched"
+		}
+		Detection_Timeout_Duration {
+			DisplayName = "Detection Timeout Duration"
+		}
+		Max_Star_Pixel {
+			DisplayName = "Maximum Star Pixel"
+			Description = "Maximum pixels in a star"
+		}
+		Min_Star_Pixel {
+			DisplayName = "Minimum Star Pixel"
+			Description = "Minimum pixels in a star"
+		}
+		StarTracker_Err_Margin {
+			DisplayName = "Star Tracker Error Margin"
+			Description = "% Error margin of the star identification."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "%"
+		}
+		StarTracker_Delay_Time {
+			DisplayName = "Star Tracker Delay Time"
+			Unit = "s"
+		}
+		StarTracker_Centroid_X {
+			DisplayName = "Star Tracker Centroid X"
+		}
+		StarTracker_Centroid_Y {
+			DisplayName = "Star Tracker Centroid Y"
+		}
+		StarTracker_Focal_Length {
+			DisplayName = "Star Tracker Focal Length"
+			Unit = "mm"
+		}
+		K1_Rad_Dist_Coeff {
+			DisplayName = "K1 Radial Distortion Coefficient"
+			Unit = "gain"
+		}
+		K2_Rad_Dist_Coeff {
+			DisplayName = "K2 Radial Distortion Coefficient"
+			Unit = "gain"
+		}
+		P1_Tang_Dist_Coeff {
+			DisplayName = "P1 Tangential Distortion Coefficient"
+			Unit = "gain"
+		}
+		P2_Tang_Dist_Coeff {
+			DisplayName = "P2 Tangential Distortion Coefficient"
+			Unit = "gain"
+		}
+		StarTracking_Window_Width {
+			DisplayName = "Star Tracking Window Width"
+		}
+		StarTracking_Margin {
+			DisplayName = "Star Tracking Margin"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+		}
+		StarValidation_Margin {
+			DisplayName = "Star Validation Margin"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+		}
+		StarTracking_Module_Location_Prediction_Enable {
+			DisplayName = "Star Tracking Module Location Prediction Enable"
+		}
+		StarTracking_Search_Width {
+			DisplayName = "Star Tracking Search Width"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.2"
+			}
+		}
+	}
+
+	struct RWHEELS_CFG_Struct {
+		Description = "Set Reaction Wheel Control Parameters Message Format"
+		RWheel_Proport_Gain {
+			DisplayName = "RWheel Proportional Gain"
+			Description = "RWheel Proportional Gain (Kp2)"
+		}
+		RWheel_Deriv_Gain {
+			DisplayName = "RWheel Derivative Gain"
+			Description = "RWheel Derivative Gain (Kd2)"
+		}
+		Y_Wheel_Bias_Momentum {
+			DisplayName = "Y Wheel Bias Momentum"
+			Description = "Y Wheel Bias Momentum (H-bias)"
+			Unit = "Nms"
+		}
+		SunPointAndAutoCntrlTransition {
+			DisplayName = "Sun Pointing and Auto Control Transition"
+			Description =
+			"Sun Pointing and Automatic Control Transition due to Wheel Errors"
+		}
+	}
+
+	struct TARGET_REF_Struct {
+		Description = "Target reference for tracking control mode"
+		Geocentric_Longitude {
+			DisplayName = "Geocentric Longitude"
+			Unit = "°"
+		}
+		Geocentric_Latitude {
+			DisplayName = "Geocentric Latitude"
+			Unit = "°"
+		}
+		Geocentric_Altitude {
+			DisplayName = "Geocentric Altitude"
+			Unit = "m"
+		}
+	}
+
+	struct COMMANDED_ATTITUDE_Angles_Struct {
+		Description = "Commanded Attitude Angles Message Format"
+		Angle_Roll {
+			DisplayName = "Roll Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		Angle_Pitch {
+			DisplayName = "Pitch Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		Angle_Yaw {
+			DisplayName = "Yaw Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+	}
+
+	struct MTQ_CFG_Struct {
+		Description = "Magnetorquer Configuration Message Format"
+		MTQ1 {
+			DisplayName = "Magnetorquer 1"
+		}
+		MTQ2 {
+			DisplayName = "Magnetorquer 2"
+		}
+		MTQ3 {
+			DisplayName = "Magnetorquer 3"
+		}
+	}
+
+	struct WHEEL_CFG_Struct {
+		Description = "Wheel Configuration Message Format"
+		RW1 {
+			DisplayName = "RW1"
+		}
+		RW2 {
+			DisplayName = "RW2"
+		}
+		RW3 {
+			DisplayName = "RW3"
+		}
+		RW4 {
+			DisplayName = "RW4"
+		}
+	}
+
+	struct CSS_CFG {
+		DisplayName = "CSS Configuration Message Format"
+		Description = "Photodiode pointing directions and scale factors"
+		CSS1 {
+			DisplayName = "CSS1"
+		}
+		CSS2 {
+			DisplayName = "CSS2"
+		}
+		CSS3 {
+			DisplayName = "CSS3"
+		}
+		CSS4 {
+			DisplayName = "CSS4"
+		}
+		CSS5 {
+			DisplayName = "CSS5"
+		}
+		CSS6 {
+			DisplayName = "CSS6"
+		}
+		CSS7 {
+			DisplayName = "CSS7"
+		}
+		CSS8 {
+			DisplayName = "CSS8"
+		}
+		CSS9 {
+			DisplayName = "CSS9"
+		}
+		CSS10 {
+			DisplayName = "CSS10"
+		}
+		CSS_rel_scale {
+			Description = "CSS Relative Scaling Factor"
+			DisplayName = "CSS Relative Scale"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+		}
+		CSS_threshold {
+			DisplayName = "CSS Threshold"
+		}
+	}
+
+	struct SDLog_Struct {
+		Description = "Log Configuration Message Format"
+		LogSelection {
+			DisplayName = "Log Selection"
+		}
+		LogPeriod {
+			DisplayName = "Log Period"
+			Unit = "s"
+		}
+		LogDestination {
+			DisplayName = "Log Destination"
+		}
+	}
+
+	struct UNIXTime_Struct {
+		Description = "Current Unix Time Message Format"
+		CurrentUnixTime {
+			DisplayName = "Current Unix Time"
+			Description = "Time in s since 01/01/1970, 00:00"
+			Unit = "s"
+		}
+		Milliseconds {
+			DisplayName = "Milliseconds"
+			Description = "Current millisecond count"
+			Unit = "ms"
+		}
+	}
+
+	struct UNIXTime_SaveCfg_Struct {
+		Description = "Configuration settings for unixtime flash memory persistence"
+		SaveCfg {
+			DisplayName = "Save Configuration"
+		}
+		Period {
+			DisplayName = "Period"
+			Description = "Interval at which to save unixtime to flash memory."
+			Unit = "s"
+		}
+	}
+
+	struct SGP4_OrbParams_Struct {
+		Description = "SGP4 Orbit Parameters Message Format"
+		Inclination {
+			DisplayName = "Inclination"
+			Unit = "°"
+		}
+		Eccentricity {
+			DisplayName = "Eccentricity"
+		}
+		RAAN {
+			DisplayName = "RAAN"
+			Description = "Right-ascension of the Ascending Node"
+			Unit = "°"
+		}
+		ArgOfPerigee {
+			DisplayName = "Argument Of Perigee"
+			Unit = "°"
+		}
+		B_Star_Drag_Term {
+			DisplayName = "B-Star Drag Term"
+		}
+		Mean_Motion {
+			DisplayName = "Mean Motion"
+			Unit = "orbits/day"
+		}
+		Mean_Anomaly {
+			DisplayName = "Mean Anomaly"
+			Unit = "°"
+		}
+		Epoch {
+			DisplayName = "Epoch"
+			Unit = "year.day"
+		}
+	}
+
+	struct UART_log_cfg {
+		Description = "UART (unsolicited TLM) Log Configuration Message Format"
+		LogSelection {
+			DisplayName = "Log Selection"
+		}
+		LogPeriod {
+			DisplayName = "Log Period"
+			Unit = "s"
+		}
+	}
+
+	struct ADCS_sim_data {
+		Unix_Time {
+			DisplayName = "Unix Time"
+			Unit = "s"
+		}
+		CSS_Raw {
+			DisplayName = "CSS Raw"
+		}
+		Cam1_Raw_X {
+			DisplayName = "Cam1 Raw X"
+		}
+		Cam1_Raw_Y {
+			DisplayName = "Cam1 Raw Y"
+		}
+		Cam1_Busy {
+			DisplayName = "Cam1 Busy"
+		}
+		Cam1_Result {
+			DisplayName = "Cam1 Result"
+		}
+		Cam2_Raw_X {
+			DisplayName = "Cam2 Raw X"
+		}
+		Cam2_Raw_Y {
+			DisplayName = "Cam2 Raw Y"
+		}
+		Cam2_Busy {
+			DisplayName = "Cam2 Busy"
+		}
+		Cam2_Result {
+			DisplayName = "Cam2 Result"
+		}
+		Mag_Raw_X {
+			DisplayName = "Magnetometer Raw X"
+		}
+		Mag_Raw_Y {
+			DisplayName = "Magnetometer Raw Y"
+		}
+		Mag_Raw_Z {
+			DisplayName = "Magnetometer Raw Z"
+		}
+		Rate_Raw_X {
+			DisplayName = "Rate Raw X"
+		}
+		Rate_Raw_Y {
+			DisplayName = "Rate Raw Y"
+		}
+		Rate_Raw_Z {
+			DisplayName = "Rate Raw Z"
+		}
+		Wheel_Raw_X {
+			DisplayName = "Wheel Raw X"
+			Unit = "rpm"
+		}
+		Wheel_Raw_Y {
+			DisplayName = "Wheel Raw Y"
+			Unit = "rpm"
+		}
+		Wheel_Raw_Z {
+			DisplayName = "Wheel Raw Z"
+			Unit = "rpm"
+		}
+		Star1_Camera_X {
+			DisplayName = "Star1 Camera X"
+		}
+		Star1_Camera_Y {
+			DisplayName = "Star1 Camera Y"
+		}
+		Star1_Camera_Z {
+			DisplayName = "Star1 Camera Z"
+		}
+		Star1_Inertial_X {
+			DisplayName = "Star1 Inertial X"
+		}
+		Star1_Inertial_Y {
+			DisplayName = "Star1 Inertial Y"
+		}
+		Star1_Inertial_Z {
+			DisplayName = "Star1 Inertial Z"
+		}
+		Star2_Camera_X {
+			DisplayName = "Star2 Camera X"
+		}
+		Star2_Camera_Y {
+			DisplayName = "Star2 Camera Y"
+		}
+		Star2_Camera_Z {
+			DisplayName = "Star2 Camera Z"
+		}
+		Star2_Inertial_X {
+			DisplayName = "Star2 Inertial X"
+		}
+		Star2_Inertial_Y {
+			DisplayName = "Star2 Inertial Y"
+		}
+		Star2_Inertial_Z {
+			DisplayName = "Star2 Inertial Z"
+		}
+		Star3_Camera_X {
+			DisplayName = "Star3 Camera X"
+		}
+		Star3_Camera_Y {
+			DisplayName = "Star3 Camera Y"
+		}
+		Star3_Camera_Z {
+			DisplayName = "Star3 Camera Z"
+		}
+		Star3_Inertial_X {
+			DisplayName = "Star3 Inertial X"
+		}
+		Star3_Inertial_Y {
+			DisplayName = "Star3 Inertial Y"
+		}
+		Star3_Inertial_Z {
+			DisplayName = "Star3 Inertial Z"
+		}
+		GPS_Stat {
+			DisplayName = "GPS Solution Status"
+		}
+		GPS_Ref_Week {
+			DisplayName = "GPS Reference Week"
+		}
+		GPS_Time {
+			DisplayName = "GPS Time"
+			Unit = "ms"
+		}
+		ECEF_X {
+			DisplayName = "ECEF Position X"
+			Unit = "m"
+		}
+		ECEF_V_X {
+			DisplayName = "ECEF Velocity X"
+			Unit = "m/s"
+		}
+		ECEF_Y {
+			DisplayName = "ECEF Position Y"
+			Unit = "m"
+		}
+		ECEF_V_Y {
+			DisplayName = "ECEF Velocity Y"
+			Unit = "m/s"
+		}
+		ECEF_Z {
+			DisplayName = "ECEF Position Z"
+			Unit = "m"
+		}
+		ECEF_V_Z {
+			DisplayName = "ECEF Velocity Z"
+			Unit = "m/s"
+		}
+		X_Pos_StdDiv {
+			DisplayName = "X-Pos Standard Deviation"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"10"
+			}
+			Unit = "m"
+		}
+		Y_Pos_StdDiv {
+			DisplayName = "Y-Pos Standard Deviation"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"10"
+			}
+			Unit = "m"
+		}
+		Z_Pos_StdDiv {
+			DisplayName = "Z-Pos Standard Deviation"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"10"
+			}
+			Unit = "m"
+		}
+		X_Vel_StdDiv {
+			DisplayName = "X-Vel Standard Deviation"
+			Unit = "m/s"
+		}
+		Y_Vel_StdDiv {
+			DisplayName = "Y-Vel Standard Deviation"
+			Unit = "m/s"
+		}
+		Z_Vel_StdDiv {
+			DisplayName = "Z-Vel Standard Deviation"
+			Unit = "m/s"
+		}
+	}
+
+	struct Conv_to_JPG_Struct {
+		Description = "Convert to JPG file Command Format"
+		Source_File_Container {
+			DisplayName = "Source File Container"
+		}
+		Quality_Factor {
+			DisplayName = "Quality Factor"
+		}
+		White_Balance {
+			DisplayName = "White Balance"
+		}
+	}
+
+	struct Erase_File_Struct {
+		Description = "Erase File Command Format"
+		File_Type {
+			DisplayName = "File Type"
+		}
+		File_Counter {
+			DisplayName = "File Counter"
+		}
+		Erase_All {
+			DisplayName = "Erase All"
+		}
+	}
+
+	struct File_Dwnd_Buffer_Struct {
+		Description = "Load File Download Block Command Format"
+		File_Type {
+			DisplayName = "File Type"
+		}
+		Counter {
+			DisplayName = "Counter"
+		}
+		Offset {
+			DisplayName = "Offset"
+			Unit = "B"
+		}
+		Block_Length {
+			DisplayName = "Block Length"
+			Unit = "B"
+		}
+	}
+
+	struct File_Upload_Struct {
+		Description = "Initiate File Upload Command Format"
+		Destination {
+			DisplayName = "Destination"
+		}
+		Block_size {
+			DisplayName = "Block Size"
+			Unit = "B"
+		}
+	}
+
+	struct File_Upload_Packet_Struct {
+		Description = "File Upload Packet Command Format"
+		Packet_Number {
+			DisplayName = "Packet Number"
+		}
+		Buffer {
+			DisplayName = "Buffer"
+		}
+	}
+
+	struct Finalize_Upload_Block_Struct {
+		Description = "Finalize Upload Block Command Format"
+		Destination {
+			DisplayName = "Destination"
+		}
+		Offset {
+			DisplayName = "Offset"
+			Unit = "B"
+		}
+		Block_Length {
+			DisplayName = "Block Length"
+			Unit = "B"
+		}
+	}
+
+	struct Download_Burst_Struct {
+		Description = "Initiate Download Burst Command Format"
+		Message_Length {
+			DisplayName = "Message Length"
+			Unit = "B"
+		}
+		Ignore_Hole_Map {
+			DisplayName = "Ignore Hole Map"
+		}
+	}
+
+	struct Hole_Map_Struct {
+		Buffer {
+			DisplayName = "Buffer"
+		}
+	}
+
+	struct TLM128_Struct {
+		Description = "Identification Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		NodeType {
+			DisplayName = "Node Type"
+		}
+		InterfaceVersion {
+			DisplayName = "Interface Version"
+			Description = "Interface version. This field should have a value of 1"
+		}
+		FWVersionMajor {
+			DisplayName = "Firmware Version (Major)"
+		}
+		FWVersionMinor {
+			DisplayName = "Firmware Version (Minor)"
+		}
+		RuntimeS {
+			DisplayName = "Runtime (seconds)"
+			Description = "Number of seconds since processor start-up"
+			Unit = "s"
+		}
+		RuntimeMs {
+			DisplayName = "Runtime (milliseconds)"
+			Description =
+			"Number of milliseconds (after the integer second) since processor start-up"
+			Unit = "ms"
+		}
+	}
+
+	struct TLM129_Struct {
+		Description = "Boot And Running Program Status Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		ResetAndBoot {
+			DisplayName = "Reset And Boot"
+		}
+		BootCnt {
+			DisplayName = "Boot Counter"
+		}
+		BootProgIndx {
+			DisplayName = "Boot Program Index"
+		}
+		FWVersionMajor {
+			DisplayName = "Firmware Version (Major)"
+		}
+		FWVersionMinor {
+			DisplayName = "Firmware Version (Minor)"
+		}
+	}
+
+	struct TLM130_Struct {
+		Description = "Current selected boot index and status of last boot"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		ProgramIndex {
+			DisplayName = "Program Index"
+		}
+		BootStatus {
+			DisplayName = "Boot Status"
+		}
+	}
+
+	struct TLM131_Struct {
+		Description = "Cache enabled state Message Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Enabled_State {
+			DisplayName = "Enabled State"
+		}
+	}
+
+	struct TLM132_APP_Struct {
+		Description = "Current ADCS State Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Byte0 {
+			DisplayName = "Byte0"
+		}
+		Byte1 {
+			DisplayName = "Byte1"
+		}
+		Byte2 {
+			DisplayName = "Byte2"
+		}
+		Byte3 {
+			DisplayName = "Byte3"
+		}
+		Byte4 {
+			DisplayName = "Byte4"
+		}
+		Byte5 {
+			DisplayName = "Byte5"
+		}
+	}
+
+	struct TLM132_Boot_Struct {
+		Description = "Bootloader State Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		UpTime {
+			DisplayName = "Uptime"
+			Unit = "s"
+		}
+		Byte2 {
+			DisplayName = "Byte2"
+		}
+		Byte3 {
+			DisplayName = "Byte3"
+		}
+		Byte4 {
+			DisplayName = "Byte4"
+		}
+		Byte5 {
+			DisplayName = "Byte5"
+		}
+	}
+
+	struct TLM133_Struct {
+		Description = "JPG Conversion Progress Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Progress_Percentage {
+			DisplayName = "Progress Percentage"
+			Unit = "%"
+		}
+		JPG_Conv_Res {
+			DisplayName = "JPG Conversion Result"
+		}
+		Output_File {
+			DisplayName = "Output File"
+		}
+	}
+
+	struct TLM134_APP_Struct {
+		Description = "SRAM Scrub Parameters Message Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Scrub_Size {
+			DisplayName = "Scrubbing Size"
+		}
+	}
+
+	struct TLM135_Struct {
+		Description = "CubeACP State Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Bools {
+			DisplayName = "Bools"
+		}
+	}
+
+	struct TLM141_Struct {
+		Description = "Last Logged Event Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Event_time {
+			DisplayName = "Event Time"
+		}
+		Event_ID {
+			DisplayName = "Event ID"
+		}
+		Event_parameter {
+			DisplayName = "Event Parameter"
+		}
+	}
+
+	struct TLM142_Struct {
+		Description = "SRAM Latchup counters Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		SRAM1_latchup_num {
+			DisplayName = "SRAM1 Latchups"
+		}
+		SRAM2_latchup_num {
+			DisplayName = "SRAM2 Latchups"
+		}
+	}
+
+	struct TLM143_Struct {
+		Description = "EDAC Error Counters Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		s_SRAM_upsets {
+			DisplayName = "Single SRAM Upsets"
+			Description = "The number of single SRAM upsets (per byte) detected"
+		}
+		d_SRAM_upsets {
+			DisplayName = "Double SRAM Upsets"
+			Description = "The number of double SRAM upsets (per byte) detected"
+		}
+		m_SRAM_upsets {
+			DisplayName = "Multiple SRAM Upsets"
+			Description = "The number of multiple SRAM upsets (per byte) detected"
+		}
+	}
+
+	struct TLM144_Struct {
+		Description = "Communication Status Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		TC_num {
+			DisplayName = "Telecommand counter"
+			Description = "No. of telecommands received"
+		}
+		TLM_num {
+			DisplayName = "Telemetry request counter"
+			Description = "No. of telemetry requests received"
+		}
+		Errors {
+			DisplayName = "Errors"
+		}
+	}
+
+	struct TLM146_Struct {
+		Description = "Estimated Attitude Angles Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Roll_Ang {
+			DisplayName = "Estimated Roll Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		Pitch_Ang {
+			DisplayName = "Estimated Pitch Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		Yaw_Ang {
+			DisplayName = "Estimated Yaw Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+	}
+
+	struct TLM147_Struct {
+		Description = "Estimated Angular Rates Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		EstX_AngRate {
+			DisplayName = "Estimated X Angle Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°/s"
+		}
+		EstY_AngRate {
+			DisplayName = "Estimated Y Angle Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°/s"
+		}
+		EstZ_AngRate {
+			DisplayName = "Estimated Z Angle Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°/s"
+		}
+	}
+
+	struct TLM148_Struct {
+		Description = "Satellite Position (ECI) Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		X {
+			DisplayName = "X Position"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.25"
+			}
+			Unit = "km"
+		}
+		Y {
+			DisplayName = "Y Position"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.25"
+			}
+			Unit = "km"
+		}
+		Z {
+			DisplayName = "Z Position"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.25"
+			}
+			Unit = "km"
+		}
+	}
+
+	struct TLM149_Struct {
+		Description = "Satellite Velocity (ECI) Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		V_x {
+			DisplayName = "X Velocity"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.25"
+			}
+			Unit = "m/s"
+		}
+		V_y {
+			DisplayName = "Y Velocity"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.25"
+			}
+			Unit = "m/s"
+		}
+		V_z {
+			DisplayName = "Z Velocity"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.25"
+			}
+			Unit = "m/s"
+		}
+	}
+
+	struct TLM150_Struct {
+		Description = "Satellite Position (LLH) Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Latitude {
+			DisplayName = "Latitude"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		Longitude {
+			DisplayName = "Longitude"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		Altitude {
+			DisplayName = "Altitude"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "km"
+		}
+	}
+
+	struct TLM151_Struct {
+		Description = "Magnetic Field Vector Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		MagField_X {
+			DisplayName = "Magnetic Field X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "µT"
+		}
+		MagField_Y {
+			DisplayName = "Magnetic Field Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "µT"
+		}
+		MagField_Z {
+			DisplayName = "Magnetic Field Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "µT"
+		}
+	}
+
+	struct TLM152_Struct {
+		Description = "Coarse Sun Vector Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Coarse_Sun_X {
+			DisplayName = "Coarse Sun X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Coarse_Sun_Y {
+			DisplayName = "Coarse Sun Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Coarse_Sun_Z {
+			DisplayName = "Coarse Sun Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM153_Struct {
+		Description = "Fine Sun Vector Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Sun_X {
+			DisplayName = "Sun X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Sun_Y {
+			DisplayName = "Sun Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Sun_Z {
+			DisplayName = "Sun Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM154_Struct {
+		Description = "Nadir Vector Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Nadir_X {
+			DisplayName = "Nadir X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Nadir_Y {
+			DisplayName = "Nadir Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Nadir_Z {
+			DisplayName = "Nadir Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM155_Struct {
+		Description = "Rate Sensor Rates Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		X_AngRate {
+			DisplayName = "X Angular Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°/s"
+		}
+		Y_AngRate {
+			DisplayName = "Y Angular Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°/s"
+		}
+		Z_AngRate {
+			DisplayName = "Z Angular Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°/s"
+		}
+	}
+
+	struct TLM156_Struct {
+		Description = "Wheel Speed Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Wheel_Speed_X {
+			DisplayName = "Wheel Speed X"
+			Unit = "rpm"
+		}
+		Wheel_Speed_Y {
+			DisplayName = "Wheel Speed Y"
+			Unit = "rpm"
+		}
+		Wheel_Speed_Z {
+			DisplayName = "Wheel Speed Z"
+			Unit = "rpm"
+		}
+	}
+
+	struct TLM157_Struct {
+		Description = "Magnetorquer Command Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		MTQ_Cmd_X {
+			DisplayName = "X Magnetorquer Command"
+			Unit = "10ms units"
+		}
+		MTQ_Cmd_Y {
+			DisplayName = "Y Magnetorquer Command"
+			Unit = "10ms units"
+		}
+		MTQ_Cmd_Z {
+			DisplayName = "Z Magnetorquer Command"
+			Unit = "10ms units"
+		}
+	}
+
+	struct TLM158_Struct {
+		Description = "Wheel Speed Commands Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		CmdWheelSpeed_X {
+			DisplayName = "Commanded X Wheel Speed"
+			Unit = "rpm"
+		}
+		CmdWheelSpeed_Y {
+			DisplayName = "Commanded Y Wheel Speed"
+			Unit = "rpm"
+		}
+		CmdWheelSpeed_Z {
+			DisplayName = "Commanded Z Wheel Speed"
+			Unit = "rpm"
+		}
+	}
+
+	struct TLM159_Struct {
+		Description = "IGRF Modeled Magnetic Field Vector Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Field_X {
+			DisplayName = "IGRF Modeled Magnetic Field X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "µT"
+		}
+		Field_Y {
+			DisplayName = "IGRF Modeled Magnetic Field Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "µT"
+		}
+		Field_Z {
+			DisplayName = "IGRF Modeled Magnetic Field Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "µT"
+		}
+	}
+
+	struct TLM160_Struct {
+		Description = "Modeled Sun Vector Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Sun_X {
+			DisplayName = "Modeled Sun Vector X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Sun_Y {
+			DisplayName = "Modeled Sun Vector Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Sun_Z {
+			DisplayName = "Modeled Sun Vector Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM161_Struct {
+		Description = "Estimated Gyro Bias Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		EstGyroBias_X {
+			DisplayName = "Estimated X-Gyro Bias"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+		EstGyroBias_Y {
+			DisplayName = "Estimated Y-Gyro Bias"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+		EstGyroBias_Z {
+			DisplayName = "Estimated Z-Gyro Bias"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+	}
+
+	struct TLM162_Struct {
+		Description = "Estimation Innovation Vector Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		InnovVect_X {
+			DisplayName = "Innovation Vector X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		InnovVect_Y {
+			DisplayName = "Innovation Vector Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		InnovVect_Z {
+			DisplayName = "Innovation Vector Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM163_Struct {
+		Description = "Quaternion Error Vector Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Err_Q1 {
+			DisplayName = "Quaternion Error - Q1"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Err_Q2 {
+			DisplayName = "Quaternion Error - Q2"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Err_Q3 {
+			DisplayName = "Quaternion Error - Q3"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM164_Struct {
+		Description = "Quaternion Covariance Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		RMS_Q1 {
+			DisplayName = "Quaternion Covariance - RMS Q1"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		RMS_Q2 {
+			DisplayName = "Quaternion Covariance - RMS Q2"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		RMS_Q3 {
+			DisplayName = "Quaternion Covariance - RMS Q3"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM165_Struct {
+		Description = "Angular Rate Covariance Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		RMS_X {
+			DisplayName = "X Angular Rate Covariance"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		RMS_Y {
+			DisplayName = "Y Angular Rate Covariance"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		RMS_Z {
+			DisplayName = "Z Angular Rate Covariance"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM166_Struct {
+		Description = "Raw Cam2 Sensor Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Centroid_X_CAM2 {
+			DisplayName = "CAM2 Centroid X"
+		}
+		Centroid_Y_CAM2 {
+			DisplayName = "CAM2 Centroid Y"
+		}
+		CAM2_Capture {
+			DisplayName = "CAM2 Capture"
+		}
+		CAM2_Detection {
+			DisplayName = "CAM2 Detection Result"
+		}
+	}
+
+	struct TLM167_Struct {
+		Description = "Raw Cam1 Sensor Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Centroid_X_CAM1 {
+			DisplayName = "CAM1 Centroid X"
+		}
+		Centroid_Y_CAM1 {
+			DisplayName = "CAM1 Centroid Y"
+		}
+		CAM1_Capture {
+			DisplayName = "CAM1 Capture"
+		}
+		CAM1_Detection {
+			DisplayName = "CAM1 Detection"
+		}
+	}
+
+	struct TLM168_Struct {
+		Description = "Raw CSS 1 to 6 Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		CSS1 {
+			DisplayName = "CSS1"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS2 {
+			DisplayName = "CSS2"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS3 {
+			DisplayName = "CSS3"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS4 {
+			DisplayName = "CSS4"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS5 {
+			DisplayName = "CSS5"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS6 {
+			DisplayName = "CSS6"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+	}
+
+	struct TLM169_Struct {
+		Description = "Raw CSS 7 to 10 Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		CSS7 {
+			DisplayName = "CSS7"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS8 {
+			DisplayName = "CSS8"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS9 {
+			DisplayName = "CSS9"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS10 {
+			DisplayName = "CSS10"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+	}
+
+	struct TLM170_Struct {
+		Description = "Raw Magnetometer Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		MagX {
+			DisplayName = "Mag X"
+		}
+		MagY {
+			DisplayName = "Mag Y"
+		}
+		MagZ {
+			DisplayName = "Mag Z"
+		}
+	}
+
+	struct TLM171_Struct {
+		Description = "CubeSense1 Current Measurements Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Data_3V3_Current {
+			DisplayName = "Data 3V3 Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "mA"
+		}
+		Cam_SRAM_Current {
+			DisplayName = "Cam SRAM Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "mA"
+		}
+	}
+
+	struct TLM172_Struct {
+		Description = "CubeControl Current Measurements Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		I_3V3 {
+			DisplayName = "CubeControl 3V3 Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.48828125"
+			}
+			Unit = "mA"
+		}
+		I_5V {
+			DisplayName = "CubeControl 5V Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.48828125"
+			}
+			Unit = "mA"
+		}
+		I_Vbat {
+			DisplayName = "CubeControl Vbat Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.48828125"
+			}
+			Unit = "mA"
+		}
+	}
+
+	struct TLM173_Struct {
+		Description = "Wheel Currents Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Wheel_1_Current {
+			DisplayName = "Wheel 1 Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "mA"
+		}
+		Wheel_2_Current {
+			DisplayName = "Wheel 2 Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "mA"
+		}
+		Wheel_3_Current {
+			DisplayName = "Wheel 3 Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "mA"
+		}
+	}
+
+	struct TLM174_Struct {
+		Description = "ADCS Temperatures Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		ADCS_MCU_Temp {
+			DisplayName = "MCU Temperature"
+			Unit = "C"
+		}
+		MTM_Temp {
+			DisplayName = "Magnetometer Temp"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "C"
+		}
+		RMTM_Temp {
+			DisplayName = "Redundant Magnetometer Temp"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "C"
+		}
+	}
+
+	struct TLM175_Struct {
+		Description = "Rate sensor temperatures Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		X_Sensor_Temp {
+			DisplayName = "X-Rate Sensor Temp"
+			Unit = "C"
+		}
+		Y_Sensor_Temp {
+			DisplayName = "Y-Rate Sensor Temp"
+			Unit = "C"
+		}
+		Z_Sensor_Temp {
+			DisplayName = "Z-Rate Sensor Temp"
+			Unit = "C"
+		}
+	}
+
+	struct TLM176_Struct {
+		Description = "Raw GPS Status Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		GPS_Stat {
+			DisplayName = "GPS Solution Status"
+		}
+		N_Sat_Tracked {
+			DisplayName = "Number of Tracked GPS Satellites"
+		}
+		N_Sat_Used {
+			DisplayName = "Number of GPS satellites used in solution"
+		}
+		XYZ_Lof_Count {
+			DisplayName = "Counter for XYZ Lof from GPS"
+		}
+		RANGE_Log_Count {
+			DisplayName = "Counter for RANGE log from GPS"
+		}
+		Log_Setup_Response {
+			DisplayName = "Response Message for GPS log setup"
+		}
+	}
+
+	struct TLM177_Struct {
+		Description = "Raw GPS Time Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		GPS_Ref_Week {
+			DisplayName = "GPS Reference Week"
+		}
+		GPS_Time {
+			DisplayName = "GPS Time"
+			Unit = "ms"
+		}
+	}
+
+	struct TLM178_Struct {
+		Description = "Raw GPS X Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		ECEF_X {
+			DisplayName = "ECEF Position X"
+			Unit = "m"
+		}
+		ECEF_V_X {
+			DisplayName = "ECEF Velocity X"
+			Unit = "m/s"
+		}
+	}
+
+	struct TLM179_Struct {
+		Description = "Raw GPS Y Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		ECEF_Y {
+			DisplayName = "ECEF Position Y"
+			Unit = "m"
+		}
+		ECEF_V_Y {
+			DisplayName = "ECEF Velocity Y"
+			Unit = "m/s"
+		}
+	}
+
+	struct TLM180_Struct {
+		Description = "Raw GPS Z Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		ECEF_Z {
+			DisplayName = "ECEF Position Z"
+			Unit = "m"
+		}
+		ECEF_V_Z {
+			DisplayName = "ECEF Velocity Z"
+			Unit = "m/s"
+		}
+	}
+
+	struct TLM181_Struct {
+		Description = "Star 1 Body Vector Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Star1BX {
+			DisplayName = "Star1BX"
+			Description = "Star1 body X-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star1BY {
+			DisplayName = "Star1BY"
+			Description = "Star1 body Y-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star1BZ {
+			DisplayName = "Star1BZ"
+			Description = "Star1 body Z-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM182_Struct {
+		Description = "Star 2 Body Vector Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Star2BX {
+			DisplayName = "Star2BX"
+			Description = "Star2 body X-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star2BY {
+			DisplayName = "Star2BY"
+			Description = "Star2 body Y-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star2BZ {
+			DisplayName = "Star2BZ"
+			Description = "Star2 body Z-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM183_Struct {
+		Description = "Star 3 Body Vector Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Star3BX {
+			DisplayName = "Star3BX"
+			Description = "Star3 body X-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star3BY {
+			DisplayName = "Star3BY"
+			Description = "Star3 body Y-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star3BZ {
+			DisplayName = "Star3BZ"
+			Description = "Star3 body Z-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM184_Struct {
+		Description = "Star 1 Orbit Vector Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Star1OX {
+			DisplayName = "Star1OX"
+			Description = "Star1 orbit X-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star1OY {
+			DisplayName = "Star1OY"
+			Description = "Star1 orbit Y-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star1OZ {
+			DisplayName = "Star1OZ"
+			Description = "Star1 orbit Z-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM185_Struct {
+		Description = "Star 2 Orbit Vector Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Star2OX {
+			DisplayName = "Star2OX"
+			Description = "Star2 orbit X-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star2OY {
+			DisplayName = "Star2OY"
+			Description = "Star2 orbit Y-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star2OZ {
+			DisplayName = "Star2OZ"
+			Description = "Star1 orbit Z-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM186_Struct {
+		Description = "Star 3 Orbit Vector Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Star3OX {
+			DisplayName = "Star3OX"
+			Description = "Star3 orbit X-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star3OY {
+			DisplayName = "Star3OY"
+			Description = "Star3 orbit Y-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star3OZ {
+			DisplayName = "Star3OZ"
+			Description = "Star3 orbit Z-vector"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM187_Struct {
+		Description = "Star Magnitude Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Mag_Star1 {
+			DisplayName = "Magnitude Star1"
+		}
+		Mag_Star2 {
+			DisplayName = "Magnitude Star2"
+		}
+		Mag_Star3 {
+			DisplayName = "Magnitude Star3"
+		}
+	}
+
+	struct TLM188_Struct {
+		Description = "Star Performance1 Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Num_Star_Detected {
+			DisplayName = "Number of Stars Detected"
+			Unit = "stars"
+		}
+		Star_Image_Noise {
+			DisplayName = "Star Image Noise"
+			Unit = "noise"
+		}
+		Num_Inv_Star_Detected {
+			DisplayName = "Number of Invalid Stars Identified"
+			Unit = "invalid stars"
+		}
+		Num_Star_Identified {
+			DisplayName = "Number of Stars Identified"
+			Unit = "stars"
+		}
+		Identification_mode {
+			DisplayName = "Identification Mode"
+		}
+		Center_line_avg {
+			DisplayName = "Center Line Average"
+			Unit = "8-bit pixel value"
+		}
+	}
+
+	struct TLM189_Struct {
+		Description = "Star Timing Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Capture_time {
+			DisplayName = "Capture"
+			Unit = "ms"
+		}
+		Detection_Time {
+			DisplayName = "Detection"
+			Unit = "ms"
+		}
+		Identification_time {
+			DisplayName = "Identification"
+			Unit = "ms"
+		}
+	}
+
+	struct TLM190_Struct {
+		Description = "ADCS State Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Byte0 {
+			DisplayName = "Byte0"
+		}
+		Byte1 {
+			DisplayName = "Byte1"
+		}
+		Byte2 {
+			DisplayName = "Byte2"
+		}
+		Byte3 {
+			DisplayName = "Byte3"
+		}
+		Byte4 {
+			DisplayName = "Byte4"
+		}
+		Byte5 {
+			DisplayName = "Byte5"
+		}
+		Byte6 {
+			DisplayName = "Byte6"
+		}
+		Byte7 {
+			DisplayName = "Byte7"
+		}
+		Byte8 {
+			DisplayName = "Byte8"
+		}
+		Empty_Byte0 {
+			DisplayName = "Empty Byte0"
+		}
+		Empty_Byte1 {
+			DisplayName = "Empty Byte1"
+		}
+		Empty_Byte2 {
+			DisplayName = "Empty Byte2"
+		}
+		est_Roll_Angle {
+			DisplayName = "Estimated Roll Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		est_Pitch_Angle {
+			DisplayName = "Estimated Pitch Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		est_Yaw_Angle {
+			DisplayName = "Estimated Yaw Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		est_q1 {
+			DisplayName = "Estimated Q1"
+		}
+		est_q2 {
+			DisplayName = "Estimated Q2"
+		}
+		est_q3 {
+			DisplayName = "Estimated Q3"
+		}
+		est_X_AngRate {
+			DisplayName = "Estimated X Angular Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°/s"
+		}
+		est_Y_AngRate {
+			DisplayName = "Estimated Y Angular Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°/s"
+		}
+		est_Z_AngRate {
+			DisplayName = "Estimated Z Angular Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°/s"
+		}
+		X_pos {
+			DisplayName = "X Position"
+			Description = "ECI referenced X coordinate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.25"
+			}
+			Unit = "km"
+		}
+		Y_pos {
+			DisplayName = "Y Position"
+			Description = "ECI referenced Y coordinate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.25"
+			}
+			Unit = "km"
+		}
+		Z_pos {
+			DisplayName = "Z Position"
+			Description = "ECI referenced Z coordinate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.25"
+			}
+			Unit = "km"
+		}
+		V_x {
+			DisplayName = "X Velocity"
+			Description = "ECI referenced X velocity"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.25"
+			}
+			Unit = "m/s"
+		}
+		V_y {
+			DisplayName = "Y Velocity"
+			Description = "ECI referenced Y velocity"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.25"
+			}
+			Unit = "m/s"
+		}
+		V_z {
+			DisplayName = "Z Velocity"
+			Description = "ECI referenced Z velocity"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.25"
+			}
+			Unit = "m/s"
+		}
+		Latitude {
+			DisplayName = "Latitude"
+			Description = "WGS-84 Latitude angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		Longitude {
+			DisplayName = "Longitude"
+			Description = "WGS-84 Longitude angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		Altitude {
+			DisplayName = "Altitude"
+			Description = "WGS-84 altitude"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "km"
+		}
+		ECEF_X {
+			DisplayName = "ECEF Position X"
+			Unit = "m"
+		}
+		ECEF_Y {
+			DisplayName = "ECEF Position Y"
+			Unit = "m"
+		}
+		ECEF_Z {
+			DisplayName = "ECEF Position Z"
+			Unit = "m"
+		}
+	}
+
+	struct TLM191_Struct {
+		Description = "ADCS Measurements Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		MagField_X {
+			DisplayName = "Magnetic Field X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "µT"
+		}
+		MagField_Y {
+			DisplayName = "Magnetic Field Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "µT"
+		}
+		MagField_Z {
+			DisplayName = "Magnetic Field Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "µT"
+		}
+		CoarseSun_X {
+			DisplayName = "Coarse Sun X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		CoarseSun_Y {
+			DisplayName = "Coarse Sun Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		CoarseSun_Z {
+			DisplayName = "Coarse Sun Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Sun_X {
+			DisplayName = "Sun X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Sun_Y {
+			DisplayName = "Sun Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Sun_Z {
+			DisplayName = "Sun Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Nadir_X {
+			DisplayName = "Nadir X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+			Unit = "°"
+		}
+		Nadir_Y {
+			DisplayName = "Nadir Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+			Unit = "°"
+		}
+		Nadir_Z {
+			DisplayName = "Nadir Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+			Unit = "°"
+		}
+		AngRate_X {
+			DisplayName = "Angular Rate X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°/s"
+		}
+		AngRate_Y {
+			DisplayName = "Angular Rate Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°/s"
+		}
+		AngRate_Z {
+			DisplayName = "Angular Rate Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°/s"
+		}
+		WheelSpeed_X {
+			DisplayName = "Wheel Speed X"
+			Unit = "rpm"
+		}
+		WheelSpeed_Y {
+			DisplayName = "Wheel Speed Y"
+			Unit = "rpm"
+		}
+		WheelSpeed_Z {
+			DisplayName = "Wheel Speed Z"
+			Unit = "rpm"
+		}
+		Star1B_X {
+			DisplayName = "Star1B X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star1B_Y {
+			DisplayName = "Star1B Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star1B_Z {
+			DisplayName = "Star1B Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star1O_X {
+			DisplayName = "Star1O X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star1O_Y {
+			DisplayName = "Star1O Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star1O_Z {
+			DisplayName = "Star1O Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star2B_X {
+			DisplayName = "Star2B X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star2B_Y {
+			DisplayName = "Star2B Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star2B_Z {
+			DisplayName = "Star2B Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star2O_X {
+			DisplayName = "Star2O X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star2O_Y {
+			DisplayName = "Star2O Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star2O_Z {
+			DisplayName = "Star2O Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star3B_X {
+			DisplayName = "Star3B X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star3B_Y {
+			DisplayName = "Star3B Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star3B_Z {
+			DisplayName = "Star3B Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star3O_X {
+			DisplayName = "Star3O X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star3O_Y {
+			DisplayName = "Star3O Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Star3O_Z {
+			DisplayName = "Star3O Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM192_Struct {
+		Description = "Actuator Commands Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		X_MTQ_Ontime {
+			DisplayName = "X Magnetorquer Commanded On-time"
+			Unit = "10ms units"
+		}
+		Y_MTQ_Ontime {
+			DisplayName = "Y Magnetorquer Commanded On-time"
+			Unit = "10ms units"
+		}
+		Z_MTQ_Ontime {
+			DisplayName = "Z Magnetorquer Commanded On-time"
+			Unit = "10ms units"
+		}
+		X_Wheel_Speed {
+			DisplayName = "Commanded X Wheel Speed"
+			Unit = "rpm"
+		}
+		Y_Wheel_Speed {
+			DisplayName = "Commanded Y Wheel Speed"
+			Unit = "rpm"
+		}
+		Z_Wheel_Speed {
+			DisplayName = "Commanded Z Wheel Speed"
+			Unit = "rpm"
+		}
+	}
+
+	struct TLM193_Struct {
+		Description = "Estimation Data Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		IGRF_MagField_X {
+			DisplayName = "IGRF Modeled Magnetic Field X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "µT"
+		}
+		IGRF_MagField_Y {
+			DisplayName = "IGRF Modeled Magnetic Field Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "µT"
+		}
+		IGRF_MagField_Z {
+			DisplayName = "IGRF Modeled Magnetic Field Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "µT"
+		}
+		Modelled_Sun_V_X {
+			DisplayName = "Modeled Sun Vector X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Modelled_Sun_V_Y {
+			DisplayName = "Modeled Sun Vector Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Modelled_Sun_V_Z {
+			DisplayName = "Modeled Sun Vector Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		EstGyroBias_X {
+			DisplayName = "Estimated X-Gyro Bias"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+		EstGyroBias_Y {
+			DisplayName = "Estimated Y-Gyro Bias"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+		EstGyroBias_Z {
+			DisplayName = "Estimated Z-Gyro Bias"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+		Innovation_Vec_X {
+			DisplayName = "Innovation Vector X"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Innovation_Vec_Y {
+			DisplayName = "Innovation Vector Y"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Innovation_Vec_Z {
+			DisplayName = "Innovation Vector Z"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Err_Q1 {
+			DisplayName = "Quaternion Error - Q1"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Err_Q2 {
+			DisplayName = "Quaternion Error - Q2"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Err_Q3 {
+			DisplayName = "Quaternion Error - Q3"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		RMS_Q1 {
+			DisplayName = "Quaternion Covariance - Q1 RMS"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		RMS_Q2 {
+			DisplayName = "Quaternion Covariance - Q2 RMS"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		RMS_Q3 {
+			DisplayName = "Quaternion Covariance - Q3 RMS"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		X_AngRate_Cov {
+			DisplayName = "X Angular Rate Covariance"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Y_AngRate_Cov {
+			DisplayName = "Y Angular Rate Covariance"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Z_AngRate_Cov {
+			DisplayName = "Z Angular Rate Covariance"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM194_Struct {
+		Description = "Raw Sensor Measurements Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Centroid_X_CAM2 {
+			DisplayName = "CAM2 Centroid X"
+			Description = "Cam2 azimuth angle"
+		}
+		Centroid_Y_CAM2 {
+			DisplayName = "CAM2 Centroid Y"
+			Description = "Cam2 elevation angle"
+		}
+		CAM2_Capture {
+			DisplayName = "CAM2 Capture Status"
+		}
+		CAM2_Detection {
+			DisplayName = "CAM2 Detection Result"
+		}
+		Centroid_X_CAM1 {
+			DisplayName = "CAM1 Centroid X"
+			Description = "Cam1 azimuth angle"
+		}
+		Centroid_Y_CAM1 {
+			DisplayName = "CAM1 Centroid Y"
+			Description = "Cam1 elevation angle"
+		}
+		CAM1_Capture {
+			DisplayName = "CAM1 Capture Status"
+		}
+		CAM1_Detection {
+			DisplayName = "CAM1 Detection Result"
+		}
+		CSS1 {
+			DisplayName = "CSS1"
+			Description = "sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS2 {
+			DisplayName = "CSS2"
+			Description = "sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS3 {
+			DisplayName = "CSS3"
+			Description = "sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS4 {
+			DisplayName = "CSS4"
+			Description = "sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS5 {
+			DisplayName = "CSS5"
+			Description = "sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS6 {
+			DisplayName = "CSS6"
+			Description = "sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS7 {
+			DisplayName = "CSS7"
+			Description = "sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS8 {
+			DisplayName = "CSS8"
+			Description = "sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS9 {
+			DisplayName = "CSS9"
+			Description = "sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CSS10 {
+			DisplayName = "CSS10"
+			Description = "sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		MagX {
+			DisplayName = "Mag X"
+			Description = "sampled A/D value"
+		}
+		MagY {
+			DisplayName = "Mag Y"
+			Description = "sampled A/D value"
+		}
+		MagZ {
+			DisplayName = "Mag Z"
+			Description = "sampled A/D value"
+		}
+		RateX {
+			DisplayName = "Rate X"
+			Description = "sampled A/D value"
+		}
+		RateY {
+			DisplayName = "Rate Y"
+			Description = "sampled A/D value"
+		}
+		RateZ {
+			DisplayName = "Rate Z"
+			Description = "sampled A/D value"
+		}
+	}
+
+	struct TLM195_Struct {
+		Description = "Power and Temperature Measurements Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Cubesense1_3V3_Current {
+			DisplayName = "CubeSense1 3V3 Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "mA"
+		}
+		Cubesense1_SRAM_Current {
+			DisplayName = "CubeSense1 SRAM Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "mA"
+		}
+		Cubesense2_3V3_Current {
+			DisplayName = "CubeSense2 3V3 Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "mA"
+		}
+		Cubesense2_SRAM_Current {
+			DisplayName = "CubeSense2 SRAM Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "mA"
+		}
+		CubeControl_3V3_Current {
+			DisplayName = "CubeControl 3V3 Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.48828125"
+			}
+			Unit = "mA"
+		}
+		CubeControl_5V_Current {
+			DisplayName = "CubeControl 5V Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.48828125"
+			}
+			Unit = "mA"
+		}
+		CubeControl_Vbat_Current {
+			DisplayName = "CubeControl Vbat Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.48828125"
+			}
+			Unit = "mA"
+		}
+		Wheel_1_Current {
+			DisplayName = "Wheel 1 Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "mA"
+		}
+		Wheel_2_Current {
+			DisplayName = "Wheel 2 Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "mA"
+		}
+		Wheel_3_Current {
+			DisplayName = "Wheel 3 Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "mA"
+		}
+		CubeStar_Current {
+			DisplayName = "CubeStar Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "mA"
+		}
+		MTQ_Current {
+			DisplayName = "Magnetorquer Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "mA"
+		}
+		CubeStar_MCU_Temp {
+			DisplayName = "CubeStar MCU Temperature"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "C"
+		}
+		ADCS_MCU_Temp {
+			DisplayName = "ADCS MCU Temperature"
+			Unit = "C"
+		}
+		MTM_Temp {
+			DisplayName = "Magnetometer Temperature"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "C"
+		}
+		RMTM_Temp {
+			DisplayName = "Redundant Magnetometer Temperature"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "C"
+		}
+		X_Rate_Sensor_Temp {
+			DisplayName = "X Rate Sensor Temperature"
+			Unit = "C"
+		}
+		Y_Rate_Sensor_Temp {
+			DisplayName = "Y Rate Sensor Temperature"
+			Unit = "C"
+		}
+		Z_Rate_Sensor_Temp {
+			DisplayName = "Z Rate Sensor Temperature"
+			Unit = "C"
+		}
+	}
+
+	struct TLM196_Struct {
+		Description = "ADCS Execution Times Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		ADCS_Update_Time {
+			DisplayName = "Time to Perform ADCS Update"
+			Unit = "ms"
+		}
+		Senson_Actuator_Comm_Time {
+			DisplayName = "Time to Perform Sensor/Actuator Communications"
+			Unit = "ms"
+		}
+		SGP4_Execution_Time {
+			DisplayName = "Time to Execute SGP4 Propagator"
+			Unit = "ms"
+		}
+		IGRF_Execution_Time {
+			DisplayName = "Time to Execute IGRF Model"
+			Unit = "ms"
+		}
+	}
+
+	struct ADCS_Pwr_Ctrl_Struct {
+		Byte0 {
+			DisplayName = "Byte0"
+		}
+		Byte1 {
+			DisplayName = "Byte1"
+		}
+		Byte2 {
+			DisplayName = "Byte2"
+		}
+	}
+
+	struct TLM198_Struct {
+		Description = "ADCS Misc Current Measurements Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		CubeStar_Current {
+			DisplayName = "CubeStar Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "mA"
+		}
+		MTQ_Current {
+			DisplayName = "Magnetorquer Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "mA"
+		}
+		CubeStar_MCU_Temp {
+			DisplayName = "CubeStar MCU Temperature"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "C"
+		}
+	}
+
+	struct TLM201_Struct {
+		Description = "Fine Estimated Angular Rates Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		EstX_AngRate {
+			DisplayName = "Estimated X Angular Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+		EstY_AngRate {
+			DisplayName = "Estimated Y Angular Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+		EstZ_AngRate {
+			DisplayName = "Estimated Z Angular Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+	}
+
+	struct MTM_Config {
+		Description = "Magnetometer Configuration Message Format"
+		MTM_MTransf_AlphaAngle {
+			DisplayName = "Magnetometer Mounting Transform Alpha Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		MTM_MTransf_BetaAngle {
+			DisplayName = "Magnetometer Mounting Transform Beta Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		MTM_MTransf_GammaAngle {
+			DisplayName = "Magnetometer Mounting Transform Gamma Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		MTM_Ch1_Offset {
+			DisplayName = "Magnetometer Channel 1 Offset"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_Ch2_Offset {
+			DisplayName = "Magnetometer Channel 2 Offset"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_Ch3_Offset {
+			DisplayName = "Magnetometer Channel 3 Offset"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S11 {
+			DisplayName = "Magnetometer Sensitivity Matrix S11"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S22 {
+			DisplayName = "Magnetometer Sensitivity Matrix S22"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S33 {
+			DisplayName = "Magnetometer Sensitivity Matrix S33"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S12 {
+			DisplayName = "Magnetometer Sensitivity Matrix S12"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S13 {
+			DisplayName = "Magnetometer Sensitivity Matrix S13"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S21 {
+			DisplayName = "Magnetometer Sensitivity Matrix S21"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S23 {
+			DisplayName = "Magnetometer Sensitivity Matrix S23"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S31 {
+			DisplayName = "Magnetometer Sensitivity Matrix S31"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S32 {
+			DisplayName = "Magnetometer Sensitivity Matrix S32"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+	}
+
+	struct RMTM_Config {
+		Description = "Redundant Magnetometer Configuration Message Format"
+		RMTM_MTransf_AlphaAngle {
+			DisplayName = "Redundant Magnetometer Mounting Transform Alpha Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		RMTM_MTransf_BetaAngle {
+			DisplayName = "Redundant Magnetometer Mounting Transform Beta Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		RMTM_MTransf_GammaAngle {
+			DisplayName = "Redundant Magnetometer Mounting Transform Gamma Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		RMTM_Ch1_Offset {
+			DisplayName = "Redundant Magnetometer Channel 1 Offset"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		RMTM_Ch2_Offset {
+			DisplayName = "Redundant Magnetometer Channel 2 Offset"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		RMTM_Ch3_Offset {
+			DisplayName = "Redundant Magnetometer Channel 3 Offset"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		RMTM_SensMatrix_S11 {
+			DisplayName = "Redundant Magnetometer Sensitivity Matrix S11"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		RMTM_SensMatrix_S22 {
+			DisplayName = "Redundant Magnetometer Sensitivity Matrix S22"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		RMTM_SensMatrix_S33 {
+			DisplayName = "Redundant Magnetometer Sensitivity Matrix S33"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		RMTM_SensMatrix_S12 {
+			DisplayName = "Redundant Magnetometer Sensitivity Matrix S12"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		RMTM_SensMatrix_S13 {
+			DisplayName = "Redundant Magnetometer Sensitivity Matrix S13"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		RMTM_SensMatrix_S21 {
+			DisplayName = "Redundant Magnetometer Sensitivity Matrix S21"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		RMTM_SensMatrix_S23 {
+			DisplayName = "Redundant Magnetometer Sensitivity Matrix S23"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		RMTM_SensMatrix_S31 {
+			DisplayName = "Redundant Magnetometer Sensitivity Matrix S31"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		RMTM_SensMatrix_S32 {
+			DisplayName = "Redundant Magnetometer Sensitivity Matrix S32"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+	}
+
+	struct TLM206_Struct {
+		Description = "ADCS Configuration Message Format"
+		MTQ1_Axis {
+			DisplayName = "Magnetorquer 1 Configuration"
+		}
+		MTQ2_Axis {
+			DisplayName = "Magnetorquer 2 Configuration"
+		}
+		MTQ3_Axis {
+			DisplayName = "Magnetorquer 3 Configuration"
+		}
+		RW1_Axis {
+			DisplayName = "RW1 Configuration"
+		}
+		RW2_Axis {
+			DisplayName = "RW2 Configuration"
+		}
+		RW3_Axis {
+			DisplayName = "RW3 Configuration"
+		}
+		RW4_Axis {
+			DisplayName = "RW4 Configuration"
+		}
+		Gyro1_Axis {
+			DisplayName = "Gyro1 Configuration"
+		}
+		Gyro2_Axis {
+			DisplayName = "Gyro2 Configuration"
+		}
+		Gyro3_Axis {
+			DisplayName = "Gyro3 Configuration"
+		}
+		Rate_Sensor_Offset_X {
+			DisplayName = "X-Rate Sensor Offset"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+		Rate_Sensor_Offset_Y {
+			DisplayName = "Y-Rate Sensor Offset"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+		Rate_Sensor_Offset_Z {
+			DisplayName = "Z-Rate Sensor Offset"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+		Rate_sensor_Mult {
+			DisplayName = "Rate Sensor Multiplier"
+			Description = "Multiplier of rate sensor measurement"
+		}
+		CSS_Axis {
+			DisplayName = "CSS Configuration"
+		}
+		CSS_rel_scale {
+			DisplayName = "CSS Relative Scale"
+		}
+		CSS_threshold {
+			DisplayName = "CSS Threshold"
+		}
+		Cubesense_data {
+			DisplayName = "CubeSense Data"
+		}
+		Config_data_MTM {
+			DisplayName = "Configuration Data Magnetometer"
+		}
+		Config_data_RMTM {
+			DisplayName = "Configuration Data Redundant Magnetometer"
+		}
+		Cubestar_data {
+			DisplayName = "CubeStar Data"
+		}
+		Detumbling_Sping_Gain {
+			DisplayName = "Detumbling Spin Gain"
+			Description = "Detumbling Spin Gain (Ks)"
+		}
+		Detumbling_Damping_Gain {
+			DisplayName = "Detumbling Damping Gain"
+			Description = "Detumbling Damping Gain (Kd)"
+		}
+		Reference_Spin_Rate {
+			DisplayName = "Reference Spin Rate"
+			Description = "Reference spin rate (wy-ref). Must always be smaller than 0."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+		Fast_Detumb_Bdot_Gain {
+			DisplayName = "Fast Detumbling Bdot Gain"
+			Description = "Fast Detumbling Bdot Gain (Kdf)"
+		}
+		Y_Momentum_Ctrl_Gain {
+			DisplayName = "Y Momentum Control Gain"
+			Description = "Y Momentum Control Gain (Kh)"
+		}
+		Y_Momentum_Nutation_Damping_Gain {
+			DisplayName = "Y Momentum Nutation Damping Gain"
+			Description = "Y Momentum Nutation Damping Gain (Kn)"
+		}
+		Y_Momentum_Proprt_Gain {
+			DisplayName = "Y Momentum Proportional Gain"
+			Description = "Y Momentum Proportional Gain (Kp1)"
+		}
+		Y_Momentum_Deriv_Gain {
+			DisplayName = "Y Momentum Derivative Gain"
+			Description = "Y Momentum Derivative Gain (Kd1)"
+		}
+		Reference_Wheel_Momentum {
+			DisplayName = "Reference Wheel Momentum"
+			Description =
+			"Reference Wheel Momentum (H-ref). Must always be smaller than 0."
+			Unit = "Nms"
+		}
+		RWheel_Proport_Gain {
+			DisplayName = "RWheel Proportional Gain"
+			Description = "RWheel Proportional Gain (Kp2)"
+		}
+		RWheel_Deriv_Gain {
+			DisplayName = "RWheel Derivative Gain"
+			Description = "RWheel Derivative Gain (Kd2)"
+		}
+		Y_Wheel_Bias_Momentum {
+			DisplayName = "Y Wheel Bias Momentum"
+			Description = "Y-Wheel Bias Momentum (H-bias)."
+			Unit = "Nms"
+		}
+		Sunward_Face_Auto_Ctrl_Transition {
+			DisplayName = "Sunward Face Auto Control Transition"
+		}
+		Tracking_Proprt_Gain {
+			DisplayName = "Tracking Proportional Gain"
+			Description = "Tracking Proportional Gain (Kp3)"
+		}
+		Tracking_Deriv_Gain {
+			DisplayName = "Tracking Derivative Gain"
+			Description = "Tracking Derivative Gain (Kd3)"
+		}
+		Tracking_Integral_Gain {
+			DisplayName = "Tracking Integral Gain"
+			Description = "Tracking Integral Gain (Ki3)"
+		}
+		Target_Tracking_Facet {
+			DisplayName = "Target Tracking Facet"
+		}
+		MOI_xx {
+			DisplayName = "Moment Of Inertia Xx"
+			Unit = "kg.m^2"
+		}
+		MOI_yy {
+			DisplayName = "Moment Of Inertia Yy"
+			Unit = "kg.m^2"
+		}
+		MOI_zz {
+			DisplayName = "Moment Of Inertia Zz"
+			Unit = "kg.m^2"
+		}
+		POI_xy {
+			DisplayName = "Product Of Inertia Xy"
+			Unit = "kg.m^2"
+		}
+		POI_xz {
+			DisplayName = "Product Of Inertia Xz"
+			Unit = "kg.m^2"
+		}
+		POI_yz {
+			DisplayName = "Product Of Inertia Yz"
+			Unit = "kg.m^2"
+		}
+		MTM_RateFilt_Sys_Noise {
+			DisplayName = "Magnetometer Rate Filter System Noise"
+		}
+		EKF_Sys_Noise {
+			DisplayName = "EKF System Noise"
+		}
+		CSS_Meas_Noise {
+			DisplayName = "CSS Measurement Noise"
+		}
+		SunSens_Meas_Noise {
+			DisplayName = "Sun Sensor Measurement Noise"
+		}
+		NadirSens_Meas_Noise {
+			DisplayName = "Nadir Sensor Measurement Noise"
+		}
+		MTM_Meas_Noise {
+			DisplayName = "Magnetometer Measurement Noise"
+		}
+		StarTrack_Meas_Noise {
+			DisplayName = "Star Tracker Measurement Noise"
+		}
+		Byte375 {
+			DisplayName = "Byte375"
+		}
+		Byte376 {
+			DisplayName = "Byte376"
+		}
+		Cam_1_2_Sample_Period {
+			DisplayName = "Cam1 and Cam2 Sampling Period"
+			Description =
+			"Cam1 and Cam2 sensor sampling period. Lower four bits are Cam1 period and upper four bits the Cam2 period. Setting period to zero for sensor will disable sampling of sensor."
+			Unit = "s"
+		}
+		Incl_Coeff {
+			DisplayName = "Incl Coeff"
+			Description = "Inclination filter coefficient"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		Raan_Coeff {
+			DisplayName = "Raan Coeff"
+			Description = "RAAN filter coefficient."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		Ecc_Coeff {
+			DisplayName = "Ecc Coeff"
+			Description = "Eccentricity filter coefficient"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		Aop_Coeff {
+			DisplayName = "Aop Coeff"
+			Description = "Argument of perigee filter coefficient"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		Time_Coeff {
+			DisplayName = "Time Coeff"
+			Description = "Time filter coefficient"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		Pos_Coeff {
+			DisplayName = "Pos Coeff"
+			Description = "Position filter coefficient."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		Max_Pos_Error {
+			DisplayName = "Maximum Position Error"
+			Description = "Maximum position error for asgp4 to continue working."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+		}
+		ASGP4_Filter {
+			DisplayName = "ASGP4 Filter"
+			Description = "The type of filter asgp4 is using."
+		}
+		xp_Coeff {
+			DisplayName = "Xp Coeff"
+			Description = "Polar coefficient xp."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0000001"
+			}
+		}
+		yp_Coeff {
+			DisplayName = "Yp Coeff"
+			Description = "Polar coefficient yp."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0000001"
+			}
+		}
+		GPS_roll_over {
+			DisplayName = "GPS Roll Over"
+			Description = "GPS roll over number"
+		}
+		Position_sd {
+			DisplayName = "Position Sd"
+			Description = "Maximum position standard deviation for asgp4 to operate."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+		}
+		Velocity_sd {
+			DisplayName = "Velocity Sd"
+			Description = "Maximum velocity standard deviation for asgp4 to operate."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+		}
+		Min_Satellites {
+			DisplayName = "Min Satellites"
+			Description = "Minimum satellites for asgp4 to operate"
+		}
+		Time_Gain {
+			DisplayName = "Time Gain"
+			Description = "Time offset compensation gain."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+		}
+		Max_lag {
+			DisplayName = "Max Lag"
+			Description = "Maximum lagged timestamp measurements to incorporate."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+		}
+		Min_Samples {
+			DisplayName = "Min Samples"
+			Description = "Minimum samples to use for asgp4 process"
+		}
+		User_Coded_Ctrl_Settings {
+			DisplayName = "User Coded Control Settings"
+			Description = "Settings for user coded control mode(s)"
+		}
+		User_Coded_Est_Mode_Settings {
+			DisplayName = "User Coded Estimator Mode Settings"
+			Description = "Settings for user coded estimation mode(s)"
+		}
+	}
+
+	struct Detumbling_Struct {
+		Description = "Detumbling Control Parameters Message Format"
+		Detumbling_Sping_Gain {
+			DisplayName = "Detumbling Spin Gain"
+			Description = "Detumbling Spin Gain (Ks)"
+		}
+		Detumbling_Damping_Gain {
+			DisplayName = "Detumbling Damping Gain"
+			Description = "Detumbling Damping Gain (Kd)"
+		}
+		Reference_Spin_Rate {
+			DisplayName = "Reference Spin Rate"
+			Description = "Reference spin rate (wy-ref). Must always be smaller than 0"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+		Fast_Detumb_Bdot {
+			DisplayName = "Fast Detumb Bdot"
+			Description = "Fast BDot Detumbling Gain (Kdf)"
+		}
+	}
+
+	struct Y_Ctrl_Par_Struct {
+		Description = "Y-Wheel Control Parameters Message Format"
+		Y_Momentum_Ctrl_Gain {
+			DisplayName = "Y Momentum Control Gain"
+			Description = "Y-Momentum Control Gain (Kh)"
+		}
+		Y_Momentum_Nutation_Damping_Gain {
+			DisplayName = "Y Momentum Nutation Damping Gain"
+			Description = "Y-momentum Nutation Damping Gain (Kn)"
+		}
+		Y_Momentum_Proprt_Gain {
+			DisplayName = "Y Momentum Proportional Gain"
+			Description = "Y-momentum Proportional Gain (Kp1)"
+		}
+		Y_Momentum_Deriv_Gain {
+			DisplayName = "Y Momentum Derivative Gain"
+			Description = "Y-momentum Derivative Gain (Kd1)"
+		}
+		Reference_Wheel_Momentum {
+			DisplayName = "Reference Wheel Momentum"
+			Description =
+			"Reference Wheel Momentum (H-ref). Must always be smaller than 0"
+			Unit = "Nms"
+		}
+	}
+
+	struct TLM210_Struct {
+		Description = "Raw GPS Measurements Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		GPS_Stat {
+			DisplayName = "GPS Solution Status"
+		}
+		N_Sat_Tracked {
+			DisplayName = "Number of Tracked GPS Satellites"
+		}
+		N_Sat_Used {
+			DisplayName = "Number of GPS Satellites Used"
+		}
+		XYZ_Lof_Count {
+			DisplayName = "Counter for XYZ Lof"
+		}
+		RANGE_Log_Count {
+			DisplayName = "Counter for RANGE Log"
+		}
+		Log_Setup_Response {
+			DisplayName = "Log Setup Response"
+		}
+		GPS_Ref_Week {
+			DisplayName = "GPS Reference Week"
+		}
+		GPS_Time {
+			DisplayName = "GPS Time"
+			Unit = "ms"
+		}
+		ECEF_X {
+			DisplayName = "ECEF Position X"
+			Unit = "m"
+		}
+		ECEF_V_X {
+			DisplayName = "ECEF Velocity X"
+			Unit = "ms"
+		}
+		ECEF_Y {
+			DisplayName = "ECEF Position Y"
+			Unit = "m"
+		}
+		ECEF_V_Y {
+			DisplayName = "ECEF Velocity Y"
+			Unit = "ms"
+		}
+		ECEF_Z {
+			DisplayName = "ECEF Position Z"
+			Unit = "m"
+		}
+		ECEF_V_Z {
+			DisplayName = "ECEF Velocity Z"
+			Unit = "ms"
+		}
+		X_Pos_StdDiv {
+			DisplayName = "X-Pos Standard Deviation"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "m"
+		}
+		Y_Pos_StdDiv {
+			DisplayName = "Y-Pos Standard Deviation"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "m"
+		}
+		Z_Pos_StdDiv {
+			DisplayName = "Z-Pos Standard Deviation"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "m"
+		}
+		V_X_StdDiv {
+			DisplayName = "X-Vel Standard Deviation"
+			Unit = "m/s"
+		}
+		V_Y_StdDiv {
+			DisplayName = "Y-Vel Standard Deviation"
+			Unit = "m/s"
+		}
+		V_Z_StdDiv {
+			DisplayName = "Z-Vel Standard Deviation"
+			Unit = "m/s"
+		}
+	}
+
+	struct TLM211_Struct {
+		Description = "Raw Star Tracker Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Num_Star_Detected {
+			DisplayName = "Number of Stars Detected"
+			Unit = "stars"
+		}
+		Star_Image_Noise {
+			DisplayName = "Star Image Noise"
+			Unit = "noise"
+		}
+		Num_Inv_Star_Detected {
+			DisplayName = "Number of Invalid Star Detected"
+			Unit = "invalid stars"
+		}
+		Num_Star_Identified {
+			DisplayName = "Number of Stars Identified"
+			Unit = "stars"
+		}
+		Mode {
+			DisplayName = "Identification Mode"
+		}
+		Img_Dark_Value {
+			DisplayName = "Image Dark Value"
+			Unit = "8-bit pixel value"
+		}
+		Bools {
+			DisplayName = "Bools"
+		}
+		Sample_Period {
+			DisplayName = "Sample Period"
+		}
+		Star1_Confidence {
+			DisplayName = "Star 1 Confidence"
+			Unit = "%"
+		}
+		Star2_Confidence {
+			DisplayName = "Star 2 Confidence"
+			Unit = "%"
+		}
+		Star3_Confidence {
+			DisplayName = "Star 3 Confidence"
+			Unit = "%"
+		}
+		Mag_Star1 {
+			DisplayName = "Magnitude Star 1"
+		}
+		Mag_Star2 {
+			DisplayName = "Magnitude Star 2"
+		}
+		Mag_Star3 {
+			DisplayName = "Magnitude Star 3"
+		}
+		Catalogue_Star1 {
+			DisplayName = "Catalogue Star 1"
+		}
+		Centroid_X_Star1 {
+			DisplayName = "Centroid X Star 1"
+		}
+		Centroid_Y_Star1 {
+			DisplayName = "Centroid Y Star 1"
+		}
+		Catalogue_Star2 {
+			DisplayName = "Catalogue Star 2"
+		}
+		Centroid_X_Star2 {
+			DisplayName = "Centroid X Star 2"
+		}
+		Centroid_Y_Star2 {
+			DisplayName = "Centroid Y Star 2"
+		}
+		Catalogue_Star3 {
+			DisplayName = "Catalogue Star 3"
+		}
+		Centroid_X_Star3 {
+			DisplayName = "Centroid X Star 3"
+		}
+		Centroid_Y_Star3 {
+			DisplayName = "Centroid Y Star 3"
+		}
+		Capture_Time {
+			DisplayName = "Capture Time"
+			Unit = "ms"
+		}
+		Detection_Time {
+			DisplayName = "Detection Time"
+			Unit = "ms"
+		}
+		Identification_Time {
+			DisplayName = "Identification Time"
+			Unit = "ms"
+		}
+		X_Rate {
+			DisplayName = "X-Axis Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Y_Rate {
+			DisplayName = "Y-Axis Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Z_Rate {
+			DisplayName = "Z-Axis Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Q0 {
+			DisplayName = "Q0"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Q1 {
+			DisplayName = "Q1"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Q2 {
+			DisplayName = "Q2"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM212_Struct {
+		Description = "Star 1 Raw Data Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Catalogue_Star1 {
+			DisplayName = "Catalogue Star1"
+		}
+		Centroid_X_Star1 {
+			DisplayName = "Centroid X Star1"
+		}
+		Centroid_Y_Star1 {
+			DisplayName = "Centroid Y Star1"
+		}
+	}
+
+	struct TLM213_Struct {
+		Description = "Star 2 Raw Data Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Catalogue_Star2 {
+			DisplayName = "Catalogue Star2"
+		}
+		Centroid_X_Star2 {
+			DisplayName = "Centroid X Star2"
+		}
+		Centroid_Y_Star2 {
+			DisplayName = "Centroid Y Star2"
+		}
+	}
+
+	struct TLM214_Struct {
+		Description = "Star 3 Raw Data Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Catalogue_Star3 {
+			DisplayName = "Catalogue Star3"
+		}
+		Centroid_X_Star3 {
+			DisplayName = "Centroid X Star3"
+		}
+		Centroid_Y_Star3 {
+			DisplayName = "Centroid Y Star3"
+		}
+	}
+
+	struct TLM215_Struct {
+		Description = "Secondary Magnetometer Raw Measurements Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		MagX {
+			DisplayName = "Mag X"
+			Description = "sampled A/D value"
+		}
+		MagY {
+			DisplayName = "Mag Y"
+			Description = "sampled A/D value"
+		}
+		MagZ {
+			DisplayName = "Mag Z"
+			Description = "sampled A/D value"
+		}
+	}
+
+	struct TLM216_Struct {
+		Description = "Raw Rate Sensor Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Rate_X {
+			DisplayName = "Rate X"
+			Description = "sampled A/D value"
+		}
+		Rate_Y {
+			DisplayName = "Rate Y"
+			Description = "sampled A/D value"
+		}
+		Rate_Z {
+			DisplayName = "Rate Z"
+			Description = "sampled A/D value"
+		}
+	}
+
+	struct TLM218_Struct {
+		Description = "Estimated Quaternion Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Est_Q1 {
+			DisplayName = "Estimated Q1"
+		}
+		Est_Q2 {
+			DisplayName = "Estimated Q2"
+		}
+		Est_Q3 {
+			DisplayName = "Estimated Q3"
+		}
+	}
+
+	struct TLM219_Struct {
+		Description = "ECEF Position Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		ECEF_X {
+			DisplayName = "ECEF Position X"
+			Unit = "m"
+		}
+		ECEF_Y {
+			DisplayName = "ECEF Position Y"
+			Unit = "m"
+		}
+		ECEF_Z {
+			DisplayName = "ECEF Position Z"
+			Unit = "m"
+		}
+	}
+
+	struct TLM220_Struct {
+		Description = "ACP Execution State Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Time_Iter_Star {
+			DisplayName = "Time Since Iteration Start"
+			Description = "Time since the start of the current loop iteration"
+			Unit = "ms"
+		}
+		Waypoint {
+			DisplayName = "Current Execution Point"
+			Description = "Indicates which part of the loop is currently executing"
+		}
+	}
+
+	struct Tracking_cfg_Struct {
+		Description = "Tracking Controller Gain Parameters Message Format"
+		Tracking_Proprt_Gain {
+			DisplayName = "Tracking Proportional Gain"
+			Description = "Tracking Proportional Gain (Kp3)"
+		}
+		Tracking_Deriv_Gain {
+			DisplayName = "Tracking Derivative Gain"
+			Description = "Tracking Derivative Gain (Kd3)"
+		}
+		Tracking_Integral_Gain {
+			DisplayName = "Tracking Integral Gain"
+			Description = "Tracking Integral Gain (Ki3)"
+		}
+		Axis {
+			DisplayName = "Target-tracking Facet"
+			Description = "Satellite body axis that will point to target."
+		}
+	}
+
+	struct MOI_Struct {
+		Description = "Moment of Inertia Matrix Message Format"
+		MOI_xx {
+			DisplayName = "Moment Of Inertia Ixx"
+			Unit = "kg.m^2"
+		}
+		MOI_yy {
+			DisplayName = "Moment Of Inertia Iyy"
+			Unit = "kg.m^2"
+		}
+		MOI_zz {
+			DisplayName = "Moment Of Inertia Izz"
+			Unit = "kg.m^2"
+		}
+		POI_xy {
+			DisplayName = "Product Of Inertia Ixy"
+			Unit = "kg.m^2"
+		}
+		POI_xz {
+			DisplayName = "Product Of Inertia Ixz"
+			Unit = "kg.m^2"
+		}
+		POI_yz {
+			DisplayName = "Product Of Inertia Iyz"
+			Unit = "kg.m^2"
+		}
+	}
+
+	struct TLM224_Struct {
+		Description = "Current ADCS State 2 Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Byte0 {
+			DisplayName = "Byte0"
+		}
+		Byte1 {
+			DisplayName = "Byte1"
+		}
+		Byte2 {
+			DisplayName = "Byte2"
+		}
+	}
+
+	struct ADCS_Sys_Cfg_Struct {
+		Description = "ADCS System Configuration Message Format"
+		ACP_Type_Ctrl_Select {
+			DisplayName = "ACP Type and Special Control Selection"
+		}
+		CubeControl_Signal_Version {
+			DisplayName = "CubeControl Signal Version"
+		}
+		CubeControl_Motor_Version {
+			DisplayName = "CubeControl Motor Version"
+		}
+		CubeSense1_Version {
+			DisplayName = "CubeSense1 Version"
+		}
+		CubeSense2_Version {
+			DisplayName = "CubeSense2 Version"
+		}
+		Cam1_2_Type {
+			DisplayName = "CubeSense1 and CubeSense2 Camera Type"
+		}
+		CubeStar_Version {
+			DisplayName = "CubeStar Version"
+		}
+		GPS_RMTM {
+			DisplayName = "GPS Type and Redundant MTM Included"
+		}
+		MTQ_X_Max_Dipole {
+			DisplayName = "Magnetorquer-X Max Dipole"
+			Unit = "A.m^2"
+		}
+		MTQ_Y_Max_Dipole {
+			DisplayName = "Magnetorquer-Y Max Dipole"
+			Unit = "A.m^2"
+		}
+		MTQ_Z_Max_Dipole {
+			DisplayName = "Magnetorquer-Z Max Dipole"
+			Unit = "A.m^2"
+		}
+		MTQ_OnTime_Resolution {
+			DisplayName = "Magnetorquer On Time Resolution"
+			Unit = "s"
+		}
+		MTQ_Max_On_Time {
+			DisplayName = "Magnetorquer Maximum On-Time"
+			Unit = "s"
+		}
+		RW_X_Max_Torque {
+			DisplayName = "RW-X Maximum Torque"
+			Unit = "N.m"
+		}
+		RW_Y_Max_Torque {
+			DisplayName = "RW-Y Maximum Torque"
+			Unit = "N.m"
+		}
+		RW_Z_Max_Torque {
+			DisplayName = "RW-Z Maximum Torque"
+			Unit = "N.m"
+		}
+		RW_X_Max_Momentum {
+			DisplayName = "RW-X Maximum Momentum"
+			Unit = "Nms"
+		}
+		RW_Y_Max_Momentum {
+			DisplayName = "RW-Y Maximum Momentum"
+			Unit = "Nms"
+		}
+		RW_Z_Max_Momentum {
+			DisplayName = "RW-Z Maximum Momentum"
+			Unit = "Nms"
+		}
+		RW_X_Inertia {
+			DisplayName = "RW-X Inertia"
+			Unit = "kg.m^2"
+		}
+		RW_Y_Inertia {
+			DisplayName = "RW-Y Inertia"
+			Unit = "kg.m^2"
+		}
+		RW_Z_Inertia {
+			DisplayName = "RW-Z Inertia"
+			Unit = "kg.m^2"
+		}
+		RW_Torque_Increment {
+			DisplayName = "RW Torque Increment"
+			Unit = "N.m"
+		}
+		Prim_MTM_X_Bias_d1 {
+			DisplayName = "Primary MTM X Bias D1"
+		}
+		Prim_MTM_Y_Bias_d1 {
+			DisplayName = "Primary MTM Y Bias D1"
+		}
+		Prim_MTM_Z_Bias_d1 {
+			DisplayName = "Primary MTM Z Bias D1"
+		}
+		Prim_MTM_X_Bias_d2 {
+			DisplayName = "Primary MTM X Bias D2"
+		}
+		Prim_MTM_Y_Bias_d2 {
+			DisplayName = "Primary MTM Y Bias D2"
+		}
+		Prim_MTM_Z_Bias_d2 {
+			DisplayName = "Primary MTM Z Bias D2"
+		}
+		Prim_MTM_X_Sens_s1 {
+			DisplayName = "Primary MTM X Sens S1"
+		}
+		Prim_MTM_Y_Sens_s1 {
+			DisplayName = "Primary MTM Y Sens S1"
+		}
+		Prim_MTM_Z_Sens_s1 {
+			DisplayName = "Primary MTM Z Sens S1"
+		}
+		Prim_MTM_X_Sens_s2 {
+			DisplayName = "Primary MTM X Sens S2"
+		}
+		Prim_MTM_Y_Sens_s2 {
+			DisplayName = "Primary MTM Y Sens S2"
+		}
+		Prim_MTM_Z_Sens_s2 {
+			DisplayName = "Primary MTM Z Sens S2"
+		}
+		Prim_RMTM_X_Bias_d1 {
+			DisplayName = "Redundant MTM X Bias D1"
+		}
+		Prim_RMTM_Y_Bias_d1 {
+			DisplayName = "Redundant MTM Y Bias D1"
+		}
+		Prim_RMTM_Z_Bias_d1 {
+			DisplayName = "Redundant MTM Z Bias D1"
+		}
+		Prim_RMTM_X_Bias_d2 {
+			DisplayName = "Redundant MTM X Bias D2"
+		}
+		Prim_RMTM_Y_Bias_d2 {
+			DisplayName = "Redundant MTM Y Bias D2"
+		}
+		Prim_RMTM_Z_Bias_d2 {
+			DisplayName = "Redundant MTM Z Bias D2"
+		}
+		Prim_RMTM_X_Sens_s1 {
+			DisplayName = "Redundant MTM X Sens S1"
+		}
+		Prim_RMTM_Y_Sens_s1 {
+			DisplayName = "Redundant MTM Y Sens S1"
+		}
+		Prim_RMTM_Z_Sens_s1 {
+			DisplayName = "Redundant MTM Z Sens S1"
+		}
+		Prim_RMTM_X_Sens_s2 {
+			DisplayName = "Redundant MTM X Sens S2"
+		}
+		Prim_RMTM_Y_Sens_s2 {
+			DisplayName = "Redundant MTM Y Sens S2"
+		}
+		Prim_RMTM_Z_Sens_s2 {
+			DisplayName = "Redundant MTM Z Sens S2"
+		}
+		Byte164 {
+			DisplayName = "Byte164"
+		}
+		Byte165 {
+			DisplayName = "Byte165"
+		}
+		Byte166 {
+			DisplayName = "Byte166"
+		}
+		Byte167 {
+			DisplayName = "Byte167"
+		}
+		Byte168 {
+			DisplayName = "Byte168"
+		}
+		Byte169 {
+			DisplayName = "Byte169"
+		}
+		Byte170 {
+			DisplayName = "Byte170"
+		}
+		Byte171 {
+			DisplayName = "Byte171"
+		}
+		Byte172 {
+			DisplayName = "Byte172"
+		}
+	}
+
+	struct User_Coded_Ctrl_Settings_Struct {
+		Description = "User-coded Controller and Estimator Parameters Message Format"
+		User_Coded_Ctrl_Settings {
+			DisplayName = "User Coded Controller Settings"
+		}
+		User_Coded_Est_Mode_Settings {
+			DisplayName = "User Coded Estimator Mode Settings"
+		}
+	}
+
+	struct ASGP4_Param_Struct {
+		Description = "Augmented-SGP4 Parameters Message Format"
+		Incl_Coeff {
+			DisplayName = "Incl Coeff"
+			Description = "Inclination filter coefficient"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		Raan_Coeff {
+			DisplayName = "Raan Coeff"
+			Description = "RAAN filter coefficient"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		Ecc_Coeff {
+			DisplayName = "Ecc Coeff"
+			Description = "Eccentricity filter coefficient"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		Aop_Coeff {
+			DisplayName = "Aop Coeff"
+			Description = "Argument of perigee filter coefficient"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		Time_Coeff {
+			DisplayName = "Time Coeff"
+			Description = "Time filter coefficient"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		Pos_Coeff {
+			DisplayName = "Pos Coeff"
+			Description = "Position filter coefficient"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		Max_Pos_Error {
+			DisplayName = "Max Pos Error"
+			Description = "Maximum position error for asgp4 to continue working"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+		}
+		Mode {
+			DisplayName = "Mode"
+			Description = "The type of filter asgp4 is using."
+		}
+		xp_Coeff {
+			DisplayName = "Xp Coeff"
+			Description = "Polar coefficient xp"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0000001"
+			}
+		}
+		yp_Coeff {
+			DisplayName = "Yp Coeff"
+			Description = "Polar coefficient yp"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0000001"
+			}
+		}
+		GPS_roll_over {
+			DisplayName = "GPS Roll Over"
+			Description = "GPS roll over number"
+		}
+		Position_sd {
+			DisplayName = "Position Sd"
+			Description = "Maximum position standard deviation for asgp4 to operate."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+		}
+		Velocity_sd {
+			DisplayName = "Velocity Sd"
+			Description = "Maximum velocity standard deviation for asgp4 to operate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+		}
+		Min_Satellites {
+			DisplayName = "Min Satellites"
+			Description = "Minimum satellites for asgp4 to operate"
+		}
+		Time_Gain {
+			DisplayName = "Time Gain"
+			Description = "Time offset compensation gain"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+		}
+		Max_lag {
+			DisplayName = "Max Lag"
+			Description = "Maximum lagged timestamp measurements to incorporate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+		}
+		Min_Samples {
+			DisplayName = "Min Samples"
+			DefaultValue = "Minimum samples to use for asgp4 process"
+		}
+	}
+
+	struct TLM228_Struct {
+		Description = "ASGP4 TLEs Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Byte0 {
+			DisplayName = "Byte0"
+		}
+		Epoch {
+			DisplayName = "Epoch"
+		}
+		Inclination {
+			DisplayName = "ASGP4 Inclination"
+		}
+		RAAN {
+			DisplayName = "ASGP4 RAAN"
+		}
+		ECC {
+			DisplayName = "ASGP4 ECC"
+		}
+		AOP {
+			DisplayName = "ASGP4 AOP"
+		}
+		MA {
+			DisplayName = "ASGP4 MA"
+		}
+		MM {
+			DisplayName = "ASGP4 MM"
+		}
+		Bstar {
+			DisplayName = "ASGP4 Bstar"
+		}
+	}
+
+	struct TLM229_Struct {
+		Description = 'CubeStar Estimated Rates Telemetry Format'
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		X_Rate {
+			DisplayName = "X Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Y_Rate {
+			DisplayName = "Y Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Z_Rate {
+			DisplayName = "Z Rate"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM230_Struct {
+		Description = "CubeStar Estimated Quaternion Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Q0 {
+			DisplayName = "Q0"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Q1 {
+			DisplayName = "Q1"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+		Q2 {
+			DisplayName = "Q2"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.0001"
+			}
+		}
+	}
+
+	struct TLM231_Struct {
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Bools {
+			DisplayName = "Bools"
+		}
+		Sample_Period {
+			DisplayName = "Sample Period"
+		}
+		Star1_Confidence {
+			DisplayName = "Star1 Confidence"
+			Unit = "%"
+		}
+		Star2_Confidence {
+			DisplayName = "Star2 Confidence"
+			Unit = "%"
+		}
+		Star3_Confidence {
+			DisplayName = "Star3 Confidence"
+			Unit = "%"
+		}
+	}
+
+	struct TLM232_Struct {
+		Description = "CubeSense2 Current Measurements Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Data_3V3_Current {
+			DisplayName = "CubeSense2 Data 3V3 Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "mA"
+		}
+		Cam_SRAM_Current {
+			DisplayName = "CubeSense2 Cam SRAM Current"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.1"
+			}
+			Unit = "mA"
+		}
+	}
+
+	struct TLM233_Struct {
+		Description = "Status of Image Capture and Save Operation Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		PercComplete {
+			DisplayName = "Perc Complete"
+			Unit = "%"
+		}
+		Status {
+			DisplayName = "Status"
+		}
+	}
+
+	struct TLM234_Struct {
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Format_Erase_Busy {
+			DisplayName = "Format Erase Busy"
+		}
+	}
+
+	struct Inertial_Ref_Vec_Struct {
+		Inertial_Ref_X {
+			DisplayName = "Inertial Ref X"
+		}
+		Inertial_Ref_Y {
+			DisplayName = "Inertial Ref Y"
+		}
+		Inertial_Ref_Z {
+			DisplayName = "Inertial Ref Z"
+		}
+	}
+
+	struct TLM240_Struct {
+		Description = "Telecommand Acknowledge Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Last_TC_ID {
+			DisplayName = "Last TC ID"
+		}
+		Processed_flag {
+			DisplayName = "Processed Flag"
+		}
+		TC_parameter_error_index {
+			DisplayName = "TC Parameter Error Index"
+		}
+	}
+
+	struct TLM241_Struct {
+		Description = "File Download Buffer with File Contents Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Packet_counter {
+			DisplayName = "Packet Counter"
+		}
+		Buffer {
+			DisplayName = "Buffer"
+		}
+	}
+
+	struct TLM242_Struct {
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Ready_Param_Err {
+			DisplayName = "Ready Param Err"
+		}
+		CRC16 {
+			DisplayName = "CRC16"
+		}
+		Block_Lenght {
+			DisplayName = "Block Lenght"
+		}
+	}
+
+	struct TLM243_Struct {
+		Description = "Download Block Ready Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Byte0 {
+			DisplayName = "Byte0"
+		}
+		File_Ctr {
+			DisplayName = "File Counter"
+		}
+		File_Size {
+			DisplayName = "File Size"
+			Unit = "B"
+		}
+		File_Date_Time {
+			DisplayName = "File Date Time"
+			Unit = "s"
+		}
+		CRC16 {
+			DisplayName = "CRC16"
+		}
+	}
+
+	struct TLM244_Struct {
+		Description = "Initialize Upload Complete Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Busy {
+			DisplayName = "Busy"
+		}
+	}
+
+	struct TLM245_Struct {
+		Description = "Upload Block Complete Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Busy_Err {
+			DisplayName = "Busy and Error"
+		}
+	}
+
+	struct TLM246_Struct {
+		Description = "Block Checksum Telemetry Format"
+		TLM_ID {
+			DisplayName = "TLM ID"
+		}
+		Checksum {
+			DisplayName = "Checksum"
+		}
+	}
+
+	struct TC26_Struct {
+		Description = "Magnetometer Configuration Message Format"
+		MTM_MTransf_AlphaAngle {
+			DisplayName = "Magnetometer Mounting Transform Alpha Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		MTM_MTransf_BetaAngle {
+			DisplayName = "Magnetometer Mounting Transform Beta Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		MTM_MTransf_GammaAngle {
+			DisplayName = "Magnetometer Mounting Transform Gamma Angle"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.01"
+			}
+			Unit = "°"
+		}
+		MTM_Ch1_Offset {
+			DisplayName = "Magnetometer Channel 1 Offset"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_Ch2_Offset {
+			DisplayName = "Magnetometer Channel 2 Offset"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_Ch3_Offset {
+			DisplayName = "Magnetometer Channel 3 Offset"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S11 {
+			DisplayName = "Magnetometer Sensitivity Matrix S11"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S22 {
+			DisplayName = "Magnetometer Sensitivity Matrix S22"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S33 {
+			DisplayName = "Magnetometer Sensitivity Matrix S33"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S12 {
+			DisplayName = "Magnetometer Sensitivity Matrix S12"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S13 {
+			DisplayName = "Magnetometer Sensitivity Matrix S13"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S21 {
+			DisplayName = "Magnetometer Sensitivity Matrix S21"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S23 {
+			DisplayName = "Magnetometer Sensitivity Matrix S23"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S31 {
+			DisplayName = "Magnetometer Sensitivity Matrix S31"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+		MTM_SensMatrix_S32 {
+			DisplayName = "Magnetometer Sensitivity Matrix S32"
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+	}
+
+	struct TC11_Struct {
+		Byte0 {
+			DisplayName = "Byte0"
+		}
+		Byte1 {
+			DisplayName = "Byte1"
+		}
+		Byte2 {
+			DisplayName = "Byte2"
+		}
+	}
+
+	struct TC13_Struct {
+		Description = "Set Attitude Control Mode Command Format"
+		ControlMode {
+			DisplayName = "Control Mode"
+		}
+		Timeout {
+			DisplayName = "Timeout"
+			Unit = "s"
+		}
+	}
+
+	struct TC38_Struct {
+		Description = "Set Detumbling Control Parameters Message Format"
+		Detumbling_Sping_Gain {
+			DisplayName = "Detumbling Spin Gain"
+			Description = "Detumbling Spin Gain (Ks)"
+		}
+		Detumbling_Damping_Gain {
+			DisplayName = "Detumbling Damping Gain"
+			Description = "Detumbling Damping Gain (Kd)"
+		}
+		Reference_Spin_Rate {
+			DisplayName = "Reference Spin Rate"
+			Description = "Reference spin rate (wy-ref). Must always be smaller than 0."
+			CalibrationAlg = "coeff"
+			CalibratedType = "float"
+			CalibrationParams = {
+				"0.001"
+			}
+			Unit = "°/s"
+		}
+		Fast_Detumb_Bdot {
+			DisplayName = "Fast Detumb Bdot"
+			Description = "Fast BDot Detumbling Gain (Kdf)"
+		}
+	}
+
+	struct TC39_Struct {
+		Description = "Set Y-Wheel Control Parameters Message Format"
+		Y_Momentum_Ctrl_Gain {
+			DisplayName = "Y-Momentum Control Gain"
+			Description = "Y-Momentum Control Gain (Kh)"
+		}
+		Y_Momentum_Nutation_Damping_Gain {
+			DisplayName = "Y-Momentum Nutation Damping Gain"
+			Description = "Y-Momentum Nutation Damping Gain (Kn)"
+		}
+		Y_Momentum_Proprt_Gain {
+			DisplayName = "Y-Momentum Proportional Gain"
+			Description = "Y-Momentum Proportional Gain (Kp1)"
+		}
+		Y_Momentum_Deriv_Gain {
+			DisplayName = "Y-Momentum Derivative Gain"
+			Description = "Y-Momentum Derivative Gain (Kd1)"
+		}
+		Reference_Wheel_Momentum {
+			DisplayName = "Reference Wheel Momentum"
+			Description =
+			"Reference Wheel Momentum (H-ref). Must always be smaller than 0"
+			Unit = "Nms"
+		}
+	}
+
+	struct TC80_Struct {
+		Description = "Save Image Command Format"
+		CamSelect {
+			DisplayName = "Camera Select"
+		}
+		ImgSize {
+			DisplayName = "Image Size"
+		}
+	}
+
+	method TLM_128 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "128"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_129 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "129"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_130 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "130"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_131 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "131"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_132_APP {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "132_APP"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_133 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "133"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_134_APP {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "134_APP"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_135 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "135"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_136 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "136"
+			}
+		}
+		out {
+			RespCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_137 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "137"
+			}
+		}
+		out {
+			RespCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_138 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "138"
+			}
+		}
+		out {
+			RespCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_139 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "139"
+			}
+		}
+		out {
+			RespCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_140 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "140"
+			}
+		}
+		out {
+			RespCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_141 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "141"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_142 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "142"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_143 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "143"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_144 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "144"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_145 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "145"
+			}
+		}
+		out {
+			RespCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_146 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "146"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_147 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "147"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_148 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "148"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_149 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "149"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_150 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "150"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_151 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "151"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_152 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "152"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_153 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "153"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_154 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "154"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_155 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "155"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_156 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "156"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_157 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "157"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_158 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "158"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_159 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "159"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_160 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "160"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_161 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "161"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_162 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "162"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_163 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "163"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_164 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "164"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_165 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "165"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_166 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "166"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_167 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "167"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_168 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "168"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_169 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "169"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_170 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "170"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_171 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "171"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_172 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "172"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_173 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "173"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_174 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "174"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_175 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "175"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_176 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "176"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_177 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "177"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_178 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "178"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_179 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "179"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_180 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "180"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_181 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "181"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_182 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "182"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_183 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "183"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_184 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "184"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_185 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "185"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_186 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "186"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_187 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "187"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_188 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "188"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_189 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "189"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_190 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "190"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_191 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "191"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_192 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "192"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_193 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "193"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_194 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "194"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_195 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "195"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_196 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "196"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_197 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "197"
+			}
+		}
+		out {
+			respCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_198 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "198"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_199 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "199"
+			}
+		}
+		out {
+			RespCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_200 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "200"
+			}
+		}
+		out {
+			RespCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_201 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "201"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_202 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "202"
+			}
+		}
+		out {
+			RespCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_203 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "203"
+			}
+		}
+		out {
+			RespCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_204 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "204"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_205 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "205"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_206 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "206"
+			}
+		}
+		out {
+			RespCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_207 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "207"
+			}
+		}
+		out {
+			RespCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_208 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "208"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_209 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "209"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_210 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "210"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_211 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "211"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_212 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "212"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_213 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "213"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_214 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "214"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_215 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "215"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_216 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "216"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_217 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "217"
+			}
+		}
+		out {
+			RespCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_218 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "218"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_219 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "219"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_220 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "220"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_221 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "221"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_222 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "222"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_223 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "223"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_224 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "224"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_225 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "225"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_226 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "226"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_227 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "227"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_228 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "228"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_229 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "229"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_230 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "230"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_231 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "231"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_232 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "232"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_233 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "233"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_234 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "234"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_235 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "235"
+			}
+		}
+		out {
+			RespCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_236 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "236"
+			}
+		}
+		out {
+			RespCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_237 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "237"
+			}
+		}
+		out {
+			RespCmdID {
+				DisplayName = "Response Command ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_238 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "238"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_240 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "240"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_241 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "241"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_242 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "242"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_243 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "243"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_244 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "244"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_245 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "245"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_246 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "246"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_247 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "247"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_248 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "248"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_249 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "249"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_250 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "250"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_251 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "251"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_252 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "252"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_253 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "253"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TLM_254 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "254"
+			}
+		}
+		out {
+			TLM_ID {
+				DisplayName = "TLM_ID"
+			}
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_1 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "1"
+			}
+			Magic_Number {
+				DisplayName = "Magic Number"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_2 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "2"
+			}
+			Time {
+				DisplayName = "Time"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_3 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "3"
+			}
+			Enabled_State {
+				DisplayName = "Enabled_State"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_4 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "4"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_5 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "5"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_6 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "6"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_7 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "7"
+			}
+			Timeout {
+				DisplayName = "Timeout"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_8 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "8"
+			}
+			Scrub_Size {
+				DisplayName = "Scrub Size"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_9 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "9"
+			}
+			Cfg {
+				DisplayName = "Configuration"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_10 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "10"
+			}
+			State {
+				DisplayName = "State"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_11 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "11"
+			}
+			PwrCntrl {
+				DisplayName = "Power Control"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_12 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "12"
+			}
+			Latched_errs {
+				DisplayName = "Latched_errs"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_13 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "13"
+			}
+			Control {
+				DisplayName = "Control"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_14 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "14"
+			}
+			Estimation {
+				DisplayName = "Estimation"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_15 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "15"
+			}
+			Estimation {
+				DisplayName = "Estimation"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_16 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "16"
+			}
+			X_DutyCycle {
+				DisplayName = "X_Duty Cycle"
+			}
+			Y_DutyCycle {
+				DisplayName = "Y_Duty Cycle"
+			}
+			Z_DutyCycle {
+				DisplayName = "Z_Duty Cycle"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_17 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "17"
+			}
+			X_Speed {
+				DisplayName = "X_Speed"
+			}
+			Y_Speed {
+				DisplayName = "Y_Speed"
+			}
+			Z_Speed {
+				DisplayName = "Z_Speed"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_18 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "18"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_19 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "19"
+			}
+			Data {
+				DisplayName = "Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_20 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "20"
+			}
+			Config {
+				DisplayName = "Configuration"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_21 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "21"
+			}
+			MTQConfigs {
+				DisplayName = "MTQConfigs"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_22 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "22"
+			}
+			MTQConfigs {
+				DisplayName = "MTQConfigs"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_23 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "23"
+			}
+			Config {
+				DisplayName = "Configuration"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_24 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "24"
+			}
+			Config {
+				DisplayName = "Configuration"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_25 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "25"
+			}
+			Config {
+				DisplayName = "Configuration"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_26 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "26"
+			}
+			Config {
+				DisplayName = "Configuration"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_27 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "27"
+			}
+			Params {
+				DisplayName = "Parameters"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_28 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "28"
+			}
+			Params {
+				DisplayName = "Parameters"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_29 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "29"
+			}
+			Settings {
+				DisplayName = "Settings"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_30 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "30"
+			}
+			Cfg {
+				DisplayName = "Configuration"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_31 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "31"
+			}
+			Mode {
+				DisplayName = "Mode"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_32 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "32"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_33 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "33"
+			}
+			magicNumber {
+				DisplayName = "Magic Number"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_34 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "34"
+			}
+			cmdData {
+				DisplayName = "Command Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_36 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "36"
+			}
+			Config {
+				DisplayName = "Configuration"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_37 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "37"
+			}
+			Config {
+				DisplayName = "Configuration"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_38 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "38"
+			}
+			Config {
+				DisplayName = "Configuration"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_39 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "39"
+			}
+			Config {
+				DisplayName = "Configuration"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_40 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "40"
+			}
+			CmdPayload {
+				DisplayName = "Command Payload"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_41 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "41"
+			}
+			MOI {
+				DisplayName = "MOI"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_45 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "45"
+			}
+			OrbitParams {
+				DisplayName = "Orbit Params"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_54 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "54"
+			}
+			Cfg {
+				DisplayName = "Configuration"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_55 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "55"
+			}
+			CmdPayload {
+				DisplayName = "Command Payload"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_56 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "56"
+			}
+			Mode {
+				DisplayName = "Mode"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_57 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "57"
+			}
+			cmdData {
+				DisplayName = "Command Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_63 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "63"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_64 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "64"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_80 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "80"
+			}
+			ImgCaptCfg {
+				DisplayName = "Img Capt Cfg"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_100 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "100"
+			}
+			ProgIndx {
+				DisplayName = "Prog Indx"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_101 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "101"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_104 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "104"
+			}
+			LogConfig {
+				DisplayName = "Log Config"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_105 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "105"
+			}
+			LogConfig {
+				DisplayName = "Log Config"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_106 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "106"
+			}
+			LogConfig {
+				DisplayName = "Log Config"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_108 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "108"
+			}
+			cmdData {
+				DisplayName = "Command Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_112 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "112"
+			}
+			cmdData {
+				DisplayName = "Command Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_113 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "113"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_114 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "114"
+			}
+			cmdData {
+				DisplayName = "Command Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_115 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "115"
+			}
+			cmdData {
+				DisplayName = "Command Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_116 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "116"
+			}
+			cmdData {
+				DisplayName = "Command Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_117 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "117"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_118 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "118"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_119 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "119"
+			}
+			cmdData {
+				DisplayName = "Command Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_120 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "120"
+			}
+			cmdData {
+				DisplayName = "Command Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_121 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "121"
+			}
+			cmdData {
+				DisplayName = "Command Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_122 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "122"
+			}
+			cmdData {
+				DisplayName = "Command Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_123 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "123"
+			}
+			cmdData {
+				DisplayName = "Command Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_124 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "124"
+			}
+			cmdData {
+				DisplayName = "Command Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_125 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "125"
+			}
+			cmdData {
+				DisplayName = "Command Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_126 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "126"
+			}
+			cmdData {
+				DisplayName = "Command Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+	method TC_127 {
+		in {
+			CmdID {
+				DisplayName = "CmdID"
+				DefaultValue = "127"
+			}
+			cmdData {
+				DisplayName = "Command Data"
+			}
+		}
+		out {
+			responseData {
+				DisplayName = "Response Data"
+			}
+		}
+	}
+
+}

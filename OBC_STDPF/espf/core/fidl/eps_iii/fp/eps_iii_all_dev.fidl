@@ -1,0 +1,304 @@
+package endurosat.macif
+
+<** @description: Solar panels interface
+    @details: id = 0xD0
+**>
+
+interface eps_iii_all_dev
+{
+    version { major 2 minor 0 }
+    
+    <** @description: Command status **>
+    enumeration CommandStatus
+    {
+        <** @description: The command was successfully executed **>
+        SUCCESS
+        
+        <** @description: The command was failed during execution  **>
+        FAIL
+        
+        <** @description: The command was successfully executed, but not all data was gathered  **>
+        FAIL_GATHERING_DATA
+    }
+
+    <** @description: clear or read statistics **>
+    enumeration ReadClearOpt
+    {
+        <** @description: read only the data without changing it **>
+        READ
+        
+        <** @description: reset statistics **>
+        CLEAR
+    }
+    
+    <** @description: system TIV resets **>
+    struct SysStivRrstReasonsStr
+    {
+        <** @description: Brownout resets **>
+        UInt8 bor
+        
+        <** @description: RSTIFG RST/NMI **>
+        UInt8 rstnmi
+        
+        <** @description: PMMSWBOR software BOR **>
+        UInt8 pmmswbor
+        
+        <** @description: LPMx.5 wakeup **>
+        UInt8 lpm5wu
+        
+        <** @description: Security violation **>
+        UInt8 secyv
+        
+        <** @description: SVSHIFG SVSH event **>
+        UInt8 svshifg
+        
+        <** @description: PMMSWPOR software POR **>
+        UInt8 pmmswpor
+        
+        <** @description: WDTIFG watchdog timeout **>
+        UInt8 wdtifg
+        
+        <** @description: WDTPW watchdog password violation **>
+        UInt8 wdtpw
+        
+        <** @description: FRCTLPW password violation **>
+        UInt8 frctlpw
+        
+        <** @description: Uncorrectable FRAM bit error detection **>
+        UInt8 ubdifg
+        
+        <** @description: Peripheral area fetch **>
+        UInt8 perf
+        
+        <** @description: PMM password violation **>
+        UInt8 pmmpw
+        
+        <** @description: MPU password violation **>
+        UInt8 mpupw
+        
+        <** @description: CS password violation **>
+        UInt8 cspw
+        
+        <** @description: MPUSEGPIFG encapsulated IP memory segment violation **>
+        UInt8 mpusegpifg
+        
+        <** @description: MPUSEGIIFG information memory segment violation **>
+        UInt8 mpusegiifg
+        
+        <** @description: MPUSEG1IFG segment 1 memory violation **>
+        UInt8 mpuseg1ifg
+        
+        <** @description: MPUSEG2IFG segment 2 memory violation **>
+        UInt8 mpuseg2ifg
+        
+        <** @description: MPUSEG3IFG segment 3 memory violation **>
+        UInt8 mpuseg3ifg
+        
+        <** @description: not handled reason **>
+        UInt8 unhandled
+    }
+    
+    <** @description: system NIV resets **>
+    struct SysSnivRstReasonsStr
+    {
+        <** @description: Uncorrectable FRAM bit error detection **>
+        UInt8 ubdifg
+        
+        <** @description: FRAM Access Time Error **>
+        UInt8 accteifg
+        
+        <** @description: MPUSEGPIFG encapsulated IP memory segment violation **>
+        UInt8 mpusegpifg
+        
+        <** @description: MPUSEGIIFG information memory segment violation **>
+        UInt8 mpusegiifg
+        
+        <** @description: MPUSEG1IFG segment 1 memory violation **>
+        UInt8 mpuseg1ifg
+        
+        <** @description: MPUSEG2IFG segment 2 memory violation **>
+        UInt8 mpuseg2ifg
+        
+        <** @description: MPUSEG3IFG segment 3 memory violation **>
+        UInt8 mpuseg3ifg
+        
+        <** @description: VMAIFG Vacant memory access **>
+        UInt8 vmaifg
+        
+        <** @description: JMBINIFG JTAG mailbox input **>
+        UInt8 jmbinifg
+        
+        <** @description: JMBOUTIFG JTAG mailbox output **>
+        UInt8 jmboutifg
+        
+        <** @description: Correctable FRAM bit error detection **>
+        UInt8 cbdifg
+        
+        <** @description: FRAM write protection detection **>
+        UInt8 wprot
+        
+        <** @description: LEA time-out fault **>
+        UInt8 leato
+        
+        <** @description: LEA command fault **>
+        UInt8 leacmd
+        
+        <** @description: not handled reason **>
+        UInt8 unhandled
+    }
+    
+    <** @description: system UNIV resets **>
+    struct SysUnivRstReasonsStr
+    {
+        <** @description: NMIIFG NMI pin **>
+        UInt8 nmiifg
+        
+        <** @description: OFIFG oscillator fault **>
+        UInt8 ofifg    
+        
+        <** @description: not handled reason **>
+        UInt8 unhandled
+    }
+    
+    <** @description: Counters for all reset reasons **>
+    struct ResetCountersStr
+    {
+        <** @description: Counts every power up regardless of the reason **>
+        UInt32 power_up_counter
+        
+        <** @description: Counts number of resets based on Hardware reason **>
+        UInt32 number_HW_related_resets
+        
+        <** @description: Counts number of resets based on Firmware problem **>
+        UInt32 number_SW_related_resets
+        
+        <** @description: Counts number of resets with risen at least one flag for STIV reset **>
+        UInt32 number_stiv_resets
+        
+        <** @description: System TIV resets **>
+        SysStivRrstReasonsStr stiv 
+        
+        <** @description: Counts number of resets with risen at least one flag for SNIV reset **>
+        UInt32 number_sniv_resets
+        
+        <** @description: Counts number of resets with risen at least one flag for UNIV reset **>
+        SysSnivRstReasonsStr sniv
+        
+        <** @description: system UNIV resets **>
+        UInt32 number_univ_resets
+        
+        <** @description: UNIV resets **>
+        SysUnivRstReasonsStr univ
+        
+        <** @description: User initiated restart **>
+        UInt8 userreset
+    }
+
+    <** @description: Get statistical information about the device.
+          @details: id = 0x00000002
+    **>
+    method get_reset_counters_statistics
+    {
+        in
+        {
+            <** @description: All reset counters **>
+            ReadClearOpt reset_counters_req
+        }
+    
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: All reset counters **>
+            ResetCountersStr reset_counters 
+        }
+    }
+      
+    
+    <** @description: Termination resistor state **>
+    enumeration TerminationResistorState
+    {
+        <** @description: Just read the current settings **>
+        TERM_RES_READ_VALUE_NO_CHANGES
+        
+        <** @description: Remove the termination resistor **>
+        TERM_RES_DISCONNECTED
+        
+        <** @description: Termination resistor will be in use **>
+        TERM_RES_CONNECTED
+    }
+    
+    <** @description: Connect or Disconnect a termination resistor for RS485 communication channel
+      @details: id = 0x00000010
+    **>
+    method get_set_rs485_termination_resistor_state
+    {
+        in
+        {
+            <** @description: Read state or set value that will remain after power cycle **>
+            TerminationResistorState set_state
+        }
+    
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: Current state after the set command is executed **>
+            TerminationResistorState current_state
+        }
+    }
+    
+        <** @description: Restart Command return states **>
+    enumeration RestartState
+    {
+        <** @description: Current state is restarting **>
+        RESTARTING
+        
+        <** @description: The request is accepted from the previous command and in progress **>
+        ALREADY_IN_EXECUTION
+    }
+        
+    <** @description: Do a SW reset of the MCU
+      @details: id = 0x00000020
+    **>
+    method device_restart_now
+    {
+        out
+        {
+            <** @description: On success will always return state "Restarting" **>
+            RestartState rst_status
+        }
+    }
+    
+    <** @description: Perform power down of all power channels followed by restore to default state of all channels and then SW reset of the MCU of the current module
+      @details: id = 0x00000030
+    **>
+    method reset_sat
+    {
+        out
+        {
+            <** @description: On success will always return state "Restarting" **>
+            RestartState rst_status
+        }
+    }
+
+    <** @description: Reading the active Interface (FIDL) version loaded on the module 
+    @details: id = 0x00003000**>
+    method FIDL_version
+    {
+       
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: The current major version of the interface (FIDL) **>
+            UInt8 v_major
+
+            <** @description: The current minor version of the interface (FIDL) **>
+            UInt8 v_minor
+        }
+    }
+}

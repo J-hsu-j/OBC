@@ -1,0 +1,21 @@
+package org.endurosat.spec
+import "CalibrationSpec.fdepl"
+
+/**
+ * Used to map fidls to subsystems and satellites
+ */
+specification SpaceOpsMappingSpec extends org.endurosat.spec.CalibrationSpec {
+    for interfaces {
+        Satellite : String  (default: "");
+        ModuleName : String  (default: "");
+        ModuleDescription : String  (default: "");
+        ModuleSWVersion : String  (default: "");
+        ModuleHWVersion : String  (default: "");
+        // WARNING: the SpaceOps mapping is not implemented for the "Satellite" and "Suffix",
+        // so every subsystem name is unique and generated beforehand!
+        SatelliteSubsystems : String[] (default: {""});
+        GatewayCommand: Integer (default: 1212);
+        FidlType: {cp_commands, fp_commands} (default: fp_commands);
+        Suffix: String (default: "");
+    }
+}

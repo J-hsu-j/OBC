@@ -1,0 +1,57 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CommonTransfer1.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CommonTransfer1 as CubeADCS_Gen2_CommonTransfer1_Definitions
+{    
+    
+    struct TransferFrame
+    {
+        DisplayName = "Transfer Frame"
+        
+        NextFrame {
+            DisplayName = "Next Frame Number"
+        }
+        
+    }
+    
+    struct Frame
+    {
+        DisplayName = "Data Frame"
+        
+        FrameSize {
+            DisplayName = "Frame size"
+        }
+        
+        FrameBytes {
+            DisplayName = "Frame bytes"
+        }
+        
+    }
+    
+    struct FrameInfo
+    {
+        DisplayName = "Image Frame Information"
+        
+        FrameNumber {
+            DisplayName = "Image frame number"
+        }
+        
+        CheckSum {
+            DisplayName = "checksum"
+        }
+        
+        FrameLast {
+            DisplayName = "Last frame"
+        }
+        
+        FrameError {
+            DisplayName = "Frame error"
+        }
+        
+    }
+    
+}

@@ -1,0 +1,6 @@
+package org.endurosat.deploy
+
+import "../../../../../../fidl/spec/PlatformSpec.fdepl"
+import "../../../../../../fidl/xband_fe/fp/xband_fe.fidl"
+
+define org.endurosat.spec.PlatformSpec for interface endurosat.pf.radio.xband_fe            { IsClient = true }

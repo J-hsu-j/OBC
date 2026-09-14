@@ -1,0 +1,823 @@
+package endurosat.macif
+
+<** @description: Solar panels interface
+    @details: id = 18 **>
+
+interface sp_uhf_ant
+{
+    version { major 2 minor 1 }
+
+    <** @description: Get or Set option**>
+    enumeration CtrlOptionGetSet
+    {
+        <** @description: Select to only collect the data. **>
+        READ
+        
+        <** @description: Select to first set the data, followed by a collect.**>
+        WRITE
+    }
+    
+    <** @description: Get or Reset option**>
+    enumeration CtrlOption
+    {
+        <** @description: Select to only collect the data. **>
+        READ
+        
+        <** @description: Select to first reset the data to default, followed by a collect.**>
+        CLEAR
+    }    
+
+    <** @description: List of all available deployment algorithms **>
+    enumeration SetStatus
+    {
+        <** @description: Read status **>
+        READ_STATUS    
+    
+        <** @description: Status OFF **>
+        SET_OFF
+        
+        <** @description: Status ON **>
+        SET_ON
+    }    
+    
+        <** @description: List of all available deployment algorithms **>
+    enumeration ReturnStatus
+    {    
+        <** @description: Status OFF **>
+        OFF
+        
+        <** @description: Status ON **>
+        ON
+    }    
+
+    <** @description: List of all available deployment algorithms **>
+    enumeration DepCmd
+    {
+        <** @description: Read the deployment status. **>
+        READ_STATUS
+    
+        <** @description: Stop the running Algorithm. **>
+        STOP
+        
+        <** @description: Algorithm 1 is selected **>
+        START_ALG1
+        
+        <** @description: Algorithm 2 is selected **>
+        START_ALG2
+        
+        <** @description: Algorithm 3 is selected **>
+        START_ALG3
+    }
+    
+    <** @description: List of feedbacks regarding if the functionality is supported **>
+    enumeration FuncSupport
+    {
+        <** @description: The function is supported by this module. **>
+        SUPPORTED
+        
+        <** @description: The function is NOT supported by this module **>
+        NOT_SUPPORTED
+    }
+    
+    <** @description: List of initialization status states **>
+    enumeration InitStatus
+    {
+        <** @description: The initialization was successful. **>
+        SUCCESS
+        
+        <** @description: The initialization failed. **>
+        FAIL
+
+        <** @description: Initialization not supported. **>
+        NOT_SUPPORTED
+    }
+    
+    <** @description: List of Oscillator sources **>
+    enumeration OscSource
+    {
+        <** @description: The Oscillator is from internal source. **>
+        INTERNAL
+        
+        <** @description: The Oscillator is from external source.**>
+        EXTERNAL
+    }
+    
+    <** @description: List of feedbacks regarding validation of the data **>
+    enumeration DataVld
+    {
+        <** @description: The data was successfully gathered **>
+        SUCCESS
+        
+        <** @description: There was a problem gathering the data **>
+        NO_RESPONCE
+        
+        <** @description: The function is NOT supported by this module **>
+        NOT_SUPPORTED
+    }
+    
+    <** @description: List of the available gyroscopes options. **>
+    enumeration GyroID
+    {
+        <** @description: Select Main gyroscope. **>
+        MAIN
+        
+        <** @description: Select External gyroscope. **>
+        EXTERNAL
+    }
+
+    <** @description: List of feedbacks regarding gyroscope validation of the data **>
+    enumeration GyroDataVld
+    {
+        <** @description: The data was successfully gathered **>
+        SUCCESS
+        
+        <** @description: There was a problem gathering the data **>
+        NO_RESPONCE
+
+        <** @description: The sensor is still calibrating **>
+        CALIBRATING
+        
+        <** @description: The function is NOT supported by this module **>
+        NOT_SUPPORTED
+    }
+
+   <** @description: List of gyroscope autocalibration actions.**>
+    enumeration SetCalibStatus
+    {
+        <** @description: Read the current status. **>
+        READ_STATUS
+
+        <** @description: Start a calibration. **>
+        START
+        
+        <** @description: Stop the current calibration. **>
+        STOP
+    }
+
+    <** @description: List of feedbacks regarding gyroscope autocalibration .**>
+    enumeration ReturnCalibStatus
+    {
+        <** @description: The calibration was stopped **>
+        STOPPED
+
+        <** @description: The gyrsocope was successfully calibrated **>
+        SUCCESS
+        
+        <** @description: There was a problem calibrating the sensor **>
+        FAIL
+
+        <** @description: The sensor is still calibrating **>
+        IN_PROGRESS
+
+        <** @description: The OFFSET is set to the initialized value **>
+        DEFAULT
+        
+        <** @description: The function is NOT supported by this module **>
+        NOT_SUPPORTED
+    }
+    
+    <** @description: List of all available Magnetorquer modes **>
+    enumeration MtqMode
+    {
+        <** @description: Clockwise mode. **>
+        READ_STATUS
+        
+        <** @description: Set Clockwise mode. **>
+        SET_CLOCKWISE
+        
+        <** @description: Set Counterclockwise mode.  **>
+        SET_COUNTERCLOCKWISE
+        
+        <** @description: Turn OFF the Magnetorquer.  **>
+        OFF    
+    }
+    
+    <** @description: List of all available Magnetorquer modes **>
+    enumeration ReturnMtqMode
+    {
+        <** @description: Clockwise mode. **>
+        CLOCKWISE
+        
+        <** @description: Counterclockwise mode.  **>
+        COUNTERCLOCKWISE
+        
+        <** @description:  The Magnetorquer is turned OFF.  **>
+        OFF    
+    }
+    
+    <** @description: Return status list **>
+    enumeration StsReturn
+    {
+        <** @description: The requested duty cycle is out of the available range. **>
+        OUT_OF_RANGE
+
+        <** @description: The requested duty cycle was in the available range.  **>
+        OK
+
+        <** @description: Not supported by this device.  **>
+        NOT_SUPPORTED
+    }
+    
+    <** @description: Restarting state**>
+    enumeration Rst
+    {
+        <** @description: The module is restarting. **>
+        RESTARTING
+    }    
+    
+    <** @description: system TIV resets **>
+    struct SysStivRrstReasonsStr
+    {
+        <** @description: Brownout resets **>
+        UInt8 bor
+        
+        <** @description: RSTIFG RST/NMI **>
+        UInt8 rstnmi
+        
+        <** @description: PMMSWBOR software BOR **>
+        UInt8 pmmswbor
+        
+        <** @description: LPMx.5 wakeup **>
+        UInt8 lpm5wu
+        
+        <** @description: Security violation **>
+        UInt8 secyv
+        
+        <** @description: SVSHIFG SVSH event **>
+        UInt8 svshifg
+        
+        <** @description: PMMSWPOR software POR **>
+        UInt8 pmmswpor
+        
+        <** @description: WDTIFG watchdog timeout **>
+        UInt8 wdtifg
+        
+        <** @description: WDTPW watchdog password violation **>
+        UInt8 wdtpw
+        
+        <** @description: FRCTLPW password violation **>
+        UInt8 frctlpw
+        
+        <** @description: Uncorrectable FRAM bit error detection **>
+        UInt8 ubdifg
+        
+        <** @description: Peripheral area fetch **>
+        UInt8 perf
+        
+        <** @description: PMM password violation **>
+        UInt8 pmmpw
+        
+        <** @description: MPU password violation **>
+        UInt8 mpupw
+        
+        <** @description: CS password violation **>
+        UInt8 cspw
+        
+        <** @description: MPUSEGPIFG encapsulated IP memory segment violation **>
+        UInt8 mpusegpifg
+        
+        <** @description: MPUSEGIIFG information memory segment violation **>
+        UInt8 mpusegiifg
+        
+        <** @description: MPUSEG1IFG segment 1 memory violation **>
+        UInt8 mpuseg1ifg
+        
+        <** @description: MPUSEG2IFG segment 2 memory violation **>
+        UInt8 mpuseg2ifg
+        
+        <** @description: MPUSEG3IFG segment 3 memory violation **>
+        UInt8 mpuseg3ifg
+        
+        <** @description: not handled reason **>
+        UInt8 unhandled
+    }
+    
+    <** @description: system NIV resets **>
+    struct SysSnivRstReasonsStr
+    {
+        <** @description: Uncorrectable FRAM bit error detection **>
+        UInt8 ubdifg
+        
+        <** @description: FRAM Access Time Error **>
+        UInt8 accteifg
+        
+        <** @description: MPUSEGPIFG encapsulated IP memory segment violation **>
+        UInt8 mpusegpifg
+        
+        <** @description: MPUSEGIIFG information memory segment violation **>
+        UInt8 mpusegiifg
+        
+        <** @description: MPUSEG1IFG segment 1 memory violation **>
+        UInt8 mpuseg1ifg
+        
+        <** @description: MPUSEG2IFG segment 2 memory violation **>
+        UInt8 mpuseg2ifg
+        
+        <** @description: MPUSEG3IFG segment 3 memory violation **>
+        UInt8 mpuseg3ifg
+        
+        <** @description: VMAIFG Vacant memory access **>
+        UInt8 vmaifg
+        
+        <** @description: JMBINIFG JTAG mailbox input **>
+        UInt8 jmbinifg
+        
+        <** @description: JMBOUTIFG JTAG mailbox output **>
+        UInt8 jmboutifg
+        
+        <** @description: Correctable FRAM bit error detection **>
+        UInt8 cbdifg
+        
+        <** @description: FRAM write protection detection **>
+        UInt8 wprot
+        
+        <** @description: LEA time-out fault **>
+        UInt8 leato
+        
+        <** @description: LEA command fault **>
+        UInt8 leacmd
+        
+        <** @description: not handled reason **>
+        UInt8 unhandled
+    }
+    
+    <** @description: system UNIV resets **>
+    struct SysUnivRstReasonsStr
+    {
+        <** @description: NMIIFG NMI pin **>
+        UInt8 nmiifg
+        
+        <** @description: OFIFG oscillator fault **>
+        UInt8 ofifg    
+        
+        <** @description: not handled reason **>
+        UInt8 unhandled
+    }
+    
+    <** @description: Counters for all reset reasons **>
+    struct ResetCountersStr
+    {
+        <** @description: Counts every power up regardless of the reason **>
+        UInt32 power_up_counter
+        
+        <** @description: Counts number of resets based on Hardware reason **>
+        UInt32 number_HW_related_resets
+        
+        <** @description: Counts number of resets based on Firmware problem **>
+        UInt32 number_SW_related_resets
+        
+        <** @description: Counts number of resets with risen at leaset one flag for STIV reset **>
+        UInt32 number_stiv_resets
+        
+        <** @description: System TIV resets **>
+        SysStivRrstReasonsStr stiv 
+        
+        <** @description: Counts number of resets with risen at leaset one flag for SNIV reset **>
+        UInt32 number_sniv_resets
+        
+        <** @description: Counts number of resets with risen at leaset one flag for UNIV reset **>
+        SysSnivRstReasonsStr sniv
+        
+        <** @description: system UNIV resets **>
+        UInt32 number_univ_resets
+        
+        <** @description: UNIV resets **>
+        SysUnivRstReasonsStr univ
+        
+        <** @description: User initiated restart **>
+        UInt8 userreset
+    }
+    
+    <** @description: Read/Reset all reset counters values.
+    @details: id = 0x00000100 **>
+    method restart_counters
+    {
+        in
+        {
+            <** @description: Select available option. **>
+            CtrlOption opt
+        }
+        
+        out
+        {
+            <** @description: List of firmware resets. **>
+            ResetCountersStr  resets
+        }
+    }
+        
+    <** @description: System initialization status.
+        @details: id = 0x00000200 **>
+    method initialization_status
+    {
+        out
+        {
+            <** @description: Main temperature sensor initialization status. **>
+            InitStatus temp_sensor_main
+            
+            <** @description: First external temperature sensor initialization status. **>
+            InitStatus temp_sensor_ext1
+            
+            <** @description: Second external temperature sensor initialization status. **>
+            InitStatus temp_sensor_ext2
+            
+            <** @description: Main gyroscope sensor initialization status. **>
+            InitStatus gyroscope_main
+            
+            <** @description: External gyroscope sensor initialization status. **>
+            InitStatus gyroscope_ext
+            
+            <** @description: External memory (FRAM) initialization status. **>
+            InitStatus fram
+            
+            <** @description: System Clock oscilator source. **>
+            OscSource system_clock
+        }
+    }
+    
+    <** @description: Start/Stop a module deployment algorithm.
+        @details: id = 0x00000300 **>
+    method deployment
+    {
+        in
+        {
+            <** @description: Select one of the 3 available Algorithms or turn off the current one. **>
+            DepCmd deploy_command
+        }
+        
+        out
+        {
+            <** @description: Feedback if the functionality is supported. **>
+            FuncSupport function
+            
+            <** @description: Represents the current deployment status 
+            
+                bit position(0b76543210) - description:                
+                0 - S1 Current active deployment algorithm
+                1 - S2 Current active deployment algorithm
+                2 - Mode (1 = test mode)
+                3 - Not used
+                4 - Main Feedback 1 (1 = open)
+                5 - Main Feedback 2 (1 = open)
+                6 - External Feedback 1 (1 = open)
+                7 - External Feedback 2 (1 = open)
+            
+                S1 and S2 together they create the current
+                active deployment algorthm:                
+                0bXXXXXX00 - OFF
+                0bXXXXXX01 - algorthm 1 
+                0bXXXXXX10 - algorthm 2 
+                0bXXXXXX11 - algorthm 3 
+            **>
+            UInt8 status
+            
+            <** @description: Represents the current status of the heaters. 
+            
+                bit position (0b76543210) - description:                
+                0 - A1 (1 = active/burning)
+                1 - A2 (1 = active/burning)
+                2 - B1 (1 = active/burning)
+                3 - B2 (1 = active/burning)
+                4 - A3 (1 = active/burning)
+                5 - A4 (1 = active/burning)
+                6 - B3 (1 = active/burning)
+                7 - B4 (1 = active/burning) 
+            **>
+            UInt8 heaters
+            
+            <** @description: Represents the status of the the feedbacks. 
+            
+                bit position (0b76543210) - description:
+                0 - Main Feedback 1 (1 = open)
+                1 - Main Feedback 2 (1 = open)
+                2 - External Feedback 1 (1 = open)
+                3 - External Feedback 2 (1 = open)
+                4 - Not used
+                5 - Not used
+                6 - Not used
+                7 - Not used 
+            **>
+            UInt8 feedback
+            
+            <** @description: Represents the algorithm run time in seconds. **>
+            UInt8 timer
+            
+            <** @description: Represents a counter of the non test deployments. **>
+            UInt8 counter
+        }
+    }
+    
+    <** @description: Read/Set the auto deploy parameters.
+        @details: id = 0x00000400 **>
+    method auto_deployment
+    {
+        in
+        {        
+            <** @description: Set the current status of the auto deploy.**>
+            SetStatus autodeploy
+            
+            <** @description: Set the current timer before auto deploy in seconds.**>
+            UInt16 seconds
+        }
+        
+                out
+        {
+            <** @description: The current status of the auto deploy.**>
+            ReturnStatus autodeploy
+            
+            <** @description: The current timer set before auto deploy.**>
+            UInt16 seconds
+
+            <** @description: Returns the status of the configuration request.**>
+            StsReturn validation
+        }
+    }
+
+    <** @description: Structure that provides the data from all Sun sensors. **>
+    struct SunSensors
+    {
+        <** @description: The Stationary Panel sun sensor data. 
+            (output range: 1 - 2560)**>
+        UInt16 sun_data_main
+        
+        <** @description: The Stationary Panel sun sensor data validation. **>
+        DataVld sun_vld_main
+        
+        <** @description: The Upper Panel sun sensor data. 
+            (output range: 1 - 2560)**>
+        UInt16 sun_data_ext
+        
+        <** @description: The Upper Panel sun sensor data validation. **>
+        DataVld sun_vld_ext
+    }
+
+    <** @description: Structure that provides the data from all Temperature sensors. **>    
+    struct TempSensors
+    {
+        <** @description: The Stationary Panel temperature sensor data.
+            (output example: 347 = 34.7 C) **>
+        Int16 temp_data_main
+        
+        <** @description: The Stationary Panel temperature sensor data validation.**>
+        DataVld temp_vld_main
+        
+        <** @description: The Upper panel, bottom side, temperature sensor data.
+            (output example: 347 = 34.7 C) **>
+        Int16 temp_data_ext1
+        
+        <** @description: The Upper Panel, bottom side, temperature sensor data validation.**>
+        DataVld temp_vld_ext1
+        
+        <** @description: The Upper panel, top side, temperature sensor data.
+            (output example: 347 = 34.7 C) **>
+        Int16 temp_data_ext2
+        
+        <** @description: The Upper Panel, top side, temperature sensor data validation.**>
+        DataVld temp_vld_ext2
+        
+        <** @description: The internal MCU temperature sensor data.
+            (output example: 347 = 34.7 C) **>
+        Int16 temp_data_mcu
+        
+        <** @description: The internal MCU temperature sensor data validation. **>
+        DataVld temp_vld_mcu
+        
+    }
+
+    <** @description: Structure that provides the data from Sun and Temperature data. **>  
+    struct AllTelemetry
+    {
+        <** @description: The run time of the module since the last Power-on/Restart in seconds. **>
+        UInt32 uptime
+        
+        <** @description: Structure that provides the data from all sun sensors. **>
+        SunSensors sun_data
+        
+        <** @description: Structure that provides the data from all temperature sensors and the temperature of the MCU. **>
+        TempSensors temp_data
+    }
+
+    <** @description: Read telemetry data from Sun and Temperature sensors.
+        @details: id = 0x00000500 **>
+    method telemetry
+    {
+        out
+        {
+            <** @description: Returns Telemetric data from the sun and temperature sensors. **>
+            AllTelemetry data
+        }
+    }
+    
+    <** @description: Read/Reset the min/max values from all temperature sensors.
+        @details: id = 0x00000600 **>
+    method temperature_min_max
+    {
+        in
+        {
+            <** @description: Select available option. **>
+            CtrlOption opt
+        }
+        
+        out
+        {            
+            <** @description: Main temperature sesor minimum mesured value. 
+                (output example: 347 = 34.7 C) **>
+            Int16 temp_data_main_min
+            
+            <** @description: Main temperature sesor maximum mesured value. 
+                (output example: 347 = 34.7 C) **>
+            Int16 temp_data_main_max
+            
+            <** @description: External 1 temperature sesor minimum mesured value. 
+                (output example: 347 = 34.7 C) **>
+            Int16 temp_data_ext1_min
+            
+            <** @description: External 1 temperature sesor maximum mesured value.
+                (output example: 347 = 34.7 C) **>
+            Int16 temp_data_ext1_max
+            
+            <** @description: External 2 temperature sesor minimum mesured value. 
+                (output example: 347 = 34.7 C) **>
+            Int16 temp_data_ext2_min
+            
+            <** @description: External 2 temperature sesor maximum mesured value. 
+                (output example: 347 = 34.7 C) **>
+            Int16 temp_data_ext2_max
+            
+            <** @description: MCU temperature sesor minimum mesured value. 
+                (output example: 347 = 34.7 C) **>
+            Int16 temp_data_mcu_min
+            
+            <** @description: MCU temperature sesor maximum mesured value. 
+                (output example: 347 = 34.7 C) **>
+            Int16 temp_data_mcu_max
+        }
+        
+    }   
+    
+    <** @description: Structure that provides the data from the selected gyroscope. **> 
+    struct GyroData
+    {
+        <** @description: The gyroscope rotation rate. 
+            (output example: 46 = 4.6 deg/s) **>
+        Int16 gyro_data_rate
+        
+        <** @description: The gyroscope rotation rate data validation.**>
+        GyroDataVld gyro_vld_rate
+        
+        <** @description: The gyroscope angle. 
+            (output example: 3460 = 346.0 deg) **>
+        UInt16 gyro_data_angle
+        
+        <** @description: The gyroscope angle data validation.**>
+        GyroDataVld gyro_vld_angle
+        
+        <** @description: The gyroscope temperature. 
+            (output example: 347 = 34.7 C) **>
+        Int16 gyro_data_tmp
+        
+        <** @description: The gyroscope temperature data validation.**>
+        GyroDataVld gyro_vld_tmp
+        
+        
+    }
+    
+    <** @description: Read telemetric data from the selected gyroscope.
+        @details: id = 0x00000700 **>
+    method gyroscope_data
+    {
+        in
+        {
+            <** @description: Select available Gyroscope option. **>
+            GyroID gyro
+        }
+    
+        out
+        {
+            <** @description: Returns the telemetry data from the selected gyroscope. **>
+            GyroData data
+        }
+    }
+    
+    <** @description: Read/Write gyroscope register value.
+        @details: id = 0x00000800 **>
+    method gyroscope_register
+    {
+        in
+        {        
+            <** @description: Select available Gyroscope option. **>
+            GyroID gyro
+            
+            <** @description: Select available option. **>
+            CtrlOptionGetSet gyro_option
+        
+            <** @description: Input an available Gyro Register address.
+            
+                Frequently used addresses:
+                0x02 Power supply measurement 
+                0x04 X-axis gyroscope output 
+                0x0A Analog input channel measurement 
+                0x0C Internal temperature measurement 
+                0x0E Angle displacement 
+                0x14 Calibration, offset/bias adjustment 
+                0x16 Calibration, scale adjustment 
+                0x3E Control, global commands 
+                0x56 Product identifier - convert to decimal 16,265/16,260 
+                0x58 Serial number 
+                
+                Please review sensor datasheet for all address and for more information. 
+            **>
+            UInt8 gyro_register_address
+                
+            <** @description: Select a valid value for the Gyro Register.
+                Please review sensor datasheet for more information. **>
+            UInt16 gyro_register_value
+        }
+        
+        out
+        {
+            <** @description: Main Gyro Register value. 
+                Please review 5.3.4 Gyroscope Register Memory Map table for more details. **>
+            UInt16 return_gyro_register_value
+        }
+    }
+    
+    <** @description: Read/Set the auto calibration status of the selected gyroscope.
+        @details: id = 0x00000900 **>
+    method gyroscope_auto_calibration
+    {
+        in
+        {        
+            <** @description: Select available Gyroscope option. **>
+            GyroID gyro
+            
+            <** @description: Select status. 
+            When activated the gyroscope auto calibration will run for 10 minutes. **>
+            SetCalibStatus set_autocalib_status
+        }
+        
+        out
+        {
+            <** @description: Current status, On or Off. **>
+            ReturnCalibStatus return_autocalib_status
+        }
+    }
+    
+    <** @description: Read/Set Magnetorquer function parameters.
+        @details: id = 0x00000A00 **>
+    method magnetorquer
+    {
+        in
+        {
+                        
+            <** @description: Select MTQ Mode. **>
+            MtqMode mode        
+
+            <** @description: Select a valid Duty Cycle (1 - 100)%,
+            0% = OFF.**>
+            UInt8 write_mtq_duty_cycle
+        }
+        
+        out
+        {
+            <** @description: MTQ Mode.
+                CW = clockwise, CCW = counter clockwise **>
+            ReturnMtqMode mode
+
+            <** @description: Duty Cycle.
+                (output range: 1 - 100) **>
+            UInt8 get_mtq_duty_cycle
+        
+            <** @description: Return the duty cycle parameters data validation. **>
+            StsReturn mtq_duty_cycle_valid_range
+        }
+    }
+        
+    <** @description: Read/Set the current status of the RS485 termination resistor.
+        @details: id = 0x00000B00 **>
+    method termination_resistor
+    {
+        in
+        {            
+            <** @description: Set the current status of the RS485 termination resistor.**>
+            SetStatus term_resistor
+        }
+    
+        out
+        {
+            <** @description: The current status of the RS485 termination resistor.**>
+            ReturnStatus term_resistor
+        }
+    }
+      
+    <** @description: Restart The Firmware of the Solar Panel.
+        @details: id = 0x0000FFFF **>
+    method module_restart
+    {
+            out
+        {
+            <** @description: The functionality status of the Restart command.**>
+            Rst rst_state
+        }
+    
+    }
+} 

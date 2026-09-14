@@ -1,0 +1,229 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/OBC_AOCS_CNTRL.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.macif.OBC_AOCS_CNTRL as OBC_AOCS_CNTRL_Definitions {
+
+	enumeration StandardResult {
+		AlarmInvalidRegexValues = {
+			"(^(?!SUCCESS$).*$)"
+		}
+	}
+
+	struct thresholdValues {
+		tolerance {
+			DisplayName = "Tolerance"
+		}
+		safety_factor {
+			DisplayName = "Safety Factor"
+		}
+	}
+
+	struct PMoutput {
+		longTermMetric {
+			DisplayName = "Long Term Metric"
+			Unit = "%"
+		}
+		encodedStability {
+			DisplayName = "Encoded Stability"
+		}
+	}
+
+	struct Config {
+		max_time_for_logging {
+			DisplayName = "Max Time For Logging"
+			Unit = "s"
+		}
+		update_interval {
+			DisplayName = "Update Interval"
+			Unit = "s"
+		}
+		data_type {
+			DisplayName = "Data Type"
+		}
+		samples_to_skip {
+			DisplayName = "Samples to Skip"
+		}
+	}
+
+	struct AocsRefParams {
+		refParam1 {
+			DisplayName = "Reference Parameter 1"
+		}
+		refParam2 {
+			DisplayName = "Reference Parameter 2"
+		}
+		refParam3 {
+			DisplayName = "Reference Parameter 3"
+		}
+	}
+
+	method resetAOCSPMbuff {
+	}
+
+	method getMaxTimeForAutoLogging {
+		out {
+			maxTimeForAutoLogging {
+				DisplayName = "Max Time for Auto Logging"
+				Unit = "s"
+			}
+		}
+	}
+
+	method setMaxTimeForAutoLogging {
+		in {
+			maxTimeForAutoLogging {
+				DisplayName = "Max Time For Auto Logging"
+				Unit = "s"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method startLogging {
+		in {
+			timeWindowForLogging {
+				DisplayName = "Time Window for Logging"
+				Unit = "s"
+			}
+		}
+	}
+
+	method getDataTypeForAssessment {
+		out {
+			dataType {
+				DisplayName = "Data Type"
+			}
+		}
+	}
+
+	method setDataTypeForAssessment {
+		in {
+			dataType {
+				DisplayName = "Data Type"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getThresholdLevels {
+		out {
+			threshold {
+				DisplayName = 'Threshold'
+			}
+		}
+	}
+
+	method setThresholdLevels {
+		in {
+			threshold {
+				DisplayName = 'Threshold'
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getPMOutput {
+		out {
+			output {
+				DisplayName = "Output"
+			}
+		}
+	}
+
+	method getConfig {
+		out {
+			current_config {
+				DisplayName = "Current Configuration"
+			}
+		}
+	}
+
+	method getUpdateInterval {
+		out {
+			update_interval {
+				DisplayName = "Update Interval"
+				Unit = "s"
+			}
+		}
+	}
+
+	method setUpdateInterval {
+		in {
+			update_interval {
+				DisplayName = "Update Interval"
+				Unit = "s"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getSamplesToSkip {
+		out {
+			samples_to_skip {
+				DisplayName = "Samples to Skip"
+			}
+		}
+	}
+
+	method setSamplesToSkip {
+		in {
+			samples_to_skip {
+				DisplayName = "Samples to Skip"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method setAocsState {
+		in {
+			aocsState {
+				DisplayName = "AOCS State"
+			}
+			refParams {
+				DisplayName = "Reference Parameters"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getAocsState {
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+			aocsState {
+				DisplayName = "AOCS State"
+			}
+			reqState {
+				DisplayName = "Request State"
+			}
+		}
+	}
+
+}

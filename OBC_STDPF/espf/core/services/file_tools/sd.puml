@@ -1,0 +1,26 @@
+' Copyright (c) 2023-2024 EnduroSat AD. All rights reserved.
+'
+' Contents and presentations are protected world-wide.
+' Any kind of using, copying etc. is prohibited without prior permission.
+
+@startuml
+title <b>SD Card control flow</b>
+[*] --> EJECTED
+state EJECTED : ejected
+state ERROR : error
+state NOT_INIT : not_init
+state BUSY : busy
+state READY : ready
+state INFO : blue - normal flow\nred - error\npurple - recover
+
+EJECTED -[#blue]-> NOT_INIT: <b>SD is present</b>
+NOT_INIT -[#blue]-> BUSY: <b>init in progress</b>
+BUSY -[#blue]-> READY: <b>op done</b>
+BUSY -[#red]-> ERROR: <b>op failed</b>
+READY -[#blue]-> EJECTED: <b>got update signal</b>
+READY -[#blue]-> BUSY: <b>read/write/ioctl</b>
+READY -[#red]-> ERROR: <b>status</b>
+READY -[#blue]-> EJECTED: <b>sd gone</b>
+ERROR -[#purple]-> EJECTED: <b>timeout: SD gone</b>
+ERROR -[#purple]-> NOT_INIT: <b>timeout: SD present</b>
+@enduml

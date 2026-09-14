@@ -1,0 +1,110 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/UHFExt_PipeMode.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.macif.UhfExt_PipeMode as UhfExt_PipeMode_Definitions {
+
+    enumeration eESSA_UhfExtPipeStatus {
+        AlarmInvalidRegexValues = {
+            "ERROR"
+        }
+    }
+
+    method SetPeer {
+        in {
+            Addr {
+                DisplayName = "Address"
+            }
+        }
+        out {
+            opResult {
+                DisplayName = "Result"
+            }
+        }
+    }
+
+    method GetPeer {
+        out {
+            Addr {
+                DisplayName = "Address"
+            }
+        }
+    }
+
+    method SetMode {
+        in {
+            Mode {
+                DisplayName = "Mode"
+            }
+        }
+        out {
+            opResult {
+                DisplayName = "Result"
+            }
+        }
+    }
+
+    method GetMode {
+        out {
+            opResult {
+                DisplayName = "Result"
+            }
+        }
+    }
+
+    method SetPipeModeDuration {
+        in {
+            Duration {
+                DisplayName = "Duration"
+                Unit = "ms"
+            }
+        }
+        out {
+            opResult {
+                DisplayName = "Result"
+            }
+        }
+    }
+
+    method GetPipeModeDuration {
+        out {
+            opResult {
+                DisplayName = "Duration"
+                Unit = "ms"
+            }
+        }
+    }
+
+    method WriteData {
+        in {
+            ReqID {
+                DisplayName = "Request ID"
+            }
+            DataSize {
+                DisplayName = "Data Size"
+                Unit = "B"
+            }
+            Data {
+                DisplayName = "Data"
+            }
+        }
+        out {
+            opResult {
+                DisplayName = "Result"
+            }
+        }
+    }
+
+    method WriteDataStatus {
+        in {
+            ReqID {
+                DisplayName = "Request ID"
+            }
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+}

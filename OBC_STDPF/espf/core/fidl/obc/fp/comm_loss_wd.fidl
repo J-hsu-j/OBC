@@ -1,0 +1,82 @@
+package endurosat.macif
+
+<** @description: Configuration of the ground station communication loss watchdog.
+    @details: id = 0x65
+**>
+interface comm_loss_wd
+{
+    version { major 0 minor 3 }
+   
+     <** @description: General status type used for SW-related communication and/or settings. **>
+    enumeration StandardResult
+    {
+        <** @description: The operation is successful **>
+        SUCCESS,
+        <** @description: An error has occurred **>
+        ERROR,
+        <** @description: Invalid input arguments provided to the operation **>
+        INVALID_ARGS,
+        <** @description: The action related to the input data is not supported by the firmware **>
+        NOT_SUPPORTED
+    }
+  	
+	
+    <** @description: Sets timeout period of the comm loss WD in minutes. 
+        @details: id = 0x00000001
+    **>
+    method set_wd_timeout
+    {
+        in
+        {
+            <** @description: Timeout period of the comm loss WD in minutes. **>
+            UInt32 wd_timeout
+	    }
+		out
+        {
+            <** @description: Clear operation result **>
+            StandardResult op_result
+        }
+    }
+
+    <** @description: Sets enable/disable control flag of the comm loss WD. 
+        @details: id = 0x00000002
+    **>
+    method set_wd_enable
+    {
+        in
+        {
+			<** @description: Enable/disable control flag of the comm loss WD**>
+            Boolean wd_enable
+        }
+		out
+        {
+            <** @description: Clear operation result **>
+            StandardResult op_result
+        }
+    }
+
+	
+	<** @description: Returns timeout period of the comm loss WD in minutes. 
+        @details: id = 0x00000003
+    **>
+    method get_wd_timeout
+    {
+        out
+        {
+            <** @description: Timeout period of the comm loss WD in minutes. **>
+            UInt32 wd_timeout
+        }
+    }
+	
+	<** @description: Returns current status of the comm loss WD. 
+        @details: id = 0x00000004
+    **>
+    method get_wd_stat
+    {
+        out
+        {
+			<** @description: Current status of the comm loss WD. **>
+            Boolean wd_stat
+        }
+    }
+}

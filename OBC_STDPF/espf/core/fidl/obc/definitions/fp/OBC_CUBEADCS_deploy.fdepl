@@ -1,0 +1,1152 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/OBC_CUBEADCS.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.macif.OBC_CUBEADCS as OBC_CUBEADCS_Definitions {
+
+	enumeration StandardResult {
+		AlarmInvalidRegexValues = {
+			"(^(?!SUCCESS$).*$)"
+		}
+	}
+
+	enumeration CommStatus {
+		AlarmInvalidRegexValues = {
+			"(^(?!COMM_OK$).*$)"
+		}
+	}
+
+	enumeration FTransfStatus {
+		AlarmInvalidRegexValues = {
+			"(^(?!DONE$).*$)"
+		}
+	}
+
+	enumeration BOOT_Status {
+		AlarmInvalidRegexValues = {
+			"FAILED"
+		}
+	}
+
+	enumeration CUBE_ADCS_TC_13_Control_Mode {
+		AlarmInvalidRegexValues = {
+			"DETUMB", "NO_CNTRL"
+		}
+	}
+
+	struct CUBE_ADCS_CfgNodePwr {
+		CubeControl_Signal {
+			DisplayName = "CubeControl Signal"
+		}
+		CubeControl_Motor {
+			DisplayName = "CubeControl Motor"
+		}
+		CubeSense1 {
+			DisplayName = "CubeSense 1"
+		}
+		CubeSense2 {
+			DisplayName = "CubeSense 2"
+		}
+		CubeStar {
+			DisplayName = "CubeStar"
+		}
+		CubeWheel1 {
+			DisplayName = "CubeWheel 1"
+		}
+		CubeWheel2 {
+			DisplayName = "CubeWheel 2"
+		}
+		CubeWheel3 {
+			DisplayName = "CubeWheel 3"
+		}
+		MotorPwr {
+			DisplayName = "Motor Power"
+		}
+		GPSPwr {
+			DisplayName = "GPS Power"
+		}
+	}
+
+	struct CubeADCS_Cfg {
+		CfgType {
+			DisplayName = "Configuration Type"
+		}
+		NodePwrMask {
+			DisplayName = "Node Power Mask"
+		}
+		CntrlMask {
+			DisplayName = "Control Mask"
+		}
+		EstMode {
+			DisplayName = "Estimation Mode"
+		}
+		RunMask {
+			DisplayName = "Run Mask"
+		}
+		AdditionalLogic {
+			DisplayName = "Additional Logic"
+		}
+	}
+
+	struct TLMDataFormat {
+		TLM_ID {
+			DisplayName = "Telemetry ID"
+		}
+		TLM_Data {
+			DisplayName = "Telemetry Data"
+		}
+	}
+
+	struct TLMReqReply {
+		TLM_Rply_Data {
+			DisplayName = "Telemetry Reply Data"
+		}
+		TLM_Rply_Len {
+			DisplayName = "Telemetry Reply Length"
+			Unit = "B"
+		}
+	}
+
+	struct TCReq {
+		TC_ID {
+			DisplayName = "Telecommand ID"
+		}
+		TC_Data {
+			DisplayName = "Telecommand Data"
+		}
+		TC_Data_Len {
+			DisplayName = "Telecommand Data Length"
+			Unit = "B"
+		}
+	}
+
+	struct TCDataFormat {
+		TC_ID {
+			DisplayName = "Telecommand ID"
+		}
+		TC_Err_flags {
+			DisplayName = "Telecommand Error Flags"
+		}
+	}
+
+	struct TCReqReply {
+		TCData {
+			DisplayName = "Telecommand Data"
+		}
+		TC_Rply_Len {
+			DisplayName = "Telecommand Reply Length"
+			Unit = "B"
+		}
+	}
+
+	struct CubeADCS_TLM128 {
+		Description = "Identification information for this node."
+		CmdID {
+			DisplayName = "Command ID"
+			Description = "Node type identifier"
+		}
+		NodeType {
+			DisplayName = "Node Type"
+			Description = "Node type identifier"
+		}
+		InterfaceVersion {
+			DisplayName = "Interface Version"
+			Description = "Interface version. This field should have a value of 1"
+		}
+		MajorFirmwareVersion {
+			DisplayName = "Major Firmware Version"
+		}
+		MinorFirmwareVersion {
+			DisplayName = "Minor Firmware Version"
+		}
+		RuntimeSeconds {
+			DisplayName = "Runtime Seconds"
+			Description = "Number of seconds since processor start-up"
+			Unit = "s"
+		}
+		RuntimeMiliseconds {
+			DisplayName = "Runtime Milliseconds"
+			Description =
+			"Number of milliseconds (after the integer second) since processor start-up"
+			Unit = "ms"
+		}
+	}
+
+	struct TLM132_Boot {
+		Description = "Bootloader State"
+		CmdID {
+			DisplayName = "Command ID"
+		}
+		UpTime {
+			DisplayName = "Uptime"
+			Unit = "s"
+		}
+		Flags {
+			DisplayName = "Flags"
+		}
+		Res {
+			DisplayName = "Result"
+		}
+	}
+
+	struct TLM132_App {
+		Description = "Current state of the Attitude Control Processor - frame 1"
+		CmdID {
+			DisplayName = "Command ID"
+		}
+		Byte0 {
+			DisplayName = "Byte 0"
+		}
+		Byte1 {
+			DisplayName = "Byte 1"
+		}
+		Byte2 {
+			DisplayName = "Byte 2"
+		}
+		Byte3 {
+			DisplayName = "Byte 3"
+		}
+		Byte4 {
+			DisplayName = "Byte 4"
+		}
+		Byte5 {
+			DisplayName = "Byte 5"
+		}
+	}
+
+	struct TLM135 {
+		Description = "CubeACP State"
+		CmdID {
+			DisplayName = "Command ID"
+		}
+		ACPState {
+			DisplayName = "ACP State"
+		}
+	}
+
+	struct TLM168 {
+		DisplayName = "Raw CSS measurements 1 to 6"
+		CmdID {
+			DisplayName = "Command ID"
+		}
+		CCS1 {
+			DisplayName = "CCS 1"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CCS2 {
+			DisplayName = "CCS 2"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CCS3 {
+			DisplayName = "CCS 3"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CCS4 {
+			DisplayName = "CCS 4"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CCS5 {
+			DisplayName = "CCS 5"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CCS6 {
+			DisplayName = "CCS 6"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+	}
+
+	struct TLM169 {
+		DisplayName = "Raw CSS measurements 7 to 10"
+		CmdID {
+			DisplayName = "Command ID"
+		}
+		CCS7 {
+			DisplayName = "CCS 7"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CCS8 {
+			DisplayName = "CCS 8"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CCS9 {
+			DisplayName = "CCS 9"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		CCS10 {
+			DisplayName = "CCS10"
+			Description = "Sampled A/D value - corresponds to COS(sun_angle)"
+		}
+		Res {
+			DisplayName = "Result"
+		}
+	}
+
+	struct TLM224 {
+		Description = "Current state of the Attitude Control Processor - frame 2"
+		CmdID {
+			DisplayName = "Command ID"
+		}
+		Byte0 {
+			DisplayName = "Byte 0"
+		}
+		Byte1 {
+			DisplayName = "Byte 1"
+		}
+		Byte2 {
+			DisplayName = "Byte 2"
+		}
+		Byte3 {
+			DisplayName = "Byte 3"
+		}
+		Byte4 {
+			DisplayName = "Byte 4"
+		}
+		Byte5 {
+			DisplayName = "Byte 5"
+		}
+	}
+
+	struct TLM129 {
+		Description = "Boot And Running Program Status"
+		CmdID {
+			DisplayName = "Command ID"
+		}
+		ResetAndBoot {
+			DisplayName = "Reset And Boot Causes Bitmask"
+		}
+		BootCnt {
+			DisplayName = "Boot Counter"
+			Description = "Number of times CubeComputer has booted"
+		}
+		BootProgIndx {
+			DisplayName = "Boot Program Index"
+			Description = "Location of program that is currently running."
+		}
+		FWVersionMajor {
+			DisplayName = "Firmware Version Major"
+		}
+		FWVersionMinor {
+			DisplayName = "Firmware Version Minor"
+		}
+	}
+
+	struct TLM130 {
+		CmdID {
+			DisplayName = "Command ID"
+		}
+		ProgramIndex {
+			DisplayName = "Program Index"
+		}
+		BootStatus {
+			DisplayName = "Boot Status"
+		}
+	}
+
+	struct State {
+		ACPState {
+			DisplayName = "ACP State"
+		}
+		ADCSState {
+			DisplayName = "ADCS State"
+		}
+		ADCSState2 {
+			DisplayName = "ADCS State2"
+		}
+		BootStatus {
+			DisplayName = "Boot Status"
+		}
+		ProgStatus {
+			DisplayName = "Program Status"
+		}
+	}
+
+	struct HCheckCommStatus {
+		Description = "Health Check Communication Status"
+		TLM128 {
+			DisplayName = "Telemetry 128"
+			Description = "Identification information for this node"
+		}
+		TLM130 {
+			DisplayName = "Telemetry 130"
+			Description = "Boot index and status"
+		}
+		TLM132 {
+			DisplayName = "Telemetry 132"
+			Description = "Current ADCS state"
+		}
+		TLM135 {
+			DisplayName = "Telemetry 135"
+			Description = "Cube ACP state"
+		}
+		TLM224 {
+			DisplayName = "Telemetry 224"
+			Description = "Current ADCS state 2"
+		}
+		TLM197 {
+			DisplayName = "Telemetry 197"
+			Description = "ADCS power control"
+		}
+	}
+
+	struct Status {
+		Commissioning {
+			DisplayName = "Commissioning"
+		}
+		NodeStatus {
+			DisplayName = "Node Status"
+		}
+		RunTimeLatchedErrors {
+			DisplayName = "Runtime Latched Errors"
+		}
+		HCheclComm {
+			DisplayName = "Health Check Communication"
+		}
+	}
+
+	struct OpStatus {
+		Mode {
+			DisplayName = "Mode"
+		}
+		State {
+			DisplayName = "State"
+		}
+		Status {
+			DisplayName = "Status"
+		}
+		Comm {
+			DisplayName = "Communication Status"
+		}
+	}
+
+	struct FTransfer_FInfo {
+		FType {
+			DisplayName = "File Type"
+		}
+		Counter {
+			DisplayName = "Counter"
+		}
+		Crc16 {
+			DisplayName = "CRC16"
+		}
+		FileSize {
+			DisplayName = "File Size"
+			Unit = "B"
+		}
+	}
+
+	struct cntrsRange {
+		baseCntr {
+			DisplayName = "Base Counter"
+		}
+		topCntr {
+			DisplayName = "Top Counter"
+		}
+	}
+
+	struct LibVersion {
+		majVer {
+			DisplayName = "Major Version"
+		}
+		minVer {
+			DisplayName = "Minor Version"
+		}
+		patchVer {
+			DisplayName = "Patch Version"
+		}
+	}
+
+	struct UnixTime {
+		currentUnixTime {
+			DisplayName = "Current Unix Time"
+			Description = "Time in s since 01/01/1970, 00:00"
+			Unit = "s"
+		}
+		milliseconds {
+			DisplayName = "Milliseconds"
+			Description = "Current millisecond count"
+			Unit = "ms"
+		}
+	}
+
+	struct ErrCounters {
+		COMM_OK {
+			DisplayName = "COMM OK"
+		}
+		COMM_ERR {
+			DisplayName = "COMM ERR"
+		}
+		COMM_CMD_ERR {
+			DisplayName = "COMM CMD ERR"
+		}
+		COMM_LEN_WRT_ERR {
+			DisplayName = "COMM LEN WRT ERR"
+		}
+		COMM_LEN_READ_ERR {
+			DisplayName = "COMM LEN READ ERR"
+		}
+		COMM_RX_TIMEOUT {
+			DisplayName = "COMM RX TIMEOUT"
+		}
+		COMM_TX_TIMEOUT {
+			DisplayName = "COMM TX TIMEOUT"
+		}
+		COMM_COMM_ERR {
+			DisplayName = "COMM COMM ERR"
+		}
+		COMM_INV_DATA {
+			DisplayName = "COMM INV DATA"
+		}
+		CUBESENSE1_COMM_ERR {
+			DisplayName = "CUBESENSE1 COMM ERR"
+		}
+		CUBESENSE2_COMM_ERR {
+			DisplayName = "CUBESENSE2 COMM ERR"
+		}
+		CUBECONTROL_SIGNAL_COMM_ERR {
+			DisplayName = "CUBECONTROL SIGNAL COMM ERR"
+		}
+		CUBECONTROL_MOTOR_COMM_ERR {
+			DisplayName = "CUBECONTROL MOTOR COMM ERR"
+		}
+		CUBEWHEEL1_COMM_ERR {
+			DisplayName = "CUBEWHEEL1 COMM ERR"
+		}
+		CUBEWHEEL2_COMM_ERR {
+			DisplayName = "CUBEWHEEL2 COMM ERR"
+		}
+		CUBEWHEEL3_COMM_ERR {
+			DisplayName = "CUBEWHEEL3 COMM ERR"
+		}
+		CUBESTAR_COMM_ERR {
+			DisplayName = "CUBESTAR COMM ERR"
+		}
+		MAGMETER_RANGE_ERR {
+			DisplayName = "MAGMETER RANGE ERR"
+		}
+		CAM1_SRAM_OVERCURRENT_DET {
+			DisplayName = "CAM1 SRAM OVERCURRENT DET"
+		}
+		CAM1_3V3_OVERCURRENT_DET {
+			DisplayName = "CAM1 3V3 OVERCURRENT DET"
+		}
+		CAM1_SENSOR_BUSY_ERR {
+			DisplayName = "CAM1 SENSOR BUSY ERR"
+		}
+		CAM1_SENSOR_DET_ERR {
+			DisplayName = "CAM1 SENSOR DET ERR"
+		}
+		SUN_SENSOR_RANGE_ERR {
+			DisplayName = "SUN SENSOR RANGE ERR"
+		}
+		CAM2_SRAM_OVERCURRENT_DET {
+			DisplayName = "CAM2 SRAM OVERCURRENT DET"
+		}
+		CAM2_3V3_OVERCURRENT_DET {
+			DisplayName = "CAM2 3V3 OVERCURRENT DET"
+		}
+		CAM2_SENSOR_BUSY_ERR {
+			DisplayName = "CAM2 SENSOR BUSY ERR"
+		}
+		CAM2_SENSOR_DET_ERR {
+			DisplayName = "CAM2 SENSOR DET ERR"
+		}
+		NADIR_SENSOR_RANGE_ERR {
+			DisplayName = "NADIR SENSOR RANGE ERR"
+		}
+		RATE_SENSOR_RANGE_ERR {
+			DisplayName = "RATE SENSOR RANGE ERR"
+		}
+		WHEEL_SPEED_RANGE_ERR {
+			DisplayName = "WHEEL SPEED RANGE ERR"
+		}
+		CSS_ERR {
+			DisplayName = "CSS ERR"
+		}
+		STARTRACKER_MATCH_ERR {
+			DisplayName = "STARTRACKER MATCH ERR"
+		}
+		STARTRACKER_OVERCURRENT_DET {
+			DisplayName = "STARTRACKER OVERCURRENT DET"
+		}
+		SRAM_LUP_ERR {
+			DisplayName = "SRAM LUP ERR"
+		}
+		SRAM_LUP_ERR_REC {
+			DisplayName = "SRAM LUP ERR REC"
+		}
+		SD_CARD_INIT_ERR {
+			DisplayName = "SD CARD INIT ERR"
+		}
+		SD_CARD_READ_ERR {
+			DisplayName = "SD CARD READ ERR"
+		}
+		SD_CARD_WRT_ERR {
+			DisplayName = "SD CARD WRT ERR"
+		}
+		EXT_FLASH_ERR {
+			DisplayName = "EXT FLASH ERR"
+		}
+		INT_FLASH_ERR {
+			DisplayName = "INT FLASH ERR"
+		}
+		EEPROM_ERR {
+			DisplayName = "EEPROM ERR"
+		}
+		BOOT_REG_ERR {
+			DisplayName = "BOOT REG ERR"
+		}
+		COMM_RADIO_ERR {
+			DisplayName = "COMM RADIO ERR"
+		}
+		ADCS_CONFIG_LOAD_ERR {
+			DisplayName = "ADCS CONFIG LOAD ERR"
+		}
+		ORBIT_PARAM_LOAD_ERR {
+			DisplayName = "ORBIT PARAM LOAD ERR"
+		}
+		SYS_CONFIG_LOAD_ERR {
+			DisplayName = "SYS CONFIG LOAD ERR"
+		}
+		ORBIT_PARAM_INVALID_ERR {
+			DisplayName = "ORBIT PARAM INVALID ERR"
+		}
+		CONFIG_INVALID_ERR {
+			DisplayName = "CONFIG INVALID ERR"
+		}
+		CNTRL_MODE_CHG_INV_ERR {
+			DisplayName = "CNTRL MODE CHG INV ERR"
+		}
+		EST_CHG_INV_ERR {
+			DisplayName = "EST CHG INV ERR"
+		}
+		MAGNETIC_FIELD_DIFF_ERR {
+			DisplayName = "MAGNETIC FIELD DIFF ERR"
+		}
+		NODE_RECOVERY_ERR {
+			DisplayName = "NODE RECOVERY ERR"
+		}
+		CUBESENSE1_RUNTIME_ERR {
+			DisplayName = "CUBESENSE1 RUNTIME ERR"
+		}
+		CUBESENSE2_RUNTIME_ERR {
+			DisplayName = "CUBESENSE2 RUNTIME ERR"
+		}
+		CUBECONTROL_SIGNAL_RUNTIME_ERR {
+			DisplayName = "CUBECONTROL SIGNAL RUNTIME ERR"
+		}
+		CUBECONTROL_MOTOR_RUNTIME_ERR {
+			DisplayName = "CUBECONTROL MOTOR RUNTIME ERR"
+		}
+		CUBEWHEEL1_RUNTIME_ERR {
+			DisplayName = "CUBEWHEEL1 RUNTIME ERR"
+		}
+		CUBEWHEEL2_RUNTIME_ERR {
+			DisplayName = "CUBEWHEEL2 RUNTIME ERR"
+		}
+		CUBEWHEEL3_RUNTIME_ERR {
+			DisplayName = "CUBEWHEEL3 RUNTIME ERR"
+		}
+		CUBESTAR_RUNTIME_ERR {
+			DisplayName = "CUBESTAR RUNTIME ERR"
+		}
+		MAGNETOMETER_ERR {
+			DisplayName = "MAGNETOMETER ERR"
+		}
+		RATE_SENSOR_FAILURE_ERR {
+			DisplayName = "RATE SENSOR FAILURE ERR"
+		}
+	}
+
+	struct FDIRCounters {
+		NODE_RECOVERY_ERR {
+			DisplayName = "NODE RECOVERY ERR"
+		}
+		MAGMETER_RANGE_ERR {
+			DisplayName = "MAGMETER RANGE ERR"
+		}
+		CAM1_SRAM_OVERCURRENT_DET {
+			DisplayName = "CAM1 SRAM OVERCURRENT DET"
+		}
+		CAM1_3V3_OVERCURRENT_DET {
+			DisplayName = "CAM1 3V3 OVERCURRENT DET"
+		}
+		CAM2_SRAM_OVERCURRENT_DET {
+			DisplayName = "CAM2 SRAM OVERCURRENT DET"
+		}
+		CAM2_3V3_OVERCURRENT_DET {
+			DisplayName = "CAM2 3V3 OVERCURRENT DET"
+		}
+		STARTRACKER_OVERCURRENT_DET {
+			DisplayName = "STARTRACKER OVERCURRENT DET"
+		}
+		MAGNETOMETER_ERR {
+			DisplayName = "MAGNETOMETER ERR"
+		}
+		CAM1_SENSOR_BUSY_ERR {
+			DisplayName = "CAM1 SENSOR BUSY ERR"
+		}
+		CAM2_SENSOR_BUSY_ERR {
+			DisplayName = "CAM2 SENSOR BUSY ERR"
+		}
+		RATE_SENSOR_RANGE_ERR {
+			DisplayName = "RATE SENSOR RANGE ERR"
+		}
+		WHEEL_SPEED_RANGE_ERR {
+			DisplayName = "WHEEL SPEED RANGE ERR"
+		}
+		RATE_SENSOR_FAILURE_ERR {
+			DisplayName = "RATE SENSOR FAILURE ERR"
+		}
+		ORBIT_PARAM_INVALID_ERR {
+			DisplayName = "ORBIT PARAM INVALID ERR"
+		}
+		CONFIG_INVALID_ERR {
+			DisplayName = "CONFIG INVALID ERR"
+		}
+		CNTRL_MODE_CHG_INV_ERR {
+			DisplayName = "CNTRL MODE CHG INV ERR"
+		}
+		EST_CHG_INV_ERR {
+			DisplayName = "EST CHG INV ERR"
+		}
+	}
+
+	method getCommissioningStatus {
+		out {
+			status {
+				DisplayName = "Status"
+			}
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method setCommissioningStatus {
+		in {
+			status {
+				DisplayName = "Status"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getGenericTLM {
+		in {
+			TLMID {
+				DisplayName = "Telemetry ID"
+			}
+		}
+		out {
+			TLMReq_Reply {
+				DisplayName = "Telemetry Request Reply"
+			}
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method sendGenericTC {
+		in {
+			TCReq_Data {
+				DisplayName = "Telecommand Request Data"
+			}
+		}
+		out {
+			TCReq_Reply {
+				DisplayName = "Telecommand Request Reply"
+			}
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getOpStatus {
+		out {
+			opStatus {
+				DisplayName = "Operational Status"
+			}
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method reset {
+		in {
+			mode {
+				DisplayName = "Mode"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method clrErrFlags {
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method startFileTransfer {
+		in {
+			FileInfo {
+				DisplayName = "File Info"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method pollFileTransferStatus {
+		out {
+			status {
+				DisplayName = "Status"
+			}
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method clearRunTimeLatchedErrs {
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method clearFaultyNodeStatus {
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method startFileListDownload {
+		in {
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method pollFileListDownloadStatus {
+		out {
+			status {
+				DisplayName = "Status"
+			}
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getADCSSysState {
+		out {
+			sysState {
+				DisplayName = "System state"
+			}
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method setADCSSysState {
+		in {
+			sysState {
+				DisplayName = "System State"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getADCSUnixTime {
+		out {
+			unixTime {
+				DisplayName = "Unix Time"
+			}
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method updateADCSUnixTime {
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method setEnableErrHandlLogic {
+		in {
+			enFlag {
+				DisplayName = "Enable Flag"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getEnableErrHandlLogic {
+		out {
+			enFlag {
+				DisplayName = "Enflag"
+			}
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method setStablePointingThresholds {
+		in {
+			stablePointingThresholdAngle {
+				DisplayName = "Stable Pointing Threshold Angle"
+				Unit = "deg"
+			}
+			stablePointingThresholdAngleRate {
+				DisplayName = "Stable Pointing Threshold Angle Rate"
+				Unit = "deg/s"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getStablePointingThresholds {
+		out {
+			stablePointingThresholdAngle {
+				DisplayName = "Stable Pointing Threshold Angle"
+				Unit = "deg"
+			}
+			stablePointingThresholdAngleRate {
+				DisplayName = "Stable Pointing Threshold Angle Rate"
+				Unit = "deg/s"
+			}
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method setSimulationMode {
+		in {
+			en_sim_mode {
+				DisplayName = "Enable Simulation Mode"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getSimulationModeValue {
+		out {
+			en_sim_mode {
+				DisplayName = "Enable Simulation Mode"
+			}
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getOBCCommAndErrCounters {
+		out {
+			counters {
+				DisplayName = "Counters"
+			}
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method clrOBCCommAndErrCounters {
+		in {
+			range {
+				DisplayName = "Range"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getFDIRCouners {
+		out {
+			counters {
+				DisplayName = "Counters"
+			}
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method clrFDIRCounters {
+		in {
+			range {
+				DisplayName = "Range"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method stopFileTransfer {
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getRunTimeLatchedErrs {
+		out {
+			NodeRecoveryErr {
+				DisplayName = "Node Recovery Error"
+				AlarmNumericMinInclusive = "1"
+			}
+			RangeErr {
+				DisplayName = "Range Error"
+				AlarmNumericMinInclusive = "1"
+			}
+			RateSensFailure {
+				DisplayName = "Rate Sensor Failure"
+				AlarmNumericMinInclusive = "1"
+			}
+			MagnetometerErr {
+				DisplayName = "Magnetometer Error"
+				AlarmNumericMinInclusive = "1"
+			}
+			OrbitParamsErr {
+				DisplayName = "Orbital Parameters Error"
+				AlarmNumericMinInclusive = "1"
+			}
+			ConfigInvalid {
+				DisplayName = "Configuration Invalid"
+				AlarmNumericMinInclusive = "1"
+			}
+			CntrlModeChgErr {
+				DisplayName = "Control Mode Change Error"
+				AlarmNumericMinInclusive = "1"
+			}
+			EstModeChgErr {
+				DisplayName = "Estimation Mode Change Error"
+				AlarmNumericMinInclusive = "1"
+			}
+			SysStateChgErr {
+				DisplayName = "System State Change Error"
+				AlarmNumericMinInclusive = "1"
+			}
+			Reserved {
+				DisplayName = "Reserved"
+			}
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getFaultyNodeStatus {
+		out {
+			SignalMCU {
+				DisplayName = "Signal MCU"
+				AlarmNumericMinInclusive = "1"
+			}
+			MotorMCU {
+				DisplayName = "Motor MCU"
+			}
+			CubeSense1 {
+				DisplayName = "CubeSense 1"
+				AlarmNumericMinInclusive = "1"
+			}
+			CubeSense2 {
+				DisplayName = "CubeSense 2"
+				AlarmNumericMinInclusive = "1"
+			}
+			CubeStar {
+				DisplayName = "CubeStar"
+				AlarmNumericMinInclusive = "1"
+			}
+			RWheel1 {
+				DisplayName = "Reaction Wheel 1"
+				AlarmNumericMinInclusive = "1"
+			}
+			RWheel2 {
+				DisplayName = "Reaction Wheel 2"
+				AlarmNumericMinInclusive = "1"
+			}
+			RWheel3 {
+				DisplayName = "Reaction Wheel 3"
+				AlarmNumericMinInclusive = "1"
+			}
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method setSystemStateCfg {
+		in {
+			CubeADCS_sys_state_cfg {
+				DisplayName = "CubeADCS System State Configuration"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getSystemStateCfg {
+		out {
+			CubeADCS_sys_state_cfg {
+				DisplayName = "CubeADCS System State Configuration"
+			}
+		}
+	}
+
+}

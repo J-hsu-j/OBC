@@ -1,0 +1,117 @@
+package endurosat.pf.payload
+
+<** @description: Payload Control interface used for testing purposes
+
+    @details: id = 0x6F
+**>
+interface payload_ctrl
+{
+    version { major 2 minor 0 }
+
+    <** @description: Payload controller operation result **>
+    enumeration PayloadOpResult
+    {
+        NOT_INIT
+        INVALID_PL_ID
+        REFUSE_CMD
+        FAILED
+        OK
+    }
+
+    <** @description: State of a payload **>
+    enumeration PayloadState
+    {
+        NOT_INIT,
+        STOPPED,
+        STARTED,
+        STARTING,
+        STOPPING,
+        ERROR
+    }
+    
+    <** @description: Urgency of a payload stop operation **>
+    enumeration StopMode
+    {
+        NORMAL = 0,
+        EMERGENCY = 0xFF
+    }
+
+    <** @description: Status information about a payload **>
+    struct PayloadInfo
+    {
+        <** @description: State of the payload **>
+        PayloadState pl_state
+        
+        <** @description: Last regisered error of the payload **>
+        UInt32 last_error_code
+    }
+    
+    <** @description: Configuration arguments for starting a payload **>
+    struct PayloadStartCfg
+    {
+        <** @description: A set of setup flags with payload-specific purpose **>
+        UInt8 flags
+        
+        <** @description: Payload-specific arguments 
+            @details: size = 47 
+        **>
+        UInt8[] pl_args
+    }
+
+    <** @description: Start payload
+        @details: id = 0x00000000
+    **>
+    method start_payload
+    {
+        in
+        {
+            <** @description: ID of the payload **>
+            UInt8 payload_id
+            
+            <** @description: Configuration arguments of the start operation **>
+            PayloadStartCfg start_cfg
+        }
+        out
+        {
+            <** @description: Result of the operation **>
+            PayloadOpResult op_result
+        }
+    }
+
+    <** @description: Stop payload
+        @details: id = 0x00000001
+    **>
+    method stop_payload
+    {
+        in
+        {
+            <** @description: ID of the payload **>
+            UInt8 payload_id
+            
+            <** @description: Urgency of the stop operation **>
+            StopMode req_stop_mode
+        }
+        out
+        {
+            <** @description: Result of the operation **>
+            PayloadOpResult op_result
+        }
+    }
+
+    <** @description: Get payload information
+        @details: id = 0x00000002
+    **>
+    method get_payload_info
+    {
+        in
+        {
+            <** @description: ID of the payload **>
+            UInt8 payload_id
+        }
+        out
+        {
+            <** @description: Status information about the payload **>
+            PayloadInfo info
+        }
+    }
+}

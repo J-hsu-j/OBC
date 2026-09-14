@@ -1,0 +1,1377 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+package endurosat.macif
+
+
+<** @description: Interface for Cube ADCS Gen2 - CubeStarControlProgram6
+    @details: id = 318
+**>
+
+interface CubeADCS_Gen2_CubeStarControlProgram6
+{
+    version {major 6 minor 0}
+    
+    <** @description: This enumeration holds the IDs of CubeADCS Gen2 nodes for which this interface is applicable.
+        @details: size = 1 
+    **>
+    enumeration CmdTargetNode
+    {
+        NodeInvalid = 0
+        NodeStr0 = 2
+        NodeStr1 = 3
+        
+    }
+
+    <** @description: Return status type of the CubeADCS Gen2 API operations. Possible values are:
+                     0 - No error
+                     1 - NULL pointer
+                     2 - Size incorrect
+                     3 - Size too low
+                     4 - Size too high
+                     5 - Overrun
+                     6 - Parameter error (out of range)
+                     7 - Timeout
+                     8 - TCTLM comms Nack
+                     9 - Busy
+                     10 - Frame
+                     11 - CRC
+                     12 - Read
+                     13 - Write
+                     14 - CAN ID type error
+                     15 - CAN frame error
+                     16 - Unknown NACK
+                     17 - Invalid node type
+                     18 - CubeSpace file upload internal error
+                     19 - Usage error
+                     20 - Auto-Discovery error
+                     21 - Image error
+                     22 - Does not exist error
+                     23 - User data error
+                     24 - Commit error
+                     25 - TCTLM protocol error
+                     26 - General unexpected/unknown error
+                     27 - Telemetry response size error
+                     28 - TCTLM response ID does not match the request
+
+                     50 - TCTLM Nack - invalid ID
+                     51 - TCTLM Nack - invalid length
+                     52 - TCTLM Nack - invalid parameter data
+                     53 - TCTLM Nack - CRC failed
+                     54 - TCTLM Nack - not implemented
+                     55 - TCTLM Nack - busy
+                     56 - TCTLM Nack - sequence
+                     57 - TCTLM Nack - internal
+                     58 - TCTLM Nack - pass-through timeout
+                     59 - TCTLM Nack - pass-through target
+
+                     70 - CSP - receive timeout
+                     71 - CSP - failed to acquire a buffer
+
+                     65535 - Not implemented / TODO
+    **>
+    typedef AdcsErrorCode is Int32
+    
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeStarControlProgram6_TestPatternSelection
+    {
+        
+        <** @description: None **>
+        TestPatVideo = 0
+        
+        <** @description: Image capture scheduled **>
+        TestPatDiag1 = 1
+        
+        <** @description: Image capture in progress **>
+        TestPatDiag2 = 2
+        
+        <** @description: Successful capture **>
+        TestPatRamp = 3
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeStarControlProgram6_IntTimeMultSelection
+    {
+        
+        <** @description: x8 **>
+        IntTimeMultX8 = 0
+        
+        <** @description: x16 **>
+        IntTimeMultX16 = 1
+        
+        <** @description: x32 **>
+        IntTimeMultX32 = 2
+        
+        <** @description: x64 **>
+        IntTimeMultX64 = 3
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeStarControlProgram6_AnalogGainSelection
+    {
+        
+        <** @description: x1 **>
+        AnaGainX1 = 0
+        
+        <** @description: x1.5 **>
+        AnaGainX1_5 = 1
+        
+        <** @description: x2 **>
+        AnaGainX2 = 2
+        
+        <** @description: x3 **>
+        AnaGainX3 = 3
+        
+        <** @description: x4 **>
+        AnaGainX4 = 4
+        
+        <** @description: x6 **>
+        AnaGainX6 = 5
+        
+        <** @description: x8(6) **>
+        AnaGainX8 = 6
+        
+        <** @description: x8(7) **>
+        AnaGainX8_2 = 7
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeStarControlProgram6_CaptureStatus
+    {
+        
+        <** @description: Initialised **>
+        CaptureStartup = 0
+        
+        <** @description: Image capture scheduled **>
+        CapturePending = 1
+        
+        <** @description: Image capture in progress **>
+        CaptureBusy = 2
+        
+        <** @description: Successful capture **>
+        CaptureDone = 3
+        
+        <** @description: Camera error occurred **>
+        CaptureError = 4
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeStarControlProgram6_StarDetectStatus
+    {
+        
+        <** @description: Initialised **>
+        DetectStartup = 0
+        
+        <** @description: Detection scheduled **>
+        DetectPending = 1
+        
+        <** @description: Detection in progress **>
+        DetectBusy = 2
+        
+        <** @description: Detection stopped because process took too long **>
+        DetectAbort = 3
+        
+        <** @description: Detection completed **>
+        DetectDone = 4
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeStarControlProgram6_StarIdStatus
+    {
+        
+        <** @description: Initialised **>
+        IdStartup = 0
+        
+        <** @description: Identification scheduled **>
+        IdPending = 1
+        
+        <** @description: Identification in progress **>
+        IdBusy = 2
+        
+        <** @description: Identification stopped because process took too long **>
+        IdAbort = 3
+        
+        <** @description: Identification stopped because there is not enough memory for match tables **>
+        IdOutOfMem = 4
+        
+        <** @description: Identification was not attempted because there are not enough detected stars **>
+        IdTooFew = 5
+        
+        <** @description: Identification failed because previously tracked stars could not be located **>
+        IdTrackErr = 6
+        
+        <** @description: Identification completed **>
+        IdDone = 7
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeStarControlProgram6_DirSelection
+    {
+        
+        <** @description: Download from node **>
+        Download = 0
+        
+        <** @description: Upload to node **>
+        Upload = 1
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeStarControlProgram6_CompressionSelection
+    {
+        
+        <** @description: Uncompressed **>
+        None = 0
+        
+        <** @description: Run-length encoding **>
+        RLE = 1
+        
+        <** @description: JPG Compression **>
+        JPG = 2
+        
+    }
+    
+    
+    
+    <** @description: Parameter structure for interface CaptureDetect
+    **>
+    struct CaptureDetect
+    {
+        
+        <** @description: Force identification to perform lost-in-space algorithm **>
+        Boolean ForceLostInSpace
+        
+    }
+    
+    <** @description: Parameter structure for interface LensDistortion
+    **>
+    struct LensDistortion
+    {
+        
+        <** @description: Lens focal length **>
+        Float FocalLength
+        
+        <** @description: Lens principal point on X-axis **>
+        Float Cx
+        
+        <** @description: Lens principal point on Y-axis **>
+        Float Cy
+        
+        <** @description: Radial distortion coefficient K1 **>
+        Float K1
+        
+        <** @description: Radial distortion coefficient K2 **>
+        Float K2
+        
+        <** @description: Radial distortion coefficient K3 **>
+        Float K3
+        
+        <** @description: Inverse radial distortion coefficient K1 **>
+        Float InvK1
+        
+        <** @description: Inverse radial distortion coefficient K2 **>
+        Float InvK2
+        
+        <** @description: Inverse radial distortion coefficient K3 **>
+        Float InvK3
+        
+    }
+    
+    <** @description: Parameter structure for interface DetectionSettings
+    **>
+    struct DetectionSettings
+    {
+        
+        <** @description: Horizontal and vertical step when scanning for pixels above threshold **>
+        UInt8 StepSize
+        
+        <** @description: Minimum pixel intensity above dark value to be considered a star pixel **>
+        UInt8 Threshold
+        
+        <** @description: minimum number of above-threshold pixels surrounding central pix **>
+        UInt8 MinSurroundCount
+        
+        <** @description: Minimum number of pixels a star may occupy **>
+        UInt16 MinStarPixels
+        
+        <** @description: Maximum number of pixels a star may occupy **>
+        UInt16 MaxStarPixels
+        
+        <** @description: Region of interest start in X-axis **>
+        UInt16 XStart
+        
+        <** @description: Region of interest start in Y-axis **>
+        UInt16 YStart
+        
+        <** @description: Region of interest end in X-axis **>
+        UInt16 XEnd
+        
+        <** @description: Region of interest end in Y-axis **>
+        UInt16 YEnd
+        
+        <** @description: Fixed angular separation tolerance for matching star pairs **>
+        UInt16 AdTolFixed
+        
+        <** @description: Additional angular separation tolerance for matching star pairs **>
+        UInt16 AdTolR
+        
+        <** @description: Angular separation tolerance when tracking stars **>
+        UInt16 AdTolRelaxed
+        
+        <** @description: Maximum time allowed when tracking stars **>
+        UInt16 MaxTrackTime
+        
+        <** @description: Tracking window size **>
+        UInt16 TrackWindowSize
+        
+        <** @description: Use angular rate to predict tracked star positions **>
+        Boolean TrackUseAngRate
+        
+    }
+    
+    <** @description: Parameter structure for interface SensorSettings
+    **>
+    struct SensorSettings
+    {
+        
+        <** @description: Automatic black level adjustment (auto-clamp) **>
+        Boolean AutoBlackLevel
+        
+        <** @description: Enables range compression (in 10-bit to 8-bit conversion) **>
+        Boolean RangeCompression
+        
+        <** @description: Integration time multiplication factor **>
+        CubeStarControlProgram6_IntTimeMultSelection IntTimeMultiply
+        
+        <** @description: Test pattern **>
+        CubeStarControlProgram6_TestPatternSelection TestPattern
+        
+        <** @description: Clamp lock mechanism enable **>
+        Boolean ClampLockEnable
+        
+        <** @description: Digital correction enable **>
+        Boolean ClampDigitalCorrect
+        
+        <** @description: Range compression knee-point coefficient **>
+        UInt8 RangeCoefficient
+        
+        <** @description: Integration time in number of lines **>
+        UInt16 IntTimeNumLines
+        
+        <** @description: Analog gain **>
+        CubeStarControlProgram6_AnalogGainSelection AnalogGain
+        
+        <** @description: ROI Digital gain **>
+        UInt8 RoiDigitalGain
+        
+        <** @description: Global Digital gain **>
+        UInt8 GlobalDigitalGain
+        
+        <** @description: Additional clamp offset with auto-clamp enabled **>
+        Int8 AutoClampAddOffset
+        
+        <** @description: Manual clamp offset with auto-clamp disabled **>
+        UInt8 ManualClampOffset
+        
+        <** @description: Number of init lines (V0) before reading matrix **>
+        UInt8 ClampInitLines
+        
+        <** @description: Clamp lock mechanism threshold **>
+        UInt8 ClampLockThreshold
+        
+        <** @description: Clamp V0 gain **>
+        UInt8 ClampV0Gain
+        
+    }
+    
+    <** @description: Parameter structure for interface ImageTransferSetup
+    **>
+    struct ImageTransferSetup
+    {
+        
+        <** @description: Transfer direction (upload or download) **>
+        CubeStarControlProgram6_DirSelection Direction
+        
+        <** @description: Compression selection **>
+        CubeStarControlProgram6_CompressionSelection Compression
+        
+        <** @description: Left column of download window **>
+        UInt16 WindowX
+        
+        <** @description: Top row of download window **>
+        UInt16 WindowY
+        
+        <** @description: Width download window **>
+        UInt16 WindowWidth
+        
+        <** @description: Height of download window **>
+        UInt16 WindowHeight
+        
+    }
+    
+    <** @description: Parameter structure for interface SensorRegisterRead
+    **>
+    struct SensorRegisterRead
+    {
+        
+        <** @description: Register address **>
+        UInt8 RegAddr
+        
+    }
+    
+    <** @description: Parameter structure for interface SensorRegisterWrite
+    **>
+    struct SensorRegisterWrite
+    {
+        
+        <** @description: Register address **>
+        UInt8 RegAddr
+        
+        <** @description: Register value **>
+        UInt16 RegValue
+        
+    }
+    
+    <** @description: Parameter structure for interface SubsystemPower
+    **>
+    struct SubsystemPower
+    {
+        
+        <** @description: Enable or disable power to subsystems **>
+        Boolean SubsystemPwr
+        
+    }
+    
+    <** @description: Parameter structure for interface Status
+    **>
+    struct Status
+    {
+        
+        <** @description: Status of image capture operation **>
+        CubeStarControlProgram6_CaptureStatus CaptureStatus
+        
+        <** @description: Status of star detection operation **>
+        CubeStarControlProgram6_StarDetectStatus DetectStatus
+        
+        <** @description: Status of star identification operation **>
+        CubeStarControlProgram6_StarIdStatus IdentStatus
+        
+        <** @description: CubeStar is idle and can accept new command **>
+        Boolean Idle
+        
+        <** @description: CubeStar is in tracking mode **>
+        Boolean Tracking
+        
+        <** @description: Number of detected stars **>
+        UInt8 NumDetected
+        
+        <** @description: Number of identified stars **>
+        UInt8 NumIdentified
+        
+    }
+    
+    <** @description: Parameter structure for interface DetectionMetaData
+    **>
+    struct DetectionMetaData
+    {
+        
+        <** @description: Image capture duration **>
+        UInt16 CaptureTime
+        
+        <** @description: Star detection duration **>
+        UInt16 DetectTime
+        
+        <** @description: Star identification duration **>
+        UInt16 IdentTime
+        
+        <** @description: Average dark level **>
+        UInt8 DarkVal
+        
+        <** @description: Number of detected stars **>
+        UInt16 NumStarsDetected
+        
+        <** @description: Number of too small regions (noise pixels) **>
+        UInt32 RegionsTooSmall
+        
+        <** @description: Number of too-large regions **>
+        UInt32 RegionsTooLarge
+        
+        <** @description: Average angular separation error **>
+        Float AvgAdError
+        
+        <** @description: Average pixel position error **>
+        Float AvgPredictError
+        
+    }
+    
+    <** @description: Parameter structure for interface DetectedStars
+    **>
+    struct DetectedStars
+    {
+        
+        <** @description: Star 1 X **>
+        Double Star1x
+        
+        <** @description: Star 1 Y **>
+        Double Star1y
+        
+        <** @description: Star 1 Instrument magnitude **>
+        UInt16 Star1Mvi
+        
+        <** @description: Star 1 Catalogue index **>
+        Int16 Star1CatI
+        
+        <** @description: Star 2 X **>
+        Double Star2x
+        
+        <** @description: Star 2 Y **>
+        Double Star2y
+        
+        <** @description: Star 2 Instrument magnitude **>
+        UInt16 Star2Mvi
+        
+        <** @description: Star 2 Catalogue index **>
+        Int16 Star2CatI
+        
+        <** @description: Star 3 X **>
+        Double Star3x
+        
+        <** @description: Star 3 Y **>
+        Double Star3y
+        
+        <** @description: Star 3 Instrument magnitude **>
+        UInt16 Star3Mvi
+        
+        <** @description: Star 3 Catalogue index **>
+        Int16 Star3CatI
+        
+        <** @description: Star 4 X **>
+        Double Star4x
+        
+        <** @description: Star 4 Y **>
+        Double Star4y
+        
+        <** @description: Star 4 Instrument magnitude **>
+        UInt16 Star4Mvi
+        
+        <** @description: Star 4 Catalogue index **>
+        Int16 Star4CatI
+        
+        <** @description: Star 5 X **>
+        Double Star5x
+        
+        <** @description: Star 5 Y **>
+        Double Star5y
+        
+        <** @description: Star 5 Instrument magnitude **>
+        UInt16 Star5Mvi
+        
+        <** @description: Star 5 Catalogue index **>
+        Int16 Star5CatI
+        
+        <** @description: Star 6 X **>
+        Double Star6x
+        
+        <** @description: Star 6 Y **>
+        Double Star6y
+        
+        <** @description: Star 6 Instrument magnitude **>
+        UInt16 Star6Mvi
+        
+        <** @description: Star 6 Catalogue index **>
+        Int16 Star6CatI
+        
+        <** @description: Star 7 X **>
+        Double Star7x
+        
+        <** @description: Star 7 Y **>
+        Double Star7y
+        
+        <** @description: Star 7 Instrument magnitude **>
+        UInt16 Star7Mvi
+        
+        <** @description: Star 7 Catalogue index **>
+        Int16 Star7CatI
+        
+        <** @description: Star 8 X **>
+        Double Star8x
+        
+        <** @description: Star 8 Y **>
+        Double Star8y
+        
+        <** @description: Star 8 Instrument magnitude **>
+        UInt16 Star8Mvi
+        
+        <** @description: Star 8 Catalogue index **>
+        Int16 Star8CatI
+        
+        <** @description: Star 9 X **>
+        Double Star9x
+        
+        <** @description: Star 9 Y **>
+        Double Star9y
+        
+        <** @description: Star 9 Instrument magnitude **>
+        UInt16 Star9Mvi
+        
+        <** @description: Star 9 Catalogue index **>
+        Int16 Star9CatI
+        
+        <** @description: Star 10 X **>
+        Double Star10x
+        
+        <** @description: Star 10 Y **>
+        Double Star10y
+        
+        <** @description: Star 10 Instrument magnitude **>
+        UInt16 Star10Mvi
+        
+        <** @description: Star 10 Catalogue index **>
+        Int16 Star10CatI
+        
+    }
+    
+    <** @description: Parameter structure for interface HealthTlm
+    **>
+    struct HealthTlm
+    {
+        
+        <** @description: MCU Temperature **>
+        Int16 McuTemp
+        
+        <** @description: MCU current **>
+        UInt16 McuCurrent
+        
+        <** @description: Imager, NAND, SRAM current combined **>
+        UInt16 SystemCurrent
+        
+        <** @description: Peak system current since last Health TLM request **>
+        UInt16 SystemCurrentPk
+        
+        <** @description: MCU supply voltage **>
+        UInt16 McuVoltage
+        
+        <** @description: Detector PCB temperature **>
+        Int16 DetectorTemp
+        
+        <** @description: Sensor initialised without error **>
+        Boolean SensorInitOk
+        
+        <** @description: Sensor configuration set without error **>
+        Boolean SensorConfigOk
+        
+        <** @description: Temperature sensor initialised without error **>
+        Boolean TempSensorOk
+        
+        <** @description: Subsystem power switch status **>
+        Boolean SubsytemOn
+        
+        <** @description: Error Code for the first serious fault to occur **>
+        UInt32 ErrorCode
+        
+        <** @description: Bitmask representing virtual watchdog region warning counters.  
+            @details: size = 5**>
+        UInt8[] WatchdogCount
+        
+    }
+    
+    <** @description: Parameter structure for interface SensorRegisterValue
+    **>
+    struct SensorRegisterValue
+    {
+        
+        <** @description: Register address **>
+        UInt8 RegAddr
+        
+        <** @description: Register value **>
+        UInt16 RegValue
+        
+        <** @description: Completed **>
+        Boolean Completed
+        
+        <** @description: Error while reading/writing **>
+        Boolean Error
+        
+    }
+    
+    <** @description: Parameter structure for interface BestStars
+    **>
+    struct BestStars
+    {
+        
+        <** @description: Status of image capture operation **>
+        CubeStarControlProgram6_CaptureStatus CaptureStatus
+        
+        <** @description: Status of star detection operation **>
+        CubeStarControlProgram6_StarDetectStatus DetectStatus
+        
+        <** @description: Status of star identification operation **>
+        CubeStarControlProgram6_StarIdStatus IdentStatus
+        
+        <** @description: CubeStar is idle and can accept new command **>
+        Boolean Idle
+        
+        <** @description: CubeStar is in tracking mode **>
+        Boolean Tracking
+        
+        <** @description: Number of detected stars **>
+        UInt8 NumDetected
+        
+        <** @description: Number of identified stars **>
+        UInt8 NumIdentified
+        
+        <** @description: Star 1 X-component of measured body vector **>
+        Double Cam1x
+        
+        <** @description: Star 1 Y-component of measured body vector **>
+        Double Cam1y
+        
+        <** @description: Star 1 Z-component of measured body vector **>
+        Double Cam1z
+        
+        <** @description: Star 1 X-component of inertial reference vector **>
+        Double Ref1x
+        
+        <** @description: Star 1 Y-component of inertial reference vector **>
+        Double Ref1y
+        
+        <** @description: Star 1 Z-component of inertial reference vector **>
+        Double Ref1z
+        
+        <** @description: Star 2 X-component of measured body vector **>
+        Double Cam2x
+        
+        <** @description: Star 2 Y-component of measured body vector **>
+        Double Cam2y
+        
+        <** @description: Star 2 Z-component of measured body vector **>
+        Double Cam2z
+        
+        <** @description: Star 2 X-component of inertial reference vector **>
+        Double Ref2x
+        
+        <** @description: Star 2 Y-component of inertial reference vector **>
+        Double Ref2y
+        
+        <** @description: Star 2 Z-component of inertial reference vector **>
+        Double Ref2z
+        
+        <** @description: Star 3 X-component of measured body vector **>
+        Double Cam3x
+        
+        <** @description: Star 3 Y-component of measured body vector **>
+        Double Cam3y
+        
+        <** @description: Star 3 Z-component of measured body vector **>
+        Double Cam3z
+        
+        <** @description: Star 3 X-component of inertial reference vector **>
+        Double Ref3x
+        
+        <** @description: Star 3 Y-component of inertial reference vector **>
+        Double Ref3y
+        
+        <** @description: Star 3 Z-component of inertial reference vector **>
+        Double Ref3z
+        
+        <** @description: Estimated angular rate around CubeStar X-axis **>
+        Double xRate
+        
+        <** @description: Estimated angular rate around CubeStar Y-axis **>
+        Double yRate
+        
+        <** @description: Estimated angular rate around CubeStar Z-axis **>
+        Double zRate
+        
+    }
+    
+    <** @description: Parameter structure for interface Attitude
+    **>
+    struct Attitude
+    {
+        
+        <** @description: Status of image capture operation **>
+        CubeStarControlProgram6_CaptureStatus CaptureStatus
+        
+        <** @description: Status of star detection operation **>
+        CubeStarControlProgram6_StarDetectStatus DetectStatus
+        
+        <** @description: Status of star identification operation **>
+        CubeStarControlProgram6_StarIdStatus IdentStatus
+        
+        <** @description: CubeStar is idle and can accept new command **>
+        Boolean Idle
+        
+        <** @description: CubeStar is in tracking mode **>
+        Boolean Tracking
+        
+        <** @description: Number of detected stars **>
+        UInt8 NumDetected
+        
+        <** @description: Number of identified stars **>
+        UInt8 NumIdentified
+        
+        <** @description: Attitude Q1 **>
+        Float Q1
+        
+        <** @description: Attitude Q2 **>
+        Float Q2
+        
+        <** @description: Attitude Q3 **>
+        Float Q3
+        
+        <** @description: Attitude Q4 **>
+        Float Q4
+        
+        <** @description: Estimated angular rate around CubeStar X-axis **>
+        Double xRate
+        
+        <** @description: Estimated angular rate around CubeStar Y-axis **>
+        Double yRate
+        
+        <** @description: Estimated angular rate around CubeStar Z-axis **>
+        Double zRate
+        
+    }
+    
+    
+    
+    <**
+        @description: Capture image and perform star detection and identification
+        @details: id = 0
+    **>
+    method setCaptureDetect
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            CaptureDetect setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Capture image only
+        @details: id = 1
+    **>
+    method setCaptureOnly
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Detect and identify stars only
+        @details: id = 2
+    **>
+    method setDetectIdOnly
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Lens distortion parameters
+        @details: id = 3
+    **>
+    method setLensDistortion
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            LensDistortion setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Star detection settings
+        @details: id = 4
+    **>
+    method setDetectionSettings
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            DetectionSettings setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Sensor settings
+        @details: id = 5
+    **>
+    method setSensorSettings
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            SensorSettings setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Setup image transfer details
+        @details: id = 6
+    **>
+    method setImageTransferSetup
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            ImageTransferSetup setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Read sensor register
+        @details: id = 7
+    **>
+    method setSensorRegisterRead
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            SensorRegisterRead setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Write sensor register
+        @details: id = 8
+    **>
+    method setSensorRegisterWrite
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            SensorRegisterWrite setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Switch subsystem power
+        @details: id = 9
+    **>
+    method setSubsystemPower
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            SubsystemPower setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Lens distortion parameters
+        @details: id = 10
+    **>
+    method getLensDistortion
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            LensDistortion returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Star detection settings
+        @details: id = 11
+    **>
+    method getDetectionSettings
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            DetectionSettings returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Sensor settings
+        @details: id = 12
+    **>
+    method getSensorSettings
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            SensorSettings returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Capture, star detection and identification status
+        @details: id = 13
+    **>
+    method getStatus
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Status returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Meta-data from star detection
+        @details: id = 14
+    **>
+    method getDetectionMetaData
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            DetectionMetaData returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: List of detected stars
+        @details: id = 15
+    **>
+    method getDetectedStars
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            DetectedStars returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Housekeeping telemetry and error flags
+        @details: id = 16
+    **>
+    method getHealthTlm
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            HealthTlm returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Result of read/write sensor register
+        @details: id = 17
+    **>
+    method getSensorRegisterValue
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            SensorRegisterValue returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Capture, star detection and identification status, and best three matching star pairs
+        @details: id = 18
+    **>
+    method getBestStars
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            BestStars returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Capture, star detection and identification status, and attitude quaternion
+        @details: id = 19
+    **>
+    method getAttitude
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Attitude returnVal
+            
+            
+        }
+    }
+    
+}

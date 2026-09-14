@@ -1,0 +1,69 @@
+package org.endurosat.spec
+import "DecoratorSpec.fdepl"
+
+/**
+ * Used when there are calibration or validation values to be applied to the FIDL
+ * Currently only available for the JS generator
+ * All fields have to be String due to the JS generation
+ * No separate Spec for Validation
+ */
+specification CalibrationSpec extends org.endurosat.spec.DecoratorSpec {
+    for methods {
+        AlarmUseCalibrated : Boolean ( default: true ) ;
+    }
+    for attributes {
+        AlarmUseCalibrated : Boolean ( default: true ) ;
+    }
+    for struct_fields {
+        CalibratedType : String ( default: "" ) ;
+        CalibrationAlg : String ( default: "" ) ;
+        CalibrationParams : String [] ( default: {
+            ""
+        }
+        ) ;
+        AlarmNumericMinInclusive : String ( default: "" ) ;
+        AlarmNumericMaxInclusive : String ( default: "" ) ;
+        AlarmInvalidRegexValues : String [] ( default: {
+            ""
+        }
+        ) ;
+    }
+    for enumerations {
+        AlarmInvalidRegexValues : String [] ( default: {
+            ""
+        }
+        ) ;
+    }
+    for arguments {
+        CalibratedType : String ( default: "" ) ;
+        CalibrationAlg : String ( default: "" ) ;
+        CalibrationParams : String [] ( default: {
+            ""
+        }
+        ) ;
+        AlarmNumericMinInclusive : String ( default: "" ) ;
+        AlarmNumericMaxInclusive : String ( default: "" ) ;
+        AlarmInvalidRegexValues : String [] ( default: {
+            ""
+        }
+        ) ;
+    }
+    for attributes {
+        CalibratedType : String ( default: "" ) ;
+        CalibrationAlg : String ( default: "" ) ;
+        CalibrationParams : String [] ( default: {
+            ""
+        }
+        ) ;
+        AlarmNumericMinInclusive : String ( default: "" ) ;
+        AlarmNumericMaxInclusive : String ( default: "" ) ;
+        AlarmInvalidRegexValues : String [] ( default: {
+            ""
+        }
+        ) ;
+    }
+    for structs {
+        CalibratedType : String ( default: "" ) ;
+        CalibrationAlg : String ( default: "" ) ;
+    }
+}

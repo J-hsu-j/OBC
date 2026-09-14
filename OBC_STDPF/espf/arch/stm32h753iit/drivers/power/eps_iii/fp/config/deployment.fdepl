@@ -1,0 +1,69 @@
+package org.endurosat.deploy
+
+import "../../../../../../../../espf/core/fidl/spec/PlatformSpec.fdepl"
+
+import "../../../../../../../../espf/core/fidl/eps_iii/fp/eps_iii_input_stage.fidl"
+import "../../../../../../../../espf/core/fidl/eps_iii/fp/eps_iii_batt_pack.fidl"
+import "../../../../../../../../espf/core/fidl/eps_iii/fp/eps_iii_pdm_a.fidl"
+import "../../../../../../../../espf/core/fidl/eps_iii/fp/eps_iii_pdm_b.fidl"
+import "../../../../../../../../espf/core/fidl/eps_iii/fp/eps_iii_expander.fidl"
+
+
+// Client generation
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.eps_iii_input_stage  { 
+    IsClient = true
+    
+    method get_telemetry { InUse = true }
+    method get_telemetry_statistics { InUse = false }
+    method self_lock_functionality { InUse = false }
+    method device_passivation_step_1 { InUse = false }
+    method device_passivation_step_2 { InUse = false }
+    method device_passivation_step_3 { InUse = false }
+    method device_passivation_cancel { InUse = false }
+    method FIDL_version { InUse = false }
+}
+
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.eps_iii_batt_pack    { 
+    IsClient = true
+    
+    method get_telemetry { InUse = true }
+    method get_telemetry_statistics { InUse = false }
+    method m5_fuel_gauge_telemetry { InUse = false }
+    method m5_fuel_gauge_register_actions { InUse = false }
+    method device_passivation_step_1 { InUse = false }
+    method device_passivation_step_2 { InUse = false }
+    method device_passivation_step_3 { InUse = false }
+    method device_passivation_cancel { InUse = false }
+    method FIDL_version { InUse = false }
+}
+    
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.eps_iii_pdm_a        { 
+    IsClient = true
+    
+    method get_telemetry { InUse = true }
+    method get_telemetry_statistics { InUse = false }
+    method external_system_bus_control { InUse = true }
+    method low_volt_control { InUse = true }
+    method FIDL_version { InUse = false }
+}
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.eps_iii_pdm_b        {
+    IsClient = true
+    
+    method get_telemetry { InUse = true }
+    method get_telemetry_statistics { InUse = false }
+    method A_B_control { InUse = true }
+    method FIDL_version { InUse = false }
+}
+
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.eps_iii_expander     {
+    IsClient = true
+    
+    method get_telemetry { InUse = true }
+    method get_telemetry_statistics { InUse = false }
+    method h1_channels_control { InUse = true }
+    method gpio_control { InUse = true }
+    method interconnect_control { InUse = true }
+    method release_control { InUse = true }
+    method current_limiter_amp_settings { InUse = false }
+    method FIDL_version { InUse = false }
+}

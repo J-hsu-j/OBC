@@ -1,0 +1,964 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+package endurosat.macif
+
+
+<** @description: Interface for Cube ADCS Gen2 - CubeAurigaControlProgram1
+    @details: id = 302
+**>
+
+interface CubeADCS_Gen2_CubeAurigaControlProgram1
+{
+    version {major 6 minor 0}
+    
+    <** @description: This enumeration holds the IDs of CubeADCS Gen2 nodes for which this interface is applicable.
+        @details: size = 1 
+    **>
+    enumeration CmdTargetNode
+    {
+        NodeInvalid = 0
+        NodeStr0 = 2
+        NodeStr1 = 3
+        
+    }
+
+    <** @description: Return status type of the CubeADCS Gen2 API operations. Possible values are:
+                     0 - No error
+                     1 - NULL pointer
+                     2 - Size incorrect
+                     3 - Size too low
+                     4 - Size too high
+                     5 - Overrun
+                     6 - Parameter error (out of range)
+                     7 - Timeout
+                     8 - TCTLM comms Nack
+                     9 - Busy
+                     10 - Frame
+                     11 - CRC
+                     12 - Read
+                     13 - Write
+                     14 - CAN ID type error
+                     15 - CAN frame error
+                     16 - Unknown NACK
+                     17 - Invalid node type
+                     18 - CubeSpace file upload internal error
+                     19 - Usage error
+                     20 - Auto-Discovery error
+                     21 - Image error
+                     22 - Does not exist error
+                     23 - User data error
+                     24 - Commit error
+                     25 - TCTLM protocol error
+                     26 - General unexpected/unknown error
+                     27 - Telemetry response size error
+                     28 - TCTLM response ID does not match the request
+
+                     50 - TCTLM Nack - invalid ID
+                     51 - TCTLM Nack - invalid length
+                     52 - TCTLM Nack - invalid parameter data
+                     53 - TCTLM Nack - CRC failed
+                     54 - TCTLM Nack - not implemented
+                     55 - TCTLM Nack - busy
+                     56 - TCTLM Nack - sequence
+                     57 - TCTLM Nack - internal
+                     58 - TCTLM Nack - pass-through timeout
+                     59 - TCTLM Nack - pass-through target
+
+                     70 - CSP - receive timeout
+                     71 - CSP - failed to acquire a buffer
+
+                     65535 - Not implemented / TODO
+    **>
+    typedef AdcsErrorCode is Int32
+    
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeAurigaControlProgram1_AurigaLibStateVal
+    {
+        
+        <** @description: Initialization **>
+        Initialization = 0
+        
+        <** @description: Standby Mode **>
+        Standby = 1
+        
+        <** @description: Self-test Mode **>
+        Selftest = 2
+        
+        <** @description: Photo Mode **>
+        PhotoMode = 3
+        
+        <** @description: Tracking **>
+        Tracking = 4
+        
+        <** @description: Angular Rate Mode **>
+        ArmMode = 5
+        
+        <** @description: Attitude Acquisition Mode **>
+        AamMode = 6
+        
+        <** @description: Attitude Tracking Mode **>
+        AtmMode = 7
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeAurigaControlProgram1_OhStateVal
+    {
+        
+        <** @description: Optical head switched off **>
+        OhStateOff = 0
+        
+        <** @description: Wait On **>
+        OhStateWaitOn = 1
+        
+        <** @description: Init Tempo **>
+        OhStateInitTempo = 2
+        
+        <** @description: Check **>
+        OhStateCheck = 3
+        
+        <** @description: Config **>
+        OhStateConfig = 4
+        
+        <** @description: Standby **>
+        OhStateStandby = 5
+        
+        <** @description: Acquire FF **>
+        OhStateAcqFF = 6
+        
+        <** @description: Acquire HW **>
+        OhStateAcqHW = 7
+        
+        <** @description: First Track **>
+        OhStateFirstTrack = 8
+        
+        <** @description: Tracking **>
+        OhStateTracking = 9
+        
+        <** @description: Photo **>
+        OhStatePhoto = 10
+        
+        <** @description: SensorTest **>
+        OhStateSensorTest = 11
+        
+        <** @description: WaitAcq **>
+        OhStateWaitAcq = 12
+        
+        <** @description: Error State Off Request **>
+        OhStateOffRequest = 16
+        
+        <** @description: Error State Wait Off **>
+        OhStateWaitOff = 17
+        
+        <** @description: Error State IRQ **>
+        OhStateIrqErr = 18
+        
+        <** @description: Error State RAZ **>
+        OhStateRazErr = 19
+        
+        <** @description: Error State Off Error **>
+        OhStateOffErr = 20
+        
+        <** @description: Error State Timeout **>
+        OhStateTimeoutErr = 21
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeAurigaControlProgram1_TestStateVal
+    {
+        
+        <** @description: Standby Mode **>
+        Idle = 0
+        
+        <** @description: Busy Mode **>
+        Busy = 1
+        
+    }
+    
+    
+    
+    <** @description: Parameter structure for interface OhPowerStates
+    **>
+    struct OhPowerStates
+    {
+        
+        <** @description: First Optical Head Power State **>
+        Boolean Oh1Power
+        
+        <** @description: Second Optical Head Power State **>
+        Boolean Oh2Power
+        
+    }
+    
+    <** @description: Parameter structure for interface Configuration
+    **>
+    struct Configuration
+    {
+        
+        <** @description: Rotation quaternion1 from 1st optical head's alignment frame RAL to sensor frame RS **>
+        Double OH1QRotRALRS1
+        
+        <** @description: Rotation quaternion2 from 1st optical head's alignment frame RAL to sensor frame RS **>
+        Double OH1QRotRALRS2
+        
+        <** @description: Rotation quaternion3 from 1st optical head's alignment frame RAL to sensor frame RS **>
+        Double OH1QRotRALRS3
+        
+        <** @description: Rotation quaternion4 from 1st optical head's alignment frame RAL to sensor frame RS **>
+        Double OH1QRotRALRS4
+        
+        <** @description: Rotation quaternion1 from 2nd optical head's alignment frame RAL to sensor frame RS **>
+        Double OH2QRotRALRS1
+        
+        <** @description: Rotation quaternion2 from 2nd optical head's alignment frame RAL to sensor frame RS **>
+        Double OH2QRotRALRS2
+        
+        <** @description: Rotation quaternion3 from 2nd optical head's alignment frame RAL to sensor frame RS **>
+        Double OH2QRotRALRS3
+        
+        <** @description: Rotation quaternion4 from 2nd optical head's alignment frame RAL to sensor frame RS **>
+        Double OH2QRotRALRS4
+        
+    }
+    
+    <** @description: Parameter structure for interface AurigaSelfTest
+    **>
+    struct AurigaSelfTest
+    {
+        
+        <** @description: Must be correct to trigger self-test **>
+        UInt32 magicNumber
+        
+    }
+    
+    <** @description: Parameter structure for interface ExtMemTest
+    **>
+    struct ExtMemTest
+    {
+        
+        <** @description: Must be correct to trigger SRAM test **>
+        UInt32 magicNumber
+        
+    }
+    
+    <** @description: Parameter structure for interface SpwTest
+    **>
+    struct SpwTest
+    {
+        
+        <** @description: Must be correct to trigger SRAM test **>
+        UInt32 magicNumber
+        
+    }
+    
+    <** @description: Parameter structure for interface HealthTlm
+    **>
+    struct HealthTlm
+    {
+        
+        <** @description: MCU supply voltage **>
+        UInt16 McuVoltage
+        
+        <** @description: MCU Temperature **>
+        Int16 McuTemp
+        
+        <** @description: MCU current **>
+        Double McuCurrent
+        
+        <** @description: SRAM current **>
+        Double SramCurrent
+        
+        <** @description: OH1 Current **>
+        Double Oh1Current
+        
+        <** @description: OH2 Current **>
+        Double Oh2Current
+        
+        <** @description: FPGA1 Current **>
+        Double fpga1Current
+        
+        <** @description: FPGA2 Current **>
+        Double fpga2Current
+        
+        <** @description: FPGA1 Voltage **>
+        UInt16 fpga1Voltage
+        
+        <** @description: FPGA2 Voltage **>
+        UInt16 fpga2Voltage
+        
+        <** @description: Process idle delay (idle time between consecutive processing cycles) **>
+        UInt16 processIdleTiming
+        
+        <** @description: Bitmask representing virtual watchdog region warning counters.  
+            @details: size = 5**>
+        UInt8[] WatchdogCount
+        
+        <** @description: STR Synthesis flags for analog acquisition **>
+        UInt16 AcqSynthFlags
+        
+        <** @description: Star Tracker Mode **>
+        CubeAurigaControlProgram1_AurigaLibStateVal STRMode
+        
+        <** @description: OH1 Temperature **>
+        Int16 OH1Temp
+        
+        <** @description: OH2 Temperature **>
+        Int16 OH2Temp
+        
+        <** @description: Blocks Validity at library initialization **>
+        UInt16 BlocksValidity
+        
+        <** @description: STR hot reset counters **>
+        UInt8 ResetCnt
+        
+        <** @description: Sequence number (8 low bits) of the last STR TC processed **>
+        UInt8 LastTCSeqNum
+        
+        <** @description: STR TC counters **>
+        UInt8 TCCnt
+        
+        <** @description: Number of errors since last STR cold reset and various error indicator **>
+        UInt8 ErrorInfo
+        
+        <** @description: Last Error Parameter **>
+        UInt32 LastErrorParam
+        
+        <** @description: Last Error Identifier **>
+        UInt8 LastErrorId
+        
+        <** @description: Number of loss of tracking since last STR reset **>
+        UInt8 TRKLossCnt
+        
+    }
+    
+    <** @description: Parameter structure for interface AurigaStatus
+    **>
+    struct AurigaStatus
+    {
+        
+        <** @description: Frame count number **>
+        UInt16 FrameCount
+        
+        <** @description: Sub-Address Identifier **>
+        UInt16 IDSATM
+        
+        <** @description: Julian Date in sec since 00:00 Jan1 2000 **>
+        UInt32 JulianDate
+        
+        <** @description: STR Synthesis flags for analog acquisition **>
+        UInt16 AcqSynthFlags
+        
+        <** @description: Star Tracker Mode **>
+        CubeAurigaControlProgram1_AurigaLibStateVal STRMode
+        
+        <** @description: First Optical Head State **>
+        CubeAurigaControlProgram1_OhStateVal OH1State
+        
+        <** @description: Second Optical Head State **>
+        CubeAurigaControlProgram1_OhStateVal OH2State
+        
+        <** @description: Blocks Validity at library initialization **>
+        UInt16 BlocksValidity
+        
+        <** @description: STR hot reset counters **>
+        UInt8 ResetCnt
+        
+        <** @description: Sequence number (8 low bits) of the last STR TC processed **>
+        UInt8 LastTCSeqNum
+        
+        <** @description: STR TC counters **>
+        UInt8 TCCnt
+        
+        <** @description: Number of errors since last STR cold reset and various error indicator **>
+        UInt8 ErrorInfo
+        
+        <** @description: Last Error Parameter **>
+        UInt32 LastErrorParam
+        
+        <** @description: Last Error Identifier **>
+        UInt8 LastErrorId
+        
+        <** @description: Number of loss of tracking since last STR reset **>
+        UInt8 TRKLossCnt
+        
+        <** @description: OH1 Serial Number in FPGA **>
+        UInt16 OH1SerialNumber
+        
+        <** @description: OH1 Part Number (FPGA Design version) **>
+        UInt32 OH1PartNumber
+        
+        <** @description: OH1 Calibration Parameter Id **>
+        UInt16 OH1CalibParamId
+        
+        <** @description: OH1 Temperature Acquisition Date (ETR) **>
+        UInt16 OH1AcqETR
+        
+        <** @description: OH1 Temperature **>
+        Int16 OH1Temp
+        
+        <** @description: OH2 Serial Number in FPGA **>
+        UInt16 OH2SerialNumber
+        
+        <** @description: OH2 Part Number (FPGA Design version) **>
+        UInt32 OH2PartNumber
+        
+        <** @description: OH2 Calibration Parameter Id **>
+        UInt16 OH2CalibParamId
+        
+        <** @description: OH2 Temperature Acquisition Date (ETR) **>
+        UInt16 OH2AcqETR
+        
+        <** @description: OH2 Temperature **>
+        Int16 OH2Temp
+        
+        <** @description: Delay (tick) associated with current ETR **>
+        Int16 Delay
+        
+    }
+    
+    <** @description: Parameter structure for interface AurigaAttitudeData
+    **>
+    struct AurigaAttitudeData
+    {
+        
+        <** @description: Frame count number **>
+        UInt16 FrameCount
+        
+        <** @description: Sub-Address Identifier **>
+        UInt16 IDSATM
+        
+        <** @description: Options of Telecommand **>
+        UInt16 SpecTC
+        
+        <** @description: Synthesis of coherence tests results **>
+        UInt16 SyntDefATM
+        
+        <** @description: Synthesis of fused quaternion status **>
+        UInt16 SyntFusion
+        
+        <** @description: Synthesis of available quaternions for averaging of fused quaternion **>
+        UInt16 SyntFil
+        
+        <** @description: QRsFil measurement time **>
+        UInt32 DateMesFil
+        
+        <** @description: Filtered fused attitude quaternion1 Rs/Rc **>
+        Double QRsFil1
+        
+        <** @description: Filtered fused attitude quaternion2 Rs/Rc **>
+        Double QRsFil2
+        
+        <** @description: Filtered fused attitude quaternion3 Rs/Rc **>
+        Double QRsFil3
+        
+        <** @description: Filtered fused attitude quaternion4 Rs/Rc **>
+        Double QRsFil4
+        
+        <** @description: Quality index of the filtered attitude about XRs STR axis **>
+        UInt16 IQFilXRs
+        
+        <** @description: Quality index of the filtered attitude about YRs STR axis **>
+        UInt16 IQFilYRs
+        
+        <** @description: Quality index of the filtered attitude about ZRs STR axis **>
+        UInt16 IQFilZRs
+        
+        <** @description: Number of expected stars inside STR FOV **>
+        UInt16 NbEtoAtt
+        
+        <** @description: Number of expected stars per OH **>
+        UInt16 NbEtoAttOH
+        
+        <** @description: Number of used stars for fused attitude **>
+        UInt16 NbEtoCoh
+        
+        <** @description: Number of coherent stars per OH **>
+        UInt16 NbEtoCohOH
+        
+        <** @description: Filtered angular rate1 in Rs **>
+        Float WRsFil1
+        
+        <** @description: Filtered angular rate2 in Rs **>
+        Float WRsFil2
+        
+        <** @description: Filtered angular rate3 in Rs **>
+        Float WRsFil3
+        
+        <** @description: Mean level of stray-light for OH1 **>
+        UInt16 NLPMoyOH1
+        
+        <** @description: Mean level of stray-light for OH2 **>
+        UInt16 NLPMoyOH2
+        
+        <** @description: Synthesis of available quaternions for averaging of OH1 quaternion **>
+        UInt16 SyntFilOH1
+        
+        <** @description: Synthesis of available quaternions for averaging of OH2 quaternion **>
+        UInt16 SyntFilOH2
+        
+        <** @description: Synthesis of FDIR actions for OH1 **>
+        UInt16 SyntFDIROH1
+        
+        <** @description: Synthesis of FDIR actions for OH2 **>
+        UInt16 SyntFDIROH2
+        
+        <** @description: Synthesis of OH1 designation **>
+        UInt16 SyntDesOH1
+        
+        <** @description: Synthesis of OH2 designation **>
+        UInt16 SyntDesOH2
+        
+        <** @description: First Optical Head State **>
+        CubeAurigaControlProgram1_OhStateVal OH1State
+        
+        <** @description: Second Optical Head State **>
+        CubeAurigaControlProgram1_OhStateVal OH2State
+        
+        <** @description: Data is valid **>
+        Boolean DataValid
+        
+    }
+    
+    <** @description: Parameter structure for interface AurigaSelfTestResults
+    **>
+    struct AurigaSelfTestResults
+    {
+        
+        <** @description: AAMNbRefStarsCriteria **>
+        Boolean OH1AAMNbRefStarsCriteria
+        
+        <** @description: AAMNbRefStarsCriteria **>
+        Boolean OH1AAMQuaternionCriteria
+        
+        <** @description: AAMNbRefStarsCriteria **>
+        Boolean OH1AAM_ATMTransitionCriteria
+        
+        <** @description: AAMNbRefStarsCriteria **>
+        Boolean OH1ATMNbCoherentStarsCriteria
+        
+        <** @description: AAMNbRefStarsCriteria **>
+        Boolean OH1ATMQuaternionCriteria
+        
+        <** @description: AAMNbRefStarsCriteria **>
+        Boolean OH2AAMNbRefStarsCriteria
+        
+        <** @description: AAMNbRefStarsCriteria **>
+        Boolean OH2AAMQuaternionCriteria
+        
+        <** @description: AAMNbRefStarsCriteria **>
+        Boolean OH2AAM_ATMTransitionCriteria
+        
+        <** @description: AAMNbRefStarsCriteria **>
+        Boolean OH2ATMNbCoherentStarsCriteria
+        
+        <** @description: AAMNbRefStarsCriteria **>
+        Boolean OH2ATMQuaternionCriteria
+        
+        <** @description: Self-test State **>
+        CubeAurigaControlProgram1_TestStateVal TestState
+        
+    }
+    
+    <** @description: Parameter structure for interface ExtMemTestResult
+    **>
+    struct ExtMemTestResult
+    {
+        
+        <** @description: SRAM Test Result **>
+        Boolean TestResult
+        
+        <** @description: SRAM Test State **>
+        CubeAurigaControlProgram1_TestStateVal TestState
+        
+    }
+    
+    <** @description: Parameter structure for interface SpwTestResult
+    **>
+    struct SpwTestResult
+    {
+        
+        <** @description: Spacewire Test Result **>
+        Boolean TestResult
+        
+        <** @description: Spacewire Test State **>
+        CubeAurigaControlProgram1_TestStateVal TestState
+        
+    }
+    
+    
+    
+    <**
+        @description: Optical Head Power States
+        @details: id = 0
+    **>
+    method setOhPowerStates
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            OhPowerStates setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Synchronize Auriga RTC with control interval
+        @details: id = 1
+    **>
+    method setRtcSync
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Detector and sensor configuration settings
+        @details: id = 2
+    **>
+    method setConfiguration
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            Configuration setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Perform self-test on all active optical heads
+        @details: id = 3
+    **>
+    method setAurigaSelfTest
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            AurigaSelfTest setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Perform test on eternal SRAM
+        @details: id = 4
+    **>
+    method setExtMemTest
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            ExtMemTest setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Perform loopback test with SpW interfaces
+        @details: id = 5
+    **>
+    method setSpwTest
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            SpwTest setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Optical Head Power States
+        @details: id = 6
+    **>
+    method getOhPowerStates
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            OhPowerStates returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Housekeeping telemetry and error flags
+        @details: id = 7
+    **>
+    method getHealthTlm
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            HealthTlm returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Status telemetry as defined in Auriga CP Library ICD
+        @details: id = 8
+    **>
+    method getAurigaStatus
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            AurigaStatus returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Attitude tracking mode telemetry as defined in Auriga CP Library ICD
+        @details: id = 9
+    **>
+    method getAurigaAttitudeData
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            AurigaAttitudeData returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Detector and sensor configuration settings
+        @details: id = 10
+    **>
+    method getConfiguration
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Configuration returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Result of self-test of optical heads
+        @details: id = 11
+    **>
+    method getAurigaSelfTestResults
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            AurigaSelfTestResults returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Result of SRAM Test Result
+        @details: id = 12
+    **>
+    method getExtMemTestResult
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            ExtMemTestResult returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Result of Spacewire Test
+        @details: id = 13
+    **>
+    method getSpwTestResult
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            SpwTestResult returnVal
+            
+            
+        }
+    }
+    
+}

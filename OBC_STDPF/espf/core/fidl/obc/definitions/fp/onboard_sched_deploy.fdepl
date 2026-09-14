@@ -1,0 +1,68 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/onboard_sched.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.macif.onboard_sched as onboard_sched_Definitions {
+
+	enumeration SchedLoadResult {
+		AlarmInvalidRegexValues = {
+			"ERROR"
+		}
+	}
+
+	method set_scheduler_state {
+		in {
+			sch_state {
+				DisplayName = "Scheduler State"
+			}
+		}
+		out {
+			new_state {
+				DisplayName = "New State"
+			}
+		}
+	}
+
+	method get_scheduler_state {
+		out {
+			sch_state {
+				DisplayName = "Scheduler State"
+			}
+		}
+	}
+
+	method set_active_schedule {
+		in {
+			file_name {
+				DisplayName = "File Name"
+			}
+		}
+		out {
+			result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_active_schedule {
+		out {
+			file_name {
+				DisplayName = "File Name"
+			}
+			result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_next_slot {
+		out {
+			offset {
+				DisplayName = "Offset"
+				Unit = "B"
+			}
+		}
+	}
+
+}

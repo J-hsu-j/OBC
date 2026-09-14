@@ -1,0 +1,180 @@
+package endurosat.macif
+
+<** @description: EnduroSat Actuator Control Service as part of the Onboard Computer
+    @details: id = 70
+**>
+interface acs
+{
+    version { major 1 minor 2 }
+
+    <** @description: Result of operation **>
+    enumeration Result
+    {
+        <** @description: Function execution successful **>
+        ES_OK,
+        <** @description: Function execution failed **>
+        ES_FAIL
+    }
+
+    <** @description: This corresponds to enum acs_state_t **>
+    enumeration State
+    {
+        <** @description: ACS is in run state and actuators are updated with values from DataCache **>
+        ES_RUN,
+        <** @description: ACS is in manual state and actuators are updated with values from operator command **>
+        ES_MANUAL
+        <** @description: ACS is in stopped state. No calculations are performed **>
+        ES_STOPPED
+    }
+
+    <** @description: This corresponds to enum acs_error_t **>
+    enumeration Error
+    {
+        <** @description: No error **>
+        ES_NONE,
+        <** @description: DataCache error **>
+        ES_DATA_CACHE_GET,
+        <** @description: Math operation failed **>
+        ES_MATH_FAILED
+    }
+
+    <** @description: This corresponds to enum acs_warning_t **>
+    enumeration Warning
+    {
+        <** @description: No error **>
+        ES_NONE,
+        <** @description: One or more control values has reached upper saturation **>
+        ES_SATURATION_UPPER,
+        <** @description: One or more control values has reached lower saturation **>
+        ES_SATURATION_LOWER
+    }
+
+    <** @description: This corresponds to struct acs_status_t **>
+    struct Status 
+    {
+        <** @description: Last registered warning in the ACS service **>
+        Warning last_warning
+        <** @description: Last registered error in the ACS service **>
+        Error last_error
+        <** @description: Current state of the ACS service **>
+        State active_state
+    }
+
+    <** @description: Holds the last commanded MTQ values (in Body Frame and Actuator Frame) that were sent to the physical magnetorquers **>
+    struct LastMtqData
+    {
+        <** @description: Last magnetorquer control in Body Frame X axis [% PWM] **>
+        Int8 mtq_x_body_frame
+        <** @description: Last magnetorquer control in Body Frame Y axis [% PWM] **>
+        Int8 mtq_y_body_frame
+        <** @description: Last magnetorquer control in Body Frame Z axis [% PWM] **>
+        Int8 mtq_z_body_frame
+        <** @description: Last magnetorquer control in Actuator Frame X axis [% PWM] **>
+        Int8 mtq_x_mtq_frame
+        <** @description: Last magnetorquer control in Actuator Frame Y axis [% PWM] **>
+        Int8 mtq_y_mtq_frame
+        <** @description: Last magnetorquer control in Actuator Frame Z axis [% PWM] **>
+        Int8 mtq_z_mtq_frame
+    }
+
+    <** @description: Holds the manually set or retrieved MTQ values (in Actuator Frame) **>
+    struct ManualMtqData
+    {
+        <** @description: Manual magnetorquer control in Actuator Frame (PAN4 hardware connector) [% PWM] **>
+        Int8 mtq_1_mtq_frame
+        <** @description: Manual magnetorquer control in Actuator Frame (PAN5 hardware connector) [% PWM] **>
+        Int8 mtq_2_mtq_frame
+        <** @description: Manual magnetorquer control in Actuator Frame (PAN6 hardware connector) [% PWM] **>
+        Int8 mtq_3_mtq_frame
+    }
+
+    <** @description: Attempt to change the ACS operating modes state machine to a new state.
+        @details: id = 0x00000001
+    **>
+    method set_op_mode
+    {
+        in
+        {
+            <** @description: ACS state to switch to - RUN, MANUAL or STOPPED **>
+            State desired_mode
+        }
+        out
+        {
+            <** @description: Operation status, can be can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Get the currently active state of the ACS operating modes state machine.
+        @details: id = 0x00000002
+    **>
+    method get_op_mode
+    {
+        out
+        {
+            <** @description: Current ACS state **>
+            State active_mode
+            <** @description: Operation status, can be can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Get the general status of the Actuator Control Service
+        @details: id = 0x00000003
+    **>
+    method get_status
+    {
+        out
+        {
+            <** @description: ACS service status, including current state, last error and last warning **>
+            Status current_status
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Set the new manual control values for the magnetorquers. These values are used only in ACS_STATE_MANUAL mode.
+        @details: id = 0x00000004
+    **>
+    method set_manual_mtq_control
+    {
+        in
+        {
+            <** @description: The desired manual values (% PWM, signed) for the magnetorquers. The values are in the Actuator Frame, in percentage and signed. **>
+            ManualMtqData desired_manual_magnetorquer_control_values
+        }
+        out
+        {
+            <** @description: Operation status, can be can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Retrieve the manually set control values for the magnetorquers. These values are used only in ACS_STATE_MANUAL mode.
+        @details: id = 0x00000005
+    **>
+    method get_manual_mtq_control
+    {
+        out
+        {
+            <** @description: The manually set values for the magnetorquers. The values are in the Actuator Frame, in percentage and signed. **>
+            ManualMtqData manual_magnetorquer_control_values
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Get the last control values of the magnetorquers. The values are in the Body Frame and the Actuator Frame, in percentage and signed.
+        @details: id = 0x00000006
+    **>
+    method get_last_mtq_control
+    {
+        out
+        {
+            <** @description: The last sent values to the magnetorquers **>
+            LastMtqData last_magnetorquer_control_values
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+}

@@ -1,0 +1,62 @@
+package endurosat.macif
+
+<** @description: This is specific interface modified based on system configuraiton.
+    @details: id = 31
+**>
+interface eps_ctrl
+{
+    version { major 0 minor 1 }
+
+    <** @description: General status type used for SW-related communication and/or settings. **>
+    enumeration StandardResult
+    {
+        <** @description: The operation is successful **>
+        SUCCESS,
+        <** @description: An error has occurred **>
+        ERROR,
+        <** @description: Invalid input arguments provided to the operation **>
+        INVALID_ARGS,
+        <** @description: The action related to the input data is not supported by the firmware **>
+        NOT_SUPPORTED
+    }
+
+    
+    <** @description: Read EPS channel output.
+        @details: id = 0x000000001
+    **>
+    method get_ch_output
+    {
+        in
+        {
+            <** @description: Device. See the list of device IDs in the NVM fidl. **>
+            UInt8 ch_id
+        }
+        out
+        {
+            <** @description: Channel state. **>
+            Boolean ch_state
+            <** @description: Get request result **>
+            StandardResult op_result
+        }
+    }    
+
+    <** @description: Set EPS channel output.
+        @details: id = 0x000000002
+    **>
+    method set_ch_output
+    {
+        in
+        {
+            <** @description: Device. See the list of device IDs in the NVM fidl. **>
+            UInt8 ch_id
+            <** @description: requested channel state. **>
+			Boolean new_state
+        }
+        out
+        {
+            <** @description: Get request result **>
+            StandardResult op_result
+        }
+    }    
+
+}

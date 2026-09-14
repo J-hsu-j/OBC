@@ -1,0 +1,82 @@
+package org.endurosat.deploy
+
+// import the deployment specification
+import "../../../../espf/core/fidl/spec/PlatformSpec.fdepl"
+import "../../../../espf/core/fidl/common/fp/ModuleId.fidl"
+import "../../../../espf/core/fidl/common/fp/MacServices.fidl"
+import "../../../../espf/core/fidl/obc/fp/Beacons.fidl"
+import "../../../../espf/core/fidl/obc/fp/conops.fidl"
+import "../../../../espf/core/fidl/obc/fp/FileManager.fidl"
+import "../../../../espf/core/fidl/obc/fp/gnss.fidl"
+import "../../../../espf/core/fidl/obc/fp/obc.fidl"
+import "../../../../espf/core/fidl/obc/fp/OBC_AOCS_CNTRL.fidl"
+import "../../../../espf/core/fidl/obc/fp/OBC_CUBEADCS.fidl"
+import "../../../../espf/core/fidl/obc/fp/adis16265_gyro.fidl"
+import "../../../../espf/core/fidl/obc/fp/coordsys.fidl"
+import "../../../../espf/core/fidl/obc/fp/acs.fidl"
+import "../../../../espf/core/fidl/obc/fp/payload_ctrl.fidl"
+import "../../../../espf/core/fidl/obc/fp/telemetry.fidl"
+import "../../../../espf/core/fidl/obc/fp/time.fidl"
+import "../../../../espf/core/fidl/obc/fp/obc_micropython.fidl"
+import "../../../../espf/core/fidl/obc/fp/sds.fidl"
+import "../../../../espf/core/fidl/obc/fp/crypto.fidl"
+import "../../../../espf/core/fidl/obc/fp/task_stat.fidl"
+import "../../../../espf/core/fidl/obc/fp/trace_level_config.fidl"
+import "../../../../espf/core/fidl/obc/fp/arducam.fidl"
+import "../../../../espf/core/fidl/obc/cp/OBC_CP_CUBEADCS_GATEWAY.fidl"
+import "../../../../espf/core/fidl/eps_ii/fp/EPSII_BP_v1.fidl"
+import "../../../../espf/core/fidl/eps_ii/fp/EPSII_PDM_v1.fidl"
+import "../../../../espf/core/fidl/obc/fp/OBC_CUBEADCS_GEN2.fidl"
+import "../../../../espf/core/fidl/obc/fp/fault_ops.fidl"
+import "../../../../espf/core/fidl/obc/cp/cp_fault_ops.fidl"
+import "../../../../espf/core/fidl/obc/cp/obc_cp_general.fidl"
+import "../../../../espf/core/fidl/obc/fp/onboard_sched.fidl"
+import "../../../../espf/core/fidl/obc/fp/csp_service.fidl"
+import "../../../../espf/core/fidl/obc_boot/fp/BasicAppServices.fidl"
+import "../../../../espf/core/fidl/obc/fp/fdir_srv.fidl"
+import "../../../../espf/core/fidl/xband_fe/fp/xband_fe.fidl"
+import "../../../../espf/core/fidl/obc/fp/sdr.fidl"
+import "../../../../espf/core/fidl/obc/cp/cp_comm_gw.fidl"
+import "../../../../espf/config/nvm/fp/config/nvm.fidl"
+import "../../../../espf/config/nvm/fp/config/nvm_eps.fidl"
+
+/**
+ * Define all the interfaces as a default deployment
+ */
+// Client generation
+define org.endurosat.spec.PlatformSpec for interface endurosat.pf.ModuleId.ModuleId               { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.MacServices                  { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.pf.Beacons                         { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.conops                       { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.FileManager                  { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.task_stat                    { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.obc                          { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.OBC_AOCS_CNTRL               { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.OBC_CUBEADCS                 { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.adis16265_gyro               { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.coordsys                     { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.acs                          { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.pf.payload.payload_ctrl            { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.pf.telemetry                       { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.pf.time                            { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.SDS                          { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.pf.crypto                          { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.pf.gnss                            { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.faults.fp.fault_ops                { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.faults.cp.cp_faultops              { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.cp.obc_cp_general            { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.cp.OBC_CP_CUBEADCS_GATEWAY   { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.EPSII_BP_1                   { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.EPSII_PDM_1                  { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.obc_micropython              { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.OBC_CUBEADCS_GEN2            { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.pf.trace_level_config              { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.pf.arducam                         { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.onboard_sched                { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.BasicAppServices             { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.fdir_srv                     { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.pf.radio.xband_fe                  { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.pf.sdr                             { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.comm.cp.cp_comm_gw                 { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.pf.nvm                             { IsClient = true }
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.nvm_eps                      { IsClient = true }

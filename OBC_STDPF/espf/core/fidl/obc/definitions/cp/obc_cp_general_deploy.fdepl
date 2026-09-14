@@ -1,0 +1,25 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../cp/obc_cp_general.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.macif.cp.obc_cp_general as obc_cp_general_Definitions {
+
+	method download_file {
+		in {
+			file_offset {
+				DisplayName = "File Offset"
+				Unit = "B"
+			}
+			file_name {
+				DisplayName = "File Name"
+			}
+		}
+		out {
+			file_data {
+				DisplayName = "File Data"
+			}
+		}
+	}
+
+}

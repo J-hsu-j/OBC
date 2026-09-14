@@ -1,0 +1,115 @@
+package endurosat.comm.cp
+
+<** @description: Onboard Computer COMM GW interface 
+    @details: id = 201 
+**>
+interface cp_comm_gw
+{
+    version { major 0 minor 1 }
+
+    <** @description: ESPS bus priority levels
+        @details: size = 1 
+    **>
+    enumeration mac_prio
+    {
+        CRITICAL = 1,
+        HIGH = 3,
+        NORMAL = 7,
+        LOW = 13
+    }
+    
+    <** @description: GW result code 
+        @details: size = 1
+    **>
+    enumeration gw_res
+    {
+        <** @description: the request was executed successfully **>
+        OK
+        <** @description: the request executed successfully but there is no space in the response buffer to hold the complete response **>
+        OK_PARTIAL
+        <** @description: the request was sent but a response was not received due to communication error **>
+        ERR
+        <** @description: invalid arguments passed to send operation **>
+        INVALID_ARGS
+        <** @description: send confirmation callback reported an error (see node trace for details) **>
+        SEND_ERR
+        <** @description: request sending timed out **>
+        SND_TIMEOUT
+        <** @description: response reception timed out **>
+        RCV_TIMEOUT
+    }
+
+    <** 
+        @description: Send a raw FP command to be executed (locally or remotely on a different ESPS bus node)
+        @details: id = 1213 
+    **>
+    method send_fp
+    {
+        in
+        {
+            <** @description: MAC interface ID to send the command to **>
+            UInt8 mac_if_id
+            <** @description: MAC address of the target node (if this is the OBC address, the request will be executed locally) **>
+            UInt8 target_node_addr
+            <** @description: message bus priority used for the transmission (only used for external bus transfers) **>
+            mac_prio msg_prio
+            <** @description: Response timeout value in milliseonds **>
+            UInt32 resp_timeout            
+            <** @description: Size (in bytes) of the provided request **>
+            UInt32 req_size
+            <** @description: Request data bytes
+                @details: size = DataLen 
+            **>
+            UInt8[] req_data
+        }
+        out
+        {
+            <** @description: operation result **>
+            gw_res op_res
+            <** @description: response size in bytes **>
+            UInt32 resp_size
+            <** @description: Response buffer data                
+                @details: size = DataLen 
+            **>
+            UInt8[] resp_data
+        }
+    }
+    
+    <** 
+        @description: Send a raw CSP command to be executed (locally or remotely on a different ESPS bus node)
+        @details: id = 1214 
+    **>
+    method send_csp
+    {
+        in
+        {
+            <** @description: MAC address of the target node (if this is the OBC address, the request will be executed locally) **>
+            UInt8 target_node_addr
+            <** @description: CSP target port to forward the data to **>
+            UInt8 port
+            <** @description: message bus priority used for the transmission (only used for external bus transfers) **>
+            UInt8 msg_prio      
+            <** @description: CSP connection-specific option flags to use for the transfer **>
+            UInt32 opts
+            <** @description: Response timeout value in milliseonds **>
+            UInt32 resp_timeout            
+            <** @description: Size (in bytes) of the provided request **>
+            UInt32 req_size
+            <** @description: Request data bytes
+                @details: size = DataLen 
+            **>
+            UInt8[] req_data
+        }
+        out
+        {
+            <** @description: operation result **>
+            gw_res op_res
+            <** @description: response size in bytes **>
+            UInt32 resp_size
+            <** @description: Response buffer data                
+                @details: size = DataLen 
+            **>
+            UInt8[] resp_data
+        }
+    }
+}

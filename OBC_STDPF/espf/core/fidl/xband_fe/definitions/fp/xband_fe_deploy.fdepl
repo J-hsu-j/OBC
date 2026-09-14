@@ -1,0 +1,298 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../..//fp/xband_fe.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.pf.radio.xband_fe as xband_fe_Definitions {
+	
+	enumeration StdResponse {
+		AlarmInvalidRegexValues = {"ERR"}
+	}
+	
+	enumeration CommRes {
+		AlarmInvalidRegexValues = {"ERR", "TIMEOUT", "INVALID"}
+	}
+
+	struct StdResponseWrapper {
+		DisplayName = "Standard Response Wrapper"
+		std_resp {
+			DisplayName = "Response"
+		}
+	}
+
+	struct ModStatusReportParams {
+		DisplayName = "Module Status Report Parameters"
+		system_state {
+			DisplayName = "System State"
+		}
+		status_flags {
+			DisplayName = "Status Flags"
+		}
+		pa_temperature {
+			DisplayName = "PA Temperature"
+			CalibratedType = "float"
+			CalibrationAlg = "polynomial",
+			CalibrationParams = {
+				"0.1"
+			},
+			Unit = "°C"
+		}
+		pa_pwr_det {
+			DisplayName = "PA Power Det"
+			CalibratedType = "float"
+			CalibrationAlg = "polynomial",
+			CalibrationParams = {
+				"0.01"
+			},
+			Unit = "dBm"
+		}
+		powsup_5v_rf_drv {
+			DisplayName = "Power Supply 5V RF Driver"
+		}
+		pa_idd {
+			DisplayName = "PA Idd"
+			CalibratedType = "float"
+			CalibrationAlg = "polynomial",
+			CalibrationParams = {
+				"0.001"
+			},
+			Unit = "A"
+		}
+		pa_vdd {
+			DisplayName = "PA Vdd"
+			CalibratedType = "float"
+			CalibrationAlg = "polynomial",
+			CalibrationParams = {
+				"0.001"
+			},
+			Unit = "V"
+		}
+		powsup_5v_vco_drv {
+			DisplayName = "Power Supply 5V VCO Driver"
+		}
+		powsup_3v3_pll {
+			DisplayName = "Power Supply 3.3V Pll"
+		}
+		powsup_5v_if_amp {
+			DisplayName = "Power Supply 5V If Amp"
+		}
+		powsup_5v_att {
+			DisplayName = "Power Supply 5V Att"
+		}
+		pa_vgg {
+			DisplayName = "PA Vgg"
+		}
+		cpu_vdd {
+			DisplayName = "CPU Vdd"
+			CalibratedType = "float"
+			CalibrationAlg = "polynomial",
+			CalibrationParams = {
+				"0.001"
+			},
+			Unit = "V"
+		}
+		cpu_temperature {
+			DisplayName = "CPU Temperature"
+			CalibratedType = "float"
+			CalibrationAlg = "polynomial",
+			CalibrationParams = {
+				"0.01"
+			},
+			Unit = "°C"
+		}
+		adc_vref_internal {
+			DisplayName = "ADC VRef Internal"
+			CalibratedType = "float"
+			CalibrationAlg = "polynomial",
+			CalibrationParams = {
+				"0.001"
+			},
+			Unit = "V"
+		}
+		fw_version {
+			DisplayName = "FW Version"
+		}
+	}
+
+	struct ModStatusReportParamsWrapper {
+		DisplayName = "Module Status Report Parameters Wrapper"
+		status_report {
+			DisplayName = "Status Report"
+		}
+	}
+
+	struct ModCfgParams {
+		DisplayName = "Module Configuration Parameters"
+		target_output_power {
+			DisplayName = "Target Output Power"
+			Unit = "dBm"
+			AlarmNumericMinInclusive = "26"			
+			AlarmNumericMaxInclusive = "35"			
+		}
+		pll_output_mux {
+			DisplayName = "Pll Output Mux"
+			AlarmNumericMaxInclusive = "4"			
+		}
+		pll_channel_divider_on_off {
+			DisplayName = "Pll Channel Divider On/Off"
+			AlarmNumericMaxInclusive = "2"			
+		}
+		pll_channel_divider {
+			DisplayName = "Pll Channel Divider"
+			AlarmNumericMaxInclusive = "18"			
+		}
+		pll_divider {
+			DisplayName = "Pll Divider"
+			AlarmNumericMaxInclusive = "151"			
+		}
+	}
+
+	struct ModCfgParamsWrapper {
+		DisplayName = "Module Configuration Parameters Wrapper"
+		mod_params {
+			DisplayName = "Module Parameters"
+		}
+	}
+
+	struct XBandFeTxPowerInfo {
+		DisplayName = "XBand FW TX Power Info"
+		tx_power {
+			DisplayName = "TX Power"
+			Unit = "dBm"
+			AlarmNumericMinInclusive = "26"			
+			AlarmNumericMaxInclusive = "35"	
+		}
+	}
+
+	struct XBandFeTxPowerInfoWrapper {
+		DisplayName = "XBand FW TX Power Info Wrapper"
+		pwr_info {
+			DisplayName = "Power Info"
+		}
+	}
+
+	struct ObcXBandFeNvmCfg {
+		DisplayName = "OBC XBand FE NVM Configuration"
+		target_node_addr {
+			DisplayName = "Target Node Address"
+		}
+		port {
+			DisplayName = "Port"
+		}
+		prio {
+			DisplayName = "Priority"
+		}
+		opts {
+			DisplayName = "Options"
+		}
+	}
+
+	method get_obc_xband_fe_nvm_cfg {
+		out {
+			nvm_params {
+				DisplayName = "NVM Parameters"
+			}
+		}
+	}
+
+	method set_obc_xband_fe_nvm_cfg {
+		in {
+			nvm_params_in {
+				DisplayName = "NVM Parameters"
+			}
+		}
+		out {
+			success {
+				DisplayName = "Success"
+			}
+		}
+	}
+
+	method get_status_report {
+		out {
+			comm_res {
+				DisplayName = "Result"
+			}
+			status_params {
+				DisplayName = "Status Parameters"
+			}
+		}
+	}
+
+	method set_sys_mngr_run_mode {
+		out {
+			comm_res {
+				DisplayName = "Result"
+			}
+			cmd_resp {
+				DisplayName = "Command Response"
+			}
+		}
+	}
+
+	method set_sys_mngr_standby_mode {
+		out {
+			comm_res {
+				DisplayName = "Result"
+			}
+			cmd_resp {
+				DisplayName = "Command Response"
+			}
+		}
+	}
+
+	method set_mod_all_params {
+		in {
+			cfg_params {
+				DisplayName = "Configuration Parameters"
+			}
+		}
+		out {
+			comm_res {
+				DisplayName = "Result"
+			}
+			cmd_resp {
+				DisplayName = "Command Response"
+			}
+		}
+	}
+
+	method get_mod_all_params {
+		out {
+			comm_res {
+				DisplayName = "Result"
+			}
+			cfg_params {
+				DisplayName = "Configuration Parameters"
+			}
+		}
+	}
+
+	method set_tx_power {
+		in {
+			tx_power {
+				DisplayName = "TX Power"
+			}
+		}
+		out {
+			comm_res {
+				DisplayName = "Result"
+			}
+			cmd_resp {
+				DisplayName = "Command Response"
+			}
+		}
+	}
+
+	method get_tx_power {
+		out {
+			comm_res {
+				DisplayName = "Result"
+			}
+			tx_power_info {
+				DisplayName = "TX Power Info"
+			}
+		}
+	}
+
+}

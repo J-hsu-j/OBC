@@ -1,0 +1,7 @@
+package org.endurosat.deploy
+
+import "../../../fidl/spec/PlatformSpec.fdepl"
+
+import "../../../fidl/obc/fp/onboard_sched.fidl"
+
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.onboard_sched	{ IsClient = false }

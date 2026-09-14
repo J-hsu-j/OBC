@@ -1,0 +1,41 @@
+package endurosat.pf
+
+<** @description: Non-volatile memory services
+    @details: id = 259
+**>
+
+interface nvm
+{
+    version { major 1 minor 0 }
+
+    enumeration StandardResult
+    {
+        SUCCESS
+        ERROR
+        INVALID_ARGS
+        NOT_SUPPORTED
+    }
+
+    enumeration BlockId
+    {
+        // The following enumeration list is generated! Do not modify manually!
+// @@BLOCK_ID_LIST@@
+    }
+
+    <** @description: Restore NVM defaults from FLASH
+      @details: id = 0x000000
+    **>
+    method restore_defaults
+    {
+        in
+        {
+            <** @description: ID of the NVM block to restore defaults to **>
+            BlockId block_id
+        }
+        out
+        {
+            StandardResult op_result
+        }
+    }
+
+}

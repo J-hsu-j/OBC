@@ -1,0 +1,1852 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+package endurosat.macif
+
+
+<** @description: Interface for Cube ADCS Gen2 - CubeCommonBaseBootloader6
+    @details: id = 303
+**>
+
+interface CubeADCS_Gen2_CubeCommonBaseBootloader6
+{
+    version {major 6 minor 0}
+    
+    <** @description: This enumeration holds the IDs of CubeADCS Gen2 nodes for which this interface is applicable.
+        @details: size = 1 
+    **>
+    enumeration CmdTargetNode
+    {
+        NodeInvalid = 0
+        NodeComputer = 1
+        NodeStr0 = 2
+        NodeStr1 = 3
+        NodeFss0 = 4
+        NodeFss1 = 5
+        NodeFss2 = 6
+        NodeFss3 = 7
+        NodeHss0 = 8
+        NodeHss1 = 9
+        NodeMag0 = 10
+        NodeMag1 = 11
+        NodeRwl0 = 14
+        NodeRwl1 = 15
+        NodeRwl2 = 16
+        NodeRwl3 = 17
+        NodeRwl4 = 18
+        
+    }
+
+    <** @description: Return status type of the CubeADCS Gen2 API operations. Possible values are:
+                     0 - No error
+                     1 - NULL pointer
+                     2 - Size incorrect
+                     3 - Size too low
+                     4 - Size too high
+                     5 - Overrun
+                     6 - Parameter error (out of range)
+                     7 - Timeout
+                     8 - TCTLM comms Nack
+                     9 - Busy
+                     10 - Frame
+                     11 - CRC
+                     12 - Read
+                     13 - Write
+                     14 - CAN ID type error
+                     15 - CAN frame error
+                     16 - Unknown NACK
+                     17 - Invalid node type
+                     18 - CubeSpace file upload internal error
+                     19 - Usage error
+                     20 - Auto-Discovery error
+                     21 - Image error
+                     22 - Does not exist error
+                     23 - User data error
+                     24 - Commit error
+                     25 - TCTLM protocol error
+                     26 - General unexpected/unknown error
+                     27 - Telemetry response size error
+                     28 - TCTLM response ID does not match the request
+
+                     50 - TCTLM Nack - invalid ID
+                     51 - TCTLM Nack - invalid length
+                     52 - TCTLM Nack - invalid parameter data
+                     53 - TCTLM Nack - CRC failed
+                     54 - TCTLM Nack - not implemented
+                     55 - TCTLM Nack - busy
+                     56 - TCTLM Nack - sequence
+                     57 - TCTLM Nack - internal
+                     58 - TCTLM Nack - pass-through timeout
+                     59 - TCTLM Nack - pass-through target
+
+                     70 - CSP - receive timeout
+                     71 - CSP - failed to acquire a buffer
+
+                     65535 - Not implemented / TODO
+    **>
+    typedef AdcsErrorCode is Int32
+    
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeCommonBaseBootloader5_States
+    {
+        
+        <** @description: Bootloader is idle and ready to receive commands **>
+        StateIdle = 0
+        
+        <** @description: Busy setting up read/write transfer - includes firmware file writes **>
+        StateBusySetupXfer = 1
+        
+        <** @description: Busy erasing flash - internally triggered when uploading a firmware binary or config file (with metadata), or specified explicitely by user when writing raw data to memory **>
+        StateBusyAutoErase = 2
+        
+        <** @description: Busy erasing flash **>
+        StateBusyErase = 3
+        
+        <** @description: Busy waiting for next frame **>
+        StateBusyWaitFrame = 4
+        
+        <** @description: Busy writing flash **>
+        StateBusyWrite = 5
+        
+        <** @description: Busy committing new file to file table (including CRC calculation) - happens after successful data transfer **>
+        StateBusyCommitFile = 6
+        
+        <** @description: Busy erase file table flash region in preperation for re-write - happens after successful file commit - intermediary step to improve comms responsiveness of bare-metal application **>
+        StateBusyEraseFileTable = 7
+        
+        <** @description: Busy writing file table to flash - happens after successful table erase - this is the final step of a file upload, state returns to idle **>
+        StateBusyWriteFileTable = 8
+        
+        <** @description: Busy reading flash **>
+        StateBusyRead = 9
+        
+        <** @description: Busy deleting file entry **>
+        StateBusyDelete = 10
+        
+        <** @description: Busy setting the default application target **>
+        StateBusySetTarget = 11
+        
+        <** @description: Busy jumping to application **>
+        StateBusyJump = 12
+        
+        <** @description: Busy reloading config after being set by the user. If the new config is successfully written to flash, a soft reset is triggered to reload the config automatically. **>
+        StateBusyReloadCfg = 13
+        
+        <** @description: Busy writing option bytes. If successful the MCU will reset automatically, otherwise the result will be stored in errors **>
+        StateBusyObWrite = 14
+        
+        <** @description: Busy launching option bytes. Will reset immediately if successful **>
+        StateBusyObCommit = 15
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeCommonBaseBootloader5_FileType
+    {
+        
+        <** @description: Binary image file **>
+        Bin = 0
+        
+        <** @description: Binary config file **>
+        Cfg = 1
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeCommonBaseBootloader5_ResetVal
+    {
+        
+        <** @description: Dummy Value **>
+        DoNothing = 0
+        
+        <** @description: Performs reset immediately - not the same as common-framework **>
+        Soft = 55
+        
+        <** @description: Performs reset immediately **>
+        Hard = 66
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeCommonBaseBootloader5_UartBaud
+    {
+        
+        <** @description: 19200 **>
+        Baud19200 = 0
+        
+        <** @description: 38400 **>
+        Baud38400 = 1
+        
+        <** @description: 57600 **>
+        Baud57600 = 2
+        
+        <** @description: 115200 **>
+        Baud115200 = 3
+        
+        <** @description: 230400 **>
+        Baud230400 = 4
+        
+        <** @description: 460800 **>
+        Baud460800 = 5
+        
+        <** @description: 921600 **>
+        Baud921600 = 6
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CommonFrameworkTypes1_TcTlmError
+    {
+        
+        <** @description: No Error **>
+        Ok = 0
+        
+        <** @description: Invalid TcTlm ID **>
+        InvalidId = 1
+        
+        <** @description: Invalid Length **>
+        InvalidLength = 2
+        
+        <** @description: Invalid Parameter **>
+        InvalidParam = 3
+        
+        <** @description: CRC Check Failed **>
+        Crc = 4
+        
+        <** @description: TCTLM not implemented **>
+        NotImplemented = 5
+        
+        <** @description: Busy **>
+        TcTlmBusy = 6
+        
+        <** @description: Error in sequence of commands **>
+        Sequence = 7
+        
+        <** @description: Internal error **>
+        Internal = 8
+        
+        <** @description: Passthrough node timeout error **>
+        PassTimeout = 9
+        
+        <** @description: Passthrough target is invalid (passthrough is disabled) **>
+        PassTarget = 10
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CommonFrameworkTypes1_NodeTypeLegacy
+    {
+        
+        <** @description: Invalid Node Type **>
+        NodeTypeLegacyInvalid = 0
+        
+        <** @description: CubeComputer Type - version independant **>
+        NodeTypeLegacyCubeComputer = 1
+        
+        <** @description: CubeSense Type - version independant **>
+        NodeTypeLegacyCubeSense = 2
+        
+        <** @description: CubeWheel Type - version independant **>
+        NodeTypeLegacyCubeWheel = 3
+        
+        <** @description: CubeIR Type - version independant **>
+        NodeTypeLegacyCubeIr = 4
+        
+        <** @description: CubeMag Deploy Type - version independant **>
+        NodeTypeLegacyCubeMagDeploy = 5
+        
+        <** @description: CubeMag Compact Type - version independant **>
+        NodeTypeLegacyCubeMagCompact = 6
+        
+        <** @description: CubeStar Type - version independant **>
+        NodeTypeLegacyCubeStar = 7
+        
+        <** @description: CubeAuriga Type - version independant **>
+        NodeTypeLegacyCubeAuriga = 8
+        
+        <** @description: CubeNode General Type - version independant **>
+        NodeTypeLegacyCubeNode = 9
+        
+        <** @description: CubeNode SLT Type - version independant **>
+        NodeTypeLegacyCubeNodeSlt = 10
+        
+        <** @description: CubeNode PST3S Type - version independant **>
+        NodeTypeLegacyCubeNodePst3s = 11
+        
+        <** @description: CubeNode NSSRWL Type - version independant **>
+        NodeTypeLegacyCubeNodeNssrwl = 12
+        
+        <** @description: Marks the end of the 4-bit legacy enum - Make use of a different telemetry that uses the NodeType enum (Identification2) **>
+        NodeTypeLegacyExtended = 15
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CommonFrameworkTypes1_ProgramType
+    {
+        
+        <** @description: Invalid Program Type **>
+        ProgramTypeInvalid = 0
+        
+        <** @description: control-program primary product application **>
+        ProgramTypeControl = 1
+        
+        <** @description: cube-computer flash-bootloader Bootloader application **>
+        ProgramTypeBootloader = 4
+        
+        <** @description: health-check Health Check application **>
+        ProgramTypeHealthCheck = 7
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CommonFrameworkTypes1_SerialSource
+    {
+        
+        <** @description: Serial number sourced from OTP **>
+        SourceOtp = 0
+        
+        <** @description: Serial number sourced from Config **>
+        SourceConfig = 1
+        
+    }
+    
+    
+    
+    <** @description: Parameter structure for interface EccSim
+    **>
+    struct EccSim
+    {
+        
+        <** @description: Magic number to allow action **>
+        UInt32 MagicNumber
+        
+        <** @description: The offset within the specified bank that the error occured at **>
+        UInt32 Addr
+        
+        <** @description: The flash bank the error occured in (0=bank1, 1=bank2) **>
+        Boolean Bank
+        
+        <** @description: Double ECC error **>
+        Boolean Eccd
+        
+        <** @description: Single ECC error **>
+        Boolean Eccc
+        
+        <** @description: If a double ECC error occurs in the primary image, the action taken depends on this flag. If this flag is FALSE, an ECC error will result in a reset and then immediate jump to the redundant image. If this flag is TRUE, it means the reset approach is not possible because the code to jump to the redundant image is unreachable, therefore we jump to the redundant image in the interrupt handler; this type of jump has consequences, as the MCU thinks that the interrupt handler never returned; mitigations have been put in place such that if this does occur during normal operation, both the redundant bootloader and the control program can still execute. **>
+        Boolean BootIncomplete
+        
+    }
+    
+    <** @description: Parameter structure for interface Warnings
+    **>
+    struct Warnings
+    {
+        
+        <** @description: The redundant binary is currently running. This implies that the primary binary is corrupt. If this flag is set, a bootloader upgrade should be performed to recover the primary binary. The user must inspect the flags of this telemetry to identify the type of corruption. If this flag is set, the bootloader will not automatically jump to the control program at the end of backoff. The user will need to command the jump manually. This scheme is implemented to enforce user intervention in the case of flash corruption **>
+        Boolean RedBinRunning
+        
+        <** @description: This flag is only valid if the redundant binary is running (RedBinRunning=TRUE). If this flag is FALSE, the redundant binary was jumped to after a reset. In this scenario, the redundant bootloader functions as normal and can be upgraded, and the control program can be executed. If this flag is TRUE, the redundant binary was jumped to from an interrupt handler. In this scenario, the redundant bootloader functions as normal and can be upgraded, but the control program cannot be executed. Any attempt to execute the control program will result in an ASSERT reset. This happens because when the redundant bootloader is jumped to from an interrupt handler, the MCU thinks it is still running in an interrupt context, and so the RTOS used by the control program cannot function. Note that for this flag to be TRUE, a very specific area of the primary binary flash must be corrupt (PriBinEccd flag). Therefore, it is very unlikely, however it is implemented so that there is a solution to flash corruption anywhere within the primary binary. **>
+        Boolean RedBinIntLock
+        
+        <** @description: The primary binary has failed CRC validation and is deemed corrupt. The flash itself is not corrupt and can be read, but the CRC validation failed. If this flag is set, the redundant binary should be running (check the RedBinRunning flag). If this flag is set, a bootloader upgrade should be performed to recover the primary binary. If the bootloader is not upgraded, and the redundant binary also becomes corrupt, the bootloader will enter a boot loop cycle. If this flag is set, the bootloader will not automatically jump to the control program at the end of backoff. The user will need to command the jump manually. This scheme is implemented to enforce user intervention in the case of flash corruption **>
+        Boolean PriBinCrc
+        
+        <** @description: The primary binary flash region has experienced multiple ECC errors and cannot be automatically corrected, and is corrupt. Multiple ECC errors means that the flash region can no longer be read and therefore cannot be executed reliably. If this flag is set, the redundant binary should be running (check the RedBinRunning flag). If this flag is set, a bootloader upgrade should be performed to recover the primary binary. If the bootloader is not upgraded, and the redundant binary also becomes corrupt, the bootloader will enter a boot loop cycle. If this flag is set, the bootloader will not automatically jump to the control program at the end of backoff. The user will need to command the jump manually. This scheme is implemented to enforce user intervention in the case of flash corruption **>
+        Boolean PriBinEccd
+        
+        <** @description: The primary binary flash region has experienced a single ECC error. The error is automatically corrected and normal operation continues **>
+        Boolean PriBinEccc
+        
+        <** @description: The redundant binary has failed CRC validation and is deemed corrupt. The flash itself is not corrupt and can be read, but the CRC validation failed. If this flag is set, a bootloader upgrade should be performed to recover the redundant binary. If the bootloader is not upgraded, and the primary binary also becomes corrupt, the bootloader will enter a boot loop cycle. If this flag is set, the bootloader will not automatically jump to the control program at the end of backoff. The user will need to command the jump manually. This scheme is implemented to enforce user intervention in the case of flash corruption **>
+        Boolean RedBinCrc
+        
+        <** @description: The Redundant binary flash region has experienced multiple ECC errors and cannot be automatically corrected, and is corrupt. Multiple ECC errors means that the flash region can no longer be read and therefore cannot be executed reliably. If this flag is set, a bootloader upgrade should be performed to recover the redundant binary. If the bootloader is not upgraded, and the primary binary also becomes corrupt, the bootloader will enter a boot loop cycle. If this flag is set, the bootloader will not automatically jump to the control program at the end of backoff. The user will need to command the jump manually. This scheme is implemented to enforce user intervention in the case of flash corruption **>
+        Boolean RedBinEccd
+        
+        <** @description: The Redundant binary flash region has experienced a single ECC error. The error is automatically corrected and normal operation continues **>
+        Boolean RedBinEccc
+        
+        <** @description: The primary config has failed CRC validation and is deemed corrupt. The flash itself is not corrupt and can be read, but the CRC validation failed. If the redundant config is not corrupt, the redundant config is being used. If the redundant config is also corrupt, the default config is being used. The user should set the config manually too attempt to write both the primary and redundant to flash. If this flag is set, the bootloader will not automatically jump to the control program at the end of backoff. The user will need to command the jump manually. This scheme is implemented to enforce user intervention in the case of flash corruption **>
+        Boolean PriCfgCrc
+        
+        <** @description: The primary config has experienced multiple ECC errors and cannot be automatically corrected, and is corrupt. Multiple ECC errors means that the flash region can no longer be read. If the redundant config is not corrupt, the redundant config is being used. If the redundant config is also corrupt, the default config is being used. The user should set the config manually too attempt to write both the primary and redundant to flash. If this flag is set, the bootloader will not automatically jump to the control program at the end of backoff. The user will need to command the jump manually. This scheme is implemented to enforce user intervention in the case of flash corruption **>
+        Boolean PriCfgEccd
+        
+        <** @description: The primary config flash region has experienced a single ECC error. The error is automatically corrected and normal operation continues **>
+        Boolean PriCfgEccc
+        
+        <** @description: The redundant config has failed CRC validation and is deemed corrupt. The flash itself is not corrupt and can be read, but the CRC validation failed. If the primary config is not corrupt, the primary config is being used. If the primary config is also corrupt, the default config is being used. The user should set the config manually too attempt to write both the primary and redundant to flash. If this flag is set, the bootloader will not automatically jump to the control program at the end of backoff. The user will need to command the jump manually. This scheme is implemented to enforce user intervention in the case of flash corruption **>
+        Boolean RedCfgCrc
+        
+        <** @description: The redundant config has experienced multiple ECC errors and cannot be automatically corrected, and is corrupt. Multiple ECC errors means that the flash region can no longer be read. If the primary config is not corrupt, the primary config is being used. If the primary config is also corrupt, the default config is being used. The user should set the config manually too attempt to write both the primary and redundant to flash. If this flag is set, the bootloader will not automatically jump to the control program at the end of backoff. The user will need to command the jump manually. This scheme is implemented to enforce user intervention in the case of flash corruption **>
+        Boolean RedCfgEccd
+        
+        <** @description: The redundant config flash region has experienced a single ECC error. The error is automatically corrected and normal operation continues **>
+        Boolean RedCfgEccc
+        
+        <** @description: The file table flash region has experienced multiple ECC errors and cannot be automatically corrected, and is corrupt. Multiple ECC errors means that the flash region can no longer be read. The flash page is automatically erased, therefore control program files will need to be uploaded again to populate the file table. Note that the file data still exists in flash, and could be executed using the JumpToAddress command **>
+        Boolean FileTabEccd
+        
+        <** @description: The file table flash region has experienced a single ECC error. The error is automatically corrected and normal operation continues **>
+        Boolean FileTabEccc
+        
+        <** @description: A flash region not explicitly known to the bootloader (possibly the control program), has experienced multiple ECC errors and cannot be automatically corrected, and has become corrupt. Multiple ECC errors means that the flash region can no longer be read. The page address of the error is automatically erased. The address of the error is stored in AddrEcc **>
+        Boolean OtherEccd
+        
+        <** @description: A region not explicitly known to the bootloader (possibly the control program) has experianced a single ECC error. The error is automatically corrected and normal operation continues. The address of the error is stored in AddrEcc **>
+        Boolean OtherEccc
+        
+        <** @description: Attempt to erase the corrupt flash page failed. When any flash region, outside of the bootloader itself, experiences multiple ECC errors (ECCD), The page is automatically erased. This flag indicates if that erase operation failed. The address of the error is stored in AddrEcc **>
+        Boolean EraseEccd
+        
+        <** @description: The config being used passed CRC validation but at least one parameter is out-of-bounds. The config being used is either primary or redundant, and is decided prior to this check. The check for out out-of-bounds parameters is only done after a valid config is chosen, because, for example, if the primary config has an out-of-bounds parameter and passes CRC validation, it is likely that the redundant config will have the same parameter, and we don't want one out-of-bounds parameter to cause the bootloader to entirely revert to the default config. We rather only revert the specific out-of-bounds parameters to the defaults, and hope the important/used parameters are correct. The same parameter out-of-bounds checks are performed when the user sets the config, therefore it is unlikely that this flag will be set. **>
+        Boolean CfgPartInv
+        
+        <** @description: Failed to write the redundant config to flash after the primary config was successfully written. The redundant config is only written to flash if the primary config was successfully written to flash. It is done this way because if the primary config write fails, we do not want to erase the redundant config, because if the redundant config write also fails, but is erased, the bootloader would revert to the default config on next boot **>
+        Boolean RedCfgWrite
+        
+        <** @description: Address of last ECC error (ECCC or ECCD). This is an absolute address and does not cater for memory remapping. i.e. If booting from bank2 (BFB2=1), this address will still show the error location as if BFB2=0 **>
+        UInt32 AddrEcc
+        
+    }
+    
+    <** @description: Parameter structure for interface Reset
+    **>
+    struct Reset
+    {
+        
+        <** @description: The type of reset to perform **>
+        CubeCommonBaseBootloader5_ResetVal ResetType
+        
+    }
+    
+    <** @description: Parameter structure for interface Config
+    **>
+    struct Config
+    {
+        
+        <** @description: Configurable serial number - used only if OtpOverride==TRUE  
+            @details: size = 32**>
+        UInt8[] SerialNumber
+        
+        <** @description: The amount of time the bootloader waits before automatically jumping to the default app target. Ensure that this value is large enough to be able to halt the bootloader **>
+        UInt16 Backoff
+        
+        <** @description: If set, the node will always ignore OTP and use the serial number in config (NodeType+SerialInt) **>
+        Boolean OtpOverride
+        
+        <** @description: UART1 baud rate **>
+        CubeCommonBaseBootloader5_UartBaud Uart1Baud
+        
+        <** @description: UART1 slave receive timeout **>
+        UInt16 Uart1Timeout
+        
+        <** @description: UART1 RS485 address **>
+        UInt8 Uart1RS485Addr
+        
+        <** @description: UART1 RS485 transceiver populated **>
+        Boolean Uart1RS485Trans
+        
+        <** @description: UART2 baud rate (CubeComputer only) **>
+        CubeCommonBaseBootloader5_UartBaud Uart2Baud
+        
+        <** @description: UART2 slave receive timeout (CubeComputer only) **>
+        UInt16 Uart2Timeout
+        
+        <** @description: UART2 RS485 address (CubeComputer only) **>
+        UInt8 Uart2RS485Addr
+        
+        <** @description: UART2 RS485 transceiver populated (CubeComputer only) **>
+        Boolean Uart2RS485Trans
+        
+        <** @description: CAN1 Address **>
+        UInt8 Can1Addr
+        
+        <** @description: CAN1 slave receive timeout **>
+        UInt16 Can1Timeout
+        
+        <** @description: CAN1 CSP enabled **>
+        Boolean Can1CspEn
+        
+        <** @description: CAN2 Address (CubeComputer only) **>
+        UInt8 Can2Addr
+        
+        <** @description: CAN2 slave receive timeout (CubeComputer only) **>
+        UInt16 Can2Timeout
+        
+        <** @description: CAN2 CSP enabled **>
+        Boolean Can2CspEn
+        
+        <** @description: I2C Address **>
+        UInt8 I2cAddr
+        
+        <** @description: I2C slave receive timeout **>
+        UInt16 I2cTimeout
+        
+    }
+    
+    <** @description: Parameter structure for interface DefaultAppTarget
+    **>
+    struct DefaultAppTarget
+    {
+        
+        <** @description: File handle of the default app to jump to. Must request FileInfo to get the handle. The selected file must be of type bin. **>
+        UInt8 FileHandle
+        
+    }
+    
+    <** @description: Parameter structure for interface JumpToApp
+    **>
+    struct JumpToApp
+    {
+        
+        <** @description: File handle of the app to jump to. Must request FileInfo to get the handle. The selected file must be of type bin. **>
+        UInt8 FileHandle
+        
+    }
+    
+    <** @description: Parameter structure for interface JumpToAddress
+    **>
+    struct JumpToAddress
+    {
+        
+        <** @description: Address to jump to. **>
+        UInt32 Address
+        
+    }
+    
+    <** @description: Parameter structure for interface WriteFileSetup
+    **>
+    struct WriteFileSetup
+    {
+        
+        <** @description: CubeSpace File Meta Data. May be less than allocated size (padding required)  
+            @details: size = 128**>
+        UInt8[] MetaData
+        
+    }
+    
+    <** @description: Parameter structure for interface DeleteFileEntry
+    **>
+    struct DeleteFileEntry
+    {
+        
+        <** @description: File handle of the entry to delete. **>
+        UInt8 FileHandle
+        
+    }
+    
+    <** @description: Parameter structure for interface WriteMemorySetup
+    **>
+    struct WriteMemorySetup
+    {
+        
+        <** @description: Address of memory to read **>
+        UInt32 Address
+        
+        <** @description: Size of memory to read **>
+        UInt32 Size
+        
+        <** @description: Should the region to be written be automatically erased **>
+        Boolean AutoErase
+        
+    }
+    
+    <** @description: Parameter structure for interface ReadMemorySetup
+    **>
+    struct ReadMemorySetup
+    {
+        
+        <** @description: Address of memory to read **>
+        UInt32 Address
+        
+        <** @description: Size of memory to read **>
+        UInt32 Size
+        
+    }
+    
+    <** @description: Parameter structure for interface EraseMemorySetup
+    **>
+    struct EraseMemorySetup
+    {
+        
+        <** @description: Address of memory to read **>
+        UInt32 Address
+        
+        <** @description: Size of memory to read **>
+        UInt32 Size
+        
+    }
+    
+    <** @description: Parameter structure for interface OptionBytes
+    **>
+    struct OptionBytes
+    {
+        
+        <** @description: This value will change every time the telemetry is requested. When sending the telecommand to set the option bytes, this parameter must be set to the last value returned by the telemetry request. If this parameter is not correct the telecommand will return a Sequence error Nack. This scheme is implemented to ensure that the user obtains the current option bytes, and only modify what is required, before setting **>
+        UInt32 MagicNumber
+        
+        <** @description: See reference manual **>
+        UInt8 Rdp
+        
+        <** @description: See reference manual **>
+        UInt8 BorLev
+        
+        <** @description: See reference manual **>
+        Boolean nRstStop
+        
+        <** @description: See reference manual **>
+        Boolean nRstStdby
+        
+        <** @description: See reference manual **>
+        Boolean nRstShdw
+        
+        <** @description: See reference manual **>
+        Boolean iWdgSw
+        
+        <** @description: See reference manual **>
+        Boolean iWdgStop
+        
+        <** @description: See reference manual **>
+        Boolean iWdgStdby
+        
+        <** @description: See reference manual **>
+        Boolean wWdgSw
+        
+        <** @description: See reference manual **>
+        Boolean bfb2
+        
+        <** @description: See reference manual **>
+        Boolean dBank
+        
+        <** @description: See reference manual **>
+        Boolean nBoot1
+        
+        <** @description: See reference manual **>
+        Boolean Sram2Pe
+        
+        <** @description: See reference manual **>
+        Boolean Sram2Rst
+        
+        <** @description: See reference manual **>
+        Boolean nSwBoot0
+        
+        <** @description: See reference manual **>
+        Boolean nBoot0
+        
+        <** @description: See reference manual **>
+        Boolean PcRopRdp
+        
+        <** @description: See reference manual **>
+        UInt32 PcRopStrt1
+        
+        <** @description: See reference manual **>
+        UInt32 PcRopEnd1
+        
+        <** @description: See reference manual **>
+        UInt8 WrpAStrt1
+        
+        <** @description: See reference manual **>
+        UInt8 WrpAEnd1
+        
+        <** @description: See reference manual **>
+        UInt8 WrpBStrt1
+        
+        <** @description: See reference manual **>
+        UInt8 WrpBEnd1
+        
+        <** @description: See reference manual **>
+        UInt32 PcRopStrt2
+        
+        <** @description: See reference manual **>
+        UInt32 PcRopEnd2
+        
+        <** @description: See reference manual **>
+        UInt8 WrpAStrt2
+        
+        <** @description: See reference manual **>
+        UInt8 WrpAEnd2
+        
+        <** @description: See reference manual **>
+        UInt8 WrpBStrt2
+        
+        <** @description: See reference manual **>
+        UInt8 WrpBEnd2
+        
+    }
+    
+    <** @description: Parameter structure for interface CommitOptionBytes
+    **>
+    struct CommitOptionBytes
+    {
+        
+        <** @description: This value must be set to the last MagicNumber value returned by the OptionBytes or OptionBytesF7 telemetry. If this parameter is not correct the telecommand will return a Sequence error Nack **>
+        UInt32 MagicNumber
+        
+    }
+    
+    <** @description: Parameter structure for interface OptionBytesF7
+    **>
+    struct OptionBytesF7
+    {
+        
+        <** @description: This value will change every time the telemetry is requested. When sending the telecommand to set the option bytes, this parameter must be set to the last value returned by the telemetry request. If this parameter is not correct the telecommand will return a Sequence error Nack. This scheme is implemented to ensure that the user obtains the current option bytes, and only modify what is required, before setting **>
+        UInt32 MagicNumber
+        
+        <** @description: See reference manual **>
+        UInt8 Rdp
+        
+        <** @description: See reference manual **>
+        UInt8 BorLev
+        
+        <** @description: See reference manual **>
+        Boolean nRstStop
+        
+        <** @description: See reference manual **>
+        Boolean nRstStdby
+        
+        <** @description: See reference manual **>
+        Boolean iWdgSw
+        
+        <** @description: See reference manual **>
+        Boolean iWdgStop
+        
+        <** @description: See reference manual **>
+        Boolean iWdgStdby
+        
+        <** @description: See reference manual **>
+        Boolean wWdgSw
+        
+        <** @description: See reference manual **>
+        Boolean ndBank
+        
+        <** @description: See reference manual **>
+        Boolean ndBoot
+        
+        <** @description: See reference manual **>
+        UInt16 BootAdd0
+        
+        <** @description: See reference manual **>
+        UInt16 BootAdd1
+        
+        <** @description: See reference manual **>
+        Boolean nWrp0
+        
+        <** @description: See reference manual **>
+        Boolean nWrp1
+        
+        <** @description: See reference manual **>
+        Boolean nWrp2
+        
+        <** @description: See reference manual **>
+        Boolean nWrp3
+        
+        <** @description: See reference manual **>
+        Boolean nWrp4
+        
+        <** @description: See reference manual **>
+        Boolean nWrp5
+        
+        <** @description: See reference manual **>
+        Boolean nWrp6
+        
+        <** @description: See reference manual **>
+        Boolean nWrp7
+        
+        <** @description: See reference manual **>
+        Boolean nWrp8
+        
+        <** @description: See reference manual **>
+        Boolean nWrp9
+        
+        <** @description: See reference manual **>
+        Boolean nWrp10
+        
+        <** @description: See reference manual **>
+        Boolean nWrp11
+        
+    }
+    
+    <** @description: Parameter structure for interface Identification
+    **>
+    struct Identification
+    {
+        
+        <** @description: Node type identifier **>
+        CommonFrameworkTypes1_NodeTypeLegacy NodeType
+        
+        <** @description: Program type identifier **>
+        CommonFrameworkTypes1_ProgramType ProgramType
+        
+        <** @description: Interface version **>
+        UInt8 InterfaceVersion
+        
+        <** @description: Firmware version (Major) **>
+        UInt8 FirmwareMajorVersion
+        
+        <** @description: Firmware version (Minor) **>
+        UInt8 FirmwareMinorVersion
+        
+        <** @description: Seconds since processor start-up **>
+        UInt16 RuntimeSeconds
+        
+        <** @description: Milliseconds (after the integer second) since processor start-up **>
+        UInt16 RuntimeMilliseconds
+        
+    }
+    
+    <** @description: Parameter structure for interface SerialNumber
+    **>
+    struct SerialNumber
+    {
+        
+        <** @description: OTP ASCII string of chars denoting the serial number of this module  
+            @details: size = 32**>
+        UInt8[] OtpSerial
+        
+        <** @description: Config ASCII string of chars denoting the serial number of this module  
+            @details: size = 32**>
+        UInt8[] CfgSerial
+        
+        <** @description: Which serial number (OTP/Config) should be used for identification **>
+        CommonFrameworkTypes1_SerialSource ActiveSerial
+        
+    }
+    
+    <** @description: Parameter structure for interface State
+    **>
+    struct State
+    {
+        
+        <** @description: Current state of the application **>
+        CubeCommonBaseBootloader5_States AppState
+        
+        <** @description: Previous state of the application **>
+        CubeCommonBaseBootloader5_States AppStatePrev
+        
+        <** @description: Error code for the last operation - gets reset to 0 at start of new operation **>
+        UInt32 Result
+        
+        <** @description: The current address being used for the operation, if applicable **>
+        UInt32 OpAddress
+        
+        <** @description: The current bank being used for erase operation, if applicable **>
+        UInt8 OpEBank
+        
+        <** @description: The current page being used for erase operation, if applicable **>
+        UInt16 OpEPage
+        
+        <** @description: The amount of data remaining for operation, if applicable **>
+        UInt32 OpDataRemain
+        
+    }
+    
+    <** @description: Parameter structure for interface Errors
+    **>
+    struct Errors
+    {
+        
+        <** @description: Error code for the last operation - gets reset to 0 at start of new operation **>
+        UInt32 Result
+        
+        <** @description: Error code for HAL initialization (0 = OK) **>
+        UInt32 HalInit
+        
+        <** @description: Error code for Flash initialization (0 = OK) **>
+        UInt32 FlashInit
+        
+        <** @description: Error code for UART1 initialization (0 = OK) **>
+        UInt32 Uart1Init
+        
+        <** @description: Error code for UART2 initialization (0 = OK) **>
+        UInt32 Uart2Init
+        
+        <** @description: Error code for CAN1 initialization (0 = OK) **>
+        UInt32 Can1Init
+        
+        <** @description: Error code for CAN2 initialization (0 = OK) **>
+        UInt32 Can2Init
+        
+        <** @description: Error code for I2C initialization (0 = OK) **>
+        UInt32 I2cInit
+        
+        <** @description: Config error flag set if configuration CRC failed and default config is being used **>
+        Boolean ConfigInit
+        
+        <** @description: Timeout error flag on last operation **>
+        Boolean Timeout
+        
+        <** @description: Data overrun error flag on last operation **>
+        Boolean Overrun
+        
+        <** @description: Page erase error flag on last operation **>
+        Boolean ErasePage
+        
+        <** @description: Write error flag on last operation **>
+        Boolean Write
+        
+        <** @description: File CRC error flag on upload complete **>
+        Boolean FileCrc
+        
+        <** @description: Set if failure to write file table to flash **>
+        Boolean CommitFileTable
+        
+        <** @description: Set if failure to write config table to flash **>
+        Boolean CommitConfigTable
+        
+        <** @description: Set if the jump target is invalid **>
+        Boolean JumpTarget
+        
+    }
+    
+    <** @description: Parameter structure for interface FileInfo
+    **>
+    struct FileInfo
+    {
+        
+        <** @description: Handle identifier of the file **>
+        UInt8 FileHandle
+        
+        <** @description: Set if the file associated with this entry failed CRC check. Use file handle to delete the entry **>
+        Boolean IsCorrupt
+        
+        <** @description: The type of the file **>
+        CubeCommonBaseBootloader5_FileType Type
+        
+        <** @description: The Program Type associated with the file **>
+        CommonFrameworkTypes1_ProgramType Program
+        
+        <** @description: The adddress in flash where the file is located **>
+        UInt32 Address
+        
+        <** @description: File Size **>
+        UInt32 Size
+        
+        <** @description: File CRC **>
+        UInt32 Crc
+        
+        <** @description: Firmware version (Major) that this file is for/from **>
+        UInt8 FirmwareMajorVersion
+        
+        <** @description: Firmware version (Minor) that this file is for/from **>
+        UInt8 FirmwareMinorVersion
+        
+        <** @description: Firmware version (Patch) that this file is for/from **>
+        UInt16 FirmwarePatchVersion
+        
+        <** @description: System version (Major) that this file is for/from **>
+        UInt8 SystemMajorVersion
+        
+        <** @description: System version (Minor) that this file is for/from **>
+        UInt8 SystemMinorVersion
+        
+        <** @description: System version (Patch) that this file is for/from **>
+        UInt16 SystemPatchVersion
+        
+        <** @description: ASCII string of chars denoting the serial number this file is associated with  
+            @details: size = 32**>
+        UInt8[] Serial
+        
+        <** @description: Signals if the fil list is empty **>
+        Boolean Empty
+        
+        <** @description: Signals if this returned entry is the first in the file list - used to manage wrapping **>
+        Boolean First
+        
+        <** @description: Signals if this returned entry is the last in the file list - used to manage wrapping **>
+        Boolean Last
+        
+    }
+    
+    <** @description: Parameter structure for interface CommsStatus
+    **>
+    struct CommsStatus
+    {
+        
+        <** @description: UART1 No. of telecommands received **>
+        UInt16 uart1TcCounter
+        
+        <** @description: UART1 No. of telemetry requests received **>
+        UInt16 uart1TlmCounter
+        
+        <** @description: UART1 Errors reported in SW checks **>
+        UInt16 uart1SoftwareProtoErrors
+        
+        <** @description: UART1 Errors reported by HW Flags **>
+        UInt16 uart1HardwareFlagErrors
+        
+        <** @description: UART2 No. of telecommands received **>
+        UInt16 uart2TcCounter
+        
+        <** @description: UART2 No. of telemetry requests received **>
+        UInt16 uart2TlmCounter
+        
+        <** @description: UART2 Errors reported in SW checks **>
+        UInt16 uart2SoftwareProtoErrors
+        
+        <** @description: UART2 Errors reported by HW Flags **>
+        UInt16 uart2HardwareFlagErrors
+        
+        <** @description: CAN1 No. of telecommands received **>
+        UInt16 can1TcCounter
+        
+        <** @description: CAN1 No. of telemetry requests received **>
+        UInt16 can1TlmCounter
+        
+        <** @description: CAN1 Errors reported in SW checks **>
+        UInt16 can1SoftwareProtoErrors
+        
+        <** @description: CAN1 Errors reported by HW Flags **>
+        UInt16 can1HardwareFlagErrors
+        
+        <** @description: CAN2 No. of telecommands received **>
+        UInt16 can2TcCounter
+        
+        <** @description: CAN2 No. of telemetry requests received **>
+        UInt16 can2TlmCounter
+        
+        <** @description: CAN2 Errors reported in SW checks **>
+        UInt16 can2SoftwareProtoErrors
+        
+        <** @description: CAN2 Errors reported by HW Flags **>
+        UInt16 can2HardwareFlagErrors
+        
+        <** @description: I2C No. of telecommands received **>
+        UInt16 i2cTcCounter
+        
+        <** @description: I2C No. of telemetry requests received **>
+        UInt16 i2cTlmCounter
+        
+        <** @description: I2C Errors reported in SW checks **>
+        UInt16 i2cSoftwareProtoErrors
+        
+        <** @description: I2C Errors reported by HW Flags **>
+        UInt16 i2cHardwareFlagErrors
+        
+    }
+    
+    <** @description: Parameter structure for interface MemMap
+    **>
+    struct MemMap
+    {
+        
+        <** @description: Memory Re-Mapped **>
+        Boolean memrmp
+        
+    }
+    
+    <** @description: Parameter structure for interface TelecommandAcknowledge
+    **>
+    struct TelecommandAcknowledge
+    {
+        
+        <** @description: Last TcTlm ID **>
+        UInt8 Id
+        
+        <** @description: Last TcTlm Error **>
+        CommonFrameworkTypes1_TcTlmError Error
+        
+        <** @description: Buffer index of error **>
+        UInt8 ErrorIndex
+        
+        <** @description: Flag indicating if this acknowledgement has been read sinc the last TCTLM **>
+        Boolean Read
+        
+    }
+    
+    
+    
+    <**
+        @description: Simulate an ECC correction/error
+        @details: id = 0
+    **>
+    method setEccSim
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            EccSim setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Warning information of the application (CubeComputer only)
+        @details: id = 1
+    **>
+    method getWarnings
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Warnings returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Perform a soft reset
+        @details: id = 2
+    **>
+    method setReset
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            Reset setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Stay in bootloader. Do NOT jump to app
+        @details: id = 3
+    **>
+    method setHalt
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Configuration of base bootloader
+        @details: id = 4
+    **>
+    method setConfig
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            Config setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Set/Get the default application the bootloader will jump to if not specifically commanded
+        @details: id = 5
+    **>
+    method setDefaultAppTarget
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            DefaultAppTarget setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Trigger Bootloader to jump to the default application
+        @details: id = 6
+    **>
+    method setJumpToDefaultApp
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Trigger Bootloader to jump to the specified application
+        @details: id = 7
+    **>
+    method setJumpToApp
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            JumpToApp setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Trigger Bootloader to jump to the specified address - DO NOT use under normal circumstances
+        @details: id = 8
+    **>
+    method setJumpToAddress
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            JumpToAddress setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Reset the file info index to start from the first index in the file list. Then request file info to increment the index automatically until last is detected
+        @details: id = 9
+    **>
+    method setResetFileInfoIdx
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Setup a file write
+        @details: id = 10
+    **>
+    method setWriteFileSetup
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            WriteFileSetup setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Delete a file entry
+        @details: id = 11
+    **>
+    method setDeleteFileEntry
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            DeleteFileEntry setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Setup a memory write - not to be used under normal circumstances
+        @details: id = 12
+    **>
+    method setWriteMemorySetup
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            WriteMemorySetup setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Setup a memory read - not to be used under normal circumstances
+        @details: id = 13
+    **>
+    method setReadMemorySetup
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            ReadMemorySetup setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Setup a memory erase - not to be used under normal circumstances
+        @details: id = 14
+    **>
+    method setEraseMemorySetup
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            EraseMemorySetup setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Read/Write - not to be used under normal circumstances. Applicable to all CubePrducts except CubeAuriga
+        @details: id = 15
+    **>
+    method setOptionBytes
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            OptionBytes setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Commit option bytes. Will cause reset if successful
+        @details: id = 16
+    **>
+    method setCommitOptionBytes
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            CommitOptionBytes setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Read/Write - not to be used under normal circumstances. Applicable only to CubeAuriga
+        @details: id = 17
+    **>
+    method setOptionBytesF7
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            OptionBytesF7 setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Identification information for this node
+        @details: id = 18
+    **>
+    method getIdentification
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Identification returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Unique serial number of the CubeSpace Component
+        @details: id = 19
+    **>
+    method getSerialNumber
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            SerialNumber returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Configuration of base bootloader
+        @details: id = 20
+    **>
+    method getConfig
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Config returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: State information of the application
+        @details: id = 21
+    **>
+    method getState
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            State returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Error information of the application
+        @details: id = 22
+    **>
+    method getErrors
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Errors returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get information on the current file entry index. The index will automatically increment every time this telemetry is requested, and wrap back to first entry
+        @details: id = 23
+    **>
+    method getFileInfo
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            FileInfo returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Set/Get the default application the bootloader will jump to if not specifically commanded
+        @details: id = 24
+    **>
+    method getDefaultAppTarget
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            DefaultAppTarget returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Read/Write - not to be used under normal circumstances. Applicable to all CubePrducts except CubeAuriga
+        @details: id = 25
+    **>
+    method getOptionBytes
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            OptionBytes returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Communication Status
+        @details: id = 26
+    **>
+    method getCommsStatus
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            CommsStatus returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Microcontroller memory mapping setting
+        @details: id = 27
+    **>
+    method getMemMap
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            MemMap returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Read/Write - not to be used under normal circumstances. Applicable only to CubeAuriga
+        @details: id = 28
+    **>
+    method getOptionBytesF7
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            OptionBytesF7 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Used with the I2C protocol to receive Telecommand Ack/Nack
+        @details: id = 29
+    **>
+    method getTelecommandAcknowledge
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            TelecommandAcknowledge returnVal
+            
+            
+        }
+    }
+    
+}

@@ -1,0 +1,297 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+package endurosat.macif
+
+
+<** @description: Interface for Cube ADCS Gen2 - CubeNodeCommon1
+    @details: id = 315
+**>
+
+interface CubeADCS_Gen2_CubeNodeCommon1
+{
+    version {major 6 minor 0}
+    
+    <** @description: This enumeration holds the IDs of CubeADCS Gen2 nodes for which this interface is applicable.
+        @details: size = 1 
+    **>
+    enumeration CmdTargetNode
+    {
+        NodeInvalid = 0
+        NodeStr0 = 2
+        NodeStr1 = 3
+        NodeRwl0 = 14
+        NodeRwl1 = 15
+        NodeRwl2 = 16
+        NodeRwl3 = 17
+        NodeRwl4 = 18
+        
+    }
+
+    <** @description: Return status type of the CubeADCS Gen2 API operations. Possible values are:
+                     0 - No error
+                     1 - NULL pointer
+                     2 - Size incorrect
+                     3 - Size too low
+                     4 - Size too high
+                     5 - Overrun
+                     6 - Parameter error (out of range)
+                     7 - Timeout
+                     8 - TCTLM comms Nack
+                     9 - Busy
+                     10 - Frame
+                     11 - CRC
+                     12 - Read
+                     13 - Write
+                     14 - CAN ID type error
+                     15 - CAN frame error
+                     16 - Unknown NACK
+                     17 - Invalid node type
+                     18 - CubeSpace file upload internal error
+                     19 - Usage error
+                     20 - Auto-Discovery error
+                     21 - Image error
+                     22 - Does not exist error
+                     23 - User data error
+                     24 - Commit error
+                     25 - TCTLM protocol error
+                     26 - General unexpected/unknown error
+                     27 - Telemetry response size error
+                     28 - TCTLM response ID does not match the request
+
+                     50 - TCTLM Nack - invalid ID
+                     51 - TCTLM Nack - invalid length
+                     52 - TCTLM Nack - invalid parameter data
+                     53 - TCTLM Nack - CRC failed
+                     54 - TCTLM Nack - not implemented
+                     55 - TCTLM Nack - busy
+                     56 - TCTLM Nack - sequence
+                     57 - TCTLM Nack - internal
+                     58 - TCTLM Nack - pass-through timeout
+                     59 - TCTLM Nack - pass-through target
+
+                     70 - CSP - receive timeout
+                     71 - CSP - failed to acquire a buffer
+
+                     65535 - Not implemented / TODO
+    **>
+    typedef AdcsErrorCode is Int32
+    
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeNodeCommon1_SwitchState
+    {
+        
+        <** @description: Switch is disabled **>
+        Off = 0
+        
+        <** @description: Switch is enabled **>
+        On = 1
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeNodeCommon1_NodeModelEnum
+    {
+        
+        <** @description: CubeNode Model 1 **>
+        Model1 = 0
+        
+        <** @description: CubeNode Model 2 **>
+        Model2 = 1
+        
+        <** @description: CubeNode Model 3 **>
+        Model3 = 2
+        
+    }
+    
+    
+    
+    <** @description: Port current data
+    **>
+    struct CubeNodeCommon1_PortCurrent
+    {
+        
+        <** @description: VBatt 5V Current Monitor current **>
+        UInt16 vBattCurrent
+        
+        <** @description: VBatt 5V Overcurrent flag (max 500mA) **>
+        Boolean vBattOvercurrent
+        
+    }
+    
+    <** @description: Power switch state
+    **>
+    struct CubeNodeCommon1_PowerSwState
+    {
+        
+        <** @description: Power Switch State **>
+        CubeNodeCommon1_SwitchState Power
+        
+    }
+    
+    <** @description: Parameter structure for interface PowerSwitchState
+    **>
+    struct PowerSwitchState
+    {
+        
+        <** @description: Power State on port  
+            @details: size = 4**>
+        CubeNodeCommon1_PowerSwState[] Power
+        
+    }
+    
+    <** @description: Parameter structure for interface HealthTlm
+    **>
+    struct HealthTlm
+    {
+        
+        <** @description: MCU current **>
+        UInt16 McuCurrent
+        
+        <** @description: MCU temperature in deg C **>
+        Int16 McuTemp
+        
+        <** @description: MCU supply voltage **>
+        UInt16 McuVoltage
+        
+        <** @description: Current measurement from PMU (if applicable) **>
+        UInt16 PmuCurrent
+        
+        <** @description: Flag indicating that the PMU current measurement is valid **>
+        Boolean PmuCurrentValid
+        
+        <** @description: PowerGood signal (from PMU for CQ / Always true for CNo) **>
+        Boolean PowerGood
+        
+        <** @description: Port 5v Currents  
+            @details: size = 4**>
+        CubeNodeCommon1_PortCurrent[] PortCurrent
+        
+        <** @description: Bitmask representing virtual watchdog region warning counters.  
+            @details: size = 5**>
+        UInt8[] WatchdogCount
+        
+    }
+    
+    <** @description: Parameter structure for interface NodeModel
+    **>
+    struct NodeModel
+    {
+        
+        <** @description: CubeNode Model **>
+        CubeNodeCommon1_NodeModelEnum Model
+        
+    }
+    
+    
+    
+    <**
+        @description: Enable/Disable 5V Power Switch Downstream
+        @details: id = 0
+    **>
+    method setPowerSwitchState
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            PowerSwitchState setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: HealthTelemetry for CubeNode
+        @details: id = 1
+    **>
+    method getHealthTlm
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            HealthTlm returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Enable/Disable 5V Power Switch Downstream
+        @details: id = 2
+    **>
+    method getPowerSwitchState
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            PowerSwitchState returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: CubeNode Model
+        @details: id = 3
+    **>
+    method getNodeModel
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            NodeModel returnVal
+            
+            
+        }
+    }
+    
+}

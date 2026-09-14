@@ -1,0 +1,83 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/payload_ctrl.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.pf.payload.payload_ctrl as payload_ctrl_Definitions {
+
+	enumeration PayloadOpResult {
+		AlarmInvalidRegexValues = {
+			"(^(?!OK$).*$)"
+		}
+	}
+
+	enumeration PayloadState {
+		AlarmInvalidRegexValues = {
+			"ERROR"
+		}
+	}
+
+	struct PayloadInfo {
+		pl_state {
+			DisplayName = "Payload State"
+		}
+		last_error_code {
+			DisplayName = "Last Error Code"
+		}
+	}
+
+	struct PayloadStartCfg {
+		flags {
+			DisplayName = "Flags"
+		}
+		pl_args {
+			DisplayName = "Payload Arguments"
+		}
+	}
+
+	method start_payload {
+		in {
+			payload_id {
+				DisplayName = "Payload ID"
+			}
+			start_cfg {
+				DisplayName = "Start Configuration"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method stop_payload {
+		in {
+			payload_id {
+				DisplayName = "Payload ID"
+			}
+			req_stop_mode {
+				DisplayName = "Requested Stop Mode"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_payload_info {
+		in {
+			payload_id {
+				DisplayName = "Payload ID"
+			}
+		}
+		out {
+			info {
+				DisplayName = "Info"
+			}
+		}
+	}
+
+}

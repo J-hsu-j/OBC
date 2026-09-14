@@ -1,0 +1,937 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CubeCommonBaseBootloader6.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CubeCommonBaseBootloader6 as CubeADCS_Gen2_CubeCommonBaseBootloader6_Definitions
+{    
+    
+    struct EccSim
+    {
+        DisplayName = "Simulate ECC Error"
+        
+        MagicNumber {
+            DisplayName = "Magic Number"
+        }
+        
+        Addr {
+            DisplayName = "ADDR_ECC"
+        }
+        
+        Bank {
+            DisplayName = "BK_ECC"
+        }
+        
+        Eccd {
+            DisplayName = "ECCD"
+        }
+        
+        Eccc {
+            DisplayName = "ECCC"
+        }
+        
+        BootIncomplete {
+            DisplayName = "Boot Incomplete"
+        }
+        
+    }
+    
+    struct Warnings
+    {
+        DisplayName = "Warnings (CubeComputer only)"
+        
+        RedBinRunning {
+            DisplayName = "Redundant Bin Running"
+        }
+        
+        RedBinIntLock {
+            DisplayName = "Redundant Bin Int Lock"
+        }
+        
+        PriBinCrc {
+            DisplayName = "Primary Bin CRC"
+        }
+        
+        PriBinEccd {
+            DisplayName = "Primary Bin ECCD"
+        }
+        
+        PriBinEccc {
+            DisplayName = "Primary Bin ECCC"
+        }
+        
+        RedBinCrc {
+            DisplayName = "Redundant Bin CRC"
+        }
+        
+        RedBinEccd {
+            DisplayName = "Redundant Bin ECCD"
+        }
+        
+        RedBinEccc {
+            DisplayName = "Redundant Bin ECCC"
+        }
+        
+        PriCfgCrc {
+            DisplayName = "Primary Cfg Crc"
+        }
+        
+        PriCfgEccd {
+            DisplayName = "Primary Cfg ECCD"
+        }
+        
+        PriCfgEccc {
+            DisplayName = "Primary Cfg ECCC"
+        }
+        
+        RedCfgCrc {
+            DisplayName = "Redundant Cfg Crc"
+        }
+        
+        RedCfgEccd {
+            DisplayName = "Redundant Cfg ECCD"
+        }
+        
+        RedCfgEccc {
+            DisplayName = "Redundant Cfg ECCC"
+        }
+        
+        FileTabEccd {
+            DisplayName = "File Table ECCD"
+        }
+        
+        FileTabEccc {
+            DisplayName = "File Table ECCC"
+        }
+        
+        OtherEccd {
+            DisplayName = "Other ECCD"
+        }
+        
+        OtherEccc {
+            DisplayName = "Other ECCC"
+        }
+        
+        EraseEccd {
+            DisplayName = "Erase ECCD"
+        }
+        
+        CfgPartInv {
+            DisplayName = "Config Partially Invalid"
+        }
+        
+        RedCfgWrite {
+            DisplayName = "Redundant Cfg Write"
+        }
+        
+        AddrEcc {
+            DisplayName = "Address ECC"
+        }
+        
+    }
+    
+    struct Reset
+    {
+        DisplayName = "Reset"
+        
+        ResetType {
+            DisplayName = "Reset Type"
+        }
+        
+    }
+    
+    struct Config
+    {
+        DisplayName = "Configuration"
+        
+        SerialNumber {
+            DisplayName = "Serial Number"
+        }
+        
+        Backoff {
+            DisplayName = "Backoff"
+			AlarmNumericMinInclusive = "99.9999"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        OtpOverride {
+            DisplayName = "OTP Override"
+        }
+        
+        Uart1Baud {
+            DisplayName = "UART1 Baud"
+        }
+        
+        Uart1Timeout {
+            DisplayName = "UART1 Timeout"
+            Unit = "ms"
+			AlarmNumericMinInclusive = "199.9999"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Uart1RS485Addr {
+            DisplayName = "UART1 RS485 Address"
+        }
+        
+        Uart1RS485Trans {
+            DisplayName = "UART1 RS485 Transceiver"
+        }
+        
+        Uart2Baud {
+            DisplayName = "UART2 Baud"
+        }
+        
+        Uart2Timeout {
+            DisplayName = "UART2 Timeout"
+            Unit = "ms"
+			AlarmNumericMinInclusive = "199.9999"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Uart2RS485Addr {
+            DisplayName = "UART2 RS485 Address"
+        }
+        
+        Uart2RS485Trans {
+            DisplayName = "UART2 RS485 Transceiver"
+        }
+        
+        Can1Addr {
+            DisplayName = "CAN1 Address"
+        }
+        
+        Can1Timeout {
+            DisplayName = "CAN1 Timeout"
+            Unit = "ms"
+			AlarmNumericMinInclusive = "199.9999"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Can1CspEn {
+            DisplayName = "CAN1 CSP Enabled"
+        }
+        
+        Can2Addr {
+            DisplayName = "CAN2 Address"
+        }
+        
+        Can2Timeout {
+            DisplayName = "CAN2 Timeout"
+            Unit = "ms"
+			AlarmNumericMinInclusive = "199.9999"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Can2CspEn {
+            DisplayName = "CAN2 CSP Enabled"
+        }
+        
+        I2cAddr {
+            DisplayName = "I2C Address"
+			AlarmNumericMinInclusive = "0.9999"
+			AlarmNumericMaxInclusive = "127.0001"
+        }
+        
+        I2cTimeout {
+            DisplayName = "I2C Timeout"
+            Unit = "ms"
+			AlarmNumericMinInclusive = "9.9999"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+    }
+    
+    struct DefaultAppTarget
+    {
+        DisplayName = "Default application target"
+        
+        FileHandle {
+            DisplayName = "File Handle"
+        }
+        
+    }
+    
+    struct JumpToApp
+    {
+        DisplayName = "Jump To Application"
+        
+        FileHandle {
+            DisplayName = "File Handle"
+        }
+        
+    }
+    
+    struct JumpToAddress
+    {
+        DisplayName = "Jump To Address"
+        
+        Address {
+            DisplayName = "Address"
+        }
+        
+    }
+    
+    struct WriteFileSetup
+    {
+        DisplayName = "Write File Setup"
+        
+        MetaData {
+            DisplayName = "File Meta Data"
+        }
+        
+    }
+    
+    struct DeleteFileEntry
+    {
+        DisplayName = "Delete File Entry"
+        
+        FileHandle {
+            DisplayName = "File Handle"
+        }
+        
+    }
+    
+    struct WriteMemorySetup
+    {
+        DisplayName = "Write Memory Setup"
+        
+        Address {
+            DisplayName = "Address"
+        }
+        
+        Size {
+            DisplayName = "Size"
+        }
+        
+        AutoErase {
+            DisplayName = "Auto Erase"
+        }
+        
+    }
+    
+    struct ReadMemorySetup
+    {
+        DisplayName = "Read Memory Setup"
+        
+        Address {
+            DisplayName = "Address"
+        }
+        
+        Size {
+            DisplayName = "Size"
+        }
+        
+    }
+    
+    struct EraseMemorySetup
+    {
+        DisplayName = "Eraze Memory Setup"
+        
+        Address {
+            DisplayName = "Address"
+        }
+        
+        Size {
+            DisplayName = "Size"
+        }
+        
+    }
+    
+    struct OptionBytes
+    {
+        DisplayName = "Option Bytes"
+        
+        MagicNumber {
+            DisplayName = "MagicNumber"
+        }
+        
+        Rdp {
+            DisplayName = "RDP"
+        }
+        
+        BorLev {
+            DisplayName = "BOR_LEV"
+        }
+        
+        nRstStop {
+            DisplayName = "nRST_STOP"
+        }
+        
+        nRstStdby {
+            DisplayName = "nRST_STDBY"
+        }
+        
+        nRstShdw {
+            DisplayName = "nRST_SHDW"
+        }
+        
+        iWdgSw {
+            DisplayName = "IWDG_SW"
+        }
+        
+        iWdgStop {
+            DisplayName = "IWDG_STOP"
+        }
+        
+        iWdgStdby {
+            DisplayName = "IWDG_STDBY"
+        }
+        
+        wWdgSw {
+            DisplayName = "WWDG_SW"
+        }
+        
+        bfb2 {
+            DisplayName = "BFB2"
+        }
+        
+        dBank {
+            DisplayName = "DBANK"
+        }
+        
+        nBoot1 {
+            DisplayName = "nBOOT1"
+        }
+        
+        Sram2Pe {
+            DisplayName = "SRAM2_PE"
+        }
+        
+        Sram2Rst {
+            DisplayName = "SRAM2_RST"
+        }
+        
+        nSwBoot0 {
+            DisplayName = "nSWBOOT0"
+        }
+        
+        nBoot0 {
+            DisplayName = "nBOOT0"
+        }
+        
+        PcRopRdp {
+            DisplayName = "PCROP_RDP"
+        }
+        
+        PcRopStrt1 {
+            DisplayName = "PCROP1_STRT"
+        }
+        
+        PcRopEnd1 {
+            DisplayName = "PCROP1_END"
+        }
+        
+        WrpAStrt1 {
+            DisplayName = "WRPA1_STRT"
+        }
+        
+        WrpAEnd1 {
+            DisplayName = "WRPA1_END"
+        }
+        
+        WrpBStrt1 {
+            DisplayName = "WRPB1_STRT"
+        }
+        
+        WrpBEnd1 {
+            DisplayName = "WRPB1_END"
+        }
+        
+        PcRopStrt2 {
+            DisplayName = "PCROP2_STRT"
+        }
+        
+        PcRopEnd2 {
+            DisplayName = "PCROP2_END"
+        }
+        
+        WrpAStrt2 {
+            DisplayName = "WRPA2_STRT"
+        }
+        
+        WrpAEnd2 {
+            DisplayName = "WRPA2_END"
+        }
+        
+        WrpBStrt2 {
+            DisplayName = "WRPB2_STRT"
+        }
+        
+        WrpBEnd2 {
+            DisplayName = "WRPB2_END"
+        }
+        
+    }
+    
+    struct CommitOptionBytes
+    {
+        DisplayName = "Commit Option Bytes"
+        
+        MagicNumber {
+            DisplayName = "MagicNumber"
+        }
+        
+    }
+    
+    struct OptionBytesF7
+    {
+        DisplayName = "Option Bytes F7"
+        
+        MagicNumber {
+            DisplayName = "MagicNumber"
+        }
+        
+        Rdp {
+            DisplayName = "RDP"
+        }
+        
+        BorLev {
+            DisplayName = "BOR_LEV"
+        }
+        
+        nRstStop {
+            DisplayName = "nRST_STOP"
+        }
+        
+        nRstStdby {
+            DisplayName = "nRST_STDBY"
+        }
+        
+        iWdgSw {
+            DisplayName = "IWDG_SW"
+        }
+        
+        iWdgStop {
+            DisplayName = "IWDG_STOP"
+        }
+        
+        iWdgStdby {
+            DisplayName = "IWDG_STDBY"
+        }
+        
+        wWdgSw {
+            DisplayName = "WWDG_SW"
+        }
+        
+        ndBank {
+            DisplayName = "nDBANK"
+        }
+        
+        ndBoot {
+            DisplayName = "nDBOOT"
+        }
+        
+        BootAdd0 {
+            DisplayName = "BOOT_ADD0"
+        }
+        
+        BootAdd1 {
+            DisplayName = "BOOT_ADD1"
+        }
+        
+        nWrp0 {
+            DisplayName = "nWRP0"
+        }
+        
+        nWrp1 {
+            DisplayName = "nWRP1"
+        }
+        
+        nWrp2 {
+            DisplayName = "nWRP2"
+        }
+        
+        nWrp3 {
+            DisplayName = "nWRP3"
+        }
+        
+        nWrp4 {
+            DisplayName = "nWRP4"
+        }
+        
+        nWrp5 {
+            DisplayName = "nWRP5"
+        }
+        
+        nWrp6 {
+            DisplayName = "nWRP6"
+        }
+        
+        nWrp7 {
+            DisplayName = "nWRP7"
+        }
+        
+        nWrp8 {
+            DisplayName = "nWRP8"
+        }
+        
+        nWrp9 {
+            DisplayName = "nWRP9"
+        }
+        
+        nWrp10 {
+            DisplayName = "nWRP10"
+        }
+        
+        nWrp11 {
+            DisplayName = "nWRP11"
+        }
+        
+    }
+    
+    struct Identification
+    {
+        DisplayName = "Identification"
+        
+        NodeType {
+            DisplayName = "Node type identifier"
+        }
+        
+        ProgramType {
+            DisplayName = "Program type identifier"
+        }
+        
+        InterfaceVersion {
+            DisplayName = "Interface version"
+        }
+        
+        FirmwareMajorVersion {
+            DisplayName = "Firmware version (Major)"
+        }
+        
+        FirmwareMinorVersion {
+            DisplayName = "Firmware version (Minor)"
+        }
+        
+        RuntimeSeconds {
+            DisplayName = "Runtime (seconds)"
+        }
+        
+        RuntimeMilliseconds {
+            DisplayName = "Runtime (milliseconds)"
+        }
+        
+    }
+    
+    struct SerialNumber
+    {
+        DisplayName = "Serial Number"
+        
+        OtpSerial {
+            DisplayName = "OTP Serial"
+        }
+        
+        CfgSerial {
+            DisplayName = "Config Serial"
+        }
+        
+        ActiveSerial {
+            DisplayName = "Active Serial Number"
+        }
+        
+    }
+    
+    struct State
+    {
+        DisplayName = "State"
+        
+        AppState {
+            DisplayName = "App State"
+        }
+        
+        AppStatePrev {
+            DisplayName = "Previous App State"
+        }
+        
+        Result {
+            DisplayName = "Error Code"
+        }
+        
+        OpAddress {
+            DisplayName = "Operation Address"
+        }
+        
+        OpEBank {
+            DisplayName = "Operation Erase Bank"
+        }
+        
+        OpEPage {
+            DisplayName = "Operation Erase Page"
+        }
+        
+        OpDataRemain {
+            DisplayName = "Operation Data Remain"
+        }
+        
+    }
+    
+    struct Errors
+    {
+        DisplayName = "Errors"
+        
+        Result {
+            DisplayName = "Error Code"
+        }
+        
+        HalInit {
+            DisplayName = "HAL Init"
+        }
+        
+        FlashInit {
+            DisplayName = "Flash Init"
+        }
+        
+        Uart1Init {
+            DisplayName = "UART1 Init"
+        }
+        
+        Uart2Init {
+            DisplayName = "UART2 Init"
+        }
+        
+        Can1Init {
+            DisplayName = "CAN1 Init"
+        }
+        
+        Can2Init {
+            DisplayName = "CAN2 Init"
+        }
+        
+        I2cInit {
+            DisplayName = "I2C Init"
+        }
+        
+        ConfigInit {
+            DisplayName = "Config Init"
+        }
+        
+        Timeout {
+            DisplayName = "Timeout"
+        }
+        
+        Overrun {
+            DisplayName = "Overrun"
+        }
+        
+        ErasePage {
+            DisplayName = "Erase Page"
+        }
+        
+        Write {
+            DisplayName = "Write"
+        }
+        
+        FileCrc {
+            DisplayName = "File CR"
+        }
+        
+        CommitFileTable {
+            DisplayName = "Commit File Table"
+        }
+        
+        CommitConfigTable {
+            DisplayName = "Commit Config Table"
+        }
+        
+        JumpTarget {
+            DisplayName = "Jump Target"
+        }
+        
+    }
+    
+    struct FileInfo
+    {
+        DisplayName = "File Info"
+        
+        FileHandle {
+            DisplayName = "File Handle"
+        }
+        
+        IsCorrupt {
+            DisplayName = "File Corrupt"
+        }
+        
+        Type {
+            DisplayName = "File Type"
+        }
+        
+        Program {
+            DisplayName = "Program"
+        }
+        
+        Address {
+            DisplayName = "Address"
+        }
+        
+        Size {
+            DisplayName = "File Size"
+            Unit = "Bytes"
+        }
+        
+        Crc {
+            DisplayName = "CRC"
+        }
+        
+        FirmwareMajorVersion {
+            DisplayName = "Firmware Version (Major)"
+        }
+        
+        FirmwareMinorVersion {
+            DisplayName = "Firmware Version (Minor)"
+        }
+        
+        FirmwarePatchVersion {
+            DisplayName = "Firmware Version (Patch)"
+        }
+        
+        SystemMajorVersion {
+            DisplayName = "System Version (Major)"
+        }
+        
+        SystemMinorVersion {
+            DisplayName = "System Version (Minor)"
+        }
+        
+        SystemPatchVersion {
+            DisplayName = "System Version (Patch)"
+        }
+        
+        Serial {
+            DisplayName = "Serial Number"
+        }
+        
+        Empty {
+            DisplayName = "Empty"
+        }
+        
+        First {
+            DisplayName = "First"
+        }
+        
+        Last {
+            DisplayName = "Last"
+        }
+        
+    }
+    
+    struct CommsStatus
+    {
+        DisplayName = "Communication Status"
+        
+        uart1TcCounter {
+            DisplayName = "UART1 Telecommand counter"
+        }
+        
+        uart1TlmCounter {
+            DisplayName = "UART1 Telemetry request counter"
+        }
+        
+        uart1SoftwareProtoErrors {
+            DisplayName = "UART1 Errors reported in SW checks"
+        }
+        
+        uart1HardwareFlagErrors {
+            DisplayName = "UART1 Errors reported by HW Flags"
+        }
+        
+        uart2TcCounter {
+            DisplayName = "UART2 Telecommand counter"
+        }
+        
+        uart2TlmCounter {
+            DisplayName = "UART2 Telemetry request counter"
+        }
+        
+        uart2SoftwareProtoErrors {
+            DisplayName = "UART2 Errors reported in SW checks"
+        }
+        
+        uart2HardwareFlagErrors {
+            DisplayName = "UART2 Errors reported by HW Flags"
+        }
+        
+        can1TcCounter {
+            DisplayName = "CAN1 Telecommand counter"
+        }
+        
+        can1TlmCounter {
+            DisplayName = "CAN1 Telemetry request counter"
+        }
+        
+        can1SoftwareProtoErrors {
+            DisplayName = "CAN1 Errors reported in SW checks"
+        }
+        
+        can1HardwareFlagErrors {
+            DisplayName = "CAN1 Errors reported by HW Flags"
+        }
+        
+        can2TcCounter {
+            DisplayName = "CAN2 Telecommand counter"
+        }
+        
+        can2TlmCounter {
+            DisplayName = "CAN2 Telemetry request counter"
+        }
+        
+        can2SoftwareProtoErrors {
+            DisplayName = "CAN2 Errors reported in SW checks"
+        }
+        
+        can2HardwareFlagErrors {
+            DisplayName = "CAN2 Errors reported by HW Flags"
+        }
+        
+        i2cTcCounter {
+            DisplayName = "I2C Telecommand counter"
+        }
+        
+        i2cTlmCounter {
+            DisplayName = "I2C Telemetry request counter"
+        }
+        
+        i2cSoftwareProtoErrors {
+            DisplayName = "I2C Errors reported in SW checks"
+        }
+        
+        i2cHardwareFlagErrors {
+            DisplayName = "I2C Errors reported by HW Flags"
+        }
+        
+    }
+    
+    struct MemMap
+    {
+        DisplayName = "Memory Mapping"
+        
+        memrmp {
+            DisplayName = "MEMRMP"
+        }
+        
+    }
+    
+    struct TelecommandAcknowledge
+    {
+        DisplayName = "Telecommand Acknowledge"
+        
+        Id {
+            DisplayName = "TCTLM ID"
+        }
+        
+        Error {
+            DisplayName = "Error"
+        }
+        
+        ErrorIndex {
+            DisplayName = "ErrorIndex"
+        }
+        
+        Read {
+            DisplayName = "Read"
+        }
+        
+    }
+    
+}

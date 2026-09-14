@@ -1,0 +1,936 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+package endurosat.macif
+
+
+<** @description: Interface for Cube ADCS Gen2 - CubeNodeControlProgramPst3sQuad1
+    @details: id = 314
+**>
+
+interface CubeADCS_Gen2_CubeNodeControlProgramPst3sQuad1
+{
+    version {major 6 minor 0}
+    
+    <** @description: This enumeration holds the IDs of CubeADCS Gen2 nodes for which this interface is applicable.
+        @details: size = 1 
+    **>
+    enumeration CmdTargetNode
+    {
+        NodeInvalid = 0
+        
+    }
+
+    <** @description: Return status type of the CubeADCS Gen2 API operations. Possible values are:
+                     0 - No error
+                     1 - NULL pointer
+                     2 - Size incorrect
+                     3 - Size too low
+                     4 - Size too high
+                     5 - Overrun
+                     6 - Parameter error (out of range)
+                     7 - Timeout
+                     8 - TCTLM comms Nack
+                     9 - Busy
+                     10 - Frame
+                     11 - CRC
+                     12 - Read
+                     13 - Write
+                     14 - CAN ID type error
+                     15 - CAN frame error
+                     16 - Unknown NACK
+                     17 - Invalid node type
+                     18 - CubeSpace file upload internal error
+                     19 - Usage error
+                     20 - Auto-Discovery error
+                     21 - Image error
+                     22 - Does not exist error
+                     23 - User data error
+                     24 - Commit error
+                     25 - TCTLM protocol error
+                     26 - General unexpected/unknown error
+                     27 - Telemetry response size error
+                     28 - TCTLM response ID does not match the request
+
+                     50 - TCTLM Nack - invalid ID
+                     51 - TCTLM Nack - invalid length
+                     52 - TCTLM Nack - invalid parameter data
+                     53 - TCTLM Nack - CRC failed
+                     54 - TCTLM Nack - not implemented
+                     55 - TCTLM Nack - busy
+                     56 - TCTLM Nack - sequence
+                     57 - TCTLM Nack - internal
+                     58 - TCTLM Nack - pass-through timeout
+                     59 - TCTLM Nack - pass-through target
+
+                     70 - CSP - receive timeout
+                     71 - CSP - failed to acquire a buffer
+
+                     65535 - Not implemented / TODO
+    **>
+    typedef AdcsErrorCode is Int32
+    
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeNodeControlProgramPst3sCommonTypes1_Pst3sApiVersion
+    {
+        
+        <** @description: PSST3S API Version G2 **>
+        Pst3sApiVersionG2 = 0
+        
+        <** @description: PSST3S API Version H3 **>
+        Pst3sApiVersionH3 = 1
+        
+        <** @description: PSST3S API Version H3.1 **>
+        Pst3sApiVersionH31 = 2
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeNodeControlProgramPst3sCommonTypes1_Pst3sOperatingModes
+    {
+        
+        <** @description: Invalid Mode **>
+        ModeInvalid = 0
+        
+        <** @description: Normal Mode **>
+        NormalMode = 1
+        
+        <** @description: Fixed Threshold **>
+        FixedThreshold = 2
+        
+        <** @description: Test Mode **>
+        Test = 3
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeNodeControlProgramPst3sCommonTypes1_Pst3sDynamicModeEnum
+    {
+        
+        <** @description: Invalid Dynamic Mode. Depends on PST3S Version **>
+        DynamicModeInvalid = 0
+        
+        <** @description: High Dynamic Mode **>
+        DynamicModeHigh = 1
+        
+        <** @description: Low Dynamic Mode **>
+        DynamicModeLow = 2
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeNodeControlProgramPst3sCommonTypes1_Pst3sSaaWorkingMode
+    {
+        
+        <** @description: SAA Invalid. Depends on PST3S Version **>
+        SaaInvalid = 0
+        
+        <** @description: SAA Off **>
+        SaaOff = 1
+        
+        <** @description: SAA On when Tracking **>
+        SaaTracking = 2
+        
+        <** @description: SAA on when Capture **>
+        SaaCapture = 3
+        
+        <** @description: SAA on when Tracking and Capture **>
+        SaaAll = 4
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeNodeControlProgramPst3sCommonTypes1_Pst3sQFilteringGetState
+    {
+        
+        <** @description: Filtering Invalid. Depends on PST3S Version **>
+        QFilteringGetInvalid = 0
+        
+        <** @description: Filtering Off **>
+        QFilteringGetOff = 1
+        
+        <** @description: Filtering On **>
+        QFilteringGetOn = 2
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeNodeControlProgramPst3sCommonTypes1_Pst3sSelfTestResult
+    {
+        
+        <** @description: Invalid **>
+        TestInvalid = 0
+        
+        <** @description: Selt-test OK **>
+        Correct = 1
+        
+        <** @description: Selt-test Error **>
+        Error = 2
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeNodeControlProgramPst3sCommonTypes1_Pst3sDataValid
+    {
+        
+        <** @description: Gesture Data Valid **>
+        GestureValid = 0
+        
+        <** @description: Attitude Data Valid **>
+        AttitudeValid = 1
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeNodeControlProgramPst3sCommonTypes1_Pst3sExtImageState
+    {
+        
+        <** @description: External Image State Invalid for API version **>
+        ImageInvalid = 0
+        
+        <** @description: External Image State Off **>
+        ImageOff = 1
+        
+        <** @description: External Image State On **>
+        ImageOn = 2
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeNodeControlProgramPst3sCommonTypes1_Pst3sRateQuality
+    {
+        
+        <** @description: Invalid - no velocity information **>
+        RateInvalid = 0
+        
+        <** @description: Velocity is estimated from previous calculations **>
+        Estimated = 1
+        
+        <** @description: Velocity is precise and calculated from attitude data **>
+        Precise = 2
+        
+    }
+    
+    
+    
+    <** @description: PST3S TLM Packet from port 1. Triggers TLM Request
+    **>
+    struct CubeNodeControlProgramPst3sCommon1_RawTlm
+    {
+        
+        <** @description: PST3S API Version **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sApiVersion ApiVersion
+        
+        <** @description: PST3S Quaternion 1 **>
+        Float Quat1
+        
+        <** @description: PST3S Quaternion 2 **>
+        Float Quat2
+        
+        <** @description: PST3S Quaternion 3 **>
+        Float Quat3
+        
+        <** @description: PST3S Quaternion 4 **>
+        Float Quat4
+        
+        <** @description: PST3S Angular Valocity X **>
+        Float AngVelX
+        
+        <** @description: PST3S Angular Valocity Y **>
+        Float AngVelY
+        
+        <** @description: PST3S Angular Valocity Z **>
+        Float AngVelZ
+        
+        <** @description: PST3S Rate Quality **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sRateQuality RateQuality
+        
+        <** @description: PST3S Unix Seconds **>
+        UInt32 UnixSeconds
+        
+        <** @description: PST3S Unix Seconds Decimal **>
+        Float UnixSecondsDecimal
+        
+        <** @description: PST3S Temperature **>
+        Int8 Temperature
+        
+        <** @description: PST3S Image Exposure **>
+        UInt8 ImageExposure
+        
+        <** @description: PST3S Image Threshold **>
+        UInt8 ImageThreshold
+        
+        <** @description: PST3S BackGround Values **>
+        UInt8 BackGroundValues
+        
+        <** @description: PST3S Internal Process Code **>
+        UInt8 InternalProcessCode
+        
+        <** @description: PST3S CMOS Chip ID Self-test Result **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sSelfTestResult CmosChipIdResult
+        
+        <** @description: PST3S FPGA MRAM Self-test Result **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sSelfTestResult FpgaMRamResult
+        
+        <** @description: PST3S Number of Extracted Stars **>
+        UInt8 NumberOfExtractedStars
+        
+        <** @description: PST3S Operating Mode **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sOperatingModes OperatingMode
+        
+        <** @description: PST3S Imaging Gain **>
+        UInt8 ImagingGain
+        
+        <** @description: PST3S Minimum Navigation Stars When Quaternion is Valid **>
+        UInt8 MinNavigationStars
+        
+        <** @description: PST3S Data Valid **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sDataValid DataValid
+        
+        <** @description: PST3S External Image State **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sExtImageState ExtImageState
+        
+        <** @description: PST3S Number of Identified Stars **>
+        UInt8 IdentifiedStars
+        
+        <** @description: PST3S Device Number **>
+        UInt8 DeviceNumber
+        
+        <** @description: PST3S Software Version **>
+        UInt8 SoftwareVersion
+        
+        <** @description: PST3S EDAC Error Count **>
+        UInt8 EdacErrorCount
+        
+        <** @description: PST3S Image Frame Number **>
+        UInt32 ImageFrameNumber
+        
+        <** @description: PST3S Dynamic Mode **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sDynamicModeEnum DynamicMode
+        
+        <** @description: PST3S SAA Mode **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sSaaWorkingMode SaaMode
+        
+        <** @description: PST3S SAA Threshold **>
+        UInt8 SaaThreshold
+        
+        <** @description: PST3S Quaternion Filtering State **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sQFilteringGetState QuaternionFilteringState
+        
+        <** @description: PST3S Four Star Capture Threshold **>
+        UInt8 FourStarCaptureThreshold
+        
+        <** @description: PST3S Tracking Threshold **>
+        UInt8 TrackingThreshold
+        
+        <** @description: PST3S EDAC Enabled/Disabled **>
+        Boolean EdacSwitch
+        
+    }
+    
+    <** @description: PST3S Attitude Specific Data
+    **>
+    struct CubeNodeControlProgramPst3sCommon1_AttitudeTlm
+    {
+        
+        <** @description: PST3S API Version **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sApiVersion ApiVersion
+        
+        <** @description: PST3S Quaternion 1 **>
+        Float Quat1
+        
+        <** @description: PST3S Quaternion 2 **>
+        Float Quat2
+        
+        <** @description: PST3S Quaternion 3 **>
+        Float Quat3
+        
+        <** @description: PST3S Quaternion 4 **>
+        Float Quat4
+        
+        <** @description: PST3S Angular Valocity X **>
+        Float AngVelX
+        
+        <** @description: PST3S Angular Valocity Y **>
+        Float AngVelY
+        
+        <** @description: PST3S Angular Valocity Z **>
+        Float AngVelZ
+        
+        <** @description: PST3S Rate Quality **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sRateQuality RateQuality
+        
+        <** @description: PST3S Unix Seconds **>
+        UInt32 UnixSeconds
+        
+        <** @description: PST3S Unix Seconds Decimal **>
+        Float UnixSecondsDecimal
+        
+        <** @description: PST3S Number of Extracted Stars **>
+        UInt8 NumberOfExtractedStars
+        
+        <** @description: PST3S Operating Mode **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sOperatingModes OperatingMode
+        
+        <** @description: PST3S Data Valid **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sDataValid DataValid
+        
+        <** @description: PST3S Number of Identified Stars **>
+        UInt8 IdentifiedStars
+        
+        <** @description: PST3S Quaternion Filtering State **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sQFilteringGetState QuaternionFilteringState
+        
+    }
+    
+    <** @description: PST3S Housekeeping related data
+    **>
+    struct CubeNodeControlProgramPst3sCommon1_HousekeepingTlm
+    {
+        
+        <** @description: PST3S API Version **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sApiVersion ApiVersion
+        
+        <** @description: PST3S Temperature **>
+        Int8 Temperature
+        
+        <** @description: PST3S BackGround Values **>
+        UInt8 BackGroundValues
+        
+        <** @description: PST3S Internal Process Code **>
+        UInt8 InternalProcessCode
+        
+        <** @description: PST3S CMOS Chip ID Self-test Result **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sSelfTestResult CmosChipIdResult
+        
+        <** @description: PST3S FPGA MRAM Self-test Result **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sSelfTestResult FpgaMRamResult
+        
+        <** @description: PST3S Operating Mode **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sOperatingModes OperatingMode
+        
+        <** @description: PST3S External Image State **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sExtImageState ExtImageState
+        
+        <** @description: PST3S Device Number **>
+        UInt8 DeviceNumber
+        
+        <** @description: PST3S Software Version **>
+        UInt8 SoftwareVerion
+        
+        <** @description: PST3S EDAC Error Count **>
+        UInt8 EdacErrorCount
+        
+        <** @description: PST3S Image Frame Number **>
+        UInt32 ImageFrameNumber
+        
+        <** @description: PST3S Quaternion Filtering State **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sQFilteringGetState QuaternionFilteringState
+        
+    }
+    
+    <** @description: PST3S Config related data
+    **>
+    struct CubeNodeControlProgramPst3sCommon1_ConfigTlm
+    {
+        
+        <** @description: PST3S API Version **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sApiVersion ApiVersion
+        
+        <** @description: PST3S Image Exposure **>
+        UInt8 ImageExposure
+        
+        <** @description: PST3S Image Threshold **>
+        UInt8 ImageThreshold
+        
+        <** @description: PST3S BackGround Values **>
+        UInt8 BackGroundValues
+        
+        <** @description: PST3S Operating Mode **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sOperatingModes OperatingMode
+        
+        <** @description: PST3S Imaging Gain **>
+        UInt8 ImagingGain
+        
+        <** @description: PST3S Minimum Navigation Stars When Quaternion is Valid **>
+        UInt8 MinNavigationStars
+        
+        <** @description: PST3S Dynamic Mode **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sDynamicModeEnum DynamicMode
+        
+        <** @description: PST3S SAA Mode **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sSaaWorkingMode SaaMode
+        
+        <** @description: PST3S SAA Threshold **>
+        UInt8 SaaThreshold
+        
+        <** @description: PST3S Quaternion Filtering State **>
+        CubeNodeControlProgramPst3sCommonTypes1_Pst3sQFilteringGetState QuaternionFilteringState
+        
+        <** @description: PST3S Four Star Capture Threshold **>
+        UInt8 FourStarCaptureThreshold
+        
+        <** @description: PST3S Tracking Threshold **>
+        UInt8 TrackingThreshold
+        
+        <** @description: PST3S EDAC Enabled/Disabled **>
+        Boolean EdacSwitch
+        
+    }
+    
+    <** @description: Parameter structure for interface Pst3sTlm2
+    **>
+    struct Pst3sTlm2
+    {
+        
+        <** @description: PST3S raw tlm **>
+        CubeNodeControlProgramPst3sCommon1_RawTlm Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface Pst3sTlm3
+    **>
+    struct Pst3sTlm3
+    {
+        
+        <** @description: PST3S raw tlm **>
+        CubeNodeControlProgramPst3sCommon1_RawTlm Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface Pst3sTlm4
+    **>
+    struct Pst3sTlm4
+    {
+        
+        <** @description: PST3S raw tlm **>
+        CubeNodeControlProgramPst3sCommon1_RawTlm Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface Pst3sAttitude2
+    **>
+    struct Pst3sAttitude2
+    {
+        
+        <** @description: PST3S attitude tlm **>
+        CubeNodeControlProgramPst3sCommon1_AttitudeTlm Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface Pst3sAttitude3
+    **>
+    struct Pst3sAttitude3
+    {
+        
+        <** @description: PST3S attitude tlm **>
+        CubeNodeControlProgramPst3sCommon1_AttitudeTlm Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface Pst3sAttitude4
+    **>
+    struct Pst3sAttitude4
+    {
+        
+        <** @description: PST3S attitude tlm **>
+        CubeNodeControlProgramPst3sCommon1_AttitudeTlm Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface Pst3sHousekeeping2
+    **>
+    struct Pst3sHousekeeping2
+    {
+        
+        <** @description: PST3S housekeeping tlm **>
+        CubeNodeControlProgramPst3sCommon1_HousekeepingTlm Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface Pst3sHousekeeping3
+    **>
+    struct Pst3sHousekeeping3
+    {
+        
+        <** @description: PST3S housekeeping tlm **>
+        CubeNodeControlProgramPst3sCommon1_HousekeepingTlm Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface Pst3sHousekeeping4
+    **>
+    struct Pst3sHousekeeping4
+    {
+        
+        <** @description: PST3S housekeeping tlm **>
+        CubeNodeControlProgramPst3sCommon1_HousekeepingTlm Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface Pst3sConfig2
+    **>
+    struct Pst3sConfig2
+    {
+        
+        <** @description: PST3S config tlm **>
+        CubeNodeControlProgramPst3sCommon1_ConfigTlm Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface Pst3sConfig3
+    **>
+    struct Pst3sConfig3
+    {
+        
+        <** @description: PST3S config tlm **>
+        CubeNodeControlProgramPst3sCommon1_ConfigTlm Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface Pst3sConfig4
+    **>
+    struct Pst3sConfig4
+    {
+        
+        <** @description: PST3S config tlm **>
+        CubeNodeControlProgramPst3sCommon1_ConfigTlm Tlm
+        
+    }
+    
+    
+    
+    <**
+        @description: Get PST3S TLM Packet from port 2. Triggers TLM Request
+        @details: id = 0
+    **>
+    method getPst3sTlm2
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Pst3sTlm2 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get PST3S TLM Packet from port 3. Triggers TLM Request
+        @details: id = 1
+    **>
+    method getPst3sTlm3
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Pst3sTlm3 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get PST3S TLM Packet from port 4. Triggers TLM Request
+        @details: id = 2
+    **>
+    method getPst3sTlm4
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Pst3sTlm4 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get the Last Sampled PST3S Attitude Specific Data from port 2
+        @details: id = 3
+    **>
+    method getPst3sAttitude2
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Pst3sAttitude2 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get the Last Sampled PST3S Attitude Specific Data from port 3
+        @details: id = 4
+    **>
+    method getPst3sAttitude3
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Pst3sAttitude3 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get the Last Sampled PST3S Attitude Specific Data from port 4
+        @details: id = 5
+    **>
+    method getPst3sAttitude4
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Pst3sAttitude4 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get the Last Sampled PST3S Housekeeping related data from port 2
+        @details: id = 6
+    **>
+    method getPst3sHousekeeping2
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Pst3sHousekeeping2 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get the Last Sampled PST3S Housekeeping related data from port 3
+        @details: id = 7
+    **>
+    method getPst3sHousekeeping3
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Pst3sHousekeeping3 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get the Last Sampled PST3S Housekeeping related data from port 4
+        @details: id = 8
+    **>
+    method getPst3sHousekeeping4
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Pst3sHousekeeping4 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get the Last Sampled PST3S Config related data from port 2
+        @details: id = 9
+    **>
+    method getPst3sConfig2
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Pst3sConfig2 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get the Last Sampled PST3S Config related data from port 3
+        @details: id = 10
+    **>
+    method getPst3sConfig3
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Pst3sConfig3 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get the Last Sampled PST3S Config related data from port 4
+        @details: id = 11
+    **>
+    method getPst3sConfig4
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Pst3sConfig4 returnVal
+            
+            
+        }
+    }
+    
+}

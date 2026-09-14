@@ -1,0 +1,1263 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/OBC_CUBEADCS_GEN2.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.macif.OBC_CUBEADCS_GEN2 as OBC_CUBEADCS_GEN2_Definitions {
+
+	struct FName {
+		name {
+			DisplayName = "Name"
+		}
+	}
+
+	struct TctlmCubeComputerCommon3_EventLogFilterTransferSetup {
+		filterType {
+			DisplayName = "Filter Type"
+		}
+		startTimeUnix {
+			DisplayName = "Start Time Unix"
+			Unit = "Unix TS (s)"
+		}
+		endTimeUnix {
+			DisplayName = "End Time Unix"
+			Unit = "Unix TS (s)"
+		}
+		numEntries {
+			DisplayName = "Number of Entries to Log"
+		}
+		writeCounter {
+			DisplayName = "Write Counter"
+		}
+		includeClassCritical {
+			DisplayName = "Include Class Critical"
+		}
+		includeClassMajorWarning {
+			DisplayName = "Include Class Major Warning"
+		}
+		includeClassMinorWarning {
+			DisplayName = "Include Class Minor Warning"
+		}
+		includeClassInfo {
+			DisplayName = "Include Class Info"
+		}
+		includeSourceCubeComputer {
+			DisplayName = "Include Source Cube Computer"
+		}
+		includeSourceRwl0 {
+			DisplayName = "Include Source Reaction Wheel 0"
+		}
+		includeSourceRwl1 {
+			DisplayName = "Include Source Reaction Wheel 1"
+		}
+		includeSourceRwl2 {
+			DisplayName = "Include Source Reaction Wheel 2"
+		}
+		includeSourceRwl3 {
+			DisplayName = "Include Source Reaction Wheel 3"
+		}
+		includeSourceFss0 {
+			DisplayName = "Include Source FSS 0"
+		}
+		includeSourceFss1 {
+			DisplayName = "Include Source FSS 1"
+		}
+		includeSourceFss2 {
+			DisplayName = "Include Source FSS 2"
+		}
+		includeSourceFss3 {
+			DisplayName = "Include Source FSS 3"
+		}
+		includeSourceHss0 {
+			DisplayName = "Include Source HSS 0"
+		}
+		includeSourceHss1 {
+			DisplayName = "Include Source HSS 1"
+		}
+		includeSourceStr0 {
+			DisplayName = "Include Source Star Tracker 0"
+		}
+		includeSourceStr1 {
+			DisplayName = "Include Source Star Tracker 1"
+		}
+		includeSourceMag0 {
+			DisplayName = "Include Source Magnetomer 0"
+		}
+		includeSourceMag1 {
+			DisplayName = "Include Source Magnetomer 1"
+		}
+		includeSourceExt0 {
+			DisplayName = "Include Source External 0"
+		}
+		includeSourceExt1 {
+			DisplayName = "Include Source External 1"
+		}
+	}
+
+	struct TctlmCubeComputerCommon3_EventLogStatus {
+		numberOfEntriesQueued {
+			DisplayName = "Number Of Entries Queued"
+		}
+		numberOfEntriesBuffered {
+			DisplayName = "Number Of Entries Buffered"
+		}
+		numberOfEntries {
+			DisplayName = "Number Of Entries"
+		}
+		numberOfEmptyEntries {
+			DisplayName = "Number Of Empty Entries"
+		}
+		oldestEntryUnix {
+			DisplayName = "Oldest Entry Unix"
+		}
+		latestEntryUnix {
+			DisplayName = "Latest Entry Unix"
+		}
+		numberOfCriticalEvents {
+			DisplayName = "Number Of Critical Events"
+		}
+		numberOfMajorWarningEvents {
+			DisplayName = "Number Of Major Warning Events"
+		}
+		numberOfMinorWarningEvents {
+			DisplayName = "Number Of Minor Warning Events"
+		}
+		numberOfInfoEvents {
+			DisplayName = "Number Of Info Events"
+		}
+		writeCounter {
+			DisplayName = "Write Counter"
+		}
+		readQueueState {
+			DisplayName = "Read Queue State"
+		}
+	}
+
+	struct TctlmCubeComputerCommon3_TelemetryLogTransferSetup {
+		filterType {
+			DisplayName = "Filter Type"
+		}
+		startTimeUnix {
+			DisplayName = "Start Time Unix"
+			Unit = "Unix TS (s)"
+		}
+		endTimeUnix {
+			DisplayName = "End Time Unix"
+			Unit = "Unix TS (s)"
+		}
+		numEntries {
+			DisplayName = "Number of Entries"
+		}
+		writeCounter {
+			DisplayName = "Write Counter"
+		}
+		tlmLogReturnInterval {
+			DisplayName = "Telemetry Log Return Interval"
+		}
+		logIdBitmask {
+			DisplayName = "Log ID Bitmask"
+		}
+	}
+
+	struct TctlmCubeComputerCommon3_TelemtryLogStatus {
+		numberOfEntriesQueued {
+			DisplayName = "Number of Entries Queued"
+		}
+		numberOfTlmIterations {
+			DisplayName = "Number of Telemetry Iterations"
+		}
+		numberOfEntries {
+			DisplayName = "Number of Entries"
+		}
+		oldestEntryUnix {
+			DisplayName = "Oldest Entry Unix"
+			Unit = "Unix TS (s)"
+		}
+		latestEntryUnix {
+			DisplayName = "Latest Entry Unix"
+			Unit = "Unix TS (s)"
+		}
+		writeCounter {
+			DisplayName = "Write Counter"
+		}
+		readQueueState {
+			DisplayName = "Read Queue State"
+		}
+	}
+
+	struct TctlmCubeComputerCommon3_ImageTransferStatus {
+		transfer_state {
+			DisplayName = "Transfer State"
+		}
+		errorCode {
+			DisplayName = "Error Code"
+		}
+		transferSize {
+			DisplayName = "Transfer Size"
+		}
+		dataRemain {
+			DisplayName = "Data Remain"
+		}
+		invalidNodeError {
+			DisplayName = "Invalid Node Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		timeoutError {
+			DisplayName = "Timeout Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		captureError {
+			DisplayName = "Capture Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		setupError {
+			DisplayName = "Setup Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		fileOpenReadError {
+			DisplayName = "File Open Read Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		fileOpenWriteError {
+			DisplayName = "File Open Write Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		fileReadError {
+			DisplayName = "File Read Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		fileWriteError {
+			DisplayName = "File Write Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		busyError {
+			DisplayName = "Busy Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+	}
+
+	struct TctlmCubeCommonBaseBootloader5_Errors {
+		result {
+			DisplayName = "Result"
+			AlarmNumericMaxInclusive = "1"
+		}
+		halInit {
+			DisplayName = "HAL Initialization"
+			AlarmNumericMaxInclusive = "1"
+		}
+		flashInit {
+			DisplayName = "Flash Initialization"
+			AlarmNumericMaxInclusive = "1"
+		}
+		uart1Init {
+			DisplayName = "UART 1 Initialization"
+			AlarmNumericMaxInclusive = "1"
+		}
+		uart2Init {
+			DisplayName = "UART 2 Initialization"
+			AlarmNumericMaxInclusive = "1"
+		}
+		can1Init {
+			DisplayName = "CAN 1 Initialization"
+			AlarmNumericMaxInclusive = "1"
+		}
+		can2Init {
+			DisplayName = "CAN 2 Initialization"
+			AlarmNumericMaxInclusive = "1"
+		}
+		i2cInit {
+			DisplayName = "I2C Initialization"
+			AlarmNumericMaxInclusive = "1"
+		}
+		configInit {
+			DisplayName = "Configuration Initialization"
+			AlarmNumericMaxInclusive = "1"
+		}
+		timeout {
+			DisplayName = "Timeout"
+			AlarmNumericMaxInclusive = "1"
+		}
+		overrun {
+			DisplayName = "Overrun"
+			AlarmNumericMaxInclusive = "1"
+		}
+		erasePage {
+			DisplayName = "Erase Page"
+			AlarmNumericMaxInclusive = "1"
+		}
+		write {
+			DisplayName = "Write"
+			AlarmNumericMaxInclusive = "1"
+		}
+		fileCrc {
+			DisplayName = "File CRC"
+			AlarmNumericMaxInclusive = "1"
+		}
+		commitFileTable {
+			DisplayName = "Commit File Table"
+			AlarmNumericMaxInclusive = "1"
+		}
+		commitConfigTable {
+			DisplayName = "Commit Configuration Table"
+			AlarmNumericMaxInclusive = "1"
+		}
+		jumpTarget {
+			DisplayName = "Jump Target"
+			AlarmNumericMaxInclusive = "1"
+		}
+	}
+
+	struct TctlmCubeComputerControlProgram8_FileTransferStatus {
+		ftp_state {
+			DisplayName = "FTP State"
+		}
+		upgradeState {
+			DisplayName = "Upgrade State"
+		}
+		dataRemain {
+			DisplayName = "Data Remaining"
+			Unit = "B"
+		}
+		errorCode {
+			DisplayName = "Error Code"
+			AlarmNumericMaxInclusive = "1"
+		}
+		busyError {
+			DisplayName = "Busy Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		fileMetaError {
+			DisplayName = "File Meta Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		versionError {
+			DisplayName = "Version Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		nodeExistError {
+			DisplayName = "Node Exists Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		nodeExpectError {
+			DisplayName = "Node Expect Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		fileCrcError {
+			DisplayName = "File CRC Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		fileSizeError {
+			DisplayName = "File Size Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		fileError {
+			DisplayName = "File Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		fileInvalidError {
+			DisplayName = "File Invalid Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		fileFullError {
+			DisplayName = "File Full Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		fileEmptyError {
+			DisplayName = "File Empty Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		readError {
+			DisplayName = "Read Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		writeError {
+			DisplayName = "Write Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		eraseError {
+			DisplayName = "Erase Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		frameSizeError {
+			DisplayName = "Frame Size Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		timeoutError {
+			DisplayName = "Timeout Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		nodeCommsError {
+			DisplayName = "Node Communications Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		nodeUsedError {
+			DisplayName = "Node Used Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+	}
+
+	struct download_event_status {
+		err {
+			DisplayName = "Error"
+		}
+		setup {
+			DisplayName = "Setup"
+		}
+		status {
+			DisplayName = "Status"
+		}
+		file_name {
+			DisplayName = "File Name"
+		}
+	}
+
+	struct download_telemetry_status {
+		err {
+			DisplayName = "Error"
+		}
+		setup {
+			DisplayName = "Setup"
+		}
+		status {
+			DisplayName = "Status"
+		}
+		file_name {
+			DisplayName = "File Name"
+		}
+	}
+
+	struct cube_computer_fw_update_status {
+		err_code {
+			DisplayName = "Error Code"
+		}
+		force {
+			DisplayName = "Force"
+		}
+		status {
+			DisplayName = "Status"
+		}
+		control_program_file_name {
+			DisplayName = "Control Program File Name"
+		}
+		configuration_file_name {
+			DisplayName = "Configuration File Name"
+		}
+	}
+
+	struct cube_node_fw_update_status {
+		err_code {
+			DisplayName = "Error Code"
+		}
+		force {
+			DisplayName = "Force"
+		}
+		node_type {
+			DisplayName = "Node Type"
+		}
+		serial_int {
+			DisplayName = "Serial Interface"
+		}
+		status {
+			DisplayName = "Status"
+		}
+		control_program_file_name {
+			DisplayName = "Control Program File Name"
+		}
+		configuration_file_name {
+			DisplayName = "Configuration File Name"
+		}
+	}
+
+	enumeration StandardResult {
+		AlarmInvalidRegexValues = {
+			"ERROR", "INVALID_ARGS", "NOT_SUPPORTED"
+		}
+	}
+
+	enumeration BootState {
+		AlarmInvalidRegexValues = {
+			"Error", "BootloaderHaltReset"
+		}
+	}
+
+	struct PowerState {
+		rwl0 {
+			DisplayName = "Reaction Wheel 0"
+		}
+		rwl1 {
+			DisplayName = "Reaction Wheel 1"
+		}
+		rwl2 {
+			DisplayName = "Reaction Wheel 2"
+		}
+		rwl3 {
+			DisplayName = "Reaction Wheel 3"
+		}
+		mag0 {
+			DisplayName = "Magnetometer 0"
+		}
+		mag1 {
+			DisplayName = "Magnetometer 1"
+		}
+		gyro0 {
+			DisplayName = "Gyro 0"
+		}
+		gyro1 {
+			DisplayName = "Gyro 1"
+		}
+		fss0 {
+			DisplayName = "FSS 0"
+		}
+		fss1 {
+			DisplayName = "FSS 1"
+		}
+		fss2 {
+			DisplayName = "FSS 2"
+		}
+		fss3 {
+			DisplayName = "FSS 3"
+		}
+		hss0 {
+			DisplayName = "HSS 0"
+		}
+		hss1 {
+			DisplayName = "HSS 1"
+		}
+		str0 {
+			DisplayName = "Star Tracker 0"
+		}
+		str1 {
+			DisplayName = "Star Tracker 1"
+		}
+		extSensor0 {
+			DisplayName = "External Sensor 0"
+		}
+		extSensor1 {
+			DisplayName = "External Sensor 1"
+		}
+		extGyro0 {
+			DisplayName = "External Gyro 0"
+		}
+		extGyro1 {
+			DisplayName = "External Gyro 1"
+		}
+	}
+
+	struct RefParams {
+		ref_param1 {
+			DisplayName = "Reference Parameter 1"
+		}
+		ref_param2 {
+			DisplayName = "Reference Parameter 2"
+		}
+		ref_param3 {
+			DisplayName = "Reference Parameter 3"
+		}
+	}
+
+	struct state_change_core_args {
+		control_mode {
+			DisplayName = "Control Mode"
+		}
+		estimation_mode_main {
+			DisplayName = "Estimation Mode Main"
+		}
+		estimation_mode_backup {
+			DisplayName = "Estimation Mode Backup"
+		}
+		nodes_pwr_states {
+			DisplayName = "Nodes Power States"
+		}
+	}
+
+	struct state_change_args {
+		core_args {
+			DisplayName = "Core Arguments"
+		}
+		ref_params {
+			DisplayName = "Reference Parameters"
+		}
+		req_state_id {
+			DisplayName = "Requested State ID"
+		}
+	}
+
+	struct BootStatus {
+		State {
+			DisplayName = "State"
+		}
+		ResetReason {
+			DisplayName = "Reset Reason"
+		}
+		SharedParamsError {
+			DisplayName = "Shared Parameters Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		PortValidationError {
+			DisplayName = "Port Validation Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		PortDiscoveryError {
+			DisplayName = "Port Discovery Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		OtpSerialError {
+			DisplayName = "OTP Serial Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		CfgSerialError {
+			DisplayName = "Configuration Serial Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		SerialMismatchError {
+			DisplayName = "Serial Mismatch Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+		ConfigInvalidError {
+			DisplayName = "Configuration Invalid Error"
+			AlarmNumericMaxInclusive = "1"
+		}
+	}
+
+	struct CompErrCodes {
+		MasterSvc {
+			DisplayName = "Master Service"
+		}
+		FramFsSvc {
+			DisplayName = "FRAM FS Service"
+		}
+		EventLogSvc {
+			DisplayName = "Event Log Service"
+		}
+		ImgLogSvc {
+			DisplayName = "Image Log Service"
+		}
+		TlmLogSvc {
+			DisplayName = "Telemetry Log Service"
+		}
+		ImuSvc {
+			DisplayName = "IMU Service"
+		}
+	}
+
+	struct ControlModeConfig {
+		control_mode {
+			DisplayName = "Control Mode"
+		}
+		timeout {
+			DisplayName = "Timeout"
+			Unit = "s"
+		}
+	}
+
+	struct EstModeConfig {
+		main {
+			DisplayName = "Main"
+		}
+		backup {
+			DisplayName = "Backup"
+		}
+	}
+
+	struct OpStatusCommon {
+		boot_status {
+			DisplayName = "Boot Status"
+		}
+		power_state {
+			DisplayName = "Power State"
+		}
+		comp_err_codes {
+			DisplayName = "Component Error Codes"
+		}
+		is_valid {
+			DisplayName = "Is Valid"
+			AlarmNumericMaxInclusive = "1"
+		}
+	}
+
+	struct OpStatusApp {
+		run_mode {
+			DisplayName = "Run Mode"
+		}
+		control_mode {
+			DisplayName = "Control Mode"
+		}
+		estimation_mode {
+			DisplayName = "Estimation Mode"
+		}
+		op_state {
+			DisplayName = "Operational State"
+		}
+		is_valid {
+			DisplayName = "Is Valid"
+			AlarmNumericMaxInclusive = "1"
+		}
+	}
+
+	struct events {
+		node_comm_error {
+			DisplayName = "Node Communication Errors"
+		}
+		adcs_config_validation_error {
+			DisplayName = "ADCS Configuration Validation Errors"
+		}
+		node_setup_error {
+			DisplayName = "Node Setup Errors"
+		}
+		node_jump_error {
+			DisplayName = "Node Jump Errors"
+		}
+		mag_deploy_error {
+			DisplayName = "Magnetometer Deploy Errors"
+		}
+		control_loop_failure {
+			DisplayName = "Control Loop Failures"
+		}
+		node_failure {
+			DisplayName = "Node Failures"
+		}
+		config_persist_error {
+			DisplayName = "Configuration Persist Errors"
+		}
+		virtual_watchdog_warning {
+			DisplayName = "Virtual Watchdog Warnings"
+		}
+		port_validation_error {
+			DisplayName = "Port Validation Errors"
+		}
+		auto_discovery_error {
+			DisplayName = "Auto Discovery Errors"
+		}
+		control_loop_critical {
+			DisplayName = "Control Loop Critical"
+		}
+		gyro_voltage_error {
+			DisplayName = "Gyro Voltage Errors"
+		}
+		gyro_critical {
+			DisplayName = "Gyro Critical"
+		}
+		virtual_watchdog_error {
+			DisplayName = "Virtual Watchdog Errors"
+		}
+	}
+
+	struct fdir_stat {
+		event_type {
+			DisplayName = "Event Type"
+		}
+		event_fdir_execution_num {
+			DisplayName = "Event FDIR Execution Count"
+		}
+		event_fdir_execution_res {
+			DisplayName = "Event FDIR Execution Result"
+		}
+	}
+
+	struct telemetry_mask_0 {
+		en_get_health_tlm_for_cubenode_pst3s {
+			DisplayName = "Enable Get Health Telemetry For CubeNode PST3S"
+		}
+		en_get_health_tlm_for_cubemag_magnetometer {
+			DisplayName = "Enable Get Health Telemetry For CubeMag Magnetometer"
+		}
+		en_get_health_tlm_for_cubesense_sun {
+			DisplayName = "Enable Get Health Telemetry For CubeSense Sun"
+		}
+		en_get_torquer_current_measurements {
+			DisplayName = "Enable Get Torquer Current Measurements"
+		}
+		en_get_raw_cubesense_sun_telemetry {
+			DisplayName = "Enable Get Raw CubeSense Sun Telemetry"
+		}
+		en_get_raw_external_sensor_telemetry {
+			DisplayName = "Enable Get Raw External Sensor Telemetry"
+		}
+		en_get_controller_telemetry {
+			DisplayName = "Enable Get Controller Telemetry"
+		}
+		en_get_backup_estimator_telemetry {
+			DisplayName = "Enable Get Backup Estimator Telemetry"
+		}
+	}
+
+	struct telemetry_mask_1 {
+		en_get_models_telemetry {
+			DisplayName = "Enable Get Models Telemetry"
+		}
+		en_get_calibrated_gnss_sensor_telemetry {
+			DisplayName = "Enable Get Calibrated GNSS Sensor Telemetry"
+		}
+		en_get_calibrated_hss_sensor_telemetry {
+			DisplayName = "Enable Get Calibrated HSS Sensor Telemetry"
+		}
+		en_get_calibrated_mag_sensor_telemetry {
+			DisplayName = "Enable Get Calibrated Mag Sensor Telemetry"
+		}
+		en_get_calibrated_fss_sensor_telemetry {
+			DisplayName = "Enable Get Calibrated FSS Sensor Telemetry"
+		}
+		en_get_raw_cubesense_earth_telemetry {
+			DisplayName = "Enable Get Raw CubeSense Earth Telemetry"
+		}
+		en_get_raw_mag_sensor_telemetry {
+			DisplayName = "Enable Get Raw Mag Sensor Telemetry"
+		}
+		en_get_raw_css_sensor_telemetry {
+			DisplayName = "Enable Get Raw CSS Sensor Telemetry"
+		}
+	}
+
+	struct telemetry_mask_2 {
+		en_get_raw_gyr_sensor_telemetry {
+			DisplayName = "Enable Get Raw Gyro Sensor Telemetry"
+		}
+		en_get_raw_rwl_sensor_telemetry {
+			DisplayName = "Enable Get Raw Reaction Wheel Sensor Telemetry"
+		}
+		en_get_calibrated_css_sensor_telemetry {
+			DisplayName = "Enable Get Calibrated CSS Sensor Telemetry"
+		}
+		en_get_calibrated_gyr_sensor_telemetry {
+			DisplayName = "Enable Get Calibrated Gyro Sensor Telemetry"
+		}
+		en_get_calibrated_str_sensor_telemetry {
+			DisplayName = "Enable Get Calibrated Star Tracker Sensor Telemetry"
+		}
+		en_get_calibrated_rwl_sensor_telemetry {
+			DisplayName = "Enable Get Calibrated Reaction Wheel Sensor Telemetry"
+		}
+		en_get_main_estimator_telemetry {
+			DisplayName = "Enable Get Main Estimator Telemetry"
+		}
+		en_get_main_estimator_high_resolution_telemetry {
+			DisplayName = "Enable Get Main Estimator High Resolution Telemetry"
+		}
+	}
+
+	struct telemetry_mask_3 {
+		en_get_raw_gnss_sensor_telemetry {
+			DisplayName = "Enable Get Raw GNSS Sensor Telemetry"
+		}
+		en_get_raw_pst3s_star_tracker_telemetry {
+			DisplayName = "Enable Get Raw PST3S Star Tracker Telemetry"
+		}
+		en_get_acp_execution_telemetry {
+			DisplayName = "Enable Get ACP Execution Telemetry"
+		}
+		en_get_cubecomputer_health {
+			DisplayName = "Enable Get CubeComputer Health"
+		}
+		en_get_health_telemetry_for_cubesense_earth {
+			DisplayName = "Enable Get Health Telemetry For CubeSense Earth"
+		}
+		en_get_health_telemetry_for_reaction_wheels {
+			DisplayName = "Enable Get Health Telemetry For Reaction Wheels"
+		}
+		en_get_health_telemetry_for_cubenode_nssrwl {
+			DisplayName = "Enable Get Health Telemetry For CubeNode NSSRWL"
+		}
+		en_get_raw_nssrwl_sensor_telemetry {
+			DisplayName = "Enable Get Raw NSSRWL Sensor Telemetry"
+		}
+	}
+
+	struct telemetry_mask_4 {
+		en_get_health_telemetry_for_cubestar {
+			DisplayName = "Enable Get Health Telemetry For CubeStar"
+		}
+		reserved_0 {
+			DisplayName = "Reserved 0"
+		}
+		reserved_1 {
+			DisplayName = "Reserved 1"
+		}
+		reserved_2 {
+			DisplayName = "Reserved 2"
+		}
+		reserved_3 {
+			DisplayName = "Reserved 3"
+		}
+		reserved_4 {
+			DisplayName = "Reserved 4"
+		}
+		reserved_5 {
+			DisplayName = "Reserved 5"
+		}
+		reserved_6 {
+			DisplayName = "Reserved 6"
+		}
+	}
+
+	enumeration sys_states {
+		AlarmInvalidRegexValues = {
+			"DETUMBLING", "NO_CONTROL"
+		}
+	}
+
+	method reqStateMachineStateChange {
+		in {
+			sm_event {
+				DisplayName = "State Machine Event"
+			}
+			state_change_event_args {
+				DisplayName = "State Change Event Arguments"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getStateMachineState {
+		out {
+			sm_state {
+				DisplayName = "State Machine State"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getOpStatus {
+		out {
+			op_status_common {
+				DisplayName = "Operational Status - Common"
+			}
+			op_status_app {
+				DisplayName = "Operational Status - Application"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method reqSoftResetAndMode {
+		in {
+			prog_type {
+				DisplayName = "Program Type"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_events_since_last_power_up {
+		out {
+			all_events {
+				DisplayName = "All Events"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method clear_events_since_last_power_up {
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method download_evt {
+		in {
+			file_name {
+				DisplayName = "File Name"
+			}
+			setup {
+				DisplayName = "Setup"
+			}
+		}
+		out {
+			err {
+				DisplayName = "Error"
+			}
+		}
+	}
+
+	method download_evt_status {
+		out {
+			err {
+				DisplayName = "Error"
+			}
+			status {
+				DisplayName = "Status"
+			}
+		}
+	}
+
+	method download_tlm {
+		in {
+			file_name {
+				DisplayName = "File Name"
+			}
+			setup {
+				DisplayName = "Setup"
+			}
+		}
+		out {
+			err {
+				DisplayName = "Error"
+			}
+		}
+	}
+
+	method download_tlm_status {
+		out {
+			err {
+				DisplayName = "Error"
+			}
+			status {
+				DisplayName = "Status"
+			}
+		}
+	}
+
+	method download_img_direct {
+		in {
+			file_name {
+				DisplayName = "File Name"
+			}
+			node {
+				DisplayName = "ADCS Node Type"
+			}
+			file_handle {
+				DisplayName = "File Handle"
+			}
+		}
+		out {
+			err {
+				DisplayName = "Error"
+			}
+		}
+	}
+
+	method download_img_direct_status {
+		out {
+			err {
+				DisplayName = "Error"
+			}
+			file_name {
+				DisplayName = "Image File Name on OBC SD card"
+			}
+			status {
+				DisplayName = "Status"
+			}
+		}
+	}
+
+	method get_fdir_persistent_errors {
+		out {
+			errors {
+				DisplayName = "Errors"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method clear_fdir_persistent_errors {
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_fdir_stats {
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method clear_fdir_stats {
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_commissioning_status {
+		out {
+			status {
+				DisplayName = "Status"
+			}
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_commissioning_status {
+		in {
+			status {
+				DisplayName = "Status"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_tlm_cfg {
+		out {
+			mask_0 {
+				DisplayName = "Mask 0"
+			}
+			mask_1 {
+				DisplayName = "Mask 1"
+			}
+			mask_2 {
+				DisplayName = "Mask 2"
+			}
+			mask_3 {
+				DisplayName = "Mask 3"
+			}
+			mask_4 {
+				DisplayName = "Mask 4"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_tlm_cfg {
+		in {
+			mask_0 {
+				DisplayName = "Mask 0"
+			}
+			mask_1 {
+				DisplayName = "Mask 1"
+			}
+			mask_2 {
+				DisplayName = "Mask 2"
+			}
+			mask_3 {
+				DisplayName = "Mask 3"
+			}
+			mask_4 {
+				DisplayName = "Mask 4"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_nvm_system_states_cfg {
+		in {
+			sys_state_to_get {
+				DisplayName = "System State to Get"
+			}
+		}
+		out {
+			sys_states_cfg {
+				DisplayName = "System States Configuration"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_nvm_system_states_cfg {
+		in {
+			sys_states_cfg {
+				DisplayName = "System States Configuration"
+			}
+			sys_state_to_set {
+				DisplayName = "System State to Set"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method fw_update_cube_computer {
+		in {
+			control_program_file_name {
+				DisplayName = "Control Program File Name"
+			}
+			configuration_file_name {
+				DisplayName = "Configuration File Name"
+			}
+			force {
+				DisplayName = "Force"
+			}
+		}
+		out {
+			err {
+				DisplayName = "Error"
+			}
+		}
+	}
+
+	method fw_update_cube_computer_status {
+		out {
+			err {
+				DisplayName = "Error"
+			}
+			status {
+				DisplayName = "Status"
+			}
+		}
+	}
+
+	method fw_update_cube_node {
+		in {
+			control_program_file_name {
+				DisplayName = "Control Program File Name"
+			}
+			configuration_file_name {
+				DisplayName = "Configuration File Name"
+			}
+			force {
+				DisplayName = "Force"
+			}
+			node_type {
+				DisplayName = "Node Type"
+			}
+			serial_int {
+				DisplayName = "Serial Interface"
+			}
+		}
+		out {
+			err {
+				DisplayName = "Error"
+			}
+		}
+	}
+
+	method fw_update_cube_node_status {
+		out {
+			err {
+				DisplayName = "Error"
+			}
+			status {
+				DisplayName = "Status"
+			}
+		}
+	}
+
+}

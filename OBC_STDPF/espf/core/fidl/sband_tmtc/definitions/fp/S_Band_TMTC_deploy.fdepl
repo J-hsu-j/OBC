@@ -1,0 +1,884 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/S_Band_TMTC.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.macif.SBAND_TMTC as SBAND_TMTC_Definitions {
+
+    enumeration eESSA_TMTCStatus {
+        AlarmInvalidRegexValues = {
+            "ERROR"
+        }
+    }
+
+    enumeration eCipherKeySlotStatus {
+        AlarmInvalidRegexValues = {
+            "ERR"
+        }
+    }
+
+    enumeration eValidity {
+        AlarmInvalidRegexValues = {
+            "INVALID"
+        }
+    }
+
+    struct sHealthStatus {
+        DisplayName = "Health Status"
+        HSBitField {
+            DisplayName = "Bit Field"
+        }
+    }
+
+    struct sUpTime {
+        DisplayName = "Uptime"
+        u32UpTime {
+            DisplayName = "Uptime"
+            Unit = "s"
+        }
+    }
+
+    struct sSatCfg {
+        DisplayName = "Sat Configuration"
+        SatID {
+            DisplayName = "Sat ID"
+        }
+    }
+
+    struct sErrCounters {
+        DisplayName = "Error Counters"
+        POR {
+            DisplayName = "POR"
+        }
+        MAC_Collisions {
+            DisplayName = "MAC Collisions"
+        }
+        MAC_fails {
+            DisplayName = "MAC Fails"
+        }
+        GS_Handshakes {
+            DisplayName = "GS Handshakes"
+        }
+        NvMWriteFails {
+            DisplayName = "NVM Write Fails"
+        }
+        NvMReadFails {
+            DisplayName = "NVM Read Fails"
+        }
+        NvMDefaultEntry {
+            DisplayName = "NVM Default Entry"
+        }
+        IntFRAM_corruptions {
+            DisplayName = "Internal FRAM Corruptions"
+        }
+        ExtFRAM_corruptions {
+            DisplayName = "External FRAM Corruptions"
+        }
+        ExtFRAM_gone {
+            DisplayName = "External FRAM Gone"
+        }
+        PA1LUP {
+            DisplayName = "PA 1 LUP"
+        }
+        PA2LUP {
+            DisplayName = "PA 2 LUP"
+        }
+        AuthFailures {
+            DisplayName = "Auth Failures"
+        }
+    }
+
+    struct sPipeModeCfg {
+        DisplayName = "Pipe Mode Configuration"
+        Duration {
+            DisplayName = "Duration"
+            Unit = "s"
+        }
+        PeerAddr {
+            DisplayName = "Peer Address"
+        }
+        Validity {
+            DisplayName = "Validity"
+        }
+    }
+
+    struct sCipherKeySlot {
+        DisplayName = "Cipher Key Slot"
+        ServiceID {
+            DisplayName = "Service ID"
+        }
+        SlotID {
+            DisplayName = "Slot ID"
+        }
+        Data {
+            DisplayName = "Data"
+        }
+        Size {
+            DisplayName = "Size"
+            Unit = "B"
+        }
+    }
+
+    struct sCommPortCfgIn {
+        DisplayName = "Input Comm Port Configuration"
+        PortID {
+            DisplayName = "Port ID"
+        }
+        ProtoID {
+            DisplayName = "Protocol ID"
+        }
+        CfgID {
+            DisplayName = "Configuration ID"
+        }
+    }
+
+    struct sCommPortCfgOut {
+        DisplayName = "Output Comm Port Configuration"
+        PortID {
+            DisplayName = "Port ID"
+        }
+        ProtoID {
+            DisplayName = "Protocol ID"
+        }
+        CfgID {
+            DisplayName = "Configuration ID"
+        }
+        Capabilities {
+            DisplayName = "Capabilities"
+        }
+        ConnectionType {
+            DisplayName = "Connection Type"
+        }
+        PortMaxCount {
+            DisplayName = "Port Max Count"
+        }
+        Validity {
+            DisplayName = "Validity"
+        }
+    }
+
+    struct sLogger_Cfg {
+        DisplayName = "Logger Configuration"
+        NvMLogMaskCfg {
+            DisplayName = "NVM Log Mask Configuration"
+        }
+        DebugLogMaskCfg {
+            DisplayName = "Debug Log Mask Configuration"
+        }
+        Validity {
+            DisplayName = "Validity"
+        }
+    }
+
+    struct sCapabilities {
+        DisplayName = "Capabilities"
+        RadioHWCapabilities {
+            DisplayName = "Radio HW Capabilities"
+        }
+        Reserved1 {
+            DisplayName = "Reserved 1"
+        }
+        RadioProtoCapabilities {
+            DisplayName = "Radio Protocol Capabilities"
+        }
+        Reserved2 {
+            DisplayName = "Reserved 2"
+        }
+        TxMessageCapabilities {
+            DisplayName = "TX Message Capabilities"
+        }
+        Reserved3 {
+            DisplayName = "Reserved 3"
+        }
+        IFPhyCapabilities {
+            DisplayName = "IF Physical Capabilities"
+        }
+        IFProtoCapabilities {
+            DisplayName = "IF Protocol Capabilities"
+        }
+        Reserved4 {
+            DisplayName = "Reserved 4"
+        }
+        Reserved5 {
+            DisplayName = "Reserved 5"
+        }
+        Reserved6 {
+            DisplayName = "Reserved 6"
+        }
+        Reserved7 {
+            DisplayName = "Reserved 7"
+        }
+        Reserved8 {
+            DisplayName = "Reserved 8"
+        }
+        Reserved9 {
+            DisplayName = "Reserved 9"
+        }
+        Reserved10 {
+            DisplayName = "Reserved 10"
+        }
+        Reserved11 {
+            DisplayName = "Reserved 11"
+        }
+        Reserved12 {
+            DisplayName = "Reserved 12"
+        }
+        Reserved13 {
+            DisplayName = "Reserved 13"
+        }
+    }
+
+    struct sTxRadioMsg {
+        DisplayName = "TX Radio Message"
+        Type {
+            DisplayName = "Type"
+        }
+        Size {
+            DisplayName = "Size"
+            Unit = "B"
+        }
+        Data {
+            DisplayName = "Data"
+        }
+    }
+
+    struct sPing {
+        DisplayName = "Ping"
+        Size {
+            DisplayName = "Size"
+            Unit = "B"
+        }
+        Data {
+            DisplayName = "Data"
+        }
+    }
+
+    struct sTestPacket {
+        DisplayName = "Test Packet"
+        Run {
+            DisplayName = "Run"
+        }
+        pattern {
+            DisplayName = "Pattern"
+        }
+    }
+
+    struct sRfFreqCfg {
+        DisplayName = "RF Frequency Configuration"
+        Rx {
+            DisplayName = "RX"
+            Unit = "Hz"
+        }
+        Tx {
+            DisplayName = "TX"
+            Unit = "Hz"
+        }
+        Validity {
+            DisplayName = "Validity"
+        }
+    }
+
+    struct sTC {
+        DisplayName = "Trouble Codes"
+        MCU {
+            DisplayName = "MCU"
+        }
+        Memory {
+            DisplayName = "Memory"
+        }
+        ^Interface {
+            DisplayName = "Interface"
+        }
+        Sensor {
+            DisplayName = "Sensor"
+        }
+        Radio {
+            DisplayName = "Radio"
+        }
+        Mixer {
+            DisplayName = "Mixer"
+        }
+    }
+
+    struct sTempSensors {
+        DisplayName = "Temperature Sensors"
+        MCUtemp {
+            DisplayName = "MCU Temperature"
+            Unit = "°C"
+        }
+        PAtemp {
+            DisplayName = "PA Temperature"
+            Unit = "°C"
+        }
+    }
+
+    struct sRadioCRC {
+        DisplayName = "Radio CRC"
+        enable {
+            DisplayName = "Enable"
+        }
+        seed {
+            DisplayName = "Seed"
+        }
+    }
+
+    struct sRFPacketCounters {
+        DisplayName = "RF Packet Counters"
+        TransmittedPackets {
+            DisplayName = "Transmitted Packets"
+        }
+        ReceivedPackets {
+            DisplayName = "Received Packets"
+        }
+        CRCError {
+            DisplayName = "CRC Errors"
+        }
+    }
+
+    method GetCapabilities {
+        out {
+            Capabilities {
+                DisplayName = "Capabilities"
+            }
+        }
+    }
+
+    method ReadUpTime {
+        out {
+            UpTime {
+                DisplayName = "Uptime"
+            }
+        }
+    }
+
+    method ReadHWHealth {
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method ReadErrorCounters {
+        out {
+            ErrCounters {
+                DisplayName = "Error Counters"
+            }
+        }
+    }
+
+    method ReadPipeModeCfg {
+        out {
+            Cfg {
+                DisplayName = "Configuration"
+            }
+        }
+    }
+
+    method WritePipeModeCfg {
+        in {
+            Cfg {
+                DisplayName = "Configuration"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method WriteCipherKeySlot {
+        in {
+            sKeySlot {
+                DisplayName = "Key Slot"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method ReadCipherKeySlotStatus {
+        in {
+            SlotId {
+                DisplayName = "Slot Id"
+            }
+        }
+        out {
+            eSlotStatus {
+                DisplayName = "Slot Status"
+            }
+        }
+    }
+
+    method EraseCipherKeySlot {
+        in {
+            sKeySlot {
+                DisplayName = "Key Slot"
+            }
+        }
+        out {
+            opResult {
+                DisplayName = "Result"
+            }
+        }
+    }
+
+    method ReadPortCfg {
+        in {
+            PortID {
+                DisplayName = "Port ID"
+            }
+        }
+        out {
+            Cfg {
+                DisplayName = "Configuration"
+            }
+        }
+    }
+
+    method WritePortCfg {
+        in {
+            Cfg {
+                DisplayName = "Configuration"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method ReadLoggerCfg {
+        out {
+            Cfg {
+                DisplayName = "Configuration"
+            }
+        }
+    }
+
+    method WriteLoggerCfg {
+        in {
+            Cfg {
+                DisplayName = "Configuration"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method TransmitData {
+        in {
+            Msg {
+                DisplayName = "Message"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method LoadPresetCfg {
+        in {
+            Cfg {
+                DisplayName = "Configuration"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method Ping {
+        in {
+            Data {
+                DisplayName = "Data"
+            }
+        }
+        out {
+            opResult {
+                DisplayName = "Result"
+            }
+        }
+    }
+
+    method SetDualPAMode {
+        in {
+            ctl {
+                DisplayName = "Control"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method GetDualPAMode {
+        out {
+            ctl {
+                DisplayName = "Control"
+            }
+        }
+    }
+
+    method SetTestPacketState {
+        in {
+            tp {
+                DisplayName = "Test Packet"
+            }
+        }
+    }
+
+    method ReadRfFreqCfg {
+        out {
+            Cfg {
+                DisplayName = "Configuration"
+            }
+        }
+    }
+
+    method WriteRfFreqCfg {
+        in {
+            Cfg {
+                DisplayName = "Configuration"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method Reset {
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method ResetErrorCounters {
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method ReadSatCfg {
+        out {
+            Cfg {
+                DisplayName = "Configuration"
+            }
+        }
+    }
+
+    method WriteSatCfg {
+        in {
+            Cfg {
+                DisplayName = "Configuration"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method ReadTC {
+        out {
+            TC {
+                DisplayName = "Trouble Codes"
+            }
+        }
+    }
+
+    method ClearTC {
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method ReadTempSensors {
+        out {
+            Temp {
+                DisplayName = "Temperatures"
+            }
+        }
+    }
+
+    method Ignore_PA_TS {
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method ReadRadioCRCCfg {
+        out {
+            Cfg {
+                DisplayName = "Configuration"
+            }
+        }
+    }
+
+    method WriteRadioCRCCfg {
+        in {
+            Cfg {
+                DisplayName = "Configuration"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method WriteRadioPacketFecHdlc {
+        in {
+            onoff {
+                DisplayName = "On/Off"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method ReadRadioPacketFecHdlc {
+        out {
+            onoff {
+                DisplayName = "On/Off"
+            }
+        }
+    }
+
+    method GetPacketCounters {
+        out {
+            counters {
+                DisplayName = "Counters"
+            }
+        }
+    }
+
+    method ReadRadioErrors {
+        out {
+            errors {
+                DisplayName = "Errors"
+            }
+        }
+    }
+
+    method GetModulation {
+        out {
+            m {
+                DisplayName = "Modulation"
+            }
+        }
+    }
+
+    method SetModulation {
+        in {
+            m {
+                DisplayName = "Modulation"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method GetBaudrate {
+        out {
+            b {
+                DisplayName = "Baud Rate"
+            }
+        }
+    }
+
+    method SetBaudrate {
+        in {
+            b {
+                DisplayName = "Baud Rate"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method GetFreqShaping {
+        out {
+            f {
+                DisplayName = "Filtering"
+            }
+        }
+    }
+
+    method SetFreqShaping {
+        in {
+            f {
+                DisplayName = "Filtering"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method GetStreamMode {
+        out {
+            s {
+                DisplayName = "Stream Mode"
+            }
+        }
+    }
+
+    method SetStreamMode {
+        in {
+            s {
+                DisplayName = "Stream Mode"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method GetTargetPower {
+        out {
+            power {
+                DisplayName = "Power"
+                Unit = "dBm"
+            }
+        }
+    }
+
+    method SetTargetPower {
+        in {
+            power {
+                DisplayName = "Power"
+                Unit = "dBm"
+                AlarmNumericMinInclusive = "25"
+                AlarmNumericMaxInclusive = "34"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method GetPacketScrambler {
+        out {
+            s {
+                DisplayName = "Scrambling"
+            }
+        }
+    }
+
+    method SetPacketScrambler {
+        in {
+            s {
+                DisplayName = "Scrambling"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method GetFreqCorrection {
+        out {
+            enabled {
+                DisplayName = "Enabled"
+            }
+        }
+    }
+
+    method SetFreqCorrection {
+        in {
+            enabled {
+                DisplayName = "Enabled"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+    method GetKeyUseCount {
+        in {
+            id {
+                DisplayName = "Id"
+            }
+        }
+        out {
+            count {
+                DisplayName = "Count"
+            }
+        }
+    }
+
+    method GetCryptographyControl {
+        out {
+            crypto {
+                DisplayName = "Encryption"
+            }
+            auth {
+                DisplayName = "Authentication"
+            }
+        }
+    }
+
+    method SetCryptographyControl {
+        in {
+            crypto {
+                DisplayName = "Encryption"
+            }
+            auth {
+                DisplayName = "Authentication"
+            }
+        }
+        out {
+            Status {
+                DisplayName = "Status"
+            }
+        }
+    }
+
+}

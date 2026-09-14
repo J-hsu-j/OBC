@@ -1,0 +1,62 @@
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+
+import "../../fp/adis16265_gyro.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.adis16265_gyro as adis16265_gyro_Definitions {
+	
+	enumeration Result {
+		AlarmInvalidRegexValues = {"FAIL"}
+	}
+	
+	method set_gyroscope_config {
+		in {
+			gyroscope_1 {
+				DisplayName = "Gyroscope 1"
+			}
+			gyroscope_2 {
+				DisplayName = "Gyroscope 2"
+			}
+			gyroscope_3 {
+				DisplayName = "Gyroscope 3"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method get_gyroscope_config {
+		out {
+			gyroscope_1 {
+				DisplayName = "Gyroscope 1"
+			}
+			gyroscope_2 {
+				DisplayName = "Gyroscope 2"
+			}
+			gyroscope_3 {
+				DisplayName = "Gyroscope 3"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method save_gyroscope_config {
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method load_gyroscope_config {
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+}

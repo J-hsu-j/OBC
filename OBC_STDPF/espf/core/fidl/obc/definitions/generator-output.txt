@@ -1,0 +1,291 @@
+
+
+... EnduroSat ...
+                              __    _       __      
+   ____ ___  ____ ___________/ /_  (_)___ _/ /_____ 
+  / __ `__ \/ __ `/ ___/ ___/ __ \/ / __ `/ __/ __ \
+ / / / / / / /_/ / /__/ /__/ / / / / /_/ / /_/ /_/ /
+/_/ /_/ /_/\__,_/\___/\___/_/ /_/_/\__,_/\__/\____/ v0.0.0 (do not update manually)
+
+
+please wait...
+  --gen-fdepl: ........ [v1.1]
+0    [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/OBC_AOCS_CNTRL.fidl
+127  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/OBC_AOCS_CNTRL.fidl
+131  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/OBC_AOCS_CNTRL_deploy.fdepl
+131  [main] DEBUG                 Macchiato Generator  - 	==> 
+131  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/Beacons.fidl
+160  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/Beacons.fidl
+162  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/Beacons_deploy.fdepl
+162  [main] DEBUG                 Macchiato Generator  - 	==> 
+162  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/adis16265_gyro.fidl
+185  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/adis16265_gyro.fidl
+191  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/adis16265_gyro_deploy.fdepl
+191  [main] DEBUG                 Macchiato Generator  - 	==> 
+191  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/trace_level_config.fidl
+232  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/trace_level_config.fidl
+237  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/trace_level_config_deploy.fdepl
+238  [main] DEBUG                 Macchiato Generator  - 	==> 
+238  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/arducam.fidl
+264  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/arducam.fidl
+266  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/arducam_deploy.fdepl
+266  [main] DEBUG                 Macchiato Generator  - 	==> 
+266  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/fault_ops.fidl
+284  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/fault_ops.fidl
+286  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/fault_ops_deploy.fdepl
+286  [main] DEBUG                 Macchiato Generator  - 	==> 
+287  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/fdir_srv.fidl
+306  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/fdir_srv.fidl
+308  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/fdir_srv_deploy.fdepl
+308  [main] DEBUG                 Macchiato Generator  - 	==> 
+308  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/gnss.fidl
+326  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/gnss.fidl
+328  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/gnss_deploy.fdepl
+328  [main] DEBUG                 Macchiato Generator  - 	==> 
+328  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/onboard_sched.fidl
+343  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/onboard_sched.fidl
+344  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/onboard_sched_deploy.fdepl
+344  [main] DEBUG                 Macchiato Generator  - 	==> 
+344  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/OBC_CUBEADCS.fidl
+377  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/OBC_CUBEADCS.fidl
+383  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/OBC_CUBEADCS_deploy.fdepl
+383  [main] DEBUG                 Macchiato Generator  - 	==> 
+383  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/comm_loss_wd.fidl
+398  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/comm_loss_wd.fidl
+399  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/comm_loss_wd_deploy.fdepl
+399  [main] DEBUG                 Macchiato Generator  - 	==> 
+399  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/acs.fidl
+421  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/acs.fidl
+422  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/acs_deploy.fdepl
+422  [main] DEBUG                 Macchiato Generator  - 	==> 
+422  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/csp_service.fidl
+437  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/csp_service.fidl
+438  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/csp_service_deploy.fdepl
+438  [main] DEBUG                 Macchiato Generator  - 	==> 
+438  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/sdr.fidl
+454  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/sdr.fidl
+455  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/sdr_deploy.fdepl
+455  [main] DEBUG                 Macchiato Generator  - 	==> 
+455  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/sds.fidl
+471  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/sds.fidl
+472  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/sds_deploy.fdepl
+472  [main] DEBUG                 Macchiato Generator  - 	==> 
+472  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/crypto.fidl
+489  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/crypto.fidl
+490  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/crypto_deploy.fdepl
+490  [main] DEBUG                 Macchiato Generator  - 	==> 
+490  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/FileManager.fidl
+508  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/FileManager.fidl
+509  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/FileManager_deploy.fdepl
+509  [main] DEBUG                 Macchiato Generator  - 	==> 
+509  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/obc.fidl
+523  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/obc.fidl
+524  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/obc_deploy.fdepl
+524  [main] DEBUG                 Macchiato Generator  - 	==> 
+525  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/obc_micropython.fidl
+537  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/obc_micropython.fidl
+537  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/obc_micropython_deploy.fdepl
+537  [main] DEBUG                 Macchiato Generator  - 	==> 
+537  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/task_stat.fidl
+551  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/task_stat.fidl
+551  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/task_stat_deploy.fdepl
+552  [main] DEBUG                 Macchiato Generator  - 	==> 
+552  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/coordsys.fidl
+567  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/coordsys.fidl
+568  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/coordsys_deploy.fdepl
+568  [main] DEBUG                 Macchiato Generator  - 	==> 
+569  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/payload_ctrl.fidl
+580  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/payload_ctrl.fidl
+581  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/payload_ctrl_deploy.fdepl
+581  [main] DEBUG                 Macchiato Generator  - 	==> 
+581  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/es_adcs.fidl
+598  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/es_adcs.fidl
+599  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/es_adcs_deploy.fdepl
+599  [main] DEBUG                 Macchiato Generator  - 	==> 
+599  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/OBC_Intersat.fidl
+612  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/OBC_Intersat.fidl
+613  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/OBC_Intersat_deploy.fdepl
+613  [main] DEBUG                 Macchiato Generator  - 	==> 
+613  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/OBC_CUBEADCS_GEN2.fidl
+639  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/OBC_CUBEADCS_GEN2.fidl
+643  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/OBC_CUBEADCS_GEN2_deploy.fdepl
+643  [main] DEBUG                 Macchiato Generator  - 	==> 
+643  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/conops.fidl
+659  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/conops.fidl
+660  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/conops_deploy.fdepl
+661  [main] DEBUG                 Macchiato Generator  - 	==> 
+661  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/time.fidl
+672  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/time.fidl
+673  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/time_deploy.fdepl
+673  [main] DEBUG                 Macchiato Generator  - 	==> 
+673  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/telemetry.fidl
+686  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/fp/telemetry.fidl
+687  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/fp/telemetry_deploy.fdepl
+687  [main] DEBUG                 Macchiato Generator  - 	==> 
+687  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/nvm/nvm_block_types.fidl
+703  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/nvm/nvm_block_types.fidl
+705  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/nvm/nvm_block_types_deploy.fdepl
+705  [main] DEBUG                 Macchiato Generator  - 	==> 
+705  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cp_fault_ops.fidl
+715  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cp_fault_ops.fidl
+715  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cp_fault_ops_deploy.fdepl
+715  [main] DEBUG                 Macchiato Generator  - 	==> 
+715  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeIrControlProgram1.fidl
+729  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeIrControlProgram1.fidl
+730  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeIrControlProgram1_deploy.fdepl
+730  [main] DEBUG                 Macchiato Generator  - 	==> 
+730  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeStarControlProgram6.fidl
+747  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeStarControlProgram6.fidl
+749  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeStarControlProgram6_deploy.fdepl
+749  [main] DEBUG                 Macchiato Generator  - 	==> 
+749  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramPst3sCommon1.fidl
+768  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramPst3sCommon1.fidl
+770  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramPst3sCommon1_deploy.fdepl
+770  [main] DEBUG                 Macchiato Generator  - 	==> 
+770  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeMagControlProgramDeploy1.fidl
+784  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeMagControlProgramDeploy1.fidl
+785  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeMagControlProgramDeploy1_deploy.fdepl
+785  [main] DEBUG                 Macchiato Generator  - 	==> 
+785  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeComputerCommon3.fidl
+807  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeComputerCommon3.fidl
+811  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeComputerCommon3_deploy.fdepl
+811  [main] DEBUG                 Macchiato Generator  - 	==> 
+811  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CommonFramework1.fidl
+827  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CommonFramework1.fidl
+829  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CommonFramework1_deploy.fdepl
+829  [main] DEBUG                 Macchiato Generator  - 	==> 
+829  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeWheelControlProgram3.fidl
+844  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeWheelControlProgram3.fidl
+845  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeWheelControlProgram3_deploy.fdepl
+845  [main] DEBUG                 Macchiato Generator  - 	==> 
+845  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramNssrwlCommon1.fidl
+859  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramNssrwlCommon1.fidl
+860  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramNssrwlCommon1_deploy.fdepl
+860  [main] DEBUG                 Macchiato Generator  - 	==> 
+860  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeSenseControlProgram5.fidl
+873  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeSenseControlProgram5.fidl
+874  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeSenseControlProgram5_deploy.fdepl
+874  [main] DEBUG                 Macchiato Generator  - 	==> 
+874  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeMagControlProgramCommon1.fidl
+888  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeMagControlProgramCommon1.fidl
+889  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeMagControlProgramCommon1_deploy.fdepl
+889  [main] DEBUG                 Macchiato Generator  - 	==> 
+889  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CommonTransfer1.fidl
+899  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CommonTransfer1.fidl
+900  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CommonTransfer1_deploy.fdepl
+900  [main] DEBUG                 Macchiato Generator  - 	==> 
+900  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeCommonBaseBootloader6.fidl
+917  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeCommonBaseBootloader6.fidl
+920  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeCommonBaseBootloader6_deploy.fdepl
+920  [main] DEBUG                 Macchiato Generator  - 	==> 
+920  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeMagControlProgramCompact1.fidl
+932  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeMagControlProgramCompact1.fidl
+933  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeMagControlProgramCompact1_deploy.fdepl
+933  [main] DEBUG                 Macchiato Generator  - 	==> 
+933  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeAurigaControlProgram1.fidl
+946  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeAurigaControlProgram1.fidl
+948  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeAurigaControlProgram1_deploy.fdepl
+948  [main] DEBUG                 Macchiato Generator  - 	==> 
+948  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramNssrwlQuad1.fidl
+959  [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramNssrwlQuad1.fidl
+960  [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramNssrwlQuad1_deploy.fdepl
+960  [main] DEBUG                 Macchiato Generator  - 	==> 
+960  [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeComputerControlProgram8.fidl
+1008 [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeComputerControlProgram8.fidl
+1028 [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeComputerControlProgram8_deploy.fdepl
+1028 [main] DEBUG                 Macchiato Generator  - 	==> 
+1028 [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeCommon1.fidl
+1038 [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeCommon1.fidl
+1039 [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeCommon1_deploy.fdepl
+1039 [main] DEBUG                 Macchiato Generator  - 	==> 
+1039 [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeSenseCommon1.fidl
+1051 [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeSenseCommon1.fidl
+1051 [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeSenseCommon1_deploy.fdepl
+1051 [main] DEBUG                 Macchiato Generator  - 	==> 
+1051 [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramPst3sQuad1.fidl
+1063 [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramPst3sQuad1.fidl
+1065 [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramPst3sQuad1_deploy.fdepl
+1065 [main] DEBUG                 Macchiato Generator  - 	==> 
+1065 [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramLitefufors1.fidl
+1075 [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramLitefufors1.fidl
+1076 [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramLitefufors1_deploy.fdepl
+1076 [main] DEBUG                 Macchiato Generator  - 	==> 
+1076 [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cp_comm_gw.fidl
+1085 [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/cp_comm_gw.fidl
+1086 [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/cp_comm_gw_deploy.fdepl
+1086 [main] DEBUG                 Macchiato Generator  - 	==> 
+1086 [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/OBC_CP_GW.fidl
+1095 [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/OBC_CP_GW.fidl
+1096 [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/OBC_CP_GW_deploy.fdepl
+1096 [main] DEBUG                 Macchiato Generator  - 	==> 
+1096 [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/obc_cp_general.fidl
+1103 [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/obc_cp_general.fidl
+1103 [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/obc_cp_general_deploy.fdepl
+1103 [main] DEBUG                 Macchiato Generator  - 	==> 
+1103 [main] DEBUG                 Macchiato Generator  - Loading /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/OBC_CP_CUBEADCS_GATEWAY.fidl
+1132 [main] DEBUG                 Macchiato Generator  - ==> Found 0 issues in file:/var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-src-6000575178049600738/cp/OBC_CP_CUBEADCS_GATEWAY.fidl
+1146 [main] DEBUG                 Macchiato Generator  - Created file /var/folders/cz/p5btd_3n4tx6k37dfr1g1l600000gq/T/macchiato-generate--gen-fdepl8280682143847099725/cp/OBC_CP_CUBEADCS_GATEWAY_deploy.fdepl
+1146 [main] DEBUG                 Macchiato Generator  - 	==> 
+==========================================================================================
+                            Generator Summary
+==========================================================================================
+              Interface |   ver |         ID | Deployed as |   Duplicated?              
+==========================================================================================
+      OBC_AOCS_CNTRL.fidl     n/a          n/a n/a             no                       
+             Beacons.fidl     n/a          n/a n/a             no                       
+      adis16265_gyro.fidl     n/a          n/a n/a             no                       
+  trace_level_config.fidl     n/a          n/a n/a             no                       
+             arducam.fidl     n/a          n/a n/a             no                       
+           fault_ops.fidl     n/a          n/a n/a             no                       
+            fdir_srv.fidl     n/a          n/a n/a             no                       
+                gnss.fidl     n/a          n/a n/a             no                       
+       onboard_sched.fidl     n/a          n/a n/a             no                       
+        OBC_CUBEADCS.fidl     n/a          n/a n/a             no                       
+        comm_loss_wd.fidl     n/a          n/a n/a             no                       
+                 acs.fidl     n/a          n/a n/a             no                       
+         csp_service.fidl     n/a          n/a n/a             no                       
+                 sdr.fidl     n/a          n/a n/a             no                       
+                 sds.fidl     n/a          n/a n/a             no                       
+              crypto.fidl     n/a          n/a n/a             no                       
+         FileManager.fidl     n/a          n/a n/a             no                       
+                 obc.fidl     n/a          n/a n/a             no                       
+     obc_micropython.fidl     n/a          n/a n/a             no                       
+           task_stat.fidl     n/a          n/a n/a             no                       
+            coordsys.fidl     n/a          n/a n/a             no                       
+        payload_ctrl.fidl     n/a          n/a n/a             no                       
+             es_adcs.fidl     n/a          n/a n/a             no                       
+        OBC_Intersat.fidl     n/a          n/a n/a             no                       
+   OBC_CUBEADCS_GEN2.fidl     n/a          n/a n/a             no                       
+              conops.fidl     n/a          n/a n/a             no                       
+                time.fidl     n/a          n/a n/a             no                       
+           telemetry.fidl     n/a          n/a n/a             no                       
+     nvm_block_types.fidl     n/a          n/a n/a             no                       
+        cp_fault_ops.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeIrControlProgram1.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeStarControlProgram6.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeNodeControlProgramPst3sCommon1.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeMagControlProgramDeploy1.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeComputerCommon3.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CommonFramework1.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeWheelControlProgram3.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeNodeControlProgramNssrwlCommon1.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeSenseControlProgram5.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeMagControlProgramCommon1.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CommonTransfer1.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeCommonBaseBootloader6.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeMagControlProgramCompact1.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeAurigaControlProgram1.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeNodeControlProgramNssrwlQuad1.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeComputerControlProgram8.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeNodeCommon1.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeSenseCommon1.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeNodeControlProgramPst3sQuad1.fidl     n/a          n/a n/a             no                       
+CubeADCS_Gen2_CubeNodeControlProgramLitefufors1.fidl     n/a          n/a n/a             no                       
+          cp_comm_gw.fidl     n/a          n/a n/a             no                       
+           OBC_CP_GW.fidl     n/a          n/a n/a             no                       
+      obc_cp_general.fidl     n/a          n/a n/a             no                       
+OBC_CP_CUBEADCS_GATEWAY.fidl     n/a          n/a n/a             no                       
+==========================================================================================
+             Generation Went Without Issues: true
+==========================================================================================
+1155 [main] INFO                  Macchiato Generator  - I am done. Give me more like this one!

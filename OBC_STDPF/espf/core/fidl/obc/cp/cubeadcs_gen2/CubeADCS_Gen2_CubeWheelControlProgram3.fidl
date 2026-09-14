@@ -1,0 +1,1175 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+package endurosat.macif
+
+
+<** @description: Interface for Cube ADCS Gen2 - CubeWheelControlProgram3
+    @details: id = 319
+**>
+
+interface CubeADCS_Gen2_CubeWheelControlProgram3
+{
+    version {major 6 minor 0}
+    
+    <** @description: This enumeration holds the IDs of CubeADCS Gen2 nodes for which this interface is applicable.
+        @details: size = 1 
+    **>
+    enumeration CmdTargetNode
+    {
+        NodeInvalid = 0
+        NodeRwl0 = 14
+        NodeRwl1 = 15
+        NodeRwl2 = 16
+        NodeRwl3 = 17
+        NodeRwl4 = 18
+        
+    }
+
+    <** @description: Return status type of the CubeADCS Gen2 API operations. Possible values are:
+                     0 - No error
+                     1 - NULL pointer
+                     2 - Size incorrect
+                     3 - Size too low
+                     4 - Size too high
+                     5 - Overrun
+                     6 - Parameter error (out of range)
+                     7 - Timeout
+                     8 - TCTLM comms Nack
+                     9 - Busy
+                     10 - Frame
+                     11 - CRC
+                     12 - Read
+                     13 - Write
+                     14 - CAN ID type error
+                     15 - CAN frame error
+                     16 - Unknown NACK
+                     17 - Invalid node type
+                     18 - CubeSpace file upload internal error
+                     19 - Usage error
+                     20 - Auto-Discovery error
+                     21 - Image error
+                     22 - Does not exist error
+                     23 - User data error
+                     24 - Commit error
+                     25 - TCTLM protocol error
+                     26 - General unexpected/unknown error
+                     27 - Telemetry response size error
+                     28 - TCTLM response ID does not match the request
+
+                     50 - TCTLM Nack - invalid ID
+                     51 - TCTLM Nack - invalid length
+                     52 - TCTLM Nack - invalid parameter data
+                     53 - TCTLM Nack - CRC failed
+                     54 - TCTLM Nack - not implemented
+                     55 - TCTLM Nack - busy
+                     56 - TCTLM Nack - sequence
+                     57 - TCTLM Nack - internal
+                     58 - TCTLM Nack - pass-through timeout
+                     59 - TCTLM Nack - pass-through target
+
+                     70 - CSP - receive timeout
+                     71 - CSP - failed to acquire a buffer
+
+                     65535 - Not implemented / TODO
+    **>
+    typedef AdcsErrorCode is Int32
+    
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeWheelControlProgram3_ControlModeVal
+    {
+        
+        <** @description: No control mode **>
+        NoControl = 0
+        
+        <** @description: Speed controller mode **>
+        SpeedController = 1
+        
+        <** @description: Torque controller mode **>
+        TorqueController = 2
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeWheelControlProgram3_WheelErrorState
+    {
+        
+        <** @description: Data is valid **>
+        DataValid = 0
+        
+        <** @description: No response from encoder **>
+        EncoderNoResponse = 1
+        
+        <** @description: Mismatch between speed reported from hall sensors vs that of encoder **>
+        HallSensorEncoderMismatch = 2
+        
+        <** @description: Speed setpoint not reached within allocated time period **>
+        SpeedNotReachedTimeout = 3
+        
+        <** @description: Speed setpoint at or near the software limit **>
+        MaxSpeedReached = 4
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeWheelControlProgram3_WheelTypeEnum
+    {
+        
+        <** @description: Default Generic Wheel **>
+        CubeWheelGeneric = 0
+        
+        <** @description: Node is a CubeWheel 0017 type **>
+        CubeWheelCW0017 = 1
+        
+        <** @description: Node is a CubeWheel 0057 type **>
+        CubeWheelCW0057 = 2
+        
+        <** @description: Node is a CubeWheel 0162 type **>
+        CubeWheelCW0162 = 3
+        
+        <** @description: Node is a CubeWheel 0500 type **>
+        CubeWheelCW0500 = 4
+        
+        <** @description: Node is a CubeWheel 1200 type **>
+        CubeWheelCW1200 = 5
+        
+        <** @description: Node is a CubeWheel 2500 type **>
+        CubeWheelCW2500 = 6
+        
+        <** @description: Node is a CubeWheel 5000 type **>
+        CubeWheelCW5000 = 7
+        
+        <** @description: Node is a CubeWheel Rover 1 type **>
+        CubeWheelRover1 = 8
+        
+        <** @description: Node is a CubeWheel 10k type **>
+        CubeWheelCW10k = 9
+        
+        <** @description: Node is a CubeWheel 40k type **>
+        CubeWheelCW40k = 10
+        
+    }
+    
+    
+    
+    <** @description: Parameter structure for interface WheelSpeedRef
+    **>
+    struct WheelSpeedRef
+    {
+        
+        <** @description: Wheel reference speed **>
+        Float SpeedRef
+        
+    }
+    
+    <** @description: Parameter structure for interface WheelTorqueRef
+    **>
+    struct WheelTorqueRef
+    {
+        
+        <** @description: Wheel reference Torque **>
+        Float TorqueRef
+        
+    }
+    
+    <** @description: Parameter structure for interface WheelTravelRef
+    **>
+    struct WheelTravelRef
+    {
+        
+        <** @description: Wheel reference speed **>
+        Float SpeedRef
+        
+        <** @description: Wheel reference distance **>
+        Int32 DistanceRef
+        
+    }
+    
+    <** @description: Parameter structure for interface WheelRefRampRateLimit
+    **>
+    struct WheelRefRampRateLimit
+    {
+        
+        <** @description: Maximum speed reference increment during 1ms period. This limits the max torque of the motor. **>
+        Float RampRateLimit
+        
+    }
+    
+    <** @description: Parameter structure for interface BackupWheelMode
+    **>
+    struct BackupWheelMode
+    {
+        
+        <** @description: Enable the back-up mode **>
+        Boolean BackupMode
+        
+    }
+    
+    <** @description: Parameter structure for interface MainGain
+    **>
+    struct MainGain
+    {
+        
+        <** @description: Proportional gain **>
+        Float Kp
+        
+        <** @description: Integrator gain **>
+        Float Ki
+        
+        <** @description: Feedback gain **>
+        Float Kd
+        
+    }
+    
+    <** @description: Parameter structure for interface BackupGain
+    **>
+    struct BackupGain
+    {
+        
+        <** @description: Proportional gain **>
+        Float Kp
+        
+        <** @description: Integrator gain **>
+        Float Ki
+        
+        <** @description: Feedback gain **>
+        Float Kd
+        
+    }
+    
+    <** @description: Parameter structure for interface PWMGain
+    **>
+    struct PWMGain
+    {
+        
+        <** @description: Main gain **>
+        Float K
+        
+    }
+    
+    <** @description: Parameter structure for interface MotorPower
+    **>
+    struct MotorPower
+    {
+        
+        <** @description: Switch motor power switch on/off **>
+        Boolean MotorPowerSwitch
+        
+    }
+    
+    <** @description: Parameter structure for interface Stator
+    **>
+    struct Stator
+    {
+        
+        <** @description: Current applied to motor coils **>
+        Float Coilcurrent
+        
+        <** @description: Temperature of the coil windings **>
+        Float Statortemp
+        
+    }
+    
+    <** @description: Parameter structure for interface WheelTorque
+    **>
+    struct WheelTorque
+    {
+        
+        <** @description: Wheel Torque measurement in mNm **>
+        Float wheelTorque
+        
+        <** @description: Wheel error state **>
+        CubeWheelControlProgram3_WheelErrorState WheelErrorState
+        
+    }
+    
+    <** @description: Parameter structure for interface StatusErrorFlags
+    **>
+    struct StatusErrorFlags
+    {
+        
+        <** @description: An invalid telemetry request was received **>
+        Boolean InvalidTelemetry
+        
+        <** @description: An invalid telecommand was received **>
+        Boolean InvalidTelecommand
+        
+        <** @description: Encoder indicates an error **>
+        Boolean EncoderError
+        
+        <** @description: Error in UART protocol **>
+        Boolean UARTError
+        
+        <** @description: Error in I2C protocol **>
+        Boolean I2CError
+        
+        <** @description: Error in CAN protocol **>
+        Boolean CANError
+        
+        <** @description: Configuration load error **>
+        Boolean ConfigError
+        
+        <** @description: Speed measurements indicates an error **>
+        Boolean SpeedError
+        
+    }
+    
+    <** @description: Parameter structure for interface WheelData
+    **>
+    struct WheelData
+    {
+        
+        <** @description: Wheel speed measurement in rpm **>
+        Float WheelSpeed
+        
+        <** @description: Wheel backup speed measurement in rpm **>
+        Float WheelSpeedBackup
+        
+        <** @description: Wheel reference speed in rpm **>
+        Float WheelReference
+        
+        <** @description: Battery current measurement **>
+        UInt16 BatteryCurrent
+        
+        <** @description: Wheel data status **>
+        CubeWheelControlProgram3_WheelErrorState WheelErrorState
+        
+    }
+    
+    <** @description: Parameter structure for interface WheelDuty
+    **>
+    struct WheelDuty
+    {
+        
+        <** @description: Duty cycle of motor PWM control signal. The torque provided by the motor will be proportional to the PWM signal **>
+        Float DutyCycle
+        
+    }
+    
+    <** @description: Parameter structure for interface HealthTlm
+    **>
+    struct HealthTlm
+    {
+        
+        <** @description: Battery current measurement **>
+        UInt16 BatteryCurrent
+        
+        <** @description: Battery voltage measurement at input **>
+        UInt16 BatteryVoltage
+        
+        <** @description: Total 3.3V Current **>
+        UInt16 DigitalCurrent
+        
+        <** @description: MCU temperature measurement **>
+        Float McuTemperature
+        
+        <** @description: Bitmask representing virtual watchdog region warning counters.  
+            @details: size = 5**>
+        UInt8[] WatchdogCount
+        
+    }
+    
+    <** @description: Parameter structure for interface WheelSpeed
+    **>
+    struct WheelSpeed
+    {
+        
+        <** @description: Wheel speed measurement in rpm **>
+        Float wheelSpeed
+        
+        <** @description: Wheel error state **>
+        CubeWheelControlProgram3_WheelErrorState WheelErrorState
+        
+    }
+    
+    <** @description: Parameter structure for interface ControlMode
+    **>
+    struct ControlMode
+    {
+        
+        <** @description: Control mode of motor **>
+        CubeWheelControlProgram3_ControlModeVal controlMode
+        
+    }
+    
+    <** @description: Parameter structure for interface WheelModel
+    **>
+    struct WheelModel
+    {
+        
+        <** @description: The model type of the motor **>
+        CubeWheelControlProgram3_WheelTypeEnum MotorWheelType
+        
+    }
+    
+    <** @description: Parameter structure for interface WheelPosData
+    **>
+    struct WheelPosData
+    {
+        
+        <** @description: Wheel positiion **>
+        Float WheelPosition
+        
+        <** @description: Wheel speed measurement in rpm **>
+        Float WheelSpeed
+        
+        <** @description: Wheel reference speed in rpm **>
+        Float WheelReference
+        
+        <** @description: Battery current measurement **>
+        UInt16 BatteryCurrent
+        
+        <** @description: Wheel data status **>
+        CubeWheelControlProgram3_WheelErrorState WheelErrorState
+        
+    }
+    
+    
+    
+    <**
+        @description: Set momentum wheel reference speed
+        @details: id = 0
+    **>
+    method setWheelSpeedRef
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            WheelSpeedRef setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Set torque reference for wheel
+        @details: id = 1
+    **>
+    method setWheelTorqueRef
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            WheelTorqueRef setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Drive rover for defined distance and max speed.
+        @details: id = 2
+    **>
+    method setWheelTravelRef
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            WheelTravelRef setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Set ramp rate limit for wheel speed reference
+        @details: id = 3
+    **>
+    method setWheelRefRampRateLimit
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            WheelRefRampRateLimit setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Set the back-up wheel mode
+        @details: id = 4
+    **>
+    method setBackupWheelMode
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            BackupWheelMode setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Clear the processor error flags
+        @details: id = 5
+    **>
+    method setClearErrors
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Main speed controller gain values
+        @details: id = 6
+    **>
+    method setMainGain
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            MainGain setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Backup speed controller gain values
+        @details: id = 7
+    **>
+    method setBackupGain
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            BackupGain setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: General PWM gain
+        @details: id = 8
+    **>
+    method setPWMGain
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            PWMGain setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Switch motor power on/off
+        @details: id = 9
+    **>
+    method setMotorPower
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            MotorPower setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Set ramp rate limit for wheel speed reference
+        @details: id = 10
+    **>
+    method getWheelRefRampRateLimit
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            WheelRefRampRateLimit returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Data related to the motor stator windings
+        @details: id = 11
+    **>
+    method getStator
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            Stator returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Wheel Torque measurement
+        @details: id = 12
+    **>
+    method getWheelTorque
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            WheelTorque returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Backup speed controller gain values
+        @details: id = 13
+    **>
+    method getBackupGain
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            BackupGain returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Main speed controller gain values
+        @details: id = 14
+    **>
+    method getMainGain
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            MainGain returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: General PWM gain
+        @details: id = 15
+    **>
+    method getPWMGain
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            PWMGain returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Processor status and error flags
+        @details: id = 16
+    **>
+    method getStatusErrorFlags
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            StatusErrorFlags returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Complete wheel data
+        @details: id = 17
+    **>
+    method getWheelData
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            WheelData returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Motor commanded PWM control signal
+        @details: id = 18
+    **>
+    method getWheelDuty
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            WheelDuty returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Health telemetry for CubeWheel
+        @details: id = 19
+    **>
+    method getHealthTlm
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            HealthTlm returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Set momentum wheel reference speed
+        @details: id = 20
+    **>
+    method getWheelSpeedRef
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            WheelSpeedRef returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Set torque reference for wheel
+        @details: id = 21
+    **>
+    method getWheelTorqueRef
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            WheelTorqueRef returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Wheel speed measurement
+        @details: id = 22
+    **>
+    method getWheelSpeed
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            WheelSpeed returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Switch motor power on/off
+        @details: id = 23
+    **>
+    method getMotorPower
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            MotorPower returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get the motor control mode
+        @details: id = 24
+    **>
+    method getControlMode
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            ControlMode returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Set the back-up wheel mode
+        @details: id = 25
+    **>
+    method getBackupWheelMode
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            BackupWheelMode returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get the wheel model
+        @details: id = 26
+    **>
+    method getWheelModel
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            WheelModel returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Complete wheel data
+        @details: id = 27
+    **>
+    method getWheelPosData
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            WheelPosData returnVal
+            
+            
+        }
+    }
+    
+}

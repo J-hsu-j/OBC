@@ -1,0 +1,202 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/obc.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.obc as obc_Definitions {
+
+	enumeration StandardResult {
+		AlarmInvalidRegexValues = {
+			"(^(?!SUCCESS$).*$)"
+		}
+	}
+
+	struct I2CPullUpsState {
+		system_bus_4K7 {
+			DisplayName = "System Bus 4K7"
+		}
+		system_bus_10K {
+			DisplayName = "System Bus 10K"
+		}
+		payload_bus_4K7 {
+			DisplayName = "Payload Bus 4K7"
+		}
+		payload_bus_10K {
+			DisplayName = "Payload Bus 10K"
+		}
+	}
+
+	struct ResetCountersInfo {
+		wwd {
+			DisplayName = "WWD"
+		}
+		iwd {
+			DisplayName = "IWD"
+		}
+		lpr {
+			DisplayName = "LPR"
+		}
+		por {
+			DisplayName = "POR"
+		}
+		rst_pin {
+			DisplayName = "Reset Pin"
+		}
+		bor {
+			DisplayName = "BOR"
+		}
+		hard_fault {
+			DisplayName = "Hard Fault"
+		}
+		mem_fault {
+			DisplayName = "Memory Fault"
+		}
+		bus_fault {
+			DisplayName = "Bus Fault"
+		}
+		usage_fault {
+			DisplayName = "Usage Fault"
+		}
+	}
+
+	struct GpoGetPortsType {
+		gpo_port_nvm {
+			DisplayName = "GPO port NVM setting"
+		}
+		gpo_port_active {
+			DisplayName = "GPO port temporarily-applied pin setting"
+		}
+	}
+
+	struct GpoSetPortsType {
+		gpo_port_nvm {
+			DisplayName = "GPO port NVM setting"
+		}
+		gpo_port_active {
+			DisplayName = "GPO port temporarily-applied pin setting"
+		}
+	}
+
+	method get_all_gpo_values {
+		out {
+			gpo {
+				DisplayName = "Status of all available GPOs"
+			}
+			result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_all_gpo_values {
+		in {
+			gpo {
+				DisplayName = "Desired status for all available GPOs"
+			}
+		}
+		out {
+			result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_i2c_pull_ups_state {
+		out {
+			nvm_pull_ups_state {
+				DisplayName = "NNM Pull Ups State"
+			}
+			io_pull_ups_state {
+				DisplayName = "IO Pull Ups State"
+			}
+		}
+	}
+
+	method set_i2c_pull_ups_state {
+		in {
+			pull_up_state {
+				DisplayName = "Pull Up State"
+			}
+		}
+		out {
+			pull_ups_io_state {
+				DisplayName = "Pull Ups IO State"
+			}
+		}
+	}
+
+	method get_uptime {
+		out {
+			uptime {
+				DisplayName = "Uptime"
+				Unit = "s"
+			}
+		}
+	}
+
+	method get_reset_counters {
+		out {
+			status {
+				DisplayName = "Status"
+			}
+		}
+	}
+
+	method clear_reset_counter {
+		in {
+			id {
+				DisplayName = "ID"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method trigger_reset_in_mode {
+		in {
+			start_mode {
+				DisplayName = "Start Mode"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_device_mac_address {
+		in {
+			new_mac_address {
+				DisplayName = "New MAC Address"
+			}
+			device_id {
+				DisplayName = "Device ID"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_device_mac_address {
+		in {
+			device_id {
+				DisplayName = "Device ID"
+			}
+		}
+		out {
+			mac_address {
+				DisplayName = "MAC Address"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+}

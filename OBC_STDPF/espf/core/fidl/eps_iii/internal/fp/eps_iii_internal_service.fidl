@@ -1,0 +1,162 @@
+package endurosat.macif
+
+<** @description: EPS III internal interfaces
+    @details: id = 0xD4
+**>
+
+interface eps_iii_internal_service
+{
+    version { major 2 minor 0 }
+    
+    <** @description: Command status **>
+    enumeration CommandStatus
+    {
+        <** @description: The command was successfully executed **>
+        SUCCESS
+        
+        <** @description: The command was failed during execution  **>
+        FAIL
+        
+        <** @description: The command was successfully executed, but not all data was gathered  **>
+        FAIL_GATHERING_DATA
+    }
+	
+    <** @description: Read or Write option **>
+    enumeration ReadWriteOpt
+    {
+        <** @description: Option to read the current data from the source **>
+        READ
+        
+        <** @description: Option to write the current data to the the destination **>
+        WRITE
+    }
+
+    <** @description: Set a new serial number for the device.
+        @details: id = 0x00000000 **>
+    method set_serial_number
+    {
+        in
+        {
+            <** @description: Choose Read or Write option **>
+            ReadWriteOpt option
+
+            <** @description: HW_SERIAL
+            @details: size = 30 **>
+            UInt8[] writeHhwSerialNumber
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: HW_SERIAL
+            @details: size = 30 **>
+            UInt8[] readHwSerialNumber
+        }
+    }
+        
+    <** @description: In-Application Programming return codes **> 
+    enumeration IAP_RetCode
+    {
+        <** @description: Success **>
+        SUCCESS = 0,
+        <** @description: Wrong Address to write or size **>
+        WRONG_ADDR_OR_SIZE,
+        <** @description: Verification Failure **>
+        VERIFY_FAILURE,
+        <** @description: No image available or the uploaded image is not compatible **>
+        INCOMPATIBLE_IMAGE,
+        <** @description: The command has been executed. Please, read the FW version with different command to compare it **>
+        ALREADY_EXECUTED
+        <** @description: The command is not supported in that FW or any other issue **>
+        ACCESS_DENY
+    }
+    
+    <** @description: In-Application Programming: Writes part of a image file of a new application in the storage flash memory
+      @details: id = 0x00001001
+    **>
+    method IAP_write
+    {
+        in
+        {
+            <** @description: Address of the first byte from the image **>
+            UInt32 address
+            
+            <** @description: Number of bytes to write from the buffer **>
+            UInt8 size
+
+            <** @description: Data memory to write, up to 200 bytes. Must be even.
+                @details: size = 240
+            **>
+            UInt8[] data
+        }
+        
+        out
+        {
+            <** @description: status of the operation **>
+            IAP_RetCode result
+        }
+    }
+    
+    <** @description: In-Application Programming: Request the installation of the new image from the storage flash over the current application
+    @details: id = 0x00001002
+    **>
+    method IAP_execute
+    {
+        in
+        {
+            <** @description: Cyclic redundancy check of the image of the new firmware. **>
+            UInt32 CRC32
+            
+            <** @description: Image size in bytes **>
+            UInt32 fw_size
+            
+            <** @description: Update number. A magic number to let the device know that is just a repeated command, not a new request **>
+            UInt8 update_number
+        }
+        out
+        {
+            <** @description: status of the operation **>
+            IAP_RetCode result
+        }
+    }
+
+    <** @description: In-Application Programming: Request the verification of the new image from the storage flash if it is ready for flashing
+    @details: id = 0x00001003
+    **>
+    method IAP_image_verification_only
+    {
+        in
+        {
+            <** @description: Cyclic redundancy check of the image of the new firmware. **>
+            UInt32 CRC32
+            
+            <** @description: Image size in bytes **>
+            UInt32 fw_size
+        }
+        
+        out
+        {
+            <** @description: status of the operation **>
+            IAP_RetCode result
+        }
+    }
+
+    <** @description: Reading the active Interface (FIDL) version loaded on the module 
+    @details: id = 0x00003000**>
+    method FIDL_version
+    {
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: The current major version of the interface (FIDL) **>
+            UInt8 v_major
+
+            <** @description: The current minor version of the interface (FIDL) **>
+            UInt8 v_minor
+        }
+    }
+} 

@@ -1,0 +1,54 @@
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+
+import "../../fp/comm_loss_wd.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.comm_loss_wd as comm_loss_wd_Definitions {
+	
+	enumeration StandardResult {
+		AlarmInvalidRegexValues = {"ERROR", "INVALID_ARGS", "NOT_SUPPORTED"}
+	}
+	
+	method set_wd_enable {
+		in {
+			wd_enable {
+				DisplayName = "Watchdog Timeout"
+				Unit = "min"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method set_wd_enable {
+		in {
+			wd_enable {
+				DisplayName = "Watchdog Enable Flag"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method get_wd_timeout {
+		out {
+			wd_timeout {
+				DisplayName = "Watchdog Timeout"
+				Unit = "min"
+			}
+		}
+	}
+	
+	method get_wd_stat {
+		out {
+			wd_stat {
+				DisplayName = "Watchdog Enable Status"
+			}
+		}
+	}
+}

@@ -1,0 +1,334 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramNssrwlQuad1.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CubeNodeControlProgramNssrwlQuad1 as CubeADCS_Gen2_CubeNodeControlProgramNssrwlQuad1_Definitions
+{    
+    
+    struct CubeNodeControlProgramNssrwlCommon1_RwlSpeed
+    {
+        
+        
+        Speed {
+            DisplayName = "Speed"
+            Unit = "RPM"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+    }
+    
+    struct CubeNodeControlProgramNssrwlCommon1_TlmStandard
+    {
+        
+        
+        SerialNumber {
+            DisplayName = "Serial Number"
+        }
+        
+        TargetValue {
+            DisplayName = "Target Value"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        ActualWheelSpeed {
+            DisplayName = "Actual Wheel Speed"
+            Unit = "RPM"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        ActualMotorCurrent {
+            DisplayName = "Actual Motor Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "20000.0001"
+        }
+        
+        Temperature {
+            DisplayName = "Temperature"
+            Unit = "C"
+			AlarmNumericMinInclusive = "-273.0001"
+			AlarmNumericMaxInclusive = "273.0001"
+        }
+        
+        ISignal {
+            DisplayName = "I-Signal (loop)"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        ReactionWheelMode {
+            DisplayName = "Reaction Wheel Mode"
+        }
+        
+        CurrentControlMode {
+            DisplayName = "Current Control Mode"
+        }
+        
+        SpeedControlMode {
+            DisplayName = "Speed Control Mode"
+        }
+        
+        TorqueMode {
+            DisplayName = "Torque Mode"
+        }
+        
+        WheelGyroMode {
+            DisplayName = "Wheel Gyro Mode"
+        }
+        
+        OmegaPiControlLoop {
+            DisplayName = "Omega-PI Control Loop"
+        }
+        
+        AnglePdControlLoop {
+            DisplayName = "Angle-PD Control Loop"
+        }
+        
+        BootControl {
+            DisplayName = "Boot Control"
+        }
+        
+        GyroConnected {
+            DisplayName = "Gyro Connected"
+        }
+        
+        GyroTelemetry {
+            DisplayName = "Gyro Telemetry"
+        }
+        
+        GyroFlagRegister {
+            DisplayName = "Gyro Flag Register"
+        }
+        
+        CrcError {
+            DisplayName = "CRC Error"
+        }
+        
+        WrongLlCommand {
+            DisplayName = "Wrong Low-Level Command"
+        }
+        
+        WrongHlCommand {
+            DisplayName = "Wrong High-Level Command"
+        }
+        
+        ToutSci1Main {
+            DisplayName = "Timeout SCI1 Main Interface"
+        }
+        
+        ToutSci2Gyro {
+            DisplayName = "Timeout SCI2 Gyro Interface"
+        }
+        
+    }
+    
+    struct CubeNodeControlProgramNssrwlCommon1_TlmExtended
+    {
+        
+        
+        SerialNumber {
+            DisplayName = "Serial Number"
+        }
+        
+        ActualWheelSpeed {
+            DisplayName = "Actual Wheel Speed"
+            Unit = "RPM"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+    }
+    
+    struct CubeNodeControlProgramNssrwlCommon1_TlmSystem
+    {
+        
+        
+        SerialNumber {
+            DisplayName = "Serial Number"
+        }
+        
+        DeviceType {
+            DisplayName = "Devie Type"
+        }
+        
+        DeviceId {
+            DisplayName = "Device ID"
+        }
+        
+        Month {
+            DisplayName = "Month"
+        }
+        
+        Year {
+            DisplayName = "Year"
+        }
+        
+        StatusRegister {
+            DisplayName = "Status Register"
+        }
+        
+        AcsRegister {
+            DisplayName = "ACS Flag Register"
+        }
+        
+        SystemRegister {
+            DisplayName = "System Flag Register"
+        }
+        
+        RwaRegister {
+            DisplayName = "RWA Flag Register"
+        }
+        
+        GyroRegister {
+            DisplayName = "Gyro Flag Register"
+        }
+        
+        BootFlag {
+            DisplayName = "Boot Flag"
+        }
+        
+        BootVector {
+            DisplayName = "Boot Vector"
+        }
+        
+        AcsControlInterval {
+            DisplayName = "ACS Control Interval"
+            Unit = "10.24ms"
+        }
+        
+        AcsStartAddr {
+            DisplayName = "ACS Start Address"
+        }
+        
+        TachoStartAddr {
+            DisplayName = "Tacho Start Address"
+        }
+        
+    }
+    
+    struct NssRwlWheelSpeed2
+    {
+        DisplayName = "Wheel Speed Port 2"
+        
+        Speed {
+            DisplayName = "Speed"
+        }
+        
+    }
+    
+    struct NssRwlWheelSpeed3
+    {
+        DisplayName = "Wheel Speed Port 3"
+        
+        Speed {
+            DisplayName = "Speed"
+        }
+        
+    }
+    
+    struct NssRwlWheelSpeed4
+    {
+        DisplayName = "Wheel Speed Port 4"
+        
+        Speed {
+            DisplayName = "Speed"
+        }
+        
+    }
+    
+    struct NssRwlTlmStandard2
+    {
+        DisplayName = "Raw NSSRWL Standard TLM Port 2"
+        
+        Tlm {
+            DisplayName = "Standard Tlm"
+        }
+        
+    }
+    
+    struct NssRwlTlmStandard3
+    {
+        DisplayName = "Raw NSSRWL Standard TLM Port 3"
+        
+        Tlm {
+            DisplayName = "Standard Tlm"
+        }
+        
+    }
+    
+    struct NssRwlTlmStandard4
+    {
+        DisplayName = "Raw NSSRWL Standard TLM Port 4"
+        
+        Tlm {
+            DisplayName = "Standard Tlm"
+        }
+        
+    }
+    
+    struct NssRwlTlmExtended2
+    {
+        DisplayName = "Raw NSSRWL Extended TLM Port 2"
+        
+        Tlm {
+            DisplayName = "Extended Tlm"
+        }
+        
+    }
+    
+    struct NssRwlTlmExtended3
+    {
+        DisplayName = "Raw NSSRWL Extended TLM Port 3"
+        
+        Tlm {
+            DisplayName = "Extended Tlm"
+        }
+        
+    }
+    
+    struct NssRwlTlmExtended4
+    {
+        DisplayName = "Raw NSSRWL Extended TLM Port 4"
+        
+        Tlm {
+            DisplayName = "Extended Tlm"
+        }
+        
+    }
+    
+    struct NssRwlTlmSystem2
+    {
+        DisplayName = "Raw NSSRWL System TLM Port 2"
+        
+        Tlm {
+            DisplayName = "System Tlm"
+        }
+        
+    }
+    
+    struct NssRwlTlmSystem3
+    {
+        DisplayName = "Raw NSSRWL System TLM Port 3"
+        
+        Tlm {
+            DisplayName = "System Tlm"
+        }
+        
+    }
+    
+    struct NssRwlTlmSystem4
+    {
+        DisplayName = "Raw NSSRWL System TLM Port 4"
+        
+        Tlm {
+            DisplayName = "System Tlm"
+        }
+        
+    }
+    
+}

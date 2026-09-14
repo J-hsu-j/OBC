@@ -1,0 +1,233 @@
+package endurosat.pf
+
+<** @description: gnss interface
+    @details: id = 23
+**>
+interface gnss
+{
+    version { major 1 minor 2 }
+
+    <** @description: operation status **>
+    enumeration Operation
+    {
+        <** @description: operation failure **>
+        ERROR = 0,
+
+        <** @description: operation success **>
+        OK = 1
+    }
+
+    <** @description: gnss power status **>
+    enumeration Power
+    {
+        <** @description: gnss is powered off **>
+        OFF = 0,
+
+        <** @description: gnss is powered on **>
+        ON = 1
+    }
+
+    <** @description: gnss user command execution status **>
+    enumeration CommandStatus
+    {
+        <** @description: command execution failed **>
+        OK = 0,
+
+        <** @description: command execution success **>
+        ERROR = 1,
+
+        <** @description: command execution is pending **>
+        QUEUE_FULL = 2,
+
+        <** @description: command execution wrong parameters **>
+        WRONG_PARAMS = 3,
+
+        <** @description: command processing **>
+        PROCESSING = 4,
+
+        <** @description: command execution pending **>
+        PENDING = 5,
+
+        <** @description: command not found **>
+        NOT_FOUND = 6,
+
+        <** @description: command timed out **>
+        TIMED_OUT = 7,
+
+        <** @description: command execution mutex failure **>
+        MUTEX_FAIL = 8
+    }
+
+    <**@description: Time as returned by the OBC **>
+    struct TimeStruct
+    {
+        <**@description: This value can be in the range: 0 <= hours <= 23 **>
+        UInt8  hour
+        
+        <**@description: This value can be in the range: 0 <= minutes <= 59 **>
+        UInt8  min
+        
+        <**@description: This value can be in the range: 0 <= seconds <= 59 **>
+        UInt8  sec
+        
+        <**@description: This value can be in the range: 0 <= milliseconds <= 999 **>
+        UInt16 ms
+        
+        <**@description: This value can be in the range: 0 <= microseconds <= 999 **>
+        UInt16 us
+    }
+
+    <** @description: GNSS UART baud rates
+        The baud rate options are taken directly from the OEM7 Commands and Logs Reference Manual
+    **>
+    enumeration BaudRate
+    {
+        <** @description: 9600 baud (bit/second) **>
+        BAUD_9600_BPS = 0,
+
+        <** @description: 19200 baud (bit/second) **>
+        BAUD_19200_BPS = 1,
+
+        <** @description: 38400 baud (bit/second) **>
+        BAUD_38400_BPS = 2,
+
+        <** @description: 57600 baud (bit/second) **>
+        BAUD_57600_BPS = 3,
+
+        <** @description: 115200 baud (bit/second) **>
+        BAUD_115200_BPS = 4,
+
+        <** @description: 230400 baud (bit/second) **>
+        BAUD_230400_BPS = 5,
+
+        <** @description: 460800 baud (bit/second) **>
+        BAUD_460800_BPS = 6
+    }
+
+    <** 
+        @description: set gnss power (on/off)
+        @details: id = 0x00000001
+    **>
+    method set_power
+    {
+        in
+        {
+            <** @description: gnss power status **>
+            Power pwr_status 
+        }
+        out
+        {
+            <** @description: operation status **>
+            Operation op_status
+        }
+    }
+
+    <** 
+        @description: get gnss power status (on/off)
+        @details: id = 0x00000002
+    **>
+    method get_power
+    {
+        out
+        {
+            <** @description: gnss current power state (on/off) **>
+            Power pwr_status
+
+            <** @description: operation status **>
+            Operation op_status
+        }
+    }
+
+    <** @description: execute gnss command
+        @details: id = 0x00000003
+    **>
+    method request_command_execution
+    {
+        in
+        {
+            <** @details: size = 240
+                @description: gnss command
+                NULL termination is handled automatically. The command must be in abbreviated ascii
+                format! Check the gnss receiver documentation for how to structure such
+                a command. The returned command id can be used to check the status of the
+                execution with [get_cmd_status].
+            **>
+            String cmd
+
+            <** @description: gnss command timeout in milliseconds
+            If this timeout elapses, command execution will be aborted. **>
+            UInt32 timeout_ms
+        }
+        out
+        {
+            <** @description: gnss command identifier in the command queue **>
+            UInt8 cmd_id
+
+            <** @description: command execution operation status **>
+            CommandStatus command_status
+        }
+    }
+
+    <** @description: get gnss command status, based on command id
+        @details: id = 0x00000004
+    **>
+    method get_command_execution_status
+    {
+        in
+        {
+            <** @description: gnss command id **>
+            UInt8 cmd_id
+        }
+        out
+        {
+            <** @description: command execution status **>
+            CommandStatus command_status
+
+            <** @description: user command execution duration in milliseconds **>
+            UInt32 duration_ms
+
+            <** @description: time at which the user command execution was requested **>
+            TimeStruct requested_time
+
+            <** @description: time at which the user command execution started **>
+            TimeStruct time_started
+        }
+    }
+
+    <** @description: Set gnss uart baud rate. This method overwrites the currently
+                      saved baud rate in the NVM. Then, it attempts to re-initialize
+                      the UART peripheral with the new desired baud rate.
+        @details: id = 0x00000005
+    **>
+    method set_gnss_uart_baudrate
+    {
+        in
+        {
+            <** @description: gnss uart baud rate **>
+            BaudRate baud_rate
+        }
+        out
+        {
+            <** @description: operation status **>
+            Operation op_status
+        }
+    }
+
+    <** @description: get gnss uart baud rate
+        @details: id = 0x00000006
+    **>
+    method get_gnss_uart_baudrate
+    {
+        out
+        {
+            <** @description: gnss uart baudrate nvm setting **>
+            BaudRate gnss_uart_baudrate_nvm
+
+            <** @description: gnss uart actual current baudrate **>
+            BaudRate gnss_uart_baudrate_current
+
+            <** @description: operation status **>
+            Operation op_status
+        }
+    }
+}

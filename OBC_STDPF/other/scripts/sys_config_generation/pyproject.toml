@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "es-sys-config"
+version = "2.2.1"
+description = "Runtime Configuration tool for the OBC"
+authors = ["Jose Moreno <jose.moreno@endurosat.com>"]
+readme = "README"
+
+[tool.poetry.dependencies]
+python = ">=3.10 <4"
+typer = "*"
+toml = "*"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "*"
+pylint = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+es-sys-config="es_sys_config.__main__:main"
+
+[tool.black]
+line-length = 120
+target-version = ['py311']
+skip-string-normalization = true
+exclude = '''
+/(
+\.eggs
+| \.git
+| \.hg
+| \.mypy_cache
+| \.tox
+| \.venv
+| _build
+| buck-out
+| build
+| build_win
+| dist
+| pytest_cache
+| __pycache__
+)/
+'''

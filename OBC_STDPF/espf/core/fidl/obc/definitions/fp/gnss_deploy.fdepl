@@ -1,0 +1,116 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/gnss.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.pf.gnss
+as gnss_Definitions {
+
+	enumeration Operation {
+		AlarmInvalidRegexValues = {
+			"ERROR"
+		}
+	}
+
+	enumeration CommandStatus {
+		AlarmInvalidRegexValues = {
+			"(^(?!OK).*$)"
+		}
+	}
+
+	method set_power {
+		in {
+			pwr_status {
+				DisplayName = "Power Status"
+			}
+		}
+		out {
+			op_status {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_power {
+		out {
+			op_status {
+				DisplayName = "Result"
+			}
+			pwr_status {
+				DisplayName = "Power Status"
+			}
+		}
+	}
+
+	method request_command_execution {
+		in {
+			cmd {
+				DisplayName = "Command"
+			}
+			timeout_ms {
+				DisplayName = "Timeout"
+				Unit = "ms"
+			}
+		}
+		out {
+			cmd_id {
+				DisplayName = "Command ID"
+			}
+			command_status {
+				DisplayName = "Command Status"
+			}
+		}
+	}
+
+	method get_command_execution_status {
+		in {
+			cmd_id {
+				DisplayName = "Command ID"
+			}
+		}
+		out {
+			command_status {
+				DisplayName = "Command Status"
+			}
+			duration_ms {
+				DisplayName = "Timeout"
+				Unit = "ms"
+			}
+			requested_time {
+				DisplayName = "Requested Time"
+			}
+			time_started {
+				DisplayName = "Time Started"
+			}
+		}
+	}
+
+    method set_gnss_uart_baudrate {
+        in {
+            baud_rate {
+                DisplayName = "GNSS UART Baud Rate"
+                Unit = "bit/second"
+            }
+        }
+        out {
+            op_status {
+                DisplayName = "Result"
+            }
+        }
+    }
+
+    method get_gnss_uart_baudrate {
+        out {
+            gnss_uart_baudrate_nvm {
+                DisplayName = "GNSS UART Baud Rate NVM Setting"
+                Unit = "bit/second"
+            }
+            gnss_uart_baudrate_current {
+                DisplayName = "GNSS UART Currently Set Baud Rate"
+                Unit = "bit/second"
+            }
+            op_status {
+                DisplayName = "Result"
+            }
+        }
+    }
+}

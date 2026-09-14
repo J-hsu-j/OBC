@@ -1,0 +1,344 @@
+package endurosat.macif
+
+<** @description: EnduroSat Coordinate frames as part of the Onboard Computer
+    @details: id = 68
+**>
+interface coordsys
+{
+    version { major 2 minor 0 }
+
+    <** @description: Result of operation **>
+    enumeration Result
+    {
+        <** @description: Function execution successful **>
+        ES_OK,
+        <** @description: Function execution failed **>
+        ES_FAIL
+    }
+
+    <** @description: This corresponds to enum coordsys_satellite_axis_t **>
+    enumeration SatelliteAxis
+    {
+        <** @description: Body (satellite) frame positive X axis **>
+        X_POSITIVE,
+        <** @description: Body (satellite) frame positive Y axis **>
+        Y_POSITIVE,
+        <** @description: Body (satellite) frame positive Z axis **>
+        Z_POSITIVE,
+        <** @description: Body (satellite) frame negative X axis **>
+        X_NEGATIVE,
+        <** @description: Body (satellite) frame negative Y axis **>
+        Y_NEGATIVE,
+        <** @description: Body (satellite) frame negative Z axis **>
+        Z_NEGATIVE
+    }
+
+    <** @description: This corresponds to enum coordsys_error_t **>
+    enumeration Error
+    {
+        <** @description: No error during operation **>
+        NONE,
+        <** @description: The nvm configuration has failed the validation step **>
+        NVM_CONFIG_CORRUPTED,
+        <** @description: The frame type given to an operation is invalid **>
+        FRAME_TYPE_INVALID,
+        <** @description: The satellite axis given to an operation is invalid **>
+        SATELLITE_AXIS_INVALID,
+        <** @description: An element of a rotation/mapping matrix is outside the expected value range **>
+        ELEMENT_OUT_OF_RANGE,
+        <** @description: A column or row of a rotation/mapping matrix has failed the validation step **>
+        INVALID_ROW_OR_COLUMN
+    }
+
+    <** @description: This corresponds to struct coordsys_frame_status_t **>
+    struct FrameStatus
+    {
+        <** @description: The first error code for the frame **>
+        Error status_1
+        <** @description: The second error code for the frame **>
+        Error status_2
+    }
+
+    <** @description: This corresponds to struct coordsys_status_t **>
+    struct Status
+    {
+        <** @description: The status code for the gyroscope frame **>
+        Result gyroscope_frame
+        <** @description: The status code for the magnetometer frame **>
+        Result magnetometer_frame
+        <** @description: The status code for the coarse sun sensor frame **>
+        Result coarse_sun_sensor_frame
+        <** @description: The status code for the magnetorquer frame **>
+        Result magnetorquer_frame
+        <** @description: The status code for any errors that are general to the coordsys service and not to a specific frame (e.g. state machine out of bounds) **>
+        Error general_error
+    }
+
+    <** @description: This corresponds to a half of the struct coordsys_frame_t due to the gyroscope transformation being a 3D mapping instead of a full 6D mapping **>
+    struct GyroscopeFrame
+    {
+        <** @description: Which Body (satellite) frame axis does gyroscope 1 correspond to **>
+        SatelliteAxis gyroscope_1
+        <** @description: Which Body (satellite) frame axis does gyroscope 2 correspond to **>
+        SatelliteAxis gyroscope_2
+        <** @description: Which Body (satellite) frame axis does gyroscope 3 correspond to **>
+        SatelliteAxis gyroscope_3
+    }
+
+    <** @description: This corresponds to a half of the struct coordsys_frame_t due to the magnetometer transformation being a 3D mapping instead of a full 6D mapping **>
+    struct MagnetometerFrame
+    {
+        <** @description: Which Body (satellite) frame axis does magnetometer X axis correspond to **>
+        SatelliteAxis magnetometer_x
+        <** @description: Which Body (satellite) frame axis does magnetometer Y axis correspond to **>
+        SatelliteAxis magnetometer_y
+        <** @description: Which Body (satellite) frame axis does magnetometer Z axis correspond to **>
+        SatelliteAxis magnetometer_z
+    }
+
+    <** @description: This corresponds to the full struct coordsys_frame_t due to the coarse sun sensor transformation being a full 6D mapping**>
+    struct CoarseSunSensorFrame
+    {
+        <** @description: Which Body (satellite) frame axis does coarse sun sensor 1 correspond to **>
+        SatelliteAxis coarse_sun_sensor_1
+        <** @description: Which Body (satellite) frame axis does coarse sun sensor 2 correspond to **>
+        SatelliteAxis coarse_sun_sensor_2
+        <** @description: Which Body (satellite) frame axis does coarse sun sensor 3 correspond to **>
+        SatelliteAxis coarse_sun_sensor_3
+        <** @description: Which Body (satellite) frame axis does coarse sun sensor 4 correspond to **>
+        SatelliteAxis coarse_sun_sensor_4
+        <** @description: Which Body (satellite) frame axis does coarse sun sensor 5 correspond to **>
+        SatelliteAxis coarse_sun_sensor_5
+        <** @description: Which Body (satellite) frame axis does coarse sun sensor 6 correspond to **>
+        SatelliteAxis coarse_sun_sensor_6
+    }
+
+    <** @description: This corresponds to a half of the struct coordsys_frame_t due to the magnetorquer transformation being a 3D mapping instead of a full 6D mapping **>
+    struct MagnetorquerFrame
+    {
+        <** @description: Which Body (satellite) frame axis does magnetorquer 1 correspond to **>
+        SatelliteAxis magnetorquer_1
+        <** @description: Which Body (satellite) frame axis does magnetorquer 2 correspond to **>
+        SatelliteAxis magnetorquer_2
+        <** @description: Which Body (satellite) frame axis does magnetorquer 3 correspond to **>
+        SatelliteAxis magnetorquer_3
+    }
+
+    <** @description: Get the latest status for the entire coordsys service.
+        @details: id = 0x00000001
+    **>
+    method get_status
+    {
+        out
+        {
+            <** @description: Latest status for the coordsys service **>
+            Status service_status
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Attempt to change the gyroscope coordinate frame. This maps which axis in the Body (satellite) frame each gyroscope corresponds to.
+        @details: id = 0x00000002
+    **>
+    method set_gyroscope_frame
+    {
+        in
+        {
+            <** @description: The desired gyroscope frame to be set **>
+            GyroscopeFrame desired_gyr_frame
+        }
+        out
+        {
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Get the currently active gyroscope coordinate frame. This maps which axis in the Body (satellite) frame each gyroscope corresponds to.
+        @details: id = 0x00000003
+    **>
+    method get_gyroscope_frame
+    {
+        out
+        {
+            <** @description: The currently active gyroscope frame **>
+            GyroscopeFrame active_gyr_frame
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Get the latest status for the gyroscope coordinate frame.
+        @details: id = 0x00000004
+    **>
+    method get_gyroscope_frame_status
+    {
+        out
+        {
+            <** @description: Latest status for the gyroscope frame **>
+            FrameStatus gyr_frame_status
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Attempt to change the magnetometer coordinate frame. This maps which axis in the Body (satellite) frame each magnetometer axis corresponds to.
+        @details: id = 0x00000005
+    **>
+    method set_magnetometer_frame
+    {
+        in
+        {
+            <** @description: The desired magnetometer frame to be set **>
+            MagnetometerFrame desired_mag_frame
+        }
+        out
+        {
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Get the currently active magnetometer coordinate frame. This maps which axis in the Body (satellite) frame each magnetometer axis corresponds to.
+        @details: id = 0x00000006
+    **>
+    method get_magnetometer_frame
+    {
+        out
+        {
+            <** @description: The currently active magnetometer frame **>
+            MagnetometerFrame active_mag_frame
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Get the latest status for the magnetometer coordinate frame.
+        @details: id = 0x00000007
+    **>
+    method get_magnetometer_frame_status
+    {
+        out
+        {
+            <** @description: Latest status for the magnetometer frame **>
+            FrameStatus mag_frame_status
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Attempt to change the coarse sun sensor coordinate frame. This maps which axis in the Body (satellite) frame each coarse sun sensor (css) corresponds to.
+        @details: id = 0x00000008
+    **>
+    method set_coarse_sun_sensor_frame
+    {
+        in
+        {
+            <** @description: The desired coarse sun sensor suite frame to be set **>
+            CoarseSunSensorFrame desired_css_frame
+        }
+        out
+        {
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Get the currently active coarse sun sensor coordinate frame. This maps which axis in the Body (satellite) frame each coarse sun sensor (css) corresponds to.
+        @details: id = 0x00000009
+    **>
+    method get_coarse_sun_sensor_frame
+    {
+        out
+        {
+            <** @description: The currently active coarse sun sensor suite frame **>
+            CoarseSunSensorFrame active_css_frame
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Get the latest status for the coarse sun sensor coordinate frame.
+        @details: id = 0x0000000A
+    **>
+    method get_coarse_sun_sensor_frame_status
+    {
+        out
+        {
+            <** @description: Latest status for the coarse sun sensor frame **>
+            FrameStatus css_frame_status
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Attempt to change the magnetorquer coordinate frame. This maps which axis in the Body (satellite) frame each magnetorquer corresponds to.
+        @details: id = 0x0000000E
+    **>
+    method set_magnetorquer_frame
+    {
+        in
+        {
+            <** @description: The desired magnetorquer frame to be set **>
+            MagnetorquerFrame desired_mtq_frame
+        }
+        out
+        {
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Get the currently active magnetorquer coordinate frame. This maps which axis in the Body (satellite) frame each magnetorquer corresponds to.
+        @details: id = 0x0000000F
+    **>
+    method get_magnetorquer_frame
+    {
+        out
+        {
+            <** @description: The currently active magnetorquer frame **>
+            MagnetorquerFrame active_mtq_frame
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Get the latest status for the magnetorquer coordinate frame.
+        @details: id = 0x00000010
+    **>
+    method get_magnetorquer_frame_status
+    {
+        out
+        {
+            <** @description: Latest status for the magnetorquer frame **>
+            FrameStatus mtq_frame_status
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Save the active coordinate frame configuration to nvm. THIS SHOULD ONLY BE DONE WHEN YOU ARE SURE THE CONFIGURATION HAS GOOD PERFORMANCE.
+        @details: id = 0x00000011
+    **>
+    method save_coordsys_config
+    {
+        out
+        {
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+
+    <** @description: Load the active coordinate frame configuration from nvm.
+        @details: id = 0x00000012
+    **>
+    method load_coordsys_config
+    {
+        out
+        {
+            <** @description: Operation status, can be ES_OK or ES_FAIL **>
+            Result op_result
+        }
+    }
+}

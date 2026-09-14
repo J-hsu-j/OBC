@@ -1,0 +1,30 @@
+/*
+ * Copyright (c) 2020-2022 EnduroSat AD. All rights reserved.
+ *
+ * Contents and presentations are protected world-wide.
+ * Any kind of using, copying etc. is prohibited without prior permission.
+ */
+/*
+ * @addtogroup igrf
+ * @{
+ *
+ * @file  igrf_config.h
+ * @brief IGRF magnetic field model configurations.
+ *
+ * @}
+ */
+#ifndef IGRF_CONFIG_H_
+#define IGRF_CONFIG_H_
+
+#define IGRF_TEST_ON_PC (0)     // 0 when in OBC application
+                                // 1 when testing on PC
+#define IGRF_USE_TYPE_FLOAT (0) // 0 for double
+                                // 1 for float
+
+#ifdef __GNUC__
+#define IGRF_PACK(__declaration__) __declaration__ __attribute__((__packed__))
+#elif _MSC_VER
+#define IGRF_PACK(__declaration__) __pragma(pack(push, 1)) __declaration__ __pragma(pack(pop))
+#endif
+
+#endif /* IGRF_CONFIG_H_ */

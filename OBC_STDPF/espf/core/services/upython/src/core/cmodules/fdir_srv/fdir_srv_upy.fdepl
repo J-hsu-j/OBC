@@ -1,0 +1,6 @@
+package org.endurosat.deploy
+
+import "../../../../../../fidl/spec/PlatformSpec.fdepl"
+import "../../../../../../fidl/obc/fp/fdir_srv.fidl"
+
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.fdir_srv            { IsClient = true }

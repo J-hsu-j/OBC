@@ -1,0 +1,989 @@
+package endurosat.macif
+
+<** @description: EPS_III_Expander interface
+    @details: id = 0xAC
+**>
+
+interface eps_iii_expander
+{
+    version { major 2 minor 0 }
+    
+    <** @description: Command status **>
+    enumeration CommandStatus
+    {
+        <** @description: The command was successfully executed **>
+        SUCCESS
+        
+        <** @description: The command was failed during execution  **>
+        FAIL
+        
+        <** @description: The command was successfully executed, but not all data was gathered  **>
+        FAIL_GATHERING_DATA
+    }
+
+    <** @description: Read enable status **>
+    enumeration ReadEnDftStatus
+    {
+        <** @description: The status is OFF **>
+        OFF
+        
+        <** @description: The status is ON **>
+        ON
+        
+        <** @description: The status is OFF for time **>
+        OFF_FOR_TIME
+        
+        <** @description: The status is ON for time **>
+        ON_FOR_TIME
+        
+        <** @description: The Toggle functionality is currently busy, current status is OFF_FOR_TIME  **>
+        TOGGLE_BUSY_OFF_FOR_TIME
+        
+        <** @description: The Toggle functionality is currently busy, current status is ON_FOR_TIME  **>
+        TOGGLE_BUSY_ON_FOR_TIME
+        
+        <** @description: The default status is OFF **>
+        DEFAULT_OFF
+        
+        <** @description: The default status is ON **>
+        DEFAULT_ON
+        
+        <** @description: The default status is to keep last known state while active **>
+        DEFAULT_KEEP_LAST
+        
+        <** @description: The status is undefined **>
+        WRONG_INPUT
+    }
+    
+        <** @description: Read level state **>
+    enumeration ReadLvlState
+    {
+        <** @description: The level is Low **>
+        LOW
+        
+        <** @description: The level is High **>
+        HIGH
+        
+        <** @description: The level was not concluded as high or low  **>
+        UNKNOWN
+    }
+    
+    <** @description: Seconds converted into days, hours, minutes, and seconds **>
+    struct UptimeConverted
+    {
+        <** @description: Number of days since last power up **>
+        UInt16 days
+        
+        <** @description: Number of hours since last power up **>
+        UInt8 hours
+        
+        <** @description: Number of minutes since last power up **>
+        UInt8 minutes
+        
+        <** @description: Number of seconds since last power up **>
+        UInt8 seconds
+    }
+    
+    <** @description: Channel option **>
+    enumeration ChannelOpt
+    {
+        <** @description: Read current status **>
+        READ_STATUS
+        
+        <** @description: Set status to OFF  **>
+        SET_OFF
+        
+        <** @description: Set status to ON  **>
+        SET_ON
+        
+        <** @description: Toggle the status for the defined time in seconds  **>
+        TOGGLE_FOR_TIME
+        
+        <** @description: Read the default status  **>
+        READ_DEFAULT
+        
+        <** @description: Set the default status to OFF  **>
+        SET_DEFAULT_OFF
+        
+        <** @description: Set the default status to ON  **>
+        SET_DEFAULT_ON
+        
+        <** @description: Set the default status to ON  **>
+        SET_DEFAULT_KEEP_LAST
+    }
+    
+    <** @description: Voltage and Current measurement **>
+    struct VoltAmps
+    {
+        <** @description: Voltage [mV] **>
+        UInt16 voltage
+        
+        <** @description: Current [mA] **>
+        Int16 current
+    }
+    
+    <** @description: Common measurement **>
+    struct CommonMesurments
+    {
+        <** @description: MCU Voltage [mV]**>
+        UInt16 mcu_volt
+        
+        <** @description: MCU Temperature [mdegC]**>
+        Int32 mcu_temp
+        
+        <** @description: BUS Voltage [mV]**>
+        UInt16 sys_bus_volt
+    }
+    
+    <** @description: Voltage and Current measurements **>
+    struct CurrentLimiters
+    {
+        <** @description: Voltage and Current measurements for Channel Low voltage pins H1 47 and H1 48  **>
+        VoltAmps l_h1_47_48
+        
+        <** @description: Voltage and Current measurements for Channel High voltage pins H1 47 and H1 48 **>
+        VoltAmps h_h1_47_48
+        
+        <** @description: Voltage and Current measurements for Channel Low voltage pins H1 49 and H1 50 **>
+        VoltAmps l_h1_49_50
+        
+        <** @description: Voltage and Current measurements for Channel High voltage pins H1 49 and H1 50 **>
+        VoltAmps h_h1_49_50
+        
+        <** @description: Voltage and Current measurements for Channel Low voltage pins H1 51 and H1 52 **>
+        VoltAmps l_h1_51_52
+        
+        <** @description: Voltage and Current measurements for Channel High voltage pins H1 51 and H1 52 **>
+        VoltAmps h_h1_51_52
+        
+        <** @description: Voltage and Current measurements for Release 1 **>
+        VoltAmps release1
+        
+        <** @description: Voltage and Current measurements for Release 2 **>
+        VoltAmps release2
+        
+        <** @description: Voltage and Current measurements for Release 3 **>
+        VoltAmps release3
+        
+        <** @description: Voltage and Current measurements for Release 4 **>
+        VoltAmps release4
+        
+        <** @description: Voltage and Current measurements for Channel 3.3V Interconnection **>
+        VoltAmps interc_3v3
+        
+        <** @description: Voltage and Current measurements for Channel 5V Interconnection **>
+        VoltAmps interc_5v
+        
+        <** @description: Voltage and Current measurements for Channel 12V Interconnection **>
+        VoltAmps interc_12v
+        
+        <** @description: Voltage and Current measurements for Battery Bus **>
+        VoltAmps interc_battery
+    }
+    
+    <** @description: The level state of all Feedbacks **>
+    struct Feedback
+    {
+        <** @description: Returned status for Up feedback 1**>
+        ReadLvlState feedback_1_1
+            
+        <** @description: Returned status for Low feedback 1**>
+        ReadLvlState feedback_1_2
+            
+        <** @description: Returned status for Up feedback 2**>
+        ReadLvlState feedback_2_1
+            
+        <** @description: Returned status for Low feedback 2**>
+        ReadLvlState feedback_2_2
+            
+        <** @description: Returned status for Up feedback 3**>
+        ReadLvlState feedback_3_1
+            
+        <** @description: Returned status for Low feedback 3**>
+        ReadLvlState feedback_3_2
+            
+        <** @description: Returned status for Up feedback 4**>
+        ReadLvlState feedback_4_1
+            
+        <** @description: Returned status for Low feedback 4**>
+        ReadLvlState feedback_4_2
+    }
+    
+    <** @description: The level state of all General inputs **>
+    struct GeneralInput
+    {
+    
+        <** @description: Returned status for General Output 1**>
+        ReadLvlState general_input_1
+            
+        <** @description: Returned status for General Output 2**>
+        ReadLvlState general_input_2
+            
+        <** @description: Returned status for General Output 3**>
+        ReadLvlState general_input_3
+            
+        <** @description: Returned status for General Output 4**>
+        ReadLvlState general_input_4
+            
+        <** @description: Returned status for General Output 5**>
+        ReadLvlState general_input_5
+            
+        <** @description: Returned status for General Output 6**>
+        ReadLvlState general_input_6
+            
+        <** @description: Returned status for General Output 7**>
+        ReadLvlState general_input_7
+            
+        <** @description: Returned status for General Output 8**>
+        ReadLvlState general_input_8
+        
+    }
+    
+    <** @description: The status of All Feedback channels **>
+    struct DigitalOutputs
+    {
+        <** @description: Status of output Channel low voltage pins H1 47 and H1 48**>
+        ReadEnDftStatus lv_h1_47_48
+        
+        <** @description: Status of output Channel High voltage pins H1 47 and H1 48**>
+        ReadEnDftStatus hv_h1_47_48
+        
+        <** @description: Status of output Channel low voltage pins H1 49 and H1 50**>
+        ReadEnDftStatus lv_h1_49_50
+        
+        <** @description: Status of output Channel High voltage pins H1 49 and H1 50**>
+        ReadEnDftStatus hv_h1_49_50
+        
+        <** @description: Status of output Channel low voltage pins H1 51 and H1 52**>
+        ReadEnDftStatus lv_h1_51_52
+        
+        <** @description: Status of output Channel High voltage pins H1 51 and H1 52**>
+        ReadEnDftStatus hv_h1_51_52
+        
+        <** @description: Status of output Channel Battery**>
+        ReadEnDftStatus interconnect_battery
+        
+        <** @description: Status of output Channel 3.3V Interconnect**>
+        ReadEnDftStatus interconnect_3v3
+        
+        <** @description: Status of output Channel 5v Interconnect**>
+        ReadEnDftStatus interconnect_5v
+        
+        <** @description: Status of output Channel 12v Interconnect**>
+        ReadEnDftStatus interconnect_12v
+        
+        <** @description: Status of output Channel General output 1**>
+        ReadEnDftStatus general_output_1
+        
+        <** @description: Status of output Channel General output 2**>
+        ReadEnDftStatus general_output_2
+        
+        <** @description: Status of output Channel General output 3**>
+        ReadEnDftStatus general_output_3
+        
+        <** @description: Status of output Channel General output 4**>
+        ReadEnDftStatus general_output_4
+        
+        <** @description: Status of output Channel General output 5**>
+        ReadEnDftStatus general_output_5
+        
+        <** @description: Status of output Channel General output 6**>
+        ReadEnDftStatus general_output_6
+        
+        <** @description: Status of output Channel General output 7**>
+        ReadEnDftStatus general_output_7
+        
+        <** @description: Status of output Channel General output 8**>
+        ReadEnDftStatus general_output_8
+        
+        <** @description: Status of output Channel Release 1 **>
+        ReadEnDftStatus release_1
+        
+        <** @description: Status of output Channel Release 2 **>
+        ReadEnDftStatus release_2
+        
+        <** @description: Status of output Channel Release 3 **>
+        ReadEnDftStatus release_3
+        
+        <** @description: Status of output Channel Release 4 **>
+        ReadEnDftStatus release_4
+        
+        <** @description: Status of output Channel Release A1 **>
+        ReadEnDftStatus release_a1
+        
+        <** @description: Status of output Channel Release B1 **>
+        ReadEnDftStatus release_b1
+        
+        <** @description: Status of output Channel Release A2 **>
+        ReadEnDftStatus release_a2
+        
+        <** @description: Status of output Channel Release B2 **>
+        ReadEnDftStatus release_b2
+        
+        <** @description: Status of output Channel Release A3 **>
+        ReadEnDftStatus release_a3
+        
+        <** @description: Status of output Channel Release B3 **>
+        ReadEnDftStatus release_b3
+        
+        <** @description: Status of output Channel Release A4 **>
+        ReadEnDftStatus release_a4
+        
+        <** @description: Status of output Channel Release B4 **>
+        ReadEnDftStatus release_b4
+    }
+    
+    <** @description: Reading all Feedback, general outputs and inputs, voltage and current measurements
+    @details: id = 0x00000000**>
+    method get_telemetry
+    {
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: number of seconds since last power up **>
+            UInt32  uptime_in_seconds
+            
+            <** @description: Same as uptimeInSeconds but split into human readable values  **>
+            UptimeConverted uptime_converted
+            
+            <** @description: MCU measurements voltage and temperature  **>
+            CommonMesurments common
+            
+            <** @description: State of All output Channels **>
+            DigitalOutputs outputs
+            
+            <** @description: Status of All general inputs Channels **>
+            GeneralInput general_inputs
+            
+            <** @description: Status of All feedbacks **>
+            Feedback feedbacks
+            
+            <** @description: Voltage and Current measurements from all Current limiters **>
+            CurrentLimiters volt_amp_mesurments
+        }
+    }
+    
+    <** @description: Options for Read or Clear **>
+    enumeration ReadClearOpt
+    {
+        <** @description: Option to read the current data from the source **>
+        READ
+        
+        <** @description: Option to clear to default values the current data on the source **>
+        CLEAR
+    }
+    
+    <** @description: Initialization status **>
+    enumeration InitStatus
+    {
+        <** @description: The initialization was successful **>
+        SUCCESS
+        
+        <** @description: The initialization Failed **>
+        FAIL
+        
+        <** @description: The initialization status is unsupported **>
+        UNSUPPORTED
+        
+        <** @description: The initialization status is unknown **>
+        UNKNOWN
+    }
+    
+    <** @description: Oscillator Initialization source **>
+    enumeration OscSource
+    {
+        <** @description: The Oscillator source is internal **>
+        INTERNAL
+        
+        <** @description: The Oscillator source is external **>
+        EXTERNAL
+        
+        <** @description: The Oscillator source is unknown **>
+        UNKNOWN
+    }
+    
+    <** @description: Minimum and maximum Voltage measurements **>
+    struct MinMaxVolt
+    {
+        <** @description: The minimum value measured from the last measurement data clear [mV]**>
+        UInt16 min_voltage
+        
+        <** @description: The maximum value measured from the last measurement data clear [mV]**>
+        UInt16 max_voltage
+    }
+    
+        <** @description: Minimum and maximum Temperature measurements **>
+    struct MinMaxTemp
+    {
+        <** @description: The minimum value measured from the last measurement data clear [mdegC]**>
+        Int32 min_temp
+        
+        <** @description: The maximum value measured from the last measurement data clear [mdegC]**>
+        Int32 max_temp
+    }
+    
+    <** @description: Minimum and maximum Voltage and Current measurements **>
+    struct MinMaxVA
+    {
+        <** @description: The minimum Voltage measured from the last measurement data clear [mV] **>
+        UInt16 min_voltage
+        
+        <** @description: The maximum Voltage measured from the last measurement data clear [mV]**>
+        UInt16 max_voltage
+        
+        <** @description: The minimum Current measured from the last measurement data clear [mA]**>
+        Int16 min_current
+        
+        <** @description: The maximum Current measured from the last measurement data clear [mA]**>
+        Int16 max_current
+    }
+    
+    <** @description: Current status of the channel. OFF, ON or unknown**>
+    enumeration OnOffStatus
+    {
+        <** @description: Current status is inactive **>
+        OFF
+        
+        <** @description: Current status is active **>
+        ON
+        
+        <** @description: Current status is unknown **>
+        UNKNOWN
+    }
+    
+    <** @description: Reading all minimum and maximum values from the last measurement data clear
+    @details: id = 0x00000010**>
+    method get_telemetry_statistics
+    {
+        in
+        {
+            <** @description: Choose an option, to read or clear the data **>
+            ReadClearOpt statistic_option
+        }
+    
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: Current reset statistics jumper **>
+            OnOffStatus reset_jumer
+
+            <** @description: Current Oscillator source **>
+            OscSource oscillator_src
+            
+            <** @description: Initialization status of the NVM **>
+            InitStatus nvm_init_sts
+            
+            <** @description: Initialization status of the CAN **>
+            InitStatus can_init_sts
+
+            <** @description: The minimum and maximum Temperature measured from the MCU **>
+            MinMaxTemp mcu_temp_min_max
+            
+            <** @description: The minimum and maximum Voltage measured from the MCU **>
+            MinMaxVolt mcu_volt_min_max
+            
+            <** @description: The minimum and maximum Voltage measured on the V_BUS **>
+            MinMaxVolt sys_bus_volt_min_max
+            
+            <** @description: The minimum and maximum Voltage and Current measured on the high H1 47/48 pin **>
+            MinMaxVA h_h1_47_48_min_max
+            
+            <** @description: The minimum and maximum Voltage and Current measured on the low H1 47/48 pin **>
+            MinMaxVA l_h1_47_48_min_max
+            
+            <** @description: The minimum and maximum Voltage and Current measured on the high H1 49/50 pin **>
+            MinMaxVA h_h1_49_50_min_max
+            
+            <** @description: The minimum and maximum Voltage and Current measured on the low H1 49/50 pin **>
+            MinMaxVA l_h1_49_50_min_max
+            
+            <** @description: The minimum and maximum Voltage and Current measured on the high H1 51/52 pin **>
+            MinMaxVA h_h1_51_52_min_max
+            
+            <** @description: The minimum and maximum Voltage and Current measured on the low H1 51/52 pin **>
+            MinMaxVA l_h1_51_52_min_max
+            
+            <** @description: The minimum and maximum Voltage and Current measured on the Release1 **>
+            MinMaxVA release1_min_max
+            
+            <** @description: The minimum and maximum Voltage and Current measured on the Release2 **>
+            MinMaxVA release2_min_max
+            
+            <** @description: The minimum and maximum Voltage and Current measured on the Release3 **>
+            MinMaxVA release3_min_max
+            
+            <** @description: The minimum and maximum Voltage and Current measured on the Release4 **>
+            MinMaxVA release4_min_max
+            
+            <** @description: The minimum and maximum Voltage and Current measured on the Interconnection 5V **>
+            MinMaxVA interconect_3v3_min_max
+            
+            <** @description: The minimum and maximum Voltage and Current measured on the Interconnection 5V **>
+            MinMaxVA interconect_5v_min_max
+            
+            <** @description: The minimum and maximum Voltage and Current measured on the Interconnection 12V **>
+            MinMaxVA interconect_12v_min_max
+            
+            <** @description: The minimum and maximum Voltage and Current measured on the Interconnection Battery **>
+            MinMaxVA interconect_bat_min_max
+        }
+    }
+    
+    
+    <** @description: High and low H1 Channel ID **>
+    enumeration HLVChannelId
+    {
+        <** @description: Low Voltage channel on H1 pins 47 and 48 **>
+        LV_H1_47_48
+        
+        <** @description: High Voltage channel on H1 pins 47 and 48 **>
+        HV_H1_47_48
+        
+        <** @description: Low Voltage channel on H1 pins 49 and 50 **>
+        LV_H1_49_50
+        
+        <** @description: High Voltage channel on H1 pins 49 and 50 **>
+        HV_H1_49_50
+        
+        <** @description: Low Voltage channel on H1 pins 51 and 52 **>
+        LV_H1_51_52
+        
+        <** @description:  High Voltage channel on H1 pins 51 and 52 **>
+        HV_H1_51_52
+    }
+        
+    <** @description: H1 bus control for pins from 47 to 52 
+    @details: id = 0x00000020**>
+    method h1_channels_control 
+    {
+        in
+        {
+            <** @description: Select a channel. LV = Low Voltage, HV = High Voltage.  **>
+            HLVChannelId h1_channel
+            
+            <** @description: Select an option **>
+            ChannelOpt h1_option
+
+            <** @description: Input time in seconds (available only with TOGGLE_FOR_TIME option) **>
+            UInt16 h1_time
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: Returned status **>
+            ReadEnDftStatus h1_status
+            
+            <** @description: The time in seconds remaining for the currently active "for time" option **>
+            UInt16 h1_timer
+            
+            <** @description: Voltage and Current measurements for Selected channel **>
+            VoltAmps h1_mesurment
+        }
+    }
+    
+    
+    <** @description: General Output Channel ID **>
+    enumeration GPIOChannelId
+    {
+        <** @description: General Output channel 1 **>
+        GPIO_1
+        
+        <** @description: General Output channel 2 **>
+        GPIO_2
+        
+        <** @description: General Output channel 3 **>
+        GPIO_3
+        
+        <** @description: General Output channel 4 **>
+        GPIO_4
+        
+        <** @description: General Output channel 5 **>
+        GPIO_5
+        
+        <** @description: General Output channel 6 **>
+        GPIO_6
+        
+        <** @description: General Output channel 7 **>
+        GPIO_7
+        
+        <** @description: General Output channel 8 **>
+        GPIO_8
+    }
+    
+    <** @description: General Outputs control for channels 1 to 8
+    @details: id = 0x00000030**>
+    method gpio_control
+    {
+        in
+        {
+            <** @description: Select a channel **>
+            GPIOChannelId go_channel
+            
+            <** @description: Select an option **>
+            ChannelOpt go_option
+            
+            
+            <** @description: Toggle time in seconds (optional only with TOGGLE_FOR_TIME option) **>
+            UInt16 go_time
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: Return the input status **>
+            ReadEnDftStatus gpio_input_state
+            
+            <** @description: The time in seconds remaining for the currently active "for time" option **>
+            UInt16 go_timer
+            
+            <** @description: Return the output status **>
+            ReadLvlState gpio_output_state
+        }
+    }
+    
+    <** @description: Interconnection Channel ID **>
+    enumeration IntercChannelId
+    {
+        <** @description: Interconnection channel for 3V3 **>
+        INTERCONNECT_3V3
+        
+        <** @description: Interconnection channel for 5V **>
+        INTERCONNECT_5V
+        
+        <** @description: Interconnection channel for 12V **>
+        INTERCONNECT_12V
+        
+        <** @description: Interconnection channel for Battery **>
+        INTERCONNECT_BATTERY
+    }
+    
+    <** @description: Interconnection channel control 
+    @details: id = 0x00000040**>
+    method interconnect_control
+    {
+        in
+        {
+            <** @description: Select a channel **>
+            IntercChannelId ic_channel
+        
+            <** @description: Select an option **>
+            ChannelOpt ic_option
+
+            <** @description: Input time in seconds (optional only with TOGGLE_FOR_TIME option) **>
+            UInt16 ic_time
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: Returned status **>
+            ReadEnDftStatus interc_status
+            
+            <** @description: The time in seconds remaining for the currently active "for time" option **>
+            UInt16 timer
+            
+            <** @description: Voltage and Current measurements for Selected channel **>
+            VoltAmps interc_mesurment
+        }
+    }
+    
+    <** @description: Release connector ID **>
+    enumeration R5VChannelId
+    {
+        <** @description: Release connector 1 5V **>
+        RELEASE_CONNECTOR_1_5V
+        
+        <** @description: Release connector 2 5V **>
+        RELEASE_CONNECTOR_2_5V
+        
+        <** @description: Release connector 3 5V **>
+        RELEASE_CONNECTOR_3_5V
+        
+        <** @description: Release connector 4 5V **>
+        RELEASE_CONNECTOR_4_5V
+    }
+    
+        <** @description: Release connector ID **>
+    enumeration RChannelId
+    {
+        <** @description: Release connector 1 channel A **>
+        RELEASE_CONNECTOR_1_A
+        
+        <** @description: Release connector 1 channel B **>
+        RELEASE_CONNECTOR_1_B
+        
+        <** @description: Release connector 1 channel A and B **>
+        RELEASE_CONNECTOR_1_AB
+        
+        <** @description: Release connector 2 channel A **>
+        RELEASE_CONNECTOR_2_A
+        
+        <** @description: Release connector 2 channel B **>
+        RELEASE_CONNECTOR_2_B
+        
+        <** @description: Release connector 2 channel A and B **>
+        RELEASE_CONNECTOR_2_AB
+        
+        <** @description: Release connector 3 channel A **>
+        RELEASE_CONNECTOR_3_A
+        
+        <** @description: Release connector 3 channel B **>
+        RELEASE_CONNECTOR_3_B
+        
+        <** @description: Release connector 3 channel A and B **>
+        RELEASE_CONNECTOR_3_AB
+        
+        <** @description: Release connector 4 channel A **>
+        RELEASE_CONNECTOR_4_A
+        
+        <** @description: Release connector 4 channel B **>
+        RELEASE_CONNECTOR_4_B
+        
+        <** @description: Release connector 4 channel A and B **>
+        RELEASE_CONNECTOR_4_AB
+    }
+    
+    <** @description: Read status **>
+    enumeration ReadRlStatus
+    {
+        <** @description: The status is OFF **>
+        OFF
+        
+        <** @description: The status is ON for time **>
+        ON_FOR_TIME
+        
+        <** @description: The status is with wrong input **>
+        WRONG_INPUT
+    }
+    
+    <** @description: Release Channel ID **>
+    enumeration RChannelOpt
+    {
+        <** @description: REad the current status **>
+        READ_STATUS
+        
+        <** @description: Set A channel OFF  **>
+        SET_OFF
+        
+        <** @description: Set A channel ON for the specific time  **>
+        SET_ON_FOR_TIME
+        
+        <** @description: Set A channel ON for 18 hours and 10 minutes  **>
+        SET_ON_FOR_TIME_MAX
+    }
+    
+    <** @description: Release A or B connector status **>
+    struct ReleaseSts
+    {
+        <** @description: Returned status from the Release **>
+        ReadRlStatus rl_a_b_status
+        
+        <** @description: The time in seconds remaining for the currently active "for time" option for Release **>
+        UInt16 rl_timer
+    }
+    
+    <** @description: Release 5V status and measurements **>
+    struct Release5vSts
+    {
+        <** @description: Returned status from the Release connector 5v pin**>
+        ReadEnDftStatus rl_5v_status
+        
+        <** @description: The time in seconds remaining for the currently active "for time" option**>
+        UInt16 rl_5v_timer
+        
+        <** @description: Release connector 5v pin Voltage [mV] **>
+        UInt16 rl_voltage
+        
+        <** @description: Release connector 5v pin Current [mA] **>
+        Int16 rl_current
+    }
+    
+    <** @description: Release control 5V
+    @details: id = 0x00000050**>
+    method release_5v
+    {
+        in
+        {
+            <** @description: Select a channel **>
+            R5VChannelId rl_5v_channel
+            
+            <** @description: Select an option (option SET_ON_FOR_TIME_MAX make the ON for 18 hours and 10 minutes) **>
+            ChannelOpt rl_5v_option
+            
+            <** @description: Input time in seconds (optional only with SET_ON_FOR_TIME option) **>
+            UInt16 rl_5v_time
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: Returned status from Release enable **>
+            Release5vSts rl_5v_data
+        }
+    }
+    
+    <** @description: Release connectors control from 1 to 4 
+    @details: id = 0x00000060**>
+    method release_control
+    {
+        in
+        {
+            <** @description: Select a channel **>
+            RChannelId rl_channel
+        
+            <** @description: Select an option **>
+            RChannelOpt rl_option
+            
+            <** @description: Input time in seconds (optional only with TOGGLE_FOR_TIME option) **>
+            UInt16 rl_time
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+        
+            <** @description: Returned status from Release A **>
+            ReleaseSts a_status
+            
+            <** @description: Returned status from Release B **>
+            ReleaseSts b_status
+            
+            <** @description: Returned status from Feedback 1 **>
+            ReadLvlState fb_1_state
+            
+            <** @description: Returned status from Feedback 2 **>
+            ReadLvlState fb_2_state
+            
+            <** @description: Returned status from Release enable **>
+            Release5vSts rl_5v_data
+        }
+    }
+    
+    <** @description: Choose Current option**>
+    enumeration AmpOptions
+    {
+        <** @description: Option to read the current data from the source **>
+        READ_CURRENT_LIMIT
+    
+        <** @description: Current limit option 0.88 Amps**>
+        SET_AMP_LIMIT_A88
+        
+        <** @description: Current limit option 1 Amps**>
+        SET_AMP_LIMIT_1A
+        
+        <** @description: Current limit option 2 Amps**>
+        SET_AMP_LIMIT_2A
+        
+        <** @description: Current limit option 3 Amps**>
+        SET_AMP_LIMIT_3A
+    }
+    
+    <** @description: Return current limit options**>
+    enumeration AmpOptionsRtrn
+    {
+        <** @description: No valid option was selected **>
+        WRONG_INPUT
+    
+        <** @description: Current limit option 0.88 Amps**>
+        SET_AMP_LIMIT_A88
+        
+        <** @description: Current limit option 1 Amps**>
+        SET_AMP_LIMIT_1A
+        
+        <** @description: Current limit option 2 Amps**>
+        SET_AMP_LIMIT_2A
+        
+        <** @description: Current limit option 3 Amps**>
+        SET_AMP_LIMIT_3A
+    }
+    
+    <** @description: Low Voltage Current limiter ID**>
+    enumeration CurrentLimiterID
+    {
+        <** @description: Current limiter for Low Voltage on H1 pins 47 and 48 **>
+        CL_LV_H1_47_48
+        
+        <** @description: Current limiter for Low Voltage on H1 pins 49 and 50 **>
+        CL_LV_H1_49_50
+        
+        <** @description: Current limiter for Low Voltage on H1 pins 51 and 52 **>
+        CL_LV_H1_51_52
+        
+        <** @description: Current limiter for Release 1 **>
+        CL_RELEASE_1
+        
+        <** @description: Current limiter for Release 2 **>
+        CL_RELEASE_2
+        
+        <** @description: Current limiter for Release 3 **>
+        CL_RELEASE_3
+        
+        <** @description: Current limiter for Release 4 **>
+        CL_RELEASE_4
+        
+        <** @description: Current limiter for Interconnection channel 3.3V **>
+        CL_INTERC_3V3
+        
+        <** @description: Current limiter for Interconnection channel 5V**>
+        CL_INTERC_5V
+        
+        <** @description: Current limiter for Interconnection channel 12V**>
+        CL_INTERC_12V
+        
+    }
+    
+    <** @description: Current limiter Amp limit settings 
+    @details: id = 0x00000070**>
+    method current_limiter_amp_settings
+    {
+        in
+        {
+            <** @description: Choose Current Limiter ID **>
+            CurrentLimiterID cl_channel_id
+            
+            <** @description: Choose Current limiter Amp option ( this settings is available only when SET option is selected ) **>
+            AmpOptions set_setting
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: Currently set option on the module for the selected channel**>
+            AmpOptionsRtrn get_setting
+        }
+    }
+
+    <** @description: Reading the active Interface (FIDL) version loaded on the module 
+    @details: id = 0x00003000**>
+    method FIDL_version
+    {
+       
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: The current major version of the interface (FIDL) **>
+            UInt8 v_major
+
+            <** @description: The current minor version of the interface (FIDL) **>
+            UInt8 v_minor
+        }
+    }
+}

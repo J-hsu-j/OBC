@@ -1,0 +1,44 @@
+---
+sdr_sm:
+    states:
+        - inactive:
+            transitions:
+                - booting:
+                    - { event: boot, guard: is_device_init }
+            attributes:
+               on_entry: true
+               on_exit: false
+        - booting:
+            transitions:
+                - syncing:
+                    - { event: "__periodic", guard: is_valid_response }
+                - "__self":
+                    - { event: "__periodic", guard: is_poll_time_elapsed, action: poll_device }
+            attributes:
+               on_entry: true
+               on_exit: true
+        - syncing:
+            transitions:
+                - ready:
+                    - { event: "__periodic", guard: is_data_ready_to_sync, action: sync_time }
+                - ready:
+                    - { event: "__periodic", guard: is_sync_timeout_elapsed}
+            attributes:
+               on_entry: true
+               on_exit: true
+        - ready:
+            transitions:
+                - busy:
+                    - { event: "__periodic", guard: is_operation_pending }
+            attributes:
+               on_entry: true
+               on_exit: false
+        - busy:
+            transitions:
+                - ready:
+                    - { event: "__periodic", guard: is_operation_executed }
+            attributes:
+               on_entry: true
+               on_exit: false
+    attributes:
+        initial: inactive

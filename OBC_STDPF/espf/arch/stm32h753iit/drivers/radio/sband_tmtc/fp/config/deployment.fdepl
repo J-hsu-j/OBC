@@ -1,0 +1,63 @@
+package org.endurosat.deploy
+
+import "../../../../../../../../espf/core/fidl/spec/PlatformSpec.fdepl"
+
+import "../../../../../../../../espf/core/fidl/sband_tmtc/fp/S_Band_TMTC.fidl"
+
+// Client generation
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.SBAND_TMTC { 
+	IsClient = true
+	 
+	method GetCapabilities { InUse = false }
+	method ReadUpTime { InUse = true }
+	method ReadHWHealth { InUse = false }
+	method ReadErrorCounters { InUse = true }
+	method ReadPipeModeCfg { InUse = false }
+	method WritePipeModeCfg { InUse = false }
+	method WriteCipherKeySlot { InUse = false }
+	method ReadCipherKeySlotStatus { InUse = false }
+	method EraseCipherKeySlot { InUse = false }
+	method ReadPortCfg { InUse = false }
+	method WritePortCfg { InUse = false }
+	method ReadLoggerCfg { InUse = false }
+	method WriteLoggerCfg { InUse = false }
+	method TransmitData { InUse = false }
+	method LoadPresetCfg { InUse = false }
+	method Ping { InUse = false }
+	method SetDualPAMode { InUse = false }
+	method GetDualPAMode { InUse = false }
+	method SetTestPacketState { InUse = false }
+	method ReadRfFreqCfg { InUse = false }
+	method WriteRfFreqCfg { InUse = false }
+	method Reset { InUse = false }
+	method ResetErrorCounters { InUse = false }
+	method ReadSatCfg { InUse = false }
+	method WriteSatCfg { InUse = false }
+	method ReadTC { InUse = false }
+	method ClearTC { InUse = false }
+	method ReadTempSensors { InUse = false }
+	method Ignore_PA_TS { InUse = false }
+	method ReadRadioCRCCfg { InUse = false }
+	method WriteRadioCRCCfg { InUse = false }
+	method WriteRadioPacketFecHdlc { InUse = false }
+	method ReadRadioPacketFecHdlc { InUse = false }
+	method GetPacketCounters { InUse = true }
+	method ReadRadioErrors { InUse = false }
+	method GetModulation { InUse = false }
+	method SetModulation { InUse = false }
+	method GetBaudrate { InUse = false }
+	method SetBaudrate { InUse = false }
+	method GetFreqShaping { InUse = false }
+	method SetFreqShaping { InUse = false }
+	method GetStreamMode { InUse = false }
+	method SetStreamMode { InUse = false }
+	method GetTargetPower { InUse = false }
+	method SetTargetPower { InUse = false }
+	method GetPacketScrambler { InUse = false }
+	method SetPacketScrambler { InUse = false }
+	method GetFreqCorrection { InUse = false }
+	method SetFreqCorrection { InUse = false }
+	method GetKeyUseCount { InUse = false }
+	method GetCryptographyControl { InUse = false }
+	method SetCryptographyControl { InUse = false }	 
+}

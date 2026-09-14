@@ -1,0 +1,59 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/csp_service.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.macif.csp_service as csp_service_Definitions {
+
+	enumeration StandardResult {
+		AlarmInvalidRegexValues = {
+			"ERROR", "INVALID_ARGS", "NOT_SUPPORTED"
+		}
+	}
+
+	struct debug_levels {
+		CSP_ERROR_FLAG {
+			DisplayName = "CSP ERROR FLAG"
+		}
+		CSP_WARN_FLAG {
+			DisplayName = "CSP WARN FLAG"
+		}
+		CSP_INFO_FLAG {
+			DisplayName = "CSP INFO FLAG"
+		}
+		CSP_BUFFER_FLAG {
+			DisplayName = "CSP BUFFER FLAG"
+		}
+		CSP_PACKET_FLAG {
+			DisplayName = "CSP PACKET FLAG"
+		}
+		CSP_PROTOCOL_FLAG {
+			DisplayName = "CSP PROTOCOL FLAG"
+		}
+		CSP_LOCK_FLAG {
+			DisplayName = "CSP LOCK FLAG"
+		}
+	}
+
+	method get_trace_debug_level {
+		out {
+			trace_debug_level {
+				DisplayName = "Trace Debug Level"
+			}
+		}
+	}
+
+	method set_trace_debug_level {
+		in {
+			trace_debug_level {
+				DisplayName = "Trace Debug Level"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+}

@@ -1,0 +1,208 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/fdir_srv.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.macif.fdir_srv as fdir_srv_Definitions {
+
+	enumeration return_status {
+		AlarmInvalidRegexValues = {
+			"ERROR"
+		}
+	}
+
+	method get_system_fdir_level {
+		out {
+			status {
+				DisplayName = "Status"
+			}
+			fdir_level {
+				DisplayName = "FDIR Level"
+			}
+		}
+	}
+
+	method get_agent_fdir_level {
+		in {
+			agent_id {
+				DisplayName = "Agent ID"
+			}
+		}
+		out {
+			status {
+				DisplayName = "Status"
+			}
+			fdir_level {
+				DisplayName = "FDIR Level"
+			}
+		}
+	}
+
+	method get_detection_for_fault {
+		in {
+			fault_id {
+				DisplayName = "Fault ID"
+			}
+		}
+		out {
+			status {
+				DisplayName = "Status"
+			}
+			detection_enabled {
+				DisplayName = "Detection Enabled"
+			}
+		}
+	}
+
+	method set_detection_for_fault {
+		in {
+			fault_id {
+				DisplayName = "Fault ID"
+			}
+			set_detection_enabled {
+				DisplayName = "Set Detection Enabled"
+			}
+		}
+		out {
+			status {
+				DisplayName = "Status"
+			}
+			detection_enabled {
+				DisplayName = "Detection Enabled"
+			}
+		}
+	}
+
+	method set_detection_for_all_faults {
+		in {
+			set_detection_enabled {
+				DisplayName = "Set Detection Enabled"
+			}
+		}
+		out {
+			status {
+				DisplayName = "Status"
+			}
+			fault_id {
+				DisplayName = "Fault ID"
+			}
+		}
+	}
+
+	method get_min_active_fdir {
+		out {
+			status {
+				DisplayName = "Status"
+			}
+			fdir_level_set {
+				DisplayName = "FDIR Level Set"
+			}
+		}
+	}
+
+	method set_min_active_fdir {
+		in {
+			fdir_level {
+				DisplayName = "FDIR Level"
+			}
+		}
+		out {
+			status {
+				DisplayName = "Status"
+			}
+			fdir_level_set {
+				DisplayName = "FDIR Level Set"
+			}
+		}
+	}
+
+	method get_fault_user_clear_level {
+		out {
+			status {
+				DisplayName = "Status"
+			}
+			fdir_level {
+				DisplayName = "FDIR Level"
+			}
+		}
+	}
+
+	method set_fault_user_clear_level {
+		in {
+			fdir_level {
+				DisplayName = "FDIR Level"
+			}
+		}
+		out {
+			status {
+				DisplayName = "Status"
+			}
+			fdir_level_set {
+				DisplayName = "FDIR Level Set"
+			}
+		}
+	}
+
+	method get_fault {
+		in {
+			fault_id {
+				DisplayName = "Fault ID"
+			}
+		}
+		out {
+			status {
+				DisplayName = "Status"
+			}
+			is_active {
+				DisplayName = "Is Active"
+			}
+			fdir_level {
+				DisplayName = "FDIR Level"
+			}
+		}
+	}
+
+	method set_fault {
+		in {
+			fault_id {
+				DisplayName = "Fault ID"
+			}
+			agent_id {
+				DisplayName = "Agent Id"
+			}
+			active {
+				DisplayName = "Active"
+			}
+		}
+		out {
+			status {
+				DisplayName = "Status"
+			}
+		}
+	}
+
+	method force_clear_fault {
+		in {
+			fault_id {
+				DisplayName = "Fault ID"
+			}
+		}
+		out {
+			status {
+				DisplayName = "Status"
+			}
+		}
+	}
+
+	method force_clear_all_faults {
+		out {
+			status {
+				DisplayName = "Status"
+			}
+			fault_id {
+				DisplayName = "Fault ID"
+			}
+		}
+	}
+
+}

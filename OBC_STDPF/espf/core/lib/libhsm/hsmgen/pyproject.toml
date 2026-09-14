@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "hsmgen"
+version = "2.0.3"
+description = "libhsm hierarchical state machines generator script"
+authors = ["Ivan Petrov <ivan.petrov@endurosat.com>"]
+readme = "README.md"
+package-mode = true
+repository = "https://gitlab.endurosatlab.com/sw-platform-es/cots/libhsm"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Jinja2 = "3.1.2"
+PyYAML = "6.0.1"
+rich = "13.6.0"
+
+[tool.black]
+line-length = 120
+target-version = ['py311']
+skip-string-normalization = true
+
+[[tool.poetry.source]]
+name = "endurosat-pypi"
+url = "http://pypi.endurosatlab.com/"
+priority = "supplemental"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

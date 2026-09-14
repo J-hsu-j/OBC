@@ -1,0 +1,112 @@
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+
+import "../../fp/acs.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.acs as acs_Definitions {
+	enumeration Result {
+		AlarmInvalidRegexValues = {"ES_FAIL"}
+	}
+	
+	struct LastMtqData {
+		mtq_x_body_frame {			
+			Unit = "% PWM"
+		}
+		mtq_y_body_frame {
+			Unit = "% PWM"
+		}
+		mtq_z_body_frame {
+			Unit = "% PWM"
+		}
+		mtq_x_mtq_frame {
+			Unit = "% PWM"
+		}
+		mtq_y_mtq_frame {
+			Unit = "% PWM"
+		}
+		mtq_z_mtq_frame {
+			Unit = "% PWM"
+		}
+	}
+	
+	struct ManualMtqData {
+		mtq_1_mtq_frame {
+			Unit = "% PWM"
+		}
+		mtq_2_mtq_frame {
+			Unit = "% PWM"
+		}
+		mtq_3_mtq_frame {
+			Unit = "% PWM"
+		}
+	}
+	
+	method set_op_mode {
+		in {
+			desired_mode {
+				DisplayName = "Desired Mode"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method get_op_mode {
+		out {
+			active_mode {
+				DisplayName = "Active Mode"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method get_status {
+		out {
+			current_status {
+				DisplayName = "Current Status"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method set_manual_mtq_control {
+		in {
+			desired_manual_magnetorquer_control_values {
+				DisplayName = "Desired Manual Magnetorquer Control Values"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method get_manual_mtq_control {
+		out {
+			manual_magnetorquer_control_values {
+				DisplayName = "Manual Magnetorquer Control Values"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method get_last_mtq_control {
+		out {
+			last_magnetorquer_control_values {
+				DisplayName = "Last Magnetorquer Control Values"
+			}
+			op_result {
+				DisplayName = "Result"
+			}			
+		}
+	}
+}

@@ -1,0 +1,43 @@
+---
+telemetry_sm:
+    states:
+        - Not_Init:
+            transitions:
+                - Init:
+                    - { event: init }
+            attributes:
+               on_entry: False
+               on_exit: False
+
+        - Init:
+            transitions:
+               - Started:
+                  - { event: start }
+               - "__self":
+                  - { event: "__periodic", action: reload_config }
+            attributes:
+               on_exit: False
+
+        - Started:
+           transitions:
+              - Stopped:
+                 - { event: stop, action: stop_file_telemetry }
+              - Stopped:                 
+                 - { event: "__periodic", guard: is_hold_time_elapsed, action: stop_file_telemetry }
+              - "__self":
+                 - { event: "__periodic", action: collect_telemetry }
+           attributes:
+              on_entry: True
+        - Stopped:
+           transitions:
+              - Started:
+                 - { event: start, action: start_file_telemetry }
+              - Started:                 
+                 - { event: "__periodic", guard: is_hold_time_elapsed, action: start_file_telemetry }
+              - "__self":
+                 - { event: "__periodic", action: reload_config }
+           attributes:
+              on_exit: False
+    attributes:
+        initial: Not_Init
+        instances: 2

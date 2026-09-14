@@ -1,0 +1,139 @@
+package org.endurosat.deploy
+
+import "../../core/fidl/spec/PlatformSpec.fdepl"
+import "DataCache.fidl"
+
+define org.endurosat.spec.PlatformSpec for interface endurosat.pf.DataCache.data_cache {
+    attribute EPS_9_Data { Status_timeout = 30000 }
+    attribute EPS_10_Data { Status_timeout = 30000 }
+    attribute EpsOverallBatteryInfo_Data { Status_timeout = 30000 }
+
+// begin EPS BP generated code
+
+
+//
+// Global declarations for EPS BP INSTANCE0
+//
+    attribute EPS2_BP_INST0_BP_INFO_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST0_DEVICE_HEALTH_INFO_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST0_INA_SENSOR1_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST0_INA_SENSOR2_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST0_BALANCER_INFO_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST0_BALANCER_STATUS_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST0_BALANCER_CELLS_INFO_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST0_CHARGER_XP_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST0_CHARGER_XR_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST0_CHARGER_YP_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST0_CHARGER_YR_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST0_CHARGER_ZP_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST0_CHARGER_ZR_Data { Status_timeout = 30000 }
+    attribute FDIR_EPS_II_BP_INST0_CMD_EXEC_STATUS_Data { Status_timeout = 40000 }
+//
+// Global declarations for EPS BP INSTANCE1
+//
+    attribute EPS2_BP_INST1_BP_INFO_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST1_DEVICE_HEALTH_INFO_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST1_INA_SENSOR1_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST1_INA_SENSOR2_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST1_BALANCER_INFO_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST1_BALANCER_STATUS_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST1_BALANCER_CELLS_INFO_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST1_CHARGER_XP_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST1_CHARGER_XR_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST1_CHARGER_YP_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST1_CHARGER_YR_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST1_CHARGER_ZP_Data { Status_timeout = 30000 }
+    attribute EPS2_BP_INST1_CHARGER_ZR_Data { Status_timeout = 30000 }
+    attribute FDIR_EPS_II_BP_INST1_CMD_EXEC_STATUS_Data { Status_timeout = 40000 }
+// end EPS BP generated code
+
+// begin EPS_III BP generated code
+
+
+//
+// Global declarations for EPS BP INSTANCE0
+//  
+    attribute EPS3_BP_INST0_uptime_in_seconds { Status_timeout = 30000 }  
+    attribute EPS3_BP_INST0common { Status_timeout = 30000 }
+    attribute EPS3_BP_INST0hib_mode_status { Status_timeout = 30000 }
+    attribute EPS3_BP_INST0measurements { Status_timeout = 30000 }
+    attribute EPS3_BP_INST0discharging_state { Status_timeout = 30000 }
+    attribute EPS3_BP_INST0charge_status { Status_timeout = 30000 }
+    attribute EPS3_BP_INST0balancers_status { Status_timeout = 30000 }
+    attribute EPS3_BP_INST0battery_cells_status { Status_timeout = 30000 }
+    attribute EPS3_BP_INST0heaters_status { Status_timeout = 30000 }
+    attribute EPS3_BP_INST0_CMD_EXEC_STATUS_Data { Status_timeout = 40000 }    
+// end EPS_III BP generated code
+
+// begin EPS_III PDM_A generated code
+
+
+//
+// Global declarations for EPS PDM_A INSTANCE0
+//    
+    attribute EPS3_PDM_A_INST0_uptime_in_seconds { Status_timeout = 30000 }
+    attribute EPS3_PDM_A_INST0_common { Status_timeout = 30000 }
+    attribute EPS3_PDM_A_INST0_hib_mode { Status_timeout = 30000 }
+    attribute EPS3_PDM_A_INST0_general_outputs { Status_timeout = 30000 }
+    attribute EPS3_PDM_A_INST0_general_faults { Status_timeout = 30000 }
+    attribute EPS3_PDM_A_INST0_all_measurements { Status_timeout = 30000 }
+    attribute EPS3_PDM_A_INST0_CMD_EXEC_STATUS_Data { Status_timeout = 40000 }    
+// end EPS_III PDM_A generated code
+
+// begin EPS_III PDM_B generated code
+
+
+//
+// Global declarations for EPS PDM_B INSTANCE0
+//    
+    attribute EPS3_PDM_B_INST0_uptime_in_seconds { Status_timeout = 30000 }
+    attribute EPS3_PDM_B_INST0_common { Status_timeout = 30000 }
+    attribute EPS3_PDM_B_INST0_hib_mode { Status_timeout = 30000 }
+    attribute EPS3_PDM_B_INST0_general_outputs { Status_timeout = 30000 }
+    attribute EPS3_PDM_B_INST0_channel_flag_state { Status_timeout = 30000 }
+    attribute EPS3_PDM_B_INST0_temperature { Status_timeout = 30000 }
+    attribute EPS3_PDM_B_INST0_all_measurements { Status_timeout = 30000 }
+    attribute EPS3_PDM_B_INST0_CMD_EXEC_STATUS_Data { Status_timeout = 40000 }    
+// end EPS_III PDM_B generated code
+
+// begin EPS_III INPUT_STAGE generated code
+
+
+//
+// Global declarations for EPS INPUT_STAGE INSTANCE0
+//    
+    attribute EPS3_INPUT_STAGE_INST0_uptime_in_seconds { Status_timeout = 30000 }
+    attribute EPS3_INPUT_STAGE_INST0common { Status_timeout = 30000 }
+    attribute EPS3_INPUT_STAGE_INST0hib_mode_status { Status_timeout = 30000 }
+    attribute EPS3_INPUT_STAGE_INST0selflock_on { Status_timeout = 30000 }
+    attribute EPS3_INPUT_STAGE_INST0sp1 { Status_timeout = 30000 }
+    attribute EPS3_INPUT_STAGE_INST0sp2 { Status_timeout = 30000 }
+    attribute EPS3_INPUT_STAGE_INST0sp3 { Status_timeout = 30000 }
+    attribute EPS3_INPUT_STAGE_INST0system_bus { Status_timeout = 30000 }
+    attribute EPS3_INPUT_STAGE_INST0bus_7v5 { Status_timeout = 30000 }
+    attribute EPS3_INPUT_STAGE_INST0bus_7v5_power_good { Status_timeout = 30000 }
+    attribute EPS3_INPUT_STAGE_INST0undervoltage_7V5 { Status_timeout = 30000 }
+    attribute EPS3_INPUT_STAGE_INST0bus_3v3 { Status_timeout = 30000 }
+    attribute EPS3_INPUT_STAGE_INST0undervoltage_3V3 { Status_timeout = 30000 }
+    attribute EPS3_INPUT_STAGE_INST0_CMD_EXEC_STATUS_Data { Status_timeout = 40000 }    
+// end EPS_III INPUT_STAGE generated code
+
+// begin EPS_III EXPANDER generated code
+
+
+//
+// Global declarations for EPS EXPANDER INSTANCE0
+//  
+    attribute EPS3_EXPANDER_INST0_uptime_in_seconds { Status_timeout = 30000 }  
+    attribute EPS3_EXPANDER_INST0_common { Status_timeout = 30000 }
+    attribute EPS3_EXPANDER_INST0_outputs { Status_timeout = 30000 }
+    attribute EPS3_EXPANDER_INST0_general_inputs { Status_timeout = 30000 }
+    attribute EPS3_EXPANDER_INST0_feedbacks { Status_timeout = 30000 }
+    attribute EPS3_EXPANDER_INST0_volt_amp_measurements { Status_timeout = 30000 }
+    attribute EPS3_EXPANDER_INST0_CMD_EXEC_STATUS_Data { Status_timeout = 40000 }    
+// end EPS_III EXPANDER generated code
+
+    attribute EPS_14_Data { Status_timeout = 30000 }
+    attribute CUBEADCS_GEN2_OP_STATUS_COMMON_Data { Status_timeout = 10000 }
+    attribute CUBEADCS_GEN2_OP_STATUS_APP_Data { Status_timeout = 10000 }
+}

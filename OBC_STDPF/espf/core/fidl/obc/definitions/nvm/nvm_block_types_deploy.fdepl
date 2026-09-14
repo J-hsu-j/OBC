@@ -1,0 +1,716 @@
+package org.endurosat.deploy
+
+/* Load the deployment specs */
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../nvm/nvm_block_types.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for typeCollection endurosat.pf.helper_types as helper_types_Definitions {
+
+    
+    enumeration safe_bool {
+    }
+    
+    enumeration ModuleType {
+    }
+    
+    struct tlm_preset_cfg {
+        DisplayName = "Tlm Preset Cfg"
+        data_id {
+            DisplayName = "Data Id"
+        }
+    
+        active {
+            DisplayName = "Active"
+        }
+    
+        acq_period {
+            DisplayName = "Acq Period"
+        }
+    }
+    
+    enumeration tlm_file_cfg_type {
+    }
+    
+    struct bus_pull_up_state {
+        DisplayName = "Bus Pull Up State"
+        pull_up_4k7 {
+            DisplayName = "Pull Up 4k7"
+        }
+    
+        pull_up_10k {
+            DisplayName = "Pull Up 10k"
+        }
+    }
+    
+    enumeration aocs_log_data_types {
+    }
+    
+    struct aocs_pm_parameters {
+        DisplayName = "Aocs Pm Parameters"
+        max_time_for_auto_log {
+            DisplayName = "Max Time For Auto Log"
+        }
+    
+        update_interval {
+            DisplayName = "Update Interval"
+        }
+    
+        data_type {
+            DisplayName = "Data Type"
+        }
+    
+        samples_to_skip {
+            DisplayName = "Samples To Skip"
+        }
+    }
+    
+    enumeration es_adcs_estimator {
+    }
+    
+    struct es_adcs_estimator_config {
+        DisplayName = "Es Adcs Estimator Config"
+        eActiveEstimators {
+            DisplayName = "E Active Estimators"
+        }
+    }
+    
+    enumeration es_adcs_controller {
+    }
+    
+    struct es_adcs_controller_bdot_config {
+        DisplayName = "Es Adcs Controller Bdot Config"
+        bdot_coefficient_X {
+            DisplayName = "Bdot Coefficient X"
+        }
+    
+        bdot_coefficient_Y {
+            DisplayName = "Bdot Coefficient Y"
+        }
+    
+        bdot_coefficient_Z {
+            DisplayName = "Bdot Coefficient Z"
+        }
+    }
+    
+    struct es_adcs_controller_config {
+        DisplayName = "Es Adcs Controller Config"
+        ActiveController {
+            DisplayName = "Active Controller"
+        }
+    
+        BdotConfig {
+            DisplayName = "Bdot Config"
+        }
+    }
+    
+    enumeration es_adcs_used_magnetometer {
+    }
+    
+    struct aocs_pm_threshold_values {
+        DisplayName = "Aocs Pm Threshold Values"
+        tolerance {
+            DisplayName = "Tolerance"
+        }
+    
+        safety_factor {
+            DisplayName = "Safety Factor"
+        }
+    }
+    
+    enumeration es_coordsys_satellite_axes {
+    }
+    
+    struct es_coordsys_gyr_frame {
+        DisplayName = "Es Coordsys Gyr Frame"
+        gyr1 {
+            DisplayName = "Gyr1"
+        }
+    
+        gyr2 {
+            DisplayName = "Gyr2"
+        }
+    
+        gyr3 {
+            DisplayName = "Gyr3"
+        }
+    }
+    
+    struct es_coordsys_mag_frame {
+        DisplayName = "Es Coordsys Mag Frame"
+        mag_x {
+            DisplayName = "Mag X"
+        }
+    
+        mag_y {
+            DisplayName = "Mag Y"
+        }
+    
+        mag_z {
+            DisplayName = "Mag Z"
+        }
+    }
+    
+    struct es_coordsys_mtq_frame {
+        DisplayName = "Es Coordsys Mtq Frame"
+        mtq1 {
+            DisplayName = "Mtq1"
+        }
+    
+        mtq2 {
+            DisplayName = "Mtq2"
+        }
+    
+        mtq3 {
+            DisplayName = "Mtq3"
+        }
+    }
+    
+    struct es_coordsys_css_frame {
+        DisplayName = "Es Coordsys Css Frame"
+        css1 {
+            DisplayName = "Css1"
+        }
+    
+        css2 {
+            DisplayName = "Css2"
+        }
+    
+        css3 {
+            DisplayName = "Css3"
+        }
+    
+        css4 {
+            DisplayName = "Css4"
+        }
+    
+        css5 {
+            DisplayName = "Css5"
+        }
+    
+        css6 {
+            DisplayName = "Css6"
+        }
+    }
+    
+    struct es_coordsys_acc_frame {
+        DisplayName = "Es Coordsys Acc Frame"
+        acc_x {
+            DisplayName = "Acc X"
+        }
+    
+        acc_y {
+            DisplayName = "Acc Y"
+        }
+    
+        acc_z {
+            DisplayName = "Acc Z"
+        }
+    }
+    
+    enumeration TIME_calp_pulses {
+    }
+    
+    struct sds_events_cfg {
+        DisplayName = "Sds Events Cfg"
+        freq_cfg {
+            DisplayName = "Freq Cfg"
+            Unit = "Hz"
+        }
+    
+        event_cfg {
+            DisplayName = "Event Cfg"
+        }
+    }
+    
+    enumeration gyroscope_number {
+    }
+    
+    enumeration gyroscope_status {
+    }
+    
+    enumeration Panel_Number {
+    }
+    
+    enumeration PanId {
+    }
+    
+    struct gyroscope {
+        DisplayName = "Gyroscope"
+        gyro_id {
+            DisplayName = "Gyro Id"
+        }
+    
+        generalStatus {
+            DisplayName = "General Status"
+        }
+    
+        attachedPanel {
+            DisplayName = "Attached Panel"
+        }
+    
+        satelliteAxis {
+            DisplayName = "Satellite Axis"
+        }
+    
+        enabledFlag {
+            DisplayName = "Enabled Flag"
+        }
+    }
+    
+    enumeration CubeADCS_CfgType {
+    }
+    
+    enumeration CUBE_ADCS_TC_13_CONTROL_MODE {
+    }
+    
+    enumeration CUBE_ADCS_TC_14_ESTIMATION_MODE {
+    }
+    
+    enumeration CUBE_ADCS_TC_10_RUNMODE {
+    }
+    
+    struct CubeADCS_Cfg {
+        DisplayName = "Cube ADCS Cfg"
+        CfgType {
+            DisplayName = "Cfg Type"
+        }
+    
+        NodePwrMask {
+            DisplayName = "Node Pwr Mask"
+        }
+    
+        CntrlMask {
+            DisplayName = "Cntrl Mask"
+        }
+    
+        EstMode {
+            DisplayName = "Est Mode"
+        }
+    
+        RunMask {
+            DisplayName = "Run Mask"
+        }
+    
+        AdditionalLogic {
+            DisplayName = "Additional Logic"
+        }
+    }
+    
+    enumeration mac_address_index {
+    }
+    
+}
+define org.endurosat.spec.SpaceOpsMappingSpec for typeCollection endurosat.pf.nvm_block_types as nvm_block_types_Definitions {
+
+    
+    struct NvmBlock_BootData {
+        DisplayName = "Nvm Block Boot Data"
+        Reserve1 {
+            DisplayName = "Reserve1"
+        }
+    
+        Mailbox {
+            DisplayName = "Mailbox"
+        }
+    
+        RST_WWD {
+            DisplayName = "RST WWD"
+        }
+    
+        RST_IWD {
+            DisplayName = "RST IWD"
+        }
+    
+        RST_LPR {
+            DisplayName = "RST LPR"
+        }
+    
+        RST_POR {
+            DisplayName = "RST POR"
+        }
+    
+        RST_RstPin {
+            DisplayName = "RST Rst Pin"
+        }
+    
+        RST_BOR {
+            DisplayName = "RST BOR"
+        }
+    
+        RST_HardFault {
+            DisplayName = "RST Hard Fault"
+        }
+    
+        RST_MemFault {
+            DisplayName = "RST Mem Fault"
+        }
+    
+        RST_BusFault {
+            DisplayName = "RST Bus Fault"
+        }
+    
+        RST_UsageFault {
+            DisplayName = "RST Usage Fault"
+        }
+    
+        RST_ErrHandler {
+            DisplayName = "RST Err Handler"
+        }
+	
+		RebootRequest {
+			DisplayName = "Reboot Request"
+		}
+	
+		Reserve3 {
+			DisplayName = "Reserve3"
+		}
+	}
+	
+	struct NvmBlock_ModuleId {
+		DisplayName = "Nvm Block Module Id"
+		nModuleType {
+			DisplayName = "N Module Type"
+		}
+	
+		nModuleHWConfig {
+			DisplayName = "N Module HWConfig"
+		}
+	
+		nModuleHWRevision {
+			DisplayName = "N Module HWRevision"
+		}
+	
+		szModuleSerial {
+			DisplayName = "Sz Module Serial"
+		}
+	}
+	
+	struct NvmBlock_MacConfig {
+		DisplayName = "Nvm Block Mac Config"
+		u8MacBusTerminationBitField {
+			DisplayName = "U8Mac Bus Termination Bit Field"
+		}
+	
+		u8MacAddress {
+			DisplayName = "U8Mac Address"
+		}
+	}
+	
+	struct NvmBlock_beacons_cfg {
+		DisplayName = "Nvm Block Beacons Cfg"
+		beacons_en {
+			DisplayName = "Beacons En"
+		}
+	
+		chunk_based_transfer_en {
+			DisplayName = "Chunk Based Transfer En"
+		}
+	
+		bcn_tx_period {
+			DisplayName = "Bcn Tx Period"
+			Unit = "1 ms"
+		}
+	
+		bcn_inter_frame_period {
+			DisplayName = "Bcn Inter Frame Period"
+			Unit = "1 ms"
+		}
+	}
+	
+	struct NvmBlock_beacons_presets_cfg {
+		DisplayName = "Nvm Block Beacons Presets Cfg"
+		beacon_preset_cfg {
+			DisplayName = "Beacon Preset Cfg"
+		}
+	}
+	
+	struct NvmBlock_OpModesConfig {
+		DisplayName = "Nvm Block Op Modes Config"
+		CBattSafe {
+			DisplayName = "CBatt Safe"
+			Unit = "Wh"
+			CalibratedType = "float"
+			CalibrationAlg = "coeff",
+			CalibrationParams = {
+				"0.001"
+			}
+		}
+	
+		SSafe {
+			DisplayName = "SSafe"
+		}
+	
+		SDet {
+			DisplayName = "SDet"
+		}
+	
+		SPay {
+			DisplayName = "SPay"
+		}
+	
+		AngVelMax {
+			DisplayName = "Ang Vel Max"
+			Unit = "mrad/s"
+		}
+	
+		AngVelLow {
+			DisplayName = "Ang Vel Low"
+			Unit = "mrad/s"
+		}
+	
+		AngVelRange {
+			DisplayName = "Ang Vel Range"
+			Unit = "mrad/s"
+		}
+	}
+	
+	struct NvmBlock_conops_idle_pointreq_cfg {
+		DisplayName = "Nvm Block Conops Idle Pointreq Cfg"
+		en_sun_tracking {
+			DisplayName = "En Sun Tracking"
+		}
+	}
+	
+	struct NvmBlock_telemetry_cfg {
+		DisplayName = "Nvm Block Telemetry Cfg"
+		telemetry_en {
+			DisplayName = "Telemetry En"
+		}
+	
+		file_telemetry_en {
+			DisplayName = "File Telemetry En"
+		}
+	}
+	
+	struct NvmBlock_telemetry_preset_cfg {
+		DisplayName = "Nvm Block Telemetry Preset Cfg"
+		Telemetry_preset_cfg {
+			DisplayName = "Telemetry Preset Cfg"
+		}
+	}
+	
+	struct NvmBlock_telemetry_file_cfg {
+		DisplayName = "Nvm Block Telemetry File Cfg"
+		cfg_type {
+			DisplayName = "Cfg Type"
+		}
+	
+		size_limit_kb {
+			DisplayName = "Size Limit Kb"
+		}
+	
+		max_log_files_cnt {
+			DisplayName = "Max Log Files Cnt"
+		}
+	
+		time_limit_sec {
+			DisplayName = "Time Limit Sec"
+		}
+	
+		file_size_limit_kb {
+			DisplayName = "File Size Limit Kb"
+		}
+	}
+	
+	struct NvmBlock_EPSM_Config {
+		DisplayName = "Nvm Block EPSM Config"
+		enableRtcAutoAdjust {
+			DisplayName = "Enable Rtc Auto Adjust"
+		}
+	
+		onlyIfRtcIsLost {
+			DisplayName = "Only If Rtc Is Lost"
+		}
+	
+		reserved1 {
+			DisplayName = "Reserved1"
+		}
+	
+		enableCapacityCalculation {
+			DisplayName = "Enable Capacity Calculation"
+		}
+	
+		enableUsingPduBoardTemperature {
+			DisplayName = "Enable Using Pdu Board Temperature"
+		}
+	
+		usedExactTemperatureEnable {
+			DisplayName = "Used Exact Temperature Enable"
+		}
+	
+		exactTemperature {
+			DisplayName = "Exact Temperature"
+		}
+	
+		reserved2 {
+			DisplayName = "Reserved2"
+		}
+	
+		allowAutoEnableEpsOnPowerUP {
+			DisplayName = "Allow Auto Enable Eps On Power UP"
+		}
+	}
+	
+	struct NvmBlock_cubeadcs_err_handl_cfg {
+		DisplayName = "Nvm Block Cubeadcs Err Handl Cfg"
+		en_cubeadcs_err_handl {
+			DisplayName = "En Cubeadcs Err Handl"
+		}
+	}
+	
+	struct NvmBlock_cubeadcs_status {
+		DisplayName = "Nvm Block Cubeadcs Status"
+		commissioning {
+			DisplayName = "Commissioning"
+		}
+	
+		node_status {
+			DisplayName = "Node Status"
+		}
+	
+		runtime_latched_errors {
+			DisplayName = "Runtime Latched Errors"
+		}
+	}
+	
+	struct NvmBlock_i2c_config {
+		DisplayName = "Nvm Block I2c Config"
+		i2c_pull_up_config {
+			DisplayName = "I2c Pull Up Config"
+		}
+	}
+	
+	struct NvmBlock_cubeadcs_angle_limits {
+		DisplayName = "Nvm Block Cubeadcs Angle Limits"
+		stable_pointing_threshold_angle {
+			DisplayName = "Stable Pointing Threshold Angle"
+			Unit = "°"
+		}
+	
+		stable_pointing_threshold_angle_rate {
+			DisplayName = "Stable Pointing Threshold Angle Rate"
+			Unit = "°/s"
+		}
+	}
+	
+	struct NvmBlock_aocs_pm_config {
+		DisplayName = "Nvm Block Aocs Pm Config"
+		parameters {
+			DisplayName = "Parameters"
+		}
+	}
+	
+	struct NvmBlock_aocs_pm_threshold {
+		DisplayName = "Nvm Block Aocs Pm Threshold"
+		^value {
+			DisplayName = "Value"
+		}
+	}
+	
+	struct NvmBlock_es_adcs_config {
+		DisplayName = "Nvm Block Es Adcs Config"
+		EstimatorConfig {
+			DisplayName = "Estimator Config"
+		}
+	
+		ControllerConfig {
+			DisplayName = "Controller Config"
+		}
+	
+		UsedMagnetometer {
+			DisplayName = "Used Magnetometer"
+		}
+	}
+	
+	struct NvmBlock_es_coordsys_frames {
+		DisplayName = "Nvm Block Es Coordsys Frames"
+		gyroscopeFrame {
+			DisplayName = "Gyroscope Frame"
+		}
+	
+		magnetometerFrame {
+			DisplayName = "Magnetometer Frame"
+		}
+	
+		magnetorquerFrame {
+			DisplayName = "Magnetorquer Frame"
+		}
+	
+		coarseSunSensorFrame {
+			DisplayName = "Coarse Sun Sensor Frame"
+		}
+	
+		accelerometerFrame {
+			DisplayName = "Accelerometer Frame"
+		}
+	}
+	
+	struct NvmBlock_sds_sens_read_freq {
+		DisplayName = "Nvm Block Sds Sens Read Freq"
+		enable {
+			DisplayName = "Enable"
+		}
+	
+		sens_cfg {
+			DisplayName = "Sens Cfg"
+			Unit = "Hz"
+		}
+	}
+	
+	struct NvmBlock_crypto_cfg {
+		DisplayName = "Nvm Block Crypto Cfg"
+		aes_key {
+			DisplayName = "Aes Key"
+		}
+	}
+	
+	struct NvmBlock_cubeadcs_sim_mode {
+		DisplayName = "Nvm Block Cubeadcs Sim Mode"
+		en_sim_mode {
+			DisplayName = "En Sim Mode"
+		}
+	}
+	
+	struct NvmBlock_rtc_calib_data {
+		DisplayName = "Nvm Block Rtc Calib Data"
+		calm {
+			DisplayName = "Calm"
+		}
+	
+		calp {
+			DisplayName = "Calp"
+		}
+	}
+	
+	struct NvmBlock_gyroscope_configs {
+		DisplayName = "Nvm Block Gyroscope Configs"
+		gyroscopeArray {
+			DisplayName = "Gyroscope Array"
+		}
+	}
+	
+	struct NvmBlock_ff_stats {
+		DisplayName = "Nvm Block Ff Stats"
+		ff_api_err_counters {
+			DisplayName = "Ff Api Err Counters"
+		}
+	}
+	
+	struct NvmBlock_cubeADCS_sys_state_cfg {
+		DisplayName = "Nvm Block Cube ADCS Sys State Cfg"
+		CubeADCS_SysStates {
+			DisplayName = "Cube ADCS Sys States"
+		}
+	}
+	
+	struct NvmBlock_mac_address_book {
+		DisplayName = "Nvm Block Mac Address Book"
+		mac_address {
+			DisplayName = "Mac Address"
+		}
+	}
+	
+}
+

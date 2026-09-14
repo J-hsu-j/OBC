@@ -1,0 +1,103 @@
+package endurosat.macif
+
+<** @description: Control Onboard Scheduler on OBC
+    @details: id = 28
+**>
+interface onboard_sched
+{
+    version { major 0 minor 1 }
+ 
+    enumeration SchedState
+    {
+        RUNNING,
+        STOPPED
+    }
+    
+    enumeration SchedLoadResult
+    {
+        <** @description:  Operation is successful **>
+        SUCCESS,
+        <** @description:  An operating system or file management error has occurred **>
+        ERROR_SYSTEM,
+        <** @description:  File not found in storage medium **>
+        ERROR_NO_FILE,
+        <** @description:  New schedule could not be loaded because scheduler is running **>
+        ERROR_SCHED_RUNNING
+    }
+ 
+    <** @description: Starts or stops the scheduler service
+        @details: id = 0x00000001
+    **>   
+    method set_scheduler_state
+    {
+        in
+        {
+            SchedState sch_state
+        }
+        
+        out
+        {
+            <** @description: Scheduler state after the set operation **>
+            SchedState new_state
+        }
+    }
+    
+    <** @description: Gets the current state of the scheduler service
+        @details: id = 0x00000002
+    **>
+    method get_scheduler_state
+    {
+        out
+        {
+            SchedState sch_state
+        }
+    }
+    
+    <** @description: Sets a new file from the storage medium as the current active schedule
+        @details: id = 0x00000003
+    **>
+    method set_active_schedule
+    {
+        in
+        {
+            <** @description: Name of the file containing the schedule to be set as active
+                @details: size = 47
+            **>
+            String file_name
+        }
+        
+        out
+        {
+            SchedLoadResult result
+        }
+    }
+    
+    <** @description: Returns the name of the current active schedule
+        @details: id = 0x00000004
+    **>
+    method get_active_schedule
+    {
+        out
+        {
+            <** @description: Name of the file containing the current active schedule. If no schedule
+                              is active then string "No active schedule" shall be returned together with result NO_FILE
+                @details: size = 47
+            **>
+            String file_name
+            
+            SchedLoadResult result
+        }
+    }
+    
+    <** @description: Returns the slot offset of the next entry to be released. Offset is relative to the beginning of
+	                  the active schedule file
+        @details: id = 0x00000005
+    **>
+    method get_next_slot
+    {
+        out
+        {
+            UInt32 offset
+        }
+    }
+}

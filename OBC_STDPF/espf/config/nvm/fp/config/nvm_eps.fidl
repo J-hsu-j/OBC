@@ -1,0 +1,321 @@
+package endurosat.macif
+
+<** @description: This is specific interface modified based on system configuraiton.
+    @details: id = 30
+**>
+interface nvm_eps
+{
+    version { major 0 minor 1 }
+
+    <** @description: General status type used for SW-related communication and/or settings. **>
+    enumeration StandardResult
+    {
+        <** @description: The operation is successful **>
+        SUCCESS,
+        <** @description: An error has occurred **>
+        ERROR,
+        <** @description: Invalid input arguments provided to the operation **>
+        INVALID_ARGS,
+        <** @description: The action related to the input data is not supported by the firmware **>
+        NOT_SUPPORTED
+    }
+
+<** @description: EPS Battery Pack IDs. Here is an extensive list of all possible IDs of the BPs in a system. 
+    Depending on count of the EPS BPs in the specific configuration only the first N of those will be used. **>
+    enumeration EpsBpIdType
+    {
+// begin EPS BP generated code
+
+    
+        <** @description:  EPS Battery Pack ID  **>
+        EPS_BP_0,    
+        <** @description:  EPS Battery Pack ID  **>
+        EPS_BP_1        
+// end EPS BP generated code
+    }
+
+<** @description: EPS Battery Pack IDs. Here is an extensive list of all possible IDs of the EPS_III BPs in a system. 
+    Depending on count of the EPS EPS_III BPs in the specific configuration only the first N of those will be used. **>
+    enumeration EpsIIIBpIdType
+    {
+// begin EPS_III BP generated code
+
+        <** @description:  EPSIII BP ID  **>
+        EPSIII_BP_0        
+// end EPS_III BP generated code
+    }
+
+<** @description: EPS Battery Pack IDs. Here is an extensive list of all possible IDs of the EPS_III PDM_As in a system. 
+    Depending on count of the EPS EPS_III PDM_As in the specific configuration only the first N of those will be used. **>
+    enumeration EpsIIIPdmAIdType
+    {
+// begin EPS_III PDM_A generated code
+
+        <** @description:  EPSIII PDM_A ID  **>
+        EPSIII_PDM_A_0        
+// end EPS_III PDM_A generated code
+    }
+
+<** @description: EPS Battery Pack IDs. Here is an extensive list of all possible IDs of the EPS_III PDM_Bs in a system. 
+    Depending on count of the EPS_III PDM_Bs in the specific configuration only the first N of those will be used. **>
+    enumeration EpsIIIPdmBIdType
+    {
+// begin EPS_III PDM_B generated code
+
+        <** @description:  EPSIII PDM_B ID  **>
+        EPSIII_PDM_B_0        
+// end EPS_III PDM_B generated code
+    }
+    
+
+<** @description: EPS Battery Pack IDs. Here is an extensive list of all possible IDs of the EPS_III INPUT_STAGE in a system. 
+    Depending on count of the EPS EPS_III INPUT_STAGEs in the specific configuration only the first N of those will be used. **>
+    enumeration EpsIIIInputStageIdType
+    {
+// begin EPS_III INPUT_STAGE generated code
+
+        <** @description:  EPSIII INPUT_STAGE ID  **>
+        EPSIII_INPUT_STAGE_0        
+// end EPS_III INPUT_STAGE generated code
+    }
+
+<** @description: EPS Battery Pack IDs. Here is an extensive list of all possible IDs of the EPS_III EXPANDERs in a system. 
+    Depending on count of the EPS_III EXPANDERs in the specific configuration only the first N of those will be used. **>
+    enumeration EpsIIIExpanderIdType
+    {
+// begin EPS_III EXPANDER generated code
+
+        <** @description:  EPSIII EXPANDER ID  **>
+        EPSIII_EXPANDER_0        
+// end EPS_III EXPANDER generated code  
+    }
+
+    <** @description: Update the MAC address in the EPS_II bp mac address book of the OBC NVM.
+        @details: id = 0x00000001
+    **>
+    method set_eps2_bp_mac_address
+    {
+        in
+        {
+            <** @description: New MAC address. **>
+            UInt8 new_mac_address
+            <** @description: Device. See the list of device IDs in the NVM fidl. **>
+            EpsBpIdType device_id
+        }
+        out
+        {
+            <** @description: Set request result **>
+            StandardResult op_result
+        }
+    }
+    
+    <** @description: Read the MAC addres from the mac address book of the OBC NVM.
+        @details: id = 0x00000002
+    **>
+    method get_eps2_bp_mac_address
+    {
+        in
+        {
+            <** @description: Device. See the list of device IDs in the NVM fidl. **>
+            EpsBpIdType device_id
+        }
+        out
+        {
+            <** @description: MAC address read from NVM. **>
+            UInt8 mac_address
+            <** @description: Get request result **>
+            StandardResult op_result
+        }
+    }
+    
+    <** @description: Update the MAC address in the EPS_III mac address book of the OBC NVM.
+        @details: id = 0x00000003
+    **>
+    method set_eps3_bp_mac_addresses
+    {
+        in
+        {
+            <** @description: New MAC address. **>
+            UInt8 new_mac_address
+            <** @description: Device. See the list of device IDs in the NVM fidl. **>
+            EpsIIIBpIdType device_id
+        }
+        out
+        {
+            <** @description: Set request result **>
+            StandardResult op_result
+        }
+    }
+    
+    <** @description: Read the MAC addres from the mac address book of the OBC NVM.
+        @details: id = 0x00000004
+    **>
+    method get_eps3_bp_mac_addresses
+    {
+        in
+        {
+            <** @description: Device. See the list of device IDs in the NVM fidl. **>
+            EpsIIIBpIdType device_id
+        }
+        out
+        {
+            <** @description: MAC address read from NVM. **>
+            UInt8 mac_address
+            <** @description: Get request result **>
+            StandardResult op_result
+        }
+    }    
+
+    <** @description: Update the MAC address in the EPS_III mac address book of the OBC NVM.
+        @details: id = 0x00000005
+    **>
+    method set_eps3_pdm_a_mac_addresses
+    {
+        in
+        {
+            <** @description: New MAC address. **>
+            UInt8 new_mac_address
+            <** @description: Device. See the list of device IDs in the NVM fidl. **>
+            EpsIIIPdmAIdType device_id
+        }
+        out
+        {
+            <** @description: Set request result **>
+            StandardResult op_result
+        }
+    }
+    
+    <** @description: Read the MAC addres from the mac address book of the OBC NVM.
+        @details: id = 0x00000006
+    **>
+    method get_eps3_pdm_a_mac_addresses
+    {
+        in
+        {
+            <** @description: Device. See the list of device IDs in the NVM fidl. **>
+            EpsIIIPdmAIdType device_id
+        }
+        out
+        {
+            <** @description: MAC address read from NVM. **>
+            UInt8 mac_address
+            <** @description: Get request result **>
+            StandardResult op_result
+        }
+    }    
+
+    <** @description: Update the MAC address in the EPS_III mac address book of the OBC NVM.
+        @details: id = 0x00000007
+    **>
+    method set_eps3_pdm_b_mac_addresses
+    {
+        in
+        {
+            <** @description: New MAC address. **>
+            UInt8 new_mac_address
+            <** @description: Device. See the list of device IDs in the NVM fidl. **>
+            EpsIIIPdmBIdType device_id
+        }
+        out
+        {
+            <** @description: Set request result **>
+            StandardResult op_result
+        }
+    }
+    
+    <** @description: Read the MAC addres from the mac address book of the OBC NVM.
+        @details: id = 0x00000008
+    **>
+    method get_eps3_pdm_b_mac_addresses
+    {
+        in
+        {
+            <** @description: Device. See the list of device IDs in the NVM fidl. **>
+            EpsIIIPdmBIdType device_id
+        }
+        out
+        {
+            <** @description: MAC address read from NVM. **>
+            UInt8 mac_address
+            <** @description: Get request result **>
+            StandardResult op_result
+        }
+    }    
+
+    <** @description: Update the MAC address in the EPS_III mac address book of the OBC NVM.
+        @details: id = 0x00000009
+    **>
+    method set_eps3_expander_mac_addresses
+    {
+        in
+        {
+            <** @description: New MAC address. **>
+            UInt8 new_mac_address
+            <** @description: Device. See the list of device IDs in the NVM fidl. **>
+            EpsIIIExpanderIdType device_id
+        }
+        out
+        {
+            <** @description: Set request result **>
+            StandardResult op_result
+        }
+    }
+    
+    <** @description: Read the MAC addres from the mac address book of the OBC NVM.
+        @details: id = 0x00000000A
+    **>
+    method get_eps3_expander_mac_addresses
+    {
+        in
+        {
+            <** @description: Device. See the list of device IDs in the NVM fidl. **>
+            EpsIIIExpanderIdType device_id
+        }
+        out
+        {
+            <** @description: MAC address read from NVM. **>
+            UInt8 mac_address
+            <** @description: Get request result **>
+            StandardResult op_result
+        }
+    }    
+
+    <** @description: Update the MAC address in the EPS_III mac address book of the OBC NVM.
+        @details: id = 0x00000000B
+    **>
+    method set_eps3_input_stage_mac_addresses
+    {
+        in
+        {
+            <** @description: New MAC address. **>
+            UInt8 new_mac_address
+            <** @description: Device. See the list of device IDs in the NVM fidl. **>
+            EpsIIIInputStageIdType device_id
+        }
+        out
+        {
+            <** @description: Set request result **>
+            StandardResult op_result
+        }
+    }
+    
+    <** @description: Read the MAC addres from the mac address book of the OBC NVM.
+        @details: id = 0x00000000C
+    **>
+    method get_eps3_input_stage_mac_addresses
+    {
+        in
+        {
+            <** @description: Device. See the list of device IDs in the NVM fidl. **>
+            EpsIIIInputStageIdType device_id
+        }
+        out
+        {
+            <** @description: MAC address read from NVM. **>
+            UInt8 mac_address
+            <** @description: Get request result **>
+            StandardResult op_result
+        }
+    }    
+
+}

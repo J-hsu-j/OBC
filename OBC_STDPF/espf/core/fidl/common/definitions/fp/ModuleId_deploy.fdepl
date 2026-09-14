@@ -1,0 +1,66 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/ModuleId.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.pf.ModuleId.ModuleId as ModuleId_Definitions {
+
+    struct BasicVersion {
+        DisplayName = "Basic Version"
+        Major {
+            DisplayName = "Major"
+        }
+        Minor {
+            DisplayName = "Minor"
+        }
+        Patch {
+            DisplayName = "Patch"
+        }
+    }
+
+    struct VersionInfo {
+        DisplayName = "Version Info"
+        moduleType {
+            DisplayName = "Module Type"
+        }
+        fwVersion {
+            DisplayName = "FW Version"
+        }
+        buildTime {
+            DisplayName = "Build Time"
+            CalibrationAlg = "toASCIIString",
+            CalibratedType = "string"
+        }
+        buildDate {
+            DisplayName = "Build Date"
+            CalibrationAlg = "toASCIIString",
+            CalibratedType = "string"
+        }
+        buildDescription {
+            DisplayName = "Build Description"
+            CalibrationAlg = "toASCIIString",
+            CalibratedType = "string"
+        }
+        activeImageType {
+            DisplayName = "Active Image Type"
+        }
+        activeImageId {
+            DisplayName = "Active Image Id"
+        }
+        hwSerialNumber {
+            DisplayName = "HW Serial Number"
+        }
+        hwVersion {
+            DisplayName = "HW Version"
+        }
+    }
+
+    method getModuleVersionInfo {
+        out {
+            settings {
+                DisplayName = "Module Information"
+            }
+        }
+    }
+
+}

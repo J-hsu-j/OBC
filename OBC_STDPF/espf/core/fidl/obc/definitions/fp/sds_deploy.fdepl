@@ -1,0 +1,204 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/sds.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.SDS as SDS_Definitions {
+
+    enumeration StandardResult {
+        AlarmInvalidRegexValues = {
+            "(^(?!SUCCESS$).*$)"
+        }
+    }
+
+    enumeration SensorState {
+        AlarmInvalidRegexValues = {
+            "ERR"
+        }
+    }
+
+    method setSensReadFreq {
+        in {
+            enable {
+                DisplayName = "Enable"
+            }
+            sensMTM {
+                DisplayName = "Sensor - Magnetometers"
+                Unit = "Hz"
+                AlarmNumericMaxInclusive = "31"
+            }
+            sensGyro {
+                DisplayName = "Sensor - Gyroscopes"
+                Unit = "Hz"
+                AlarmNumericMaxInclusive = "31"
+            }
+            sensCSS {
+                DisplayName = "Sensor - CSSs"
+                Unit = "Hz"
+                AlarmNumericMaxInclusive = "31"
+            }
+            sensPANEL_TEMP {
+                DisplayName = "Sensor - Panels Temperature"
+                Unit = "Hz"
+                AlarmNumericMaxInclusive = "31"
+            }
+            sensGYRO_TEMP {
+                DisplayName = "Sensor - Gyroscopes Temperature"
+                Unit = "Hz"
+                AlarmNumericMaxInclusive = "31"
+            }
+            sensRES_0 {
+                DisplayName = "Sensor - RES 0"
+                Unit = "Hz"
+                AlarmNumericMaxInclusive = "31"
+            }
+            sensRES_1 {
+                DisplayName = "Sensor - RES 1"
+                Unit = "Hz"
+                AlarmNumericMaxInclusive = "31"
+            }
+        }
+        out {
+            opResult {
+                DisplayName = "Result"
+            }
+        }
+    }
+
+    method getSensReadFreq {
+        out {
+            enable {
+                DisplayName = "Enable"
+            }
+            sensMTM {
+                DisplayName = "Sensor - Magnetometers"
+                Unit = "Hz"
+                AlarmNumericMaxInclusive = "31"
+            }
+            sensGyro {
+                DisplayName = "Sensor - Gyroscopes"
+                Unit = "Hz"
+                AlarmNumericMaxInclusive = "31"
+            }
+            sensCSS {
+                DisplayName = "Sensor - CSSs"
+                Unit = "Hz"
+                AlarmNumericMaxInclusive = "31"
+            }
+            sensPANEL_TEMP {
+                DisplayName = "Sensor - Panels Temperature"
+                Unit = "Hz"
+                AlarmNumericMaxInclusive = "31"
+            }
+            sensGYRO_TEMP {
+                DisplayName = "Sensor - Gyroscopes Temperature"
+                Unit = "Hz"
+                AlarmNumericMaxInclusive = "31"
+            }
+            sensRES_0 {
+                DisplayName = "Sensor - RES 0"
+                Unit = "Hz"
+                AlarmNumericMaxInclusive = "31"
+            }
+            sensRES_1 {
+                DisplayName = "Sensor - RES 1"
+                Unit = "Hz"
+                AlarmNumericMaxInclusive = "31"
+            }
+            opResult {
+                DisplayName = "Result"
+            }
+        }
+    }
+
+    method getSensState {
+        in {
+            sensTypeId {
+                DisplayName = "Sensor Type ID"
+            }
+        }
+        out {
+            sensState {
+                DisplayName = "Sensor State"
+            }
+            opResult {
+                DisplayName = "Result"
+            }
+        }
+    }
+
+    method getSensErr {
+        in {
+            sensTypeId {
+                DisplayName = "Sensor Type ID"
+            }
+        }
+        out {
+            sensErr {
+                DisplayName = "Sensor Error"
+            }
+            X_AXIS {
+                DisplayName = "X Axis"
+            }
+            Y_AXIS {
+                DisplayName = "Y Axis"
+            }
+            Z_AXIS {
+                DisplayName = "Z Axis"
+            }
+            opResult {
+                DisplayName = "Result"
+            }
+        }
+    }
+
+    method getSensReg {
+        in {
+            sensTypeId {
+                DisplayName = "Sensor Type ID"
+            }
+            sensAxis {
+                DisplayName = "Sensor Axis"
+            }
+            SensNum {
+                DisplayName = "Sensor Number"
+            }
+            reg_address {
+                DisplayName = "Register Address"
+            }
+        }
+        out {
+            respBytes {
+                DisplayName = "Response Bytes"
+            }
+            opResult {
+                DisplayName = "Result"
+            }
+        }
+    }
+
+    method setSensReg {
+        in {
+            sensTypeId {
+                DisplayName = "Sensor Type ID"
+            }
+            sensAxis {
+                DisplayName = "Sensor Axis"
+            }
+            SensNum {
+                DisplayName = "Sensor Number"
+            }
+            reg_address {
+                DisplayName = "Register Address"
+            }
+            reg_value {
+                DisplayName = "Register Value"
+            }
+        }
+        out {
+            opResult {
+                DisplayName = "Result"
+            }
+        }
+    }
+
+}

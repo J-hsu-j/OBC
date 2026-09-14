@@ -1,0 +1,173 @@
+{{ hsmgen_std_hdr_w_ver }}
+
+#include <stddef.h>
+#include "libhsm.h"
+#include "{{ sm.name | lower }}_config_user.h"
+#include "{{ sm.name | lower }}_user.h"
+
+{%      for state_obj in states %}
+{%-            for trans in state_obj.transitions_list %}
+static const sTransition_t {{ trans.trans_generated_name }};
+{%-            endfor -%}
+{%      endfor %}
+
+{%      for state_obj in states %}
+{%-          if state_obj.has_transitions() %}
+static const sTransition_t* trans_{{ state_obj.name }}[{{ state_obj.transitions_list | length + 1}}] =
+{
+{%-            for trans in state_obj.transitions_list %}
+    &{{ trans.trans_generated_name }},
+{%-            endfor %}
+    NULL
+};
+{%          endif -%}
+{%-      endfor %}
+
+// {{ sm.name }} states forward declarations
+{%-      for state_obj in states %}
+static {% if state_obj.is_composite() %}sCompositeState_t{% else %}const sState_t{% endif %} state_{{ state_obj.name }};
+{%-     endfor %}
+
+// history/active states instance lists definitions
+{%-       for state_obj in states %}
+{%-         if state_obj.is_composite() %}
+static sState_t *p_{{ state_obj.name }}_inst_history[{{ sm.name | upper }}_INSTANCE_CNT] = {
+    {% for _ in range(attributes.instances) -%}
+        HSM_UPCAST_STATE(&state_{{ state_obj.get_attributes()['initial'] }}),
+    {%- endfor %}
+};
+
+static sState_t *p_{{ state_obj.name }}_inst_active_states[{{ sm.name | upper }}_INSTANCE_CNT] = {
+    {% for _ in range(attributes.instances) -%}
+        HSM_UPCAST_STATE(&state_{{ state_obj.name }}),
+    {%- endfor %}
+};
+{%-         endif %}
+{%-     endfor %}
+
+static sState_t *p_{{ sm.name }}_inst_history[{{ sm.name | upper }}_INSTANCE_CNT] = {
+    {% for _ in range(attributes.instances) -%}
+        HSM_UPCAST_STATE(&state_{{ attributes.initial }}),
+    {%- endfor %}
+};
+
+static sState_t *p_{{ sm.name }}_inst_active_states[{{ sm.name | upper }}_INSTANCE_CNT] = {
+    {% for _ in range(attributes.instances) -%}
+        HSM_UPCAST_STATE(&state_{{ sm.name }}),
+    {%- endfor %}
+};
+
+// {{ sm.name }} root state definition
+sCompositeState_t state_{{ sm.name }} =
+{
+    .state =
+    {
+        .state_id = {{ sm.get_state_symbolic_id_for_str("ROOT") }},
+        .pName = "state_{{ sm.name }}",
+        .onEntryFunc = NULL,
+        .onExitFunc = NULL,
+        .pTransitionList = NULL,
+        .eType = eHSM_StateType_Composite,
+        .pParent = NULL
+    },
+    .pInitialState = HSM_UPCAST_STATE(&state_{{ attributes.initial }}),
+    .instanceCnt = {{ sm.get_instance_cnt() }},
+    .ppHistoryState = p_{{ sm.name }}_inst_history,
+    .ppActiveState = p_{{ sm.name }}_inst_active_states
+};
+{%-     for state_obj in states %}
+{%-          if state_obj.is_composite() %}
+static sCompositeState_t state_{{ state_obj.name }} =
+{
+    .state =
+    {
+        .state_id = {{ state_obj.get_symbolic_id() }},
+        .pName = "state_{{ state_obj.name }}",
+{%-          if state_obj.supports_bool_attr("on_entry") %}
+        .onEntryFunc = &{{ sm.name }}_on_entry_{{ state_obj.name }},
+{%-          else %}
+        .onEntryFunc = NULL,
+{%-          endif %}
+{%-          if state_obj.supports_bool_attr("on_exit") %}
+        .onExitFunc = &{{ sm.name }}_on_exit_{{ state_obj.name }},
+{%-          else %}
+        .onExitFunc = NULL,
+{%-          endif %}
+{%- if state_obj.has_transitions() %}
+        .pTransitionList = trans_{{ state_obj.name }},
+{%- else %}
+        .pTransitionList = NULL,
+{%- endif %}
+        .eType = eHSM_StateType_Composite,
+        .pParent = HSM_UPCAST_STATE(&state_{{ state_obj.parent }})
+    },
+    .pInitialState = HSM_UPCAST_STATE(&state_{{ state_obj.get_attributes()['initial'] }}),
+    .instanceCnt = {{ sm.get_instance_cnt() }},
+    .ppHistoryState = p_{{ state_obj.name }}_inst_history,
+    .ppActiveState = p_{{ state_obj.name }}_inst_active_states
+};
+{%          else %}
+static const sState_t state_{{ state_obj.name }} =
+{
+    .state_id = {{ state_obj.get_symbolic_id() }},
+    .pName = "state_{{ state_obj.name }}",
+{%-          if state_obj.supports_bool_attr("on_entry") %}
+    .onEntryFunc = &{{ sm.name }}_on_entry_{{ state_obj.name }},
+{%-          else %}
+    .onEntryFunc = NULL,
+{%-          endif %}
+{%-          if state_obj.supports_bool_attr("on_exit") %}
+    .onExitFunc = &{{ sm.name }}_on_exit_{{ state_obj.name }},
+{%-          else %}
+    .onExitFunc = NULL,
+{%-          endif %}
+    .pTransitionList = trans_{{ state_obj.name }},
+    .eType = eHSM_StateType_Simple,
+    .pParent = HSM_UPCAST_STATE(&state_{{ state_obj.parent }})
+};
+{%          endif %}
+{%-    endfor %}
+
+{%- for hist_state in hist_states %}
+static const sState_t state_{{ hist_state[0] }} =
+{
+    .state_id = {{ sm.get_history_state_id(hist_state[0]) }},
+    .pName = "state_{{ hist_state[0] }}",
+    .onEntryFunc = NULL,
+    .onExitFunc = NULL,
+    .pTransitionList = NULL,
+    .eType = eHSM_StateType_History,
+    .pParent = HSM_UPCAST_STATE(&state_{{ hist_state[1] }})
+};
+{%- endfor %}
+{%      for state_obj in states %}
+{%-            for trans in state_obj.transitions_list %}
+static const sTransition_t {{ trans.trans_generated_name }} =
+{
+{%- if trans.is_trans_event_special() %}
+    {%- if trans.get_printable_event_name() == "periodic" %}
+    .eventId = eHSM_StdEvent_Periodic,
+    {%- else %}
+    .eventId = ev_{{ sm.name }}_{{ trans.get_printable_event_name() }},
+    {%- endif %}
+{%- else %}
+    .eventId = ev_{{ sm.name }}_{{ trans.get_printable_event_name() }},
+{%- endif %}
+{%- if trans.get_printable_guard_name() %}
+    .guardFunc = &{{ sm.name }}_guard_{{ trans.get_printable_guard_name(state_obj.name) }},
+{%- else %}
+    .guardFunc = NULL,
+{%- endif %}
+    {%- if trans.is_transition_to_self %}
+    .pTargetState = NULL,
+    {%- else %}
+    .pTargetState = HSM_UPCAST_STATE(&state_{{ trans.target_state }}),
+    {%- endif %}
+{%- if trans.get_trans_action() %}
+    .onTransitionActionFunc = &{{ sm.name }}_action_{{ trans.get_printable_action_name(state_obj.name) }},
+{%- else %}
+    .onTransitionActionFunc = NULL
+{%- endif %}
+};
+{%            endfor %}
+{%-     endfor %}

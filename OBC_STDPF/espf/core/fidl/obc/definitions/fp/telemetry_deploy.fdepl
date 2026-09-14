@@ -1,0 +1,284 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/telemetry.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.pf.telemetry as telemetry_Definitions
+{
+
+	enumeration StandardResult {
+		AlarmInvalidRegexValues = {
+			"(^(?!SUCCESS$).*$)"
+		}
+	}
+
+	struct tlm_preset_cfg {
+		data_id {
+			DisplayName = "Data ID"
+		}
+		active {
+			DisplayName = "Active"
+		}
+		acq_period_ms {
+			DisplayName = "Acquistion Period"
+			Unit = "ms"
+		}
+	}
+
+	struct tlm_file_size_limit_cfg {
+		size_limit_kb {
+			DisplayName = "Size Limit"
+			Unit = "KB"
+		}
+		max_log_files_cnt {
+			DisplayName = "Max Log Files Count"
+		}
+	}
+
+	struct tlm_general_cfg {
+		tlm_auto_start_en {
+			DisplayName = "Telemetry Auto Start Enabled"
+		}
+	}
+
+	struct tlm_stats {
+		is_started {
+			DisplayName = "Is Started"
+		}
+		msg_pushed_cnt {
+			DisplayName = "Message Pushed Count"
+		}
+		msg_popped_cnt {
+			DisplayName = "Message Popped Count"
+		}
+		free_bytes_min {
+			DisplayName = "Free Bytes Minimum"
+			Unit = "B"
+		}
+		discarded_messages_cnt {
+			DisplayName = "Discarded Messages Count"
+		}
+		max_number_of_batch_msg {
+			DisplayName = "Max Number Of Batch Messages"
+		}
+		active_slot_id {
+			DisplayName = "Active Slot ID"
+		}
+	}
+
+	method getTelemetryGeneralConfig {
+		in {
+			tlm_instance_id {
+				DisplayName = "Telemetry Instance ID"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+			cfg {
+				DisplayName = "Configuration"
+			}
+		}
+	}
+
+	method setTelemetryGeneralConfig {
+		in {
+			tlm_instance_id {
+				DisplayName = "Telemetry Instance ID"
+			}
+			cfg {
+				DisplayName = "Configuration"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getTelemetryPresetConfig {
+		in {
+			tlm_instance_id {
+				DisplayName = "Telemetry Instance ID"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+			slot_preset_cnt {
+				DisplayName = "Slot Preset Count"
+			}
+			max_tlm_msg_cnt {
+				DisplayName = "Max Telemetry Message Count"
+			}
+			Telemetry_preset_cfg {
+				DisplayName = "Telemetry Preset Configuration"
+			}
+		}
+	}
+
+	method setTelemetryPresetConfig {
+		in {
+			tlm_instance_id {
+				DisplayName = "Telemetry Instance ID"
+			}
+			Telemetry_preset_cfg {
+				DisplayName = "Telemetry Preset Configuration"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method setActivePreset {
+		in {
+			tlm_instance_id {
+				DisplayName = "Telemetry Instance ID"
+			}
+			req_active_preset {
+				DisplayName = "Requested Active Preset"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+			avail_presets_cnt {
+				DisplayName = "Available Presets Count"
+			}
+		}
+	}
+
+	method getActivePreset {
+		in {
+			tlm_instance_id {
+				DisplayName = "Telemetry Instance ID"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+			active_preset_id {
+				DisplayName = "Active Preset ID"
+			}
+		}
+	}
+
+	method restoreActivePreset {
+		in {
+			tlm_instance_id {
+				DisplayName = "Telemetry Instance ID"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getTelemetryFileSinkConfig {
+		in {
+			tlm_instance_id {
+				DisplayName = "Telemetry Instance ID"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+			active_file_cfg_type {
+				DisplayName = "Active File Configuration Type"
+			}
+			size_limit_cfg {
+				DisplayName = "Size Limit Configuration"
+			}
+		}
+	}
+
+	method setTelemetryFileSzLimitConfig {
+		in {
+			tlm_instance_id {
+				DisplayName = "Telemetry Instance ID"
+			}
+			size_limit_cfg {
+				DisplayName = "Size Limit Configuration"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method cleanTelemetryFiles {
+		in {
+			tlm_instance_id {
+				DisplayName = "Telemetry Instance ID"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getTelemetryOperationStats {
+		in {
+			tlm_instance_id {
+				DisplayName = "Telemetry Instance ID"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+			telemetry_stats {
+				DisplayName = "Telemetry Statistics"
+			}
+		}
+	}
+
+	method startTelemetry {
+		in {
+			tlm_instance_id {
+				DisplayName = "Telemetry Instance ID"
+			}
+			hold_time_sec {
+				DisplayName = "Hold Time"
+				Unit = "s"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method stopTelemetry {
+		in {
+			tlm_instance_id {
+				DisplayName = "Telemetry Instance ID"
+			}
+			hold_time_sec {
+				DisplayName = "Hold Time"
+				Unit = "s"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+}

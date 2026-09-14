@@ -1,0 +1,7379 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CubeComputerControlProgram8.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CubeComputerControlProgram8 as CubeADCS_Gen2_CubeComputerControlProgram8_Definitions
+{    
+    
+    struct ConfigDefaultModes
+    {
+        DisplayName = "Default mode configuration"
+        
+        RunModeDefault {
+            DisplayName = "Default ADCS run mode"
+        }
+        
+        OpStateDefault {
+            DisplayName = "Default ADCS operational state"
+        }
+        
+        ConModeSafe {
+            DisplayName = "Default control mode in OpStateSafe"
+        }
+        
+        ConModeAuto {
+            DisplayName = "Default control mode in OpStateAuto"
+        }
+        
+    }
+    
+    struct ConfigMount
+    {
+        DisplayName = "Mounting configuration"
+        
+        MountStackX {
+            DisplayName = "StackX mounting"
+        }
+        
+        MountStackY {
+            DisplayName = "StackY mounting"
+        }
+        
+        MountStackZ {
+            DisplayName = "StackZ mounting"
+        }
+        
+        MountMtq0 {
+            DisplayName = "MTQ0 mounting"
+        }
+        
+        MountMtq1 {
+            DisplayName = "MTQ1 mounting"
+        }
+        
+        MountMtq2 {
+            DisplayName = "MTQ2 mounting"
+        }
+        
+        MountRwl0 {
+            DisplayName = "Wheel0 mounting"
+        }
+        
+        MountRwl1 {
+            DisplayName = "Wheel1 mounting"
+        }
+        
+        MountRwl2 {
+            DisplayName = "Wheel2 mounting"
+        }
+        
+        MountRwl3 {
+            DisplayName = "Wheel3 mounting"
+        }
+        
+        MountRwlPyrAlpha {
+            DisplayName = "Pyramid RWL mounting alpha angle"
+            Unit = "deg"
+        }
+        
+        MountRwlPyrBeta {
+            DisplayName = "Pyramid RWL mounting beta angle"
+            Unit = "deg"
+        }
+        
+        MountRwlPyrGamma {
+            DisplayName = "Pyramid RWL mounting gamma angle"
+            Unit = "deg"
+        }
+        
+        MountCss0 {
+            DisplayName = "CSS0 mounting"
+        }
+        
+        MountCss1 {
+            DisplayName = "CSS1 mounting"
+        }
+        
+        MountCss2 {
+            DisplayName = "CSS2 mounting"
+        }
+        
+        MountCss3 {
+            DisplayName = "CSS3 mounting"
+        }
+        
+        MountCss4 {
+            DisplayName = "CSS4 mounting"
+        }
+        
+        MountCss5 {
+            DisplayName = "CSS5 mounting"
+        }
+        
+        MountCss6 {
+            DisplayName = "CSS6 mounting"
+        }
+        
+        MountCss7 {
+            DisplayName = "CSS7 mounting"
+        }
+        
+        MountCss8 {
+            DisplayName = "CSS8 mounting"
+        }
+        
+        MountCss9 {
+            DisplayName = "CSS9 mounting"
+        }
+        
+        MountFss0Alpha {
+            DisplayName = "FSS0 mounting alpha angle"
+            Unit = "deg"
+        }
+        
+        MountFss0Beta {
+            DisplayName = "FSS0 mounting beta angle"
+            Unit = "deg"
+        }
+        
+        MountFss0Gamma {
+            DisplayName = "FSS0 mounting gamma angle"
+            Unit = "deg"
+        }
+        
+        MountFss1Alpha {
+            DisplayName = "FSS1 mounting alpha angle"
+            Unit = "deg"
+        }
+        
+        MountFss1Beta {
+            DisplayName = "FSS1 mounting beta angle"
+            Unit = "deg"
+        }
+        
+        MountFss1Gamma {
+            DisplayName = "FSS1 mounting gamma angle"
+            Unit = "deg"
+        }
+        
+        MountFss2Alpha {
+            DisplayName = "FSS2 mounting alpha angle"
+            Unit = "deg"
+        }
+        
+        MountFss2Beta {
+            DisplayName = "FSS2 mounting beta angle"
+            Unit = "deg"
+        }
+        
+        MountFss2Gamma {
+            DisplayName = "FSS2 mounting gamma angle"
+            Unit = "deg"
+        }
+        
+        MountFss3Alpha {
+            DisplayName = "FSS3 mounting alpha angle"
+            Unit = "deg"
+        }
+        
+        MountFss3Beta {
+            DisplayName = "FSS3 mounting beta angle"
+            Unit = "deg"
+        }
+        
+        MountFss3Gamma {
+            DisplayName = "FSS3 mounting gamma angle"
+            Unit = "deg"
+        }
+        
+        MountHss0Alpha {
+            DisplayName = "HSS0 mounting alpha angle"
+            Unit = "deg"
+        }
+        
+        MountHss0Beta {
+            DisplayName = "HSS0 mounting beta angle"
+            Unit = "deg"
+        }
+        
+        MountHss0Gamma {
+            DisplayName = "HSS0 mounting gamma angle"
+            Unit = "deg"
+        }
+        
+        MountHss1Alpha {
+            DisplayName = "HSS1 mounting alpha angle"
+            Unit = "deg"
+        }
+        
+        MountHss1Beta {
+            DisplayName = "HSS1 mounting beta angle"
+            Unit = "deg"
+        }
+        
+        MountHss1Gamma {
+            DisplayName = "HSS1 mounting gamma angle"
+            Unit = "deg"
+        }
+        
+        MountMag0Alpha {
+            DisplayName = "MAG0 mounting alpha angle"
+            Unit = "deg"
+        }
+        
+        MountMag0Beta {
+            DisplayName = "MAG0 mounting beta angle"
+            Unit = "deg"
+        }
+        
+        MountMag0Gamma {
+            DisplayName = "MAG0 mounting gamma angle"
+            Unit = "deg"
+        }
+        
+        MountMag1Alpha {
+            DisplayName = "MAG1 mounting alpha angle"
+            Unit = "deg"
+        }
+        
+        MountMag1Beta {
+            DisplayName = "MAG1 mounting beta angle"
+            Unit = "deg"
+        }
+        
+        MountMag1Gamma {
+            DisplayName = "MAG1 mounting gamma angle"
+            Unit = "deg"
+        }
+        
+        MountStr0Alpha {
+            DisplayName = "STR0 mounting alpha angle"
+            Unit = "deg"
+        }
+        
+        MountStr0Beta {
+            DisplayName = "STR0 mounting beta angle"
+            Unit = "deg"
+        }
+        
+        MountStr0Gamma {
+            DisplayName = "STR0 mounting gamma angle"
+            Unit = "deg"
+        }
+        
+        MountStr1Alpha {
+            DisplayName = "STR1 mounting alpha angle"
+            Unit = "deg"
+        }
+        
+        MountStr1Beta {
+            DisplayName = "STR1 mounting beta angle"
+            Unit = "deg"
+        }
+        
+        MountStr1Gamma {
+            DisplayName = "STR1 mounting gamma angle"
+            Unit = "deg"
+        }
+        
+        MountExtSensor0Alpha {
+            DisplayName = "ExtSensor0 mounting alpha angle"
+            Unit = "deg"
+        }
+        
+        MountExtSensor0Beta {
+            DisplayName = "ExtSensor0 mounting beta angle"
+            Unit = "deg"
+        }
+        
+        MountExtSensor0Gamma {
+            DisplayName = "ExtSensor0 mounting gamma angle"
+            Unit = "deg"
+        }
+        
+        MountExtSensor1Alpha {
+            DisplayName = "ExtSensor1 mounting alpha angle"
+            Unit = "deg"
+        }
+        
+        MountExtSensor1Beta {
+            DisplayName = "ExtSensor1 mounting beta angle"
+            Unit = "deg"
+        }
+        
+        MountExtSensor1Gamma {
+            DisplayName = "ExtSensor1 mounting gamma angle"
+            Unit = "deg"
+        }
+        
+        MountExtGyr0Axis1 {
+            DisplayName = "ExtGyro0 axis1 mounting"
+        }
+        
+        MountExtGyr0Axis2 {
+            DisplayName = "ExtGyro0 axis2 mounting"
+        }
+        
+        MountExtGyr0Axis3 {
+            DisplayName = "ExtGyro0 axis3 mounting"
+        }
+        
+        MountExtGyr1Axis1 {
+            DisplayName = "ExtGyro1 axis1 mounting"
+        }
+        
+        MountExtGyr1Axis2 {
+            DisplayName = "ExtGyro1 axis2 mounting"
+        }
+        
+        MountExtGyr1Axis3 {
+            DisplayName = "ExtGyro1 axis3 mounting"
+        }
+        
+    }
+    
+    struct ConfigMag0OrbitCal
+    {
+        DisplayName = "Mag0 magnetometer in-orbit calibration configuration"
+        
+        Offset1 {
+            DisplayName = "Magnetometer channel 1 offset"
+        }
+        
+        Offset2 {
+            DisplayName = "Magnetometer channel 2 offset"
+        }
+        
+        Offset3 {
+            DisplayName = "Magnetometer channel 3 offset"
+        }
+        
+        SensMatrix11 {
+            DisplayName = "Magnetometer sensitivity matrix S11"
+        }
+        
+        SensMatrix22 {
+            DisplayName = "Magnetometer sensitivity matrix S22"
+        }
+        
+        SensMatrix33 {
+            DisplayName = "Magnetometer sensitivity matrix S33"
+        }
+        
+        SensMatrix12 {
+            DisplayName = "Magnetometer sensitivity matrix S12"
+        }
+        
+        SensMatrix13 {
+            DisplayName = "Magnetometer sensitivity matrix S13"
+        }
+        
+        SensMatrix21 {
+            DisplayName = "Magnetometer sensitivity matrix S21"
+        }
+        
+        SensMatrix23 {
+            DisplayName = "Magnetometer sensitivity matrix S23"
+        }
+        
+        SensMatrix31 {
+            DisplayName = "Magnetometer sensitivity matrix S31"
+        }
+        
+        SensMatrix32 {
+            DisplayName = "Magnetometer sensitivity matrix S32"
+        }
+        
+    }
+    
+    struct ConfigMag1OrbitCal
+    {
+        DisplayName = "Mag1 magnetometer in-orbit calibration configuration"
+        
+        Offset1 {
+            DisplayName = "Magnetometer channel 1 offset"
+        }
+        
+        Offset2 {
+            DisplayName = "Magnetometer channel 2 offset"
+        }
+        
+        Offset3 {
+            DisplayName = "Magnetometer channel 3 offset"
+        }
+        
+        SensMatrix11 {
+            DisplayName = "Magnetometer sensitivity matrix S11"
+        }
+        
+        SensMatrix22 {
+            DisplayName = "Magnetometer sensitivity matrix S22"
+        }
+        
+        SensMatrix33 {
+            DisplayName = "Magnetometer sensitivity matrix S33"
+        }
+        
+        SensMatrix12 {
+            DisplayName = "Magnetometer sensitivity matrix S12"
+        }
+        
+        SensMatrix13 {
+            DisplayName = "Magnetometer sensitivity matrix S13"
+        }
+        
+        SensMatrix21 {
+            DisplayName = "Magnetometer sensitivity matrix S21"
+        }
+        
+        SensMatrix23 {
+            DisplayName = "Magnetometer sensitivity matrix S23"
+        }
+        
+        SensMatrix31 {
+            DisplayName = "Magnetometer sensitivity matrix S31"
+        }
+        
+        SensMatrix32 {
+            DisplayName = "Magnetometer sensitivity matrix S32"
+        }
+        
+    }
+    
+    struct ConfigAdcsController
+    {
+        DisplayName = "ADCS controller configuration"
+        
+        ConModeDefault {
+            DisplayName = "Default control mode"
+        }
+        
+        Kd {
+            DisplayName = "Detumbling damping gain"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Kdsun {
+            DisplayName = "Sun-spin control gain - sunlit part"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Kdecl {
+            DisplayName = "Sun-spin control gain - eclipse part"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Ks {
+            DisplayName = "Detumbling spin gain"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Kdf {
+            DisplayName = "Fast B-dot detumbling gain"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        Kn {
+            DisplayName = "Y-momentum nutation damping gain"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Kq {
+            DisplayName = "Y-momentum nutation damping quaternion gain"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Kqx {
+            DisplayName = "X-axis GG nutation damping quaternion gain"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Kqy {
+            DisplayName = "Y-axis GG nutation damping quaternion gain"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Kqz {
+            DisplayName = "Z-axis GG nutation damping quaternion gain"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Kh {
+            DisplayName = "Wheel desaturation control gain"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Kp1 {
+            DisplayName = "Y-momentum proportional gain"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        Kd1 {
+            DisplayName = "Y-momentum derivative gain"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        Kp2 {
+            DisplayName = "RWheel proportional gain"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        Kd2 {
+            DisplayName = "RWheel derivative gain"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        Kp3 {
+            DisplayName = "Tracking proportional gain"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        Kd3 {
+            DisplayName = "Tracking derivative gain"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        Ki3 {
+            DisplayName = "Tracking integral gain"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        wy_ref {
+            DisplayName = "Reference spin rate"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-5.0001"
+			AlarmNumericMaxInclusive = "5.0001"
+        }
+        
+        H_ref {
+            DisplayName = "Reference wheel momentum"
+            Unit = "Nms"
+			AlarmNumericMinInclusive = "-10.0001"
+        }
+        
+        Hy_bias {
+            DisplayName = "Y-wheel bias momentum during XYZ-control"
+            Unit = "Nms"
+			AlarmNumericMinInclusive = "-10.0001"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        wSunYawRef {
+            DisplayName = "Reference spin rate for RW spin control"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-20.0001"
+			AlarmNumericMaxInclusive = "20.0001"
+        }
+        
+        SunKeepoutAng {
+            DisplayName = "Sun keep-out angle"
+            Unit = "deg"
+			AlarmNumericMaxInclusive = "90.0001"
+        }
+        
+        RollLimit {
+            DisplayName = "Roll limit angle"
+            Unit = "deg"
+			AlarmNumericMaxInclusive = "180.0001"
+        }
+        
+        YawCompensate {
+            DisplayName = "Yaw compensation for earth rotation"
+        }
+        
+        SunTrackEclEn {
+            DisplayName = "Enable sun tracking in eclipse"
+        }
+        
+        SunAvoidEn {
+            DisplayName = "Enable sun avoidance"
+        }
+        
+    }
+    
+    struct ConfigAdcsEstimator
+    {
+        DisplayName = "ADCS estimator configuration"
+        
+        EstModeMainDefault {
+            DisplayName = "Default main estimator mode"
+        }
+        
+        EstModeBackupDefault {
+            DisplayName = "Default backup estimator mode"
+        }
+        
+        MagR {
+            DisplayName = "MAG measurement noise"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        CssR {
+            DisplayName = "CSS measurement noise"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        FssR {
+            DisplayName = "FSS measurement noise"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        HssR {
+            DisplayName = "HSS measurement noise"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        StrR {
+            DisplayName = "STR measurement noise"
+			AlarmNumericMaxInclusive = "0.10010000000000001"
+        }
+        
+        RkfQ {
+            DisplayName = "Magnetometer RKF system noise"
+			AlarmNumericMaxInclusive = "0.0101"
+        }
+        
+        EkfQ {
+            DisplayName = "EKF system noise"
+			AlarmNumericMaxInclusive = "0.0101"
+        }
+        
+        NutDeps {
+            DisplayName = "Nutation Epsilon correction"
+            Unit = "rad"
+			AlarmNumericMinInclusive = "-0.10010000000000001"
+			AlarmNumericMaxInclusive = "0.10010000000000001"
+        }
+        
+        NutDpsi {
+            DisplayName = "Nutation Psi correction"
+            Unit = "rad"
+			AlarmNumericMinInclusive = "-0.10010000000000001"
+			AlarmNumericMaxInclusive = "0.10010000000000001"
+        }
+        
+        EkfUseFss {
+            DisplayName = "Use FSS in EKF"
+        }
+        
+        EkfUseCss {
+            DisplayName = "Use CSS in EKF"
+        }
+        
+        EkfUseHss {
+            DisplayName = "Use HSS in EKF"
+        }
+        
+        EkfUseStr {
+            DisplayName = "Use STR in EKF"
+        }
+        
+        TVec1 {
+            DisplayName = "Triad Vector 1"
+        }
+        
+        TVec2 {
+            DisplayName = "Triad Vector 2"
+        }
+        
+    }
+    
+    struct ConfigAdcsSatellite
+    {
+        DisplayName = "ADCS satellite configuration"
+        
+        Ixx {
+            DisplayName = "Moment of inertia Ixx"
+            Unit = "kg.m^2"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Iyy {
+            DisplayName = "Moment of inertia Iyy"
+            Unit = "kg.m^2"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Izz {
+            DisplayName = "Moment of inertia Izz"
+            Unit = "kg.m^2"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Ixy {
+            DisplayName = "Product of inertia Ixy"
+            Unit = "kg.m^2"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Ixz {
+            DisplayName = "Product of inertia Ixz"
+            Unit = "kg.m^2"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Iyz {
+            DisplayName = "Product of inertia Iyz"
+            Unit = "kg.m^2"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        SunPointBodyVecX {
+            DisplayName = "Sun-pointing body vector X component"
+        }
+        
+        SunPointBodyVecY {
+            DisplayName = "Sun-pointing body vector Y component"
+        }
+        
+        SunPointBodyVecZ {
+            DisplayName = "Sun-pointing body vector Z component"
+        }
+        
+        TgtTrackBodyVecX {
+            DisplayName = "Target-tracking body vector X component"
+        }
+        
+        TgtTrackBodyVecY {
+            DisplayName = "Target-tracking body vector Y component"
+        }
+        
+        TgtTrackBodyVecZ {
+            DisplayName = "Target-tracking body vector Z component"
+        }
+        
+        SatTrackBodyVecX {
+            DisplayName = "Satellite-tracking body vector X component"
+        }
+        
+        SatTrackBodyVecY {
+            DisplayName = "Satellite-tracking body vector Y component"
+        }
+        
+        SatTrackBodyVecZ {
+            DisplayName = "Satellite-tracking body vector Z component"
+        }
+        
+    }
+    
+    struct ConfigOrbitSatParams
+    {
+        DisplayName = "Satellite orbit parameter configuration"
+        
+        OrbitEpoch {
+            DisplayName = "Orbit epoch"
+            Unit = "yyddd.ssssssss"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        OrbitIncl {
+            DisplayName = "Orbit inclination"
+            Unit = "deg"
+			AlarmNumericMaxInclusive = "180.0001"
+        }
+        
+        OrbitRaan {
+            DisplayName = "Orbit RAAN"
+            Unit = "deg"
+			AlarmNumericMaxInclusive = "360.0001"
+        }
+        
+        OrbitEccen {
+            DisplayName = "Orbit eccentricity"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        OrbitAP {
+            DisplayName = "Orbit argument of perigee"
+            Unit = "deg"
+			AlarmNumericMaxInclusive = "360.0001"
+        }
+        
+        OrbitMA {
+            DisplayName = "Orbit mean anomaly"
+            Unit = "deg"
+			AlarmNumericMaxInclusive = "360.0001"
+        }
+        
+        OrbitMM {
+            DisplayName = "Orbit mean motion"
+            Unit = "orbits/day"
+			AlarmNumericMaxInclusive = "20.0001"
+        }
+        
+        OrbitBstar {
+            DisplayName = "Orbit B-star drag term"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+    }
+    
+    struct ConfigOrbitTargetParams
+    {
+        DisplayName = "Target satellite orbit parameter configuration"
+        
+        OrbitEpoch {
+            DisplayName = "Orbit epoch"
+            Unit = "yyddd.ssssssss"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        OrbitIncl {
+            DisplayName = "Orbit inclination"
+            Unit = "deg"
+			AlarmNumericMaxInclusive = "180.0001"
+        }
+        
+        OrbitRaan {
+            DisplayName = "Orbit RAAN"
+            Unit = "deg"
+			AlarmNumericMaxInclusive = "360.0001"
+        }
+        
+        OrbitEccen {
+            DisplayName = "Orbit eccentricity"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        OrbitAP {
+            DisplayName = "Orbit argument of perigee"
+            Unit = "deg"
+			AlarmNumericMaxInclusive = "360.0001"
+        }
+        
+        OrbitMA {
+            DisplayName = "Orbit mean anomaly"
+            Unit = "deg"
+			AlarmNumericMaxInclusive = "360.0001"
+        }
+        
+        OrbitMM {
+            DisplayName = "Orbit mean motion"
+            Unit = "orbits/day"
+			AlarmNumericMaxInclusive = "20.0001"
+        }
+        
+        OrbitBstar {
+            DisplayName = "Orbit B-star drag term"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+    }
+    
+    struct ConfigNodeSelection
+    {
+        DisplayName = "Node selection configuration"
+        
+        SelectRwl {
+            DisplayName = "RWL selection flags"
+        }
+        
+        SelectMag {
+            DisplayName = "MAG selection flags"
+        }
+        
+        SelectFss {
+            DisplayName = "FSS selection flags"
+        }
+        
+        SelectHss {
+            DisplayName = "HSS selection flags"
+        }
+        
+        SelectGyro {
+            DisplayName = "GYR selection flags"
+        }
+        
+        SelectStr {
+            DisplayName = "STR selection flags"
+        }
+        
+        SelectGnss {
+            DisplayName = "GNSS selection flags"
+        }
+        
+        SelectExt {
+            DisplayName = "External sensor selection flags"
+        }
+        
+    }
+    
+    struct ConfigActuatorRwl
+    {
+        DisplayName = "Wheel configuration"
+        
+        Rwl0Iw {
+            DisplayName = "RWL0 inertia"
+            Unit = "kg.m^2"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Rwl0Hmax {
+            DisplayName = "RWL0 maximum momentum"
+            Unit = "N.m.s"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        Rwl0Nmax {
+            DisplayName = "RWL0 maximum torque"
+            Unit = "N.m"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Rwl1Iw {
+            DisplayName = "RWL1 inertia"
+            Unit = "kg.m^2"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Rwl1Hmax {
+            DisplayName = "RWL1 maximum momentum"
+            Unit = "N.m.s"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        Rwl1Nmax {
+            DisplayName = "RWL1 maximum torque"
+            Unit = "N.m"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Rwl2Iw {
+            DisplayName = "RWL2 inertia"
+            Unit = "kg.m^2"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Rwl2Hmax {
+            DisplayName = "RWL2 maximum momentum"
+            Unit = "N.m.s"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        Rwl2Nmax {
+            DisplayName = "RWL2 maximum torque"
+            Unit = "N.m"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Rwl3Iw {
+            DisplayName = "RWL3 inertia"
+            Unit = "kg.m^2"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Rwl3Hmax {
+            DisplayName = "RWL3 maximum momentum"
+            Unit = "N.m.s"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        Rwl3Nmax {
+            DisplayName = "RWL3 maximum torque"
+            Unit = "N.m"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        NDel {
+            DisplayName = "Wheel ramp torque"
+            Unit = "N.m"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        RwlScheme {
+            DisplayName = "Wheel scheme"
+        }
+        
+        RwlFailId {
+            DisplayName = "Failed wheel ID"
+        }
+        
+        PyrHnom {
+            DisplayName = "Pyramid nominal momentum"
+            Unit = "N.m.s"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        PyrTiltAngle {
+            DisplayName = "Pyramid tilt angle"
+            Unit = "deg"
+			AlarmNumericMaxInclusive = "90.0001"
+        }
+        
+    }
+    
+    struct ConfigActuatorMtq
+    {
+        DisplayName = "Magnetorquer configuration"
+        
+        Mtq0Mmax {
+            DisplayName = "MTQ0 maximum dipole moment"
+            Unit = "A.m^2"
+			AlarmNumericMaxInclusive = "400.0001"
+        }
+        
+        Mtq1Mmax {
+            DisplayName = "MTQ1 maximum dipole moment"
+            Unit = "A.m^2"
+			AlarmNumericMaxInclusive = "400.0001"
+        }
+        
+        Mtq2Mmax {
+            DisplayName = "MTQ2 maximum dipole moment"
+            Unit = "A.m^2"
+			AlarmNumericMaxInclusive = "400.0001"
+        }
+        
+        OnTimeMax {
+            DisplayName = "Maximum magnetorquer on-time"
+            Unit = "ms"
+        }
+        
+        OnTimeMin {
+            DisplayName = "Minimum magnetorquer on-time"
+            Unit = "ms"
+        }
+        
+        MtqFfac {
+            DisplayName = "Magnetic control filter factor"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+    }
+    
+    struct ConfigMagSensingElement
+    {
+        DisplayName = "Mag sensing element configuration"
+        
+        Mag0SensingElement {
+            DisplayName = "MAG0 sensing element"
+        }
+        
+        Mag1SensingElement {
+            DisplayName = "MAG1 sensing element"
+        }
+        
+    }
+    
+    struct ConfigAsgp4
+    {
+        DisplayName = "Augmented SGP4 configuration"
+        
+        BatchSize {
+            DisplayName = "Batch size"
+        }
+        
+        MaxTimeBetween {
+            DisplayName = "Max time between GNSS measurements"
+            Unit = "s"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        MaxPosErr {
+            DisplayName = "Max position error"
+            Unit = "km"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        TimeGain {
+            DisplayName = "Time gain"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        UpdateRaanIncl {
+            DisplayName = "Update RAAN and Inclination"
+        }
+        
+        UpdateEccen {
+            DisplayName = "Update Eccentricity"
+        }
+        
+        UpdateApMa {
+            DisplayName = "Update AP and MA"
+        }
+        
+        UpdateTime {
+            DisplayName = "Update Time"
+        }
+        
+    }
+    
+    struct ConMode
+    {
+        DisplayName = "Control mode"
+        
+        ControlMode {
+            DisplayName = "Control mode"
+        }
+        
+        MagConTimeout {
+            DisplayName = "Magnetic control timeout"
+            Unit = "s"
+        }
+        
+    }
+    
+    struct EstMode
+    {
+        DisplayName = "Estimation mode"
+        
+        EstModeMain {
+            DisplayName = "Main estimator mode"
+        }
+        
+        EstModeBackup {
+            DisplayName = "Backup estimator mode"
+        }
+        
+    }
+    
+    struct OrbMode
+    {
+        DisplayName = "Orbit mode"
+        
+        OrbitMode {
+            DisplayName = "Orbit mode"
+        }
+        
+    }
+    
+    struct AdcsRunMode
+    {
+        DisplayName = "ADCS run mode"
+        
+        RunMode {
+            DisplayName = "ADCS run mode"
+        }
+        
+    }
+    
+    struct AdcsOpState
+    {
+        DisplayName = "ADCS operational state"
+        
+        OpState {
+            DisplayName = "ADCS operational state"
+        }
+        
+    }
+    
+    struct SimSensorRaw
+    {
+        DisplayName = "Simulation raw sensor telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Fss0RawCenX {
+            DisplayName = "FSS0 raw centroid X"
+        }
+        
+        Fss0RawCenY {
+            DisplayName = "FSS0 raw centroid Y"
+        }
+        
+        Fss1RawCenX {
+            DisplayName = "FSS1 raw centroid X"
+        }
+        
+        Fss1RawCenY {
+            DisplayName = "FSS1 raw centroid Y"
+        }
+        
+        Fss2RawCenX {
+            DisplayName = "FSS2 raw centroid X"
+        }
+        
+        Fss2RawCenY {
+            DisplayName = "FSS2 raw centroid Y"
+        }
+        
+        Fss3RawCenX {
+            DisplayName = "FSS3 raw centroid X"
+        }
+        
+        Fss3RawCenY {
+            DisplayName = "FSS3 raw centroid Y"
+        }
+        
+        Css0Raw {
+            DisplayName = "CSS0 raw measurement"
+        }
+        
+        Css1Raw {
+            DisplayName = "CSS1 raw measurement"
+        }
+        
+        Css2Raw {
+            DisplayName = "CSS2 raw measurement"
+        }
+        
+        Css3Raw {
+            DisplayName = "CSS3 raw measurement"
+        }
+        
+        Css4Raw {
+            DisplayName = "CSS4 raw measurement"
+        }
+        
+        Css5Raw {
+            DisplayName = "CSS5 raw measurement"
+        }
+        
+        Css6Raw {
+            DisplayName = "CSS6 raw measurement"
+        }
+        
+        Css7Raw {
+            DisplayName = "CSS7 raw measurement"
+        }
+        
+        Css8Raw {
+            DisplayName = "CSS8 raw measurement"
+        }
+        
+        Css9Raw {
+            DisplayName = "CSS9 raw measurement"
+        }
+        
+        Mag0RawVecX {
+            DisplayName = "MAG0 raw vector X component"
+            Unit = "uT"
+        }
+        
+        Mag0RawVecY {
+            DisplayName = "MAG0 raw vector Y component"
+            Unit = "uT"
+        }
+        
+        Mag0RawVecZ {
+            DisplayName = "MAG0 raw vector Z component"
+            Unit = "uT"
+        }
+        
+        Mag1RawVecX {
+            DisplayName = "MAG1 raw vector X component"
+            Unit = "uT"
+        }
+        
+        Mag1RawVecY {
+            DisplayName = "MAG1 raw vector Y component"
+            Unit = "uT"
+        }
+        
+        Mag1RawVecZ {
+            DisplayName = "MAG1 raw vector Z component"
+            Unit = "uT"
+        }
+        
+        Gyro0RawRateX {
+            DisplayName = "GYR0 raw rate X component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro0RawRateY {
+            DisplayName = "GYR0 raw rate Y component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro0RawRateZ {
+            DisplayName = "GYR0 raw rate Z component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro1RawRateX {
+            DisplayName = "GYR1 raw rate X component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro1RawRateY {
+            DisplayName = "GYR1 raw rate Y component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro1RawRateZ {
+            DisplayName = "GYR1 raw rate Z component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Hss0RawElev {
+            DisplayName = "HSS0 raw elevation angle"
+            Unit = "deg"
+        }
+        
+        Hss0RawRot {
+            DisplayName = "HSS0 raw rotation angle"
+            Unit = "deg"
+        }
+        
+        Hss1RawElev {
+            DisplayName = "HSS1 raw elevation angle"
+            Unit = "deg"
+        }
+        
+        Hss1RawRot {
+            DisplayName = "HSS1 raw rotation angle"
+            Unit = "deg"
+        }
+        
+        Str0MeasVec0X {
+            DisplayName = "STR0 measured vector 0 X component"
+        }
+        
+        Str0MeasVec0Y {
+            DisplayName = "STR0 measured vector 0 Y component"
+        }
+        
+        Str0MeasVec0Z {
+            DisplayName = "STR0 measured vector 0 Z component"
+        }
+        
+        Str0MeasVec1X {
+            DisplayName = "STR0 measured vector 1 X component"
+        }
+        
+        Str0MeasVec1Y {
+            DisplayName = "STR0 measured vector 1 Y component"
+        }
+        
+        Str0MeasVec1Z {
+            DisplayName = "STR0 measured vector 1 Z component"
+        }
+        
+        Str0MeasVec2X {
+            DisplayName = "STR0 measured vector 2 X component"
+        }
+        
+        Str0MeasVec2Y {
+            DisplayName = "STR0 measured vector 2 Y component"
+        }
+        
+        Str0MeasVec2Z {
+            DisplayName = "STR0 measured vector 2 Z component"
+        }
+        
+        Str0ModelVec0X {
+            DisplayName = "STR0 modelled vector 0 X component"
+        }
+        
+        Str0ModelVec0Y {
+            DisplayName = "STR0 modelled vector 0 Y component"
+        }
+        
+        Str0ModelVec0Z {
+            DisplayName = "STR0 modelled vector 0 Z component"
+        }
+        
+        Str0ModelVec1X {
+            DisplayName = "STR0 modelled vector 1 X component"
+        }
+        
+        Str0ModelVec1Y {
+            DisplayName = "STR0 modelled vector 1 Y component"
+        }
+        
+        Str0ModelVec1Z {
+            DisplayName = "STR0 modelled vector 1 Z component"
+        }
+        
+        Str0ModelVec2X {
+            DisplayName = "STR0 modelled vector 2 X component"
+        }
+        
+        Str0ModelVec2Y {
+            DisplayName = "STR0 modelled vector 2 Y component"
+        }
+        
+        Str0ModelVec2Z {
+            DisplayName = "STR0 modelled vector 2 Z component"
+        }
+        
+        Str0MeasQ0 {
+            DisplayName = "STR0 measured quaternion Q0 (sensor to IRC frame)"
+        }
+        
+        Str0MeasQ1 {
+            DisplayName = "STR0 measured quaternion Q1 (sensor to IRC frame)"
+        }
+        
+        Str0MeasQ2 {
+            DisplayName = "STR0 measured quaternion Q2 (sensor to IRC frame)"
+        }
+        
+        Str0MeasQ3 {
+            DisplayName = "STR0 measured quaternion Q3 (sensor to IRC frame)"
+        }
+        
+        Str0StarIdCount {
+            DisplayName = "STR0 number of identified stars"
+        }
+        
+        Str1MeasVec0X {
+            DisplayName = "STR1 measured vector 0 X component"
+        }
+        
+        Str1MeasVec0Y {
+            DisplayName = "STR1 measured vector 0 Y component"
+        }
+        
+        Str1MeasVec0Z {
+            DisplayName = "STR1 measured vector 0 Z component"
+        }
+        
+        Str1MeasVec1X {
+            DisplayName = "STR1 measured vector 1 X component"
+        }
+        
+        Str1MeasVec1Y {
+            DisplayName = "STR1 measured vector 1 Y component"
+        }
+        
+        Str1MeasVec1Z {
+            DisplayName = "STR1 measured vector 1 Z component"
+        }
+        
+        Str1MeasVec2X {
+            DisplayName = "STR1 measured vector 2 X component"
+        }
+        
+        Str1MeasVec2Y {
+            DisplayName = "STR1 measured vector 2 Y component"
+        }
+        
+        Str1MeasVec2Z {
+            DisplayName = "STR1 measured vector 2 Z component"
+        }
+        
+        Str1ModelVec0X {
+            DisplayName = "STR1 modelled vector 0 X component"
+        }
+        
+        Str1ModelVec0Y {
+            DisplayName = "STR1 modelled vector 0 Y component"
+        }
+        
+        Str1ModelVec0Z {
+            DisplayName = "STR1 modelled vector 0 Z component"
+        }
+        
+        Str1ModelVec1X {
+            DisplayName = "STR1 modelled vector 1 X component"
+        }
+        
+        Str1ModelVec1Y {
+            DisplayName = "STR1 modelled vector 1 Y component"
+        }
+        
+        Str1ModelVec1Z {
+            DisplayName = "STR1 modelled vector 1 Z component"
+        }
+        
+        Str1ModelVec2X {
+            DisplayName = "STR1 modelled vector 2 X component"
+        }
+        
+        Str1ModelVec2Y {
+            DisplayName = "STR1 modelled vector 2 Y component"
+        }
+        
+        Str1ModelVec2Z {
+            DisplayName = "STR1 modelled vector 2 Z component"
+        }
+        
+        Str1MeasQ0 {
+            DisplayName = "STR1 measured quaternion Q0 (sensor to IRC frame)"
+        }
+        
+        Str1MeasQ1 {
+            DisplayName = "STR1 measured quaternion Q1 (sensor to IRC frame)"
+        }
+        
+        Str1MeasQ2 {
+            DisplayName = "STR1 measured quaternion Q2 (sensor to IRC frame)"
+        }
+        
+        Str1MeasQ3 {
+            DisplayName = "STR1 measured quaternion Q3 (sensor to IRC frame)"
+        }
+        
+        Str1StarIdCount {
+            DisplayName = "STR1 number of identified stars"
+        }
+        
+        GnssTimeSeconds {
+            DisplayName = "GNSS Time integer seconds"
+            Unit = "s"
+        }
+        
+        GnssTimeNs {
+            DisplayName = "GNSS Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        GnssSatPosX {
+            DisplayName = "Satellite position vector X component (GNSS frame)"
+            Unit = "cm"
+        }
+        
+        GnssSatPosY {
+            DisplayName = "Satellite position vector Y component (GNSS frame)"
+            Unit = "cm"
+        }
+        
+        GnssSatPosZ {
+            DisplayName = "Satellite position vector Z component (GNSS frame)"
+            Unit = "cm"
+        }
+        
+        GnssSatVelX {
+            DisplayName = "Satellite velocity vector X component (GNSS frame)"
+            Unit = "cm/s"
+        }
+        
+        GnssSatVelY {
+            DisplayName = "Satellite velocity vector Y component (GNSS frame)"
+            Unit = "cm/s"
+        }
+        
+        GnssSatVelZ {
+            DisplayName = "Satellite velocity vector Z component (GNSS frame)"
+            Unit = "cm/s"
+        }
+        
+        ExtSensor0Float0 {
+            DisplayName = "ExtSensor0 raw measurement float 0"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor0Float1 {
+            DisplayName = "ExtSensor0 raw measurement float 1"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor0Float2 {
+            DisplayName = "ExtSensor0 raw measurement float 2"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor0Float3 {
+            DisplayName = "ExtSensor0 raw measurement float 3"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor0Float4 {
+            DisplayName = "ExtSensor0 raw measurement float 4"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor0Float5 {
+            DisplayName = "ExtSensor0 raw measurement float 5"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor1Float0 {
+            DisplayName = "ExtSensor1 raw measurement float 0"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor1Float1 {
+            DisplayName = "ExtSensor1 raw measurement float 1"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor1Float2 {
+            DisplayName = "ExtSensor1 raw measurement float 2"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor1Float3 {
+            DisplayName = "ExtSensor1 raw measurement float 3"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor1Float4 {
+            DisplayName = "ExtSensor1 raw measurement float 4"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor1Float5 {
+            DisplayName = "ExtSensor1 raw measurement float 5"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Rwl0SpeedMeas {
+            DisplayName = "RWL0 raw speed measurement"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl1SpeedMeas {
+            DisplayName = "RWL1 raw speed measurement"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl2SpeedMeas {
+            DisplayName = "RWL2 raw speed measurement"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl3SpeedMeas {
+            DisplayName = "RWL3 raw speed measurement"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Fss0IsValid {
+            DisplayName = "FSS0 valid flag"
+        }
+        
+        Fss1IsValid {
+            DisplayName = "FSS1 valid flag"
+        }
+        
+        Fss2IsValid {
+            DisplayName = "FSS2 valid flag"
+        }
+        
+        Fss3IsValid {
+            DisplayName = "FSS3 valid flag"
+        }
+        
+        CssIsValid {
+            DisplayName = "CSS valid flag"
+        }
+        
+        Mag0IsValid {
+            DisplayName = "MAG0 valid flag"
+        }
+        
+        Mag1IsValid {
+            DisplayName = "MAG1 valid flag"
+        }
+        
+        Gyro0IsValid {
+            DisplayName = "GYR0 valid flag"
+        }
+        
+        Gyro1IsValid {
+            DisplayName = "GYR1 valid flag"
+        }
+        
+        Hss0IsValid {
+            DisplayName = "HSS0 valid flag"
+        }
+        
+        Hss1IsValid {
+            DisplayName = "HSS1 valid flag"
+        }
+        
+        Str0IsValid {
+            DisplayName = "STR0 valid flag"
+        }
+        
+        Str1IsValid {
+            DisplayName = "STR1 valid flag"
+        }
+        
+        GnssIsValid {
+            DisplayName = "GNSS valid flag"
+        }
+        
+        GnssIsNew {
+            DisplayName = "GNSS new nav message flag"
+        }
+        
+        ExtSensor0IsValid {
+            DisplayName = "ExtSensor0 valid flag"
+        }
+        
+        ExtSensor1IsValid {
+            DisplayName = "ExtSensor1 valid flag"
+        }
+        
+        Rwl0IsValid {
+            DisplayName = "RWL0 valid flag"
+        }
+        
+        Rwl1IsValid {
+            DisplayName = "RWL1 valid flag"
+        }
+        
+        Rwl2IsValid {
+            DisplayName = "RWL2 valid flag"
+        }
+        
+        Rwl3IsValid {
+            DisplayName = "RWL3 valid flag"
+        }
+        
+    }
+    
+    struct OpenLoopCommandMtq
+    {
+        DisplayName = "OpenLoopCommandMtq"
+        
+        Mtq0OnTimeCmd {
+            DisplayName = "MTQ0 open-loop on-time command"
+            Unit = "ms"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Mtq1OnTimeCmd {
+            DisplayName = "MTQ1 open-loop on-time command"
+            Unit = "ms"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Mtq2OnTimeCmd {
+            DisplayName = "MTQ2 open-loop on-time command"
+            Unit = "ms"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+    }
+    
+    struct OpenLoopCommandRwl
+    {
+        DisplayName = "OpenLoopCommandRwl"
+        
+        Rwl0SpeedCmd {
+            DisplayName = "RWL0 open-loop speed command"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Rwl1SpeedCmd {
+            DisplayName = "RWL1 open-loop speed command"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Rwl2SpeedCmd {
+            DisplayName = "RWL2 open-loop speed command"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Rwl3SpeedCmd {
+            DisplayName = "RWL3 open-loop speed command"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+    }
+    
+    struct OpenLoopCommandHxyzRW
+    {
+        DisplayName = "OpenLoopCommandHxyzRW"
+        
+        Hx {
+            DisplayName = "X-momentum open-loop speed command"
+            Unit = "Nms"
+			AlarmNumericMinInclusive = "-10.0001"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        Hy {
+            DisplayName = "Y-momentum open-loop speed command"
+            Unit = "Nms"
+			AlarmNumericMinInclusive = "-10.0001"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        Hz {
+            DisplayName = "Z-momentum open-loop speed command"
+            Unit = "Nms"
+			AlarmNumericMinInclusive = "-10.0001"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+    }
+    
+    struct ReferenceRpy
+    {
+        DisplayName = "Reference RPY values"
+        
+        CmdRpyRoll {
+            DisplayName = "RPY Roll command"
+            Unit = "deg"
+			AlarmNumericMinInclusive = "-180.0001"
+			AlarmNumericMaxInclusive = "180.0001"
+        }
+        
+        CmdRpyPitch {
+            DisplayName = "RPY Pitch command"
+            Unit = "deg"
+			AlarmNumericMinInclusive = "-180.0001"
+			AlarmNumericMaxInclusive = "180.0001"
+        }
+        
+        CmdRpyYaw {
+            DisplayName = "RPY Yaw command"
+            Unit = "deg"
+			AlarmNumericMinInclusive = "-180.0001"
+			AlarmNumericMaxInclusive = "180.0001"
+        }
+        
+    }
+    
+    struct ReferenceTarget
+    {
+        DisplayName = "Reference LLH target command"
+        
+        CmdTargetLatitude {
+            DisplayName = "Target latitude command"
+            Unit = "deg"
+			AlarmNumericMinInclusive = "-90.0001"
+			AlarmNumericMaxInclusive = "90.0001"
+        }
+        
+        CmdTargetLongitude {
+            DisplayName = "Target longitude command"
+            Unit = "deg"
+			AlarmNumericMinInclusive = "-180.0001"
+			AlarmNumericMaxInclusive = "180.0001"
+        }
+        
+        CmdTargetAltitude {
+            DisplayName = "Target altitude command"
+            Unit = "km"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000000.0001"
+        }
+        
+    }
+    
+    struct ReferenceIrcVector
+    {
+        DisplayName = "Reference IRC vector"
+        
+        CmdEciVecX {
+            DisplayName = "Commanded ECI pointing vector X component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        CmdEciVecY {
+            DisplayName = "Commanded ECI pointing vector Y component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        CmdEciVecZ {
+            DisplayName = "Commanded ECI pointing vector Z component"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+    }
+    
+    struct ReferenceFmcParam
+    {
+        DisplayName = "Reference parameters for FMC scan"
+        
+        CmdFmcFactor {
+            DisplayName = "FMC Scanning Factor"
+        }
+        
+        CmdFmcRoll {
+            DisplayName = "FMC Roll command"
+            Unit = "deg"
+			AlarmNumericMinInclusive = "-180.0001"
+			AlarmNumericMaxInclusive = "180.0001"
+        }
+        
+        CmdFmcUnixSeconds {
+            DisplayName = "FMC Centre Time (seconds)"
+            Unit = "s"
+        }
+        
+        CmdFmcUnixNs {
+            DisplayName = "FMC Center Time (nanoseconds)"
+            Unit = "ns"
+        }
+        
+    }
+    
+    struct DeployCommandMag
+    {
+        DisplayName = "Mag Deploy Command"
+        
+        DeployMag0 {
+            DisplayName = "Deploy MAG0"
+        }
+        
+        DeployMag1 {
+            DisplayName = "Deploy MAG1"
+        }
+        
+    }
+    
+    struct GnssSensorCmd
+    {
+        DisplayName = "Commanded GNSS measurements"
+        
+        GnssTimeSeconds {
+            DisplayName = "GNSS Time integer seconds"
+            Unit = "s"
+        }
+        
+        GnssTimeNs {
+            DisplayName = "GNSS Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        GnssSatPosX {
+            DisplayName = "Satellite position vector X component (GNSS frame)"
+            Unit = "cm"
+        }
+        
+        GnssSatPosY {
+            DisplayName = "Satellite position vector Y component (GNSS frame)"
+            Unit = "cm"
+        }
+        
+        GnssSatPosZ {
+            DisplayName = "Satellite position vector Z component (GNSS frame)"
+            Unit = "cm"
+        }
+        
+        GnssSatVelX {
+            DisplayName = "Satellite velocity vector X component (GNSS frame)"
+            Unit = "cm/s"
+        }
+        
+        GnssSatVelY {
+            DisplayName = "Satellite velocity vector Y component (GNSS frame)"
+            Unit = "cm/s"
+        }
+        
+        GnssSatVelZ {
+            DisplayName = "Satellite velocity vector Z component (GNSS frame)"
+            Unit = "cm/s"
+        }
+        
+        SyncTime {
+            DisplayName = "Sync Time"
+        }
+        
+    }
+    
+    struct FileTransferSetup
+    {
+        DisplayName = "File Transfer Setup"
+        
+        OpCode {
+            DisplayName = "Op Code"
+        }
+        
+        File {
+            DisplayName = "File"
+        }
+        
+        Node {
+            DisplayName = "Node"
+        }
+        
+        SerialInt {
+            DisplayName = "Serial Number Integer"
+        }
+        
+        Program {
+            DisplayName = "Program"
+        }
+        
+        FileSize {
+            DisplayName = "File Size"
+            Unit = "Bytes"
+        }
+        
+        ForcePort {
+            DisplayName = "Force Port"
+			AlarmNumericMaxInclusive = "5.0001"
+        }
+        
+        MetaData {
+            DisplayName = "File Meta Data"
+        }
+        
+    }
+    
+    struct CubeNodePortMap
+    {
+        DisplayName = "CubeNode-Quad PortMap"
+        
+        NodeTypeSlot0 {
+            DisplayName = "Node Type CQ Slot 0"
+        }
+        
+        SerialIntSlot0 {
+            DisplayName = "Serial Number Integer CQ Slot 0"
+        }
+        
+        Port1Slot0 {
+            DisplayName = "Port 1 CQ Slot 0"
+        }
+        
+        Port2Slot0 {
+            DisplayName = "Port 2 CQ Slot 0"
+        }
+        
+        Port3Slot0 {
+            DisplayName = "Port 3 CQ Slot 0"
+        }
+        
+        Port4Slot0 {
+            DisplayName = "Port 4 CQ Slot 0"
+        }
+        
+        NodeTypeSlot1 {
+            DisplayName = "Node Type CQ Slot 1"
+        }
+        
+        SerialIntSlot1 {
+            DisplayName = "Serial Number Integer CQ Slot 1"
+        }
+        
+        Port1Slot1 {
+            DisplayName = "Port 1 CQ Slot 1"
+        }
+        
+        Port2Slot1 {
+            DisplayName = "Port 2 CQ Slot 1"
+        }
+        
+        Port3Slot1 {
+            DisplayName = "Port 3 CQ Slot 1"
+        }
+        
+        Port4Slot1 {
+            DisplayName = "Port 4 CQ Slot 1"
+        }
+        
+        NodeTypeSlot2 {
+            DisplayName = "Node Type CQ Slot 2"
+        }
+        
+        SerialIntSlot2 {
+            DisplayName = "Serial Number Integer CQ Slot 2"
+        }
+        
+        Port1Slot2 {
+            DisplayName = "Port 1 CQ Slot 2"
+        }
+        
+        Port2Slot2 {
+            DisplayName = "Port 2 CQ Slot 2"
+        }
+        
+        Port3Slot2 {
+            DisplayName = "Port 3 CQ Slot 2"
+        }
+        
+        Port4Slot2 {
+            DisplayName = "Port 4 CQ Slot 2"
+        }
+        
+        NodeTypeSlot3 {
+            DisplayName = "Node Type CQ Slot 3"
+        }
+        
+        SerialIntSlot3 {
+            DisplayName = "Serial Number Integer CQ Slot 3"
+        }
+        
+        Port1Slot3 {
+            DisplayName = "Port 1 CQ Slot 3"
+        }
+        
+        Port2Slot3 {
+            DisplayName = "Port 2 CQ Slot 3"
+        }
+        
+        Port3Slot3 {
+            DisplayName = "Port 3 CQ Slot 3"
+        }
+        
+        Port4Slot3 {
+            DisplayName = "Port 4 CQ Slot 3"
+        }
+        
+    }
+    
+    struct TlmHil
+    {
+        DisplayName = "HIL telemetry"
+        
+        ConModeActive {
+            DisplayName = "Active control mode"
+            Unit = "degps"
+        }
+        
+        EstModeActive {
+            DisplayName = "Active estimator mode"
+        }
+        
+        OrbModeActive {
+            DisplayName = "Active orbit mode"
+        }
+        
+        NavSource {
+            DisplayName = "Source of current orbit pos and vel"
+        }
+        
+        Asgp4Error {
+            DisplayName = "ASGP4 position error"
+        }
+        
+        HilSyncOk {
+            DisplayName = "HIL synchronised"
+        }
+        
+        Rwl0CmdSpeed {
+            DisplayName = "RWL0 speed command"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl1CmdSpeed {
+            DisplayName = "RWL1 speed command"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl2CmdSpeed {
+            DisplayName = "RWL2 speed command"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl3CmdSpeed {
+            DisplayName = "RWL3 speed command"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Mtq0CmdOnTime {
+            DisplayName = "MTQ0 on-time command"
+            Unit = "ms"
+        }
+        
+        Mtq1CmdOnTime {
+            DisplayName = "MTQ1 on-time command"
+            Unit = "ms"
+        }
+        
+        Mtq2CmdOnTime {
+            DisplayName = "MTQ2 on-time command"
+            Unit = "ms"
+        }
+        
+        MagConTimeout {
+            DisplayName = "Magnetic control timeout"
+            Unit = "s"
+        }
+        
+        Rwl0ErrorFlag {
+            DisplayName = "RWL0 error flag"
+            Unit = "degps"
+        }
+        
+        Rwl1ErrorFlag {
+            DisplayName = "RWL1 error flag"
+            Unit = "degps"
+        }
+        
+        Rwl2ErrorFlag {
+            DisplayName = "RWL2 error flag"
+            Unit = "degps"
+        }
+        
+        Rwl3ErrorFlag {
+            DisplayName = "RWL3 error flag"
+            Unit = "degps"
+        }
+        
+        Rwl0ActiveFlag {
+            DisplayName = "RWL0 active flag"
+            Unit = "degps"
+        }
+        
+        Rwl1ActiveFlag {
+            DisplayName = "RWL1 active flag"
+            Unit = "degps"
+        }
+        
+        Rwl2ActiveFlag {
+            DisplayName = "RWL2 active flag"
+            Unit = "degps"
+        }
+        
+        Rwl3ActiveFlag {
+            DisplayName = "RWL3 active flag"
+            Unit = "degps"
+        }
+        
+        EstQuatQ0 {
+            DisplayName = "Estimated ORC quaternion Q0"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        EstQuatQ1 {
+            DisplayName = "Estimated ORC quaternion Q1"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        EstQuatQ2 {
+            DisplayName = "Estimated ORC quaternion Q2"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        EstQuatQ3 {
+            DisplayName = "Estimated ORC quaternion Q3"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        EstRateOrcX {
+            DisplayName = "Estimated body rate (ORC) X component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        EstRateOrcY {
+            DisplayName = "Estimated body rate (ORC) Y component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        EstRateOrcZ {
+            DisplayName = "Estimated body rate (ORC) Z component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        SatPosEciX {
+            DisplayName = "Satellite ECI position vector X component"
+            Unit = "m"
+        }
+        
+        SatPosEciY {
+            DisplayName = "Satellite ECI position vector Y component"
+            Unit = "m"
+        }
+        
+        SatPosEciZ {
+            DisplayName = "Satellite ECI position vector Z component"
+            Unit = "m"
+        }
+        
+        SatVelEciX {
+            DisplayName = "Satellite ECI velocity vector X component"
+            Unit = "m/s"
+        }
+        
+        SatVelEciY {
+            DisplayName = "Satellite ECI velocity vector Y component"
+            Unit = "m/s"
+        }
+        
+        SatVelEciZ {
+            DisplayName = "Satellite ECI velocity vector Z component"
+            Unit = "m/s"
+        }
+        
+        RpyCmdRoll {
+            DisplayName = "Commanded roll angle"
+            Unit = "deg"
+			AlarmNumericMinInclusive = "-180.0001"
+			AlarmNumericMaxInclusive = "180.0001"
+        }
+        
+        RpyCmdPitch {
+            DisplayName = "Commanded pitch angle"
+            Unit = "deg"
+			AlarmNumericMinInclusive = "-180.0001"
+			AlarmNumericMaxInclusive = "180.0001"
+        }
+        
+        RpyCmdYaw {
+            DisplayName = "Commanded yaw angle"
+            Unit = "deg"
+			AlarmNumericMinInclusive = "-180.0001"
+			AlarmNumericMaxInclusive = "180.0001"
+        }
+        
+        Asgp4BatchCtr {
+            DisplayName = "ASGP4 batch counter"
+        }
+        
+        Asgp4PosDelta {
+            DisplayName = "ASGP4 position delta"
+            Unit = "m"
+        }
+        
+        Rwl0MeasSpeed {
+            DisplayName = "RWL0 speed measurement"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl1MeasSpeed {
+            DisplayName = "RWL1 speed measurement"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl2MeasSpeed {
+            DisplayName = "RWL2 speed measurement"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl3MeasSpeed {
+            DisplayName = "RWL3 speed measurement"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl0MeasValid {
+            DisplayName = "RWL0 measurement valid flag"
+        }
+        
+        Rwl1MeasValid {
+            DisplayName = "RWL1 measurement valid flag"
+        }
+        
+        Rwl2MeasValid {
+            DisplayName = "RWL2 measurement valid flag"
+        }
+        
+        Rwl3MeasValid {
+            DisplayName = "RWL3 measurement valid flag"
+        }
+        
+        FmcStage {
+            DisplayName = "FMC Stage"
+        }
+        
+    }
+    
+    struct TlmExecutionPoint
+    {
+        DisplayName = "Current execution point"
+        
+        CurrentExecutionPoint {
+            DisplayName = "Current execution point"
+        }
+        
+    }
+    
+    struct TlmAsgp4
+    {
+        DisplayName = "ASGP4 Orbital Parameters"
+        
+        Asgp4Epoch {
+            DisplayName = "ASGP4 epoch"
+            Unit = "yyddd.ssssssss"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Asgp4Incl {
+            DisplayName = "ASGP4 inclination"
+            Unit = "deg"
+			AlarmNumericMaxInclusive = "180.0001"
+        }
+        
+        Asgp4Raan {
+            DisplayName = "ASGP4 RAAN"
+            Unit = "deg"
+			AlarmNumericMaxInclusive = "360.0001"
+        }
+        
+        Asgp4Eccen {
+            DisplayName = "ASGP4 eccentricity"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Asgp4AP {
+            DisplayName = "ASGP4 argument of perigee"
+            Unit = "deg"
+			AlarmNumericMaxInclusive = "360.0001"
+        }
+        
+        Asgp4MA {
+            DisplayName = "ASGP4 mean anomaly"
+            Unit = "deg"
+			AlarmNumericMaxInclusive = "360.0001"
+        }
+        
+        Asgp4MM {
+            DisplayName = "ASGP4 mean motion"
+            Unit = "orbits/day"
+			AlarmNumericMaxInclusive = "20.0001"
+        }
+        
+        Asgp4Bstar {
+            DisplayName = "ASGP4 B-star drag term"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+    }
+    
+    struct TlmNodeInitState
+    {
+        DisplayName = "Node Initialization States"
+        
+        Rwl0State {
+            DisplayName = "RWL0 init state"
+        }
+        
+        Rwl1State {
+            DisplayName = "RWL1 init state"
+        }
+        
+        Rwl2State {
+            DisplayName = "RWL2 init state"
+        }
+        
+        Rwl3State {
+            DisplayName = "RWL3 init state"
+        }
+        
+        Mag0State {
+            DisplayName = "MAG0 init state"
+        }
+        
+        Mag1State {
+            DisplayName = "MAG1 init state"
+        }
+        
+        Gyro0State {
+            DisplayName = "GYR0 init state"
+        }
+        
+        Gyro1State {
+            DisplayName = "GYR1 init state"
+        }
+        
+        Fss0State {
+            DisplayName = "FSS0 init state"
+        }
+        
+        Fss1State {
+            DisplayName = "FSS1 init state"
+        }
+        
+        Fss2State {
+            DisplayName = "FSS2 init state"
+        }
+        
+        Fss3State {
+            DisplayName = "FSS3 init state"
+        }
+        
+        Hss0State {
+            DisplayName = "HSS0 init state"
+        }
+        
+        Hss1State {
+            DisplayName = "HSS1 init state"
+        }
+        
+        Str0State {
+            DisplayName = "STR0 init state"
+        }
+        
+        Str1State {
+            DisplayName = "STR1 init state"
+        }
+        
+        ExtSensor0State {
+            DisplayName = "ExtSensor0 init state"
+        }
+        
+        ExtSensor1State {
+            DisplayName = "ExtSensor1 init state"
+        }
+        
+        ExtGyro0State {
+            DisplayName = "EXTGYR0 init state"
+        }
+        
+        ExtGyro1State {
+            DisplayName = "EXTGYR1 init state"
+        }
+        
+    }
+    
+    struct TlmLitefuforsHealth
+    {
+        DisplayName = "Health telemetry for CubeNode LITEFUFORS"
+        
+        Gyr0McuTemp {
+            DisplayName = "EXTGYR0 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Gyr0McuCurrent {
+            DisplayName = "EXTGYR0 MCU Current"
+            Unit = "mA"
+        }
+        
+        Gyr0McuVoltage {
+            DisplayName = "EXTGYR0 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Gyr0Current1 {
+            DisplayName = "EXTGYR0 axis-1 Current"
+            Unit = "mA"
+        }
+        
+        Gyr0Current2 {
+            DisplayName = "EXTGYR0 axis-2 Current"
+            Unit = "mA"
+        }
+        
+        Gyr0Current3 {
+            DisplayName = "EXTGYR0 axis-3 Current"
+            Unit = "mA"
+        }
+        
+        Gyr0Overcurrent1 {
+            DisplayName = "EXTGYR0 axis-1 Overcurrent"
+        }
+        
+        Gyr0Overcurrent2 {
+            DisplayName = "EXTGYR0 axis-2 Overcurrent"
+        }
+        
+        Gyr0Overcurrent3 {
+            DisplayName = "EXTGYR0 axis-3 Overcurrent"
+        }
+        
+        Gyr1McuTemp {
+            DisplayName = "EXTGYR1 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Gyr1McuCurrent {
+            DisplayName = "EXTGYR1 MCU Current"
+            Unit = "mA"
+        }
+        
+        Gyr1McuVoltage {
+            DisplayName = "EXTGYR1 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Gyr1Current1 {
+            DisplayName = "EXTGYR1 axis-1 Current"
+            Unit = "mA"
+        }
+        
+        Gyr1Current2 {
+            DisplayName = "EXTGYR1 axis-2 Current"
+            Unit = "mA"
+        }
+        
+        Gyr1Current3 {
+            DisplayName = "EXTGYR1 axis-3 Current"
+            Unit = "mA"
+        }
+        
+        Gyr1Overcurrent1 {
+            DisplayName = "EXTGYR1 axis-1 Overcurrent"
+        }
+        
+        Gyr1Overcurrent2 {
+            DisplayName = "EXTGYR1 axis-2 Overcurrent"
+        }
+        
+        Gyr1Overcurrent3 {
+            DisplayName = "EXTGYR1 axis-3 Overcurrent"
+        }
+        
+    }
+    
+    struct FileTransferStatus
+    {
+        DisplayName = "File Transfer Status"
+        
+        State {
+            DisplayName = "State"
+        }
+        
+        UpgradeState {
+            DisplayName = "Upgrade State"
+        }
+        
+        DataRemain {
+            DisplayName = "Data Remain"
+            Unit = "Bytes"
+        }
+        
+        ErrorCode {
+            DisplayName = "Error Code"
+        }
+        
+        BusyError {
+            DisplayName = "Busy Error"
+        }
+        
+        FileMetaError {
+            DisplayName = "File Metadata Error"
+        }
+        
+        VersionError {
+            DisplayName = "Version Error"
+        }
+        
+        NodeExistError {
+            DisplayName = "Node Exist Error"
+        }
+        
+        NodeExpectError {
+            DisplayName = "Node Expected Error"
+        }
+        
+        FileCrcError {
+            DisplayName = "File CRC Error"
+        }
+        
+        FileSizeError {
+            DisplayName = "File Size Error"
+        }
+        
+        FileError {
+            DisplayName = "File Error"
+        }
+        
+        FileInvalidError {
+            DisplayName = "File Invalid Error"
+        }
+        
+        FileFullError {
+            DisplayName = "File Full Error"
+        }
+        
+        FileEmptyError {
+            DisplayName = "File Empty Error"
+        }
+        
+        ReadError {
+            DisplayName = "Read Error"
+        }
+        
+        WriteError {
+            DisplayName = "Write Error"
+        }
+        
+        EraseError {
+            DisplayName = "Erase Error"
+        }
+        
+        FrameSizeError {
+            DisplayName = "Frame Size Error"
+        }
+        
+        TimeoutError {
+            DisplayName = "Timeout Error"
+        }
+        
+        NodeCommsError {
+            DisplayName = "Node Comms Error"
+        }
+        
+        NodeUsedError {
+            DisplayName = "Node Used Error"
+        }
+        
+    }
+    
+    struct FileInfo
+    {
+        DisplayName = "File Info"
+        
+        File {
+            DisplayName = "File"
+        }
+        
+        Backend {
+            DisplayName = "Backend"
+        }
+        
+        Type {
+            DisplayName = "Type"
+        }
+        
+        Size {
+            DisplayName = "File Size"
+            Unit = "Bytes"
+        }
+        
+        AllocSize {
+            DisplayName = "Size Allocated"
+            Unit = "Bytes"
+        }
+        
+        VectTblOffset {
+            DisplayName = "Vector Table Offset"
+            Unit = "Bytes"
+        }
+        
+        UnixTimeSeconds {
+            DisplayName = "Unix seconds"
+            Unit = "s"
+        }
+        
+        UnixTimeNanoSeconds {
+            DisplayName = "Unix Nanoseconds"
+            Unit = "ns"
+			AlarmNumericMaxInclusive = "999999999.0001"
+        }
+        
+        Crc {
+            DisplayName = "CRC"
+        }
+        
+        Component {
+            DisplayName = "Component"
+        }
+        
+        Program {
+            DisplayName = "Program"
+        }
+        
+        FirmwareMajorVersion {
+            DisplayName = "Firmware Version (Major)"
+        }
+        
+        FirmwareMinorVersion {
+            DisplayName = "Firmware Version (Minor)"
+        }
+        
+        FirmwarePatchVersion {
+            DisplayName = "Firmware Version (Patch)"
+        }
+        
+        SystemMajorVersion {
+            DisplayName = "System Version (Major)"
+        }
+        
+        SystemMinorVersion {
+            DisplayName = "System Version (Minor)"
+        }
+        
+        SystemPatchVersion {
+            DisplayName = "System Version (Patch)"
+        }
+        
+        OwnerNodeType {
+            DisplayName = "Owner Node Type"
+        }
+        
+        OwnerSerialInt {
+            DisplayName = "Owner Serial Number Integer"
+        }
+        
+        OwnerProgram {
+            DisplayName = "Owner Program"
+        }
+        
+    }
+    
+    struct TlmSensorRawCss
+    {
+        DisplayName = "Raw CSS sensor telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Css0Raw {
+            DisplayName = "CSS0 raw measurement"
+        }
+        
+        Css1Raw {
+            DisplayName = "CSS1 raw measurement"
+        }
+        
+        Css2Raw {
+            DisplayName = "CSS2 raw measurement"
+        }
+        
+        Css3Raw {
+            DisplayName = "CSS3 raw measurement"
+        }
+        
+        Css4Raw {
+            DisplayName = "CSS4 raw measurement"
+        }
+        
+        Css5Raw {
+            DisplayName = "CSS5 raw measurement"
+        }
+        
+        Css6Raw {
+            DisplayName = "CSS6 raw measurement"
+        }
+        
+        Css7Raw {
+            DisplayName = "CSS7 raw measurement"
+        }
+        
+        Css8Raw {
+            DisplayName = "CSS8 raw measurement"
+        }
+        
+        Css9Raw {
+            DisplayName = "CSS9 raw measurement"
+        }
+        
+        CssIsValid {
+            DisplayName = "CSS valid flag"
+        }
+        
+    }
+    
+    struct TlmSensorRawMag
+    {
+        DisplayName = "Raw MAG sensor telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Mag0RawVecX {
+            DisplayName = "MAG0 raw vector X component"
+            Unit = "uT"
+        }
+        
+        Mag0RawVecY {
+            DisplayName = "MAG0 raw vector Y component"
+            Unit = "uT"
+        }
+        
+        Mag0RawVecZ {
+            DisplayName = "MAG0 raw vector Z component"
+            Unit = "uT"
+        }
+        
+        Mag1RawVecX {
+            DisplayName = "MAG1 raw vector X component"
+            Unit = "uT"
+        }
+        
+        Mag1RawVecY {
+            DisplayName = "MAG1 raw vector Y component"
+            Unit = "uT"
+        }
+        
+        Mag1RawVecZ {
+            DisplayName = "MAG1 raw vector Z component"
+            Unit = "uT"
+        }
+        
+        Mag0IsValid {
+            DisplayName = "MAG0 valid flag"
+        }
+        
+        Mag1IsValid {
+            DisplayName = "MAG1 valid flag"
+        }
+        
+    }
+    
+    struct TlmSensorRawGyro
+    {
+        DisplayName = "Raw GYR sensor telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Gyro0RawRateX {
+            DisplayName = "GYR0 raw rate X component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro0RawRateY {
+            DisplayName = "GYR0 raw rate Y component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro0RawRateZ {
+            DisplayName = "GYR0 raw rate Z component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro1RawRateX {
+            DisplayName = "GYR1 raw rate X component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro1RawRateY {
+            DisplayName = "GYR1 raw rate Y component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro1RawRateZ {
+            DisplayName = "GYR1 raw rate Z component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro0IsValid {
+            DisplayName = "GYR0 valid flag"
+        }
+        
+        Gyro1IsValid {
+            DisplayName = "GYR1 valid flag"
+        }
+        
+    }
+    
+    struct TlmSensorRawRwl
+    {
+        DisplayName = "Raw RWL sensor telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Rwl0MeasSpeed {
+            DisplayName = "RWL0 measured speed"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl1MeasSpeed {
+            DisplayName = "RWL1 measured speed"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl2MeasSpeed {
+            DisplayName = "RWL2 measured speed"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl3MeasSpeed {
+            DisplayName = "RWL3 measured speed"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl0IsValid {
+            DisplayName = "RWL0 valid flag"
+        }
+        
+        Rwl1IsValid {
+            DisplayName = "RWL1 valid flag"
+        }
+        
+        Rwl2IsValid {
+            DisplayName = "RWL2 valid flag"
+        }
+        
+        Rwl3IsValid {
+            DisplayName = "RWL3 valid flag"
+        }
+        
+    }
+    
+    struct TlmSensorCalFss
+    {
+        DisplayName = "Calibrated FSS sensor telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Fss0CalVecX {
+            DisplayName = "FSS0 calibrated unit vector X component"
+        }
+        
+        Fss0CalVecY {
+            DisplayName = "FSS0 calibrated unit vector Y component"
+        }
+        
+        Fss0CalVecZ {
+            DisplayName = "FSS0 calibrated unit vector Z component"
+        }
+        
+        Fss1CalVecX {
+            DisplayName = "FSS1 calibrated unit vector X component"
+        }
+        
+        Fss1CalVecY {
+            DisplayName = "FSS1 calibrated unit vector Y component"
+        }
+        
+        Fss1CalVecZ {
+            DisplayName = "FSS1 calibrated unit vector Z component"
+        }
+        
+        Fss2CalVecX {
+            DisplayName = "FSS2 calibrated unit vector X component"
+        }
+        
+        Fss2CalVecY {
+            DisplayName = "FSS2 calibrated unit vector Y component"
+        }
+        
+        Fss2CalVecZ {
+            DisplayName = "FSS2 calibrated unit vector Z component"
+        }
+        
+        Fss3CalVecX {
+            DisplayName = "FSS3 calibrated unit vector X component"
+        }
+        
+        Fss3CalVecY {
+            DisplayName = "FSS3 calibrated unit vector Y component"
+        }
+        
+        Fss3CalVecZ {
+            DisplayName = "FSS3 calibrated unit vector Z component"
+        }
+        
+        Fss0IsValid {
+            DisplayName = "FSS0 valid flag"
+        }
+        
+        Fss1IsValid {
+            DisplayName = "FSS1 valid flag"
+        }
+        
+        Fss2IsValid {
+            DisplayName = "FSS2 valid flag"
+        }
+        
+        Fss3IsValid {
+            DisplayName = "FSS3 valid flag"
+        }
+        
+        Fss0IsBest {
+            DisplayName = "FSS0 best for estimators flag"
+        }
+        
+        Fss1IsBest {
+            DisplayName = "FSS1 best for estimators flag"
+        }
+        
+        Fss2IsBest {
+            DisplayName = "FSS2 best for estimators flag"
+        }
+        
+        Fss3IsBest {
+            DisplayName = "FSS3 best for estimators flag"
+        }
+        
+    }
+    
+    struct TlmSensorCalCss
+    {
+        DisplayName = "Calibrated CSS sensor telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        CssCalVecX {
+            DisplayName = "CSS calibrated unit vector X component"
+        }
+        
+        CssCalVecY {
+            DisplayName = "CSS calibrated unit vector Y component"
+        }
+        
+        CssCalVecZ {
+            DisplayName = "CSS calibrated unit vector Z component"
+        }
+        
+        CssIsValid {
+            DisplayName = "CSS valid flag"
+        }
+        
+    }
+    
+    struct TlmSensorCalMag
+    {
+        DisplayName = "Calibrated MAG sensor telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Mag0CalVecX {
+            DisplayName = "MAG0 calibrated vector X component"
+            Unit = "uT"
+        }
+        
+        Mag0CalVecY {
+            DisplayName = "MAG0 calibrated vector Y component"
+            Unit = "uT"
+        }
+        
+        Mag0CalVecZ {
+            DisplayName = "MAG0 calibrated vector Z component"
+            Unit = "uT"
+        }
+        
+        Mag1CalVecX {
+            DisplayName = "MAG1 calibrated vector X component"
+            Unit = "uT"
+        }
+        
+        Mag1CalVecY {
+            DisplayName = "MAG1 calibrated vector Y component"
+            Unit = "uT"
+        }
+        
+        Mag1CalVecZ {
+            DisplayName = "MAG1 calibrated vector Z component"
+            Unit = "uT"
+        }
+        
+        Mag0IsValid {
+            DisplayName = "MAG0 valid flag"
+        }
+        
+        Mag1IsValid {
+            DisplayName = "MAG1 valid flag"
+        }
+        
+        Mag0IsBest {
+            DisplayName = "MAG0 best for estimators flag"
+        }
+        
+        Mag1IsBest {
+            DisplayName = "MAG1 best for estimators flag"
+        }
+        
+    }
+    
+    struct TlmSensorCalGyro
+    {
+        DisplayName = "Calibrated GYR sensor telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Gyro0CalRateX {
+            DisplayName = "GYR0 calibrated rate X component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro0CalRateY {
+            DisplayName = "GYR0 calibrated rate Y component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro0CalRateZ {
+            DisplayName = "GYR0 calibrated rate Z component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro1CalRateX {
+            DisplayName = "GYR1 calibrated rate X component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro1CalRateY {
+            DisplayName = "GYR1 calibrated rate Y component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro1CalRateZ {
+            DisplayName = "GYR1 calibrated rate Z component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtGyro0CalRateX {
+            DisplayName = "EXTGYR0 calibrated rate X component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtGyro0CalRateY {
+            DisplayName = "EXTGYR0 calibrated rate Y component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtGyro0CalRateZ {
+            DisplayName = "EXTGYR0 calibrated rate Z component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtGyro1CalRateX {
+            DisplayName = "EXTGYR1 calibrated rate X component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtGyro1CalRateY {
+            DisplayName = "EXTGYR1 calibrated rate Y component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtGyro1CalRateZ {
+            DisplayName = "EXTGYR1 calibrated rate Z component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Gyro0IsValid {
+            DisplayName = "GYR0 valid flag"
+        }
+        
+        Gyro1IsValid {
+            DisplayName = "GYR1 valid flag"
+        }
+        
+        ExtGyro0IsValid {
+            DisplayName = "EXTGYR0 valid flag"
+        }
+        
+        ExtGyro1IsValid {
+            DisplayName = "EXTGYR1 valid flag"
+        }
+        
+    }
+    
+    struct TlmSensorCalHss
+    {
+        DisplayName = "Calibrated HSS sensor telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Hss0CalVecX {
+            DisplayName = "HSS0 calibrated unit vector X component"
+        }
+        
+        Hss0CalVecY {
+            DisplayName = "HSS0 calibrated unit vector Y component"
+        }
+        
+        Hss0CalVecZ {
+            DisplayName = "HSS0 calibrated unit vector Z component"
+        }
+        
+        Hss1CalVecX {
+            DisplayName = "HSS1 calibrated unit vector X component"
+        }
+        
+        Hss1CalVecY {
+            DisplayName = "HSS1 calibrated unit vector Y component"
+        }
+        
+        Hss1CalVecZ {
+            DisplayName = "HSS1 calibrated unit vector Z component"
+        }
+        
+        Hss0IsValid {
+            DisplayName = "HSS0 valid flag"
+        }
+        
+        Hss1IsValid {
+            DisplayName = "HSS1 valid flag"
+        }
+        
+    }
+    
+    struct TlmSensorCalStr
+    {
+        DisplayName = "Calibrated STR sensor telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Str0MeasBodyVec0X {
+            DisplayName = "STR0 measured body vector 0 X component"
+        }
+        
+        Str0MeasBodyVec0Y {
+            DisplayName = "STR0 measured body vector 0 Y component"
+        }
+        
+        Str0MeasBodyVec0Z {
+            DisplayName = "STR0 measured body vector 0 Z component"
+        }
+        
+        Str0MeasBodyVec1X {
+            DisplayName = "STR0 measured body vector 1 X component"
+        }
+        
+        Str0MeasBodyVec1Y {
+            DisplayName = "STR0 measured body vector 1 Y component"
+        }
+        
+        Str0MeasBodyVec1Z {
+            DisplayName = "STR0 measured body vector 1 Z component"
+        }
+        
+        Str0MeasBodyVec2X {
+            DisplayName = "STR0 measured body vector 2 X component"
+        }
+        
+        Str0MeasBodyVec2Y {
+            DisplayName = "STR0 measured body vector 2 Y component"
+        }
+        
+        Str0MeasBodyVec2Z {
+            DisplayName = "STR0 measured body vector 2 Z component"
+        }
+        
+        Str0ModelOrbitVec0X {
+            DisplayName = "STR0 modelled ORC vector 0 X component"
+        }
+        
+        Str0ModelOrbitVec0Y {
+            DisplayName = "STR0 modelled ORC vector 0 Y component"
+        }
+        
+        Str0ModelOrbitVec0Z {
+            DisplayName = "STR0 modelled ORC vector 0 Z component"
+        }
+        
+        Str0ModelOrbitVec1X {
+            DisplayName = "STR0 modelled ORC vector 1 X component"
+        }
+        
+        Str0ModelOrbitVec1Y {
+            DisplayName = "STR0 modelled ORC vector 1 Y component"
+        }
+        
+        Str0ModelOrbitVec1Z {
+            DisplayName = "STR0 modelled ORC vector 1 Z component"
+        }
+        
+        Str0ModelOrbitVec2X {
+            DisplayName = "STR0 modelled ORC vector 2 X component"
+        }
+        
+        Str0ModelOrbitVec2Y {
+            DisplayName = "STR0 modelled ORC vector 2 Y component"
+        }
+        
+        Str0ModelOrbitVec2Z {
+            DisplayName = "STR0 modelled ORC vector 2 Z component"
+        }
+        
+        Str1MeasBodyVec0X {
+            DisplayName = "STR1 measured body vector 0 X component"
+        }
+        
+        Str1MeasBodyVec0Y {
+            DisplayName = "STR1 measured body vector 0 Y component"
+        }
+        
+        Str1MeasBodyVec0Z {
+            DisplayName = "STR1 measured body vector 0 Z component"
+        }
+        
+        Str1MeasBodyVec1X {
+            DisplayName = "STR1 measured body vector 1 X component"
+        }
+        
+        Str1MeasBodyVec1Y {
+            DisplayName = "STR1 measured body vector 1 Y component"
+        }
+        
+        Str1MeasBodyVec1Z {
+            DisplayName = "STR1 measured body vector 1 Z component"
+        }
+        
+        Str1MeasBodyVec2X {
+            DisplayName = "STR1 measured body vector 2 X component"
+        }
+        
+        Str1MeasBodyVec2Y {
+            DisplayName = "STR1 measured body vector 2 Y component"
+        }
+        
+        Str1MeasBodyVec2Z {
+            DisplayName = "STR1 measured body vector 2 Z component"
+        }
+        
+        Str1ModelOrbitVec0X {
+            DisplayName = "STR1 modelled ORC vector 0 X component"
+        }
+        
+        Str1ModelOrbitVec0Y {
+            DisplayName = "STR1 modelled ORC vector 0 Y component"
+        }
+        
+        Str1ModelOrbitVec0Z {
+            DisplayName = "STR1 modelled ORC vector 0 Z component"
+        }
+        
+        Str1ModelOrbitVec1X {
+            DisplayName = "STR1 modelled ORC vector 1 X component"
+        }
+        
+        Str1ModelOrbitVec1Y {
+            DisplayName = "STR1 modelled ORC vector 1 Y component"
+        }
+        
+        Str1ModelOrbitVec1Z {
+            DisplayName = "STR1 modelled ORC vector 1 Z component"
+        }
+        
+        Str1ModelOrbitVec2X {
+            DisplayName = "STR1 modelled ORC vector 2 X component"
+        }
+        
+        Str1ModelOrbitVec2Y {
+            DisplayName = "STR1 modelled ORC vector 2 Y component"
+        }
+        
+        Str1ModelOrbitVec2Z {
+            DisplayName = "STR1 modelled ORC vector 2 Z component"
+        }
+        
+        Str0IsValid {
+            DisplayName = "STR0 valid flag"
+        }
+        
+        Str1IsValid {
+            DisplayName = "STR1 valid flag"
+        }
+        
+    }
+    
+    struct TlmSensorCalGnss
+    {
+        DisplayName = "Calibrated GNSS sensor telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        GnssSatPosEcefX {
+            DisplayName = "Satellite ECEF position vector X component"
+            Unit = "m"
+			AlarmNumericMinInclusive = "-50000000.0001"
+			AlarmNumericMaxInclusive = "50000000.0001"
+        }
+        
+        GnssSatPosEcefY {
+            DisplayName = "Satellite ECEF position vector Y component"
+            Unit = "m"
+			AlarmNumericMinInclusive = "-50000000.0001"
+			AlarmNumericMaxInclusive = "50000000.0001"
+        }
+        
+        GnssSatPosEcefZ {
+            DisplayName = "Satellite ECEF position vector Z component"
+            Unit = "m"
+			AlarmNumericMinInclusive = "-50000000.0001"
+			AlarmNumericMaxInclusive = "50000000.0001"
+        }
+        
+        GnssSatVelEcefX {
+            DisplayName = "Satellite ECEF velocity vector X component"
+            Unit = "m/s"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        GnssSatVelEcefY {
+            DisplayName = "Satellite ECEF velocity vector Y component"
+            Unit = "m/s"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        GnssSatVelEcefZ {
+            DisplayName = "Satellite ECEF velocity vector Z component"
+            Unit = "m/s"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        GnssTimeSeconds {
+            DisplayName = "GNSS-supplied unix time integer seconds"
+            Unit = "s"
+        }
+        
+        GnssTimeNs {
+            DisplayName = "GNSS-supplied unix time nanoseconds"
+            Unit = "ns"
+        }
+        
+        GnssIsValid {
+            DisplayName = "GNSS valid flag"
+        }
+        
+    }
+    
+    struct TlmSensorCalRwl
+    {
+        DisplayName = "Calibrated RWL sensor telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        RwlTorqueVecX {
+            DisplayName = "Wheel SBC torque vector X component"
+            Unit = "N.m"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        RwlTorqueVecY {
+            DisplayName = "Wheel SBC torque vector Y component"
+            Unit = "N.m"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        RwlTorqueVecZ {
+            DisplayName = "Wheel SBC torque vector Z component"
+            Unit = "N.m"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        RwlMomVecX {
+            DisplayName = "Wheel SBC momentum vector X component"
+            Unit = "N.m.s"
+			AlarmNumericMinInclusive = "-10.0001"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        RwlMomVecY {
+            DisplayName = "Wheel SBC momentum vector Y component"
+            Unit = "N.m.s"
+			AlarmNumericMinInclusive = "-10.0001"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        RwlMomVecZ {
+            DisplayName = "Wheel SBC momentum vector Z component"
+            Unit = "N.m.s"
+			AlarmNumericMinInclusive = "-10.0001"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        RwlIsValid {
+            DisplayName = "RWL valid flag"
+        }
+        
+    }
+    
+    struct TlmModels
+    {
+        DisplayName = "Models telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        SatPosEciX {
+            DisplayName = "Satellite ECI position vector X component"
+            Unit = "m"
+        }
+        
+        SatPosEciY {
+            DisplayName = "Satellite ECI position vector Y component"
+            Unit = "m"
+        }
+        
+        SatPosEciZ {
+            DisplayName = "Satellite ECI position vector Z component"
+            Unit = "m"
+        }
+        
+        SatVelEciX {
+            DisplayName = "Satellite ECI velocity vector X component"
+            Unit = "m/s"
+        }
+        
+        SatVelEciY {
+            DisplayName = "Satellite ECI velocity vector Y component"
+            Unit = "m/s"
+        }
+        
+        SatVelEciZ {
+            DisplayName = "Satellite ECI velocity vector Z component"
+            Unit = "m/s"
+        }
+        
+        SatLatGeod {
+            DisplayName = "Satellite geodetic latitude"
+            Unit = "deg"
+        }
+        
+        SatLatGeoc {
+            DisplayName = "Satellite geocentric latitude"
+            Unit = "deg"
+        }
+        
+        SatLon {
+            DisplayName = "Satellite longitude"
+            Unit = "deg"
+        }
+        
+        SatAlt {
+            DisplayName = "Satellite altitude"
+            Unit = "km"
+        }
+        
+        TgtPosEciX {
+            DisplayName = "Target satellite ECI position vector X component"
+            Unit = "m"
+        }
+        
+        TgtPosEciY {
+            DisplayName = "Target satellite ECI position vector Y component"
+            Unit = "m"
+        }
+        
+        TgtPosEciZ {
+            DisplayName = "Target satellite ECI position vector Z component"
+            Unit = "m"
+        }
+        
+        ModelMagOrcX {
+            DisplayName = "IGRF ORC model X component"
+            Unit = "uT"
+        }
+        
+        ModelMagOrcY {
+            DisplayName = "IGRF ORC model Y component"
+            Unit = "uT"
+        }
+        
+        ModelMagOrcZ {
+            DisplayName = "IGRF ORC model Z component"
+            Unit = "uT"
+        }
+        
+        ModelSunOrcX {
+            DisplayName = "Sun ORC model X component"
+        }
+        
+        ModelSunOrcY {
+            DisplayName = "Sun ORC model Y component"
+        }
+        
+        ModelSunOrcZ {
+            DisplayName = "Sun ORC model Z component"
+        }
+        
+        ModelSunBetaAngle {
+            DisplayName = "Sun beta angle with orbit plane"
+            Unit = "deg"
+        }
+        
+        ModelHorRhoAngle {
+            DisplayName = "Horizon angle in XoYo plane"
+            Unit = "deg"
+        }
+        
+        ModelHorXoEastAngle {
+            DisplayName = "Horizon East angle from Xo direction"
+            Unit = "deg"
+        }
+        
+        ModelHorYiEastAngle {
+            DisplayName = "Horizon East angle from Yi direction"
+            Unit = "deg"
+        }
+        
+        Sat2TgtGndOrcX {
+            DisplayName = "Satellite to ground ORC target vector X component"
+            Unit = "m"
+        }
+        
+        Sat2TgtGndOrcY {
+            DisplayName = "Satellite to ground ORC target vector Y component"
+            Unit = "m"
+        }
+        
+        Sat2TgtGndOrcZ {
+            DisplayName = "Satellite to ground ORC target vector Z component"
+            Unit = "m"
+        }
+        
+        Asgp4BatchCtr {
+            DisplayName = "ASGP4 batch counter"
+        }
+        
+        Asgp4PosDelta {
+            DisplayName = "ASGP4 position delta"
+            Unit = "m"
+        }
+        
+        OrbModeActive {
+            DisplayName = "Active orbit mode"
+        }
+        
+        Asgp4Error {
+            DisplayName = "ASGP4 position error"
+        }
+        
+        Eclipse {
+            DisplayName = "Eclipse flag"
+        }
+        
+        NavSource {
+            DisplayName = "Source of current orbit position and velocity"
+        }
+        
+    }
+    
+    struct TlmEstimatorMain
+    {
+        DisplayName = "Main estimator telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        EstRpyRoll {
+            DisplayName = "Estimated roll angle"
+            Unit = "deg"
+        }
+        
+        EstRpyPitch {
+            DisplayName = "Estimated pitch angle"
+            Unit = "deg"
+        }
+        
+        EstRpyYaw {
+            DisplayName = "Estimated yaw angle"
+            Unit = "deg"
+        }
+        
+        EstQuatQ0 {
+            DisplayName = "Estimated ORC quaternion Q0"
+        }
+        
+        EstQuatQ1 {
+            DisplayName = "Estimated ORC quaternion Q1"
+        }
+        
+        EstQuatQ2 {
+            DisplayName = "Estimated ORC quaternion Q2"
+        }
+        
+        EstQuatQ3 {
+            DisplayName = "Estimated ORC quaternion Q3"
+        }
+        
+        EstGyroBiasX {
+            DisplayName = "Estimated gyro bias X component"
+            Unit = "degps"
+        }
+        
+        EstGyroBiasY {
+            DisplayName = "Estimated gyro bias Y component"
+            Unit = "degps"
+        }
+        
+        EstGyroBiasZ {
+            DisplayName = "Estimated gyro bias Z component"
+            Unit = "degps"
+        }
+        
+        EstRateOrcX {
+            DisplayName = "Estimated body rate (ORC) X component"
+            Unit = "degps"
+        }
+        
+        EstRateOrcY {
+            DisplayName = "Estimated body rate (ORC) Y component"
+            Unit = "degps"
+        }
+        
+        EstRateOrcZ {
+            DisplayName = "Estimated body rate (ORC) Z component"
+            Unit = "degps"
+        }
+        
+        EstRateIrcX {
+            DisplayName = "Estimated body rate (IRC) X component"
+            Unit = "degps"
+        }
+        
+        EstRateIrcY {
+            DisplayName = "Estimated body rate (IRC) Y component"
+            Unit = "degps"
+        }
+        
+        EstRateIrcZ {
+            DisplayName = "Estimated body rate (IRC) Z component"
+            Unit = "degps"
+        }
+        
+        EstGyrTorqueX {
+            DisplayName = "Estimated gyroscopic torque X component"
+            Unit = "N.m"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        EstGyrTorqueY {
+            DisplayName = "Estimated gyroscopic torque Y component"
+            Unit = "N.m"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        EstGyrTorqueZ {
+            DisplayName = "Estimated gyroscopic torque Z component"
+            Unit = "N.m"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        EstInnovX {
+            DisplayName = "Innovation vector X component"
+        }
+        
+        EstInnovY {
+            DisplayName = "Innovation vector Y component"
+        }
+        
+        EstInnovZ {
+            DisplayName = "Innovation vector Z component"
+        }
+        
+        EstStdDevRateX {
+            DisplayName = "StdDev of estimated rate X component"
+            Unit = "degps"
+        }
+        
+        EstStdDevRateY {
+            DisplayName = "StdDev of estimated rate Y component"
+            Unit = "degps"
+        }
+        
+        EstStdDevRateZ {
+            DisplayName = "StdDev of estimated rate Z component"
+            Unit = "degps"
+        }
+        
+        EstStdDevQ0 {
+            DisplayName = "StdDev of estimated quaternion Q0 component"
+        }
+        
+        EstStdDevQ1 {
+            DisplayName = "StdDev of estimated quaternion Q1 component"
+        }
+        
+        EstStdDevQ2 {
+            DisplayName = "StdDev of estimated quaternion Q2 component"
+        }
+        
+        EstModeActive {
+            DisplayName = "Active estimator mode"
+        }
+        
+    }
+    
+    struct TlmEstimatorBackup
+    {
+        DisplayName = "Backup estimator telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        EstRpyRoll {
+            DisplayName = "Estimated roll angle"
+            Unit = "deg"
+        }
+        
+        EstRpyPitch {
+            DisplayName = "Estimated pitch angle"
+            Unit = "deg"
+        }
+        
+        EstRpyYaw {
+            DisplayName = "Estimated yaw angle"
+            Unit = "deg"
+        }
+        
+        EstQuatQ0 {
+            DisplayName = "Estimated ORC quaternion Q0"
+        }
+        
+        EstQuatQ1 {
+            DisplayName = "Estimated ORC quaternion Q1"
+        }
+        
+        EstQuatQ2 {
+            DisplayName = "Estimated ORC quaternion Q2"
+        }
+        
+        EstQuatQ3 {
+            DisplayName = "Estimated ORC quaternion Q3"
+        }
+        
+        EstGyroBiasX {
+            DisplayName = "Estimated gyro bias X component"
+            Unit = "degps"
+        }
+        
+        EstGyroBiasY {
+            DisplayName = "Estimated gyro bias Y component"
+            Unit = "degps"
+        }
+        
+        EstGyroBiasZ {
+            DisplayName = "Estimated gyro bias Z component"
+            Unit = "degps"
+        }
+        
+        EstRateOrcX {
+            DisplayName = "Estimated body rate (ORC) X component"
+            Unit = "degps"
+        }
+        
+        EstRateOrcY {
+            DisplayName = "Estimated body rate (ORC) Y component"
+            Unit = "degps"
+        }
+        
+        EstRateOrcZ {
+            DisplayName = "Estimated body rate (ORC) Z component"
+            Unit = "degps"
+        }
+        
+        EstRateIrcX {
+            DisplayName = "Estimated body rate (IRC) X component"
+            Unit = "degps"
+        }
+        
+        EstRateIrcY {
+            DisplayName = "Estimated body rate (IRC) Y component"
+            Unit = "degps"
+        }
+        
+        EstRateIrcZ {
+            DisplayName = "Estimated body rate (IRC) Z component"
+            Unit = "degps"
+        }
+        
+        EstGyrTorqueX {
+            DisplayName = "Estimated gyroscopic torque X component"
+            Unit = "N.m"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        EstGyrTorqueY {
+            DisplayName = "Estimated gyroscopic torque Y component"
+            Unit = "N.m"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        EstGyrTorqueZ {
+            DisplayName = "Estimated gyroscopic torque Z component"
+            Unit = "N.m"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        EstInnovX {
+            DisplayName = "Innovation vector X component"
+        }
+        
+        EstInnovY {
+            DisplayName = "Innovation vector Y component"
+        }
+        
+        EstInnovZ {
+            DisplayName = "Innovation vector Z component"
+        }
+        
+        EstStdDevRateX {
+            DisplayName = "StdDev of estimated rate X component"
+            Unit = "degps"
+        }
+        
+        EstStdDevRateY {
+            DisplayName = "StdDev of estimated rate Y component"
+            Unit = "degps"
+        }
+        
+        EstStdDevRateZ {
+            DisplayName = "StdDev of estimated rate Z component"
+            Unit = "degps"
+        }
+        
+        EstStdDevQ0 {
+            DisplayName = "StdDev of estimated quaternion Q0 component"
+        }
+        
+        EstStdDevQ1 {
+            DisplayName = "StdDev of estimated quaternion Q1 component"
+        }
+        
+        EstStdDevQ2 {
+            DisplayName = "StdDev of estimated quaternion Q2 component"
+        }
+        
+        EstModeActive {
+            DisplayName = "Active estimator mode"
+        }
+        
+    }
+    
+    struct TlmEstimatorMainHighRes
+    {
+        DisplayName = "Main estimator high-resolution telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        EstQuatQ0 {
+            DisplayName = "Estimated ORC quaternion Q0"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        EstQuatQ1 {
+            DisplayName = "Estimated ORC quaternion Q1"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        EstQuatQ2 {
+            DisplayName = "Estimated ORC quaternion Q2"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        EstQuatQ3 {
+            DisplayName = "Estimated ORC quaternion Q3"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        EstRateOrcX {
+            DisplayName = "Estimated body rate (ORC) X component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        EstRateOrcY {
+            DisplayName = "Estimated body rate (ORC) Y component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        EstRateOrcZ {
+            DisplayName = "Estimated body rate (ORC) Z component"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+    }
+    
+    struct TlmController
+    {
+        DisplayName = "Controller telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        RpyCmdRoll {
+            DisplayName = "Commanded roll angle"
+            Unit = "deg"
+        }
+        
+        RpyCmdPitch {
+            DisplayName = "Commanded pitch angle"
+            Unit = "deg"
+        }
+        
+        RpyCmdYaw {
+            DisplayName = "Commanded yaw angle"
+            Unit = "deg"
+        }
+        
+        RpyErrRoll {
+            DisplayName = "Error roll angle (steering)"
+            Unit = "deg"
+        }
+        
+        RpyErrPitch {
+            DisplayName = "Error pitch angle (steering)"
+            Unit = "deg"
+        }
+        
+        RpyErrYaw {
+            DisplayName = "Error yaw angle (steering)"
+            Unit = "deg"
+        }
+        
+        TgtRefLat {
+            DisplayName = "Reference ground/GEO target latitude"
+            Unit = "deg"
+			AlarmNumericMinInclusive = "-90.0001"
+			AlarmNumericMaxInclusive = "90.0001"
+        }
+        
+        TgtRefLon {
+            DisplayName = "Reference ground/GEO target longitude"
+            Unit = "deg"
+			AlarmNumericMinInclusive = "-180.0001"
+			AlarmNumericMaxInclusive = "180.0001"
+        }
+        
+        TgtRefAlt {
+            DisplayName = "Reference ground/GEO target altitude"
+            Unit = "km"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "50000.0001"
+        }
+        
+        QuatErrQ0 {
+            DisplayName = "Control error quaternion vector Q0"
+        }
+        
+        QuatErrQ1 {
+            DisplayName = "Control error quaternion vector Q1"
+        }
+        
+        QuatErrQ2 {
+            DisplayName = "Control error quaternion vector Q2"
+        }
+        
+        Rwl0CmdSpeed {
+            DisplayName = "RWL0 speed command"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl1CmdSpeed {
+            DisplayName = "RWL1 speed command"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl2CmdSpeed {
+            DisplayName = "RWL2 speed command"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl3CmdSpeed {
+            DisplayName = "RWL3 speed command"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-12000.0001"
+			AlarmNumericMaxInclusive = "12000.0001"
+        }
+        
+        Rwl0CmdMom {
+            DisplayName = "RWL0 momentum command"
+            Unit = "N.m.s"
+			AlarmNumericMinInclusive = "-10.0001"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        Rwl1CmdMom {
+            DisplayName = "RWL1 momentum command"
+            Unit = "N.m.s"
+			AlarmNumericMinInclusive = "-10.0001"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        Rwl2CmdMom {
+            DisplayName = "RWL2 momentum command"
+            Unit = "N.m.s"
+			AlarmNumericMinInclusive = "-10.0001"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        Rwl3CmdMom {
+            DisplayName = "RWL3 momentum command"
+            Unit = "N.m.s"
+			AlarmNumericMinInclusive = "-10.0001"
+			AlarmNumericMaxInclusive = "10.0001"
+        }
+        
+        Rwl0CmdTorque {
+            DisplayName = "RWL0 torque command"
+            Unit = "N.m"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Rwl1CmdTorque {
+            DisplayName = "RWL1 torque command"
+            Unit = "N.m"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Rwl2CmdTorque {
+            DisplayName = "RWL2 torque command"
+            Unit = "N.m"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Rwl3CmdTorque {
+            DisplayName = "RWL3 torque command"
+            Unit = "N.m"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Mtq0CmdDip {
+            DisplayName = "MTQ0 dipole moment command"
+            Unit = "A.m^2"
+        }
+        
+        Mtq1CmdDip {
+            DisplayName = "MTQ1 dipole moment command"
+            Unit = "A.m^2"
+        }
+        
+        Mtq2CmdDip {
+            DisplayName = "MTQ2 dipole moment command"
+            Unit = "A.m^2"
+        }
+        
+        Mtq0CmdTorque {
+            DisplayName = "MTQ0 torque command"
+            Unit = "N.m"
+			AlarmNumericMinInclusive = "-0.0011"
+			AlarmNumericMaxInclusive = "0.0011"
+        }
+        
+        Mtq1CmdTorque {
+            DisplayName = "MTQ1 torque command"
+            Unit = "N.m"
+			AlarmNumericMinInclusive = "-0.0011"
+			AlarmNumericMaxInclusive = "0.0011"
+        }
+        
+        Mtq2CmdTorque {
+            DisplayName = "MTQ2 torque command"
+            Unit = "N.m"
+			AlarmNumericMinInclusive = "-0.0011"
+			AlarmNumericMaxInclusive = "0.0011"
+        }
+        
+        Mtq0CmdOnTime {
+            DisplayName = "MTQ0 on-time command"
+            Unit = "ms"
+        }
+        
+        Mtq1CmdOnTime {
+            DisplayName = "MTQ1 on-time command"
+            Unit = "ms"
+        }
+        
+        Mtq2CmdOnTime {
+            DisplayName = "MTQ2 on-time command"
+            Unit = "ms"
+        }
+        
+        MagConTimeout {
+            DisplayName = "Magnetic control timeout"
+            Unit = "s"
+        }
+        
+        ConModeActive {
+            DisplayName = "Active control mode"
+        }
+        
+        Rwl0ErrorFlag {
+            DisplayName = "RWL0 error flag"
+        }
+        
+        Rwl1ErrorFlag {
+            DisplayName = "RWL1 error flag"
+        }
+        
+        Rwl2ErrorFlag {
+            DisplayName = "RWL2 error flag"
+        }
+        
+        Rwl3ErrorFlag {
+            DisplayName = "RWL3 error flag"
+        }
+        
+        Rwl0ActiveFlag {
+            DisplayName = "RWL0 active flag"
+        }
+        
+        Rwl1ActiveFlag {
+            DisplayName = "RWL1 active flag"
+        }
+        
+        Rwl2ActiveFlag {
+            DisplayName = "RWL2 active flag"
+        }
+        
+        Rwl3ActiveFlag {
+            DisplayName = "RWL3 active flag"
+        }
+        
+        FmcStage {
+            DisplayName = "FMC Stage"
+        }
+        
+    }
+    
+    struct TlmGnssRaw
+    {
+        DisplayName = "Raw GNSS sensor telemetry"
+        
+        RtcTimeSeconds {
+            DisplayName = "RTC Time (s)"
+            Unit = "s"
+        }
+        
+        RtcTimeNs {
+            DisplayName = "RTC Time (ns)"
+            Unit = "ns"
+        }
+        
+        RtcDriftNs {
+            DisplayName = "RTC Drift (ns)"
+            Unit = "ns"
+        }
+        
+        GnssSatPosEcefX {
+            DisplayName = "Satellite ECEF position vector X component"
+            Unit = "m"
+			AlarmNumericMinInclusive = "-50000000.0001"
+			AlarmNumericMaxInclusive = "50000000.0001"
+        }
+        
+        GnssSatPosEcefY {
+            DisplayName = "Satellite ECEF position vector Y component"
+            Unit = "m"
+			AlarmNumericMinInclusive = "-50000000.0001"
+			AlarmNumericMaxInclusive = "50000000.0001"
+        }
+        
+        GnssSatPosEcefZ {
+            DisplayName = "Satellite ECEF position vector Z component"
+            Unit = "m"
+			AlarmNumericMinInclusive = "-50000000.0001"
+			AlarmNumericMaxInclusive = "50000000.0001"
+        }
+        
+        GnssSatVelEcefX {
+            DisplayName = "Satellite ECEF velocity vector X component"
+            Unit = "m/s"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        GnssSatVelEcefY {
+            DisplayName = "Satellite ECEF velocity vector Y component"
+            Unit = "m/s"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        GnssSatVelEcefZ {
+            DisplayName = "Satellite ECEF velocity vector Z component"
+            Unit = "m/s"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        GnssTimeSeconds {
+            DisplayName = "GNSS-supplied unix time integer seconds"
+            Unit = "s"
+        }
+        
+        GnssTimeNs {
+            DisplayName = "GNSS-supplied unix time nanoseconds"
+            Unit = "ns"
+        }
+        
+        GpsWeek {
+            DisplayName = "GPS week number"
+        }
+        
+        Tow {
+            DisplayName = "GNSS Time of Week"
+            Unit = "ms"
+        }
+        
+        UtcOffset {
+            DisplayName = "GNSS UTC Offset"
+            Unit = "s"
+        }
+        
+        GnssValidData {
+            DisplayName = "GNSS data is valid"
+        }
+        
+        GnssLock {
+            DisplayName = "GNSS has lock"
+        }
+        
+        GnssPPSDetected {
+            DisplayName = "GNSS PPS Detected"
+        }
+        
+    }
+    
+    struct TlmExtSensorRaw
+    {
+        DisplayName = "Raw external sensor telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        ExtSensor0Float0 {
+            DisplayName = "ExtSensor0 raw float 0"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor0Float1 {
+            DisplayName = "ExtSensor0 raw float 1"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor0Float2 {
+            DisplayName = "ExtSensor0 raw float 2"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor0Float3 {
+            DisplayName = "ExtSensor0 raw float 3"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor0Float4 {
+            DisplayName = "ExtSensor0 raw float 4"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor0Float5 {
+            DisplayName = "ExtSensor0 raw float 5"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor1Float0 {
+            DisplayName = "ExtSensor1 raw float 0"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor1Float1 {
+            DisplayName = "ExtSensor1 raw float 1"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor1Float2 {
+            DisplayName = "ExtSensor1 raw float 2"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor1Float3 {
+            DisplayName = "ExtSensor1 raw float 3"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor1Float4 {
+            DisplayName = "ExtSensor1 raw float 4"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor1Float5 {
+            DisplayName = "ExtSensor1 raw float 5"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        ExtSensor0IsValid {
+            DisplayName = "ExtSensor0 valid flag"
+        }
+        
+        ExtSensor1IsValid {
+            DisplayName = "ExtSensor1 valid flag"
+        }
+        
+    }
+    
+    struct TlmStrPst3sRaw
+    {
+        DisplayName = "Raw PST3S star tracker telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Str0Pst3sVersion {
+            DisplayName = "STR0 PST3S Version"
+        }
+        
+        Str0Quat1 {
+            DisplayName = "STR0 Quaternion 1"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str0Quat2 {
+            DisplayName = "STR0 Quaternion 2"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str0Quat3 {
+            DisplayName = "STR0 Quaternion 3"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str0Quat4 {
+            DisplayName = "STR0 Quaternion 4"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str0AngVelX {
+            DisplayName = "STR0 Angular Velocity X"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Str0AngVelY {
+            DisplayName = "STR0 Angular Velocity Y"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Str0AngVelZ {
+            DisplayName = "STR0 Angular Velocity Z"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Str0RateQuality {
+            DisplayName = "STR0 Rate Quality"
+        }
+        
+        Str0UnixSeconds {
+            DisplayName = "STR0 Unix Seconds"
+            Unit = "S"
+        }
+        
+        Str0UnixSecondsDecimal {
+            DisplayName = "STR0 Unix Seconds Decimal"
+            Unit = "S"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str0Temperature {
+            DisplayName = "STR0 Temperature"
+            Unit = "C"
+        }
+        
+        Str0ImageExposure {
+            DisplayName = "STR0 Image Exposure"
+        }
+        
+        Str0ImageThreshold {
+            DisplayName = "STR0 Image Threshold"
+        }
+        
+        Str0BackGroundValues {
+            DisplayName = "STR0 Background Values"
+        }
+        
+        Str0InternalProcessCode {
+            DisplayName = "STR0 Internal Process Code"
+        }
+        
+        Str0CmosChipIdResult {
+            DisplayName = "STR0 CMOS Chip ID Self-test Result"
+        }
+        
+        Str0FpgaMRamResult {
+            DisplayName = "STR0 FPGA MRAM Self-test Result"
+        }
+        
+        Str0NumberOfExtractedStars {
+            DisplayName = "STR0 Number of Extracted Stars"
+        }
+        
+        Str0OperatingMode {
+            DisplayName = "STR0 Operating Mode"
+        }
+        
+        Str0ImagingGain {
+            DisplayName = "STR0 Imaging Gain"
+        }
+        
+        Str0MinNavigationStars {
+            DisplayName = "STR0 Minimum Navigation Stars"
+        }
+        
+        Str0DataValid {
+            DisplayName = "STR0 Data Valid"
+        }
+        
+        Str0ExtImageState {
+            DisplayName = "STR0 External Image State"
+        }
+        
+        Str0IdentifiedStars {
+            DisplayName = "STR0 Number of Identified Stars"
+        }
+        
+        Str0DeviceNumber {
+            DisplayName = "STR0 Device Number"
+        }
+        
+        Str0SoftwareVersion {
+            DisplayName = "STR0 Software Version"
+        }
+        
+        Str0EdacErrorCount {
+            DisplayName = "STR0 EDAC Error Count"
+        }
+        
+        Str0ImageFrameNumber {
+            DisplayName = "STR0 Image Frame Number"
+        }
+        
+        Str0DynamicMode {
+            DisplayName = "STR0 Dynamic Mode"
+        }
+        
+        Str0SaaMode {
+            DisplayName = "STR0 SAA Mode"
+        }
+        
+        Str0SaaThreshold {
+            DisplayName = "STR0 SAA Threshold"
+        }
+        
+        Str0QuaternionFilteringState {
+            DisplayName = "STR0 Quaternion Filtering State"
+        }
+        
+        Str0FourStarCaptureThreshold {
+            DisplayName = "STR0 Four Star Capture Threshold"
+        }
+        
+        Str0TrackingThreshold {
+            DisplayName = "STR0 Tracking Threshold"
+        }
+        
+        Str0EdacSwitch {
+            DisplayName = "STR0 EDAC Switch"
+        }
+        
+        Str1Pst3sVersion {
+            DisplayName = "STR1 PST3S Version"
+        }
+        
+        Str1Quat1 {
+            DisplayName = "STR1 Quaternion 1"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str1Quat2 {
+            DisplayName = "STR1 Quaternion 2"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str1Quat3 {
+            DisplayName = "STR1 Quaternion 3"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str1Quat4 {
+            DisplayName = "STR1 Quaternion 4"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str1AngVelX {
+            DisplayName = "STR1 Angular Velocity X"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Str1AngVelY {
+            DisplayName = "STR1 Angular Velocity Y"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Str1AngVelZ {
+            DisplayName = "STR1 Angular Velocity Z"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        Str1RateQuality {
+            DisplayName = "STR1 Rate Quality"
+        }
+        
+        Str1UnixSeconds {
+            DisplayName = "STR1 Unix Seconds"
+            Unit = "S"
+        }
+        
+        Str1UnixSecondsDecimal {
+            DisplayName = "STR1 Unix Seconds Decimal"
+            Unit = "S"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str1Temperature {
+            DisplayName = "STR1 Temperature"
+            Unit = "C"
+        }
+        
+        Str1ImageExposure {
+            DisplayName = "STR1 Image Exposure"
+        }
+        
+        Str1ImageThreshold {
+            DisplayName = "STR1 Image Threshold"
+        }
+        
+        Str1BackGroundValues {
+            DisplayName = "STR1 Background Values"
+        }
+        
+        Str1InternalProcessCode {
+            DisplayName = "STR1 Internal Process Code"
+        }
+        
+        Str1CmosChipIdResult {
+            DisplayName = "STR1 CMOS Chip ID Self-test Result"
+        }
+        
+        Str1FpgaMRamResult {
+            DisplayName = "STR1 FPGA MRAM Self-test Result"
+        }
+        
+        Str1NumberOfExtractedStars {
+            DisplayName = "STR1 Number of Extracted Stars"
+        }
+        
+        Str1OperatingMode {
+            DisplayName = "STR1 Operating Mode"
+        }
+        
+        Str1ImagingGain {
+            DisplayName = "STR1 Imaging Gain"
+        }
+        
+        Str1MinNavigationStars {
+            DisplayName = "STR1 Minimum Navigation Stars"
+        }
+        
+        Str1DataValid {
+            DisplayName = "STR1 Data Valid"
+        }
+        
+        Str1ExtImageState {
+            DisplayName = "STR1 External Image State"
+        }
+        
+        Str1IdentifiedStars {
+            DisplayName = "STR1 Number of Identified Stars"
+        }
+        
+        Str1DeviceNumber {
+            DisplayName = "STR1 Device Number"
+        }
+        
+        Str1SoftwareVersion {
+            DisplayName = "STR1 Software Version"
+        }
+        
+        Str1EdacErrorCount {
+            DisplayName = "STR1 EDAC Error Count"
+        }
+        
+        Str1ImageFrameNumber {
+            DisplayName = "STR1 Image Frame Number"
+        }
+        
+        Str1DynamicMode {
+            DisplayName = "STR1 Dynamic Mode"
+        }
+        
+        Str1SaaMode {
+            DisplayName = "STR1 SAA Mode"
+        }
+        
+        Str1SaaThreshold {
+            DisplayName = "STR1 SAA Threshold"
+        }
+        
+        Str1QuaternionFilteringState {
+            DisplayName = "STR1 Quaternion Filtering State"
+        }
+        
+        Str1FourStarCaptureThreshold {
+            DisplayName = "STR1 Four Star Capture Threshold"
+        }
+        
+        Str1TrackingThreshold {
+            DisplayName = "STR1 Tracking Threshold"
+        }
+        
+        Str1EdacSwitch {
+            DisplayName = "STR1 EDAC Switch"
+        }
+        
+    }
+    
+    struct TlmFssCubeSenseSunRaw
+    {
+        DisplayName = "Raw CubeSense Sun telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Fss0Alpha {
+            DisplayName = "FSS0 alpha angle"
+            Unit = "deg"
+        }
+        
+        Fss0Beta {
+            DisplayName = "FSS0 beta angle"
+            Unit = "deg"
+        }
+        
+        Fss0CaptureResult {
+            DisplayName = "FSS0 capture result"
+        }
+        
+        Fss0DetectionResult {
+            DisplayName = "FSS0 detection result"
+        }
+        
+        Fss1Alpha {
+            DisplayName = "FSS1 alpha angle"
+            Unit = "deg"
+        }
+        
+        Fss1Beta {
+            DisplayName = "FSS1 beta angle"
+            Unit = "deg"
+        }
+        
+        Fss1CaptureResult {
+            DisplayName = "FSS1 capture result"
+        }
+        
+        Fss1DetectionResult {
+            DisplayName = "FSS1 detection result"
+        }
+        
+        Fss2Alpha {
+            DisplayName = "FSS2 alpha angle"
+            Unit = "deg"
+        }
+        
+        Fss2Beta {
+            DisplayName = "FSS2 beta angle"
+            Unit = "deg"
+        }
+        
+        Fss2CaptureResult {
+            DisplayName = "FSS2 capture result"
+        }
+        
+        Fss2DetectionResult {
+            DisplayName = "FSS2 detection result"
+        }
+        
+        Fss3Alpha {
+            DisplayName = "FSS3 alpha angle"
+            Unit = "deg"
+        }
+        
+        Fss3Beta {
+            DisplayName = "FSS3 beta angle"
+            Unit = "deg"
+        }
+        
+        Fss3CaptureResult {
+            DisplayName = "FSS3 capture result"
+        }
+        
+        Fss3DetectionResult {
+            DisplayName = "FSS3 detection result"
+        }
+        
+        Fss0IsValid {
+            DisplayName = "FSS0 valid flag"
+        }
+        
+        Fss1IsValid {
+            DisplayName = "FSS1 valid flag"
+        }
+        
+        Fss2IsValid {
+            DisplayName = "FSS2 valid flag"
+        }
+        
+        Fss3IsValid {
+            DisplayName = "FSS3 valid flag"
+        }
+        
+    }
+    
+    struct TlmHssCubeSenseEarthRaw
+    {
+        DisplayName = "Raw CubeSense Earth telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Hss0RawElev {
+            DisplayName = "HSS0 raw elevation angle"
+            Unit = "deg"
+        }
+        
+        Hss0RawRot {
+            DisplayName = "HSS0 raw rotation angle"
+            Unit = "deg"
+        }
+        
+        Hss0CaptureResult {
+            DisplayName = "HSS0 capture result"
+        }
+        
+        Hss0DetectionResult {
+            DisplayName = "HSS0 detection result"
+        }
+        
+        Hss1RawElev {
+            DisplayName = "HSS1 raw elevation angle"
+            Unit = "deg"
+        }
+        
+        Hss1RawRot {
+            DisplayName = "HSS1 raw rotation angle"
+            Unit = "deg"
+        }
+        
+        Hss1CaptureResult {
+            DisplayName = "HSS1 capture result"
+        }
+        
+        Hss1DetectionResult {
+            DisplayName = "HSS1 detection result"
+        }
+        
+        Hss0IsValid {
+            DisplayName = "HSS0 valid flag"
+        }
+        
+        Hss1IsValid {
+            DisplayName = "HSS1 valid flag"
+        }
+        
+    }
+    
+    struct TlmRwlNssRwlRaw
+    {
+        DisplayName = "Raw NSSRWL sensor telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Rwl0TargetValue {
+            DisplayName = "RWL0 target value"
+        }
+        
+        Rwl0MeasSpeed {
+            DisplayName = "RWL0 measured speed"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Rwl0MeasCurrent {
+            DisplayName = "RWL0 measured current"
+            Unit = "mA"
+        }
+        
+        Rwl0Temp {
+            DisplayName = "RWL0 temperature"
+            Unit = "C"
+        }
+        
+        Rwl1TargetValue {
+            DisplayName = "RWL1 target value"
+        }
+        
+        Rwl1MeasSpeed {
+            DisplayName = "RWL1 measured speed"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Rwl1MeasCurrent {
+            DisplayName = "RWL1 measured current"
+            Unit = "mA"
+        }
+        
+        Rwl1Temp {
+            DisplayName = "RWL1 temperature"
+            Unit = "C"
+        }
+        
+        Rwl2TargetValue {
+            DisplayName = "RWL2 target value"
+        }
+        
+        Rwl2MeasSpeed {
+            DisplayName = "RWL2 measured speed"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Rwl2MeasCurrent {
+            DisplayName = "RWL2 measured current"
+            Unit = "mA"
+        }
+        
+        Rwl2Temp {
+            DisplayName = "RWL2 temperature"
+            Unit = "C"
+        }
+        
+        Rwl3TargetValue {
+            DisplayName = "RWL3 target value"
+        }
+        
+        Rwl3MeasSpeed {
+            DisplayName = "RWL3 measured speed"
+            Unit = "rpm"
+			AlarmNumericMinInclusive = "-10000.0001"
+			AlarmNumericMaxInclusive = "10000.0001"
+        }
+        
+        Rwl3MeasCurrent {
+            DisplayName = "RWL3 measured current"
+            Unit = "mA"
+        }
+        
+        Rwl3Temp {
+            DisplayName = "RWL3 temperature"
+            Unit = "C"
+        }
+        
+        Rwl0IsValid {
+            DisplayName = "RWL0 valid flag"
+        }
+        
+        Rwl0WheelMode {
+            DisplayName = "RWL0 wheel mode"
+        }
+        
+        Rwl0CurentCtrlMode {
+            DisplayName = "RWL0 current-control mode"
+        }
+        
+        Rwl0SpeedCtrlMode {
+            DisplayName = "RWL0 speed-control mode"
+        }
+        
+        Rwl0TorqueCtrlMode {
+            DisplayName = "RWL0 torque-control mode"
+        }
+        
+        Rwl0CrcError {
+            DisplayName = "RWL0 CRC error"
+        }
+        
+        Rwl0WrongLlCmd {
+            DisplayName = "RWL0 wrong low-level command"
+        }
+        
+        Rwl0WrongHlCmd {
+            DisplayName = "RWL0 wrong high-level command"
+        }
+        
+        Rwl0ToutSci1Main {
+            DisplayName = "RWL0 Timeout SCI1 main"
+        }
+        
+        Rwl1IsValid {
+            DisplayName = "RWL1 valid flag"
+        }
+        
+        Rwl1WheelMode {
+            DisplayName = "RWL1 wheel mode"
+        }
+        
+        Rwl1CurentCtrlMode {
+            DisplayName = "RWL1 current-control mode"
+        }
+        
+        Rwl1SpeedCtrlMode {
+            DisplayName = "RWL1 speed-control mode"
+        }
+        
+        Rwl1TorqueCtrlMode {
+            DisplayName = "RWL1 torque-control mode"
+        }
+        
+        Rwl1CrcError {
+            DisplayName = "RWL1 CRC error"
+        }
+        
+        Rwl1WrongLlCmd {
+            DisplayName = "RWL1 wrong low-level command"
+        }
+        
+        Rwl1WrongHlCmd {
+            DisplayName = "RWL1 wrong high-level command"
+        }
+        
+        Rwl1ToutSci1Main {
+            DisplayName = "RWL1 Timeout SCI1 main"
+        }
+        
+        Rwl2IsValid {
+            DisplayName = "RWL2 valid flag"
+        }
+        
+        Rwl2WheelMode {
+            DisplayName = "RWL2 wheel mode"
+        }
+        
+        Rwl2CurentCtrlMode {
+            DisplayName = "RWL2 current-control mode"
+        }
+        
+        Rwl2SpeedCtrlMode {
+            DisplayName = "RWL2 speed-control mode"
+        }
+        
+        Rwl2TorqueCtrlMode {
+            DisplayName = "RWL2 torque-control mode"
+        }
+        
+        Rwl2CrcError {
+            DisplayName = "RWL2 CRC error"
+        }
+        
+        Rwl2WrongLlCmd {
+            DisplayName = "RWL2 wrong low-level command"
+        }
+        
+        Rwl2WrongHlCmd {
+            DisplayName = "RWL2 wrong high-level command"
+        }
+        
+        Rwl2ToutSci1Main {
+            DisplayName = "RWL2 Timeout SCI1 main"
+        }
+        
+        Rwl3IsValid {
+            DisplayName = "RWL3 valid flag"
+        }
+        
+        Rwl3WheelMode {
+            DisplayName = "RWL3 wheel mode"
+        }
+        
+        Rwl3CurentCtrlMode {
+            DisplayName = "RWL3 current-control mode"
+        }
+        
+        Rwl3SpeedCtrlMode {
+            DisplayName = "RWL3 speed-control mode"
+        }
+        
+        Rwl3TorqueCtrlMode {
+            DisplayName = "RWL3 torque-control mode"
+        }
+        
+        Rwl3CrcError {
+            DisplayName = "RWL3 CRC error"
+        }
+        
+        Rwl3WrongLlCmd {
+            DisplayName = "RWL3 wrong low-level command"
+        }
+        
+        Rwl3WrongHlCmd {
+            DisplayName = "RWL3 wrong high-level command"
+        }
+        
+        Rwl3ToutSci1Main {
+            DisplayName = "RWL3 Timeout SCI1 main"
+        }
+        
+    }
+    
+    struct TlmStrCubeStarRaw
+    {
+        DisplayName = "Raw CubeStar telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Str0CaptureStatus {
+            DisplayName = "STR0 Capture Status"
+        }
+        
+        Str0DetectStatus {
+            DisplayName = "STR0 Detection Status"
+        }
+        
+        Str0IdentStatus {
+            DisplayName = "STR0 Identification Status"
+        }
+        
+        Str0Idle {
+            DisplayName = "STR0 Idle"
+        }
+        
+        Str0Tracking {
+            DisplayName = "STR0 Tracking"
+        }
+        
+        Str0IsValid {
+            DisplayName = "STR0 valid flag"
+        }
+        
+        Str0NumDetected {
+            DisplayName = "STR0 Number Detected Stars"
+        }
+        
+        Str0NumIdentified {
+            DisplayName = "STR0 Number Identified Stars"
+        }
+        
+        Str0RateX {
+            DisplayName = "STR0 Angular Rate X"
+            Unit = "deg/s"
+        }
+        
+        Str0RateY {
+            DisplayName = "STR0 Angular Rate Y"
+            Unit = "deg/s"
+        }
+        
+        Str0RateZ {
+            DisplayName = "STR0 Angular Rate Z"
+            Unit = "deg/s"
+        }
+        
+        Str1CaptureStatus {
+            DisplayName = "STR1 Capture Status"
+        }
+        
+        Str1DetectStatus {
+            DisplayName = "STR1 Detection Status"
+        }
+        
+        Str1IdentStatus {
+            DisplayName = "STR1 Identification Status"
+        }
+        
+        Str1Idle {
+            DisplayName = "STR1 Idle"
+        }
+        
+        Str1Tracking {
+            DisplayName = "STR1 Tracking"
+        }
+        
+        Str1IsValid {
+            DisplayName = "STR1 valid flag"
+        }
+        
+        Str1NumDetected {
+            DisplayName = "STR1 Number Detected Stars"
+        }
+        
+        Str1NumIdentified {
+            DisplayName = "STR1 Number Identified Stars"
+        }
+        
+        Str1RateX {
+            DisplayName = "STR1 Angular Rate X"
+            Unit = "deg/s"
+        }
+        
+        Str1RateY {
+            DisplayName = "STR1 Angular Rate Y"
+            Unit = "deg/s"
+        }
+        
+        Str1RateZ {
+            DisplayName = "STR1 Angular Rate Z"
+            Unit = "deg/s"
+        }
+        
+    }
+    
+    struct TlmGyrLitefuforsRaw
+    {
+        DisplayName = "RAW LITEF uFORS sensor telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Gyr0RateUfors1 {
+            DisplayName = "EXTGYR0 Rate axis-1"
+			AlarmNumericMinInclusive = "-20.0001"
+			AlarmNumericMaxInclusive = "20.0001"
+        }
+        
+        Gyr0RateUfors2 {
+            DisplayName = "EXTGYR0 Rate axis-2"
+			AlarmNumericMinInclusive = "-20.0001"
+			AlarmNumericMaxInclusive = "20.0001"
+        }
+        
+        Gyr0RateUfors3 {
+            DisplayName = "EXTGYR0 Rate axis-3"
+			AlarmNumericMinInclusive = "-20.0001"
+			AlarmNumericMaxInclusive = "20.0001"
+        }
+        
+        Gyr0NogoUfors1 {
+            DisplayName = "EXTGYR0 NOGO axis-1"
+        }
+        
+        Gyr0RstAckUfors1 {
+            DisplayName = "EXTGYR0 Reset Ack axis-1"
+        }
+        
+        Gyr0TempWarnUfors1 {
+            DisplayName = "EXTGYR0 Temp Warning axis-1"
+        }
+        
+        Gyr0AuxControlLoopErrUfors1 {
+            DisplayName = "EXTGYR0 Aux Control Loop Err axis-1"
+        }
+        
+        Gyr0HardBitErrUfors1 {
+            DisplayName = "EXTGYR0 Hardware BIT Err axis-1"
+        }
+        
+        Gyr0MeasRangeErrUfors1 {
+            DisplayName = "EXTGYR0 Measurement Range Err axis-1"
+        }
+        
+        Gyr0UnknwnCmdUfors1 {
+            DisplayName = "EXTGYR0 Unknown Command axis-1"
+        }
+        
+        Gyr0NogoUfors2 {
+            DisplayName = "EXTGYR0 NOGO axis-2"
+        }
+        
+        Gyr0RstAckUfors2 {
+            DisplayName = "EXTGYR0 Reset Ack axis-2"
+        }
+        
+        Gyr0TempWarnUfors2 {
+            DisplayName = "EXTGYR0 Temp Warning axis-2"
+        }
+        
+        Gyr0AuxControlLoopErrUfors2 {
+            DisplayName = "EXTGYR0 Aux Control Loop Err axis-2"
+        }
+        
+        Gyr0HardBitErrUfors2 {
+            DisplayName = "EXTGYR0 Hardware BIT Err axis-2"
+        }
+        
+        Gyr0MeasRangeErrUfors2 {
+            DisplayName = "EXTGYR0 Measurement Range Err axis-2"
+        }
+        
+        Gyr0UnknwnCmdUfors2 {
+            DisplayName = "EXTGYR0 Unknown Command axis-2"
+        }
+        
+        Gyr0NogoUfors3 {
+            DisplayName = "EXTGYR0 NOGO axis-3"
+        }
+        
+        Gyr0RstAckUfors3 {
+            DisplayName = "EXTGYR0 Reset Ack axis-3"
+        }
+        
+        Gyr0TempWarnUfors3 {
+            DisplayName = "EXTGYR0 Temp Warning axis-3"
+        }
+        
+        Gyr0AuxControlLoopErrUfors3 {
+            DisplayName = "EXTGYR0 Aux Control Loop Err axis-3"
+        }
+        
+        Gyr0HardBitErrUfors3 {
+            DisplayName = "EXTGYR0 Hardware BIT Err axis-3"
+        }
+        
+        Gyr0MeasRangeErrUfors3 {
+            DisplayName = "EXTGYR0 Measurement Range Err axis-3"
+        }
+        
+        Gyr0UnknwnCmdUfors3 {
+            DisplayName = "EXTGYR0 Unknown Command axis-3"
+        }
+        
+        Gyr1RateUfors1 {
+            DisplayName = "EXTGYR1 Rate axis-1"
+			AlarmNumericMinInclusive = "-20.0001"
+			AlarmNumericMaxInclusive = "20.0001"
+        }
+        
+        Gyr1RateUfors2 {
+            DisplayName = "EXTGYR1 Rate axis-2"
+			AlarmNumericMinInclusive = "-20.0001"
+			AlarmNumericMaxInclusive = "20.0001"
+        }
+        
+        Gyr1RateUfors3 {
+            DisplayName = "EXTGYR1 Rate axis-3"
+			AlarmNumericMinInclusive = "-20.0001"
+			AlarmNumericMaxInclusive = "20.0001"
+        }
+        
+        Gyr1NogoUfors1 {
+            DisplayName = "EXTGYR1 NOGO axis-1"
+        }
+        
+        Gyr1RstAckUfors1 {
+            DisplayName = "EXTGYR1 Reset Ack axis-1"
+        }
+        
+        Gyr1TempWarnUfors1 {
+            DisplayName = "EXTGYR1 Temp Warning axis-1"
+        }
+        
+        Gyr1AuxControlLoopErrUfors1 {
+            DisplayName = "EXTGYR1 Aux Control Loop Err axis-1"
+        }
+        
+        Gyr1HardBitErrUfors1 {
+            DisplayName = "EXTGYR1 Hardware BIT Err axis-1"
+        }
+        
+        Gyr1MeasRangeErrUfors1 {
+            DisplayName = "EXTGYR1 Measurement Range Err axis-1"
+        }
+        
+        Gyr1UnknwnCmdUfors1 {
+            DisplayName = "EXTGYR1 Unknown Command axis-1"
+        }
+        
+        Gyr1NogoUfors2 {
+            DisplayName = "EXTGYR1 NOGO axis-2"
+        }
+        
+        Gyr1RstAckUfors2 {
+            DisplayName = "EXTGYR1 Reset Ack axis-2"
+        }
+        
+        Gyr1TempWarnUfors2 {
+            DisplayName = "EXTGYR1 Temp Warning axis-2"
+        }
+        
+        Gyr1AuxControlLoopErrUfors2 {
+            DisplayName = "EXTGYR1 Aux Control Loop Err axis-2"
+        }
+        
+        Gyr1HardBitErrUfors2 {
+            DisplayName = "EXTGYR1 Hardware BIT Err axis-2"
+        }
+        
+        Gyr1MeasRangeErrUfors2 {
+            DisplayName = "EXTGYR1 Measurement Range Err axis-2"
+        }
+        
+        Gyr1UnknwnCmdUfors2 {
+            DisplayName = "EXTGYR1 Unknown Command axis-2"
+        }
+        
+        Gyr1NogoUfors3 {
+            DisplayName = "EXTGYR1 NOGO axis-3"
+        }
+        
+        Gyr1RstAckUfors3 {
+            DisplayName = "EXTGYR1 Reset Ack axis-3"
+        }
+        
+        Gyr1TempWarnUfors3 {
+            DisplayName = "EXTGYR1 Temp Warning axis-3"
+        }
+        
+        Gyr1AuxControlLoopErrUfors3 {
+            DisplayName = "EXTGYR1 Aux Control Loop Err axis-3"
+        }
+        
+        Gyr1HardBitErrUfors3 {
+            DisplayName = "EXTGYR1 Hardware BIT Err axis-3"
+        }
+        
+        Gyr1MeasRangeErrUfors3 {
+            DisplayName = "EXTGYR1 Measurement Range Err axis-3"
+        }
+        
+        Gyr1UnknwnCmdUfors3 {
+            DisplayName = "EXTGYR1 Unknown Command axis-3"
+        }
+        
+    }
+    
+    struct TlmStrCubeAurigaRaw
+    {
+        DisplayName = "Raw CubeAuriga telemetry"
+        
+        TimeSeconds {
+            DisplayName = "Time integer seconds"
+            Unit = "s"
+        }
+        
+        TimeNs {
+            DisplayName = "Time nanoseconds"
+            Unit = "ns"
+        }
+        
+        Str0FrameCnt {
+            DisplayName = "STR0 Frame Count"
+        }
+        
+        Str0IDSATM {
+            DisplayName = "STR0 IDSATM"
+        }
+        
+        Str0SpecTC {
+            DisplayName = "STR0 SpecTC"
+        }
+        
+        Str0SyntDefATM {
+            DisplayName = "STR0 SyntDefATM"
+        }
+        
+        Str0SyntFusion {
+            DisplayName = "STR0 SyntFusion"
+        }
+        
+        Str0SyntFil {
+            DisplayName = "STR0 SyntFil"
+        }
+        
+        Str0DateMesFil {
+            DisplayName = "STR0 DateMesFil"
+        }
+        
+        Str0QRsFil1 {
+            DisplayName = "STR0 QRsFil1"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str0QRsFil2 {
+            DisplayName = "STR0 QRsFil2"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str0QRsFil3 {
+            DisplayName = "STR0 QRsFil3"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str0QRsFil4 {
+            DisplayName = "STR0 QRsFil4"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str0IQFilXRs {
+            DisplayName = "STR0 IQFilXRs"
+        }
+        
+        Str0IQFilYRs {
+            DisplayName = "STR0 IQFilYRs"
+        }
+        
+        Str0IQFilZRs {
+            DisplayName = "STR0 IQFilZRs"
+        }
+        
+        Str0NbEtoAtt {
+            DisplayName = "STR0 NbEtoAtt"
+        }
+        
+        Str0NbEtoAttOH {
+            DisplayName = "STR0 NbEtoAttOH"
+        }
+        
+        Str0NbEtoCoh {
+            DisplayName = "STR0 NbEtoCoh"
+        }
+        
+        Str0NbEtoCohOH {
+            DisplayName = "STR0 NbEtoCohOH"
+        }
+        
+        Str0WRsFil1 {
+            DisplayName = "STR0 WRsFil1"
+            Unit = "rad/s"
+			AlarmNumericMinInclusive = "-2.0001"
+			AlarmNumericMaxInclusive = "2.0001"
+        }
+        
+        Str0WRsFil2 {
+            DisplayName = "STR0 WRsFil2"
+            Unit = "rad/s"
+			AlarmNumericMinInclusive = "-2.0001"
+			AlarmNumericMaxInclusive = "2.0001"
+        }
+        
+        Str0WRsFil3 {
+            DisplayName = "STR0 WRsFil3"
+            Unit = "rad/s"
+			AlarmNumericMinInclusive = "-2.0001"
+			AlarmNumericMaxInclusive = "2.0001"
+        }
+        
+        Str0NLPMoyOH1 {
+            DisplayName = "STR0 NLPMoyOH1"
+        }
+        
+        Str0NLPMoyOH2 {
+            DisplayName = "STR0 NLPMoyOH2"
+        }
+        
+        Str0SyntFilOH1 {
+            DisplayName = "STR0 SyntFilOH1"
+        }
+        
+        Str0SyntFilOH2 {
+            DisplayName = "STR0 SyntFilOH2"
+        }
+        
+        Str0SyntFDIROH1 {
+            DisplayName = "STR0 SyntFDIROH1"
+        }
+        
+        Str0SyntFDIROH2 {
+            DisplayName = "STR0 SyntFDIROH2"
+        }
+        
+        Str0SyntDesOH1 {
+            DisplayName = "STR0 SyntDesOH1"
+        }
+        
+        Str0SyntDesOH2 {
+            DisplayName = "STR0 SyntDesOH2"
+        }
+        
+        Str0OH1State {
+            DisplayName = "STR0 OH1 State"
+        }
+        
+        Str0OH2State {
+            DisplayName = "STR0 OH2 State"
+        }
+        
+        Str0DataValid {
+            DisplayName = "STR0 Data Valid"
+        }
+        
+        Str1FrameCnt {
+            DisplayName = "STR1 Frame Count"
+        }
+        
+        Str1IDSATM {
+            DisplayName = "STR1 IDSATM"
+        }
+        
+        Str1SpecTC {
+            DisplayName = "STR1 SpecTC"
+        }
+        
+        Str1SyntDefATM {
+            DisplayName = "STR1 SyntDefATM"
+        }
+        
+        Str1SyntFusion {
+            DisplayName = "STR1 SyntFusion"
+        }
+        
+        Str1SyntFil {
+            DisplayName = "STR1 SyntFil"
+        }
+        
+        Str1DateMesFil {
+            DisplayName = "STR1 DateMesFil"
+        }
+        
+        Str1QRsFil1 {
+            DisplayName = "STR1 QRsFil1"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str1QRsFil2 {
+            DisplayName = "STR1 QRsFil2"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str1QRsFil3 {
+            DisplayName = "STR1 QRsFil3"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str1QRsFil4 {
+            DisplayName = "STR1 QRsFil4"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Str1IQFilXRs {
+            DisplayName = "STR1 IQFilXRs"
+        }
+        
+        Str1IQFilYRs {
+            DisplayName = "STR1 IQFilYRs"
+        }
+        
+        Str1IQFilZRs {
+            DisplayName = "STR1 IQFilZRs"
+        }
+        
+        Str1NbEtoAtt {
+            DisplayName = "STR1 NbEtoAtt"
+        }
+        
+        Str1NbEtoAttOH {
+            DisplayName = "STR1 NbEtoAttOH"
+        }
+        
+        Str1NbEtoCoh {
+            DisplayName = "STR1 NbEtoCoh"
+        }
+        
+        Str1NbEtoCohOH {
+            DisplayName = "STR1 NbEtoCohOH"
+        }
+        
+        Str1WRsFil1 {
+            DisplayName = "STR1 WRsFil1"
+            Unit = "rad/s"
+			AlarmNumericMinInclusive = "-2.0001"
+			AlarmNumericMaxInclusive = "2.0001"
+        }
+        
+        Str1WRsFil2 {
+            DisplayName = "STR1 WRsFil2"
+            Unit = "rad/s"
+			AlarmNumericMinInclusive = "-2.0001"
+			AlarmNumericMaxInclusive = "2.0001"
+        }
+        
+        Str1WRsFil3 {
+            DisplayName = "STR1 WRsFil3"
+            Unit = "rad/s"
+			AlarmNumericMinInclusive = "-2.0001"
+			AlarmNumericMaxInclusive = "2.0001"
+        }
+        
+        Str1NLPMoyOH1 {
+            DisplayName = "STR1 NLPMoyOH1"
+        }
+        
+        Str1NLPMoyOH2 {
+            DisplayName = "STR1 NLPMoyOH2"
+        }
+        
+        Str1SyntFilOH1 {
+            DisplayName = "STR1 SyntFilOH1"
+        }
+        
+        Str1SyntFilOH2 {
+            DisplayName = "STR1 SyntFilOH2"
+        }
+        
+        Str1SyntFDIROH1 {
+            DisplayName = "STR1 SyntFDIROH1"
+        }
+        
+        Str1SyntFDIROH2 {
+            DisplayName = "STR1 SyntFDIROH2"
+        }
+        
+        Str1SyntDesOH1 {
+            DisplayName = "STR1 SyntDesOH1"
+        }
+        
+        Str1SyntDesOH2 {
+            DisplayName = "STR1 SyntDesOH2"
+        }
+        
+        Str1OH1State {
+            DisplayName = "STR1 OH1 State"
+        }
+        
+        Str1OH2State {
+            DisplayName = "STR1 OH2 State"
+        }
+        
+        Str1DataValid {
+            DisplayName = "STR1 Data Valid"
+        }
+        
+    }
+    
+    struct TlmAcpExecution
+    {
+        DisplayName = "ACP execution telemetry"
+        
+        TimeSinceLoopStart {
+            DisplayName = "Time since iteration start"
+            Unit = "ms"
+        }
+        
+        CurrentExecutionPoint {
+            DisplayName = "Current execution point"
+        }
+        
+        ExecTimeNodeSync {
+            DisplayName = "Execution time of node sync"
+            Unit = "ms"
+        }
+        
+        ExecTimeSensorComms {
+            DisplayName = "Execution time of sensor comms"
+            Unit = "ms"
+        }
+        
+        ExecTimeSensorCal {
+            DisplayName = "Execution time of sensor calibration"
+            Unit = "ms"
+        }
+        
+        ExecTimeEstimators {
+            DisplayName = "Execution time of ADCS estimators"
+            Unit = "ms"
+        }
+        
+        ExecTimeControllers {
+            DisplayName = "Execution time of ADCS controllers"
+            Unit = "ms"
+        }
+        
+        ExecTimeWheelComms {
+            DisplayName = "Execution time of wheel comms"
+            Unit = "ms"
+        }
+        
+        ExecTimeModels {
+            DisplayName = "Execution time of ADCS models"
+            Unit = "ms"
+        }
+        
+        ExecTimeLoopSync {
+            DisplayName = "Execution time of ADCS loop sync"
+            Unit = "ms"
+        }
+        
+        ExecTimeHealth {
+            DisplayName = "Execution time of health service"
+            Unit = "ms"
+        }
+        
+        ExecTimeTlmLog {
+            DisplayName = "Execution time of telemetry logging"
+            Unit = "ms"
+        }
+        
+        LoopRtcOffset {
+            DisplayName = "ADCS loop offset from RTC"
+            Unit = "ms"
+        }
+        
+        LoopHasStarted {
+            DisplayName = "ADCS loop has started flag"
+        }
+        
+        HilSyncOk {
+            DisplayName = "HIL synchronised"
+        }
+        
+    }
+    
+    struct TlmTorquerCurrents
+    {
+        DisplayName = "Torquer Current measurements"
+        
+        Mtq1TotalCurrentPeakPos {
+            DisplayName = "MTQ1 positive current peak (mA)"
+            Unit = "mA"
+			AlarmNumericMinInclusive = "-500.0001"
+			AlarmNumericMaxInclusive = "500.0001"
+        }
+        
+        Mtq1TotalCurrentAveragePos {
+            DisplayName = "MTQ1 positive current average (mA)"
+            Unit = "mA"
+			AlarmNumericMinInclusive = "-500.0001"
+			AlarmNumericMaxInclusive = "500.0001"
+        }
+        
+        Mtq1TotalCurrentPeakNeg {
+            DisplayName = "MTQ1 negative current peak (mA)"
+            Unit = "mA"
+			AlarmNumericMinInclusive = "-500.0001"
+			AlarmNumericMaxInclusive = "500.0001"
+        }
+        
+        Mtq1TotalCurrentAverageNeg {
+            DisplayName = "MTQ1 negative current average (mA)"
+            Unit = "mA"
+			AlarmNumericMinInclusive = "-500.0001"
+			AlarmNumericMaxInclusive = "500.0001"
+        }
+        
+        Mtq2TotalCurrentPeakPos {
+            DisplayName = "MTQ2 positive current peak (mA)"
+            Unit = "mA"
+			AlarmNumericMinInclusive = "-500.0001"
+			AlarmNumericMaxInclusive = "500.0001"
+        }
+        
+        Mtq2TotalCurrentAveragePos {
+            DisplayName = "MTQ2 positive current average (mA)"
+            Unit = "mA"
+			AlarmNumericMinInclusive = "-500.0001"
+			AlarmNumericMaxInclusive = "500.0001"
+        }
+        
+        Mtq2TotalCurrentPeakNeg {
+            DisplayName = "MTQ2 negative current peak (mA)"
+            Unit = "mA"
+			AlarmNumericMinInclusive = "-500.0001"
+			AlarmNumericMaxInclusive = "500.0001"
+        }
+        
+        Mtq2TotalCurrentAverageNeg {
+            DisplayName = "MTQ2 negative current average (mA)"
+            Unit = "mA"
+			AlarmNumericMinInclusive = "-500.0001"
+			AlarmNumericMaxInclusive = "500.0001"
+        }
+        
+        Mtq3TotalCurrentPeakPos {
+            DisplayName = "MTQ3 positive current peak (mA)"
+            Unit = "mA"
+			AlarmNumericMinInclusive = "-500.0001"
+			AlarmNumericMaxInclusive = "500.0001"
+        }
+        
+        Mtq3TotalCurrentAveragePos {
+            DisplayName = "MTQ3 positive current average (mA)"
+            Unit = "mA"
+			AlarmNumericMinInclusive = "-500.0001"
+			AlarmNumericMaxInclusive = "500.0001"
+        }
+        
+        Mtq3TotalCurrentPeakNeg {
+            DisplayName = "MTQ3 negative current peak (mA)"
+            Unit = "mA"
+			AlarmNumericMinInclusive = "-500.0001"
+			AlarmNumericMaxInclusive = "500.0001"
+        }
+        
+        Mtq3TotalCurrentAverageNeg {
+            DisplayName = "MTQ3 negative current average (mA)"
+            Unit = "mA"
+			AlarmNumericMinInclusive = "-500.0001"
+			AlarmNumericMaxInclusive = "500.0001"
+        }
+        
+        Mtq1Polarity {
+            DisplayName = "MTQ1 polarity"
+        }
+        
+        Mtq2Polarity {
+            DisplayName = "MTQ2 polarity"
+        }
+        
+        Mtq3Polarity {
+            DisplayName = "MTQ3 polarity"
+        }
+        
+    }
+    
+    struct TlmCubeComputerHealth
+    {
+        DisplayName = "CubeComputer Health"
+        
+        McuTemp {
+            DisplayName = "MCU Temperature"
+            Unit = "°C"
+        }
+        
+        McuCurrent {
+            DisplayName = "MCU Current"
+            Unit = "mA"
+        }
+        
+        McuVoltage {
+            DisplayName = "MCU Voltage Internal"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        SupplyVoltage {
+            DisplayName = "MCU Supply Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        v5Sense {
+            DisplayName = "5V Supply Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "7000.0001"
+        }
+        
+        BatteryVoltage {
+            DisplayName = "Battery Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "41000.0001"
+        }
+        
+        VersionVoltage {
+            DisplayName = "Hardware Version Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "3300.0001"
+        }
+        
+        Sram1Current {
+            DisplayName = "SRAM1 Current"
+            Unit = "mA"
+        }
+        
+        Sram2Current {
+            DisplayName = "SRAM2 Current"
+            Unit = "mA"
+        }
+        
+        FpgaCurrent1v5 {
+            DisplayName = "FPGA Current 1v5"
+            Unit = "mA"
+        }
+        
+        FramCurrent {
+            DisplayName = "FRAM Current"
+            Unit = "mA"
+        }
+        
+        AdcCurrent {
+            DisplayName = "ADC Current"
+            Unit = "mA"
+        }
+        
+        FlashCurrent {
+            DisplayName = "Flash Current"
+            Unit = "mA"
+        }
+        
+        Rs485Current {
+            DisplayName = "RS485 Current"
+            Unit = "mA"
+        }
+        
+        CanCurrent {
+            DisplayName = "CAN Current"
+            Unit = "mA"
+        }
+        
+        GyroCurrent {
+            DisplayName = "Gyro Current"
+            Unit = "mA"
+        }
+        
+        RedGyroCurrent {
+            DisplayName = "Redundant Gyro Current"
+            Unit = "mA"
+        }
+        
+        GyroOverVoltage {
+            DisplayName = "Gyro Over Voltage"
+        }
+        
+        GyroUnderVoltage {
+            DisplayName = "Gyro Under Voltage"
+        }
+        
+        RedGyroOverVoltage {
+            DisplayName = "Redundant Gyro Over Voltage"
+        }
+        
+        RedGyroUnderVoltage {
+            DisplayName = "Redundant Gyro Under Voltage"
+        }
+        
+        WatchdogCount {
+            DisplayName = "Watchdog Counters"
+        }
+        
+    }
+    
+    struct TlmFssCubeSenseSunHealth
+    {
+        DisplayName = "Health telemetry for CubeSense Sun"
+        
+        Fss0McuTemp {
+            DisplayName = "FSS0 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Fss0McuCurrent {
+            DisplayName = "FSS0 MCU Current"
+            Unit = "mA"
+        }
+        
+        Fss0McuVoltage {
+            DisplayName = "FSS0 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Fss0CurrentCam {
+            DisplayName = "FSS0 CAM current"
+            Unit = "mA"
+        }
+        
+        Fss0CurrentSram {
+            DisplayName = "FSS0 SRAM current"
+            Unit = "mA"
+        }
+        
+        Fss0OvercurrentCam {
+            DisplayName = "FSS0 CAM overcurrent"
+        }
+        
+        Fss0OvercurrentSram {
+            DisplayName = "FSS0 SRAM overcurrent"
+        }
+        
+        Fss1McuTemp {
+            DisplayName = "FSS1 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Fss1McuCurrent {
+            DisplayName = "FSS1 MCU Current"
+            Unit = "mA"
+        }
+        
+        Fss1McuVoltage {
+            DisplayName = "FSS1 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Fss1CurrentCam {
+            DisplayName = "FSS1 CAM current"
+            Unit = "mA"
+        }
+        
+        Fss1CurrentSram {
+            DisplayName = "FSS1 SRAM current"
+            Unit = "mA"
+        }
+        
+        Fss1OvercurrentCam {
+            DisplayName = "FSS1 CAM overcurrent"
+        }
+        
+        Fss1OvercurrentSram {
+            DisplayName = "FSS1 SRAM overcurrent"
+        }
+        
+        Fss2McuTemp {
+            DisplayName = "FSS2 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Fss2McuCurrent {
+            DisplayName = "FSS2 MCU Current"
+            Unit = "mA"
+        }
+        
+        Fss2McuVoltage {
+            DisplayName = "FSS2 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Fss2CurrentCam {
+            DisplayName = "FSS2 CAM current"
+            Unit = "mA"
+        }
+        
+        Fss2CurrentSram {
+            DisplayName = "FSS2 SRAM current"
+            Unit = "mA"
+        }
+        
+        Fss2OvercurrentCam {
+            DisplayName = "FSS2 CAM overcurrent"
+        }
+        
+        Fss2OvercurrentSram {
+            DisplayName = "FSS2 SRAM overcurrent"
+        }
+        
+        Fss3McuTemp {
+            DisplayName = "FSS3 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Fss3McuCurrent {
+            DisplayName = "FSS3 MCU Current"
+            Unit = "mA"
+        }
+        
+        Fss3McuVoltage {
+            DisplayName = "FSS3 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Fss3CurrentCam {
+            DisplayName = "FSS3 CAM current"
+            Unit = "mA"
+        }
+        
+        Fss3CurrentSram {
+            DisplayName = "FSS3 SRAM current"
+            Unit = "mA"
+        }
+        
+        Fss3OvercurrentCam {
+            DisplayName = "FSS3 CAM overcurrent"
+        }
+        
+        Fss3OvercurrentSram {
+            DisplayName = "FSS3 SRAM overcurrent"
+        }
+        
+    }
+    
+    struct TlmHssCubeSenseEarthHealth
+    {
+        DisplayName = "Health telemetry for CubeSense Earth"
+        
+        Hss0McuTemp {
+            DisplayName = "HSS0 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Hss0McuCurrent {
+            DisplayName = "HSS0 MCU Current"
+            Unit = "mA"
+        }
+        
+        Hss0McuVoltage {
+            DisplayName = "HSS0 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Hss0DetectorTemp {
+            DisplayName = "HSS0 Detector Temperature"
+            Unit = "dK"
+        }
+        
+        Hss0DetectorCurrent {
+            DisplayName = "HSS0 Detector Current"
+            Unit = "mA"
+        }
+        
+        Hss1McuTemp {
+            DisplayName = "HSS1 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Hss1McuCurrent {
+            DisplayName = "HSS1 MCU Current"
+            Unit = "mA"
+        }
+        
+        Hss1McuVoltage {
+            DisplayName = "HSS1 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Hss1DetectorTemp {
+            DisplayName = "HSS1 Detector Temperature"
+            Unit = "dK"
+        }
+        
+        Hss1DetectorCurrent {
+            DisplayName = "HSS1 Detector Current"
+            Unit = "mA"
+        }
+        
+    }
+    
+    struct TlmCubeMagHealth
+    {
+        DisplayName = "Health telemetry for CubeMag magnetometer"
+        
+        Mag0McuTemp {
+            DisplayName = "MAG0 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Mag0McuCurrent {
+            DisplayName = "MAG0 MCU Current"
+            Unit = "mA"
+        }
+        
+        Mag0McuVoltage {
+            DisplayName = "MAG0 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Mag0PrimaryTemp {
+            DisplayName = "MAG0 Primary Temperature"
+            Unit = "°C"
+        }
+        
+        Mag0RedTemp {
+            DisplayName = "MAG0 Redundant Temperature"
+            Unit = "°C"
+        }
+        
+        Mag0BurnCurrent {
+            DisplayName = "MAG0 Burn Current"
+            Unit = "mA"
+        }
+        
+        Mag0DeployPinState {
+            DisplayName = "MAG0 Deploy Pin State"
+        }
+        
+        Mag0BurnPinState {
+            DisplayName = "MAG0 Burn Pin State"
+        }
+        
+        Mag0BurnUnderCurrent {
+            DisplayName = "MAG0 Burn Under Current"
+        }
+        
+        Mag0BurnOverCurrent {
+            DisplayName = "MAG0 Burn Over Current"
+        }
+        
+        Mag0DeployTimeout {
+            DisplayName = "MAG0 Deploy Timeout"
+        }
+        
+        Mag1McuTemp {
+            DisplayName = "MAG1 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Mag1McuCurrent {
+            DisplayName = "MAG1 MCU Current"
+            Unit = "mA"
+        }
+        
+        Mag1McuVoltage {
+            DisplayName = "MAG1 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Mag1PrimaryTemp {
+            DisplayName = "MAG1 Primary Temperature"
+            Unit = "°C"
+        }
+        
+        Mag1RedTemp {
+            DisplayName = "MAG1 Redundant Temperature"
+            Unit = "°C"
+        }
+        
+        Mag1BurnCurrent {
+            DisplayName = "MAG1 Burn Current"
+            Unit = "mA"
+        }
+        
+        Mag1DeployPinState {
+            DisplayName = "MAG1 Deploy Pin State"
+        }
+        
+        Mag1BurnPinState {
+            DisplayName = "MAG1 Burn Pin State"
+        }
+        
+        Mag1BurnUnderCurrent {
+            DisplayName = "MAG1 Burn Under Current"
+        }
+        
+        Mag1BurnOverCurrent {
+            DisplayName = "MAG1 Burn Over Current"
+        }
+        
+        Mag1DeployTimeout {
+            DisplayName = "MAG1 Deploy Timeout"
+        }
+        
+    }
+    
+    struct TlmRwlHealth
+    {
+        DisplayName = "Health telemetry for Reaction Wheels"
+        
+        Rwl0McuTemp {
+            DisplayName = "RWL0 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Rwl0McuCurrent {
+            DisplayName = "RWL0 MCU Current"
+            Unit = "mA"
+        }
+        
+        Rwl0BatVoltage {
+            DisplayName = "RWL0 Battery Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "36000.0001"
+        }
+        
+        Rwl0BatCurrent {
+            DisplayName = "RWL0 Battery Current"
+            Unit = "mA"
+        }
+        
+        Rwl1McuTemp {
+            DisplayName = "RWL1 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Rwl1McuCurrent {
+            DisplayName = "RWL1 MCU Current"
+            Unit = "mA"
+        }
+        
+        Rwl1BatVoltage {
+            DisplayName = "RWL1 Battery Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "36000.0001"
+        }
+        
+        Rwl1BatCurrent {
+            DisplayName = "RWL1 Battery Current"
+            Unit = "mA"
+        }
+        
+        Rwl2McuTemp {
+            DisplayName = "RWL2 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Rwl2McuCurrent {
+            DisplayName = "RWL2 MCU Current"
+            Unit = "mA"
+        }
+        
+        Rwl2BatVoltage {
+            DisplayName = "RWL2 Battery Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "36000.0001"
+        }
+        
+        Rwl2BatCurrent {
+            DisplayName = "RWL2 Battery Current"
+            Unit = "mA"
+        }
+        
+        Rwl3McuTemp {
+            DisplayName = "RWL3 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Rwl3McuCurrent {
+            DisplayName = "RWL3 MCU Current"
+            Unit = "mA"
+        }
+        
+        Rwl3BatVoltage {
+            DisplayName = "RWL3 Battery Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "36000.0001"
+        }
+        
+        Rwl3BatCurrent {
+            DisplayName = "RWL3 Battery Current"
+            Unit = "mA"
+        }
+        
+    }
+    
+    struct TlmStrPst3sHealth
+    {
+        DisplayName = "Health telemetry for CubeNode PST3S"
+        
+        Str0McuTemp {
+            DisplayName = "STR0 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Str0McuCurrent {
+            DisplayName = "STR0 MCU Current"
+            Unit = "mA"
+        }
+        
+        Str0McuVoltage {
+            DisplayName = "STR0 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Str0Pst3sCurrent {
+            DisplayName = "STR0 PST3S Current"
+            Unit = "mA"
+        }
+        
+        Str0Pst3sOvercurrent {
+            DisplayName = "STR0 PST3S CAM Overcurrent"
+        }
+        
+        Str1McuTemp {
+            DisplayName = "STR1 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Str1McuCurrent {
+            DisplayName = "STR1 MCU Current"
+            Unit = "mA"
+        }
+        
+        Str1McuVoltage {
+            DisplayName = "STR1 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Str1Pst3sCurrent {
+            DisplayName = "STR1 PST3S Current"
+            Unit = "mA"
+        }
+        
+        Str1Pst3sOvercurrent {
+            DisplayName = "STR1 PST3S CAM Overcurrent"
+        }
+        
+    }
+    
+    struct TlmNssRwlHealth
+    {
+        DisplayName = "Health telemetry for CubeNode NSSRWL"
+        
+        Rwl0McuTemp {
+            DisplayName = "RWL0 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Rwl0McuCurrent {
+            DisplayName = "RWL0 MCU Current"
+            Unit = "mA"
+        }
+        
+        Rwl0McuVoltage {
+            DisplayName = "RWL0 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Rwl0Current5v {
+            DisplayName = "RWL0 5V Current"
+            Unit = "mA"
+        }
+        
+        Rwl0PmuCurrent {
+            DisplayName = "RWL0 PMU Current"
+            Unit = "mA"
+        }
+        
+        Rwl0Overcurrent5v {
+            DisplayName = "RWL0 5V Overcurrent"
+        }
+        
+        Rwl0PowerGood {
+            DisplayName = "RWL0 Power Good"
+        }
+        
+        Rwl0PmuCurrentValid {
+            DisplayName = "RWL0 PMU Current Valid"
+        }
+        
+        Rwl1McuTemp {
+            DisplayName = "RWL1 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Rwl1McuCurrent {
+            DisplayName = "RWL1 MCU Current"
+            Unit = "mA"
+        }
+        
+        Rwl1McuVoltage {
+            DisplayName = "RWL1 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Rwl1Current5v {
+            DisplayName = "RWL1 5V Current"
+            Unit = "mA"
+        }
+        
+        Rwl1PmuCurrent {
+            DisplayName = "RWL1 PMU Current"
+            Unit = "mA"
+        }
+        
+        Rwl1Overcurrent5v {
+            DisplayName = "RWL1 5V Overcurrent"
+        }
+        
+        Rwl1PowerGood {
+            DisplayName = "RWL1 Power Good"
+        }
+        
+        Rwl1PmuCurrentValid {
+            DisplayName = "RWL1 PMU Current Valid"
+        }
+        
+        Rwl2McuTemp {
+            DisplayName = "RWL2 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Rwl2McuCurrent {
+            DisplayName = "RWL2 MCU Current"
+            Unit = "mA"
+        }
+        
+        Rwl2McuVoltage {
+            DisplayName = "RWL2 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Rwl2Current5v {
+            DisplayName = "RWL2 5V Current"
+            Unit = "mA"
+        }
+        
+        Rwl2PmuCurrent {
+            DisplayName = "RWL2 PMU Current"
+            Unit = "mA"
+        }
+        
+        Rwl2Overcurrent5v {
+            DisplayName = "RWL2 5V Overcurrent"
+        }
+        
+        Rwl2PowerGood {
+            DisplayName = "RWL2 Power Good"
+        }
+        
+        Rwl2PmuCurrentValid {
+            DisplayName = "RWL2 PMU Current Valid"
+        }
+        
+        Rwl3McuTemp {
+            DisplayName = "RWL3 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Rwl3McuCurrent {
+            DisplayName = "RWL3 MCU Current"
+            Unit = "mA"
+        }
+        
+        Rwl3McuVoltage {
+            DisplayName = "RWL3 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Rwl3Current5v {
+            DisplayName = "RWL3 5V Current"
+            Unit = "mA"
+        }
+        
+        Rwl3PmuCurrent {
+            DisplayName = "RWL3 PMU Current"
+            Unit = "mA"
+        }
+        
+        Rwl3Overcurrent5v {
+            DisplayName = "RWL3 5V Overcurrent"
+        }
+        
+        Rwl3PowerGood {
+            DisplayName = "RWL3 Power Good"
+        }
+        
+        Rwl3PmuCurrentValid {
+            DisplayName = "RWL3 PMU Current Valid"
+        }
+        
+    }
+    
+    struct TlmStrHealth
+    {
+        DisplayName = "Health telemetry for CubeStar"
+        
+        Str0McuTemp {
+            DisplayName = "STR0 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Str0McuCurrent {
+            DisplayName = "STR0 MCU Current"
+            Unit = "mA"
+        }
+        
+        Str0McuVoltage {
+            DisplayName = "STR0 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Str0Current {
+            DisplayName = "STR0 Current"
+            Unit = "mA"
+        }
+        
+        Str0CurrentPk {
+            DisplayName = "STR0 Peak Current"
+            Unit = "mA"
+        }
+        
+        Str0DetectorPcbTemp {
+            DisplayName = "STR0 PCB Temperature"
+            Unit = "°C"
+        }
+        
+        Str0SensorInitOk {
+            DisplayName = "STR0 Initialise OK"
+        }
+        
+        Str0SensorConfigOk {
+            DisplayName = "STR0 Configure OK"
+        }
+        
+        Str0ErrorCode {
+            DisplayName = "STR0 Error Code"
+        }
+        
+        Str1McuTemp {
+            DisplayName = "STR1 MCU Temperature"
+            Unit = "°C"
+        }
+        
+        Str1McuCurrent {
+            DisplayName = "STR1 MCU Current"
+            Unit = "mA"
+        }
+        
+        Str1McuVoltage {
+            DisplayName = "STR1 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Str1Current {
+            DisplayName = "STR1 Current"
+            Unit = "mA"
+        }
+        
+        Str1CurrentPk {
+            DisplayName = "STR1 Peak Current"
+            Unit = "mA"
+        }
+        
+        Str1DetectorPcbTemp {
+            DisplayName = "STR1 PCB Temperature"
+            Unit = "°C"
+        }
+        
+        Str1SensorInitOk {
+            DisplayName = "STR1 Initialise OK"
+        }
+        
+        Str1SensorConfigOk {
+            DisplayName = "STR1 Configure OK"
+        }
+        
+        Str1ErrorCode {
+            DisplayName = "STR1 Error Code"
+        }
+        
+    }
+    
+    struct TlmGnssUartStatus
+    {
+        DisplayName = "GNSS UART Status"
+        
+        BytesReceived {
+            DisplayName = "Bytes Received"
+        }
+        
+        ErrorFlags {
+            DisplayName = "Error Flags"
+        }
+        
+    }
+    
+    struct TlmStrAurigaHealth
+    {
+        DisplayName = "Health telemetry for CubeAuriga"
+        
+        Str0McuVoltage {
+            DisplayName = "STR0 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Str0McuTemp {
+            DisplayName = "STR0 MCU Temperature"
+            Unit = "°C"
+			AlarmNumericMinInclusive = "-40.0001"
+			AlarmNumericMaxInclusive = "120.0001"
+        }
+        
+        Str0McuCurrent {
+            DisplayName = "STR0 MCU Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "150.0001"
+        }
+        
+        Str0SramCurrent {
+            DisplayName = "STR0 SRAM Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        Str0Oh1Current {
+            DisplayName = "STR0 OH1 Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "300.0001"
+        }
+        
+        Str0Oh2Current {
+            DisplayName = "STR0 OH2 Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "300.0001"
+        }
+        
+        Str0Fpga1Current {
+            DisplayName = "STR0 FPGA1 Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "200.0001"
+        }
+        
+        Str0Fpga2Current {
+            DisplayName = "STR0 FPGA2 Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "200.0001"
+        }
+        
+        Str0Fpga1Voltage {
+            DisplayName = "STR0 FPGA1 Voltage"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Str0Fpga2Voltage {
+            DisplayName = "STR0 FPGA2 Voltage"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Str0ProcessIdleTiming {
+            DisplayName = "STR0 Process idle delay"
+            Unit = "ms"
+        }
+        
+        Str0AcqSynthFlags {
+            DisplayName = "STR0 AcqSynth Flags"
+        }
+        
+        Str0STRMode {
+            DisplayName = "STR0 Star Tracker Mode"
+        }
+        
+        Str0OH1Temp {
+            DisplayName = "STR0 OH1 Temperature"
+        }
+        
+        Str0OH2Temp {
+            DisplayName = "STR0 OH2 Temperature"
+        }
+        
+        Str0BlocksValidity {
+            DisplayName = "STR0 Blocks Validity at Lib Init"
+        }
+        
+        Str0ResetCnt {
+            DisplayName = "STR0 Reset Count"
+        }
+        
+        Str0LastTCSeqNum {
+            DisplayName = "STR0 Last TC Sequence Nr"
+        }
+        
+        Str0TCCnt {
+            DisplayName = "STR0 STR TC counters"
+        }
+        
+        Str0ErrorInfo {
+            DisplayName = "STR0 Errror Info"
+        }
+        
+        Str0LastErrorParam {
+            DisplayName = "STR0 Last Error Param"
+        }
+        
+        Str0LastErrorId {
+            DisplayName = "STR0 Last Error Id"
+        }
+        
+        Str0TRKLossCnt {
+            DisplayName = "STR0 Tracking lost count"
+        }
+        
+        Str1McuVoltage {
+            DisplayName = "STR1 MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Str1McuTemp {
+            DisplayName = "STR1 MCU Temperature"
+            Unit = "°C"
+			AlarmNumericMinInclusive = "-40.0001"
+			AlarmNumericMaxInclusive = "120.0001"
+        }
+        
+        Str1McuCurrent {
+            DisplayName = "STR1 MCU Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "150.0001"
+        }
+        
+        Str1SramCurrent {
+            DisplayName = "STR1 SRAM Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        Str1Oh1Current {
+            DisplayName = "STR1 OH1 Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "300.0001"
+        }
+        
+        Str1Oh2Current {
+            DisplayName = "STR1 OH2 Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "300.0001"
+        }
+        
+        Str1Fpga1Current {
+            DisplayName = "STR1 FPGA1 Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "200.0001"
+        }
+        
+        Str1Fpga2Current {
+            DisplayName = "STR1 FPGA2 Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "200.0001"
+        }
+        
+        Str1Fpga1Voltage {
+            DisplayName = "STR1 FPGA1 Voltage"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Str1Fpga2Voltage {
+            DisplayName = "STR1 FPGA2 Voltage"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        Str1ProcessIdleTiming {
+            DisplayName = "STR1 Process idle delay"
+            Unit = "ms"
+        }
+        
+        Str1AcqSynthFlags {
+            DisplayName = "STR1 AcqSynth Flags"
+        }
+        
+        Str1STRMode {
+            DisplayName = "STR1 Star Tracker Mode"
+        }
+        
+        Str1OH1Temp {
+            DisplayName = "STR1 OH1 Temperature"
+        }
+        
+        Str1OH2Temp {
+            DisplayName = "STR1 OH2 Temperature"
+        }
+        
+        Str1BlocksValidity {
+            DisplayName = "STR1 Blocks Validity at Lib Init"
+        }
+        
+        Str1ResetCnt {
+            DisplayName = "STR1 Reset Count"
+        }
+        
+        Str1LastTCSeqNum {
+            DisplayName = "STR1 Last TC Sequence Nr"
+        }
+        
+        Str1TCCnt {
+            DisplayName = "STR1 STR TC counters"
+        }
+        
+        Str1ErrorInfo {
+            DisplayName = "STR1 Errror Info"
+        }
+        
+        Str1LastErrorParam {
+            DisplayName = "STR1 Last Error Param"
+        }
+        
+        Str1LastErrorId {
+            DisplayName = "STR1 Last Error Id"
+        }
+        
+        Str1TRKLossCnt {
+            DisplayName = "STR1 Tracking lost count"
+        }
+        
+    }
+    
+}

@@ -1,0 +1,314 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/FileManager.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.macif.FileManager as FileManager_Definitions {
+
+	enumeration FManOpResult {
+		AlarmInvalidRegexValues = {
+			"(^(?!OK$).*$)"
+		}
+	}
+
+	struct ErrorCounters {
+		DISK_ERR {
+			DisplayName = "DISK ERR"
+		}
+		INT_ERR {
+			DisplayName = "INT ERR"
+		}
+		NOT_READY {
+			DisplayName = "NOT READY"
+		}
+		NO_FILE {
+			DisplayName = "NO FILE"
+		}
+		NO_PATH {
+			DisplayName = "NO PATH"
+		}
+		INVALID_NAME {
+			DisplayName = "INVALID NAME"
+		}
+		DENIED {
+			DisplayName = "DENIED"
+		}
+		EXIST {
+			DisplayName = "EXIST"
+		}
+		INVALID_OBJECT {
+			DisplayName = "INVALID OBJECT"
+		}
+		WRITE_PROTECTED {
+			DisplayName = "WRITE PROTECTED"
+		}
+		INVALID_DRIVE {
+			DisplayName = "INVALID DRIVE"
+		}
+		NOT_ENABLED {
+			DisplayName = "NOT ENABLED"
+		}
+		NO_FILESYSTEM {
+			DisplayName = "NO FILESYSTEM"
+		}
+		MKFS_ABORTED {
+			DisplayName = "MKFS ABORTED"
+		}
+		TIMEOUT {
+			DisplayName = "TIMEOUT"
+		}
+		LOCKED {
+			DisplayName = "LOCKED"
+		}
+		NOT_ENOUGH_CORE {
+			DisplayName = "NOT ENOUGH CORE"
+		}
+		TOO_MANY_OPEN_FILES {
+			DisplayName = "TOO MANY OPEN FILES"
+		}
+		INVALID_PARAMETER {
+			DisplayName = "INVALID PARAMETER"
+		}
+	}
+
+	struct Statistics {
+		errCounters {
+			DisplayName = "Error Counters"
+		}
+		nestCount {
+			DisplayName = "Nesting Count"
+		}
+		maxNestCount {
+			DisplayName = "Max Nesting Count"
+		}
+	}
+
+	method fileOpen {
+		in {
+			filePath {
+				DisplayName = "File Path"
+			}
+			mode {
+				DisplayName = "Mode"
+			}
+		}
+		out {
+			handle {
+				DisplayName = "Handle"
+			}
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method fileClose {
+		in {
+			handle {
+				DisplayName = "Handle"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method fileRead {
+		in {
+			handle {
+				DisplayName = "Handle"
+			}
+			pos {
+				DisplayName = "Position"
+				Unit = "B"
+			}
+			bytesToRead {
+				DisplayName = "Bytes to Read"
+				Unit = "B"
+			}
+		}
+		out {
+			data {
+				DisplayName = "Data"
+			}
+			bytesRead {
+				DisplayName = "Bytes Read"
+				Unit = "B"
+			}
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method fileWrite {
+		in {
+			handle {
+				DisplayName = "Handle"
+			}
+			pos {
+				DisplayName = "Position"
+				Unit = "B"
+			}
+			data {
+				DisplayName = "Data"
+			}
+		}
+		out {
+			bytesWritten {
+				DisplayName = "Bytes Written"
+				Unit = "B"
+			}
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method Rename {
+		in {
+			oldPath {
+				DisplayName = "Old Path"
+			}
+			newPath {
+				DisplayName = "New Path"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method Delete {
+		in {
+			Path {
+				DisplayName = "Path"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method fileGetSize {
+		in {
+			filePath {
+				DisplayName = "File Path"
+			}
+		}
+		out {
+			fSize {
+				DisplayName = "File Size"
+				Unit = "B"
+			}
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method fileGetCheckSum {
+		in {
+			filePath {
+				DisplayName = "File Path"
+			}
+		}
+		out {
+			cs {
+				DisplayName = "Checksum"
+			}
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method fileGetOpenedHandlesCount {
+		out {
+			handlesCount {
+				DisplayName = "Handles Count"
+			}
+		}
+	}
+
+	method formatPartition {
+		in {
+			PartitionId {
+				DisplayName = "Partition ID"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method fileDumpDirListToFile {
+		in {
+			filePath {
+				DisplayName = "File Path"
+			}
+			pattern {
+				DisplayName = "Pattern"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method getStatistics {
+		out {
+			stats {
+				DisplayName = "Statistics"
+			}
+		}
+	}
+
+	method clearStatistics {
+	}
+
+	method sdReinit {
+		in {
+			synchronousCall {
+				DisplayName = "Synchronous Call"
+			}
+		}
+		out {
+			status {
+				DisplayName = "Status"
+			}
+		}
+	}
+
+	method dirMake {
+		in {
+			dirName {
+				DisplayName = "Directory Name"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_sd_card_status {
+		out {
+			status {
+				DisplayName = "Status"
+			}
+		}
+	}
+
+}

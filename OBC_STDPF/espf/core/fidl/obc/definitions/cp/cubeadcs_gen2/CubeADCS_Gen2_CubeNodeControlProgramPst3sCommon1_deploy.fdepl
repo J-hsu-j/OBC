@@ -1,0 +1,724 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeControlProgramPst3sCommon1.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CubeNodeControlProgramPst3sCommon1 as CubeADCS_Gen2_CubeNodeControlProgramPst3sCommon1_Definitions
+{    
+    
+    struct CubeNodeControlProgramPst3sCommon1_PowerState
+    {
+        
+        
+        Power {
+            DisplayName = "Power State STR"
+        }
+        
+    }
+    
+    struct CubeNodeControlProgramPst3sCommon1_BootError
+    {
+        
+        
+        ErrorCode {
+            DisplayName = "Boot Error Code"
+        }
+        
+    }
+    
+    struct CubeNodeControlProgramPst3sCommon1_StrStatus
+    {
+        
+        
+        State {
+            DisplayName = "Service State"
+        }
+        
+        FailCount {
+            DisplayName = "Req Failure Count"
+        }
+        
+        FailCountLastSuccess {
+            DisplayName = "Req Last Success Failure Count"
+        }
+        
+        LastReq {
+            DisplayName = "Last Req"
+        }
+        
+        LastReqResult {
+            DisplayName = "Last Req Result"
+        }
+        
+    }
+    
+    struct CubeNodeControlProgramPst3sCommon1_RawTlm
+    {
+        
+        
+        ApiVersion {
+            DisplayName = "API Version"
+        }
+        
+        Quat1 {
+            DisplayName = "Quaternion 1"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Quat2 {
+            DisplayName = "Quaternion 2"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Quat3 {
+            DisplayName = "Quaternion 3"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Quat4 {
+            DisplayName = "Quaternion 4"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        AngVelX {
+            DisplayName = "Angular Velocity X"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        AngVelY {
+            DisplayName = "Angular Velocity Y"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        AngVelZ {
+            DisplayName = "Angular Velocity Z"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        RateQuality {
+            DisplayName = "Rate Quality"
+        }
+        
+        UnixSeconds {
+            DisplayName = "Unix Seconds"
+            Unit = "S"
+        }
+        
+        UnixSecondsDecimal {
+            DisplayName = "Unix Seconds Decimal"
+            Unit = "S"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Temperature {
+            DisplayName = "Temperature"
+            Unit = "C"
+        }
+        
+        ImageExposure {
+            DisplayName = "Image Exposure"
+        }
+        
+        ImageThreshold {
+            DisplayName = "Image Threshold"
+        }
+        
+        BackGroundValues {
+            DisplayName = "Background Values"
+        }
+        
+        InternalProcessCode {
+            DisplayName = "Internal Process Code"
+        }
+        
+        CmosChipIdResult {
+            DisplayName = "CMOS Chip ID Self-test Result"
+        }
+        
+        FpgaMRamResult {
+            DisplayName = "FPGA MRAM Self-test Result"
+        }
+        
+        NumberOfExtractedStars {
+            DisplayName = "Number of Extracted Stars"
+        }
+        
+        OperatingMode {
+            DisplayName = "Operating Mode"
+        }
+        
+        ImagingGain {
+            DisplayName = "Imaging Gain"
+        }
+        
+        MinNavigationStars {
+            DisplayName = "Minimum Navigation Stars"
+        }
+        
+        DataValid {
+            DisplayName = "Data Valid"
+        }
+        
+        ExtImageState {
+            DisplayName = "External Image State"
+        }
+        
+        IdentifiedStars {
+            DisplayName = "Number of Identified Stars"
+        }
+        
+        DeviceNumber {
+            DisplayName = "Device Number"
+        }
+        
+        SoftwareVersion {
+            DisplayName = "Software Version"
+        }
+        
+        EdacErrorCount {
+            DisplayName = "EDAC Error Count"
+        }
+        
+        ImageFrameNumber {
+            DisplayName = "Image Frame Number"
+        }
+        
+        DynamicMode {
+            DisplayName = "Dynamic Mode"
+        }
+        
+        SaaMode {
+            DisplayName = "SAA Mode"
+        }
+        
+        SaaThreshold {
+            DisplayName = "SAA Threshold"
+        }
+        
+        QuaternionFilteringState {
+            DisplayName = "Quaternion Filtering State"
+        }
+        
+        FourStarCaptureThreshold {
+            DisplayName = "Four Star Capture Threshold"
+        }
+        
+        TrackingThreshold {
+            DisplayName = "Tracking Threshold"
+        }
+        
+        EdacSwitch {
+            DisplayName = "EDAC Switch"
+        }
+        
+    }
+    
+    struct CubeNodeControlProgramPst3sCommon1_AttitudeTlm
+    {
+        
+        
+        ApiVersion {
+            DisplayName = "API Version"
+        }
+        
+        Quat1 {
+            DisplayName = "Quaternion 1"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Quat2 {
+            DisplayName = "Quaternion 2"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Quat3 {
+            DisplayName = "Quaternion 3"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        Quat4 {
+            DisplayName = "Quaternion 4"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        AngVelX {
+            DisplayName = "Angular Velocity X"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        AngVelY {
+            DisplayName = "Angular Velocity Y"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        AngVelZ {
+            DisplayName = "Angular Velocity Z"
+            Unit = "degps"
+			AlarmNumericMinInclusive = "-1000.0001"
+			AlarmNumericMaxInclusive = "1000.0001"
+        }
+        
+        RateQuality {
+            DisplayName = "Rate Quality"
+        }
+        
+        UnixSeconds {
+            DisplayName = "Unix Seconds"
+            Unit = "S"
+        }
+        
+        UnixSecondsDecimal {
+            DisplayName = "Unix Seconds Decimal"
+            Unit = "S"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        NumberOfExtractedStars {
+            DisplayName = "Number of Extracted Stars"
+        }
+        
+        OperatingMode {
+            DisplayName = "Operating Mode"
+        }
+        
+        DataValid {
+            DisplayName = "Data Valid"
+        }
+        
+        IdentifiedStars {
+            DisplayName = "Number of Identified Stars"
+        }
+        
+        QuaternionFilteringState {
+            DisplayName = "Quaternion Filtering State"
+        }
+        
+    }
+    
+    struct CubeNodeControlProgramPst3sCommon1_HousekeepingTlm
+    {
+        
+        
+        ApiVersion {
+            DisplayName = "API Version"
+        }
+        
+        Temperature {
+            DisplayName = "Temperature"
+            Unit = "C"
+        }
+        
+        BackGroundValues {
+            DisplayName = "Background Values"
+        }
+        
+        InternalProcessCode {
+            DisplayName = "Internal Process Code"
+        }
+        
+        CmosChipIdResult {
+            DisplayName = "CMOS Chip ID Self-test Result"
+        }
+        
+        FpgaMRamResult {
+            DisplayName = "FPGA MRAM Self-test Result"
+        }
+        
+        OperatingMode {
+            DisplayName = "Operating Mode"
+        }
+        
+        ExtImageState {
+            DisplayName = "External Image State"
+        }
+        
+        DeviceNumber {
+            DisplayName = "Device Number"
+        }
+        
+        SoftwareVerion {
+            DisplayName = "Software Version"
+        }
+        
+        EdacErrorCount {
+            DisplayName = "EDAC Error Count"
+        }
+        
+        ImageFrameNumber {
+            DisplayName = "Image Frame Number"
+        }
+        
+        QuaternionFilteringState {
+            DisplayName = "Quaternion Filtering State"
+        }
+        
+    }
+    
+    struct CubeNodeControlProgramPst3sCommon1_ConfigTlm
+    {
+        
+        
+        ApiVersion {
+            DisplayName = "API Version"
+        }
+        
+        ImageExposure {
+            DisplayName = "Image Exposure"
+        }
+        
+        ImageThreshold {
+            DisplayName = "Image Threshold"
+        }
+        
+        BackGroundValues {
+            DisplayName = "Background Values"
+        }
+        
+        OperatingMode {
+            DisplayName = "Operating Mode"
+        }
+        
+        ImagingGain {
+            DisplayName = "Imaging Gain"
+        }
+        
+        MinNavigationStars {
+            DisplayName = "Minimum Navigation Stars"
+        }
+        
+        DynamicMode {
+            DisplayName = "Dynamic Mode"
+        }
+        
+        SaaMode {
+            DisplayName = "SAA Mode"
+        }
+        
+        SaaThreshold {
+            DisplayName = "SAA Threshold"
+        }
+        
+        QuaternionFilteringState {
+            DisplayName = "Quaternion Filtering State"
+        }
+        
+        FourStarCaptureThreshold {
+            DisplayName = "Four Star Capture Threshold"
+        }
+        
+        TrackingThreshold {
+            DisplayName = "Tracking Threshold"
+        }
+        
+        EdacSwitch {
+            DisplayName = "EDAC Switch"
+        }
+        
+    }
+    
+    struct Pst3sNumberNavigationStars
+    {
+        DisplayName = "PST3S Number of Navigation Stars"
+        
+        Port {
+            DisplayName = "Port Handle"
+        }
+        
+        NumberStars {
+            DisplayName = "Number of Navigation Stars"
+			AlarmNumericMaxInclusive = "7.0001"
+        }
+        
+    }
+    
+    struct Pst3sExposure
+    {
+        DisplayName = "PST3S Image Exposure"
+        
+        Port {
+            DisplayName = "Port Handle"
+        }
+        
+        Exposure {
+            DisplayName = "Exposure"
+            Unit = "ms"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+    }
+    
+    struct Pst3sFSST
+    {
+        DisplayName = "PST3S Four Star Search Threshold"
+        
+        Port {
+            DisplayName = "Port Handle"
+        }
+        
+        Threshold {
+            DisplayName = "Threshold"
+        }
+        
+    }
+    
+    struct Pst3sSecondCalibration
+    {
+        DisplayName = "PST3S Second Calibration (Unix Time)"
+        
+        Port {
+            DisplayName = "Port Handle"
+        }
+        
+        UnixTime {
+            DisplayName = "Unix Time"
+            Unit = "S"
+        }
+        
+    }
+    
+    struct Pst3sTrackingModeThreshold
+    {
+        DisplayName = "PST3S Tracking Mode Threshold"
+        
+        Port {
+            DisplayName = "Port Handle"
+        }
+        
+        Threshold {
+            DisplayName = "Tracking Mode Threshold"
+        }
+        
+    }
+    
+    struct Pst3sQuaternionFiltering
+    {
+        DisplayName = "PST3S Quaternion Filtering"
+        
+        Port {
+            DisplayName = "Port Handle"
+        }
+        
+        QuaternionFiltering {
+            DisplayName = "Quaternion Filtering"
+        }
+        
+    }
+    
+    struct Pst3sSystemReset
+    {
+        DisplayName = "PST3S System Reset"
+        
+        Port {
+            DisplayName = "Port Handle"
+        }
+        
+    }
+    
+    struct Pst3sPower
+    {
+        DisplayName = "PST3S Power State"
+        
+        UnixTimeSeconds {
+            DisplayName = "Current Unix seconds"
+            Unit = "s"
+        }
+        
+        UnixTimeNanoSeconds {
+            DisplayName = "Current Unix Nanoseconds"
+            Unit = "ns"
+			AlarmNumericMaxInclusive = "999999999.0001"
+        }
+        
+        PowerStr {
+            DisplayName = "Power State STR"
+        }
+        
+    }
+    
+    struct Pst3sImageFixedThreshold
+    {
+        DisplayName = "PST3S Image Fixed Threshold"
+        
+        Port {
+            DisplayName = "Port Handle"
+        }
+        
+        Threshold {
+            DisplayName = "Threshold"
+        }
+        
+    }
+    
+    struct Pst3sSvcSettings
+    {
+        DisplayName = "PST3S Service Settings"
+        
+        MaxTcTlmErrors {
+            DisplayName = "Max TcTlm Errors"
+        }
+        
+        SampleFrequency {
+            DisplayName = "Sample Frequency"
+            Unit = "Hz"
+			AlarmNumericMinInclusive = "0.9999"
+			AlarmNumericMaxInclusive = "15.0001"
+        }
+        
+        AutoSample {
+            DisplayName = "Auto Sample"
+        }
+        
+        ApiVersion {
+            DisplayName = "API Version"
+        }
+        
+    }
+    
+    struct NodeSvcSettings
+    {
+        DisplayName = "Node Service Settings"
+        
+        Pst3sAutoBoot {
+            DisplayName = "PST3S Auto Boot"
+        }
+        
+    }
+    
+    struct Pst3sSaaMode
+    {
+        DisplayName = "PST3S SAA Mode"
+        
+        Port {
+            DisplayName = "Port Handle"
+        }
+        
+        SaaMode {
+            DisplayName = "SAA Mode"
+        }
+        
+    }
+    
+    struct Pst3sSaaThreshold
+    {
+        DisplayName = "PST3S SAA Threshold"
+        
+        Port {
+            DisplayName = "Port Handle"
+        }
+        
+        SaaThreshold {
+            DisplayName = "SAA Threshold"
+			AlarmNumericMaxInclusive = "31.0001"
+        }
+        
+    }
+    
+    struct Pst3sDynamicMode
+    {
+        DisplayName = "PST3S Dynamic Mode"
+        
+        Port {
+            DisplayName = "Port Handle"
+        }
+        
+        DynamicMode {
+            DisplayName = "Dynamic Mode"
+        }
+        
+    }
+    
+    struct Pst3sEdacOff
+    {
+        DisplayName = "PST3S EDAC Off"
+        
+        Port {
+            DisplayName = "Port Handle"
+        }
+        
+    }
+    
+    struct Pst3sSvcStatus
+    {
+        DisplayName = "PST3S Service Status"
+        
+        Status {
+            DisplayName = "STR Status"
+        }
+        
+    }
+    
+    struct Pst3sTlm1
+    {
+        DisplayName = "PST3S RAW TLM Port 1"
+        
+        Tlm {
+            DisplayName = "Raw Tlm"
+        }
+        
+    }
+    
+    struct Pst3sAttitude1
+    {
+        DisplayName = "PST3S Attitude Data Port 1"
+        
+        Tlm {
+            DisplayName = "Attitude Tlm"
+        }
+        
+    }
+    
+    struct Pst3sHousekeeping1
+    {
+        DisplayName = "PST3S Housekeeping Data Port 1"
+        
+        Tlm {
+            DisplayName = "Housekeeping Tlm"
+        }
+        
+    }
+    
+    struct Pst3sConfig1
+    {
+        DisplayName = "PST3S Config Port 1"
+        
+        Tlm {
+            DisplayName = "Config Tlm"
+        }
+        
+    }
+    
+    struct NodeSvcStatus
+    {
+        DisplayName = "Node Service Status"
+        
+        NodeState {
+            DisplayName = "Node State"
+        }
+        
+        BootError {
+            DisplayName = "Boot Error"
+        }
+        
+    }
+    
+}

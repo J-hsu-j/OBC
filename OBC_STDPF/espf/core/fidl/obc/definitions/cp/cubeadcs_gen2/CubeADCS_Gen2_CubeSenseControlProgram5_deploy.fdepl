@@ -1,0 +1,310 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CubeSenseControlProgram5.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CubeSenseControlProgram5 as CubeADCS_Gen2_CubeSenseControlProgram5_Definitions
+{    
+    
+    struct CamLensDistortion
+    {
+        DisplayName = "CAM Distortion"
+        
+        C0 {
+            DisplayName = "Coefficient 0"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        C1 {
+            DisplayName = "Coefficient 1"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        C2 {
+            DisplayName = "Coefficient 2"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        C3 {
+            DisplayName = "Coefficient 3"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        C4 {
+            DisplayName = "Coefficient 4"
+			AlarmNumericMinInclusive = "-100.0001"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+    }
+    
+    struct ImageCapture
+    {
+        DisplayName = "Capture Image"
+        
+        LocSelect {
+            DisplayName = "Location Selection"
+        }
+        
+    }
+    
+    struct ImageTransferSetup
+    {
+        DisplayName = "Setup Image Transfer"
+        
+        LocSelect {
+            DisplayName = "Location Selection"
+        }
+        
+        ImageSize {
+            DisplayName = "Image size"
+        }
+        
+        Direction {
+            DisplayName = "Download or Upload"
+        }
+        
+    }
+    
+    struct CamBoresight
+    {
+        DisplayName = "Set Camera boresight"
+        
+        Xpixel {
+            DisplayName = "X Pixel"
+        }
+        
+        Ypixel {
+            DisplayName = "Y Pixel"
+        }
+        
+    }
+    
+    struct CamMask
+    {
+        DisplayName = "Set Sensor Masking Area"
+        
+        AreaNumber {
+            DisplayName = "Area Number"
+        }
+        
+        Xmin {
+            DisplayName = "X minimum"
+        }
+        
+        Xmax {
+            DisplayName = "X maximum"
+        }
+        
+        Ymin {
+            DisplayName = "Y minimum"
+        }
+        
+        Ymax {
+            DisplayName = "Y maximum"
+        }
+        
+    }
+    
+    struct CamThreshold
+    {
+        DisplayName = "Set Cam Detection Threshold"
+        
+        Threshold {
+            DisplayName = "Threshold"
+        }
+        
+    }
+    
+    struct DetectionAreaRowSelect
+    {
+        DisplayName = "Detection Area Row Select"
+        
+        RowSelect {
+            DisplayName = "Row select"
+        }
+        
+    }
+    
+    struct SensorResultsTimestamp
+    {
+        DisplayName = "Sensor results timestamp"
+        
+        UnixTimestampSeconds {
+            DisplayName = "Unix timestamp seconds"
+            Unit = "s"
+        }
+        
+        UnixTimestampNanoSeconds {
+            DisplayName = "Unix timestamp nanoseconds"
+            Unit = "ns"
+			AlarmNumericMaxInclusive = "999999999.0001"
+        }
+        
+    }
+    
+    struct CamMasks
+    {
+        DisplayName = "Request Masking Areas"
+        
+        Area1Xmin {
+            DisplayName = "Minimum X of area 1"
+        }
+        
+        Area1Xmax {
+            DisplayName = "Maximum X of area 1"
+        }
+        
+        Area1Ymin {
+            DisplayName = "Minimum Y of area 1"
+        }
+        
+        Area1Ymax {
+            DisplayName = "Maximum Y of area 1"
+        }
+        
+        Area2Xmin {
+            DisplayName = "Minimum X of area 2"
+        }
+        
+        Area2Xmax {
+            DisplayName = "Maximum X of area 2"
+        }
+        
+        Area2Ymin {
+            DisplayName = "Minimum Y of area 2"
+        }
+        
+        Area2Ymax {
+            DisplayName = "Maximum Y of area 2"
+        }
+        
+        Area3Xmin {
+            DisplayName = "Minimum X of area 3"
+        }
+        
+        Area3Xmax {
+            DisplayName = "Maximum X of area 3"
+        }
+        
+        Area3Ymin {
+            DisplayName = "Minimum Y of area 3"
+        }
+        
+        Area3Ymax {
+            DisplayName = "Maximum Y of area 3"
+        }
+        
+        Area4Xmin {
+            DisplayName = "Minimum X of area 4"
+        }
+        
+        Area4Xmax {
+            DisplayName = "Maximum X of area 4"
+        }
+        
+        Area4Ymin {
+            DisplayName = "Minimum Y of area 4"
+        }
+        
+        Area4Ymax {
+            DisplayName = "Maximum Y of area 4"
+        }
+        
+        Area5Xmin {
+            DisplayName = "Minimum X of area 5"
+        }
+        
+        Area5Xmax {
+            DisplayName = "Maximum X of area 5"
+        }
+        
+        Area5Ymin {
+            DisplayName = "Minimum Y of area 5"
+        }
+        
+        Area5Ymax {
+            DisplayName = "Maximum Y of area 5"
+        }
+        
+    }
+    
+    struct SensorResults
+    {
+        DisplayName = "Sensor results"
+        
+        SensorA {
+            DisplayName = "Sensor alpha angle"
+            Unit = "deg"
+        }
+        
+        SensorB {
+            DisplayName = "Sensor beta angle"
+            Unit = "deg"
+        }
+        
+        SensorCaptureResult {
+            DisplayName = "Sensor Capture result"
+        }
+        
+        SensorDetectionResult {
+            DisplayName = "Sensor Detection result"
+        }
+        
+    }
+    
+    struct SensorResultTrigger
+    {
+        DisplayName = "Sensor Results Trigger"
+        
+        SensorA {
+            DisplayName = "Sensor alpha angle"
+            Unit = "deg"
+        }
+        
+        SensorB {
+            DisplayName = "Sensor beta angle"
+            Unit = "deg"
+        }
+        
+        SensorCaptureResult {
+            DisplayName = "Sensor Capture result"
+        }
+        
+        SensorDetectionResult {
+            DisplayName = "Sensor Detection result"
+        }
+        
+    }
+    
+    struct AutoCamSensorRaw
+    {
+        DisplayName = "Auto Cam Sensor Raw"
+        
+        PixelX {
+            DisplayName = "Pixel X"
+        }
+        
+        PixelY {
+            DisplayName = "Pixel Y"
+        }
+        
+    }
+    
+    struct DetectionAreaRow
+    {
+        DisplayName = "Detection Area Row"
+        
+        RowBytes {
+            DisplayName = "Row bytes"
+        }
+        
+    }
+    
+}

@@ -1,0 +1,30 @@
+@startuml
+title <b>conops_sm
+[*] --> Safe
+state Safe {
+state Safe_entry
+state Control
+state No_control
+
+}
+state Idle
+state Mission
+
+state Safe {
+[*] --> Safe_entry
+Safe --> Idle: <b>force_enter_idle</b> [is_fdir_idle]\n
+Safe_entry --> Control: <b>__periodic</b> [has_control]\n
+Safe_entry --> No_control: <b>__periodic</b> [hasno_control]\n
+Control --> No_control: <b>fdir_lvl_updated</b> [is_fdir_critical]\n
+Control -[dotted,#blue]-> Control: <b>__periodic</b> \n/ detumble
+No_control --> Control: <b>fdir_lvl_updated</b> [has_control]\n
+No_control --> Control: <b>__periodic</b> [has_control]\n
+}
+Idle --> Safe: <b>force_enter_safe</b> \n
+Idle --> Safe: <b>fdir_lvl_updated</b> [is_fdir_safe]\n
+Idle --> Mission: <b>force_enter_mission</b> \n
+Mission --> Safe: <b>force_enter_safe</b> \n
+Mission --> Safe: <b>fdir_lvl_updated</b> [is_fdir_safe]\n
+Mission --> Idle: <b>force_enter_idle</b> \n/ mission_to_idle
+Mission --> Idle: <b>__periodic</b> [mission_timer_expired]\n
+@enduml

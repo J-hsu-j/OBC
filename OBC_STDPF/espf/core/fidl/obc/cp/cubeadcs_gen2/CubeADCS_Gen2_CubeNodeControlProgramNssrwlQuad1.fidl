@@ -1,0 +1,669 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+package endurosat.macif
+
+
+<** @description: Interface for Cube ADCS Gen2 - CubeNodeControlProgramNssrwlQuad1
+    @details: id = 312
+**>
+
+interface CubeADCS_Gen2_CubeNodeControlProgramNssrwlQuad1
+{
+    version {major 6 minor 0}
+    
+    <** @description: This enumeration holds the IDs of CubeADCS Gen2 nodes for which this interface is applicable.
+        @details: size = 1 
+    **>
+    enumeration CmdTargetNode
+    {
+        NodeInvalid = 0
+        
+    }
+
+    <** @description: Return status type of the CubeADCS Gen2 API operations. Possible values are:
+                     0 - No error
+                     1 - NULL pointer
+                     2 - Size incorrect
+                     3 - Size too low
+                     4 - Size too high
+                     5 - Overrun
+                     6 - Parameter error (out of range)
+                     7 - Timeout
+                     8 - TCTLM comms Nack
+                     9 - Busy
+                     10 - Frame
+                     11 - CRC
+                     12 - Read
+                     13 - Write
+                     14 - CAN ID type error
+                     15 - CAN frame error
+                     16 - Unknown NACK
+                     17 - Invalid node type
+                     18 - CubeSpace file upload internal error
+                     19 - Usage error
+                     20 - Auto-Discovery error
+                     21 - Image error
+                     22 - Does not exist error
+                     23 - User data error
+                     24 - Commit error
+                     25 - TCTLM protocol error
+                     26 - General unexpected/unknown error
+                     27 - Telemetry response size error
+                     28 - TCTLM response ID does not match the request
+
+                     50 - TCTLM Nack - invalid ID
+                     51 - TCTLM Nack - invalid length
+                     52 - TCTLM Nack - invalid parameter data
+                     53 - TCTLM Nack - CRC failed
+                     54 - TCTLM Nack - not implemented
+                     55 - TCTLM Nack - busy
+                     56 - TCTLM Nack - sequence
+                     57 - TCTLM Nack - internal
+                     58 - TCTLM Nack - pass-through timeout
+                     59 - TCTLM Nack - pass-through target
+
+                     70 - CSP - receive timeout
+                     71 - CSP - failed to acquire a buffer
+
+                     65535 - Not implemented / TODO
+    **>
+    typedef AdcsErrorCode is Int32
+    
+    
+    
+    
+    <** @description: NSSRWL Speed
+    **>
+    struct CubeNodeControlProgramNssrwlCommon1_RwlSpeed
+    {
+        
+        <** @description: NSSRWL measured speed **>
+        Float Speed
+        
+    }
+    
+    <** @description: NSSRWL Standard TLM Packet
+    **>
+    struct CubeNodeControlProgramNssrwlCommon1_TlmStandard
+    {
+        
+        <** @description: Serial Number **>
+        UInt8 SerialNumber
+        
+        <** @description: Target Value **>
+        Float TargetValue
+        
+        <** @description: Actual Wheel Speed **>
+        Float ActualWheelSpeed
+        
+        <** @description: Actual Motor current **>
+        Float ActualMotorCurrent
+        
+        <** @description: Temperature **>
+        Float Temperature
+        
+        <** @description: I-Signal (loop) **>
+        Float ISignal
+        
+        <** @description: Set if Reaction Wheel mode is On **>
+        Boolean ReactionWheelMode
+        
+        <** @description: Set if Current Control mode is Active **>
+        Boolean CurrentControlMode
+        
+        <** @description: Set if Speed Control mode is Active **>
+        Boolean SpeedControlMode
+        
+        <** @description: Set if Torque mode is Active **>
+        Boolean TorqueMode
+        
+        <** @description: Set if Wheel/Gyro mode is On **>
+        Boolean WheelGyroMode
+        
+        <** @description: Set if Omega-PI Control Loop is Active **>
+        Boolean OmegaPiControlLoop
+        
+        <** @description: Set if Angle-PD Control Loop is Active **>
+        Boolean AnglePdControlLoop
+        
+        <** @description: Set if Boot Control is Active **>
+        Boolean BootControl
+        
+        <** @description: Set if Gyro Connected **>
+        Boolean GyroConnected
+        
+        <** @description: Set if Gyro Telemetry is On **>
+        Boolean GyroTelemetry
+        
+        <** @description: Set if Gyro Flag Register is not zero **>
+        Boolean GyroFlagRegister
+        
+        <** @description: Set if CRC Error Protected Area **>
+        Boolean CrcError
+        
+        <** @description: Set if Wrong Low-Level Command **>
+        Boolean WrongLlCommand
+        
+        <** @description: Set if Wrong High-Level Command **>
+        Boolean WrongHlCommand
+        
+        <** @description: Set if Timeout on SCI1 Main Interface **>
+        Boolean ToutSci1Main
+        
+        <** @description: Set if Timeout on SCI2 Gyro Interface **>
+        Boolean ToutSci2Gyro
+        
+    }
+    
+    <** @description: NSSRWL Extended TLM Packet
+    **>
+    struct CubeNodeControlProgramNssrwlCommon1_TlmExtended
+    {
+        
+        <** @description: Serial Number **>
+        UInt8 SerialNumber
+        
+        <** @description: Actual Wheel Speed **>
+        Float ActualWheelSpeed
+        
+    }
+    
+    <** @description: NSSRWL System TLM Packet
+    **>
+    struct CubeNodeControlProgramNssrwlCommon1_TlmSystem
+    {
+        
+        <** @description: Serial Number **>
+        UInt8 SerialNumber
+        
+        <** @description: Device Type **>
+        UInt8 DeviceType
+        
+        <** @description: Device ID **>
+        UInt8 DeviceId
+        
+        <** @description: Month **>
+        UInt8 Month
+        
+        <** @description: Year **>
+        UInt8 Year
+        
+        <** @description: Status Register **>
+        UInt16 StatusRegister
+        
+        <** @description: ACS Flag Register **>
+        UInt16 AcsRegister
+        
+        <** @description: System Flag Register **>
+        UInt16 SystemRegister
+        
+        <** @description: RWA Flag Register **>
+        UInt16 RwaRegister
+        
+        <** @description: Gyro Flag Register **>
+        UInt8 GyroRegister
+        
+        <** @description: Boot Flag **>
+        UInt16 BootFlag
+        
+        <** @description: Boot Vector **>
+        UInt16 BootVector
+        
+        <** @description: ACS Control Interval **>
+        UInt8 AcsControlInterval
+        
+        <** @description: Actual start address ACS boot control **>
+        UInt16 AcsStartAddr
+        
+        <** @description: Actual start address Tacho control **>
+        UInt16 TachoStartAddr
+        
+    }
+    
+    <** @description: Parameter structure for interface NssRwlWheelSpeed2
+    **>
+    struct NssRwlWheelSpeed2
+    {
+        
+        <** @description: NSSRWL measured wheel speed **>
+        CubeNodeControlProgramNssrwlCommon1_RwlSpeed Speed
+        
+    }
+    
+    <** @description: Parameter structure for interface NssRwlWheelSpeed3
+    **>
+    struct NssRwlWheelSpeed3
+    {
+        
+        <** @description: NSSRWL measured wheel speed **>
+        CubeNodeControlProgramNssrwlCommon1_RwlSpeed Speed
+        
+    }
+    
+    <** @description: Parameter structure for interface NssRwlWheelSpeed4
+    **>
+    struct NssRwlWheelSpeed4
+    {
+        
+        <** @description: NSSRWL measured wheel speed **>
+        CubeNodeControlProgramNssrwlCommon1_RwlSpeed Speed
+        
+    }
+    
+    <** @description: Parameter structure for interface NssRwlTlmStandard2
+    **>
+    struct NssRwlTlmStandard2
+    {
+        
+        <** @description: NSSRWL standard tlm **>
+        CubeNodeControlProgramNssrwlCommon1_TlmStandard Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface NssRwlTlmStandard3
+    **>
+    struct NssRwlTlmStandard3
+    {
+        
+        <** @description: NSSRWL standard tlm **>
+        CubeNodeControlProgramNssrwlCommon1_TlmStandard Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface NssRwlTlmStandard4
+    **>
+    struct NssRwlTlmStandard4
+    {
+        
+        <** @description: NSSRWL standard tlm **>
+        CubeNodeControlProgramNssrwlCommon1_TlmStandard Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface NssRwlTlmExtended2
+    **>
+    struct NssRwlTlmExtended2
+    {
+        
+        <** @description: NSSRWL extended tlm **>
+        CubeNodeControlProgramNssrwlCommon1_TlmExtended Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface NssRwlTlmExtended3
+    **>
+    struct NssRwlTlmExtended3
+    {
+        
+        <** @description: NSSRWL extended tlm **>
+        CubeNodeControlProgramNssrwlCommon1_TlmExtended Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface NssRwlTlmExtended4
+    **>
+    struct NssRwlTlmExtended4
+    {
+        
+        <** @description: NSSRWL extended tlm **>
+        CubeNodeControlProgramNssrwlCommon1_TlmExtended Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface NssRwlTlmSystem2
+    **>
+    struct NssRwlTlmSystem2
+    {
+        
+        <** @description: NSSRWL system tlm **>
+        CubeNodeControlProgramNssrwlCommon1_TlmSystem Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface NssRwlTlmSystem3
+    **>
+    struct NssRwlTlmSystem3
+    {
+        
+        <** @description: NSSRWL system tlm **>
+        CubeNodeControlProgramNssrwlCommon1_TlmSystem Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface NssRwlTlmSystem4
+    **>
+    struct NssRwlTlmSystem4
+    {
+        
+        <** @description: NSSRWL system tlm **>
+        CubeNodeControlProgramNssrwlCommon1_TlmSystem Tlm
+        
+    }
+    
+    
+    
+    <**
+        @description: Wheel speed measurement from port 2
+        @details: id = 0
+    **>
+    method getNssRwlWheelSpeed2
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            NssRwlWheelSpeed2 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Wheel speed measurement from port 3
+        @details: id = 1
+    **>
+    method getNssRwlWheelSpeed3
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            NssRwlWheelSpeed3 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Wheel speed measurement from port 4
+        @details: id = 2
+    **>
+    method getNssRwlWheelSpeed4
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            NssRwlWheelSpeed4 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get NSSRWL Standard TLM Packet from port 2
+        @details: id = 3
+    **>
+    method getNssRwlTlmStandard2
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            NssRwlTlmStandard2 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get NSSRWL Standard TLM Packet from port 3
+        @details: id = 4
+    **>
+    method getNssRwlTlmStandard3
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            NssRwlTlmStandard3 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get NSSRWL Standard TLM Packet from port 4
+        @details: id = 5
+    **>
+    method getNssRwlTlmStandard4
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            NssRwlTlmStandard4 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get NSSRWL Extended TLM Packet from port 2
+        @details: id = 6
+    **>
+    method getNssRwlTlmExtended2
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            NssRwlTlmExtended2 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get NSSRWL Extended TLM Packet from port 3
+        @details: id = 7
+    **>
+    method getNssRwlTlmExtended3
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            NssRwlTlmExtended3 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get NSSRWL Extended TLM Packet from port 4
+        @details: id = 8
+    **>
+    method getNssRwlTlmExtended4
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            NssRwlTlmExtended4 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get NSSRWL System TLM Packet from port 2
+        @details: id = 9
+    **>
+    method getNssRwlTlmSystem2
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            NssRwlTlmSystem2 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get NSSRWL System TLM Packet from port 3
+        @details: id = 10
+    **>
+    method getNssRwlTlmSystem3
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            NssRwlTlmSystem3 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get NSSRWL System TLM Packet from port 4
+        @details: id = 11
+    **>
+    method getNssRwlTlmSystem4
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            NssRwlTlmSystem4 returnVal
+            
+            
+        }
+    }
+    
+}

@@ -1,0 +1,100 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CubeNodeCommon1.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CubeNodeCommon1 as CubeADCS_Gen2_CubeNodeCommon1_Definitions
+{    
+    
+    struct CubeNodeCommon1_PortCurrent
+    {
+        
+        
+        vBattCurrent {
+            DisplayName = "VBatt 5V current"
+            Unit = "mA"
+        }
+        
+        vBattOvercurrent {
+            DisplayName = "VBatt 5V overcurrent"
+            Unit = "mA"
+        }
+        
+    }
+    
+    struct CubeNodeCommon1_PowerSwState
+    {
+        
+        
+        Power {
+            DisplayName = "Power Switch State"
+        }
+        
+    }
+    
+    struct PowerSwitchState
+    {
+        DisplayName = "5V Power Switch State"
+        
+        Power {
+            DisplayName = "Power State"
+        }
+        
+    }
+    
+    struct HealthTlm
+    {
+        DisplayName = "Health Telemetry"
+        
+        McuCurrent {
+            DisplayName = "MCU Current"
+            Unit = "mA"
+        }
+        
+        McuTemp {
+            DisplayName = "MCU Temperature"
+            Unit = "deg C"
+        }
+        
+        McuVoltage {
+            DisplayName = "MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        PmuCurrent {
+            DisplayName = "PMU Current"
+            Unit = "mA"
+        }
+        
+        PmuCurrentValid {
+            DisplayName = "PMU Current Valid"
+        }
+        
+        PowerGood {
+            DisplayName = "Power Good"
+        }
+        
+        PortCurrent {
+            DisplayName = "Port Current"
+        }
+        
+        WatchdogCount {
+            DisplayName = "Watchdog Counters"
+        }
+        
+    }
+    
+    struct NodeModel
+    {
+        DisplayName = "CubeNode Model"
+        
+        Model {
+            DisplayName = "Model"
+        }
+        
+    }
+    
+}

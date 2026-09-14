@@ -1,0 +1,21 @@
+package org.endurosat.deploy
+
+import "../../../../core/fidl/spec/PlatformSpec.fdepl"
+import "../../../../core/fidl/sp_and_uhf_ant_unified/fp/sp_or_uhf_ant.fidl"
+
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.sp_uhf_ant { 
+	IsClient = true
+	
+    method restart_counters { InUse = false }
+	method initialization_status { InUse = false }
+	method deployment { InUse = false }
+	method auto_deployment { InUse = false }
+	method telemetry { InUse = true }
+	method temperature_min_max { InUse = false }
+	method gyroscope_data { InUse = false }
+	method gyroscope_register { InUse = false }
+	method gyroscope_auto_calibration { InUse = false }
+	method magnetorquer { InUse = false }
+	method termination_resistor { InUse = false }
+	method module_restart { InUse = false }
+}

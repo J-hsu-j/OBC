@@ -1,0 +1,351 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CubeMagControlProgramDeploy1.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CubeMagControlProgramDeploy1 as CubeADCS_Gen2_CubeMagControlProgramDeploy1_Definitions
+{    
+    
+    struct PniConfig
+    {
+        DisplayName = "PNI Magnetometer Config"
+        
+        AutoSample {
+            DisplayName = "PNI Auto-Sample"
+        }
+        
+        AutoSamplePeriod {
+            DisplayName = "PNI Sample Period"
+        }
+        
+        SampleFilterType {
+            DisplayName = "PNI Sample Filter Type"
+        }
+        
+        SampleFilterOrder {
+            DisplayName = "PNI Sample Filter Order"
+        }
+        
+        SampleFilterDepth {
+            DisplayName = "PNI Sample Filter Depth"
+        }
+        
+        SingleSampleTime {
+            DisplayName = "PNI Single-Sample Time"
+        }
+        
+        SampleBusyAction {
+            DisplayName = "PNI Sample Busy Action"
+        }
+        
+        MaxErrorsMag {
+            DisplayName = "PNI Max Errors Magnetometer"
+        }
+        
+        MaxErrorsTmp {
+            DisplayName = "PNI Max Errors Temperature"
+        }
+        
+    }
+    
+    struct Deploy
+    {
+        DisplayName = "Deploy"
+        
+        Magic {
+            DisplayName = "Magic number"
+        }
+        
+    }
+    
+    struct DeployArm
+    {
+        DisplayName = "Arm Deploy"
+        
+        Magic {
+            DisplayName = "Magic number"
+        }
+        
+    }
+    
+    struct PniCalibration
+    {
+        DisplayName = "PNI Calibration Parameters"
+        
+        Xd1 {
+            DisplayName = "X-d1"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Xd2 {
+            DisplayName = "X-d2"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Xs1 {
+            DisplayName = "X-s1"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Xs2 {
+            DisplayName = "X-s2"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Yd1 {
+            DisplayName = "Y-d1"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Yd2 {
+            DisplayName = "Y-d2"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Ys1 {
+            DisplayName = "Y-s1"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Ys2 {
+            DisplayName = "Y-s2"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Zd1 {
+            DisplayName = "Z-d1"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Zd2 {
+            DisplayName = "Z-d2"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Zs1 {
+            DisplayName = "Z-s1"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+        Zs2 {
+            DisplayName = "Z-s2"
+			AlarmNumericMinInclusive = "-100000.0001"
+			AlarmNumericMaxInclusive = "100000.0001"
+        }
+        
+    }
+    
+    struct HealthTlm
+    {
+        DisplayName = "Health Telemetry"
+        
+        McuCurrent {
+            DisplayName = "MCU Current"
+            Unit = "mA"
+        }
+        
+        McuTemp {
+            DisplayName = "MCU Temperature"
+            Unit = "deg C"
+        }
+        
+        McuVoltage {
+            DisplayName = "MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        PrimMagTemp {
+            DisplayName = "Primary Mag Temperature"
+			AlarmNumericMinInclusive = "-75.0001"
+			AlarmNumericMaxInclusive = "150.0001"
+        }
+        
+        RedMagTemp {
+            DisplayName = "Redundant Mag Temperature"
+			AlarmNumericMinInclusive = "-75.0001"
+			AlarmNumericMaxInclusive = "150.0001"
+        }
+        
+        burnCurrent {
+            DisplayName = "Burn Current"
+            Unit = "mA"
+        }
+        
+        DeploymentPinState {
+            DisplayName = "Deployment Pin State"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        burnPinState {
+            DisplayName = "Burn Pin State"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        burnUnderCurrent {
+            DisplayName = "Burn UnderCurrent"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        burnOverCurrent {
+            DisplayName = "Burn OverCurrent"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        DeploymentTimeout {
+            DisplayName = "Deployment Timeout"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        WatchdogCount {
+            DisplayName = "Watchdog Counters"
+        }
+        
+    }
+    
+    struct RedMagMeasurement
+    {
+        DisplayName = "Redundant Magnetometer Measurement"
+        
+        X_axis {
+            DisplayName = "X_axis"
+            Unit = "nT"
+			AlarmNumericMinInclusive = "-800000.0001"
+			AlarmNumericMaxInclusive = "800000.0001"
+        }
+        
+        Y_axis {
+            DisplayName = "Y_axis"
+            Unit = "nT"
+			AlarmNumericMinInclusive = "-800000.0001"
+			AlarmNumericMaxInclusive = "800000.0001"
+        }
+        
+        Z_axis {
+            DisplayName = "Z_axis"
+            Unit = "nT"
+			AlarmNumericMinInclusive = "-800000.0001"
+			AlarmNumericMaxInclusive = "800000.0001"
+        }
+        
+        DataValid {
+            DisplayName = "Data Valid"
+        }
+        
+    }
+    
+    struct RedMagMeasurementRaw
+    {
+        DisplayName = "Redundant Magnetometer Measurement Raw"
+        
+        X_axis {
+            DisplayName = "X_axis"
+            Unit = "nT"
+			AlarmNumericMinInclusive = "-800000.0001"
+			AlarmNumericMaxInclusive = "800000.0001"
+        }
+        
+        Y_axis {
+            DisplayName = "Y_axis"
+            Unit = "nT"
+			AlarmNumericMinInclusive = "-800000.0001"
+			AlarmNumericMaxInclusive = "800000.0001"
+        }
+        
+        Z_axis {
+            DisplayName = "Z_axis"
+            Unit = "nT"
+			AlarmNumericMinInclusive = "-800000.0001"
+			AlarmNumericMaxInclusive = "800000.0001"
+        }
+        
+        DataValid {
+            DisplayName = "Data Valid"
+        }
+        
+    }
+    
+    struct RedMagTemp
+    {
+        DisplayName = "Redundant Magnetometer Temperature"
+        
+        Temp {
+            DisplayName = "Temperature"
+			AlarmNumericMinInclusive = "-75.0001"
+			AlarmNumericMaxInclusive = "125.0001"
+        }
+        
+    }
+    
+    struct DeploymentStatus
+    {
+        DisplayName = "Deployment Status"
+        
+        burnCurrent {
+            DisplayName = "Burn Current"
+            Unit = "mA"
+        }
+        
+        DeploymentPinState {
+            DisplayName = "Deployment Pin State"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        burnPinState {
+            DisplayName = "Burn Pin State"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        burnUnderCurrent {
+            DisplayName = "Burn UnderCurrent"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        burnOverCurrent {
+            DisplayName = "Burn OverCurrent"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        DeploymentTimeout {
+            DisplayName = "Deployment Timeout"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+    }
+    
+    struct RedMagDiagnostics
+    {
+        DisplayName = "Redundant Magnetometer Diagnostics"
+        
+        lastErrorMag {
+            DisplayName = "Last Error Magnetometer"
+        }
+        
+        errorCountMag {
+            DisplayName = "Error Count Magnetometer"
+        }
+        
+        lastErrorTmp {
+            DisplayName = "Last Error Temperature"
+        }
+        
+        errorCountTmp {
+            DisplayName = "Error Count Temperature"
+        }
+        
+    }
+    
+}

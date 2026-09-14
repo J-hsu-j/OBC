@@ -1,0 +1,38 @@
+package org.endurosat.deploy
+
+import "../../../../../../../../espf/core/fidl/spec/PlatformSpec.fdepl"
+
+import "../../../../../../../../espf/core/fidl/eps_i/fp/EPS1.fidl"
+
+// Client generation
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.EPS1 { 
+	IsClient = true 
+
+	method getSoftwareVersion { InUse = false }
+	method getBatteryInfo { InUse = true }
+	method getBusesInfo { InUse = false }
+	method getSolarPanelsInfo { InUse = false }
+	method getStatisticInfo { InUse = false }
+	method getTemperaturesInfo { InUse = false }
+	method getConfigurationInfo { InUse = true }
+	method queryControls { InUse = true }
+	method queryRBatRaw { InUse = false }
+	method queryDefaults { InUse = false }
+	method queryLaunchState { InUse = false }
+	method queryWatchdog { InUse = false }
+	method resetWatchdog { InUse = false }
+	method resetPowerSupply { InUse = false }
+	method SetSerialNumber { InUse = false }
+	method GetSerialNumber { InUse = false }
+	method HellModeRead { InUse = false }
+	method HellModeWrite { InUse = false }
+	method HeatersSettingsRead { InUse = false }
+	method HeatersSettingsWrite { InUse = false }
+	method ToggleOutPut { InUse = true }
+	method NotificationsSettings { InUse = false }
+	method GetTelemetryAltogether { InUse = false }
+	method bload_getVersion { InUse = false }
+	method bload_eraseFlash { InUse = false }
+	method bload_writeFlash { InUse = false }
+	method bload_execute { InUse = false }    
+}

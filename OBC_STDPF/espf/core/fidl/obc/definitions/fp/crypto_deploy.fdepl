@@ -1,0 +1,77 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/crypto.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.pf.crypto as crypto_Definitions {
+
+	enumeration key_update_status {
+		AlarmInvalidRegexValues = {
+			"BAD_SIZE", "STORE_ERROR"
+		}
+	}
+
+	enumeration cipher_op_status {
+		AlarmInvalidRegexValues = {
+			"EOS", "INVALID", "ERROR", "PARTIAL_FILE", "BAD_PARAMS", "NO_KEY",
+			"ABORTED", "NO_FILE", "BUSY"
+		}
+	}
+
+	method update_key_store {
+		in {
+			^key {
+				DisplayName = "Key"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method perform_cipher_op {
+		in {
+			cipher_op {
+				DisplayName = "Cipher Operation"
+			}
+			src_file_name {
+				DisplayName = "Source File Name"
+			}
+			target_file_name {
+				DisplayName = "Target File Name"
+			}
+		}
+		out {
+			cipher_req_status {
+				DisplayName = "Cipher Request Status"
+			}
+		}
+	}
+
+	method get_cipher_op_status {
+		out {
+			cipher_op_status {
+				DisplayName = "Cipher Operation Status"
+			}
+			op_time {
+				DisplayName = "Operation Time"
+				Unit = "ms"
+			}
+		}
+	}
+
+	method abort {
+		in {
+			op_type {
+				DisplayName = "Operation Type"
+			}
+		}
+		out {
+			status {
+				DisplayName = "Status"
+			}
+		}
+	}
+
+}

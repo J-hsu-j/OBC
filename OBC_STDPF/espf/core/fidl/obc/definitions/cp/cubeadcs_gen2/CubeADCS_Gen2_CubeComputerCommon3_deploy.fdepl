@@ -1,0 +1,1375 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CubeComputerCommon3.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CubeComputerCommon3 as CubeADCS_Gen2_CubeComputerCommon3_Definitions
+{    
+    
+    struct PassThrough
+    {
+        DisplayName = "Pass Through "
+        
+        TargetNode {
+            DisplayName = "Target Node"
+        }
+        
+    }
+    
+    struct PowerState
+    {
+        DisplayName = "Power state"
+        
+        Rwl0Power {
+            DisplayName = "RWL0 power state"
+        }
+        
+        Rwl1Power {
+            DisplayName = "RWL1 power state"
+        }
+        
+        Rwl2Power {
+            DisplayName = "RWL2 power state"
+        }
+        
+        Rwl3Power {
+            DisplayName = "RWL3 power state"
+        }
+        
+        Mag0Power {
+            DisplayName = "MAG0 power state"
+        }
+        
+        Mag1Power {
+            DisplayName = "MAG1 power state"
+        }
+        
+        Gyro0Power {
+            DisplayName = "GYR0 power state"
+        }
+        
+        Gyro1Power {
+            DisplayName = "GYR1 power state"
+        }
+        
+        Fss0Power {
+            DisplayName = "FSS0 power state"
+        }
+        
+        Fss1Power {
+            DisplayName = "FSS1 power state"
+        }
+        
+        Fss2Power {
+            DisplayName = "FSS2 power state"
+        }
+        
+        Fss3Power {
+            DisplayName = "FSS3 power state"
+        }
+        
+        Hss0Power {
+            DisplayName = "HSS0 power state"
+        }
+        
+        Hss1Power {
+            DisplayName = "HSS1 power state"
+        }
+        
+        Str0Power {
+            DisplayName = "STR0 power state"
+        }
+        
+        Str1Power {
+            DisplayName = "STR1 power state"
+        }
+        
+        ExtSensor0Power {
+            DisplayName = "ExtSensor0 power state"
+        }
+        
+        ExtSensor1Power {
+            DisplayName = "ExtSensor1 power state"
+        }
+        
+        ExtGyro0Power {
+            DisplayName = "EXTGYR0 power state"
+        }
+        
+        ExtGyro1Power {
+            DisplayName = "EXTGYR1 power state"
+        }
+        
+    }
+    
+    struct ImageTransferSetup
+    {
+        DisplayName = "Set request image log transfer setup"
+        
+        OpCode {
+            DisplayName = "Operation Code"
+        }
+        
+        NodeType {
+            DisplayName = "Target Node Type"
+        }
+        
+        FileHandle {
+            DisplayName = "File Handle"
+        }
+        
+    }
+    
+    struct PortMap
+    {
+        DisplayName = "Port Map"
+        
+        Sensor1NodeType {
+            DisplayName = "Node Type: Sensor 1"
+        }
+        
+        Sensor1AbstractType {
+            DisplayName = "Abstract Node Type: Sensor 1"
+        }
+        
+        Sensor1SerialInt {
+            DisplayName = "Serial Number Integer: Sensor 1"
+        }
+        
+        Sensor1Address {
+            DisplayName = "Address: Sensor 1"
+        }
+        
+        Sensor2NodeType {
+            DisplayName = "Node Type: Sensor 2"
+        }
+        
+        Sensor2AbstractType {
+            DisplayName = "Abstract Node Type: Sensor 2"
+        }
+        
+        Sensor2SerialInt {
+            DisplayName = "Serial Number Integer: Sensor 2"
+        }
+        
+        Sensor2Address {
+            DisplayName = "Address: Sensor 2"
+        }
+        
+        Sensor3NodeType {
+            DisplayName = "Node Type: Sensor 3"
+        }
+        
+        Sensor3AbstractType {
+            DisplayName = "Abstract Node Type: Sensor 3"
+        }
+        
+        Sensor3SerialInt {
+            DisplayName = "Serial Number Integer: Sensor 3"
+        }
+        
+        Sensor3Address {
+            DisplayName = "Address: Sensor 3"
+        }
+        
+        Sensor4NodeType {
+            DisplayName = "Node Type: Sensor 4"
+        }
+        
+        Sensor4AbstractType {
+            DisplayName = "Abstract Node Type: Sensor 4"
+        }
+        
+        Sensor4SerialInt {
+            DisplayName = "Serial Number Integer: Sensor 4"
+        }
+        
+        Sensor4Address {
+            DisplayName = "Address: Sensor 4"
+        }
+        
+        Sensor5NodeType {
+            DisplayName = "Node Type: Sensor 5"
+        }
+        
+        Sensor5AbstractType {
+            DisplayName = "Abstract Node Type: Sensor 5"
+        }
+        
+        Sensor5SerialInt {
+            DisplayName = "Serial Number Integer: Sensor 5"
+        }
+        
+        Sensor5Address {
+            DisplayName = "Address: Sensor 5"
+        }
+        
+        Sensor6NodeType {
+            DisplayName = "Node Type: Sensor 6"
+        }
+        
+        Sensor6AbstractType {
+            DisplayName = "Abstract Node Type: Sensor 6"
+        }
+        
+        Sensor6SerialInt {
+            DisplayName = "Serial Number Integer: Sensor 6"
+        }
+        
+        Sensor6Address {
+            DisplayName = "Address: Sensor 6"
+        }
+        
+        Sensor7NodeType {
+            DisplayName = "Node Type: Sensor 7"
+        }
+        
+        Sensor7AbstractType {
+            DisplayName = "Abstract Node Type: Sensor 7"
+        }
+        
+        Sensor7SerialInt {
+            DisplayName = "Serial Number Integer: Sensor 7"
+        }
+        
+        Sensor7Address {
+            DisplayName = "Address: Sensor 7"
+        }
+        
+        Sensor8NodeType {
+            DisplayName = "Node Type: Sensor 8"
+        }
+        
+        Sensor8AbstractType {
+            DisplayName = "Abstract Node Type: Sensor 8"
+        }
+        
+        Sensor8SerialInt {
+            DisplayName = "Serial Number Integer: Sensor 8"
+        }
+        
+        Sensor8Address {
+            DisplayName = "Address: Sensor 8"
+        }
+        
+        Wheel1NodeType {
+            DisplayName = "Node Type: Wheel 1"
+        }
+        
+        Wheel1AbstractType {
+            DisplayName = "Abstract Node Type: Wheel 1"
+        }
+        
+        Wheel1SerialInt {
+            DisplayName = "Serial Number Integer: Wheel 1"
+        }
+        
+        Wheel1Address {
+            DisplayName = "Address: Wheel 1"
+        }
+        
+        Wheel2NodeType {
+            DisplayName = "Node Type: Wheel 2"
+        }
+        
+        Wheel2AbstractType {
+            DisplayName = "Abstract Node Type: Wheel 2"
+        }
+        
+        Wheel2SerialInt {
+            DisplayName = "Serial Number Integer: Wheel 2"
+        }
+        
+        Wheel2Address {
+            DisplayName = "Address: Wheel 2"
+        }
+        
+        Wheel3NodeType {
+            DisplayName = "Node Type: Wheel 3"
+        }
+        
+        Wheel3AbstractType {
+            DisplayName = "Abstract Node Type: Wheel 3"
+        }
+        
+        Wheel3SerialInt {
+            DisplayName = "Serial Number Integer: Wheel 3"
+        }
+        
+        Wheel3Address {
+            DisplayName = "Address: Wheel 3"
+        }
+        
+        Wheel4NodeType {
+            DisplayName = "Node Type: Wheel 4"
+        }
+        
+        Wheel4AbstractType {
+            DisplayName = "Abstract Node Type: Wheel 4"
+        }
+        
+        Wheel4SerialInt {
+            DisplayName = "Serial Number Integer: Wheel 4"
+        }
+        
+        Wheel4Address {
+            DisplayName = "Address: Wheel 4"
+        }
+        
+    }
+    
+    struct EraseLogData
+    {
+        DisplayName = "Format all logs"
+        
+        magicNumber {
+            DisplayName = "Magic Number"
+        }
+        
+    }
+    
+    struct EventLogFilterTransferSetup
+    {
+        DisplayName = "Initiate Filtered Event Log Transfer"
+        
+        filterType {
+            DisplayName = "Filter Type"
+        }
+        
+        startTimeUnix {
+            DisplayName = "Unix start time"
+        }
+        
+        endTimeUnix {
+            DisplayName = "Unix end time"
+        }
+        
+        numEntries {
+            DisplayName = "Number of Entries"
+        }
+        
+        writeCounter {
+            DisplayName = "Write Counter"
+        }
+        
+        includeClassCritical {
+            DisplayName = "Include critical events"
+        }
+        
+        includeClassMajorWarning {
+            DisplayName = "Include major warning events"
+        }
+        
+        includeClassMinorWarning {
+            DisplayName = "Include minor warning events"
+        }
+        
+        includeClassInfo {
+            DisplayName = "Include info events"
+        }
+        
+        includeSourceCubeComputer {
+            DisplayName = "Include CubeComputer"
+        }
+        
+        includeSourceRwl0 {
+            DisplayName = "Include RWL 0"
+        }
+        
+        includeSourceRwl1 {
+            DisplayName = "Include RWL 1"
+        }
+        
+        includeSourceRwl2 {
+            DisplayName = "Include RWL 2"
+        }
+        
+        includeSourceRwl3 {
+            DisplayName = "Include RWL 3"
+        }
+        
+        includeSourceFss0 {
+            DisplayName = "Include Fss 0"
+        }
+        
+        includeSourceFss1 {
+            DisplayName = "Include Fss 1"
+        }
+        
+        includeSourceFss2 {
+            DisplayName = "Include Fss 2"
+        }
+        
+        includeSourceFss3 {
+            DisplayName = "Include Fss 3"
+        }
+        
+        includeSourceHss0 {
+            DisplayName = "Include Hss 0"
+        }
+        
+        includeSourceHss1 {
+            DisplayName = "Include Hss 1"
+        }
+        
+        includeSourceStr0 {
+            DisplayName = "Include Str 0"
+        }
+        
+        includeSourceStr1 {
+            DisplayName = "Include Str 1"
+        }
+        
+        includeSourceMag0 {
+            DisplayName = "Include Mag 0"
+        }
+        
+        includeSourceMag1 {
+            DisplayName = "Include Mag 1"
+        }
+        
+        includeSourceExt0 {
+            DisplayName = "Include External 0"
+        }
+        
+        includeSourceExt1 {
+            DisplayName = "Include External 1"
+        }
+        
+    }
+    
+    struct TelemetryLogTransferSetup
+    {
+        DisplayName = "Set request telemetry log transfer setup"
+        
+        filterType {
+            DisplayName = "Filter Type"
+        }
+        
+        startTimeUnix {
+            DisplayName = "Unix start time"
+        }
+        
+        endTimeUnix {
+            DisplayName = "Unix end time"
+        }
+        
+        numEntries {
+            DisplayName = "Number of Entries"
+        }
+        
+        writeCounter {
+            DisplayName = "Write Counter"
+        }
+        
+        tlmLogReturnInterval {
+            DisplayName = "Tlm Log Return Interval"
+        }
+        
+        logIdBitmask {
+            DisplayName = "Log ID inclusion bitmask"
+        }
+        
+    }
+    
+    struct DummyEvent
+    {
+        DisplayName = "Set a dummy event"
+        
+        eventClass {
+            DisplayName = "Event class"
+        }
+        
+        eventSource {
+            DisplayName = "Event source"
+        }
+        
+        eventType {
+            DisplayName = "Event type"
+        }
+        
+        eventData {
+            DisplayName = "Event data"
+        }
+        
+    }
+    
+    struct UnsolicitedEventSetup
+    {
+        DisplayName = "Unsolicited Event Message Setup"
+        
+        uartInfo {
+            DisplayName = "UART Info Events"
+        }
+        
+        uartWarnMinor {
+            DisplayName = "UART Minor Warning Events"
+        }
+        
+        uartWarnMajor {
+            DisplayName = "UART Major Warning Events"
+        }
+        
+        uartCritical {
+            DisplayName = "UART Critical Events"
+        }
+        
+        uart2Info {
+            DisplayName = "UART2 Info Events"
+        }
+        
+        uart2WarnMinor {
+            DisplayName = "UART2 Minor Warning Events"
+        }
+        
+        uart2WarnMajor {
+            DisplayName = "UART2 Major Warning Events"
+        }
+        
+        uart2Critical {
+            DisplayName = "UART2 Critical Events"
+        }
+        
+        canInfo {
+            DisplayName = "CAN Info Events"
+        }
+        
+        canWarnMinor {
+            DisplayName = "CAN Minor Warning Events"
+        }
+        
+        canWarnMajor {
+            DisplayName = "CAN Major Warning Events"
+        }
+        
+        canCritical {
+            DisplayName = "CAN Critical Events"
+        }
+        
+    }
+    
+    struct UnsolicitedTlmSetup
+    {
+        DisplayName = "Unsolicited Telemetry Message Setup"
+        
+        uartTlmInterval {
+            DisplayName = "UART Tlm Return Interval"
+        }
+        
+        uart2TlmInterval {
+            DisplayName = "UART2 Tlm Return Interval"
+        }
+        
+        canTlmInterval {
+            DisplayName = "CAN Tlm Return Interval"
+        }
+        
+        uartTlmIdBitmask {
+            DisplayName = "UART TLM ID inclusion bitmask"
+        }
+        
+        uart2TlmIdBitmask {
+            DisplayName = "UART2 TLM ID inclusion bitmask"
+        }
+        
+        canTlmIdBitmask {
+            DisplayName = "CAN TLM ID inclusion bitmask"
+        }
+        
+    }
+    
+    struct PortDiagnostics
+    {
+        DisplayName = "Port Diagnostics"
+        
+        GlobalErrorCode {
+            DisplayName = "Global Error Code"
+        }
+        
+        NoneExpected {
+            DisplayName = "None Expected"
+        }
+        
+        NoneDiscoveredError {
+            DisplayName = "None Discovered Error"
+        }
+        
+        ExpectedMatchError {
+            DisplayName = "Expected Match Error"
+        }
+        
+        AddrAssignError {
+            DisplayName = "Address Assign Error"
+        }
+        
+        AbstractTypeError {
+            DisplayName = "Abstract Type Error"
+        }
+        
+        ConfigPersistError {
+            DisplayName = "Config Persist Error"
+        }
+        
+        Sensor1ErrorCode {
+            DisplayName = "Error Code: Sensor 1"
+        }
+        
+        Sensor1UnexpectedError {
+            DisplayName = "Unexpected Error: Sensor 1"
+        }
+        
+        Sensor1CommsError {
+            DisplayName = "Comms Error: Sensor 1"
+        }
+        
+        Sensor1NodeTypeMatchError {
+            DisplayName = "Node Type Match Error: Sensor 1"
+        }
+        
+        Sensor1SerialMatchError {
+            DisplayName = "Serial Number Match Error: Sensor 1"
+        }
+        
+        Sensor1AddrAssignError {
+            DisplayName = "Address Assign Error: Sensor 1"
+        }
+        
+        Sensor1AbstractTypeError {
+            DisplayName = "Abstract Type Error: Sensor 1"
+        }
+        
+        Sensor1SerialResolveError {
+            DisplayName = "Serial Number Resolve Error: Sensor 1"
+        }
+        
+        Sensor2ErrorCode {
+            DisplayName = "Error Code: Sensor 2"
+        }
+        
+        Sensor2UnexpectedError {
+            DisplayName = "Unexpected Error: Sensor 2"
+        }
+        
+        Sensor2CommsError {
+            DisplayName = "Comms Error: Sensor 2"
+        }
+        
+        Sensor2NodeTypeMatchError {
+            DisplayName = "Node Type Match Error: Sensor 2"
+        }
+        
+        Sensor2SerialMatchError {
+            DisplayName = "Serial Number Match Error: Sensor 2"
+        }
+        
+        Sensor2AddrAssignError {
+            DisplayName = "Address Assign Error: Sensor 2"
+        }
+        
+        Sensor2AbstractTypeError {
+            DisplayName = "Abstract Type Error: Sensor 2"
+        }
+        
+        Sensor2SerialResolveError {
+            DisplayName = "Serial Number Resolve Error: Sensor 2"
+        }
+        
+        Sensor3ErrorCode {
+            DisplayName = "Error Code: Sensor 3"
+        }
+        
+        Sensor3UnexpectedError {
+            DisplayName = "Unexpected Error: Sensor 3"
+        }
+        
+        Sensor3CommsError {
+            DisplayName = "Comms Error: Sensor 3"
+        }
+        
+        Sensor3NodeTypeMatchError {
+            DisplayName = "Node Type Match Error: Sensor 3"
+        }
+        
+        Sensor3SerialMatchError {
+            DisplayName = "Serial Number Match Error: Sensor 3"
+        }
+        
+        Sensor3AddrAssignError {
+            DisplayName = "Address Assign Error: Sensor 3"
+        }
+        
+        Sensor3AbstractTypeError {
+            DisplayName = "Abstract Type Error: Sensor 3"
+        }
+        
+        Sensor3SerialResolveError {
+            DisplayName = "Serial Number Resolve Error: Sensor 3"
+        }
+        
+        Sensor4ErrorCode {
+            DisplayName = "Error Code: Sensor 4"
+        }
+        
+        Sensor4UnexpectedError {
+            DisplayName = "Unexpected Error: Sensor 4"
+        }
+        
+        Sensor4CommsError {
+            DisplayName = "Comms Error: Sensor 4"
+        }
+        
+        Sensor4NodeTypeMatchError {
+            DisplayName = "Node Type Match Error: Sensor 4"
+        }
+        
+        Sensor4SerialMatchError {
+            DisplayName = "Serial Number Match Error: Sensor 4"
+        }
+        
+        Sensor4AddrAssignError {
+            DisplayName = "Address Assign Error: Sensor 4"
+        }
+        
+        Sensor4AbstractTypeError {
+            DisplayName = "Abstract Type Error: Sensor 4"
+        }
+        
+        Sensor4SerialResolveError {
+            DisplayName = "Serial Number Resolve Error: Sensor 4"
+        }
+        
+        Sensor5ErrorCode {
+            DisplayName = "Error Code: Sensor 5"
+        }
+        
+        Sensor5UnexpectedError {
+            DisplayName = "Unexpected Error: Sensor 5"
+        }
+        
+        Sensor5CommsError {
+            DisplayName = "Comms Error: Sensor 5"
+        }
+        
+        Sensor5NodeTypeMatchError {
+            DisplayName = "Node Type Match Error: Sensor 5"
+        }
+        
+        Sensor5SerialMatchError {
+            DisplayName = "Serial Number Match Error: Sensor 5"
+        }
+        
+        Sensor5AddrAssignError {
+            DisplayName = "Address Assign Error: Sensor 5"
+        }
+        
+        Sensor5AbstractTypeError {
+            DisplayName = "Abstract Type Error: Sensor 5"
+        }
+        
+        Sensor5SerialResolveError {
+            DisplayName = "Serial Number Resolve Error: Sensor 5"
+        }
+        
+        Sensor6ErrorCode {
+            DisplayName = "Error Code: Sensor 6"
+        }
+        
+        Sensor6UnexpectedError {
+            DisplayName = "Unexpected Error: Sensor 6"
+        }
+        
+        Sensor6CommsError {
+            DisplayName = "Comms Error: Sensor 6"
+        }
+        
+        Sensor6NodeTypeMatchError {
+            DisplayName = "Node Type Match Error: Sensor 6"
+        }
+        
+        Sensor6SerialMatchError {
+            DisplayName = "Serial Number Match Error: Sensor 6"
+        }
+        
+        Sensor6AddrAssignError {
+            DisplayName = "Address Assign Error: Sensor 6"
+        }
+        
+        Sensor6AbstractTypeError {
+            DisplayName = "Abstract Type Error: Sensor 6"
+        }
+        
+        Sensor6SerialResolveError {
+            DisplayName = "Serial Number Resolve Error: Sensor 6"
+        }
+        
+        Sensor7ErrorCode {
+            DisplayName = "Error Code: Sensor 7"
+        }
+        
+        Sensor7UnexpectedError {
+            DisplayName = "Unexpected Error: Sensor 7"
+        }
+        
+        Sensor7CommsError {
+            DisplayName = "Comms Error: Sensor 7"
+        }
+        
+        Sensor7NodeTypeMatchError {
+            DisplayName = "Node Type Match Error: Sensor 7"
+        }
+        
+        Sensor7SerialMatchError {
+            DisplayName = "Serial Number Match Error: Sensor 7"
+        }
+        
+        Sensor7AddrAssignError {
+            DisplayName = "Address Assign Error: Sensor 7"
+        }
+        
+        Sensor7AbstractTypeError {
+            DisplayName = "Abstract Type Error: Sensor 7"
+        }
+        
+        Sensor7SerialResolveError {
+            DisplayName = "Serial Number Resolve Error: Sensor 7"
+        }
+        
+        Sensor8ErrorCode {
+            DisplayName = "Error Code: Sensor 8"
+        }
+        
+        Sensor8UnexpectedError {
+            DisplayName = "Unexpected Error: Sensor 8"
+        }
+        
+        Sensor8CommsError {
+            DisplayName = "Comms Error: Sensor 8"
+        }
+        
+        Sensor8NodeTypeMatchError {
+            DisplayName = "Node Type Match Error: Sensor 8"
+        }
+        
+        Sensor8SerialMatchError {
+            DisplayName = "Serial Number Match Error: Sensor 8"
+        }
+        
+        Sensor8AddrAssignError {
+            DisplayName = "Address Assign Error: Sensor 8"
+        }
+        
+        Sensor8AbstractTypeError {
+            DisplayName = "Abstract Type Error: Sensor 8"
+        }
+        
+        Sensor8SerialResolveError {
+            DisplayName = "Serial Number Resolve Error: Sensor 8"
+        }
+        
+        Wheel1ErrorCode {
+            DisplayName = "Error Code: Wheel 1"
+        }
+        
+        Wheel1UnexpectedError {
+            DisplayName = "Unexpected Error: Wheel 1"
+        }
+        
+        Wheel1CommsError {
+            DisplayName = "Comms Error: Wheel 1"
+        }
+        
+        Wheel1NodeTypeMatchError {
+            DisplayName = "Node Type Match Error: Wheel 1"
+        }
+        
+        Wheel1SerialMatchError {
+            DisplayName = "Serial Number Match Error: Wheel 1"
+        }
+        
+        Wheel1AddrAssignError {
+            DisplayName = "Address Assign Error: Wheel 1"
+        }
+        
+        Wheel1AbstractTypeError {
+            DisplayName = "Abstract Type Error: Wheel 1"
+        }
+        
+        Wheel1SerialResolveError {
+            DisplayName = "Serial Number Resolve Error: Wheel 1"
+        }
+        
+        Wheel2ErrorCode {
+            DisplayName = "Error Code: Wheel 2"
+        }
+        
+        Wheel2UnexpectedError {
+            DisplayName = "Unexpected Error: Wheel 2"
+        }
+        
+        Wheel2CommsError {
+            DisplayName = "Comms Error: Wheel 2"
+        }
+        
+        Wheel2NodeTypeMatchError {
+            DisplayName = "Node Type Match Error: Wheel 2"
+        }
+        
+        Wheel2SerialMatchError {
+            DisplayName = "Serial Number Match Error: Wheel 2"
+        }
+        
+        Wheel2AddrAssignError {
+            DisplayName = "Address Assign Error: Wheel 2"
+        }
+        
+        Wheel2AbstractTypeError {
+            DisplayName = "Abstract Type Error: Wheel 2"
+        }
+        
+        Wheel2SerialResolveError {
+            DisplayName = "Serial Number Resolve Error: Wheel 2"
+        }
+        
+        Wheel3ErrorCode {
+            DisplayName = "Error Code: Wheel 3"
+        }
+        
+        Wheel3UnexpectedError {
+            DisplayName = "Unexpected Error: Wheel 3"
+        }
+        
+        Wheel3CommsError {
+            DisplayName = "Comms Error: Wheel 3"
+        }
+        
+        Wheel3NodeTypeMatchError {
+            DisplayName = "Node Type Match Error: Wheel 3"
+        }
+        
+        Wheel3SerialMatchError {
+            DisplayName = "Serial Number Match Error: Wheel 3"
+        }
+        
+        Wheel3AddrAssignError {
+            DisplayName = "Address Assign Error: Wheel 3"
+        }
+        
+        Wheel3AbstractTypeError {
+            DisplayName = "Abstract Type Error: Wheel 3"
+        }
+        
+        Wheel3SerialResolveError {
+            DisplayName = "Serial Number Resolve Error: Wheel 3"
+        }
+        
+        Wheel4ErrorCode {
+            DisplayName = "Error Code: Wheel 4"
+        }
+        
+        Wheel4UnexpectedError {
+            DisplayName = "Unexpected Error: Wheel 4"
+        }
+        
+        Wheel4CommsError {
+            DisplayName = "Comms Error: Wheel 4"
+        }
+        
+        Wheel4NodeTypeMatchError {
+            DisplayName = "Node Type Match Error: Wheel 4"
+        }
+        
+        Wheel4SerialMatchError {
+            DisplayName = "Serial Number Match Error: Wheel 4"
+        }
+        
+        Wheel4AddrAssignError {
+            DisplayName = "Address Assign Error: Wheel 4"
+        }
+        
+        Wheel4AbstractTypeError {
+            DisplayName = "Abstract Type Error: Wheel 4"
+        }
+        
+        Wheel4SerialResolveError {
+            DisplayName = "Serial Number Resolve Error: Wheel 4"
+        }
+        
+    }
+    
+    struct ExpectedNodes
+    {
+        DisplayName = "Expected Nodes"
+        
+        Expected0NodeType {
+            DisplayName = "Node Type: Slot 0"
+        }
+        
+        Expected0AbstractType {
+            DisplayName = "Abstract Node Type: Slot 0"
+        }
+        
+        Expected0SerialInt {
+            DisplayName = "Serial Number Integer: Slot 0"
+        }
+        
+        Expected1NodeType {
+            DisplayName = "Node Type: Slot 1"
+        }
+        
+        Expected1AbstractType {
+            DisplayName = "Abstract Node Type: Slot 1"
+        }
+        
+        Expected1SerialInt {
+            DisplayName = "Serial Number Integer: Slot 1"
+        }
+        
+        Expected2NodeType {
+            DisplayName = "Node Type: Slot 2"
+        }
+        
+        Expected2AbstractType {
+            DisplayName = "Abstract Node Type: Slot 2"
+        }
+        
+        Expected2SerialInt {
+            DisplayName = "Serial Number Integer: Slot 2"
+        }
+        
+        Expected3NodeType {
+            DisplayName = "Node Type: Slot 3"
+        }
+        
+        Expected3AbstractType {
+            DisplayName = "Abstract Node Type: Slot 3"
+        }
+        
+        Expected3SerialInt {
+            DisplayName = "Serial Number Integer: Slot 3"
+        }
+        
+        Expected4NodeType {
+            DisplayName = "Node Type: Slot 4"
+        }
+        
+        Expected4AbstractType {
+            DisplayName = "Abstract Node Type: Slot 4"
+        }
+        
+        Expected4SerialInt {
+            DisplayName = "Serial Number Integer: Slot 4"
+        }
+        
+        Expected5NodeType {
+            DisplayName = "Node Type: Slot 5"
+        }
+        
+        Expected5AbstractType {
+            DisplayName = "Abstract Node Type: Slot 5"
+        }
+        
+        Expected5SerialInt {
+            DisplayName = "Serial Number Integer: Slot 5"
+        }
+        
+        Expected6NodeType {
+            DisplayName = "Node Type: Slot 6"
+        }
+        
+        Expected6AbstractType {
+            DisplayName = "Abstract Node Type: Slot 6"
+        }
+        
+        Expected6SerialInt {
+            DisplayName = "Serial Number Integer: Slot 6"
+        }
+        
+        Expected7NodeType {
+            DisplayName = "Node Type: Slot 7"
+        }
+        
+        Expected7AbstractType {
+            DisplayName = "Abstract Node Type: Slot 7"
+        }
+        
+        Expected7SerialInt {
+            DisplayName = "Serial Number Integer: Slot 7"
+        }
+        
+        Expected8NodeType {
+            DisplayName = "Node Type: Slot 8"
+        }
+        
+        Expected8AbstractType {
+            DisplayName = "Abstract Node Type: Slot 8"
+        }
+        
+        Expected8SerialInt {
+            DisplayName = "Serial Number Integer: Slot 8"
+        }
+        
+        Expected9NodeType {
+            DisplayName = "Node Type: Slot 9"
+        }
+        
+        Expected9AbstractType {
+            DisplayName = "Abstract Node Type: Slot 9"
+        }
+        
+        Expected9SerialInt {
+            DisplayName = "Serial Number Integer: Slot 9"
+        }
+        
+        Expected10NodeType {
+            DisplayName = "Node Type: Slot 10"
+        }
+        
+        Expected10AbstractType {
+            DisplayName = "Abstract Node Type: Slot 10"
+        }
+        
+        Expected10SerialInt {
+            DisplayName = "Serial Number Integer: Slot 10"
+        }
+        
+        Expected11NodeType {
+            DisplayName = "Node Type: Slot 11"
+        }
+        
+        Expected11AbstractType {
+            DisplayName = "Abstract Node Type: Slot 11"
+        }
+        
+        Expected11SerialInt {
+            DisplayName = "Serial Number Integer: Slot 11"
+        }
+        
+    }
+    
+    struct ImageTransferStatus
+    {
+        DisplayName = "Image Transfer Status"
+        
+        State {
+            DisplayName = "State"
+        }
+        
+        ErrorCode {
+            DisplayName = "Error Code"
+        }
+        
+        TransferSize {
+            DisplayName = "Transfer Size"
+        }
+        
+        DataRemain {
+            DisplayName = "Data Remain"
+        }
+        
+        InvalidNodeError {
+            DisplayName = "Invalid Node Error"
+        }
+        
+        TimeoutError {
+            DisplayName = "Timeout Error"
+        }
+        
+        CaptureError {
+            DisplayName = "Capture Error"
+        }
+        
+        SetupError {
+            DisplayName = "Setup Error"
+        }
+        
+        FileOpenReadError {
+            DisplayName = "File Open Read Error"
+        }
+        
+        FileOpenWriteError {
+            DisplayName = "File Open Write Error"
+        }
+        
+        FileReadError {
+            DisplayName = "File Read Error"
+        }
+        
+        FileWriteError {
+            DisplayName = "File Write Error"
+        }
+        
+        BusyError {
+            DisplayName = "Busy Error"
+        }
+        
+    }
+    
+    struct ImageFileInfo
+    {
+        DisplayName = "Image File Info"
+        
+        FileHandle {
+            DisplayName = "File Handle"
+        }
+        
+        NodeType {
+            DisplayName = "Node Type"
+        }
+        
+        Timestamp {
+            DisplayName = "Timestamp"
+        }
+        
+        Size {
+            DisplayName = "Size"
+        }
+        
+        First {
+            DisplayName = "First"
+        }
+        
+        Last {
+            DisplayName = "Last"
+        }
+        
+        IsValid {
+            DisplayName = "IsValid"
+        }
+        
+    }
+    
+    struct ComponentErrorCodes
+    {
+        DisplayName = "Component Error Codes"
+        
+        MasterSvc {
+            DisplayName = "Master Service"
+        }
+        
+        FramFsSvc {
+            DisplayName = "FRAM File System Service"
+        }
+        
+        EventLogSvc {
+            DisplayName = "Event Log Service"
+        }
+        
+        ImgLogSvc {
+            DisplayName = "Image Log Service"
+        }
+        
+        TlmLogSvc {
+            DisplayName = "Telemetry Log Service"
+        }
+        
+        ImuSvc {
+            DisplayName = "IMU Service"
+        }
+        
+    }
+    
+    struct EventLogStatus
+    {
+        DisplayName = "Get the Event log status response"
+        
+        numberOfEntriesQueued {
+            DisplayName = "Number of queued entries"
+        }
+        
+        numberOfEntriesBuffered {
+            DisplayName = "Number of buffered entries"
+        }
+        
+        numberOfEntries {
+            DisplayName = "Number of entries"
+        }
+        
+        numberOfEmptyEntries {
+            DisplayName = "Number of empty entries"
+        }
+        
+        oldestEntryUnix {
+            DisplayName = "Oldest entry unix time"
+        }
+        
+        latestEntryUnix {
+            DisplayName = "Latest entry unix time"
+        }
+        
+        numberOfCriticalEvents {
+            DisplayName = "Number of critical events"
+        }
+        
+        numberOfMajorWarningEvents {
+            DisplayName = "Number of major warning events"
+        }
+        
+        numberOfMinorWarningEvents {
+            DisplayName = "Number of minor warning events"
+        }
+        
+        numberOfInfoEvents {
+            DisplayName = "Number of info events"
+        }
+        
+        writeCounter {
+            DisplayName = "Write counter"
+        }
+        
+        readQueueState {
+            DisplayName = "Read-Queue state"
+        }
+        
+    }
+    
+    struct TelemtryLogStatus
+    {
+        DisplayName = "Get the Telemtry log status response"
+        
+        numberOfEntriesQueued {
+            DisplayName = "Number of queued entries"
+        }
+        
+        numberOfTlmIterations {
+            DisplayName = "Number of request iterations"
+        }
+        
+        numberOfEntries {
+            DisplayName = "Number of entries"
+        }
+        
+        oldestEntryUnix {
+            DisplayName = "Oldest entry unix time"
+        }
+        
+        latestEntryUnix {
+            DisplayName = "Latest entry unix time"
+        }
+        
+        writeCounter {
+            DisplayName = "Write counter"
+        }
+        
+        readQueueState {
+            DisplayName = "Read-Queue state"
+        }
+        
+    }
+    
+    struct TelemtryLogInclusionMasks
+    {
+        DisplayName = "Telemtry log inclusion masks"
+        
+        fastBitMask {
+            DisplayName = "Fast inclusion bitmask"
+        }
+        
+        slowBitMask {
+            DisplayName = "Slow inclusion bitmask"
+        }
+        
+    }
+    
+}

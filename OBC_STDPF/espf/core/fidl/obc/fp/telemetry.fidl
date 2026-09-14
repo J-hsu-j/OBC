@@ -1,0 +1,337 @@
+package endurosat.pf
+
+<** @description: OBC telemetry service control and configuration interface
+    @details: id = 0x102
+**>
+interface telemetry
+{
+    version { major 2 minor 0 }
+
+    <** @description: Standard result enumeration which can be used in most situations as a return code **>
+    enumeration StandardResult
+    {
+        SUCCESS,
+        ERROR,
+        INVALID_ARGS,
+        NOT_SUPPORTED
+    }
+    
+    <** @description: The list of telemetry instances configured in the system **>
+    enumeration TelemetryInstance
+    {
+        TLM_INST_0
+        TLM_INST_1
+    }
+
+    <** @description: Settings for the telemetry service stored in the nvm **>
+    struct tlm_preset_cfg
+    {
+        <** @description: DataCache-specified identifier **>
+        UInt16 data_id
+        <** @description: A flag indicating whether the data_id is part of the telemtry collection for this preset **>
+        Boolean active
+        <** @description: data acquistion period from the DataCache in milliseconds **>
+        UInt16 acq_period_ms
+    }
+
+    <** @description: Structure containing the values for the telemetry size limits **>
+    struct tlm_file_size_limit_cfg
+    {
+        <** @description: Maximum size limit for all telemetry logged on the SD card **>
+        UInt32 size_limit_kb
+        <** @description: Number of individual files to split the log to **>
+        UInt16 max_log_files_cnt
+    }
+
+    <** @description: How to keep the logging files, time based or size based **>
+    enumeration tlm_file_logging_type
+    {
+        SIZE_LIMIT
+    }
+
+    <** @description: Active configuration for the telemetry service **>
+    struct tlm_general_cfg
+    {
+        <** @description: Controls whether the telemetry logging is active at start-up. Telemetry sink mechanisms are separately controlled but
+                          if this flag is set to false, all sinks will cease operation.
+        **>
+        Boolean tlm_auto_start_en
+    }
+
+    <** @description: Counters of relevant events from the telemetry service **>
+    struct tlm_stats
+    {
+        <** @description: Shows whether the telemetry collection and storage is active **>
+        Boolean is_started
+        <** @description: number of pushed messages since system boot **>
+        UInt32 msg_pushed_cnt
+        <** @description: number of popped messages since system boot **>
+        UInt32 msg_popped_cnt
+        <** @description: minimum value reached for the free space in the queue **>
+        UInt32 free_bytes_min
+        <** @description: number of discarded messages due to lack of space in the queue **>
+        UInt32 discarded_messages_cnt
+        <** @description: maximum number of messages processed in a batch on a single run **>
+        UInt32 max_number_of_batch_msg
+        <** @description: identifier of the active slot where telemetry is currently stored **>
+        UInt32 active_slot_id
+    }
+
+    <** @description: Obtains the general Telemetry configuration settings
+        @details: id = 0
+    **>
+    method getTelemetryGeneralConfig
+    {
+        in
+        {
+            <** @description: Telemetry instance ID **>
+            TelemetryInstance tlm_instance_id
+        }
+        out
+        {
+            StandardResult res
+            tlm_general_cfg cfg
+        }
+    }
+
+    <** @description: Used to update the general Telemetry configuration settings
+        @details: id = 1
+    **>
+    method setTelemetryGeneralConfig
+    {
+        in
+        {
+            <** @description: Telemetry instance ID **>
+            TelemetryInstance tlm_instance_id
+            tlm_general_cfg cfg
+        }
+        out
+        {
+            StandardResult res
+        }
+
+    }
+
+    <** @description: Obtains the Telemetry service slot assignment configuration
+        @details: id = 2
+    **>
+    method getTelemetryPresetConfig
+    {
+        in
+        {
+            <** @description: Telemetry instance ID **>
+            TelemetryInstance tlm_instance_id
+        }
+        out
+        {
+            StandardResult res
+            <** @description: Hard-coded number of Telemetry slot presets in the system **>
+            UInt8 slot_preset_cnt
+            <** @description: Hard-coded number of maximum Telemetry messages in the system **>
+            UInt8 max_tlm_msg_cnt
+            <** @description: Specifies the different slot preset assignments of telemetry identifiers.
+                              Presets can be changed at run-time depending on different conditions.
+                              The size below is chosen to match the configured size of the presets in the build
+                              (3 presets by 10 DataCache entries each).
+                @details: size = 30
+            **>
+            tlm_preset_cfg[] Telemetry_preset_cfg
+        }
+    }
+
+    <** @description: Used to update the Telemetry service slot assignment configuration
+        @details: id = 3
+    **>
+    method setTelemetryPresetConfig
+    {
+        in
+        {
+            <** @description: Telemetry instance ID **>
+            TelemetryInstance tlm_instance_id
+            
+            <** @description: Specifies the different slot preset assignments of telemetry identifiers.
+                              Presets can be changed at run-time depending on different conditions.
+                              The size below is specified by calculating the number of slot presets slot_preset_cnt times
+                              the maximum number of Telemetry messages max_bcn_msg_cnt in a single Telemetry sequence. This number
+                              must match the number configured in the device firmware where this interface is
+                              implemented. In this case, this is 4 presets consisting of 20 messages each.
+                              The array is encoded as a 1D representation of a matrix where each row specifies all max_bcn_msg_cnt
+                              message IDs for a single preset.
+                @details: size = 30
+            **>
+            tlm_preset_cfg[] Telemetry_preset_cfg
+        }
+        out
+        {
+            StandardResult res
+        }
+    }
+
+    <** @description: Request a change in the Telemetry active preset
+        @details: id = 4
+    **>
+    method setActivePreset
+    {
+        in
+        {
+            <** @description: Telemetry instance ID **>
+            TelemetryInstance tlm_instance_id
+            
+            <** @description: Preset ID to use for Telemetry transmission. It will be active until next reboot or until a call
+                              to restoreActivePreset method is performed.
+            **>
+            UInt8 req_active_preset
+        }
+        out
+        {
+            StandardResult res
+            <** @description: Number of presets available in the system **>
+            UInt8 avail_presets_cnt
+        }
+    }
+
+    <** @description: Provides the currently active preset id used for Telemetry transmission
+        @details: id = 5
+    **>
+    method getActivePreset
+    {
+        in
+        {
+            <** @description: Telemetry instance ID **>
+            TelemetryInstance tlm_instance_id
+        }        
+        out
+        {
+            StandardResult res
+            UInt8 active_preset_id
+        }
+    }
+
+    <** @description: Restores the active preset autonomous mode, e.g. calculated by ConOps.
+        @details: id = 6
+    **>
+    method restoreActivePreset
+    {
+        in
+        {
+            <** @description: Telemetry instance ID **>
+            TelemetryInstance tlm_instance_id
+        }
+        out
+        {
+            StandardResult res
+        }
+    }
+
+    <** @description: Provides all file-based telemetry configuration settings
+        @details: id = 7
+    **>
+    method getTelemetryFileSinkConfig
+    {
+        in
+        {
+            <** @description: Telemetry instance ID **>
+            TelemetryInstance tlm_instance_id
+        }
+        out
+        {
+            StandardResult res
+            tlm_file_logging_type active_file_cfg_type
+            tlm_file_size_limit_cfg size_limit_cfg
+        }
+    }
+
+    <** @description: Used to update the size-limit file telemetry configuration settings.
+                      The configuration becomes active as soon as it is set unless an error is
+                      returned.
+        @details: id = 8
+    **>
+    method setTelemetryFileSzLimitConfig
+    {
+        in
+        {
+            <** @description: Telemetry instance ID **>
+            TelemetryInstance tlm_instance_id
+            
+            tlm_file_size_limit_cfg size_limit_cfg
+        }
+        out
+        {
+            StandardResult res
+        }
+    }
+
+    <** @description: Cleans-up all accumulated telemetry files on the storage. Please use with care because the files cannot be restored
+                      after this operation.
+        @details: id = 11
+    **>
+    method cleanTelemetryFiles
+    {
+        in
+        {
+            <** @description: Telemetry instance ID **>
+            TelemetryInstance tlm_instance_id
+        }
+        out
+        {
+            StandardResult res
+        }
+    }
+
+    <** @description: Provides the accummulated run-time statistics for the telemetry operation
+        @details: id = 12
+    **>
+    method getTelemetryOperationStats
+    {
+        in
+        {
+            <** @description: Telemetry instance ID **>
+            TelemetryInstance tlm_instance_id
+        }
+        out
+        {
+            StandardResult res
+            tlm_stats telemetry_stats
+        }
+    }
+
+    <** @description: Start the telemetry collection and storage
+        @details: id = 13
+    **>
+    method startTelemetry
+    {
+        in
+        {
+            <** @description: Telemetry instance ID **>
+            TelemetryInstance tlm_instance_id
+            <** @description: Number of seconds before automatically stopping the telemetry after it has been started. 
+                              If 0, the stopTelemetry method shall be called to stop the telemetry again.
+             **>
+            UInt16 hold_time_sec
+        }
+        out
+        {
+            StandardResult res
+        }
+    }
+    
+    <** @description: Stop the telemetry collection and storage
+        @details: id = 14
+    **>
+    method stopTelemetry
+    {
+        in
+        {
+            <** @description: Telemetry instance ID **>
+            TelemetryInstance tlm_instance_id
+            <** @description: Number of seconds before automatically starting the telemetry after it has been stopped. 
+                              If 0, the startTelemetry method shall be called to start the telemetry again.
+             **>
+            UInt16 hold_time_sec
+        }
+        out
+        {
+            StandardResult res
+        }
+    }
+}

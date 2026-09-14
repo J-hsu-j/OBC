@@ -1,0 +1,484 @@
+package endurosat.macif
+
+<** @description: Solar panels interface
+    @details: id = 0xA0
+**>
+
+interface eps_iii_input_stage
+{
+    version { major 2 minor 0 }
+    
+    <** @description: Command status **>
+    enumeration CommandStatus
+    {
+        <** @description: The command was successfully executed **>
+        SUCCESS
+        
+        <** @description: The command was failed during execution  **>
+        FAIL
+        
+        <** @description: The command was successfully executed, but not all data was gathered  **>
+        FAIL_GATHERING_DATA
+    }
+
+    <** @description: Seconds converted into days, hours, minutes, and seconds **>
+    struct UptimeConverted
+    {
+        <** @description: Number of days since last power up **>
+        UInt16 days
+        <** @description: Number of hours since last power up **>
+        UInt8 hours
+        <** @description: Number of minutes since last power up **>
+        UInt8 minutes
+        <** @description: Number of seconds since last power up **>
+        UInt8 seconds
+    }
+    
+    <** @description: Common measurements **>
+    struct CommonMeasurement
+    {
+        <** @description: MCU Voltage [mV]**>
+        UInt16 mcu_volt
+        
+        <** @description: MCU Temperature [mdegC]**>
+        Int32 mcu_temp
+        
+        <** @description: BUS Voltage [mV]**>
+        UInt16 sys_bus_volt
+    }
+    
+    <** @description: Current status of the channel. OFF, ON or unknown**>
+    enumeration OnOffStatus
+    {
+        <** @description: Current status is inactive **>
+        OFF
+        
+        <** @description: Current status is active **>
+        ON
+        
+        <** @description: Current status is unknown **>
+        UNKNOWN
+    }
+    
+    <** @description: The stage at which the MPPT is working. Off-line is returned if there is no communication from the chip 
+        @details: size = 2 **>
+    enumeration mpptLT8490_opperation_status
+    {
+        <** @description: educed constant-current/trickle charge **>
+        STAGE_0
+        <** @description: full constant-current **>
+        STAGE_1
+        <** @description: constant-voltage - Charging Current Has Risen Above C/5 **>
+        STAGE_2_OVER_C_5
+        <** @description: constant-voltage - Charging Current Falls Below C/10**>
+        STAGE_2_UNDER_C_10
+        <** @description:  **>
+        STAGE_3
+        <** @description: hardware configurable reduced constant voltage **>
+        DONE_CHARGING
+        <** @description: Not define state **>
+        UNKNOWN
+        
+        <** @description: No communication with the chip **>
+        OFFLINE
+    }
+    
+    <** @description: Current active fault. Off-line is returned if there is no communication from the chip 
+        @details: size = 2 **>
+    enumeration mpptLT8490_fault_status
+    {
+        <** @description: There isn't any faults - working normally **>
+        NO_FAULT
+        <** @description: Battery Disconnected **>
+        BATT_DISCCONNECT
+        <** @description: Invalid Battery Temperature **>
+        INVALID_TEMPERATURE
+        <** @description: Timer Fault **>
+        TIMER_FAUILT
+        <** @description: Battery Under voltage **>
+        BATT_UNDERVOLTAGE
+
+        <** @description: No communication with the chip **>
+        OFFLINE
+    }
+    
+    <** @description: Current mode - low power or normal. Off-line is returned if there is no communication from the chip 
+        @details: size = 2 **>
+    enumeration mpptLT8490_mode_status
+    {
+        <** @description: Not in low power mode **>
+        NORMAL
+        <** @description: In low power mode **>
+        LOW_POWER
+
+        <** @description: No communication with the chip **>
+        OFFLINE
+    }
+
+    
+    <** @description: state of the MPPT **>
+    struct MpptState_str
+    {
+        <** @description: Stage of operation of the MPPT **>
+        mpptLT8490_opperation_status    status
+        <** @description: Fault state of the MPPT **>        
+        mpptLT8490_fault_status         faults
+        <** @description: Energy mode of the MPPT **>
+        mpptLT8490_mode_status          mode
+    }
+
+    <** @description: Voltage and Current measurements **>
+    struct VoltAmps
+    {
+        <** @description: Voltage [mV] **>
+        UInt16 voltage
+        
+        <** @description: Current [mA] **>
+        Int16 current
+    }
+
+    <** @description: Voltage and Current measurements **>
+    struct VoltAllAmps
+    {
+        <** @description: Voltage mV] **>
+        UInt16 ch_voltage
+        
+        <** @description: Input Current [mA]**>
+        Int16 in_current
+        
+        <** @description: Output Current [mA] **>
+        Int16 out_current
+    }
+
+    <** @description: Solar panel (SP) input data **>
+    struct sp_input_data
+    {
+        <** @description: Data from the MPPT for Solar Panel 1 **>
+        VoltAllAmps sp_measurements
+    
+        <** @description: MPPT flag SRVO_INN for SP input **>
+        OnOffStatus input_current_state
+        <** @description: MPPT flag SRVO_FBIN for SP input **>
+        OnOffStatus output_current_state
+        <** @description: MPPT flag SRVO_FBOUT for SP input **>
+        OnOffStatus input_voltage_state
+        <** @description: MPPT flag SRVO_IOUT for SP input **>
+        OnOffStatus output_voltage_state
+        
+        <** @description: Status of MPPT for SP input **>
+        MpptState_str state_mppt
+    }      
+    
+    <** @description: Reading all telemetry data
+          @details: id = 0x00000000
+      **>
+    method get_telemetry
+    {
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: number of seconds since last power up **>
+            UInt32 uptime_in_seconds
+            <** @description: Same as �uptimeInSeconds� but split into human readable values  **>
+            UptimeConverted uptime_converted
+            
+            <** @description: MCU measurements voltage and temperature  **>
+            CommonMeasurement common
+            
+            <** @description: Current HIB mode **>
+            OnOffStatus hib_mode
+            
+            <** @description: State of Self lock output of the MCU **>
+            OnOffStatus selflock_on
+            
+            <** @description: data for input from Solar panel 1 **>
+            sp_input_data sp1
+            <** @description: data for input from Solar panel 2 **>
+            sp_input_data sp2
+            <** @description: data for input from Solar panel 3 **>
+            sp_input_data sp3
+            
+            <** @description: Voltage of the System Bus **>
+            VoltAmps system_bus
+            
+            <** @description: External supply 7.5V **>
+            VoltAmps bus_7v5
+            <** @description: External supply 7.5V signal for Power Good **>
+            OnOffStatus bus_7v5_power_good
+            <** @description: Under voltage flag for buss 7.5V **>
+            OnOffStatus undervoltage_7V5
+            
+            <** @description: External supply 3.3V **>
+            VoltAmps bus_3v3
+           <** @description: Under voltage flag for buss 3.3V **>
+            OnOffStatus undervoltage_3V3
+        }
+    }
+    
+    <** @description: Minimum and maximum value for voltage and current measurement **>
+    struct MinMaxVA
+    {
+        <** @description: The minimum Voltage measured from the last clear [mV]**>
+        UInt16 min_voltage
+        
+        <** @description: The maximum Voltage measured from the last clear [mV]**>
+        UInt16 max_voltage
+        
+        <** @description: The minimum Current measured from the last clear [mA]**>
+        Int16 min_current
+        
+        <** @description: The maximum Current measured from the last clear [mA]**>
+        Int16 max_current
+    }
+    
+    <** @description: Minimum and maximum value for voltage and input and output currents **>
+    struct MinMaxVAOut
+    {
+        <** @description: The minimum Voltage measured from the last clear [mV]**>
+        UInt16 min_voltage
+        
+        <** @description: The maximum Voltage measured from the last clear [mV]**>
+        UInt16 max_voltage
+        
+        <** @description: The minimum Current measured from the last clear [mA]**>
+        Int16 min_in_current
+        
+        <** @description: The maximum Current measured from the last clear [mA]**>
+        Int16 max_in_current
+        
+        <** @description: The minimum Current measured from the last clear [mA]**>
+        Int16 min_out_current
+        
+        <** @description: The maximum Current measured from the last clear [mA]**>
+        Int16 max_out_current
+    }
+    
+    <** @description: Minimum and maximum value for temperature measurement **>
+    struct MinMaxTemp
+    {
+        <** @description: The minimum value measured from the last clear [mdegC]**>
+        Int32 min_temp
+        
+        <** @description: The maximum value measured from the last clear [mdegC]**>
+        Int32 max_temp
+    }
+    
+    <** @description: Minimum and maximum values for telemetry data **>  
+    struct MinMaxStatistics    //Max 60 bytes.
+    {
+        <** @description: statistics for MPPT of Solar Panel 1 **>
+        MinMaxVAOut sp1
+    
+        <** @description: statistics for MPPT of Solar Panel 1 **>
+        MinMaxVAOut sp2
+        
+        <** @description: statistics for MPPT of Solar Panel 1 **>
+        MinMaxVAOut sp3
+        
+        <** @description: Statistics of the System Bus **>
+        MinMaxVA System_Bus
+        
+        <** @description: Statistics of the 7.5V bus **>
+        MinMaxVA bus_7v5
+
+        <** @description: Statistics of the 3.3V bus **>
+        MinMaxVA bus_3v3
+        
+        <** @description: Statistics for Temperature of the MCU  **>
+        MinMaxTemp mcu_temperature
+    }
+        
+    <** @description: clear or read statistics **>
+    enumeration ReadClearOpt
+    {
+        <** @description: read only the data without changing it **>
+        READ
+		
+        <** @description: reset statistics **>
+        CLEAR
+    }
+    
+    <** @description: Initialization status **>
+    enumeration InitStatus
+    {
+        <** @description: The initialization was successful **>
+        SUCCESS
+        
+        <** @description: The initialization Failed **>
+        FAIL
+        
+        <** @description: The initialization status is unsupported **>
+        UNSUPPORTED
+        
+        <** @description: The initialization status is unknown **>
+        UNKNOWN
+    }
+
+    <** @description: Oscillator Initialization source **>
+    enumeration OscSource
+    {
+        <** @description: The Oscillator source is internal **>
+        INTERNAL
+        
+        <** @description: The Oscillator source is external **>
+        EXTERNAL
+        
+        <** @description: The Oscillator source is unknown **>
+        UNKNOWN
+    }
+    
+     <** @description: Get statistical information about the device.
+          @details: id = 0x00000010
+      **>
+    method get_telemetry_statistics
+    {
+        in
+        {
+            <** @description: All Minimum and Maximum values **>
+            ReadClearOpt statistics_req
+        }
+    
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: Position of the jumper for Self-lock and reset statistics **>
+            OnOffStatus jumper
+
+            <** @description: Current Oscillator source **>
+            OscSource oscillator_src
+            
+            <** @description: Initialization status of the NVM **>
+            InitStatus nvm_init_sts
+            
+            <** @description: Initialization status of the CAN **>
+            InitStatus can_init_sts
+            
+            <** @description: All Minimum and Maximum values **>
+            MinMaxStatistics statistics
+        }
+    }
+        
+    <** @description: Self Lock state **>
+    enumeration SelfLockOpt
+    {
+        <** @description: Just read the current settings **>
+        READ_SELFLOCK_STATE
+        <** @description: Enable self-lock until power cycle of the device **>
+        SET_ON_UNTIL_RESTART
+        <** @description: Enable self-lock until disabled by a command. That value is loaded on power on. **>
+        SET_ON_AS_DEFAULT
+        <** @description: Disable self-lock until power cycle of the device **>
+        SET_OFF_UNTIL_RESTART
+        <** @description: Disable self-lock until disabled by a command. That value is loaded on power on. **>
+        SET_OFF_AS_DEFAULT
+    }
+    
+     <** @description: Self-lock control
+      @details: id = 0x00000020
+      **>
+    method self_lock_functionality
+    {
+        in
+        {
+            <** @description: Request to read or to change the self-lock settings **>
+            SelfLockOpt requested_state
+        }
+    
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+            <** @description: Currently active value for self-lock **>
+            OnOffStatus current_state
+            <** @description: Value which will be loaded after powering on the device **>
+            OnOffStatus default_state
+        }
+    }
+    
+    <** @description: Initial command for passivation (step 1).
+        @details: id = 0x00000200 **>
+    method device_passivation_step_1
+    {
+        in
+        {
+            <** @description: HW_SERIAL
+            @details: size = 30 **>
+            UInt8[] hwSerialNumber
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+        }
+    }
+    
+    <** @description: Step 2 from passivation procedure.
+        @details: id = 0x00000201 **>
+    method device_passivation_step_2
+    {
+        in
+        {
+            <** @description: HW_SERIAL
+            @details: size = 30 **>
+            UInt8[] hwSerialNumber
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+        }
+    }
+    
+    <** @description: Step 3 from passivation procedure.
+        @details: id = 0x00000202 **>
+    method device_passivation_step_3
+    {
+        in
+        {
+            <** @description: HW_SERIAL
+            @details: size = 30 **>
+            UInt8[] hwSerialNumber
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+        }
+    }
+    
+    <** @description: Reset passivation procedure to initial state. Once the Step 3 is executed successfully it can never be reversed.
+        @details: id = 0x00000205 **>
+    method device_passivation_cancel
+    {
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+        }
+    }
+
+    <** @description: Reading the active Interface (FIDL) version loaded on the module 
+    @details: id = 0x00003000**>
+    method FIDL_version
+    {
+       
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: The current major version of the interface (FIDL) **>
+            UInt8 v_major
+
+            <** @description: The current minor version of the interface (FIDL) **>
+            UInt8 v_minor
+        }
+    }
+}

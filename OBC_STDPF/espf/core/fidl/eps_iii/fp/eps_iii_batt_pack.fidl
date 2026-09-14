@@ -1,0 +1,754 @@
+package endurosat.macif
+
+<** @description: Solar panels interface
+    @details: id = 0xB0
+**>
+
+interface eps_iii_batt_pack
+{
+    version { major 2 minor 0 }
+    
+    <** @description: Command status **>
+    enumeration CommandStatus
+    {
+        <** @description: The command was successfully executed **>
+        SUCCESS
+        
+        <** @description: The command was failed during execution  **>
+        FAIL
+        
+        <** @description: The command was successfully executed, but not all data was gathered  **>
+        FAIL_GATHERING_DATA
+    }
+
+    <** @description: Seconds converted into days, hours, minutes, and seconds **>
+    struct UptimeConverted
+    {
+        <** @description: Number of days since last power up **>
+        UInt16 days
+        <** @description: Number of hours since last power up **>
+        UInt8 hours
+        <** @description: Number of minutes since last power up **>
+        UInt8 minutes
+        <** @description: Number of seconds since last power up **>
+        UInt8 seconds
+    }
+    
+    <** @description: Common measurements **>
+    struct CommonMeasurement
+    {
+        <** @description: MCU Voltage [mV]**>
+        UInt16 mcu_volt
+        
+        <** @description: MCU Temperature [mdegC] **>
+        Int32 mcu_temp
+        
+        <** @description: BUS Voltage [mV]**>
+        UInt16 sys_bus_volt
+    }
+    
+    <** @description: Current status of the channel. OFF, ON or unknown **>
+    enumeration OnOffStatus
+    {
+        <** @description: Current status is inactive **>
+        OFF
+        
+        <** @description: Current status is active **>
+        ON
+        
+        <** @description: Current status is unknown **>
+        UNKNOWN
+    }
+    
+    <** @description: Exact measured values like voltages, currents, temperatures **>
+    struct Measurements 
+    {
+    
+    
+        <** @description: Voltage of the battery [mV] **>
+        UInt16 v_batt
+    
+        <** @description: Current flowing through the battery [mA] **>
+        Int16 i_batt
+        
+        <** @description: Battery charge level [%] **>
+        UInt8 soc_batt
+                    
+        <** @description: Voltage of Cell 1 of the Battery Pack [mV] **>
+        UInt16 v_batt_cell_1
+                    
+        <** @description: Voltage of Cell 2 of the Battery Pack [mV] **>
+        UInt16 v_batt_cell_2
+                    
+        <** @description: Voltage of Cell 3 of the Battery Pack [mV] **>
+        UInt16 v_batt_cell_3
+                    
+        <** @description: Voltage of Cell 4 of the Battery Pack [mV] **>
+        UInt16 v_batt_cell_4
+        
+        <** @description: Battery temperature [mdegC] **>
+        Int32 t_batt
+        
+        <** @description: Power of heater 1 [mW] **>
+        Int32 p_heater_1
+        
+        <** @description: Power of heater 2 [mW] **>
+        Int32 p_heater_2
+        
+        <** @description: Voltage on 7.5V buss [mV] **>
+        UInt16 v_buss_7_5V
+        
+        <** @description: Voltage on 3.3V buss [mV] **>
+        UInt16 v_buss_3_3V
+    }
+    
+    <** @description: all states concerning the discharging algorithms **>
+    struct DischargeState
+    {
+        <** @description: Discharge disabled **>
+        OnOffStatus discharge
+        
+        <** @description: Signal Battery is at Low voltage **>
+        OnOffStatus battery_Overdischarge
+        
+        <** @description: Signal Battery is Dead **>
+        OnOffStatus battery_dead
+    
+        <** @description: Signal for Over current protection on the charging line **>
+        OnOffStatus battery_ocp_charge
+        
+        <** @description: Signal for Over current protection on the discharging line  **>
+        OnOffStatus battery_ocp_discharge
+        
+        <** @description: Signal for triggered overheat protection of the discharge switches **>
+        OnOffStatus discharge_switch_over_heat_prot
+        
+        <** @description: Temperature of the discharge switches [mdegC]**>
+        Int32 discharge_switch_over_heat_temp
+        
+        <** @description: Signal for overheating battery **>
+        OnOffStatus battery_overheat
+        
+        <** @description: Battery temperature [mdegC] **>
+        Int32 t_batt
+        
+        <** @description: Signal The voltage level on 7.5V bus is out of the acceptable values **>
+        OnOffStatus v_buss_7_5v_error_flag
+        
+        <** @description: Charging the battery **>
+        OnOffStatus charge
+        
+        <** @description: Signal detected current flowing to the battery **>
+        OnOffStatus charging_current_flow
+        
+        <** @description: Signal Charging voltage is good for charging **>
+        OnOffStatus charging_voltage_ok
+    }
+    
+    <** @description: all states concerning the algorithms of HIB mode **>
+    struct HIBModeStatus
+    {
+        <** @description: HIB mode enabled **>
+        OnOffStatus hib_mode_en
+        
+        <** @description: Signal Battery is Dead. In this condition the battery is disconnected **>
+        OnOffStatus battery_dead
+        
+        <** @description: Signal if battery voltage is low **>
+        OnOffStatus battery_low
+        
+        <** @description: Signal Battery temperature too low **>
+        OnOffStatus battery_temp_low
+    }
+    
+    <** @description: all states concerning the charging algorithms **>
+    struct ChargeOnStatus
+    {
+        <** @description: Charging of the battery is started **>
+        OnOffStatus charge
+        
+        <** @description: Signal Charging voltage is good for charging **>
+        OnOffStatus charging_voltage_ok
+        
+        <** @description: Signal Battery is Dead **>
+        OnOffStatus battery_dead
+        
+        <** @description: Signal Over voltage protection **>
+        OnOffStatus battery_over_voltage_prot
+        
+        <** @description: Signal Charging is in slow mode **>
+        OnOffStatus battery_slow_charging
+        
+        <** @description: Signal detected current flowing to the battery **>
+        OnOffStatus charging_current_flow
+        
+        <** @description: Value of the current in [mA] **>
+        UInt16 charge_current
+        
+        <** @description: Gives if the the voltage level is correct **>
+        OnOffStatus valid_input_voltage
+    }
+    
+    <** @description: all states concerning the balancers **>
+    struct BalancersStatus
+    {
+            <** @description: Signal Balancer enabled **>
+            OnOffStatus balancer
+            
+            <** @description: Signal Balancer enabled **>
+            OnOffStatus balancer_voltage_ok
+            
+            <** @description: Signal detected current flowing to the battery **>
+            OnOffStatus charging_current_flow
+    }
+    
+    <** @description: all states concerning the battery cells **>
+    struct BatteryCellsStatus
+    {
+        <** @description: Balancing status of Cell 1 **>
+        OnOffStatus balance_cell_1
+        
+        <** @description: Balancing status of Cell 2 **>
+        OnOffStatus balance_cell_2
+        
+        <** @description: Balancing status of Cell 3 **>
+        OnOffStatus balance_cell_3
+        
+        <** @description: Balancing status of Cell 4 **>
+        OnOffStatus balance_cell_4
+    }
+    
+    <** @description: all states concerning the heaters **>
+    struct HeatersStatus
+    {
+        <** @description: Signal Battery heater enabled **>
+        OnOffStatus heater
+        
+        <** @description: Signal Battery temperature is below 5 degC **>
+        OnOffStatus heater_under_5_deg_c
+        
+        <** @description: Signal Battery is Dead **>
+        OnOffStatus battery_dead
+        
+        <** @description: Alert signal for the battery (various events can be configured) **>
+        OnOffStatus battery_alert
+    }
+    
+        <** @description: Acquire the software version information
+              @details: id = 0x00000000
+          **>
+    method get_telemetry
+    {
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: Seconds since last power up **>
+            UInt32  uptime_in_seconds
+            
+            <** @description: Same as ?uptimeInSeconds? but split into human readable values  **>
+            UptimeConverted uptime_converted
+            
+            <** @description: MCU measurements voltage and temperature  **>
+            CommonMeasurement common
+            
+            <** @description: Statuses related to HIB mode **>
+            HIBModeStatus hib_mode_status
+            
+            <** @description: Exact measured values on the device **>
+            Measurements measurements
+            
+            <** @description: Statuses related to the discharging process **>
+            DischargeState discharging_state
+            
+            <** @description: Statuses related to the charging process **>
+            ChargeOnStatus charge_status
+            
+            <** @description: Statuses related to the balancers **>
+            BalancersStatus balancers_status
+            
+            <** @description: Statuses related to the battery cells **>
+            BatteryCellsStatus battery_cells_status
+            
+            <** @description: Status related to the heaters of the batteries **>
+            HeatersStatus heaters_status
+        }
+    }
+    
+    <** @description: Minimum and maximum value for voltage measurement **>
+    struct MinMaxVolts
+    {
+        <** @description: The minimum Voltage measured from the last clear [mV]**>
+        UInt16 min_voltage
+        
+        <** @description: The maximum Voltage measured from the last clear [mV]**>
+        UInt16 max_voltage
+    }
+    
+    <** @description: Minimum and maximum value for temperature measurement **>
+    struct MinMaxTemp
+    {
+        <** @description: The minimum value measured from the last clear [mdegC]**>
+        Int32 min_temp
+        
+        <** @description: The maximum value measured from the last clear [mdegC]**>
+        Int32 max_temp
+    }
+	
+	    <** @description: Minimum and maximum value for power measurement **>
+    struct MinMaxPower
+    {
+        <** @description: The minimum value measured from the last clear [mW]**>
+        Int32 min_power
+        
+        <** @description: The maximum value measured from the last clear [mW]**>
+        Int32 max_power
+    }
+    
+    <** @description: Minimum and maximum value for any int_16 measurement **>
+    struct MinMaxI16
+    {
+        <** @description: The minimum measured from the last clear [mA]**>
+        Int16 min_current
+        
+        <** @description: The maximum measured from the last clear [mA]**>
+        Int16 max_current
+    }
+    
+    <** @description: Minimum and maximum values for telemetry data **>  
+    struct MinMaxStrStatistics    //Max 60 bytes.
+    {
+        <** @description: The minimum and maximum Temperature measured from the MCU **>
+        MinMaxTemp mcu_temp_min_max
+        
+        <** @description: The minimum and maximum Voltage measured from the MCU **>
+        MinMaxVolts mcu_volt_min_max
+        
+        <** @description: The minimum and maximum Voltage measured on the System Bus **>
+        MinMaxVolts system_bus_voltage        
+        
+        <** @description: The minimum and maximum charging current values **>
+        MinMaxVolts charging_current
+        
+        <** @description: The minimum and maximum Current measured on the Battery Pack **>
+        MinMaxVolts battery_pack_voltage
+
+        <** @description: The minimum and maximum Voltage measured on the Battery Pack **>
+        MinMaxI16 battery_pack_current
+        
+        <** @description: The minimum and maximum Voltage measured on the cell 1 from the battery pack **>
+        MinMaxVolts battery_cell_1_voltage
+        
+        <** @description: The minimum and maximum Voltage measured on the cell 2 from the battery pack **>
+        MinMaxVolts battery_cell_2_voltage
+        
+        <** @description: The minimum and maximum Voltage measured on the cell 3 from the battery pack **>
+        MinMaxVolts battery_cell_3_voltage
+        
+        <** @description: The minimum and maximum Voltage measured on the cell 4 from the battery pack **>
+        MinMaxVolts battery_cell_4_voltage
+        
+        <** @description: The minimum and maximum Temperature of the Battery pack **>
+        MinMaxTemp battery_temperature
+        
+        <** @description: The minimum and maximum Power measured on the heater 1 **>
+        MinMaxPower heater_1_power
+        
+        <** @description: The minimum and maximum Power measured on the heater 2 **>
+        MinMaxPower heater_2_power
+        
+        <** @description: The minimum and maximum Voltage measured on the 7.5V Bus **>
+        MinMaxVolts bus_7_5V_voltage
+        
+        <** @description: The minimum and maximum Temperature of the switches on the discharge line **>
+        MinMaxTemp disch_swtich_temperature
+    }
+    
+    <** @description: clear or read statistics **>
+    enumeration ReadClearEnm
+    {
+        <** @description: read only the data without changing it **>
+        READ
+        <** @description: reset statistics **>
+        CLEAR
+    }
+    
+    <** @description: Initialization status **>
+    enumeration InitStatus
+    {
+        <** @description: The initialization was successful **>
+        SUCCESS
+        
+        <** @description: The initialization Failed **>
+        FAIL
+        
+        <** @description: The initialization status is unsupported **>
+        UNSUPPORTED
+        
+        <** @description: The initialization status is unknown **>
+        UNKNOWN
+    }
+    
+    <** @description: Oscillator Initialization source **>
+    enumeration OscSource
+    {
+        <** @description: The Oscillator source is internal **>
+        INTERNAL
+        
+        <** @description: The Oscillator source is external **>
+        EXTERNAL
+        
+        <** @description: The Oscillator source is unknown **>
+        UNKNOWN
+    }
+    
+     <** @description: Get statistical information about the device.
+      @details: id = 0x00000010
+      **>
+    method get_telemetry_statistics
+    {
+        in
+        {
+            <** @description: All Minimum and Maximum values **>
+            ReadClearEnm statistics_req
+        }
+    
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: Position of the jumper for reset statistics **>
+            OnOffStatus reset_jumper
+
+            <** @description: Current Oscillator source **>
+            OscSource oscillator_src
+            
+            <** @description: Initialization status of the NVM **>
+            InitStatus nvm_init_sts
+            
+            <** @description: Initialization status of the CAN **>
+            InitStatus can_init_sts
+            
+            <** @description: Initialization status of the Fuel Gauge **>
+            InitStatus fg_init_sts
+            
+            <** @description: All Minimum and Maximum values **>
+            MinMaxStrStatistics statistics
+        }
+    }
+    
+        <** @description: Status of M5 gathered data **>
+    enumeration M5DataStatus
+    {
+        <** @description: The data was gathered successfully. **>
+        SUCCESSFUL
+        
+        <** @description: The data gathering failed.**>
+        FAILED
+    }
+    
+            <** @description: Status of the marker **>
+    enumeration M5MarkerStatus
+    {
+        <** @description: No triggering. **>
+        OK
+        
+        <** @description: Triggered.**>
+        TRIGGERED
+    }
+    
+    <** @description: Structure that show all battery status markers. **>
+    struct M5BatteryStatus
+    {
+        <** @description: Power-On Reset. **>
+        M5MarkerStatus por    
+        
+        <** @description: Minimum Current Alert Threshold Exceeded. **>
+        M5MarkerStatus imn 
+        
+        <** @description: Battery Status, Presented or not. **>
+        M5MarkerStatus bst 
+        
+        <** @description: Maximum Current Alert Threshold Exceeded. **>
+        M5MarkerStatus imx 
+        
+        <** @description: State of Charge % Change Alert. **>
+        M5MarkerStatus dsoci 
+        
+        <** @description: Minimum Voltage Alert Threshold Exceeded. **>
+        M5MarkerStatus vmn 
+        
+        <** @description: Minimum Temperature Alert Threshold Exceeded. **>
+        M5MarkerStatus tmn 
+        
+        <** @description: Minimum SOC Alert Threshold Exceeded. **>
+        M5MarkerStatus smn 
+        
+        <** @description: Battery Insertion. **>
+        M5MarkerStatus bi 
+        
+        <** @description: Maximum Voltage Alert Threshold Exceeded. **>
+        M5MarkerStatus vmx 
+        
+        <** @description: Maximum Temperature Alert Threshold Exceeded. **>
+        M5MarkerStatus tmx 
+        
+        <** @description: Maximum SOC Alert Threshold Exceeded. **>
+        M5MarkerStatus smx 
+        
+        <** @description: Battery Removal. **>
+        M5MarkerStatus br 
+    }
+    
+    <** @description: Structure that show all basic telemetry. **>
+    struct M5BatteryBasic
+    {
+        <** @description: Lowest cell voltage of a pack, or the cell voltage for a single cell. [mV]**>
+        Int32 v_cell    
+        
+        <** @description: Reported state of charge. [%]**>
+        Int32 rep_soc 
+        
+        <** @description: Reported remaining capacity. [mA]**>
+        Int32 rep_cap 
+        
+        <** @description: Temperature. [mdegC]**>
+        Int32 temp 
+        
+        <** @description: Battery current. [mA]**>
+        Int32 current 
+        
+        <** @description: Time to empty. [seconds]**>
+        Int32 tte 
+        
+        <** @description: Time to full. [seconds] **>
+        Int32 ttf         
+    }
+    
+    <** @description: Structure that show all basic telemetry. **>
+    struct M5BatteryAdvanced
+    {
+        <** @description: Projected total cycles the battery lasts until full capacity is below the target “dead” battery capacity. [cycles] **>
+        Int32 age_forecast
+        
+        <** @description: Percentage of full capacity compared to the design capacity. [%]**>
+        Int32 age 
+        
+        <** @description: The number of cycles the battery has been used. [cycles]**>
+        Int32 cycles 
+        
+        <** @description: Hypothetical time to empty based on the AtRate value. [seconds] **>
+        Int32 at_tte 
+        
+        <** @description: Full capacity based on present discharge conditions.[mA] **>
+        Int32 full_cap 
+        
+        <** @description: Time since first power up. [seconds]**>
+        Int32 timer_h 
+        
+        <** @description: Maximum voltage value for each measurement since last life log. [mV]**>
+        Int32 max_volt 
+        
+        <** @description: Minimum voltage value for each measurement since last life log. [mV]**>
+        Int32 min_volt 
+        
+        <** @description: Maximum current value for each measurement since last life log. [mA]**>
+        Int32 max_current 
+        
+        <** @description: Minimum current value for each measurement since last life log. [mA]**>
+        Int32 min_current 
+        
+        <** @description: Maximum temperature value for each measurement since last life log. [mdegC]**>
+        Int32 max_temp 
+        
+        <** @description: Minimum temperature value for each measurement since last life log. [mdegC]**>
+        Int32 min_temp 
+        
+        <** @description: Calculated battery resistance. [mOhm]**>
+        Int32 r_cell 
+        
+        <** @description: Average of voltage. [mV]**>
+        Int32 avg_v_cell 
+        
+        <** @description: Average of current. [mA]**>
+        Int32 avg_curr 
+        
+        <** @description: Average of temperature. [mdegC]**>
+        Int32 avg_ta 
+        
+        <** @description: Filtered difference of average and instantaneous values of VCell. [mV]**>
+        Int32 v_ripple 
+    }
+    
+    <** @description: clear or read statistics **>
+    enumeration ClearFGdata
+    {
+        <** @description: read only the data without changing it **>
+        READ_TELEMETRY
+        
+        <** @description: Reset battery status data **>
+        RESET_BATTERY_STATUS
+        
+        <** @description: Reset battery status data **>
+        RESET_ADVANCED_DATA
+    }
+    
+    <** @description: M5 Fuel Gauge telemetry data.
+        @details: id = 0x00000100 **>
+    method m5_fuel_gauge_telemetry
+    {
+    
+        in
+        {
+            <** @description: Choose an option. **>
+            ClearFGdata fg_action
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: Data gathering status. **>
+            M5DataStatus data_status
+            
+            <** @description: Data gathering status. **>
+            M5BatteryStatus battery_status
+            
+            <** @description: Data gathering status. **>
+            M5BatteryBasic basic_telemetry
+            
+            <** @description: Data gathering status. **>
+            M5BatteryAdvanced advanced_telemetry
+        }
+    } 
+    
+    <** @description: Write or Read option**>
+    enumeration I2cOption
+    {
+        <** @description: Select this option to read via I2C. **>
+        READ
+        
+        <** @description: Select this option to write via I2C.**>
+        WRITE
+    }
+    
+    
+    
+    <** @description: M5 Fuel Gauge register read or write.
+        @details: id = 0x00000101 **>
+    method m5_fuel_gauge_register_actions
+    {
+    
+        in
+        {
+            <** @description: Choose an option, read or write. **>
+            I2cOption action
+            
+            <** @description: Choose available address. **>
+            UInt16 address_w
+            
+            <** @description: With option WRITE choose a value for address to be changed to. **>
+            UInt16 value_w
+
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+        
+            <** @description: Address. **>
+            UInt16 address_r
+            
+            <** @description: The value of address. **>
+            UInt16 value_r
+        
+        }
+    }
+    
+    <** @description: Initial command for passivation (step 1).
+        @details: id = 0x00000200 **>
+    method device_passivation_step_1
+    {
+        in
+        {
+            <** @description: HW_SERIAL
+            @details: size = 30 **>
+            UInt8[] hwSerialNumber
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+        }
+    }
+    
+    <** @description: Step 2 from passivation procedure.
+        @details: id = 0x00000201 **>
+    method device_passivation_step_2
+    {
+        in
+        {
+            <** @description: HW_SERIAL
+            @details: size = 30 **>
+            UInt8[] hwSerialNumber
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+        }
+    }
+    
+    <** @description: Step 3 from passivation procedure.
+        @details: id = 0x00000202 **>
+    method device_passivation_step_3
+    {
+        in
+        {
+            <** @description: HW_SERIAL
+            @details: size = 30 **>
+            UInt8[] hwSerialNumber
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+        }
+    }
+    
+    <** @description: Reset passivation procedure to initial state. Once the battery voltage level drops below the critical voltage it cannot be reversed.
+        @details: id = 0x00000205 **>
+    method device_passivation_cancel
+    {
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+        }
+    }
+
+    <** @description: Reading the active Interface (FIDL) version loaded on the module 
+    @details: id = 0x00003000**>
+    method FIDL_version
+    {
+       
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: The current major version of the interface (FIDL) **>
+            UInt8 v_major
+
+            <** @description: The current minor version of the interface (FIDL) **>
+            UInt8 v_minor
+        }
+    }
+} 

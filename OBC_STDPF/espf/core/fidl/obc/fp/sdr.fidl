@@ -1,0 +1,179 @@
+package endurosat.pf
+
+<** @description: Interface for VW-SDR
+    @details: id = 99
+**>
+interface sdr
+{
+    version { major 2 minor 0 }
+
+    <** @description: File operation status **>
+    enumeration FileStatus
+    {
+        <** @description: Some unspecified error has occurred **>
+        ES_TFTP_ERR_NOT_DEFINED = 0,
+
+        <** @description: Client receives this error when the requested
+        file does not exist  **>
+        ES_TFTP_ERR_FILE_NOT_FOUND = 1,
+
+        <** @description: This error occurs when read or write is attempted
+        without sufficient privileges (file rights) **>
+        ES_TFTP_ERR_ACESS_VIOLATION = 2,
+
+        <** @description: Server storage area error - storage is limited **>
+        ES_TFTP_ERR_DISK_FULL_OR_ALLOCATION_EXCEEDED = 3,
+
+        <** @description: Any TFTP packet that does not follow the RFC is called illegal.
+        A packet with a unknown opcode, a packet with a malformed payload, or a packet that is out of
+        sequence with the normal flow of commands/responses would all be considered "illegal" **>
+        ES_TFTP_ERR_ILLEGAL_TFTP_OPERATION = 4,
+
+        <** @description: When a TFTP client sends a duplicate read request
+        (typically this happens when the first read request times out) - the requests
+        may create an unexpected situation on the server **>
+        ES_TFTP_ERR_UNKNOWN_TRANSFER_ID = 5,
+
+        <** @description: There is already a file on the server with the same name **>
+        ES_TFTP_ERR_FILE_ALREADY_EXISTS = 6,
+
+        <** @description: Unused **>
+        ES_TFTP_ERR_NO_SUCH_USER = 7,
+
+        <** @description: No error **>
+        ES_TFTP_STATUS_OK = 8,
+
+        <** @description: Transport layer not initialized **>
+        ES_TFTP_TL_NOT_INIT = 9,
+
+        <** @description: Cannot open destination file for write **>
+        ES_TFTP_CANNOT_OPEN_DEST_FILE_FOR_WRITE = 10,
+
+        <** @description: Failed to write to destination file **>
+        ES_TFTP_FAILED_TO_WRITE_TO_DEST_FILE = 11,
+
+        <** @description: Failed to close destination file **>
+        ES_TFTP_FAILED_TO_CLOSE_DEST_FILE = 12,
+
+        <** @description: Cannot open source file for read **>
+        ES_TFTP_CANNOT_OPEN_SOURCE_FILE_FOR_READ = 13,
+
+        <** @description: File not found on source **>
+        ES_TFTP_FILE_NOT_FOUND_ON_SOURCE = 14,
+
+        <** @description: Failed to read from source file **>
+        ES_TFTP_FAILED_TO_READ_FROM_SOURCE_FILE = 15,
+
+        <** @description: Failed to close source file **>
+        ES_TFTP_FAILED_TO_CLOSE_SOURCE_FILE = 16,
+
+        <** @description: Connection to server failed **>
+        ES_TFTP_CONNECTION_TO_SERVER_FAILED = 17,
+
+        <** @description: Failed to disconnect from server **>
+        ES_TFTP_FAILED_TO_DISCONNECT_FROM_SERVER = 18,
+
+        <** @description: Receive failed **>
+        ES_TFTP_RECV_FAILED = 19,
+
+        <** @description: Send failed **>
+        ES_TFTP_SEND_FAILED = 20,
+
+        <** @description: TFTP block number mismatch **>
+        ES_TFTP_BLOCK_NUMBER_MISMATCH = 21,
+
+        <** @description: Successfully downloaded file, but it has zero size **>
+        ES_TFTP_DOWNLOADED_FILE_EMPTY = 22,
+
+        <** @description: A file transfer is pending for execution **>
+        ES_TFTP_TRANSFER_PENDING = 23,
+
+        <** @description: File transfer is in progress **>
+        ES_TFTP_BUSY = 24
+    }
+
+    <** @description: State machine states. **>
+    enumeration StateMachineState
+    {
+        ROOT,
+        INACTIVE,
+        BOOTING,
+        SYNCING,
+        READY,
+        BUSY
+    }
+
+    <** @description: File operation type **>
+    struct FileOp
+    {
+        <** @description: Absolute file path on the OBC
+            @details: size = 47
+        **>
+        String obc_file
+
+        <** @description: Absolute file path on the SDR
+            @details: size = 197
+        **>
+        String sdr_file
+    }
+
+    <** @description: Uploads file from the OBC to the SDR
+        @details: id = 0x00000000
+    **>
+    method sdr_upload
+    {
+        in
+        {
+            <** @description: Full paths of the source file to upload and the upload destination **>
+            FileOp file
+        }
+        out
+        {
+            <** @description: Status of the file upload file operation **>
+            FileStatus status
+        }
+    }
+
+    <** @description: Downloads file from the SDR to the OBC
+        @details: id = 0x00000001
+    **>
+    method sdr_download
+    {
+        in
+        {
+            <** @description: Full paths of the source file to download and the download destination **>
+            FileOp file
+        }
+        out
+        {
+            <** @description: Status of the file download file operation **>
+            FileStatus status
+        }
+    }
+
+    <** @description: Reads the latest sdr file transfer operation status
+        @details: id = 0x00000002
+    **>
+    method sdr_poll_latest_ft_status
+    {
+        out
+        {
+            <** @description: Latest file transfer operation status **>
+            FileStatus status
+        }
+    }
+
+    <** @description: Returns the current sdr SM state
+        Note: If this method returns an invalid state value (e.g MAX_CNT), it means that the current SM state cannot be read.
+        This could be due to the fact that the sdr service is handling some kind of operation.
+        @details: id = 0x00000003
+    **>
+    method sdr_get_state
+    {
+        out
+        {
+            <** @description: Current sdr SM state **>
+            StateMachineState sm_state
+        }
+    }
+}

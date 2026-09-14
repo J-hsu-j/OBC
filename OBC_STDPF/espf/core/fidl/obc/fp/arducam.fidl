@@ -1,0 +1,252 @@
+package endurosat.pf
+
+
+<** @description: Interface for onboard camera
+    @details: id = 300
+**>
+interface arducam
+{
+    version { major 1 minor 0 }
+
+    <** @description: Response data status **>
+    enumeration StandardResult
+    {
+        <** @description: request is successful **>
+        SUCCESS,
+        <** @description: no connection to the camera **>
+        CONNECTION_FAILURE,
+        <** @description: other error **>
+        ERROR,
+        <** @description: there's a capture currently in progress **>
+        CAPTURE_IN_PROGRESS
+    }
+
+    <** @description: Output size and format of the picture **>
+    enumeration OutputImageFormat
+    {
+        JPEG_320x240,
+        JPEG_640x480,
+        JPEG_1024x768,
+        JPEG_1280x960,
+        JPEG_1600x1200,
+        JPEG_2048x1536,
+        JPEG_2592x1944
+    }
+
+    <** @description: White balance mode **>
+    enumeration LightMode
+    {
+        AUTO_ADVANCED,
+        AUTO_SIMPLE,
+        MANUAL_DAY,
+        MANUAL_A,
+        MANUAL_CWF,
+        MANUAL_CLOUDY
+    }
+
+    <** @description: Exposure level **>
+    enumeration ExposureLevels
+    {
+        MINUS_17_EV,
+        MINUS_13_EV,
+        MINUS_10_EV,
+        MINUS_07_EV,
+        MINUS_03_EV,
+        DEFAULT,
+        PLUS_03_EV,
+        PLUS_07_EV,
+        PLUS_10_EV,
+        PLUS_13_EV,
+        PLUS_17_EV
+    }
+
+    <** @description: Parameter levels for the saturation, brightness and contrast **>
+    enumeration ParamsLevels
+    {
+        PLUS_4,
+        PLUS_3,
+        PLUS_2,
+        PLUS_1,
+        ZERO,
+        MINUS_1,
+        MINUS_2,
+        MINUS_3,
+        MINUS_4
+    }
+
+    <** @description: Hue **>
+    enumeration Hue
+    {
+        MINUS_180,
+        MINUS_150,
+        MINUS_120,
+        MINUS_90,
+        MINUS_60,
+        MINUS_30,
+        ZERO,
+        PLUS_30,
+        PLUS_60,
+        PLUS_90,
+        PLUS_120,
+        PLUS_150
+    }
+
+    <** @description: Effects **>
+    enumeration Effects
+    {
+        BLUISH,
+        GREENISH,
+        REDDISH,
+        BW,
+        NEGATIVE,
+        SEPIA,
+        NORMAL
+    }
+
+    <** @description: Sharpness **>
+    enumeration Sharpness
+    {
+        AUTO_SHARPNESS_DEFAULT,
+        AUTO_SHARPNESS_1,
+        AUTO_SHARPNESS_2,
+        MANUAL_SHARPNESS_OFF,
+        MANUAL_SHARPNESS_1,
+        MANUAL_SHARPNESS_2,
+        MANUAL_SHARPNESS_3,
+        MANUAL_SHARPNESS_4,
+        MANUAL_SHARPNESS_5
+    }
+
+    <** @description: Mirror Flip **>
+    enumeration MirrorFlip
+    {
+        MIRROR,
+        FLIP,
+        MIRROR_FLIP,
+        NORMAL
+    }
+
+    <** @description: JPEG Compress Quality **>
+    enumeration JpegCompressQuality
+    {
+        HIGH_QUALITY,
+        DEFAULT_QUALITY,
+        LOW_QUALITY
+    }
+
+    <**
+        @description: Sends a command to take a picture
+        @details: id = 0x00000001
+    **>
+    method capture
+    {
+        in
+        {
+            <** @description: Size of the image **>
+            OutputImageFormat image_format
+            <** @description: Quality compression of the jpeg image **>
+            JpegCompressQuality jpeg_compress_quality
+        }
+        out
+        {
+            <** @description: Result of the operation **>
+            StandardResult op_result
+        }
+    }
+
+    <**
+        @description: Update the camera settings
+        @details: id = 0x00000002
+    **>
+    method settings
+    {
+        in
+        {
+            <** @description: Light mode **>
+            LightMode light_mode
+            <** @description: Saturation levels **>
+            ParamsLevels saturation
+            <** @description: Brightness levels **>
+            ParamsLevels brightness
+            <** @description: Contrast levels **>
+            ParamsLevels contrast
+            <** @description: Hue **>
+            Hue hue
+            <** @description: Special effects **>
+            Effects effect
+            <** @description: Exposure levels **>
+            ExposureLevels exposure
+            <** @description: Sharpness levels **>
+            Sharpness sharpness
+        }
+        out
+        {
+            <** @description: Result of the operation **>
+            StandardResult op_result
+        }
+    }
+
+    enumeration ArducamState{
+        <** @description: There was an error in the last operation **>
+        ERROR = 0x00,
+        <** @description: Last operation was successfull **>
+        SUCCESS = 0x01,
+        <** @description: Arducam is capturing a picture or a video **>
+        CAPTURE_IN_PROGRESS = 0x02,
+        <** @description: The OBC is downloading a picture from the Arducam **>
+        DOWNLOAD_IN_PROGRESS = 0x03,
+        <** @description: The Arducam is powered off **>
+        DISABLED = 0xFF
+    }
+
+    <**
+        @description: Sends a command to force the camera off
+        @details: id = 0x00000003
+    **>
+    method shut_down
+    {
+        out
+        {
+            <** @description: Result of the operation **>
+            StandardResult op_result
+        }
+    }
+
+    <**
+        @description: Gets the current status of the camera and the camera service in the OBC.
+        @details: id = 0x00000004
+    **>
+    method status
+    {
+        out
+        {
+            <** @description: Result of the operation **>
+            StandardResult op_result
+            <** @description: Status of the previous  **>
+            ArducamState camera_state
+            <** @description: Name of the last image saved
+                @details: size = 25 **>
+            String last_image_name
+            <** @description: Size of the image **>
+            OutputImageFormat image_format
+            <** @description: Quality compression of the jpeg image **>
+            JpegCompressQuality jpeg_compress_quality
+            <** @description: Light mode **>
+            LightMode light_mode
+            <** @description: Saturation levels **>
+            ParamsLevels saturation
+            <** @description: Brightness levels **>
+            ParamsLevels brightness
+            <** @description: Contrast levels **>
+            ParamsLevels contrast
+            <** @description: Hue **>
+            Hue hue
+            <** @description: Special effects **>
+            Effects effect
+            <** @description: Exposure levels **>
+            ExposureLevels exposure
+            <** @description: Sharpness levels **>
+            Sharpness sharpness
+        }
+    }
+}

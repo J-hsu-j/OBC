@@ -1,0 +1,253 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/coordsys.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.macif.coordsys as coordsys_Definitions {
+
+	enumeration Result {
+		AlarmInvalidRegexValues = {
+			"ES_FAIL"
+		}
+	}
+
+	struct FrameStatus {
+		status_1 {
+			DisplayName = "Status 1"
+		}
+		status_2 {
+			DisplayName = "Status 2"
+		}
+	}
+
+	struct Status {
+		gyroscope_frame {
+			DisplayName = "Gyroscope Frame"
+		}
+		magnetometer_frame {
+			DisplayName = "Magnetometer Frame"
+		}
+		coarse_sun_sensor_frame {
+			DisplayName = "Coarse Sun Sensor Frame"
+		}
+		magnetorquer_frame {
+			DisplayName = "Magnetorquer Frame"
+		}
+		general_error {
+			DisplayName = "General Error"
+		}
+	}
+
+	struct GyroscopeFrame {
+		gyroscope_1 {
+			DisplayName = "Gyroscope 1"
+		}
+		gyroscope_2 {
+			DisplayName = "Gyroscope 2"
+		}
+		gyroscope_3 {
+			DisplayName = "Gyroscope 3"
+		}
+	}
+
+	struct MagnetometerFrame {
+		magnetometer_x {
+			DisplayName = "Magnetometer X"
+		}
+		magnetometer_y {
+			DisplayName = "Magnetometer Y"
+		}
+		magnetometer_z {
+			DisplayName = "Magnetometer Z"
+		}
+	}
+
+	struct CoarseSunSensorFrame {
+		coarse_sun_sensor_1 {
+			DisplayName = "Coarse Sun Sensor 1"
+		}
+		coarse_sun_sensor_2 {
+			DisplayName = "Coarse Sun Sensor 2"
+		}
+		coarse_sun_sensor_3 {
+			DisplayName = "Coarse Sun Sensor 3"
+		}
+		coarse_sun_sensor_4 {
+			DisplayName = "Coarse Sun Sensor 4"
+		}
+		coarse_sun_sensor_5 {
+			DisplayName = "Coarse Sun Sensor 5"
+		}
+		coarse_sun_sensor_6 {
+			DisplayName = "Coarse Sun Sensor 6"
+		}
+	}
+
+	method get_status {
+		out {
+			service_status {
+				DisplayName = "Service Status"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_gyroscope_frame {
+		in {
+			desired_gyr_frame {
+				DisplayName = "Desired Gyroscope Frame"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_gyroscope_frame {
+		out {
+			active_gyr_frame {
+				DisplayName = "Active Gyroscope Frame"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_gyroscope_frame_status {
+		out {
+			gyr_frame_status {
+				DisplayName = "Gyroscope Frame Status"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_magnetometer_frame {
+		in {
+			desired_mag_frame {
+				DisplayName = "Desired Magnetometer Frame"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_magnetometer_frame {
+		out {
+			active_mag_frame {
+				DisplayName = "Active Magnetometer Frame"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_magnetometer_frame_status {
+		out {
+			mag_frame_status {
+				DisplayName = "Magnetometer Frame Status"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_coarse_sun_sensor_frame {
+		in {
+			desired_css_frame {
+				DisplayName = "Desired CSS Frame"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_coarse_sun_sensor_frame {
+		out {
+			active_css_frame {
+				DisplayName = "Active CSS Frame"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_coarse_sun_sensor_frame_status {
+		out {
+			css_frame_status {
+				DisplayName = "CSS Frame Status"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_magnetorquer_frame {
+		in {
+			desired_mtq_frame {
+				DisplayName = "Desired Magnetorquer Frame"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_magnetorquer_frame {
+		out {
+			active_mtq_frame {
+				DisplayName = "Active Magnetorquer Frame"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_magnetorquer_frame_status {
+		out {
+			mtq_frame_status {
+				DisplayName = "Magnetorquer Frame Status"
+			}
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method save_coordsys_config {
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method load_coordsys_config {
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+}

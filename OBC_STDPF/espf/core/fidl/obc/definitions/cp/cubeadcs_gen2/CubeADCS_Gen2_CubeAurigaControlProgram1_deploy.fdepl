@@ -1,0 +1,572 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+import "../../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../../cp/cubeadcs_gen2/CubeADCS_Gen2_CubeAurigaControlProgram1.fidl"
+
+
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.CubeADCS_Gen2_CubeAurigaControlProgram1 as CubeADCS_Gen2_CubeAurigaControlProgram1_Definitions
+{    
+    
+    struct OhPowerStates
+    {
+        DisplayName = "OH Power States"
+        
+        Oh1Power {
+            DisplayName = "OH1 Power"
+        }
+        
+        Oh2Power {
+            DisplayName = "OH2 Power"
+        }
+        
+    }
+    
+    struct Configuration
+    {
+        DisplayName = "Configuration"
+        
+        OH1QRotRALRS1 {
+            DisplayName = "OH1 Alignment Rot Transform Q1"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        OH1QRotRALRS2 {
+            DisplayName = "OH1 Alignment Rot Transform Q2"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        OH1QRotRALRS3 {
+            DisplayName = "OH1 Alignment Rot Transform Q3"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        OH1QRotRALRS4 {
+            DisplayName = "OH1 Alignment Rot Transform Q4"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        OH2QRotRALRS1 {
+            DisplayName = "OH2 Alignment Rot Transform Q1"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        OH2QRotRALRS2 {
+            DisplayName = "OH2 Alignment Rot Transform Q2"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        OH2QRotRALRS3 {
+            DisplayName = "OH2 Alignment Rot Transform Q3"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        OH2QRotRALRS4 {
+            DisplayName = "OH2 Alignment Rot Transform Q4"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+    }
+    
+    struct AurigaSelfTest
+    {
+        DisplayName = "Trigger Auriga OH Self Test"
+        
+        magicNumber {
+            DisplayName = "Magic Number"
+        }
+        
+    }
+    
+    struct ExtMemTest
+    {
+        DisplayName = "Trigger External SRAM Test"
+        
+        magicNumber {
+            DisplayName = "Magic Number"
+        }
+        
+    }
+    
+    struct SpwTest
+    {
+        DisplayName = "Trigger Spacewire Test"
+        
+        magicNumber {
+            DisplayName = "Magic Number"
+        }
+        
+    }
+    
+    struct HealthTlm
+    {
+        DisplayName = "Health Telemetry"
+        
+        McuVoltage {
+            DisplayName = "MCU Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        McuTemp {
+            DisplayName = "MCU Temperature"
+            Unit = "°C"
+			AlarmNumericMinInclusive = "-40.0001"
+			AlarmNumericMaxInclusive = "120.0001"
+        }
+        
+        McuCurrent {
+            DisplayName = "MCU Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "150.0001"
+        }
+        
+        SramCurrent {
+            DisplayName = "SRAM Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "100.0001"
+        }
+        
+        Oh1Current {
+            DisplayName = "OH1 Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "300.0001"
+        }
+        
+        Oh2Current {
+            DisplayName = "OH2 Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "300.0001"
+        }
+        
+        fpga1Current {
+            DisplayName = "FPGA1 Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "200.0001"
+        }
+        
+        fpga2Current {
+            DisplayName = "FPGA2 Current"
+            Unit = "mA"
+			AlarmNumericMaxInclusive = "200.0001"
+        }
+        
+        fpga1Voltage {
+            DisplayName = "FPGA1 Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        fpga2Voltage {
+            DisplayName = "FPGA2 Voltage"
+            Unit = "mV"
+			AlarmNumericMaxInclusive = "5000.0001"
+        }
+        
+        processIdleTiming {
+            DisplayName = "Process idle delay"
+            Unit = "ms"
+        }
+        
+        WatchdogCount {
+            DisplayName = "Watchdog Counters"
+        }
+        
+        AcqSynthFlags {
+            DisplayName = "AcqSynth Flags"
+        }
+        
+        STRMode {
+            DisplayName = "Star Tracker Mode"
+        }
+        
+        OH1Temp {
+            DisplayName = "OH1 Temperature"
+        }
+        
+        OH2Temp {
+            DisplayName = "OH2 Temperature"
+        }
+        
+        BlocksValidity {
+            DisplayName = "Blocks Validity at Lib Init"
+        }
+        
+        ResetCnt {
+            DisplayName = "Reset Count"
+        }
+        
+        LastTCSeqNum {
+            DisplayName = "Last TC Sequence Nr"
+        }
+        
+        TCCnt {
+            DisplayName = "STR TC counters"
+        }
+        
+        ErrorInfo {
+            DisplayName = "Errror Info"
+        }
+        
+        LastErrorParam {
+            DisplayName = "Last Error Param"
+        }
+        
+        LastErrorId {
+            DisplayName = "Last Error Id"
+        }
+        
+        TRKLossCnt {
+            DisplayName = "Tracking lost count"
+        }
+        
+    }
+    
+    struct AurigaStatus
+    {
+        DisplayName = "Auriga Status TM"
+        
+        FrameCount {
+            DisplayName = "Frame Count"
+        }
+        
+        IDSATM {
+            DisplayName = "IDSATM"
+        }
+        
+        JulianDate {
+            DisplayName = "Julian Date"
+        }
+        
+        AcqSynthFlags {
+            DisplayName = "AcqSynth Flags"
+        }
+        
+        STRMode {
+            DisplayName = "Star Tracker Mode"
+        }
+        
+        OH1State {
+            DisplayName = "OH1 State"
+        }
+        
+        OH2State {
+            DisplayName = "OH2 State"
+        }
+        
+        BlocksValidity {
+            DisplayName = "Blocks Validity at Lib Init"
+        }
+        
+        ResetCnt {
+            DisplayName = "Reset Count"
+        }
+        
+        LastTCSeqNum {
+            DisplayName = "Last TC Sequence Nr"
+        }
+        
+        TCCnt {
+            DisplayName = "STR TC counters"
+        }
+        
+        ErrorInfo {
+            DisplayName = "Errror Info"
+        }
+        
+        LastErrorParam {
+            DisplayName = "Last Error Param"
+        }
+        
+        LastErrorId {
+            DisplayName = "Last Error Id"
+        }
+        
+        TRKLossCnt {
+            DisplayName = "Tracking lost count"
+        }
+        
+        OH1SerialNumber {
+            DisplayName = "OH1 Serial Number"
+        }
+        
+        OH1PartNumber {
+            DisplayName = "OH1 Part Number"
+        }
+        
+        OH1CalibParamId {
+            DisplayName = "OH1 Calib Param Id"
+        }
+        
+        OH1AcqETR {
+            DisplayName = "OH1 Acq ETR"
+        }
+        
+        OH1Temp {
+            DisplayName = "OH1 Temperature"
+        }
+        
+        OH2SerialNumber {
+            DisplayName = "OH2 Serial Number"
+        }
+        
+        OH2PartNumber {
+            DisplayName = "OH2 Part Number"
+        }
+        
+        OH2CalibParamId {
+            DisplayName = "OH2 Calib Param Id"
+        }
+        
+        OH2AcqETR {
+            DisplayName = "OH2 Acq ETR"
+        }
+        
+        OH2Temp {
+            DisplayName = "OH2 Temperature"
+        }
+        
+        Delay {
+            DisplayName = "Delay"
+        }
+        
+    }
+    
+    struct AurigaAttitudeData
+    {
+        DisplayName = "Auriga Attitude Data"
+        
+        FrameCount {
+            DisplayName = "Frame Count"
+        }
+        
+        IDSATM {
+            DisplayName = "IDSATM"
+        }
+        
+        SpecTC {
+            DisplayName = "SpecTC"
+        }
+        
+        SyntDefATM {
+            DisplayName = "SyntDefATM"
+        }
+        
+        SyntFusion {
+            DisplayName = "SyntFusion"
+        }
+        
+        SyntFil {
+            DisplayName = "SyntFil"
+        }
+        
+        DateMesFil {
+            DisplayName = "DateMesFil"
+        }
+        
+        QRsFil1 {
+            DisplayName = "QRsFil1"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        QRsFil2 {
+            DisplayName = "QRsFil2"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        QRsFil3 {
+            DisplayName = "QRsFil3"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        QRsFil4 {
+            DisplayName = "QRsFil4"
+			AlarmNumericMinInclusive = "-1.0001"
+			AlarmNumericMaxInclusive = "1.0001"
+        }
+        
+        IQFilXRs {
+            DisplayName = "IQFilXRs"
+        }
+        
+        IQFilYRs {
+            DisplayName = "IQFilYRs"
+        }
+        
+        IQFilZRs {
+            DisplayName = "IQFilZRs"
+        }
+        
+        NbEtoAtt {
+            DisplayName = "NbEtoAtt"
+        }
+        
+        NbEtoAttOH {
+            DisplayName = "NbEtoAttOH"
+        }
+        
+        NbEtoCoh {
+            DisplayName = "NbEtoCoh"
+        }
+        
+        NbEtoCohOH {
+            DisplayName = "NbEtoCohOH"
+        }
+        
+        WRsFil1 {
+            DisplayName = "WRsFil1"
+            Unit = "rad/s"
+			AlarmNumericMinInclusive = "-2.0001"
+			AlarmNumericMaxInclusive = "2.0001"
+        }
+        
+        WRsFil2 {
+            DisplayName = "WRsFil2"
+            Unit = "rad/s"
+			AlarmNumericMinInclusive = "-2.0001"
+			AlarmNumericMaxInclusive = "2.0001"
+        }
+        
+        WRsFil3 {
+            DisplayName = "WRsFil3"
+            Unit = "rad/s"
+			AlarmNumericMinInclusive = "-2.0001"
+			AlarmNumericMaxInclusive = "2.0001"
+        }
+        
+        NLPMoyOH1 {
+            DisplayName = "NLPMoyOH1"
+        }
+        
+        NLPMoyOH2 {
+            DisplayName = "NLPMoyOH2"
+        }
+        
+        SyntFilOH1 {
+            DisplayName = "SyntFilOH1"
+        }
+        
+        SyntFilOH2 {
+            DisplayName = "SyntFilOH2"
+        }
+        
+        SyntFDIROH1 {
+            DisplayName = "SyntFDIROH1"
+        }
+        
+        SyntFDIROH2 {
+            DisplayName = "SyntFDIROH2"
+        }
+        
+        SyntDesOH1 {
+            DisplayName = "SyntDesOH1"
+        }
+        
+        SyntDesOH2 {
+            DisplayName = "SyntDesOH2"
+        }
+        
+        OH1State {
+            DisplayName = "OH1 State"
+        }
+        
+        OH2State {
+            DisplayName = "OH2 State"
+        }
+        
+        DataValid {
+            DisplayName = "Data Valid"
+        }
+        
+    }
+    
+    struct AurigaSelfTestResults
+    {
+        DisplayName = "Auriga OH Self Test Results"
+        
+        OH1AAMNbRefStarsCriteria {
+            DisplayName = "OH1AAMNbRefStarsCriteria"
+        }
+        
+        OH1AAMQuaternionCriteria {
+            DisplayName = "OH1AAMQuaternionCriteria"
+        }
+        
+        OH1AAM_ATMTransitionCriteria {
+            DisplayName = "OH1AAM_ATMTransitionCriteria"
+        }
+        
+        OH1ATMNbCoherentStarsCriteria {
+            DisplayName = "OH1ATMNbCoherentStarsCriteria"
+        }
+        
+        OH1ATMQuaternionCriteria {
+            DisplayName = "OH1ATMQuaternionCriteria"
+        }
+        
+        OH2AAMNbRefStarsCriteria {
+            DisplayName = "OH2AAMNbRefStarsCriteria"
+        }
+        
+        OH2AAMQuaternionCriteria {
+            DisplayName = "OH2AAMQuaternionCriteria"
+        }
+        
+        OH2AAM_ATMTransitionCriteria {
+            DisplayName = "OH2AAM_ATMTransitionCriteria"
+        }
+        
+        OH2ATMNbCoherentStarsCriteria {
+            DisplayName = "OH2ATMNbCoherentStarsCriteria"
+        }
+        
+        OH2ATMQuaternionCriteria {
+            DisplayName = "OH2ATMQuaternionCriteria"
+        }
+        
+        TestState {
+            DisplayName = "Self-test State"
+        }
+        
+    }
+    
+    struct ExtMemTestResult
+    {
+        DisplayName = "SRAM Test Result"
+        
+        TestResult {
+            DisplayName = "SRAM Test Result"
+        }
+        
+        TestState {
+            DisplayName = "SRAM Test State"
+        }
+        
+    }
+    
+    struct SpwTestResult
+    {
+        DisplayName = "Spacewire Test Result"
+        
+        TestResult {
+            DisplayName = "Spacewire Test Result"
+        }
+        
+        TestState {
+            DisplayName = "Spacewire Test State"
+        }
+        
+    }
+    
+}

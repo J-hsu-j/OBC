@@ -1,0 +1,164 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/OBC_Intersat.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.macif.OBC_INTERSAT as OBC_INTERSAT_Definitions {
+
+	enumeration StandardResult {
+		AlarmInvalidRegexValues = {
+			"(^(?!SUCCESS$).*$)"
+		}
+	}
+
+	enumeration Error {
+		AlarmInvalidRegexValues = {
+			"(^(?!NONE$).*$)"
+		}
+	}
+
+	struct vec_3d {
+		DisplayName = "3D Vector"
+		X {
+			DisplayName = "X"
+		}
+		Y {
+			DisplayName = "Y"
+		}
+		Z {
+			DisplayName = "Z"
+		}
+	}
+
+	struct Status {
+		STATE {
+			DisplayName = "State"
+		}
+		lastError {
+			DisplayName = "Last Error"
+		}
+	}
+
+	struct Offset_angles {
+		roll {
+			DisplayName = "Roll"
+		}
+		pitch {
+			DisplayName = "Pitch"
+		}
+		yaw {
+			DisplayName = "Yaw"
+		}
+	}
+
+	struct Offset_angles_true {
+		roll {
+			DisplayName = "Roll"
+		}
+		pitch {
+			DisplayName = "Pitch"
+		}
+		yaw {
+			DisplayName = "Yaw"
+		}
+	}
+
+	method Start {
+		in {
+			file_name {
+				DisplayName = "File Name"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method Stop {
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method Get_status {
+		out {
+			Status {
+				DisplayName = "Status"
+			}
+		}
+	}
+
+	method Get_angles {
+		out {
+			Angles {
+				DisplayName = "Angles"
+				#struct {
+					roll {
+						Unit = "deg"
+						CalibrationAlg = "coeff"
+						CalibratedType = "float"
+						CalibrationParams = {
+							"0.01"
+						}
+					}
+					pitch {
+						Unit = "deg"
+						CalibrationAlg = "coeff"
+						CalibratedType = "float"
+						CalibrationParams = {
+							"0.01"
+						}
+					}
+					yaw {
+						Unit = "deg"
+						CalibrationAlg = "coeff"
+						CalibratedType = "float"
+						CalibrationParams = {
+							"0.01"
+						}
+					}
+				}
+			}
+			EulerAngles {
+				DisplayName = "Euler Angles"
+				#struct {
+					roll {
+						Unit = "deg"
+					}
+					pitch {
+						Unit = "deg"
+					}
+					yaw {
+						Unit = "deg"
+					}
+				}
+			}
+		}
+	}
+
+	method Set_pointing_vector {
+		in {
+			DesiredVector {
+				DisplayName = "Desired Vector"
+			}
+		}
+		out {
+			opResult {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method Get_pointing_vector {
+		out {
+			CurrentVector {
+				DisplayName = "Current Vector"
+			}
+		}
+	}
+
+}

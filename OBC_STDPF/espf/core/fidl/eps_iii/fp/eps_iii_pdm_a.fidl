@@ -1,0 +1,505 @@
+package endurosat.macif
+
+<** @description: EPS_III_PDM_A interface
+    @details: id = 0xA4
+**>
+
+interface eps_iii_pdm_a
+{
+    version { major 2 minor 0 }
+    
+    <** @description: Command status **>
+    enumeration CommandStatus
+    {
+        <** @description: The command was successfully executed **>
+        SUCCESS
+        
+        <** @description: The command was failed during execution  **>
+        FAIL
+        
+        <** @description: The command was successfully executed, but not all data was gathered  **>
+        FAIL_GATHERING_DATA
+    }
+    
+    <** @description: Read status **>
+    enumeration ReadEnDftStatus
+    {
+        <** @description: The status is OFF **>
+        OFF
+        
+        <** @description: The status is ON **>
+        ON
+        
+        <** @description: The status is OFF for time **>
+        OFF_FOR_TIME
+        
+        <** @description: The status is ON for time **>
+        ON_FOR_TIME
+
+        <** @description: The Toggle functionality is currently busy, current status is OFF_FOR_TIME  **>
+        TOGGLE_BUSY_OFF_FOR_TIME
+        
+        <** @description: The Toggle functionality is currently busy, current status is ON_FOR_TIME  **>
+        TOGGLE_BUSY_ON_FOR_TIME
+        
+        <** @description: The default status is OFF **>
+        DEFAULT_OFF
+        
+        <** @description: The default status is ON **>
+        DEFAULT_ON
+        
+        <** @description: The default status is to keep last known state while active **>
+        DEFAULT_KEEP_LAST
+        
+        <** @description: The status is undefined **>
+        WRONG_INPUT
+    }
+    
+    
+    <** @description: Seconds converted into days, hours, minutes, and seconds **>
+    struct UptimeConverted
+    {
+        <** @description: Number of days since last power up **>
+        UInt16 days
+        
+        <** @description: Number of hours since last power up **>
+        UInt8 hours
+        
+        <** @description: Number of minutes since last power up **>
+        UInt8 minutes
+        
+        <** @description: Number of seconds since last power up **>
+        UInt8 seconds
+    }
+    
+    <** @description: All Channel options available for control **>
+    enumeration ChannelOpt
+    {
+        <** @description: Read current status **>
+        READ_STATUS
+        
+        <** @description: Set status to OFF  **>
+        SET_OFF
+        
+        <** @description: Set status to ON  **>
+        SET_ON
+        
+        <** @description: Toggle the status for the defined time in seconds  **>
+        TOGGLE_FOR_TIME
+        
+        <** @description: Read the default status  **>
+        READ_DEFAULT
+        
+        <** @description: Set the default status to OFF  **>
+        SET_DEFAULT_OFF
+        
+        <** @description: Set the default status to ON  **>
+        SET_DEFAULT_ON
+        
+        <** @description: Set the default status to ON  **>
+        SET_DEFAULT_KEEP_LAST
+    }
+    
+    <** @description: Voltage and Current measurements **>
+    struct VoltAmps
+    {
+        <** @description: Voltage [mV] **>
+        UInt16 voltage
+        
+        <** @description: Current [mA] **>
+        Int16 current
+    }
+    
+    <** @description: Voltage and Current measurements **>
+    struct VoltAllAmps
+    {
+        <** @description: Voltage [mV] **>
+        UInt16 ch_voltage
+        
+        <** @description: Input Current [mA] **>
+        Int16 in_current
+        
+        <** @description: Output Current [mA] **>
+        Int16 out_current
+    }
+    
+    <** @description: Common measurements **>
+    struct CommonMesurements
+    {
+        <** @description: MCU Voltage [mV]**>
+        UInt16 mcu_volt
+        
+        <** @description: MCU Temperature [mdegC]**>
+        Int32 mcu_temp
+        
+        <** @description: BUS Voltage [mV]**>
+        UInt16 sys_bus_volt
+    }
+    
+    
+    <** @description: Outputs status for 3.3V 5V 12V and external system bus channels **>
+    struct OutputsStatus
+    {
+        <** @description: Status of External System Bus channel input **>
+        ReadEnDftStatus en_ext_sys_bus
+        
+        <** @description: Status of 3.3V Bus channel input **>
+        ReadEnDftStatus en_3v3_bus_in
+        
+        <** @description: Status of 3.3V Bus channel output **>
+        ReadEnDftStatus en_3v3_bus_out
+        
+        <** @description: Status of 5V Bus channel input **>
+        ReadEnDftStatus en_5v_bus_in
+        
+        <** @description: Status of 5V Bus channel output **>
+        ReadEnDftStatus en_5v_bus_out
+        
+        <** @description: Status of 12V Bus channel input **>
+        ReadEnDftStatus en_12v_bus_in
+        
+        <** @description: Status of 12V Bus channel output **>
+        ReadEnDftStatus en_12v_bus_out
+    }
+    
+    <** @description: Current status of the channel. OFF, ON or unknown  **>
+    enumeration OnOffStatus
+    {
+        <** @description: Current status is inactive **>
+        OFF
+        
+        <** @description: Current status is active **>
+        ON
+        
+        <** @description: Current status is unknown **>
+        UNKNOWN
+    }
+    
+    <** @description: All IN and OUT Faults status **>
+    struct FaultsStatus
+    {
+    
+        <** @description: Status of External System Bus channel Fault **>
+        OnOffStatus flt_ext_sys_bus
+        
+        <** @description: Status of 3.3V Bus channel Fault IN **>
+        OnOffStatus flt_in_3v3_bus
+        
+        <** @description: Status of 3.3V Bus channel Fault OUT **>
+        OnOffStatus flt_out_3v3_bus
+        
+        <** @description: Status of 5V Bus channel Fault IN **>
+        OnOffStatus flt_in_5v_bus
+        
+        <** @description: Status of 5V Bus channel Fault OUT **>
+        OnOffStatus flt_out_5v_bus        
+        
+        <** @description: Status of 12V Bus channel Fault IN **>
+        OnOffStatus flt_in_12v_bus
+        
+        <** @description: Status of 12V Bus channel Fault OUT **>
+        OnOffStatus flt_out_12v_bus
+    }
+    
+    <** @description: Voltage and Current measurements **>
+    struct VoltAmpsMeasurements
+    {
+        <** @description: Voltage and Current measurements for System BUS channel **>
+        VoltAmps system_bus
+        
+        <** @description: Voltage and Current measurements for External System BUS channel **>
+        VoltAmps ext_sys_bus
+        
+        <** @description: Voltage and Current measurements for 3.3V BUS channel **>
+        VoltAllAmps bus_3v3
+        
+        <** @description: Voltage and Current measurements for 5V BUS channel **>
+        VoltAllAmps bus_5v
+        
+        <** @description: Voltage and Current measurements for 12V BUS channel **>
+        VoltAllAmps bus_12v
+    }
+    
+    <** @description: Reading all general outputs, voltage and current measurements
+    @details: id = 0x00000000**>
+    method get_telemetry
+    {
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: number of seconds since last power up **>
+            UInt32 uptime_in_seconds
+            
+            <** @description: Same as uptimeInSeconds but split into human readable values  **>
+            UptimeConverted uptime_converted
+            
+            <** @description: MCU measurements voltage and temperature  **>
+            CommonMesurements common
+            
+            <** @description: HIB mode status **>
+            OnOffStatus hib_mode
+            
+            <** @description: State of All Outputs **>
+            OutputsStatus general_outputs
+            
+            <** @description: Status of All Faults **>
+            FaultsStatus general_faults
+            
+            <** @description: Measurements of All Channels **>
+            VoltAmpsMeasurements all_measurments
+        }
+    }
+    
+    <** @description: Read or Clear option **>
+    enumeration ReadClearOpt
+    {
+        <** @description: Option to read the current data from the source **>
+        READ
+        
+        <** @description: Option to clear to default values the current data on the source **>
+        CLEAR
+    }
+    
+    <** @description: Initialization status **>
+    enumeration InitStatus
+    {
+        <** @description: The initialization was successful **>
+        SUCCESS
+        
+        <** @description: The initialization Failed **>
+        FAIL
+        
+        <** @description: The initialization status is unsupported **>
+        UNSUPPORTED
+        
+        <** @description: The initialization status is unknown **>
+        UNKNOWN
+    }
+    
+    <** @description: Oscillator Initialization source **>
+    enumeration OscSource
+    {
+        <** @description: The Oscillator source is internal **>
+        INTERNAL
+        
+        <** @description: The Oscillator source is external **>
+        EXTERNAL
+        
+        <** @description: The Oscillator source is unknown **>
+        UNKNOWN
+    }
+    
+    <** @description: All common voltage minimum and maximum measurements **>
+    struct MinMaxVolt
+    {
+        <** @description: The minimum value measured from the last measurement data clear [mV] **>
+        UInt16 min_voltage
+        
+        <** @description: The maximum value measured from the last measurement data clear [mV] **>
+        UInt16 max_voltage
+    }
+    
+        <** @description: All common temperature minimum and maximum measurements **>
+    struct MinMaxTemp
+    {
+        <** @description: The minimum value measured from the last measurement data clear [mdegC] **>
+        Int32 min_temp
+        
+        <** @description: The maximum value measured from the last measurement data clear [mdegC] **>
+        Int32 max_temp
+    }
+    
+    <** @description: Voltage and Current minimum and maximum measurements **>
+    struct MinMaxVA
+    {
+        <** @description: The minimum Voltage measured from the last measurement data clear [mV] **>
+        UInt16 min_voltage
+        
+        <** @description: The maximum Voltage measured from the last measurement data clear [mV] **>
+        UInt16 max_voltage
+        
+        <** @description: The minimum Current measured from the last measurement data clear [mA] **>
+        Int16 min_current
+        
+        <** @description: The maximum Current measured from the last measurement data clear [mA] **>
+        Int16 max_current
+    }
+    
+        <** @description: Voltage and Current Minimum and maximum (IN and OUT) measurements **>
+    struct MinMaxVAOut
+    {
+        <** @description: The minimum Voltage measured from the last measurement data clear [mV] **>
+        UInt16 min_voltage
+        
+        <** @description: The maximum Voltage measured from the last measurement data clear [mV] **>
+        UInt16 max_voltage
+        
+        <** @description: The minimum Current measured from the last measurement data clear [mA] **>
+        Int16 min_in_current
+        
+        <** @description: The maximum Current measured from the last measurement data clear [mA] **>
+        Int16 max_in_current
+        
+        <** @description: The minimum Current measured from the last measurement data clear [mA] **>
+        Int16 min_out_current
+        
+        <** @description: The maximum Current measured from the last measurement data clear [mA] **>
+        Int16 max_out_current
+    }
+    
+    
+    <** @description: Reading all minimum and maximum values from the last measurement data clear
+    @details: id = 0x00000010**>
+    method get_telemetry_statistics
+    {
+        in
+        {
+            <** @description: Choose an option, to read or clear the data **>
+            ReadClearOpt statistic_option
+        }
+    
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: Current reset statistics jumper **>
+            OnOffStatus reset_jumer
+
+            <** @description: Current Oscillator source **>
+            OscSource oscillator_src
+            
+            <** @description: Initialization status of the NVM **>
+            InitStatus nvm_init_sts
+            
+            <** @description: Initialization status of the CAN **>
+            InitStatus can_init_sts
+        
+            <** @description: The minimum and maximum Temperature measured from the MCU **>
+            MinMaxTemp mcu_temp_min_max
+            
+            <** @description: The minimum and maximum Voltage measured from the MCU **>
+            MinMaxVolt mcu_volt_min_max
+            
+            <** @description: The minimum and maximum Voltage measured on the System BUS **>
+            MinMaxVA sys_bus_min_max
+            
+            <** @description: The minimum and maximum Voltage measured on the External BUS **>
+            MinMaxVA ext_sys_bus_min_max
+            
+            <** @description: The minimum and maximum Voltage measured on the BUS 3.3V **>
+            MinMaxVAOut bus_3v3_min_max
+            
+            <** @description: The minimum and maximum Voltage measured on the BUS 5V **>
+            MinMaxVAOut bus_5v_min_max
+            
+            <** @description: The minimum and maximum Voltage measured on the BUS 12V **>
+            MinMaxVAOut bus_12v_min_max
+        }
+    }
+    
+    
+    <** @description: External BUS control 
+    @details: id = 0x00000020**>
+    method external_system_bus_control
+    {
+        in
+        {        
+            <** @description: External BUS action option **>
+            ChannelOpt ext_sys_bus_option
+            
+            <** @description: Input time in seconds (optional only with TOGGLE_FOR_TIME option) **>
+            UInt16 ext_sys_bus_time
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: Returned status from External BUS input **>
+            ReadEnDftStatus ext_sys_bus_status
+            
+            <** @description: The time in seconds remaining for the currently active "for time" option **>
+            UInt16 timer
+            
+            <** @description: Returned status from external system bus converted fault **>
+            OnOffStatus ext_sys_bus_fault
+        
+            <** @description: Returned measurements from External BUS **>
+            VoltAmps ext_sys_bus_measurements
+
+        }
+    }
+    
+    <** @description: Low Voltage Interconnection converter channel ID**>
+    enumeration LowVoltageChannels
+    {
+        <** @description: Interconnection channel 3.3V **>
+        CHANNEL_3V3
+        
+        <** @description: Interconnection channel 5V**>
+        CHANNEL_5V
+        
+        <** @description: Interconnection channel 12V**>
+        CHANNEL_12V
+    }
+    
+    <** @description: Low voltage Interconnection Converter channels control 
+    @details: id = 0x00000030**>
+    method low_volt_control
+    {
+        in
+        {  
+            <** @description: Low Voltage Interconnection converter channel **>
+            LowVoltageChannels low_volt_ch
+        
+            <** @description: Low Voltage Interconnection converter channel action option **>
+            ChannelOpt low_volt_option
+            
+            <** @description: Input time in seconds (optional only with TOGGLE_FOR_TIME option) **>
+            UInt16 low_volt_time
+        }
+        
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: Returned status from low voltage channel status **>
+            ReadEnDftStatus low_volt_status
+            
+            <** @description: The time in seconds remaining for the currently active "for time" option **>
+            UInt16 timer
+            
+            <** @description: Returned status from low voltage converted fault IN **>
+            OnOffStatus in_fault_status
+
+            <** @description: Returned status from low voltage converted fault OUT **>
+            OnOffStatus out_fault_status
+        
+            <** @description: Returned measurements from low voltage channels **>
+            VoltAllAmps low_volt_measurements
+        }
+    }
+
+    <** @description: Reading the active Interface (FIDL) version loaded on the module 
+    @details: id = 0x00003000**>
+    method FIDL_version
+    {
+       
+        out
+        {
+            <** @description: Execution command status **>
+            CommandStatus command_status
+
+            <** @description: The current major version of the interface (FIDL) **>
+            UInt8 v_major
+
+            <** @description: The current minor version of the interface (FIDL) **>
+            UInt8 v_minor
+        }
+    }
+} 

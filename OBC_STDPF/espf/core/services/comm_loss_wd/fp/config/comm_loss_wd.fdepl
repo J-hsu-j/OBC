@@ -1,0 +1,6 @@
+package org.endurosat.deploy
+
+import "../../../../../core/fidl/spec/PlatformSpec.fdepl"
+import "../../../../../core/fidl/obc/fp/comm_loss_wd.fidl"
+
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.comm_loss_wd    { IsClient = false }

@@ -1,0 +1,77 @@
+package org.endurosat.deploy
+
+import "../../../../core/fidl/spec/PlatformSpec.fdepl"
+import "../../../../core/fidl/uhf/fp/UHF2.fidl"
+
+define org.endurosat.spec.PlatformSpec for interface endurosat.macif.UHF { 
+	IsClient = true
+	
+	method WriteSCW { InUse = false }
+	method ReadSCW { InUse = false }
+	method WriteRfConfig { InUse = false }
+	method ReadRfConfig { InUse = false }
+	method ReadUpTime { InUse = false }
+	method ReadNumberOfTxPackets { InUse = false }
+	method ReadNumberOfRxPackets { InUse = true }
+	method ReadNumberOfRxPacketsCRCErr { InUse = false }
+	method WriteBeaconMessageTxPeriodCfg { InUse = false }
+	method ReadBeaconMessageTxPeriodCfg { InUse = false }
+	method WriteBeaconMessageBetweeenTxPeriodConfig { InUse = false }
+	method ReadBeaconMessageBetweeenTxPeriodConfig { InUse = false }
+	method RestoreDefaultConfig { InUse = false }
+	method ResetCounters { InUse = false }
+	method WriteAntenna { InUse = false }
+	method ReadAntenna { InUse = false }
+	method EnterLPM { InUse = false }
+	method ReadLPM { InUse = false }
+	method WriteDestCallSign { InUse = false }
+	method ReadDestCallSign { InUse = false }
+	method WriteSrcCallSign { InUse = false }
+	method ReadSRCCallSign { InUse = false }
+	method WriteMorseCallSign { InUse = false }
+	method ReadMorseCallSign { InUse = false }
+	method WriteMIDIAudioBeacon { InUse = false }
+	method ReadMIDIAudioBeacon { InUse = false }
+	method ReadSWVersion { InUse = false }
+	method ReadPayloadSize { InUse = false }
+	method WriteBeaconMessageContentCfg { InUse = false }
+	method ReadBeaconMessageContentCfg { InUse = false }
+	method WriteDeviceAddrConfig { InUse = false }
+	method WriteFRAM { InUse = false }
+	method ReadFRAM { InUse = false }
+	method WriteTransProperty { InUse = false }
+	method ReadTransProperty { InUse = false }
+	method ReadTemp { InUse = false }
+	method ReadRSSI { InUse = false }
+	method WriteRadioRawData { InUse = false }
+	method Ping { InUse = false }
+	method ExBeaconSetSend { InUse = true }
+	method WriteI2cConfig { InUse = false }
+	method ReadI2cConfig { InUse = false }
+	method WriteAntennaCfg { InUse = false }
+	method ReadAntennaCfg { InUse = false }
+	method WriteEpsCfg { InUse = false }
+	method ReadEpsCfg { InUse = false }
+	method WriteEpsConOpsCfg { InUse = false }
+	method ReadEpsConOpsCfg { InUse = false }
+	method WriteRs485Config { InUse = false }
+	method ReadRs485Config { InUse = false }
+	method WriteOBCConfig { InUse = false }
+	method ReadOBCConfig { InUse = false }
+	method WriteSatConfig { InUse = false }
+	method ReadSatConfig { InUse = false }
+	method ReadEpsCfgOut { InUse = false }
+	method WriteEpsCfgOut { InUse = false }
+	method Write2UAntennaCfg { InUse = false }
+	method Read2UAntennaCfg { InUse = false }
+	method WriteAutomatedBeaconCfg { InUse = false }
+	method ReadAutomatedBeaconCfg { InUse = false }
+	method WriteOutputPowerCfg { InUse = false }
+	method ReadOutputPowerCfg { InUse = false }
+	method ReadCounters { InUse = true }
+	method WriteCipherKeySlot { InUse = false }
+	method ReadCipherKeySlotStatus { InUse = false }
+	method EraseCipherKeySlot { InUse = false }
+	method AntennaDirectRelease { InUse = false }	 
+}
+

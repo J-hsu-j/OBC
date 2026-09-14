@@ -1,0 +1,56 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/MacServices.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.macif.MacServices as MacServices_Definitions {
+
+    method getMacBusTerminationSetting {
+        in {
+            readPersistentSetting {
+                DisplayName = "Read Persistent Setting"
+            }
+        }
+        out {
+            supportedInterfacesBitField {
+                DisplayName = "Supported Interfaces Bit Field"
+                CalibrationAlg = "toBinaryString",
+                CalibratedType = "string"
+            }
+            busTerminationSettingsBitField {
+                DisplayName = "Bus Termination Settings Bit Field"
+                CalibrationAlg = "toBinaryString",
+                CalibratedType = "string"
+            }
+        }
+    }
+
+    method setMacBusTerminationSetting {
+        in {
+            supportedInterfacesBitField {
+                DisplayName = "Supported Interfaces Bit Field"
+                CalibrationAlg = "toBinaryString",
+                CalibratedType = "string"
+            }
+            busTerminationSettingsBitField {
+                DisplayName = "Bus Termination Settings Bit Field"
+                CalibrationAlg = "toBinaryString",
+                CalibratedType = "string"
+            }
+        }
+    }
+
+    method setMacAddress {
+        in {
+            macAddr {
+                DisplayName = "MAC Address"
+            }
+        }
+        out {
+            updatedMacAddr {
+                DisplayName = "Updated MAC Address"
+            }
+        }
+    }
+
+}

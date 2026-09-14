@@ -1,0 +1,77 @@
+package endurosat.macif.cp
+
+<** @description: EPS III Command Protocol (from Ground Station) Communication Gateway Commands 
+    @details: id = 0xDA
+**>
+interface EPSIII_CP_GW
+{
+    version { major 2 minor 0 }
+    
+    struct MacFpCmdReq
+    {
+        <** @description: Size in bytes of the FP frame (including FP header) **>
+        UInt8 Size
+        <** @description: The maximum allowed size of the data field in FP frames is 250 - (FP Header size)
+            @details: size = 240 **>
+        UInt8[] Data
+    }
+    
+    <** @description: The method is used to send a MAC FP frame to a device over CP protocol
+        @details: id = 1212
+    **>
+    method MacFp_GwSendCmd
+    {
+        in
+        {
+            MacFpCmdReq cmdData
+        }
+        out
+        {
+            <** @details: size = 240 **>
+            UInt8[] responseData 
+        }
+    }
+    
+    <** @description: In-Application Programming return codes **> 
+    enumeration IAP_RetCode
+    {
+        <** @description: Success **>
+        SUCCESS = 0,
+        <** @description: Wrong Address **>
+        WRONG_ADDR,
+        <** @description: Verification Failure **>
+        VERIFY_FAILURE,
+        <** @description: No data **>
+        WRONG_INPUT_DATA,
+        <** @description: The command has been executed. Please, read the FW version with different command **>
+        ALREADY_EXECUTED
+        <** @description: The command is not supported in that FW or any other issue **>
+        ACCESS_DENY
+    }
+    
+    <** @description: In-Application Programming: Writes part of a image file of a new application in the storage flash memory
+      @details: id = 0x00001001
+    **>
+    method MacCP_IAP_write
+    {
+        in
+        {
+            <** @description: Address of the first byte from the image **>
+            UInt32 address
+            
+            <** @description: Number of bytes to write from the buffer **>
+            UInt16 size
+
+            <** @description: Data memory to write, up to 200 bytes. Must be even.
+                @details: size = 2004
+            **>
+            UInt8[] data
+        }
+        
+        out
+        {
+            <** @description: status of the operation **>
+            IAP_RetCode result
+        }
+    }
+}

@@ -1,0 +1,256 @@
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+
+import "../../fp/conops.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface endurosat.macif.conops as conops_Definitions {
+	enumeration StandardResult {
+		AlarmInvalidRegexValues = {"ERROR", "INVALID_ARGS", "NOT_SUPPORTED"}
+	} 
+	
+	struct ThresholdValues {
+		v_batt_safe {
+			DisplayName = "Voltage Safe Mode Threshold"
+			Unit = "mV"
+		}
+		t_batt_safe_lower {
+			DisplayName = "Battery Low Temp Safe Mode Threshold"
+            Unit = "°C"
+		}
+		t_batt_safe_upper {
+			DisplayName = "Battery High Temp Safe Mode Threshold"
+            Unit = "°C"
+		}
+		ang_vel_max {
+			DisplayName = "Enter Detumbling Angular Velocity Threshold"
+			CalibrationAlg = "coeff",
+            CalibrationParams = {
+                "0.001"
+            },
+            Unit = "rad/s",
+            CalibratedType = "float"
+		}
+		ang_vel_low {
+			DisplayName = "Exit Detumbling Angular Velocity Threshold"
+			CalibrationAlg = "coeff",
+            CalibrationParams = {
+                "0.001"
+            },
+            Unit = "rad/s",
+            CalibratedType = "float"
+		}
+		ang_vel_y_thom_high {
+			DisplayName = "Stable Y-Thompson Upper Angular Velocity Threshold"
+			CalibrationAlg = "coeff",
+            CalibrationParams = {
+                "0.001"
+            },
+            Unit = "rad/s",
+            CalibratedType = "float"
+		}
+		ang_vel_y_thom_low {
+			DisplayName = "Stable Y-Thompson Lower Angular Velocity Threshold"
+			CalibrationAlg = "coeff",
+            CalibrationParams = {
+                "0.001"
+            },
+            Unit = "rad/s",
+            CalibratedType = "float"
+		}
+	}
+	
+	struct AocsRefParams {
+		refParam1 {
+			DisplayName = "Reference Parameter 1"
+		}
+		refParam2 {
+			DisplayName = "Reference Parameter 2"
+		}
+		refParam3 {
+			DisplayName = "Reference Parameter 3"
+		}
+	}
+	
+	enumeration OpModes {
+		AlarmInvalidRegexValues = {"MODE_SAFE", "MODE_SAFE_ENTRY", "MODE_SAFE_CONTROL", "MODE_SAFE_NO_CONTROL"}
+	}
+	
+	enumeration Events {
+		AlarmInvalidRegexValues = {"ENTER_SAFE"}
+	}
+	
+	enumeration AocsState {
+		AlarmInvalidRegexValues = {"AOCS_STATE_UNDEFINED", "AOCS_STATE_NO_CONTROL", "AOCS_STATE_NORMAL_DETUMBLING", "AOCS_STATE_FAST_DETUMBLING", "AOCS_STATE_VERY_FAST_DETUMBLING"}
+	}
+	
+	enumeration ModesWithDefCtrl {
+		AlarmInvalidRegexValues = {"SAFE"}
+	}
+	
+	struct ControlMode {
+		mode {
+			DisplayName = "Mode"
+		}
+		params {
+			DisplayName = "Parameters"
+		}
+	}
+	
+	method send_new_event {
+		in {
+			event_type {
+				DisplayName = "Event Type"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method get_op_mode {
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+			op_mode {
+				DisplayName = "Operational Mode"
+			}
+		}
+	}
+	
+	method set_thresh_val {
+		in {
+			thresh_value {
+				DisplayName = "Threshold Value"
+			}
+			thresh_type {
+				DisplayName = "Threshold Type"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method get_thresh_val {
+		in {
+			thresh_type {
+				DisplayName = "Threshold Type"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+			thresh_value {
+				DisplayName = "Threshold Value"
+			}
+		}
+	}
+		
+	method set_all_thresh_val {
+		in {
+			thresh_vals {
+				DisplayName = "Threshold Values"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+		
+	method get_all_thresh_val {
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+			thresh_vals {
+				DisplayName = "Threshold Values"
+			}
+		}
+	}
+	
+	method request_mission_mode_enter {
+		in {
+			timeout {
+				DisplayName = "Timeout"
+				Unit = "ms"
+				AlarmNumericMinInclusive = "0"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method request_mission_mode_exit {
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method get_default_control_mode {
+		in {
+			conops_mode {
+				DisplayName = "ConOps Mode"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+			control_mode {
+				DisplayName = "Control Mode"
+			}
+		}
+	}
+	
+	method set_default_control_mode {
+		in {
+			conops_mode {
+				DisplayName = "ConOps Mode"
+			}
+			control_mode {
+				DisplayName = "Control Mode"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+			set_control_mode {
+				DisplayName = "Set Control Mode"
+			}
+		}
+	}
+	
+	method set_force_allow_payloads {
+		in {
+			is_allowed {
+				DisplayName = "Is Allowed"
+			}
+		}
+		out {
+			op_result {
+				DisplayName = "Result"
+			}
+		}
+	}
+	
+	method get_force_allow_payloads {
+		out {
+			set_is_allowed {
+				DisplayName = "Is Allowed"
+			}
+		}
+	}
+}

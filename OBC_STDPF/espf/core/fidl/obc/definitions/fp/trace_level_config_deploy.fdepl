@@ -1,0 +1,129 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/trace_level_config.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.pf.trace_level_config as trace_level_config_Definitions {
+
+	enumeration Result {
+		AlarmInvalidRegexValues = {
+			"FAILED"
+		}
+	}
+
+	struct ChannelInfo {
+		channel {
+			DisplayName = "Channel"
+		}
+		level {
+			DisplayName = "Level"
+		}
+		active {
+			DisplayName = "Active"
+		}
+	}
+
+	struct ModuleInfo {
+		module_name {
+			DisplayName = "Module Name"
+		}
+		level {
+			DisplayName = "Level"
+		}
+		active {
+			DisplayName = "Active"
+		}
+	}
+
+	method set_channel_trace_level {
+		in {
+			channel {
+				DisplayName = "Channel"
+			}
+			level {
+				DisplayName = "Level"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_channel_info {
+		out {
+			channels {
+				DisplayName = "Channels"
+			}
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_channel_active_status {
+		in {
+			channel {
+				DisplayName = "Channel"
+			}
+			is_active {
+				DisplayName = "Is Active"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_module_active_status {
+		in {
+			module {
+				DisplayName = "Module"
+			}
+			is_active {
+				DisplayName = "Is Active"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method set_module_trace_level {
+		in {
+			module {
+				DisplayName = "Module"
+			}
+			level {
+				DisplayName = "Level"
+			}
+		}
+		out {
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+	method get_module_info {
+		in {
+			module_name_input {
+				DisplayName = "Module Name Input"
+			}
+		}
+		out {
+			module_output {
+				DisplayName = "Module Output"
+			}
+			res {
+				DisplayName = "Result"
+			}
+		}
+	}
+
+}

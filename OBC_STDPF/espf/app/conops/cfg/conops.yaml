@@ -1,0 +1,66 @@
+---
+conops_sm:
+  states:  
+    - Safe:
+        states:
+            - Safe_entry:
+                transitions:
+                    - Control:
+                        - { event: "__periodic", guard: has_control }
+                    - No_control:
+                        - { event: "__periodic", guard: hasno_control }
+                attributes:
+                  on_entry: False
+                  on_exit:  False
+                  
+            - Control:
+                transitions:
+                    - No_control:
+                        - { event: fdir_lvl_updated, guard: is_fdir_critical }
+                    - "__self":
+                        - { event: "__periodic", action: detumble }
+                attributes:
+                  on_entry: True
+                  on_exit:  False
+            - No_control:
+                transitions:
+                    - Control:
+                        - { event: fdir_lvl_updated, guard: has_control }
+                    - Control:
+                        - { event: "__periodic", guard: has_control }
+                attributes:
+                  on_entry: True
+                  on_exit:  False
+        attributes:
+          initial: Safe_entry
+          on_entry: True
+          on_exit:  False
+        transitions:
+          - Idle:
+              - { event: force_enter_idle, guard: is_fdir_idle }
+    - Idle:
+        transitions:
+            - Safe:
+                - { event: force_enter_safe }
+            - Safe:
+                - { event: fdir_lvl_updated, guard: is_fdir_safe }
+            - Mission:
+                - { event: force_enter_mission }
+        attributes:
+          on_entry: True
+          on_exit:  False
+    - Mission:
+        transitions:
+            - Safe:
+                - { event: force_enter_safe }
+            - Safe:
+                - { event: fdir_lvl_updated, guard: is_fdir_safe }
+            - Idle:
+                - { event: force_enter_idle, action: mission_to_idle }
+            - Idle:
+                - { event: "__periodic", guard: mission_timer_expired }
+        attributes:
+          on_entry: True
+          on_exit:  True
+  attributes:
+    initial: Safe

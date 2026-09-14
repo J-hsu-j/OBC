@@ -1,0 +1,151 @@
+
+import "../../spec/SpaceOpsMappingSpec.fdepl"
+import "../../fp/fault_ops.fidl"
+
+define org.endurosat.spec.SpaceOpsMappingSpec for interface
+endurosat.faults.fp.fault_ops as fault_ops_Definitions {
+
+	struct basic_x_frame {
+		r0 {
+			DisplayName = "R0 Register"
+		}
+		r1 {
+			DisplayName = "R1 Register"
+		}
+		r2 {
+			DisplayName = "R2 Register"
+		}
+		r3 {
+			DisplayName = "R3 Register"
+		}
+		r12 {
+			DisplayName = "R12 Register"
+		}
+		lr {
+			DisplayName = "Link Register"
+		}
+		pc {
+			DisplayName = "Program Counter"
+		}
+		psr {
+			DisplayName = "Program Status Register"
+		}
+	}
+
+	struct extended_x_frame {
+		basic_regs {
+			DisplayName = "Basic Registers"
+		}
+		fpscr {
+			DisplayName = "Floating Point Status and Control Register"
+		}
+	}
+
+	struct x_header {
+		record_type {
+			DisplayName = "Record Type"
+		}
+		rtc_timestamp {
+			DisplayName = "RTC Timestamp"
+			Unit = "Unix TS (ms)"
+		}
+		uptime {
+			DisplayName = "Uptime"
+			Unit = "ms"
+		}
+	}
+
+	struct x_frame {
+		hdr {
+			DisplayName = "Header"
+		}
+		cfsr {
+			DisplayName = "Configurable Fault Status Register"
+		}
+		hfsr {
+			DisplayName = "Hard Fault Status Register"
+		}
+		mmfar {
+			DisplayName = "MemManage Fault Address Register"
+		}
+		bfar {
+			DisplayName = "BusFault Address Register"
+		}
+		abfsr {
+			DisplayName = "Auxiliary Bus Fault Status Register"
+		}
+		sp {
+			DisplayName = "Stack Pointer"
+		}
+		vtor {
+			DisplayName = "Vector Table Address Offset"
+		}
+		stack_frame_len {
+			DisplayName = "Stack Frame Length"
+			Unit = "B"
+		}
+		stack_frame {
+			DisplayName = "Stack Frame"
+		}
+		crc {
+			DisplayName = "CRC"
+		}
+	}
+
+	method get_fault_info {
+		out {
+			occupied_fault_slots {
+				DisplayName = "Occupied Fault Slots"
+			}
+			available_fault_slots {
+				DisplayName = "Available Fault Slots"
+			}
+		}
+	}
+
+	method read_fault_by_index_raw {
+		in {
+			slot_id {
+				DisplayName = "Slot Id"
+			}
+		}
+		out {
+			is_data_valid {
+				DisplayName = "Is Data Valid"
+			}
+		}
+	}
+
+	method clear_all_faults {
+		out {
+			is_clear_ok {
+				DisplayName = "Is Clear OK"
+			}
+		}
+	}
+
+	method simulate_fault {
+		in {
+			fault_type {
+				DisplayName = "Fault Type"
+			}
+		}
+	}
+
+	method read_fault_by_index {
+		in {
+			slot_id {
+				DisplayName = "Slot Id"
+			}
+		}
+		out {
+			is_data_valid {
+				DisplayName = "Is Data Valid"
+			}
+			exception_data {
+				DisplayName = "Exception Data"
+			}
+		}
+	}
+
+}

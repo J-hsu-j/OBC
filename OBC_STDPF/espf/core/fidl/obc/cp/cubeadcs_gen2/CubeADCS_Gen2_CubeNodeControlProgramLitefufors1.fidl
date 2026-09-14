@@ -1,0 +1,669 @@
+// WARNING!!! THIS IS A GENERATED FILE! DO NOT MODIFY CONTENTS MANUALLY!!!
+
+package endurosat.macif
+
+
+<** @description: Interface for Cube ADCS Gen2 - CubeNodeControlProgramLitefufors1
+    @details: id = 310
+**>
+
+interface CubeADCS_Gen2_CubeNodeControlProgramLitefufors1
+{
+    version {major 6 minor 0}
+    
+    <** @description: This enumeration holds the IDs of CubeADCS Gen2 nodes for which this interface is applicable.
+        @details: size = 1 
+    **>
+    enumeration CmdTargetNode
+    {
+        NodeInvalid = 0
+        
+    }
+
+    <** @description: Return status type of the CubeADCS Gen2 API operations. Possible values are:
+                     0 - No error
+                     1 - NULL pointer
+                     2 - Size incorrect
+                     3 - Size too low
+                     4 - Size too high
+                     5 - Overrun
+                     6 - Parameter error (out of range)
+                     7 - Timeout
+                     8 - TCTLM comms Nack
+                     9 - Busy
+                     10 - Frame
+                     11 - CRC
+                     12 - Read
+                     13 - Write
+                     14 - CAN ID type error
+                     15 - CAN frame error
+                     16 - Unknown NACK
+                     17 - Invalid node type
+                     18 - CubeSpace file upload internal error
+                     19 - Usage error
+                     20 - Auto-Discovery error
+                     21 - Image error
+                     22 - Does not exist error
+                     23 - User data error
+                     24 - Commit error
+                     25 - TCTLM protocol error
+                     26 - General unexpected/unknown error
+                     27 - Telemetry response size error
+                     28 - TCTLM response ID does not match the request
+
+                     50 - TCTLM Nack - invalid ID
+                     51 - TCTLM Nack - invalid length
+                     52 - TCTLM Nack - invalid parameter data
+                     53 - TCTLM Nack - CRC failed
+                     54 - TCTLM Nack - not implemented
+                     55 - TCTLM Nack - busy
+                     56 - TCTLM Nack - sequence
+                     57 - TCTLM Nack - internal
+                     58 - TCTLM Nack - pass-through timeout
+                     59 - TCTLM Nack - pass-through target
+
+                     70 - CSP - receive timeout
+                     71 - CSP - failed to acquire a buffer
+
+                     65535 - Not implemented / TODO
+    **>
+    typedef AdcsErrorCode is Int32
+    
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeNodeControlProgramLitefufors1_NodeState
+    {
+        
+        <** @description: Node is Off **>
+        NodeOff = 0
+        
+        <** @description: Node is Idle **>
+        NodeIdle = 1
+        
+        <** @description: Node is powering on or off one or more uFORS **>
+        NodeUforsPwr = 2
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeNodeControlProgramLitefufors1_UforsState
+    {
+        
+        <** @description: uFORS is Off **>
+        UforsOff = 0
+        
+        <** @description: uFORS is Booting **>
+        UforsBoot = 1
+        
+        <** @description: uFORS is being reset **>
+        UforsReset = 2
+        
+        <** @description: uFORS is Idle **>
+        UforsIdle = 3
+        
+        <** @description: uFORS is Auto-Sampling **>
+        UforsAuto = 4
+        
+        <** @description: uFORS is in an Error State **>
+        UforsError = 5
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeNodeControlProgramLitefufors1_UforsPowerState
+    {
+        
+        <** @description: No change **>
+        PoweredNoChange = 0
+        
+        <** @description: uFORS Power Off **>
+        PoweredOff = 1
+        
+        <** @description: uFORS Power On **>
+        PoweredOn = 2
+        
+    }
+    
+    <** @description: No enumeration description provided by CubeSpace
+    **>
+    enumeration CubeNodeControlProgramLitefufors1_UforsReqResult
+    {
+        
+        <** @description: No Request Yet **>
+        ReqNone = 0
+        
+        <** @description: Request Response **>
+        Req = 1
+        
+        <** @description: Sum Error **>
+        SumError = 2
+        
+        <** @description: Corrupt Data **>
+        CorruptData = 3
+        
+        <** @description: Junk Data **>
+        JunkData = 4
+        
+        <** @description: Incomplete Message **>
+        IncompleteMsg = 5
+        
+        <** @description: Timeout **>
+        Timeout = 6
+        
+        <** @description: Overflow **>
+        Overflow = 7
+        
+    }
+    
+    
+    
+    <** @description: Power state for uFORS
+    **>
+    struct CubeNodeControlProgramLitefufors1_PowerState
+    {
+        
+        <** @description: uFORS Power State **>
+        CubeNodeControlProgramLitefufors1_UforsPowerState Power
+        
+    }
+    
+    <** @description: Boot error of uFORS
+    **>
+    struct CubeNodeControlProgramLitefufors1_BootError
+    {
+        
+        <** @description: Boot Error Code **>
+        UInt32 ErrorCode
+        
+    }
+    
+    <** @description: uFORS service status data
+    **>
+    struct CubeNodeControlProgramLitefufors1_UforsStatus
+    {
+        
+        <** @description: Service State **>
+        CubeNodeControlProgramLitefufors1_UforsState State
+        
+        <** @description: Request Failure Count **>
+        UInt32 FailCount
+        
+        <** @description: Request Failure Count at Last Success **>
+        UInt32 FailCountLastSuccess
+        
+        <** @description: Last Request Result **>
+        CubeNodeControlProgramLitefufors1_UforsReqResult LastReqResult
+        
+    }
+    
+    <** @description: Raw uFORS telemetry data
+    **>
+    struct CubeNodeControlProgramLitefufors1_UforsTlmData
+    {
+        
+        <** @description: Angular rate **>
+        Float Rate
+        
+        <** @description: Status - NOGO bit **>
+        Boolean Nogo
+        
+        <** @description: Status - Reset acknowledge bit **>
+        Boolean RstAck
+        
+        <** @description: Status - temperature warning bit **>
+        Boolean TempWarn
+        
+        <** @description: Status - auxiliary control loop error bit **>
+        Boolean AuxControlLoopErr
+        
+        <** @description: Status - Hardware BIT error bit **>
+        Boolean HardBitErr
+        
+        <** @description: Status - Measurement range exceeded bit **>
+        Boolean MeasRangeErr
+        
+        <** @description: Status - unknown command bit **>
+        Boolean UnknwnCmd
+        
+    }
+    
+    <** @description: Parameter structure for interface UforsPower
+    **>
+    struct UforsPower
+    {
+        
+        <** @description: uFORS Power State  
+            @details: size = 4**>
+        CubeNodeControlProgramLitefufors1_PowerState[] PowerUfors
+        
+    }
+    
+    <** @description: Parameter structure for interface NodeSvcSettings
+    **>
+    struct NodeSvcSettings
+    {
+        
+        <** @description: uFORS Auto-Boot on Startup Enable/Disable **>
+        Boolean UforsAutoBoot
+        
+    }
+    
+    <** @description: Parameter structure for interface UforsSvcSettings
+    **>
+    struct UforsSvcSettings
+    {
+        
+        <** @description: uFORS Maximum Number of data request Errors Before Entering Error State **>
+        UInt32 MaxReqErrors
+        
+        <** @description: uFORS Sample Frequency **>
+        UInt16 SampleFrequency
+        
+        <** @description: uFORS Auto-Sample Enable/Disable **>
+        Boolean AutoSample
+        
+    }
+    
+    <** @description: Parameter structure for interface NodeSvcStatus
+    **>
+    struct NodeSvcStatus
+    {
+        
+        <** @description: CubeNode Node Service State **>
+        CubeNodeControlProgramLitefufors1_NodeState NodeState
+        
+        <** @description: uFORS Boot errors  
+            @details: size = 4**>
+        CubeNodeControlProgramLitefufors1_BootError[] BootError
+        
+    }
+    
+    <** @description: Parameter structure for interface UforsSvcStatus
+    **>
+    struct UforsSvcStatus
+    {
+        
+        <** @description: uFORS Status.  
+            @details: size = 4**>
+        CubeNodeControlProgramLitefufors1_UforsStatus[] Status
+        
+    }
+    
+    <** @description: Parameter structure for interface UforsTlm
+    **>
+    struct UforsTlm
+    {
+        
+        <** @description: uFORS TLM data.  
+            @details: size = 4**>
+        CubeNodeControlProgramLitefufors1_UforsTlmData[] Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface UforsTlmPort1
+    **>
+    struct UforsTlmPort1
+    {
+        
+        <** @description: uFORS TLM data. **>
+        CubeNodeControlProgramLitefufors1_UforsTlmData Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface UforsTlmPort2
+    **>
+    struct UforsTlmPort2
+    {
+        
+        <** @description: uFORS TLM data. **>
+        CubeNodeControlProgramLitefufors1_UforsTlmData Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface UforsTlmPort3
+    **>
+    struct UforsTlmPort3
+    {
+        
+        <** @description: uFORS TLM data. **>
+        CubeNodeControlProgramLitefufors1_UforsTlmData Tlm
+        
+    }
+    
+    <** @description: Parameter structure for interface UforsTlmPort4
+    **>
+    struct UforsTlmPort4
+    {
+        
+        <** @description: uFORS TLM data. **>
+        CubeNodeControlProgramLitefufors1_UforsTlmData Tlm
+        
+    }
+    
+    
+    
+    <**
+        @description: Set the uFORS Power States
+        @details: id = 0
+    **>
+    method setUforsPower
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            UforsPower setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Set/Get the Node Service Settings
+        @details: id = 1
+    **>
+    method setNodeSvcSettings
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            NodeSvcSettings setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Set/Get the uFORS Service Settings - used by all instances
+        @details: id = 2
+    **>
+    method setUforsSvcSettings
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+            <** @description: See definition of type **>
+            UforsSvcSettings setVal
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+        }
+    }
+    
+    <**
+        @description: Set/Get the Node Service Settings
+        @details: id = 3
+    **>
+    method getNodeSvcSettings
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            NodeSvcSettings returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Set/Get the uFORS Service Settings - used by all instances
+        @details: id = 4
+    **>
+    method getUforsSvcSettings
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            UforsSvcSettings returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Node Service Status
+        @details: id = 5
+    **>
+    method getNodeSvcStatus
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            NodeSvcStatus returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: uFORS Service Status
+        @details: id = 6
+    **>
+    method getUforsSvcStatus
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            UforsSvcStatus returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get latest uFORS TLM Packets (does not perform a new request)
+        @details: id = 7
+    **>
+    method getUforsTlm
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            UforsTlm returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get uFORS TLM Packet from port 1 (performs a new request only if auto-sample is disabled)
+        @details: id = 8
+    **>
+    method getUforsTlmPort1
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            UforsTlmPort1 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get uFORS TLM Packet from port 2 (performs a new request only if auto-sample is disabled)
+        @details: id = 9
+    **>
+    method getUforsTlmPort2
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            UforsTlmPort2 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get uFORS TLM Packet from port 3 (performs a new request only if auto-sample is disabled)
+        @details: id = 10
+    **>
+    method getUforsTlmPort3
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            UforsTlmPort3 returnVal
+            
+            
+        }
+    }
+    
+    <**
+        @description: Get uFORS TLM Packet from port 4 (performs a new request only if auto-sample is disabled)
+        @details: id = 11
+    **>
+    method getUforsTlmPort4
+    {
+        in
+        {
+            <** @description: CubeADCS Gen2 node to receive the request. **>
+            CmdTargetNode cmdTargetNode
+            
+        }
+        
+        
+
+        out
+        {
+            <** @description: Return status of the CubeADCS Gen2 API operation. **>
+            AdcsErrorCode adcsErrorCode
+            
+            <** @description: See definition of type **>
+            UforsTlmPort4 returnVal
+            
+            
+        }
+    }
+    
+}
