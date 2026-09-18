@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeNodeCommon1.c:21:11:tctlmCubeNodeCommon1_setPowerSwitchState	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeNodeCommon1.c:66:11:tctlmCubeNodeCommon1_getNodeModel	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeNodeCommon1.c:112:11:tctlmCubeNodeCommon1_getPowerSwitchState	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeNodeCommon1.c:179:11:tctlmCubeNodeCommon1_getHealthTlm	48	static

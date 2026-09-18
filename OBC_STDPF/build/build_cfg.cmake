@@ -1,0 +1,1 @@
+set(BUILD_CFG_NAME "noboot_release")

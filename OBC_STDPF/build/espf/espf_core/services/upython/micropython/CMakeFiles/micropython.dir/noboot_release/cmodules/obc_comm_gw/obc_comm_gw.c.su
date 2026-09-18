@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/obc_comm_gw/obc_comm_gw.c:172:17:obc_cp_gw_send	88	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/obc_comm_gw/obc_comm_gw.c:108:17:obc_csp_gw_send	88	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/obc_comm_gw/obc_comm_gw.c:40:17:obc_fp_gw_send	88	static

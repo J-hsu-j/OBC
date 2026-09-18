@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/aocs/aocs_cntrl/aocs_cntrl_cubeadcs_int.c:602:25:aocs_cntrl_cubeadcs_int_get_cntrl_status	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/aocs/aocs_cntrl/aocs_cntrl_cubeadcs_int.c:577:25:aocs_cntrl_cubeadcs_int_get_cms_status	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/aocs/aocs_cntrl/aocs_cntrl_cubeadcs_int.c:385:25:aocs_cntrl_cubeadcs_int_get_log_data	184	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/aocs/aocs_cntrl/aocs_cntrl_cubeadcs_int.c:349:25:aocs_cntrl_cubeadcs_int_get_meas_wheel_speed	72	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/aocs/aocs_cntrl/aocs_cntrl_cubeadcs_int.c:323:25:aocs_cntrl_cubeadcs_int_get_est_att_ang	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/aocs/aocs_cntrl/aocs_cntrl_cubeadcs_int.c:294:25:aocs_cntrl_cubeadcs_int_get_est_ang_rates	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/aocs/aocs_cntrl/aocs_cntrl_cubeadcs_int.c:272:25:aocs_cntrl_cubeadcs_int_get_aocs_system_errors	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/aocs/aocs_cntrl/aocs_cntrl_cubeadcs_int.c:182:25:aocs_cntrl_cubeadcs_int_sys_state_get_req_state	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/aocs/aocs_cntrl/aocs_cntrl_cubeadcs_int.c:97:25:aocs_cntrl_cubeadcs_int_sys_state_chng_req	40	static

@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/CP_SX_Band_Commands.c:55:13:OnCmdResponseReadyCbk	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/CP_SX_Band_Commands.c:216:13:on_sxband_sched_notif	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/CP_SX_Band_Commands.c:237:13:create_sched_file	600	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/CP_SX_Band_Commands.c:62:21:CPCmdHandler_SXBand_GwSendCmd	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/CP_SX_Band_Commands.c:260:21:CPCmdHandler_SXBand_Sched_Run	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/CP_SX_Band_Commands.c:329:21:CPCmdHandler_SXBand_Sched_Poll	16	static

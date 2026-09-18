@@ -1,0 +1,8 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsServerApp.c:40:13:access_disabled_coprocessor	0	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsServerApp.c:279:13:fault_ops_read_fault_by_indexRequestHandlerImpl	328	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsServerApp.c:209:13:fault_ops_simulate_faultRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsServerApp.c:173:13:fault_ops_clear_all_faultsRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsServerApp.c:134:13:fault_ops_read_fault_by_index_rawRequestHandlerImpl	176	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsServerApp.c:94:13:fault_ops_get_fault_infoRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsServerApp.c:72:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsServerApp.c:356:6:fault_opsServerAppInit	8	static

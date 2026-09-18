@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/ModuleId/v0.1/ModuleId_server/FP_ModuleIdServerApp.c:66:13:ModuleId_getModuleVersionInfoRequestHandlerImpl	216	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/ModuleId/v0.1/ModuleId_server/FP_ModuleIdServerApp.c:48:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/ModuleId/v0.1/ModuleId_server/FP_ModuleIdServerApp.c:119:6:ModuleIdServerAppInit	8	static

@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/crypto/csp_sha1.c:63:13:csp_sha1_compress	376	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/crypto/csp_sha1.c:130:6:csp_sha1_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/crypto/csp_sha1.c:142:6:csp_sha1_process	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/crypto/csp_sha1.c:168:6:csp_sha1_done	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/crypto/csp_sha1.c:203:6:csp_sha1_memory	120	static

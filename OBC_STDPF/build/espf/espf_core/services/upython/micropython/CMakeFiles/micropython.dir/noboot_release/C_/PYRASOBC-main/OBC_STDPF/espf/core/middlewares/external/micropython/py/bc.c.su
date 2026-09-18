@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/bc.c:91:22:fun_pos_args_mismatch	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/bc.c:43:6:mp_encode_uint	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/bc.c:61:11:mp_decode_uint	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/bc.c:79:11:mp_decode_uint_value	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/bc.c:85:13:mp_decode_uint_skip	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/bc.c:127:13:mp_setup_code_state_helper	96	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/bc.c:322:6:mp_setup_code_state	8	static

@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_rng.c:49:6:MAC_RNG_DeInit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_rng.c:62:13:fs_InitRandomVector	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_rng.c:39:6:MAC_RNG_Init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_rng.c:55:10:MAC_RNG_GetRandomNumberInRange	0	static

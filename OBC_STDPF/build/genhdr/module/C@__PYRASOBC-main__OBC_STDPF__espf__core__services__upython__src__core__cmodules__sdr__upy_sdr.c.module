@@ -1,0 +1,1 @@
+MP_REGISTER_MODULE(MP_QSTR_upy_sdr, upy_sdr_user_cmodule);

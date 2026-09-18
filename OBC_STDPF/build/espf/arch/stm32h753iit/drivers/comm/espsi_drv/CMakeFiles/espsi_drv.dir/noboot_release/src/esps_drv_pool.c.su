@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_pool.c:29:20:MAC_POOL_psPoolTXNew	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_pool.c:79:20:MAC_POOL_psPoolRXNew	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_pool.c:130:6:MAC_POOL_vPoolTXFree	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_pool.c:172:6:MAC_POOL_vPoolRXFree	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_pool.c:214:6:MAC_POOL_bPoolInit	24	static

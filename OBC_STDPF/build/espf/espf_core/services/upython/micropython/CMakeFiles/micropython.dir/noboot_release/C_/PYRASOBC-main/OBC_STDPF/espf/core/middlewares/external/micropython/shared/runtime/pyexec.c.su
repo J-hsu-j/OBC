@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/runtime/pyexec.c:67:12:parse_compile_execute	88	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/runtime/pyexec.c:685:5:pyexec_file	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/runtime/pyexec.c:702:5:pyexec_frozen_module	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/runtime/pyexec.c:689:5:pyexec_file_if_exists	8	static

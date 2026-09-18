@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/fp/nvm/v1.0/nvm_server/FP_nvmProtocolServer.c:87:13:fs_restore_defaultsReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/fp/nvm/v1.0/nvm_server/FP_nvmProtocolServer.c:76:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/fp/nvm/v1.0/nvm_server/FP_nvmProtocolServer.c:123:6:nvm_registerServerApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/fp/nvm/v1.0/nvm_server/FP_nvmProtocolServer.c:128:36:nvm_getServerProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/fp/nvm/v1.0/nvm_server/FP_nvmProtocolServer.c:133:19:nvm_restore_defaultsResp	48	static

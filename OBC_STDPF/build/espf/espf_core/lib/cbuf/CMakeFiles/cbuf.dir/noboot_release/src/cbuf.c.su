@@ -1,0 +1,12 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/cbuf/src/cbuf.c:135:10:cbuf_capacity	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/cbuf/src/cbuf.c:25:6:cbuf_clearq	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/cbuf/src/cbuf.c:12:6:cbuf_init	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/cbuf/src/cbuf.c:35:6:cbuf_clear	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/cbuf/src/cbuf.c:143:10:cbuf_space	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/cbuf/src/cbuf.c:46:10:cbuf_push	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/cbuf/src/cbuf.c:151:10:cbuf_size	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/cbuf/src/cbuf.c:83:10:cbuf_peek	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/cbuf/src/cbuf.c:104:10:cbuf_free	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/cbuf/src/cbuf.c:77:10:cbuf_pop	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/cbuf/src/cbuf.c:159:6:cbuf_full	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/cbuf/src/cbuf.c:165:6:cbuf_empty	8	static

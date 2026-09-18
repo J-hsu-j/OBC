@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_dummy.c:94:23:payload_dummy_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_dummy.c:108:23:payload_dummy_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_dummy.c:117:23:payload_dummy_start	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_dummy.c:127:23:payload_dummy_stop	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_dummy.c:137:19:payload_dummy_get_active_state	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_dummy.c:143:17:payload_dummy_get_last_error	0	static

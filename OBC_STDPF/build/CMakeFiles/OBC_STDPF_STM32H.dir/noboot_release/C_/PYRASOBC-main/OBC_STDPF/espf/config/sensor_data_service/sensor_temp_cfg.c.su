@@ -1,0 +1,8 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_temp_cfg.c:147:28:sensor_panel_temp_get_state	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_temp_cfg.c:154:16:sensor_panel_temp_get_last_error	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_temp_cfg.c:186:24:sensor_panel_temp_set_register	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_temp_cfg.c:165:24:sensor_panel_temp_get_register	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_temp_cfg.c:89:24:sensor_panel_temp_get_data_in_deg_c	112	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_temp_cfg.c:136:24:sensor_panel_temp_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_temp_cfg.c:123:24:sensor_panel_temp_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_temp_cfg.c:29:1:cmp_logger_def_init	0	static

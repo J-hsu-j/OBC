@@ -1,0 +1,2 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/cubeobc/src/cubeobc_file.c:12:11:cubeObc_bulkDataTransfer_getFrameBuffer	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/cubeobc/src/cubeobc_file.c:75:11:cubeObc_bulkDataTransfer_commitFrameBuffer	32	static

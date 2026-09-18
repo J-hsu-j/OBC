@@ -1,0 +1,2 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modmicropython.c:133:17:mp_micropython_heap_unlock	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modmicropython.c:127:17:mp_micropython_heap_lock	8	static

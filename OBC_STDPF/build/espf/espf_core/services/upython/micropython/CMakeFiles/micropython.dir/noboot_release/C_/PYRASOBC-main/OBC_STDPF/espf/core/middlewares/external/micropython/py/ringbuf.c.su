@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/ringbuf.c:43:5:ringbuf_peek16	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/ringbuf.c:31:5:ringbuf_get16	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/ringbuf.c:57:5:ringbuf_put16	12	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/ringbuf.c:82:5:ringbuf_get_bytes	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/ringbuf.c:104:5:ringbuf_put_bytes	24	static

@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_route.c:47:12:csp_route_check_options	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_route.c:85:12:csp_route_security_check	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_route.c:157:5:csp_route_work	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_route.c:316:8:csp_task_router	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_route.c:327:5:csp_route_start_task	16	static

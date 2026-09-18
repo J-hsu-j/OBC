@@ -1,0 +1,2 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/fatfs/fatfs.c:42:7:get_fattime	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/fatfs/fatfs.c:66:13:fattime_to_unix	24	static

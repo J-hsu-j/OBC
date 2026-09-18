@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoServerApp.c:295:13:crypto_abortRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoServerApp.c:223:13:crypto_get_cipher_op_statusRequestHandlerImpl	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoServerApp.c:149:13:crypto_perform_cipher_opRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoServerApp.c:63:13:crypto_op_notif	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoServerApp.c:98:13:crypto_update_key_storeRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoServerApp.c:58:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoServerApp.c:348:6:cryptoServerAppInit	8	static

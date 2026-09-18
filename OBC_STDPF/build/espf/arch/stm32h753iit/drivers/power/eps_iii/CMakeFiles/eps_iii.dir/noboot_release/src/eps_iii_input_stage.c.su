@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/src/eps_iii_input_stage.c:61:6:eps_iii_input_stage_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/src/eps_iii_input_stage.c:76:6:eps_iii_input_stage_process_fdir_faults	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/src/eps_iii_input_stage.c:150:6:eps_iii_input_stage_get_telemetry_notif	112	static

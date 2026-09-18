@@ -1,0 +1,2 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/cubeobc/src/cubeobc_time.c:11:5:cubeObc_time_getMs	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/cubeobc/src/cubeobc_time.c:17:6:cubeObc_time_delay	8	static

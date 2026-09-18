@@ -1,0 +1,10 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/persistentcode.c:136:12:read_byte	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/persistentcode.c:140:13:read_bytes	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/persistentcode.c:146:15:read_uint	16	static
+C:/PYRASOBC-main/OBC_STDPF/build/../espf/core/middlewares/external/micropython/py/bc.h:295:20:mp_module_context_alloc_tables	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/persistentcode.c:158:13:load_qstr	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/persistentcode.c:173:17:load_obj	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/persistentcode.c:219:23:load_raw_code	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/persistentcode.c:393:6:mp_raw_code_load	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/persistentcode.c:446:6:mp_raw_code_load_mem	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/persistentcode.c:454:6:mp_raw_code_load_file	32	static

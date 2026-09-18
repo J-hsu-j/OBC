@@ -1,0 +1,13 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_sm_config_user.c:175:13:arm_hold_timer	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_sm_config_user.c:78:17:prepare_tlm_frame	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_sm_config_user.c:136:13:try_push_tlm_entry_to_queue	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_sm_config_user.c:47:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_sm_config_user.c:194:6:telemetry_sm_on_entry_Init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_sm_config_user.c:215:6:telemetry_sm_on_entry_Started	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_sm_config_user.c:233:6:telemetry_sm_on_exit_Started	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_sm_config_user.c:247:6:telemetry_sm_on_entry_Stopped	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_sm_config_user.c:263:6:telemetry_sm_guard_is_hold_time_elapsed	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_sm_config_user.c:288:6:telemetry_sm_action_reload_config	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_sm_config_user.c:310:6:telemetry_sm_action_stop_file_telemetry	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_sm_config_user.c:325:6:telemetry_sm_action_collect_telemetry	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_sm_config_user.c:380:6:telemetry_sm_action_start_file_telemetry	8	static

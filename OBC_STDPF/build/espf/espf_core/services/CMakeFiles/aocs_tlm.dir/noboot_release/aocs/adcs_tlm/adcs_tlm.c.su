@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/adcs_tlm/adcs_tlm.c:110:13:fs_adcs_tlm_task	96	dynamic
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/adcs_tlm/adcs_tlm.c:85:6:ADCS_TLM_TaskInit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/adcs_tlm/adcs_tlm.c:95:6:ADCS_TLM_TaskDeInit	8	static

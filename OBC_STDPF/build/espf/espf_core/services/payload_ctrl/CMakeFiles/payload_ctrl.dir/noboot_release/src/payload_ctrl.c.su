@@ -1,0 +1,11 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_ctrl.c:442:30:payload_ctrl_pld_to_ctrl_status	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_ctrl.c:427:13:payload_ctrl_check_transient_state	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_ctrl.c:406:13:payload_ctrl_task	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_ctrl.c:90:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_ctrl.c:157:23:payload_ctrl_init	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_ctrl.c:207:23:payload_ctrl_deinit	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_ctrl.c:237:23:payload_ctrl_start	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_ctrl.c:291:23:payload_ctrl_stop	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_ctrl.c:317:6:payload_ctrl_subscribe_events	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_ctrl.c:322:23:payload_ctrl_get_state	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/src/payload_ctrl.c:355:6:payload_ctrl_event_notify	24	static

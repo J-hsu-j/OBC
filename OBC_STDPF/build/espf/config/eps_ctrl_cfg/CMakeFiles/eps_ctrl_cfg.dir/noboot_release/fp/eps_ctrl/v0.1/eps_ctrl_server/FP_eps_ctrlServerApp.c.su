@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/eps_ctrl/fp/eps_ctrl/v0.1/eps_ctrl_server/FP_eps_ctrlServerApp.c:128:13:eps_ctrl_set_ch_outputRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/eps_ctrl/fp/eps_ctrl/v0.1/eps_ctrl_server/FP_eps_ctrlServerApp.c:77:13:eps_ctrl_get_ch_outputRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/eps_ctrl/fp/eps_ctrl/v0.1/eps_ctrl_server/FP_eps_ctrlServerApp.c:182:6:eps_ctrlServerAppInit	8	static

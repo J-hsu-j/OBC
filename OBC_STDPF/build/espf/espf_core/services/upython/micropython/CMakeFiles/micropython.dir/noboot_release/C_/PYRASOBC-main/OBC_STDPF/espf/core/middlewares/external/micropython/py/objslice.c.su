@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objslice.c:49:17:slice_unary_op	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objslice.c:37:13:slice_print	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objslice.c:118:10:mp_obj_new_slice	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objslice.c:129:6:mp_obj_slice_indices	24	static

@@ -1,0 +1,10 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/cp_cmd_handler.c:286:24:get_gw_id_by_cp_cmd_id	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/cp_cmd_handler.c:573:13:on_cmd_response_ready_cbk	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/cp_cmd_handler.c:586:16:dw_file_by_chunks_cbk	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/cp_cmd_handler.c:626:13:b_calc_file_crc	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/cp_cmd_handler.c:127:6:cp_cmd_handler_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/cp_cmd_handler.c:134:19:cp_cmd_handler_mac_fp_gw_enq_message	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/cp_cmd_handler.c:165:21:cp_cmd_handler_mac_fp_gw_send_cmd	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/cp_cmd_handler.c:307:21:cp_cmd_handler_comm_gw_generic_send	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/cp_cmd_handler.c:360:21:cp_cmd_handler_cubeadcs_gw_send_cmd	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/cp_cmd_handler.c:461:21:cp_cmd_handler_download_file	568	static

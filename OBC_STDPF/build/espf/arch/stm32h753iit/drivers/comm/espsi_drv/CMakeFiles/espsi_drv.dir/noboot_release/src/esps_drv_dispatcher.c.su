@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_dispatcher.c:43:6:MAC_DISP_bDispatchQueueAdd	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_dispatcher.c:73:20:MAC_DISP_bDispatchQueueTop	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_dispatcher.c:86:6:MAC_DISP_bDispatchQueuePop	0	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_dispatcher.c:111:6:MAC_DISP_vDispatcherInit	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_dispatcher.c:131:6:MAC_DISP_vDispatchMessages	16	static,ignoring_inline_asm

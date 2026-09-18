@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/UHF/v0.5/UHF_client/FP_UHFProtocolClient.c:105:13:fs_ReadNumberOfRxPacketsResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/UHF/v0.5/UHF_client/FP_UHFProtocolClient.c:135:13:fs_ExBeaconSetSendResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/UHF/v0.5/UHF_client/FP_UHFProtocolClient.c:165:13:fs_ReadCountersResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/UHF/v0.5/UHF_client/FP_UHFProtocolClient.c:99:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/UHF/v0.5/UHF_client/FP_UHFProtocolClient.c:201:6:UHF_registerClientApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/UHF/v0.5/UHF_client/FP_UHFProtocolClient.c:206:36:UHF_getClientProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/UHF/v0.5/UHF_client/FP_UHFProtocolClient.c:211:19:UHF_ReadNumberOfRxPacketsReq	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/UHF/v0.5/UHF_client/FP_UHFProtocolClient.c:259:19:UHF_ExBeaconSetSendReq	128	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/UHF/v0.5/UHF_client/FP_UHFProtocolClient.c:320:19:UHF_ReadCountersReq	56	static

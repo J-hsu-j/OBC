@@ -1,0 +1,15 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched.c:614:28:onboard_sched_check_time	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched.c:684:13:onboard_sched_check_file_extension	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched.c:548:27:onboard_sched_load_slot	600	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched.c:598:13:onboard_sched_check_crc	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched.c:636:13:onboard_sched_dispatch_cmd	24	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched.c:453:28:onboard_sched_execute_entry	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched.c:528:13:onboard_sched_execute_schedule	72	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched.c:125:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched.c:267:6:onboard_sched_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched.c:336:33:onboard_sched_get_active_schedule	80	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched.c:365:6:onboard_sched_set_state	72	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched.c:373:28:onboard_sched_get_state	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched.c:395:13:onboard_sched_task	80	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched.c:290:33:onboard_sched_set_active_schedule	592	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched.c:381:10:onboard_sched_get_next_slot	64	static

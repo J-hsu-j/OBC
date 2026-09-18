@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/freertos_mphal.c:27:1:mp_hal_ticks_ms	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/freertos_mphal.c:35:1:mp_hal_ticks_us	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/freertos_mphal.c:43:1:mp_hal_time_ns	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/freertos_mphal.c:51:1:mp_hal_delay_ms	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/freertos_mphal.c:59:1:mp_hal_delay_us	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/freertos_mphal.c:67:1:mp_hal_ticks_cpu	8	static

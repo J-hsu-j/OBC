@@ -1,0 +1,17 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:596:13:fs_cubeadcs_errhandl_update_runtime_err	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:580:26:fs_CubeADCS_ErrHandl_SysStateCghErr	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:559:26:fs_CubeADCS_ErrHandl_EstMode	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:537:26:fs_CubeADCS_ErrHandl_CntrlMode	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:516:26:fs_CubeADCS_ErrHandl_Config	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:495:26:fs_CubeADCS_ErrHandl_Orbit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:294:26:fs_CubeADCS_ErrHandl_CamStar	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:268:26:fs_CubeADCS_ErrHandl_Cam2	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:239:26:fs_CubeADCS_ErrHandl_Cam1	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:442:26:fs_CubeADCS_ErrHandl_RateFail	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:372:26:fs_CubeADCS_ErrHandl_RateAndWheelRange	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:180:26:fs_CubeADCS_ErrHandl_Mtm	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:320:26:fs_CubeADCS_ErrHandl_Node	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:124:6:CubeADCS_ErrHandl	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:140:6:cubeadcs_errhandl_activate	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:154:6:CubeADCS_ErrHandl_ClrErrHandlCntrActivCnt	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_errhandl.c:159:10:CubeADCS_ErrHandl_GetErrHandlCntrActivCnt	0	static

@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objboundmeth.c:50:10:mp_call_method_self_n_kw	40	dynamic
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objboundmeth.c:81:17:bound_meth_call	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objboundmeth.c:119:10:mp_obj_new_bound_meth	16	static

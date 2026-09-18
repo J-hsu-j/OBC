@@ -1,0 +1,12 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/obc/v4.1/obc_server/FP_obcServerApp.c:607:13:obc_get_device_mac_addressRequestHandlerImpl	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/obc/v4.1/obc_server/FP_obcServerApp.c:547:13:obc_set_device_mac_addressRequestHandlerImpl	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/obc/v4.1/obc_server/FP_obcServerApp.c:493:13:obc_trigger_reset_in_modeRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/obc/v4.1/obc_server/FP_obcServerApp.c:404:13:obc_clear_reset_counterRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/obc/v4.1/obc_server/FP_obcServerApp.c:358:13:obc_get_reset_countersRequestHandlerImpl	120	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/obc/v4.1/obc_server/FP_obcServerApp.c:323:13:obc_get_uptimeRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/obc/v4.1/obc_server/FP_obcServerApp.c:266:13:obc_set_i2c_pull_ups_stateRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/obc/v4.1/obc_server/FP_obcServerApp.c:216:13:obc_get_i2c_pull_ups_stateRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/obc/v4.1/obc_server/FP_obcServerApp.c:173:13:obc_set_all_gpo_valuesRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/obc/v4.1/obc_server/FP_obcServerApp.c:129:13:obc_get_all_gpo_valuesRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/obc/v4.1/obc_server/FP_obcServerApp.c:77:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/obc/v4.1/obc_server/FP_obcServerApp.c:664:6:obcServerAppInit	8	static

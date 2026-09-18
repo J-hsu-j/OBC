@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/io/drv_gpo/src/drv_gpo.c:45:13:enable_gpio_port_clocks	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/io/drv_gpo/src/drv_gpo.c:100:6:drv_gpo_init	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/io/drv_gpo/src/drv_gpo.c:131:6:set_all_gpo_values	88	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/io/drv_gpo/src/drv_gpo.c:195:6:get_all_gpo_values	24	static

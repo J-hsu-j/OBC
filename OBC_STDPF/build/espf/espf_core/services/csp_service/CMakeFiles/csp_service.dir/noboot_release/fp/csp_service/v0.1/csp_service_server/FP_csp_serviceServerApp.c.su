@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/fp/csp_service/v0.1/csp_service_server/FP_csp_serviceServerApp.c:110:13:csp_service_set_trace_debug_levelRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/fp/csp_service/v0.1/csp_service_server/FP_csp_serviceServerApp.c:71:13:csp_service_get_trace_debug_levelRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/fp/csp_service/v0.1/csp_service_server/FP_csp_serviceServerApp.c:166:6:csp_serviceServerAppInit	8	static

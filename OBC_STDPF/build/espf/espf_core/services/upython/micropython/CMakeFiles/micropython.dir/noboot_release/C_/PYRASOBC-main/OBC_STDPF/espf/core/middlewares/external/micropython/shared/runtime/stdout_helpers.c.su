@@ -1,0 +1,2 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/runtime/stdout_helpers.c:40:6:mp_hal_stdout_tx_strn_cooked	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/runtime/stdout_helpers.c:60:6:mp_hal_stdout_tx_str	8	static

@@ -1,0 +1,8 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/mpprint.c:46:13:plat_print_strn	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/mpprint.c:53:5:mp_print_str	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/mpprint.c:61:5:mp_print_strn	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/mpprint.c:130:12:mp_print_int	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/mpprint.c:204:5:mp_print_mp_int	104	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/mpprint.c:343:5:mp_print_float	72	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/mpprint.c:387:5:mp_vprintf	72	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/mpprint.c:379:5:mp_printf	12	static

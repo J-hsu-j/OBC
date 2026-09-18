@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/fp/EPSII_BP_1/v3.0/EPSII_BP_1_client/FP_EPSII_BP_1ProtocolClient.c:105:13:fs_GetRAWSensorsResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/fp/EPSII_BP_1/v3.0/EPSII_BP_1_client/FP_EPSII_BP_1ProtocolClient.c:135:13:fs_GetBatteryInfoResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/fp/EPSII_BP_1/v3.0/EPSII_BP_1_client/FP_EPSII_BP_1ProtocolClient.c:165:13:fs_GetDeviceHealthInfoResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/fp/EPSII_BP_1/v3.0/EPSII_BP_1_client/FP_EPSII_BP_1ProtocolClient.c:99:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/fp/EPSII_BP_1/v3.0/EPSII_BP_1_client/FP_EPSII_BP_1ProtocolClient.c:201:6:EPSII_BP_1_registerClientApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/fp/EPSII_BP_1/v3.0/EPSII_BP_1_client/FP_EPSII_BP_1ProtocolClient.c:206:36:EPSII_BP_1_getClientProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/fp/EPSII_BP_1/v3.0/EPSII_BP_1_client/FP_EPSII_BP_1ProtocolClient.c:211:19:EPSII_BP_1_GetRAWSensorsReq	168	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/fp/EPSII_BP_1/v3.0/EPSII_BP_1_client/FP_EPSII_BP_1ProtocolClient.c:270:19:EPSII_BP_1_GetBatteryInfoReq	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/fp/EPSII_BP_1/v3.0/EPSII_BP_1_client/FP_EPSII_BP_1ProtocolClient.c:318:19:EPSII_BP_1_GetDeviceHealthInfoReq	56	static

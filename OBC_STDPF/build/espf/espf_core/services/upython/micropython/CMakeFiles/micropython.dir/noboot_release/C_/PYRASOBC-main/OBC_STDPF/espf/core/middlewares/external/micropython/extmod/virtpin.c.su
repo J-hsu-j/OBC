@@ -1,0 +1,2 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/virtpin.c:29:5:mp_virtual_pin_read	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/virtpin.c:35:6:mp_virtual_pin_write	8	static

@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/app/payload_communication.c:55:13:fs_uart6_rs422_enable	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/app/payload_communication.c:79:13:fs_uart6_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/app/payload_communication.c:101:13:payload_comm_task	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/app/payload_communication.c:47:6:payload_comm_init	8	static

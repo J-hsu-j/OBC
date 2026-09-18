@@ -1,0 +1,8 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfloat.c:211:13:mp_obj_float_divmod	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfloat.c:195:10:mp_obj_new_float	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfloat.c:127:17:float_make_new	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfloat.c:203:12:mp_obj_float_get	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfloat.c:152:17:float_unary_op	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfloat.c:105:13:float_print	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfloat.c:246:10:mp_obj_float_binary_op	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfloat.c:175:17:float_binary_op	16	static

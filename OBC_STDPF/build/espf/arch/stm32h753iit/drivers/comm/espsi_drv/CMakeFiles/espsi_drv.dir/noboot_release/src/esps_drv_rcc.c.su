@@ -1,0 +1,2 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_rcc.c:23:6:MAC_RCC_vPeripheralClockEnable	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_rcc.c:41:6:MAC_RCC_vPeripheralClockDisable	0	static

@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/radio/sband_tmtc/src/sband_tmtc.c:96:13:fs_thread_routine	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/radio/sband_tmtc/src/sband_tmtc.c:44:6:sband_tmtc_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/radio/sband_tmtc/src/sband_tmtc.c:62:6:sband_tmtc_is_active	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/radio/sband_tmtc/src/sband_tmtc.c:80:6:sband_tmtc_uptime_response_handler	16	static

@@ -1,0 +1,2 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/arch/freertos/csp_clock.c:24:28:csp_clock_get_time	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/arch/freertos/csp_clock.c:29:27:csp_clock_set_time	8	static

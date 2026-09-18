@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_sys_states.c:305:16:fs_cubeadcs_gen2_get_control_mode_group	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_sys_states.c:265:13:fs_cubeadcs_gen2_binary_search	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_sys_states.c:212:13:fs_cubeadcs_gen2_get_control_mode_info	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_sys_states.c:237:13:fs_cubeadcs_gen2_get_estimator_mode_info	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_sys_states.c:319:16:fs_cubeadcs_gen2_get_est_mode_group	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_sys_states.c:189:6:cubeadcs_gen2_is_sys_state_combo_valid	16	static

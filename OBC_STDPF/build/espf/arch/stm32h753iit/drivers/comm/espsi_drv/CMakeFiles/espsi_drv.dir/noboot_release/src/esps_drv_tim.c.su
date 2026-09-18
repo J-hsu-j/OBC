@@ -1,0 +1,11 @@
+C:/PYRASOBC-main/OBC_STDPF/build/../espf/arch/arm/cmsis/include/core_cm7.h:1902:22:__NVIC_EnableIRQ	0	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/build/../espf/arch/arm/cmsis/include/core_cm7.h:1940:22:__NVIC_DisableIRQ	0	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_tim.c:188:13:fs_vProcessExpiration	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_tim.c:31:6:MAC_TIM_IRQ_Handler_Generic	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_tim.c:42:6:MAC_TIM_bInit	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_tim.c:68:6:MAC_TIM_bDeinit	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_tim.c:85:6:MAC_TIM_vMicroTimerStart	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_tim.c:120:10:MAC_TIM_vMicroTimerGetElapsed	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_tim.c:126:6:MAC_TIM_vMicroTimerCancel	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_tim.c:157:6:MAC_TIM_vGetTimerIsrStateById	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_tim.c:172:6:MAC_TIM_vSetTimerIsrStateById	8	static

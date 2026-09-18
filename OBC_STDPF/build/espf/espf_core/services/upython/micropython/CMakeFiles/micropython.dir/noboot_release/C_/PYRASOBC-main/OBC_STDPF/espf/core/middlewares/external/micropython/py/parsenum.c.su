@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/parsenum.c:201:13:accept_digit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/parsenum.c:39:22:raise_exc	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/parsenum.c:49:10:mp_parse_num_integer	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/parsenum.c:220:10:mp_parse_num_decimal	80	static

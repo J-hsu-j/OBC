@@ -1,0 +1,11 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoProtocolServer.c:122:13:fs_update_key_storeReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoProtocolServer.c:152:13:fs_perform_cipher_opReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoProtocolServer.c:182:13:fs_get_cipher_op_statusReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoProtocolServer.c:210:13:fs_abortReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoProtocolServer.c:111:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoProtocolServer.c:246:6:crypto_registerServerApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoProtocolServer.c:251:36:crypto_getServerProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoProtocolServer.c:256:19:crypto_update_key_storeResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoProtocolServer.c:306:19:crypto_perform_cipher_opResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoProtocolServer.c:356:19:crypto_get_cipher_op_statusResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/crypto/fp/crypto/v0.1/crypto_server/FP_cryptoProtocolServer.c:408:19:crypto_abortResp	48	static

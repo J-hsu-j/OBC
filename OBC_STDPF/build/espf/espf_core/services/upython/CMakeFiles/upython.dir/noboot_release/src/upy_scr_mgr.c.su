@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/upy_scr_mgr.c:62:22:upy_scr_mgr_add	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/upy_scr_mgr.c:123:22:upy_scr_mgr_get_status	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/upy_scr_mgr.c:162:22:upy_scr_mgr_set_status	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/upy_scr_mgr.c:202:6:upy_scr_mgr_init	8	static

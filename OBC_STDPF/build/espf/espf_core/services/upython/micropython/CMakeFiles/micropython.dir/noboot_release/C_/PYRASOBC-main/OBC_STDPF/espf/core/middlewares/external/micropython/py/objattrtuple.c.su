@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objattrtuple.c:58:13:mp_obj_attrtuple_attr	12	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objattrtuple.c:35:6:mp_obj_attrtuple_print_helper	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objattrtuple.c:51:13:mp_obj_attrtuple_print	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objattrtuple.c:73:10:mp_obj_new_attrtuple	16	static

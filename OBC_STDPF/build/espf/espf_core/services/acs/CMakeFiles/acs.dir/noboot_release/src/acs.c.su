@@ -1,0 +1,15 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/src/acs.c:332:13:fs_acs_update_status	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/src/acs.c:492:13:fs_get_magnetorquers_direction	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/src/acs.c:511:13:fs_actuators_saturate	4	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/src/acs.c:473:13:fs_magnetorquers_stop	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/src/acs.c:339:13:fs_magnetorquers_actuate	200	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/src/acs.c:454:13:fs_magnetorquers_actuate_manual	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/src/acs.c:284:13:fs_acs_task	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/src/acs.c:131:6:acs_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/src/acs.c:228:13:acs_get_op_mode	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/src/acs.c:148:6:acs_set_op_mode	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/src/acs.c:233:14:acs_get_status	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/src/acs.c:238:6:acs_set_manual_mtq_control_mtq_frame	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/src/acs.c:258:6:acs_get_manual_mtq_control_mtq_frame	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/src/acs.c:265:6:acs_get_last_mtq_control_body_frame	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/src/acs.c:272:6:acs_get_last_mtq_control_mtq_frame	0	static

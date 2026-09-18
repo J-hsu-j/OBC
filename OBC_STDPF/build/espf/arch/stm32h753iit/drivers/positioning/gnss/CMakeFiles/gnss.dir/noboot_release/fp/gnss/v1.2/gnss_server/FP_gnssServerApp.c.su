@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssServerApp.c:367:13:gnss_get_gnss_uart_baudrateRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssServerApp.c:325:13:gnss_set_gnss_uart_baudrateRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssServerApp.c:266:13:gnss_get_command_execution_statusRequestHandlerImpl	320	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssServerApp.c:224:13:gnss_request_command_executionRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssServerApp.c:99:13:on_gnss_cmd_exec_result_cbk	304	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssServerApp.c:181:13:gnss_get_powerRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssServerApp.c:130:13:gnss_set_powerRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssServerApp.c:32:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssServerApp.c:416:6:gnssServerAppInit	8	static

@@ -1,0 +1,11 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/fp/EPS1/v0.1/EPS1_client/FP_EPS1ProtocolClient.c:117:13:fs_getBatteryInfoResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/fp/EPS1/v0.1/EPS1_client/FP_EPS1ProtocolClient.c:147:13:fs_getConfigurationInfoResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/fp/EPS1/v0.1/EPS1_client/FP_EPS1ProtocolClient.c:177:13:fs_queryControlsResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/fp/EPS1/v0.1/EPS1_client/FP_EPS1ProtocolClient.c:207:13:fs_ToggleOutPutResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/fp/EPS1/v0.1/EPS1_client/FP_EPS1ProtocolClient.c:111:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/fp/EPS1/v0.1/EPS1_client/FP_EPS1ProtocolClient.c:243:6:EPS1_registerClientApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/fp/EPS1/v0.1/EPS1_client/FP_EPS1ProtocolClient.c:248:36:EPS1_getClientProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/fp/EPS1/v0.1/EPS1_client/FP_EPS1ProtocolClient.c:253:19:EPS1_getBatteryInfoReq	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/fp/EPS1/v0.1/EPS1_client/FP_EPS1ProtocolClient.c:301:19:EPS1_getConfigurationInfoReq	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/fp/EPS1/v0.1/EPS1_client/FP_EPS1ProtocolClient.c:349:19:EPS1_queryControlsReq	80	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/fp/EPS1/v0.1/EPS1_client/FP_EPS1ProtocolClient.c:406:19:EPS1_ToggleOutPutReq	64	static

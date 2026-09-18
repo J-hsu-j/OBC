@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_tctlmCommsMasterSvc.c:168:19:nackToErrorCode	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_tctlmCommsMasterSvc.c:252:11:cubeObc_tctlmCommsMasterSvc_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_tctlmCommsMasterSvc.c:263:10:cubeObc_tctlmCommsMasterSvc_buffer	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_tctlmCommsMasterSvc.c:268:5:cubeObc_tctlmCommsMasterSvc_bufferSize	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_tctlmCommsMasterSvc.c:273:11:cubeObc_tctlmCommsMasterSvc_sendReceive	96	static

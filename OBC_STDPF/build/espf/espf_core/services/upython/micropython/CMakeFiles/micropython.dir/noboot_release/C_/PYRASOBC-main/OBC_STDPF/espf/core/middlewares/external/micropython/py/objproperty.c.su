@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objproperty.c:76:17:property_deleter	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objproperty.c:67:17:property_setter	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objproperty.c:58:17:property_getter	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objproperty.c:39:17:property_make_new	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objproperty.c:101:17:mp_obj_property_get	0	static

@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/nvm_rc/src/nvm_rc.c:22:6:nvm_rc_clear	72	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/nvm_rc/src/nvm_rc.c:119:6:nvm_rc_clear_reset_reason	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/nvm_rc/src/nvm_rc.c:125:6:nvm_rc_update	72	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/nvm_rc/src/nvm_rc.c:169:6:nvm_rc_hard_fault_cntr_update	72	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/nvm_rc/src/nvm_rc.c:209:10:nvm_rc_get_total	96	static

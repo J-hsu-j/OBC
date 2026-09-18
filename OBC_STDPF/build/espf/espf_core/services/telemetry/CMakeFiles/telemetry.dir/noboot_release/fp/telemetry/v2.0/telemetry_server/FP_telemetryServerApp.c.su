@@ -1,0 +1,15 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/fp/telemetry/v2.0/telemetry_server/FP_telemetryServerApp.c:737:13:telemetry_stopTelemetryRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/fp/telemetry/v2.0/telemetry_server/FP_telemetryServerApp.c:695:13:telemetry_startTelemetryRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/fp/telemetry/v2.0/telemetry_server/FP_telemetryServerApp.c:639:13:telemetry_getTelemetryOperationStatsRequestHandlerImpl	72	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/fp/telemetry/v2.0/telemetry_server/FP_telemetryServerApp.c:594:13:telemetry_cleanTelemetryFilesRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/fp/telemetry/v2.0/telemetry_server/FP_telemetryServerApp.c:522:13:telemetry_setTelemetryFileSzLimitConfigRequestHandlerImpl	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/fp/telemetry/v2.0/telemetry_server/FP_telemetryServerApp.c:463:13:telemetry_getTelemetryFileSinkConfigRequestHandlerImpl	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/fp/telemetry/v2.0/telemetry_server/FP_telemetryServerApp.c:420:13:telemetry_restoreActivePresetRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/fp/telemetry/v2.0/telemetry_server/FP_telemetryServerApp.c:373:13:telemetry_getActivePresetRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/fp/telemetry/v2.0/telemetry_server/FP_telemetryServerApp.c:326:13:telemetry_setActivePresetRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/fp/telemetry/v2.0/telemetry_server/FP_telemetryServerApp.c:279:13:telemetry_setTelemetryPresetConfigRequestHandlerImpl	184	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/fp/telemetry/v2.0/telemetry_server/FP_telemetryServerApp.c:220:13:telemetry_getTelemetryPresetConfigRequestHandlerImpl	336	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/fp/telemetry/v2.0/telemetry_server/FP_telemetryServerApp.c:171:13:telemetry_setTelemetryGeneralConfigRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/fp/telemetry/v2.0/telemetry_server/FP_telemetryServerApp.c:120:13:telemetry_getTelemetryGeneralConfigRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/fp/telemetry/v2.0/telemetry_server/FP_telemetryServerApp.c:90:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/fp/telemetry/v2.0/telemetry_server/FP_telemetryServerApp.c:784:6:telemetryServerAppInit	8	static

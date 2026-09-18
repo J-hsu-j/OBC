@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libsgp4/source/sgp4_two_line_element.c:137:19:sgp4_verify_trailing_spaces	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libsgp4/source/sgp4_two_line_element.c:79:19:sgp4_verify_leading_spaces	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libsgp4/source/sgp4_two_line_element.c:384:19:sgp4_tle_verify_line2	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libsgp4/source/sgp4_two_line_element.c:195:19:sgp4_tle_verify_line1	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libsgp4/source/sgp4_two_line_element.c:30:12:sgp4_tle_verify_checksum	4	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libsgp4/source/sgp4_two_line_element.c:543:12:sgp4_tle_verify_format	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libsgp4/source/sgp4_two_line_element.c:574:12:sgp4_tle_parse	64	static

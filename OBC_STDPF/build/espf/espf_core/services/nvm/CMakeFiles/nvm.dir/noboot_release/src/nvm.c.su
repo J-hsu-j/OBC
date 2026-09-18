@@ -1,0 +1,10 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/nvm/src/nvm.c:287:1:fs_eNvmReadBlock	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/nvm/src/nvm.c:348:1:fs_bNvmWriteBlock	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/nvm/src/nvm.c:370:1:NvmStoreBlock	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/nvm/src/nvm.c:38:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/nvm/src/nvm.c:62:1:Nvm_Init	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/nvm/src/nvm.c:190:1:Nvm_Store	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/nvm/src/nvm.c:110:1:Nvm_Load	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/nvm/src/nvm.c:220:1:Nvm_RestoreBlockDefaults	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/nvm/src/nvm.c:243:1:Nvm_GetBlockById	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/nvm/src/nvm.c:255:1:Nvm_SetBlockById	32	static

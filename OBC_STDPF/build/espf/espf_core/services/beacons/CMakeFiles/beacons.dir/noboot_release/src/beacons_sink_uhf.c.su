@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/src/beacons_sink_uhf.c:32:13:beacons_uhf_cmd	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/src/beacons_sink_uhf.c:40:13:beacons_uhf_send	128	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/src/beacons_sink_uhf.c:29:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/src/beacons_sink_uhf.c:106:6:beacons_sink_uhf_send_status_cbk	40	static

@@ -1,0 +1,11 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sys_time/fp/time/v0.1/time_server/FP_timeServerApp.c:93:26:convert_rtc_clock_type	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sys_time/fp/time/v0.1/time_server/FP_timeServerApp.c:471:13:time_get_rtc_clock_sourceRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sys_time/fp/time/v0.1/time_server/FP_timeServerApp.c:425:13:time_retrieve_rtc_calibration_parametersRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sys_time/fp/time/v0.1/time_server/FP_timeServerApp.c:377:13:time_configure_rtc_calibration_parametersRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sys_time/fp/time/v0.1/time_server/FP_timeServerApp.c:333:13:time_enable_calibration_outputRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sys_time/fp/time/v0.1/time_server/FP_timeServerApp.c:276:13:time_get_timeRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sys_time/fp/time/v0.1/time_server/FP_timeServerApp.c:226:13:time_set_timeRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sys_time/fp/time/v0.1/time_server/FP_timeServerApp.c:171:13:time_get_dateRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sys_time/fp/time/v0.1/time_server/FP_timeServerApp.c:122:13:time_set_dateRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sys_time/fp/time/v0.1/time_server/FP_timeServerApp.c:70:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sys_time/fp/time/v0.1/time_server/FP_timeServerApp.c:525:6:timeServerAppInit	8	static

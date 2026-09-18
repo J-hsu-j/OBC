@@ -1,0 +1,8 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/sds_events_gen/sds_events.c:285:13:sds_events_delay_elapsed_cb	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/sds_events_gen/sds_events.c:347:13:sds_events_init_oc_chan	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/sds_events_gen/sds_events.c:368:13:sds_events_start_oc_chan_it	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/sds_events_gen/sds_events.c:379:13:sds_events_deinit_timer	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/sds_events_gen/sds_events.c:261:6:sds_deinit_events_timer	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/sds_events_gen/sds_events.c:123:6:sds_init_events_timer	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/sds_events_gen/sds_events.c:268:6:TIM3_IRQHandler	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/sds_events_gen/sds_events.c:274:6:TIM4_IRQHandler	8	static

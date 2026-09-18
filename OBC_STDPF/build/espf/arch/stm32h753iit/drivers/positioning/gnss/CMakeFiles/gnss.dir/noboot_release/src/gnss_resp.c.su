@@ -1,0 +1,16 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_resp.c:753:13:verify_info	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_resp.c:898:17:crc32_value	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_resp.c:917:17:crc32_calculate_block	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_resp.c:1055:20:strnstrn	20	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_resp.c:938:17:get_ascii_time_status	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_resp.c:988:17:get_solution_status	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_resp.c:1014:17:get_pv_type	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_resp.c:960:17:get_clock_status	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_resp.c:974:17:get_utc_status	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_resp.c:1097:20:strnchr	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_resp.c:774:13:parse_ascii_hdr	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_resp.c:211:6:gnss_resp_parse_ascii_pv	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_resp.c:531:6:gnss_resp_parse_ascii_tm	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_resp.c:671:6:gnss_resp_is_ascii	4	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_resp.c:702:6:gnss_resp_is_ascii_crc_valid	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_resp.c:721:6:gnss_resp_get_ascii_info	24	static

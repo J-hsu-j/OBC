@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/file_tools/src/stack_file.c:29:13:stack_file_open	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/file_tools/src/stack_file.c:45:13:stack_file_push	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/file_tools/src/stack_file.c:69:13:stack_file_pop	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/file_tools/src/stack_file.c:98:10:stack_file_count	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/file_tools/src/stack_file.c:103:13:stack_file_close	16	static

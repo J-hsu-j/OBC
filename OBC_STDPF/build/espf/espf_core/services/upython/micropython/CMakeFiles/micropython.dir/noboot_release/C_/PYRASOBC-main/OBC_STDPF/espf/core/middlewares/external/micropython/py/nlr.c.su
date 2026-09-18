@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/nlr.c:40:14:nlr_push_tail	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/nlr.c:48:6:nlr_pop	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/nlr.c:53:6:nlr_push_jump_callback	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/nlr.c:60:6:nlr_pop_jump_callback	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/nlr.c:76:6:nlr_call_jump_callbacks	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/nlr.c:84:15:nlr_jump_abort	8	static

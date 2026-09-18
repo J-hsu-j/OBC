@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_if.c:72:21:comm_gw_cfg_get_intf_ref	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_if.c:86:13:comm_gw_cfg_get_user_str	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_if.c:91:13:comm_gw_cfg_get_gw_str	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_if.c:96:13:comm_gw_cfg_get_err_str	0	static

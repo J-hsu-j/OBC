@@ -1,0 +1,14 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon_stat.c:212:13:task_mon_stat_init_config	192	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon_stat.c:165:13:task_mon_stat_update_id_table_file	600	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon_stat.c:256:20:task_mon_stat_is_task_enabled	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon_stat.c:261:13:task_mon_stat_sampling	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon_stat.c:311:13:task_mon_stat_log_loop	536	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon_stat.c:356:13:task_mon_stat_do_log	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon_stat.c:44:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon_stat.c:192:6:task_mon_register_for_stats	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon_stat.c:232:13:task_mon_stat_task	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon_stat.c:383:6:task_mon_stat_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon_stat.c:394:24:task_mon_stat_get_configuration	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon_stat.c:399:6:task_mon_stat_set_configuration	160	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon_stat.c:489:13:task_mon_stat_get_configuration_per_id	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon_stat.c:499:6:task_mon_stat_set_configuration_per_id	120	static

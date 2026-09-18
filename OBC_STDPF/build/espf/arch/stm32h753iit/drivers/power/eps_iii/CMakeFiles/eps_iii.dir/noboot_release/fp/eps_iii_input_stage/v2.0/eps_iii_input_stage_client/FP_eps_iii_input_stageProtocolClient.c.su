@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_input_stage/v2.0/eps_iii_input_stage_client/FP_eps_iii_input_stageProtocolClient.c:82:13:fs_get_telemetryResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_input_stage/v2.0/eps_iii_input_stage_client/FP_eps_iii_input_stageProtocolClient.c:76:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_input_stage/v2.0/eps_iii_input_stage_client/FP_eps_iii_input_stageProtocolClient.c:118:6:eps_iii_input_stage_registerClientApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_input_stage/v2.0/eps_iii_input_stage_client/FP_eps_iii_input_stageProtocolClient.c:123:36:eps_iii_input_stage_getClientProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_input_stage/v2.0/eps_iii_input_stage_client/FP_eps_iii_input_stageProtocolClient.c:128:19:eps_iii_input_stage_get_telemetryReq	56	static

@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/freertos/freertos.c:66:13:PreSleepProcessing	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/freertos/freertos.c:71:13:PostSleepProcessing	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/freertos/freertos.c:104:6:freertos_user_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/freertos/freertos.c:110:10:freertos_user_get_heap_size	0	static

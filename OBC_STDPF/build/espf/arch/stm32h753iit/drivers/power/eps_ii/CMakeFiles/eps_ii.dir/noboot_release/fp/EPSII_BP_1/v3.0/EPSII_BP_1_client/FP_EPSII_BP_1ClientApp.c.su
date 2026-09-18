@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/fp/EPSII_BP_1/v3.0/EPSII_BP_1_client/FP_EPSII_BP_1ClientApp.c:114:13:EPSII_BP_1_GetDeviceHealthInfoResponseHandlerImpl	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/fp/EPSII_BP_1/v3.0/EPSII_BP_1_client/FP_EPSII_BP_1ClientApp.c:94:13:EPSII_BP_1_GetBatteryInfoResponseHandlerImpl	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/fp/EPSII_BP_1/v3.0/EPSII_BP_1_client/FP_EPSII_BP_1ClientApp.c:75:13:EPSII_BP_1_GetRAWSensorsResponseHandlerImpl	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/fp/EPSII_BP_1/v3.0/EPSII_BP_1_client/FP_EPSII_BP_1ClientApp.c:55:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/fp/EPSII_BP_1/v3.0/EPSII_BP_1_client/FP_EPSII_BP_1ClientApp.c:138:6:EPSII_BP_1ClientAppInit	8	static

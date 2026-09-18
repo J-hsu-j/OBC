@@ -1,0 +1,15 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsProtocolServer.c:143:13:fs_set_op_modeReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsProtocolServer.c:173:13:fs_get_op_modeReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsProtocolServer.c:201:13:fs_get_statusReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsProtocolServer.c:229:13:fs_set_manual_mtq_controlReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsProtocolServer.c:259:13:fs_get_manual_mtq_controlReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsProtocolServer.c:287:13:fs_get_last_mtq_controlReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsProtocolServer.c:132:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsProtocolServer.c:321:6:acs_registerServerApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsProtocolServer.c:326:36:acs_getServerProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsProtocolServer.c:331:19:acs_set_op_modeResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsProtocolServer.c:381:19:acs_get_op_modeResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsProtocolServer.c:433:19:acs_get_statusResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsProtocolServer.c:494:19:acs_set_manual_mtq_controlResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsProtocolServer.c:544:19:acs_get_manual_mtq_controlResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsProtocolServer.c:605:19:acs_get_last_mtq_controlResp	48	static

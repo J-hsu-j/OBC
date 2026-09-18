@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/libcubeobc/cubeObc_config.c:56:20:cube_adcs_g2_run	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/libcubeobc/cubeObc_config.c:62:20:cube_adcs_g2_stop	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/libcubeobc/cubeObc_config.c:19:20:cube_adcs_g2_init	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/libcubeobc/cubeObc_config.c:68:20:cube_adcs_g2_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/libcubeobc/cubeObc_config.c:10:1:cmp_logger_def_init	0	static

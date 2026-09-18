@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/radio/sband_tmtc/fp/SBAND_TMTC/v1.12/SBAND_TMTC_client/FP_SBAND_TMTCClientApp.c:118:13:SBAND_TMTC_GetPacketCountersResponseHandlerImpl	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/radio/sband_tmtc/fp/SBAND_TMTC/v1.12/SBAND_TMTC_client/FP_SBAND_TMTCClientApp.c:95:13:SBAND_TMTC_ReadErrorCountersResponseHandlerImpl	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/radio/sband_tmtc/fp/SBAND_TMTC/v1.12/SBAND_TMTC_client/FP_SBAND_TMTCClientApp.c:76:13:SBAND_TMTC_ReadUpTimeResponseHandlerImpl	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/radio/sband_tmtc/fp/SBAND_TMTC/v1.12/SBAND_TMTC_client/FP_SBAND_TMTCClientApp.c:56:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/radio/sband_tmtc/fp/SBAND_TMTC/v1.12/SBAND_TMTC_client/FP_SBAND_TMTCClientApp.c:145:6:SBAND_TMTCClientAppInit	8	static

@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_debug.c:51:6:csp_debug_hook_set	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_debug.c:56:6:do_csp_debug	12	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_debug.c:116:6:csp_debug_set_level	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_debug.c:123:5:csp_debug_get_level	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_debug.c:131:6:csp_debug_toggle_level	0	static

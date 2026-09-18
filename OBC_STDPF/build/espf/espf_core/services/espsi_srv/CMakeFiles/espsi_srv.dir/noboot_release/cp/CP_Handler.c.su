@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/build/../espf/config/ESPLATFORM_NETWORK_STACK/inc/ESCP_CommandsLocalConf.h:118:1:GetCommandHandler	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/CP_Handler.c:75:6:OnESCP_CommandReceived	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/CP_Handler.c:83:6:OnESCP_CmdCancelRequest	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/CP_Handler.c:103:6:CP_Handler_Init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/CP_Handler.c:115:6:CP_Handler_Task	80	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/CP_Handler.c:194:6:CPCmdHandler_IsDispContextValid	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/cp/CP_Handler.c:209:10:CPCmdHandler_GetTimeout	0	static

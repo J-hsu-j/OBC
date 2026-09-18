@@ -1,0 +1,8 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsServerApp.c:308:13:acs_get_last_mtq_controlRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsServerApp.c:265:13:acs_get_manual_mtq_controlRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsServerApp.c:221:13:acs_set_manual_mtq_controlRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsServerApp.c:169:13:acs_get_statusRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsServerApp.c:126:13:acs_get_op_modeRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsServerApp.c:81:13:acs_set_op_modeRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsServerApp.c:58:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/actuator_control_service/fp/acs/v1.2/acs_server/FP_acsServerApp.c:361:6:acsServerAppInit	8	static

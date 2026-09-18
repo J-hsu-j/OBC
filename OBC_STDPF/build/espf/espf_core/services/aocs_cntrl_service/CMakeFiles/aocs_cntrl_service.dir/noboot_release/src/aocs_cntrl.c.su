@@ -1,0 +1,16 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/aocs_cntrl/src/aocs_cntrl.c:530:13:fs_aocs_cntrl_is_interface_valid	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/aocs_cntrl/src/aocs_cntrl.c:585:13:fs_aocs_cntrl_set_ref_params	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/aocs_cntrl/src/aocs_cntrl.c:276:13:fs_aocs_cntrl_init_control_mode	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/aocs_cntrl/src/aocs_cntrl.c:393:13:fs_aocs_cntrl_is_new_sys_state_req	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/aocs_cntrl/src/aocs_cntrl.c:473:13:fs_aocs_cntrl_set_aocs_sys_state_dc_data	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/aocs_cntrl/src/aocs_cntrl.c:556:13:fs_aocs_cntrl_get_ref_params	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/aocs_cntrl/src/aocs_cntrl.c:423:13:fs_aocs_cntrl_set_aocs_dc_data	96	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/aocs_cntrl/src/aocs_cntrl.c:354:13:fs_aocs_cntrl_pm	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/aocs_cntrl/src/aocs_cntrl.c:321:13:fs_aocs_cntrl_task_main	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/aocs_cntrl/src/aocs_cntrl.c:245:13:fs_aocs_cntrl_task	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/aocs_cntrl/src/aocs_cntrl.c:99:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/aocs_cntrl/src/aocs_cntrl.c:122:6:aocs_cntrl_task_init	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/aocs_cntrl/src/aocs_cntrl.c:149:6:aocs_cntrl_task_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/aocs_cntrl/src/aocs_cntrl.c:154:23:aocs_cntrl_request_aocs_state	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/aocs_cntrl/src/aocs_cntrl.c:185:23:aocs_cntrl_get_aocs_state	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/aocs_cntrl/src/aocs_cntrl.c:211:6:aocs_cntrl_get_cms_status	16	static

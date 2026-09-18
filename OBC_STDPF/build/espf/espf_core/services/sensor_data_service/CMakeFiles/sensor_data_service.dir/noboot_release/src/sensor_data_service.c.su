@@ -1,0 +1,14 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/src/sensor_data_service.c:391:13:fs_sds_check_pwr_save_off	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/src/sensor_data_service.c:404:13:fs_sds_check_pwr_save_on	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/src/sensor_data_service.c:432:13:fs_sds_spawn_locks	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/src/sensor_data_service.c:417:13:fs_sds_init_timer	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/src/sensor_data_service.c:133:6:sds_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/src/sensor_data_service.c:163:14:sds_get_thread_id	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/src/sensor_data_service.c:168:6:sds_sens_lock	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/src/sensor_data_service.c:182:6:sds_sens_release	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/src/sensor_data_service.c:299:13:fs_sds_task	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/src/sensor_data_service.c:196:6:sds_conv_mag_data_to_sat_frame	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/src/sensor_data_service.c:216:6:sds_conv_gyro_data_to_sat_frame	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/src/sensor_data_service.c:235:6:sds_conv_css_data_to_sat_frame	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/src/sensor_data_service.c:254:6:sds_conv_panel_temp_data_to_sat_frame	112	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/src/sensor_data_service.c:273:6:sds_conv_gyro_temp_data_to_sat_frame	64	static

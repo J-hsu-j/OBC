@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libDataSink/FileSink.c:25:13:fappend_formatted_buf_va	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libDataSink/FileSink.c:38:6:fappend_formatted_buf	12	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libDataSink/FileSink.c:62:6:fstart_multi_buf_seq	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libDataSink/FileSink.c:70:6:fcommit_multi_buf_seq	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libDataSink/FileSink.c:49:6:fcommit_formatted_buf	20	static

@@ -1,0 +1,11 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/arm_fault_handler/src/arm_fault_handler.c:63:35:capture_registers	8	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/arm_fault_handler/src/arm_fault_handler.c:161:6:arm_fault_handler_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/arm_fault_handler/src/arm_fault_handler.c:170:6:arm_fault_handler_set_env	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/arm_fault_handler/src/arm_fault_handler.c:194:6:arm_fault_handler_is_frame_valid	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/arm_fault_handler/src/arm_fault_handler.c:178:6:arm_fault_handler_read_last	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/arm_fault_handler/src/arm_fault_handler.c:208:6:arm_fault_handler_bkpt_if_debug	0	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/arm_fault_handler/src/arm_fault_handler.c:216:6:arm_fault_handler_generic	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/arm_fault_handler/src/arm_fault_handler.c:241:6:MemManage_Handler	0	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/arm_fault_handler/src/arm_fault_handler.c:253:6:BusFault_Handler	0	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/arm_fault_handler/src/arm_fault_handler.c:262:6:UsageFault_Handler	0	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/arm_fault_handler/src/arm_fault_handler.c:271:6:HardFault_Handler	0	static,ignoring_inline_asm

@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/timeutils/timeutils.c:45:6:timeutils_is_leap_year	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/timeutils/timeutils.c:50:11:timeutils_days_in_month	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/timeutils/timeutils.c:60:11:timeutils_year_day	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/timeutils/timeutils.c:68:6:timeutils_seconds_since_2000_to_struct_time	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/timeutils/timeutils.c:147:11:timeutils_seconds_since_2000	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/timeutils/timeutils.c:161:11:timeutils_mktime_2000	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/timeutils/timeutils.c:220:5:timeutils_calc_weekday	0	static

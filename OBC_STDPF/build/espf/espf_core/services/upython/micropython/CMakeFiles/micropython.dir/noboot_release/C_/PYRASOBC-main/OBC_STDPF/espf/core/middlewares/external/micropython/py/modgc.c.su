@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modgc.c:45:17:gc_disable	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modgc.c:52:17:gc_enable	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modgc.c:58:17:gc_isenabled	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modgc.c:34:17:py_gc_collect	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modgc.c:64:17:gc_mem_free	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modgc.c:77:17:gc_mem_alloc	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modgc.c:85:17:gc_threshold	8	static

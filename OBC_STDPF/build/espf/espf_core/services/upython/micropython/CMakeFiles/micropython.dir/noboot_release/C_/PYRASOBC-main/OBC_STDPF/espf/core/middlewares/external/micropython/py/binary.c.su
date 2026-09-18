@@ -1,0 +1,8 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/binary.c:45:8:mp_binary_get_size	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/binary.c:147:10:mp_binary_get_val_array	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/binary.c:196:11:mp_binary_get_int	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/binary.c:219:10:mp_binary_get_val	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/binary.c:271:6:mp_binary_set_int	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/binary.c:290:6:mp_binary_set_val	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/binary.c:389:6:mp_binary_set_val_array_from_int	4	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/binary.c:362:6:mp_binary_set_val_array	24	static

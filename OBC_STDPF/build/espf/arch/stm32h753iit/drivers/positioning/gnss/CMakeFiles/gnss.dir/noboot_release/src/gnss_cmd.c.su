@@ -1,0 +1,16 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_cmd.c:454:16:get_idx_from_id	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_cmd.c:470:13:crawl_cmd_q_for_space	4	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_cmd.c:687:13:gnss_cmd_timeout_cbk	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_cmd.c:606:13:fetch_cmd_to_dequeue	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_cmd.c:649:13:gnss_cmd_task	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_cmd.c:569:16:gnss_ensure_cmd_termination	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_cmd.c:507:26:gnss_register_cmd	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_cmd.c:38:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_cmd.c:231:6:gnss_cmd_init	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_cmd.c:289:6:gnss_cmd_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_cmd.c:357:6:is_gnss_cmd_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_cmd.c:592:13:gnss_comm_is_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_cmd.c:294:19:gnss_send_cmd	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_cmd.c:362:19:gnss_get_cmd_status	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_cmd.c:392:19:gnss_set_cmd_status	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_cmd.c:427:6:gnss_register_cmd_resp	16	static

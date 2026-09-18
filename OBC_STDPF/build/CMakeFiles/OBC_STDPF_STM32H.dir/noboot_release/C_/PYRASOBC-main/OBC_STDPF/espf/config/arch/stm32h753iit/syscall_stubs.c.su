@@ -1,0 +1,10 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/arch/stm32h753iit/syscall_stubs.c:8:5:_fstat	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/arch/stm32h753iit/syscall_stubs.c:16:5:_lseek	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/arch/stm32h753iit/syscall_stubs.c:25:5:_close	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/arch/stm32h753iit/syscall_stubs.c:32:5:_write	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/arch/stm32h753iit/syscall_stubs.c:41:5:_read	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/arch/stm32h753iit/syscall_stubs.c:50:7:_sbrk	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/arch/stm32h753iit/syscall_stubs.c:57:5:_isatty	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/arch/stm32h753iit/syscall_stubs.c:62:6:_exit	0	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/config/arch/stm32h753iit/syscall_stubs.c:74:6:_kill	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/arch/stm32h753iit/syscall_stubs.c:80:5:_getpid	0	static

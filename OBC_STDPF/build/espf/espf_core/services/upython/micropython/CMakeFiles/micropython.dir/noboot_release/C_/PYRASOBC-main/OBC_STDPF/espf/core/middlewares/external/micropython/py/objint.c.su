@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint.c:86:29:mp_classify_fp_as_int	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint.c:423:17:int_to_bytes	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint.c:391:17:int_from_bytes	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint.c:137:10:mp_obj_new_int_from_float	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint.c:43:17:mp_obj_int_make_new	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint.c:209:8:mp_int_format_size	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint.c:224:7:mp_obj_int_formatted	72	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint.c:179:6:mp_obj_int_print	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint.c:374:10:mp_obj_int_binary_op_extra_cases	16	static

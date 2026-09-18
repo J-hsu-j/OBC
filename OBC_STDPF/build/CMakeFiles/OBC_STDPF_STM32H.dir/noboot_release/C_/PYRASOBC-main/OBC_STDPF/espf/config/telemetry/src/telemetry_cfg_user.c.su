@@ -1,0 +1,13 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/telemetry/src/telemetry_cfg_user.c:130:9:telemetry_cfg_get_active_preset	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/telemetry/src/telemetry_cfg_user.c:190:6:telemetry_cfg_restore_active_preset	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/telemetry/src/telemetry_cfg_user.c:201:6:telemetry_cfg_set_active_preset	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/telemetry/src/telemetry_cfg_user.c:218:6:telemetry_cfg_get_tlm_config	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/telemetry/src/telemetry_cfg_user.c:229:6:telemetry_cfg_get_preset_config	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/telemetry/src/telemetry_cfg_user.c:240:6:telemetry_cfg_get_file_config	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/telemetry/src/telemetry_cfg_user.c:251:6:telemetry_cfg_get_persistent_data	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/telemetry/src/telemetry_cfg_user.c:262:6:telemetry_cfg_set_persistent_data	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/telemetry/src/telemetry_cfg_user.c:273:6:telemetry_cfg_set_tlm_config	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/telemetry/src/telemetry_cfg_user.c:284:6:telemetry_cfg_set_preset_config	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/telemetry/src/telemetry_cfg_user.c:327:6:telemetry_cfg_set_file_config	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/telemetry/src/telemetry_cfg_user.c:343:24:telemetry_cfg_get_ctx_u16	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/telemetry/src/telemetry_cfg_user.c:338:24:telemetry_cfg_get_ctx	8	static

@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/gnss/gnss_cfg.c:188:13:gnss_time_to_unix	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/gnss/gnss_cfg.c:358:13:send_cmd_to_gen2_cubeadcs	96	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/gnss/gnss_cfg.c:415:13:gnss_cfg_adcs_sync_callback	320	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/gnss/gnss_cfg.c:277:13:gnss_pps_rtc_sync_callback	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/gnss/gnss_cfg.c:228:13:gnss_pps_rtc_sync_compensation	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/gnss/gnss_cfg.c:79:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/gnss/gnss_cfg.c:118:6:gnss_user_cmd_resp_cbk	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/gnss/gnss_cfg.c:131:6:gnss_cfg_pv_callback	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/gnss/gnss_cfg.c:156:6:gnss_cfg_tm_callback	8	static

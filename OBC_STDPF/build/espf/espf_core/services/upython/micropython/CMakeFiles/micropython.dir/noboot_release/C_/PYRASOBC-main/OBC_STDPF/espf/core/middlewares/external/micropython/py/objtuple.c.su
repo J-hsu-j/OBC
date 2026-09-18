@@ -1,0 +1,13 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objtuple.c:280:17:tuple_it_iternext	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objtuple.c:291:10:mp_obj_tuple_getiter	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objtuple.c:40:6:mp_obj_tuple_print	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objtuple.c:213:17:tuple_index	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objtuple.c:206:17:tuple_count	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objtuple.c:126:10:mp_obj_tuple_unary_op	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objtuple.c:110:17:tuple_cmp_helper	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objtuple.c:243:10:mp_obj_new_tuple	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objtuple.c:68:17:mp_obj_tuple_make_new	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objtuple.c:146:10:mp_obj_tuple_binary_op	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objtuple.c:184:10:mp_obj_tuple_subscr	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objtuple.c:257:6:mp_obj_tuple_get	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objtuple.c:264:6:mp_obj_tuple_del	8	static

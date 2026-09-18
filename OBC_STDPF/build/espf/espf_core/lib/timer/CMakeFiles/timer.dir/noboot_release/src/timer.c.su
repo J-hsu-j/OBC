@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libtimer/src/timer.c:34:24:calc_delta	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libtimer/src/timer.c:52:6:timer_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libtimer/src/timer.c:59:6:timer_start	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libtimer/src/timer.c:68:6:timer_is_elapsed	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libtimer/src/timer.c:85:6:timer_stop	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libtimer/src/timer.c:94:10:timer_get_elapsed_time	8	static

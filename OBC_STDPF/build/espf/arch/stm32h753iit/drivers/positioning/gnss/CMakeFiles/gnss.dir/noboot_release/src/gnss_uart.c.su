@@ -1,0 +1,14 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_uart.c:351:13:rx_event_callback	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_uart.c:341:13:msp_deinit_callback	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_uart.c:324:13:msp_init_callback	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_uart.c:181:6:gnss_uart_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_uart.c:199:6:gnss_uart_tx	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_uart.c:216:6:gnss_uart_rx	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_uart.c:234:6:is_gnss_uart_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_uart.c:259:6:gnss_uart_baudrate_get	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_uart.c:275:10:gnss_uart_baudrate_map	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_uart.c:136:6:gnss_uart_init	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_uart.c:366:13:gnss_uart_reset_with_new_baudrate	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_uart.c:240:6:gnss_uart_baudrate_set	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_uart.c:309:6:gnss_irq_uart_handler	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_uart.c:314:6:gnss_irq_dma_handler	8	static

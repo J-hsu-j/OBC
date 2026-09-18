@@ -1,0 +1,12 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/map.c:75:15:get_hash_alloc_greater_or_equal_to	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/map.c:89:6:mp_map_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/map.c:103:6:mp_map_init_fixed_table	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/map.c:113:6:mp_map_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/map.c:120:6:mp_map_clear	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/map.c:156:16:mp_map_lookup	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/map.c:131:13:mp_map_rehash	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/map.c:329:6:mp_set_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/map.c:349:10:mp_set_lookup	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/map.c:335:13:mp_set_rehash	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/map.c:422:10:mp_set_remove_first	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/map.c:440:6:mp_set_clear	8	static

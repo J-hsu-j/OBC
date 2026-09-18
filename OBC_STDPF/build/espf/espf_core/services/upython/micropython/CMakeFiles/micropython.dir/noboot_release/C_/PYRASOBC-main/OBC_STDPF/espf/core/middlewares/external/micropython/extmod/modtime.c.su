@@ -1,0 +1,12 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/modtime.c:166:17:time_ticks_diff	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/modtime.c:55:17:time_localtime	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/modtime.c:83:17:time_mktime	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/modtime.c:112:17:time_time_ns	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/modtime.c:119:17:time_sleep	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/modtime.c:133:17:time_sleep_ms	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/modtime.c:142:17:time_sleep_us	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/modtime.c:151:17:time_ticks_ms	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/modtime.c:156:17:time_ticks_us	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/modtime.c:161:17:time_ticks_cpu	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/modtime.c:178:17:time_ticks_add	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/modtime.c:105:17:time_time	8	static

@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/repl.c:46:13:str_startswith_word	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/repl.c:157:13:test_qstr	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/repl.c:170:20:find_completions	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/repl.c:210:13:print_completions	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/repl.c:56:6:mp_repl_continue_with_input	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/repl.c:244:8:mp_repl_autocomplete	80	static

@@ -1,0 +1,11 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched_logging.c:291:13:onboard_sched_logging_set_header	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched_logging.c:65:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched_logging.c:111:6:onboard_sched_logging_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched_logging.c:124:6:onboard_sched_logging_set_file_name	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched_logging.c:139:6:onboard_sched_logging_start_log	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched_logging.c:152:6:onboard_sched_logging_end_log	608	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched_logging.c:201:6:onboard_sched_logging_add_slot_data	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched_logging.c:220:6:onboard_sched_logging_add_entry_data	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched_logging.c:242:6:onboard_sched_logging_add_script_data	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched_logging.c:259:10:onboard_sched_logging_get_build_buf_current	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched_logging.c:271:6:onboard_sched_logging_inc_build_index	0	static

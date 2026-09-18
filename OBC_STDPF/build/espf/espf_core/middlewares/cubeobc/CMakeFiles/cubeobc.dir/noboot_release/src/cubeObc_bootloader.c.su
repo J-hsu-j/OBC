@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_bootloader.c:29:11:cubeObc_bootloader_pollForState	72	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_bootloader.c:78:11:cubeObc_bootloader_uploadCubeSpaceFile	176	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_bootloader.c:169:11:cubeObc_bootloader_upgrade	144	static

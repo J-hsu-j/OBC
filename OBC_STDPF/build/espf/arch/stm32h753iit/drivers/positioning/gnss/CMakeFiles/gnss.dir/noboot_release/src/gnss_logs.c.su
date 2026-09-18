@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_logs.c:101:13:configure_log	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_logs.c:25:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_logs.c:82:6:configure_all_logs	16	static

@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/upy.c:376:13:timeout_callback	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/upy.c:55:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/upy.c:170:6:upy_task_start	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/upy.c:144:6:upy_init	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/upy.c:181:18:upy_req_script_execution	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/upy.c:225:18:upy_get_script_status	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/upy.c:249:18:upy_set_script_status	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/upy.c:275:13:upy_task	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/upy.c:390:13:upy_write_line_to_file	8	static

@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_sched/src/sxband_sched_report.c:138:20:write_and_verify	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_sched/src/sxband_sched_report.c:63:13:copy_sxband_status_to_report	648	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_sched/src/sxband_sched_report.c:146:6:sxband_sched_report_open	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_sched/src/sxband_sched_report.c:183:6:sxband_sched_report_append	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_sched/src/sxband_sched_report.c:339:6:sxband_sched_report_append_free_text	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_sched/src/sxband_sched_report.c:350:6:sxband_sched_report_close	8	static

@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/eps_ctrl/src/eps_ctrl_queue.c:105:19:eps_ctrl_queue_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/eps_ctrl/src/eps_ctrl_queue.c:124:19:eps_ctrl_queue_add	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/eps_ctrl/src/eps_ctrl_queue.c:155:6:eps_ctrl_queue_pop	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/eps_ctrl/src/eps_ctrl_queue.c:169:21:eps_ctrl_queue_find	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/eps_ctrl/src/eps_ctrl_queue.c:212:21:eps_ctrl_queue_head	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/eps_ctrl/src/eps_ctrl_queue.c:231:6:eps_ctrl_queue_is_empty	8	static

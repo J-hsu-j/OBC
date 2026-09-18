@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/file_tools/src/rlf.c:167:20:rlf_init	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/file_tools/src/rlf.c:227:20:rlf_next	88	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/file_tools/src/rlf.c:286:20:rlf_flush	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/file_tools/src/rlf.c:379:20:rlf_write_internal	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/file_tools/src/rlf.c:345:20:rlf_flush_unbroken	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/file_tools/src/rlf.c:73:13:rlf_open	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/file_tools/src/rlf.c:119:13:rlf_close	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/file_tools/src/rlf.c:143:13:rlf_write	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/file_tools/src/rlf.c:152:13:rlf_write_unbroken	16	static

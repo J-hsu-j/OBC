@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/solar_panels/fp/sp_uhf_ant/v2.1/sp_uhf_ant_client/FP_sp_uhf_antProtocolClient.c:82:13:fs_telemetryResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/solar_panels/fp/sp_uhf_ant/v2.1/sp_uhf_ant_client/FP_sp_uhf_antProtocolClient.c:76:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/solar_panels/fp/sp_uhf_ant/v2.1/sp_uhf_ant_client/FP_sp_uhf_antProtocolClient.c:118:6:sp_uhf_ant_registerClientApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/solar_panels/fp/sp_uhf_ant/v2.1/sp_uhf_ant_client/FP_sp_uhf_antProtocolClient.c:123:36:sp_uhf_ant_getClientProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/solar_panels/fp/sp_uhf_ant/v2.1/sp_uhf_ant_client/FP_sp_uhf_antProtocolClient.c:128:19:sp_uhf_ant_telemetryReq	56	static

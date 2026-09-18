@@ -1,0 +1,15 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/src/eps_ii.c:94:20:eps_ii_run	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/src/eps_ii.c:99:20:eps_ii_stop	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/src/eps_ii.c:255:13:eps_ii_init_memory	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/src/eps_ii.c:272:13:eps_ii_init_os	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/src/eps_ii.c:68:20:eps_ii_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/src/eps_ii.c:104:20:eps_ii_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/src/eps_ii.c:284:13:eps_ii_set_gpio	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/src/eps_ii.c:311:13:eps_ii_set_sgpo	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/src/eps_ii.c:303:13:eps_ii_get_gpio	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/src/eps_ii.c:330:13:eps_ii_get_sgpo	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/src/eps_ii.c:147:6:eps_ii_get_channel_output	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/src/eps_ii.c:174:10:eps_ii_last_pdm_request_seq_id	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/src/eps_ii.c:180:33:eps_ii_channel_to_gpio	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/src/eps_ii.c:205:35:eps_ii_channel_to_sgpo	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_ii/src/eps_ii.c:122:6:eps_ii_set_channel_output	8	static

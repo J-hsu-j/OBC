@@ -1,0 +1,15 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/liblz77/es_lz77.c:85:6:SendBits	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/liblz77/es_lz77.c:124:14:ReadBits	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/liblz77/es_lz77.c:151:6:SendMatch	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/liblz77/es_lz77.c:161:6:SendChar	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/liblz77/es_lz77.c:169:6:InitEncode	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/liblz77/es_lz77.c:179:14:LoadDict	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/liblz77/es_lz77.c:204:6:DeleteData	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/liblz77/es_lz77.c:221:6:HashData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/liblz77/es_lz77.c:247:6:FindMatch	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/liblz77/es_lz77.c:277:6:DictSearch	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/liblz77/es_lz77.c:360:6:Compress	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/liblz77/es_lz77.c:407:6:Decompress	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/liblz77/es_lz77.c:509:5:LZ77_Compress	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/liblz77/es_lz77.c:554:5:LZ77_Decompress	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/liblz77/es_lz77.c:599:6:LZ77_Init	8	static

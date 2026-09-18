@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libigrf/src/igrf.c:118:15:igrf_gnm	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libigrf/src/igrf.c:177:15:igrf_hnm	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libigrf/src/igrf.c:235:15:igrf_sv_g	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libigrf/src/igrf.c:294:15:igrf_sv_h	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libigrf/src/igrf.c:351:15:legendre_fact	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libigrf/src/igrf.c:375:15:legendre_fact2	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libigrf/src/igrf.c:403:13:legendre_polynomials	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libigrf/src/igrf.c:485:6:igrf_init	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libigrf/src/igrf.c:511:18:igrf_compute_magnetic_field	152	static

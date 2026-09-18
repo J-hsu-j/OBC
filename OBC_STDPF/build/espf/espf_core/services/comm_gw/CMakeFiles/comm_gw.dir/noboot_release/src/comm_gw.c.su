@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw.c:277:13:release_user_thread	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw.c:284:13:comm_gw_op_finished_notify	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw.c:249:13:prep_user_thread_wait	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw.c:254:27:user_thread_wait_for_response	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw.c:73:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw.c:120:6:comm_gw_init	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw.c:147:20:comm_gw_send	40	static

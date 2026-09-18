@@ -1,0 +1,12 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_services.c:29:5:csp_ping	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_services.c:84:6:csp_ping_noreply	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_services.c:111:6:csp_reboot	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_services.c:116:6:csp_shutdown	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_services.c:121:6:csp_ps	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_services.c:173:5:csp_get_memfree	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_services.c:185:6:csp_memfree	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_services.c:197:5:csp_get_buf_free	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_services.c:209:6:csp_buf_free	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_services.c:221:5:csp_get_uptime	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_services.c:232:6:csp_uptime	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_services.c:244:5:csp_cmp	32	static

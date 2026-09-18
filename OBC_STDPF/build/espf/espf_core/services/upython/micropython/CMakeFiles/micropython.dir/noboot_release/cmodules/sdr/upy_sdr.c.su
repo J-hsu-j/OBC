@@ -1,0 +1,17 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:110:17:FileOp_get_sdr_file	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:101:17:FileOp_get_obc_file	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:83:17:FileOp_make_new	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:135:17:FileOp_make_from_c_buf	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:153:17:FileOp_make_from_buf	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:600:17:resp_sdr_get_state_make_new	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:564:17:req_sdr_get_state	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:500:17:resp_sdr_poll_latest_ft_status_make_new	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:464:17:req_sdr_poll_latest_ft_status	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:400:17:resp_sdr_download_make_new	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:359:17:req_sdr_download	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:294:17:resp_sdr_upload_make_new	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:253:17:req_sdr_upload	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:633:17:resp_sdr_get_state_get_sm_state	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:533:17:resp_sdr_poll_latest_ft_status_get_status	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:433:17:resp_sdr_download_get_status	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/cmodules/sdr/upy_sdr.c:327:17:resp_sdr_upload_get_status	8	static

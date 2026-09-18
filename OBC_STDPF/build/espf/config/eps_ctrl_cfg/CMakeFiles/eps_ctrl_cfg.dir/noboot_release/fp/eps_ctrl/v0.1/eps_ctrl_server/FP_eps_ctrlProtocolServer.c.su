@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/eps_ctrl/fp/eps_ctrl/v0.1/eps_ctrl_server/FP_eps_ctrlProtocolServer.c:99:13:fs_get_ch_outputReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/eps_ctrl/fp/eps_ctrl/v0.1/eps_ctrl_server/FP_eps_ctrlProtocolServer.c:129:13:fs_set_ch_outputReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/eps_ctrl/fp/eps_ctrl/v0.1/eps_ctrl_server/FP_eps_ctrlProtocolServer.c:88:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/eps_ctrl/fp/eps_ctrl/v0.1/eps_ctrl_server/FP_eps_ctrlProtocolServer.c:165:6:eps_ctrl_registerServerApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/eps_ctrl/fp/eps_ctrl/v0.1/eps_ctrl_server/FP_eps_ctrlProtocolServer.c:170:36:eps_ctrl_getServerProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/eps_ctrl/fp/eps_ctrl/v0.1/eps_ctrl_server/FP_eps_ctrlProtocolServer.c:175:19:eps_ctrl_get_ch_outputResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/eps_ctrl/fp/eps_ctrl/v0.1/eps_ctrl_server/FP_eps_ctrlProtocolServer.c:227:19:eps_ctrl_set_ch_outputResp	48	static

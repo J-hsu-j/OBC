@@ -1,0 +1,17 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:52:6:ESSA_SP_Init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:58:6:ESSA_SP_Task	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:64:6:ESSA_SP_Exit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:77:17:ESSASP_CB_SetInitConfig	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:104:6:ESSASP_CB_RestartDev	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:133:17:ESSASP_CB_OnSetMACAddr	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:150:6:ESSASP_CB_PrepareShipMode	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:169:6:ESSASP_CB_EnterShipMode	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:177:6:ESSASP_CB_GetDeviceInfo	112	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:205:6:ESSASP_CB_OnAsyncNodeInfo	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:212:6:ESSASP_CB_OnNodeInfo	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:218:6:ESSASP_CB_OnDiscoveryFinished	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:224:6:ESSASP_CB_OnSetRemoteDevMACFinished	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:231:6:ESSASP_CB_OnRestartRemoteDevFinished	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:240:6:ESSASP_CB_OnGSCmdStatus	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:246:6:ESSASP_CB_OnGSCmdStatusFinished	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_ServiceProtocol_Handler.c:253:17:ESSASP_CB_OnReqGSCmdStatus	24	static

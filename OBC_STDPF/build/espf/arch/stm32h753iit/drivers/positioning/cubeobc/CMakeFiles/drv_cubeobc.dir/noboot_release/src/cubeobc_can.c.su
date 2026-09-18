@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/cubeobc/src/cubeobc_can.c:11:6:cubeObc_canIfc_rxFlush	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/cubeobc/src/cubeobc_can.c:17:11:cubeObc_canIfc_rx	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/cubeobc/src/cubeobc_can.c:25:11:cubeObc_canIfc_tx	0	static

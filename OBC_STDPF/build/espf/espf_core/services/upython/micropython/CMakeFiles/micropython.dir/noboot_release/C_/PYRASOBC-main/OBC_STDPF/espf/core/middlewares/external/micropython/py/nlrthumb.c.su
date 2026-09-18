@@ -1,0 +1,2 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/nlrthumb.c:39:37:nlr_push	0	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/nlrthumb.c:95:15:nlr_jump	8	static,ignoring_inline_asm

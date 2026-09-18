@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configServerApp.c:86:13:trace_copy_string_add_null_terminator	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configServerApp.c:337:13:trace_level_config_get_module_infoRequestHandlerImpl	240	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configServerApp.c:293:13:trace_level_config_set_module_trace_levelRequestHandlerImpl	128	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configServerApp.c:249:13:trace_level_config_set_module_active_statusRequestHandlerImpl	128	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configServerApp.c:199:13:trace_level_config_set_channel_active_statusRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configServerApp.c:151:13:trace_level_config_get_channel_infoRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configServerApp.c:101:13:trace_level_config_set_channel_trace_levelRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configServerApp.c:66:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configServerApp.c:394:6:trace_level_configServerAppInit	8	static

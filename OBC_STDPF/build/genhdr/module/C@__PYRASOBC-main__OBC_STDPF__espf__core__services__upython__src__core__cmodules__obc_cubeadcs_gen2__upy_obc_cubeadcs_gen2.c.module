@@ -1,0 +1,1 @@
+MP_REGISTER_MODULE(MP_QSTR_upy_obc_cubeadcs_gen2, upy_obc_cubeadcs_gen2_user_cmodule);

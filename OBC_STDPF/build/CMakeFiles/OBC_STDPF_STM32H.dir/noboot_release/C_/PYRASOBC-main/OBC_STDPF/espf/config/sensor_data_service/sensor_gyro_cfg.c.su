@@ -1,0 +1,10 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_gyro_cfg.c:203:28:sensor_gyro_get_state	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_gyro_cfg.c:210:16:sensor_gyro_get_last_error	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_gyro_cfg.c:218:15:sensor_gyro_conv_gyro_raw_axis_data_to_rad_s	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_gyro_cfg.c:285:24:sensor_gyro_set_register	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_gyro_cfg.c:236:24:sensor_gyro_get_register	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_gyro_cfg.c:192:24:sensor_gyro_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_gyro_cfg.c:179:24:sensor_gyro_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_gyro_cfg.c:109:24:sensor_gyro_get_data_in_rad_per_s	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_gyro_cfg.c:146:24:sensor_gyro_get_temp_data_in_deg_c	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_gyro_cfg.c:30:1:cmp_logger_def_init	0	static

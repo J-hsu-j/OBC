@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/fatfs/oofatfs/src/ffunicode.c:15226:7:ff_uni2oem	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/fatfs/oofatfs/src/ffunicode.c:15248:7:ff_oem2uni	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/fatfs/oofatfs/src/ffunicode.c:15468:7:ff_wtoupper	12	static

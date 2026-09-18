@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_pl_ctrl/src/sxband_pl_ctrl.c:53:13:update_state_and_notify	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_pl_ctrl/src/sxband_pl_ctrl.c:84:23:sxband_pl_ctrl_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_pl_ctrl/src/sxband_pl_ctrl.c:99:23:sxband_pl_ctrl_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_pl_ctrl/src/sxband_pl_ctrl.c:186:19:sxband_pl_ctrl_get_state	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_pl_ctrl/src/sxband_pl_ctrl.c:198:17:sxband_pl_ctrl_get_last_error	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_pl_ctrl/src/sxband_pl_ctrl.c:162:23:sxband_pl_ctrl_stop	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_pl_ctrl/src/sxband_pl_ctrl.c:115:23:sxband_pl_ctrl_start	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_pl_ctrl/src/sxband_pl_ctrl.c:64:13:on_sxband_notif	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_pl_ctrl/src/sxband_pl_ctrl.c:31:1:cmp_logger_def_init	0	static

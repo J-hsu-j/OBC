@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/espsi_drv/src/esps_drv_dispatcher_thread.c:137:13:fs_SpawnDispatchThread	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/espsi_drv/src/esps_drv_dispatcher_thread.c:172:13:fs_vDispatchThread	16	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/config/espsi_drv/src/esps_drv_dispatcher_thread.c:121:13:fs_vNotifyDispatcherThread	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/espsi_drv/src/esps_drv_dispatcher_thread.c:94:6:DISP_vThreadInit	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/espsi_drv/src/esps_drv_dispatcher_thread.c:106:6:MacCfg_vDispatcherNotifCallback	8	static

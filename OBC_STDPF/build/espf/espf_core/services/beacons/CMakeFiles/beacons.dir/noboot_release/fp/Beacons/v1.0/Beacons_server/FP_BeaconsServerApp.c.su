@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsServerApp.c:402:13:Beacons_restoreActivePresetRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsServerApp.c:367:13:Beacons_getActivePresetRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsServerApp.c:326:13:Beacons_setActivePresetRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsServerApp.c:234:13:Beacons_setBeaconPresetConfigRequestHandlerImpl	168	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsServerApp.c:186:13:Beacons_getBeaconPresetConfigRequestHandlerImpl	272	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsServerApp.c:130:13:Beacons_setBeaconGeneralConfigRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsServerApp.c:88:13:Beacons_getBeaconGeneralConfigRequestHandlerImpl	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsServerApp.c:64:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsServerApp.c:443:6:BeaconsServerAppInit	8	static

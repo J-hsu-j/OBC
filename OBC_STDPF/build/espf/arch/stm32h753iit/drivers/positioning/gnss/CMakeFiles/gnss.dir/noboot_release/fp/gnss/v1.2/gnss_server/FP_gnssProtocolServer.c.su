@@ -1,0 +1,15 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssProtocolServer.c:145:13:fs_set_powerReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssProtocolServer.c:175:13:fs_get_powerReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssProtocolServer.c:203:13:fs_request_command_executionReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssProtocolServer.c:233:13:fs_get_command_execution_statusReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssProtocolServer.c:263:13:fs_set_gnss_uart_baudrateReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssProtocolServer.c:293:13:fs_get_gnss_uart_baudrateReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssProtocolServer.c:134:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssProtocolServer.c:327:6:gnss_registerServerApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssProtocolServer.c:332:36:gnss_getServerProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssProtocolServer.c:337:19:gnss_set_powerResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssProtocolServer.c:387:19:gnss_get_powerResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssProtocolServer.c:439:19:gnss_request_command_executionResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssProtocolServer.c:491:19:gnss_get_command_execution_statusResp	72	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssProtocolServer.c:565:19:gnss_set_gnss_uart_baudrateResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/fp/gnss/v1.2/gnss_server/FP_gnssProtocolServer.c:615:19:gnss_get_gnss_uart_baudrateResp	48	static

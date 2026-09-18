@@ -1,0 +1,2 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objgetitemiter.c:38:17:it_iternext	88	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objgetitemiter.c:67:10:mp_obj_new_getitem_iter	0	static

@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_m/src/eps_m.c:31:20:eps_m_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_m/src/eps_m.c:37:20:eps_m_run	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_m/src/eps_m.c:43:20:eps_m_stop	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_m/src/eps_m.c:49:20:eps_m_deinit	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_m/src/eps_m.c:55:6:eps_m_set_channel_output	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_m/src/eps_m.c:60:6:eps_m_get_channel_outputs	0	static

@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/ModuleId/v0.1/ModuleId_server/FP_ModuleIdProtocolServer.c:86:13:fs_getModuleVersionInfoReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/ModuleId/v0.1/ModuleId_server/FP_ModuleIdProtocolServer.c:75:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/ModuleId/v0.1/ModuleId_server/FP_ModuleIdProtocolServer.c:120:6:ModuleId_registerServerApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/ModuleId/v0.1/ModuleId_server/FP_ModuleIdProtocolServer.c:125:36:ModuleId_getServerProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/ModuleId/v0.1/ModuleId_server/FP_ModuleIdProtocolServer.c:130:19:ModuleId_getModuleVersionInfoResp	136	static

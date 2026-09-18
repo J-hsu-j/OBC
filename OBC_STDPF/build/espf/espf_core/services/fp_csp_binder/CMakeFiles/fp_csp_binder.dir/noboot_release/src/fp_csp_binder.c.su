@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fp_csp_binder/src/fp_csp_binder.c:252:13:is_csp_fp_cmd_hdr_valid	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fp_csp_binder/src/fp_csp_binder.c:171:16:fp_csp_binder_send_reply	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fp_csp_binder/src/fp_csp_binder.c:259:27:dispatch_comm_gw_send	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fp_csp_binder/src/fp_csp_binder.c:318:8:csp_fp_rx_thread_func	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fp_csp_binder/src/fp_csp_binder.c:210:13:csp_start_fp_server	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fp_csp_binder/src/fp_csp_binder.c:113:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fp_csp_binder/src/fp_csp_binder.c:158:6:fp_csp_binder_start	16	static

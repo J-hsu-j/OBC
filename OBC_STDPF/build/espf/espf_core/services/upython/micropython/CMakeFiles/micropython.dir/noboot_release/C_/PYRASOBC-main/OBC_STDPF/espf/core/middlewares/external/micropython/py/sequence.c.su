@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/sequence.c:38:6:mp_seq_multiply	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/sequence.c:48:6:mp_seq_get_fast_slice_indexes	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/sequence.c:68:10:mp_seq_extract_slice	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/sequence.c:92:6:mp_seq_cmp_bytes	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/sequence.c:136:6:mp_seq_cmp_objs	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/sequence.c:185:10:mp_seq_index_obj	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/sequence.c:208:10:mp_seq_count_obj	24	static

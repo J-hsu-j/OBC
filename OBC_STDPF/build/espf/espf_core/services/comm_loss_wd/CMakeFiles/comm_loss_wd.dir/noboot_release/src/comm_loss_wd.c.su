@@ -1,0 +1,10 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_loss_wd/src/comm_loss_wd.c:92:6:comm_loss_wd_task	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_loss_wd/src/comm_loss_wd.c:160:6:comm_loss_wd_set_timeout	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_loss_wd/src/comm_loss_wd.c:180:6:comm_loss_wd_set_enable	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_loss_wd/src/comm_loss_wd.c:194:10:comm_loss_wd_get_timeout	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_loss_wd/src/comm_loss_wd.c:74:6:comm_loss_wd_init	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_loss_wd/src/comm_loss_wd.c:204:6:comm_loss_wd_get_enable	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_loss_wd/src/comm_loss_wd.c:214:6:comm_loss_wd_check_uhf_counter_registers	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_loss_wd/src/comm_loss_wd.c:236:6:comm_loss_wd_check_uhf_rx_packet_count	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_loss_wd/src/comm_loss_wd.c:257:6:comm_loss_wd_check_sband_error_counters	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_loss_wd/src/comm_loss_wd.c:279:6:comm_loss_wd_check_sband_packet_counters	8	static

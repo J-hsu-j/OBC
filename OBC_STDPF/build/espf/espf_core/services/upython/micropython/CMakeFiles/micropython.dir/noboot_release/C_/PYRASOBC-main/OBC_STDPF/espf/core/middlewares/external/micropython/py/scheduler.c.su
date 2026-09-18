@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/scheduler.c:33:6:mp_sched_exception	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/scheduler.c:55:6:mp_sched_vm_abort	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/scheduler.c:211:6:mp_handle_pending	8	static

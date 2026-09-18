@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/debug/src/debug.c:84:6:_DBG_setTestPin	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/debug/src/debug.c:78:6:_DBG_initTestPins	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/debug/src/debug.c:102:6:_DBG_toggleTestPin	8	static

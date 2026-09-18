@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/app/init_service/DefTasks.c:169:13:InitCompleted	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/app/init_service/DefTasks.c:109:13:ServicesTask	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/app/init_service/DefTasks.c:54:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/app/init_service/DefTasks.c:89:6:ServicesTask_Init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/app/init_service/DefTasks.c:148:6:vApplicationIdleHook	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/app/init_service/DefTasks.c:180:10:ServicesTask_UptimeSeconds	8	static

@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/fp/csp_service/v0.1/csp_service_server/FP_csp_serviceProtocolServer.c:98:13:fs_get_trace_debug_levelReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/fp/csp_service/v0.1/csp_service_server/FP_csp_serviceProtocolServer.c:126:13:fs_set_trace_debug_levelReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/fp/csp_service/v0.1/csp_service_server/FP_csp_serviceProtocolServer.c:87:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/fp/csp_service/v0.1/csp_service_server/FP_csp_serviceProtocolServer.c:162:6:csp_service_registerServerApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/fp/csp_service/v0.1/csp_service_server/FP_csp_serviceProtocolServer.c:167:36:csp_service_getServerProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/fp/csp_service/v0.1/csp_service_server/FP_csp_serviceProtocolServer.c:172:19:csp_service_get_trace_debug_levelResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/fp/csp_service/v0.1/csp_service_server/FP_csp_serviceProtocolServer.c:231:19:csp_service_set_trace_debug_levelResp	48	static

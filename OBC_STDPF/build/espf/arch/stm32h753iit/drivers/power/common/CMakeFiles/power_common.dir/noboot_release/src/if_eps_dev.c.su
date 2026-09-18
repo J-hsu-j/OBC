@@ -1,0 +1,2 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/common/src/if_eps_dev.c:58:6:eps_dev_init	24	dynamic
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/common/src/if_eps_dev.c:83:6:eps_dev_is_seq_expected	0	static

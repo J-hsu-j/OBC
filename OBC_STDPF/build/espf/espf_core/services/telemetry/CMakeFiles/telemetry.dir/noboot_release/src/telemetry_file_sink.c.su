@@ -1,0 +1,8 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_file_sink.c:130:13:telemetry_file_sink_init	16	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_file_sink.c:278:20:telemetry_file_trigger_hsm	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_file_sink.c:205:13:telemetry_file_sink_adapter_cmd	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_file_sink.c:181:13:telemetry_file_sink_exec_syncd_tasks	16	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_file_sink.c:251:13:telemetry_file_sink_task	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_file_sink.c:92:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_file_sink.c:111:6:telemetry_file_sink_syncd_clean	8	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_file_sink.c:120:6:telemetry_file_sink_config_update	0	static,ignoring_inline_asm

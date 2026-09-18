@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/builtinhelp.c:50:13:mp_help_print_info_about_object	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/builtinhelp.c:125:13:mp_help_print_obj	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/builtinhelp.c:161:17:mp_builtin_help	8	static

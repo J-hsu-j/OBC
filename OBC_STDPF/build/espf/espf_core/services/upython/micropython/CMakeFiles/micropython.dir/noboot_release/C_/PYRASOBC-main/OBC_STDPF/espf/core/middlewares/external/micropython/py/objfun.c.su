@@ -1,0 +1,10 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfun.c:51:17:fun_builtin_0_call	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfun.c:64:17:fun_builtin_1_call	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfun.c:76:17:fun_builtin_2_call	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfun.c:88:17:fun_builtin_3_call	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfun.c:100:17:fun_builtin_var_call	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfun.c:131:13:mp_obj_code_get_name	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfun.c:233:17:fun_bc_call	40	dynamic
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfun.c:144:6:mp_obj_fun_get_name	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfun.c:159:13:fun_bc_print	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objfun.c:371:10:mp_obj_new_fun_bc	32	static

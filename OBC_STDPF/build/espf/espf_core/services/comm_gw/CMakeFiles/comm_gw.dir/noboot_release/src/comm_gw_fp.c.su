@@ -1,0 +1,8 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_fp.c:192:13:comm_gw_fp_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_fp.c:285:27:get_user_data_by_vnode_addr	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_fp.c:298:27:get_user_data_by_tx_msg_id	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_fp.c:311:13:comm_gw_fp_frame_send_confirm_cbk	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_fp.c:212:13:comm_gw_fp_send	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_fp.c:73:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_fp.c:131:19:comm_gw_fp_enq_message	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_fp.c:182:6:comm_gw_fp_is_valid_vnode_addr	8	static

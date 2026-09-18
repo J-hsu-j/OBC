@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/eps_ctrl/src/eps_ctrl.c:276:20:trigger_hsm_event	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/eps_ctrl/src/eps_ctrl.c:288:13:eps_ctrl_task	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/eps_ctrl/src/eps_ctrl.c:326:13:eps_ctrl_cancel_req_wait	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/eps_ctrl/src/eps_ctrl.c:86:6:eps_ctrl_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/eps_ctrl/src/eps_ctrl.c:129:6:eps_ctrl_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/eps_ctrl/src/eps_ctrl.c:138:19:eps_ctrl_set_channel_output	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/eps_ctrl/src/eps_ctrl.c:187:19:eps_ctrl_get_channel_output	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/eps_ctrl/src/eps_ctrl.c:236:6:eps_ctrl_response_received_notif	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/eps_ctrl/src/eps_ctrl.c:241:6:eps_ctrl_unblock_user_thread	16	static

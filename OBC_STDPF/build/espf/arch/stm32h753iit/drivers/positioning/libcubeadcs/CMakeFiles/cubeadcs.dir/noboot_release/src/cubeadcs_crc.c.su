@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_crc.c:112:9:CubeADCS_CRC_8	4	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_crc.c:128:10:CubeADCS_CRC_16	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/libcubeadcs/src/cubeadcs_crc.c:141:10:CubeADCS_Calculate_Single_CRC_16	0	static

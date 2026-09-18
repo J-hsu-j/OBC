@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/runtime/sys_stdio_mphal.c:88:18:stdio_ioctl	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/runtime/sys_stdio_mphal.c:77:18:stdio_write	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/runtime/sys_stdio_mphal.c:60:18:stdio_read	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/runtime/sys_stdio_mphal.c:55:13:stdio_obj_print	8	static

@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/src/csp_service.c:119:8:fs_csp_service_thread	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/src/csp_service.c:151:8:fs_csp_can_dispatch_thread	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/src/csp_service.c:203:12:fs_can_transmit	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/src/csp_service.c:178:13:fs_can_rx_callback	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/src/csp_service.c:231:13:csp_service_debug_trace_hook	192	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/src/csp_service.c:81:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/src/csp_service.c:315:6:csp_service_init	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/src/csp_service.c:393:6:csp_service_set_trace_level	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/csp/src/csp_service.c:410:28:csp_service_get_trace_level	16	static

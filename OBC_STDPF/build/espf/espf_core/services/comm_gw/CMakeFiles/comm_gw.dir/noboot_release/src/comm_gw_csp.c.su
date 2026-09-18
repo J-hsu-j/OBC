@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_csp.c:102:13:comm_gw_csp_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_csp.c:109:27:comm_gw_csp_send_internal	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_csp.c:189:13:comm_gw_csp_send	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_csp.c:78:1:cmp_logger_def_init	0	static

@@ -1,0 +1,15 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/es_panels/panels.c:110:6:Panels_ChipSelect2_Init	80	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/es_panels/panels.c:217:6:Panels_ChipSelect2_DeInit	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/es_panels/panels.c:260:6:SPI_SlaveSelect	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/es_panels/panels.c:362:6:Panels_IsAttached	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/es_panels/panels.c:377:10:GetMagnetorque	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/es_panels/panels.c:413:10:SetMagnetorque	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/es_panels/panels.c:480:6:Magnetorquers_Update	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/es_panels/panels.c:542:6:Boost_Magnetorquers	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/es_panels/panels.c:559:6:Stop_Magnetorquers	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/es_panels/panels.c:576:10:Pan_PD_ADC_Measure	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/es_panels/panels.c:619:6:Panel_GetPhotodiodesLum	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/es_panels/panels.c:641:10:TMP122_GetTemperatureP	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/es_panels/panels.c:697:16:TMP122_getTemperatureInDegC	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/es_panels/panels.c:712:10:TMP122_GetTemperatureM	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/es_panels/panels.c:764:10:TMP122_GetTemperatureFromPanel	32	static

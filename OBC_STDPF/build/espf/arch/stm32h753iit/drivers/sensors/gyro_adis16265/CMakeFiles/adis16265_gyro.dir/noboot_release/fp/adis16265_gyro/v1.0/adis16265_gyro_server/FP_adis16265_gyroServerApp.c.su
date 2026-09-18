@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroServerApp.c:220:13:adis16265_gyro_load_gyroscope_configRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroServerApp.c:183:13:adis16265_gyro_save_gyroscope_configRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroServerApp.c:123:13:adis16265_gyro_get_gyroscope_configRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroServerApp.c:76:13:adis16265_gyro_set_gyroscope_configRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroServerApp.c:55:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroServerApp.c:262:6:adis16265_gyroServerAppInit	8	static

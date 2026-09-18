@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/vfs_blockdev.c:35:6:mp_vfs_blockdev_init	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/vfs_blockdev.c:49:5:mp_vfs_blockdev_read	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/vfs_blockdev.c:63:5:mp_vfs_blockdev_read_ext	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/vfs_blockdev.c:76:5:mp_vfs_blockdev_write	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/vfs_blockdev.c:95:5:mp_vfs_blockdev_write_ext	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/extmod/vfs_blockdev.c:113:10:mp_vfs_blockdev_ioctl	8	static

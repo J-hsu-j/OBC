@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_bulkDataTransfer.c:41:12:crc	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_bulkDataTransfer.c:64:19:setFrameNumber	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_bulkDataTransfer.c:186:19:pollFrameNumber	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_bulkDataTransfer.c:452:16:cubeObc_bulkDataTransfer_getFrameBuffer	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_bulkDataTransfer.c:478:16:cubeObc_bulkDataTransfer_commitFrameBuffer	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_bulkDataTransfer.c:246:11:cubeObc_bulkDataTransfer_download	312	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_bulkDataTransfer.c:337:11:cubeObc_bulkDataTransfer_upload	328	static

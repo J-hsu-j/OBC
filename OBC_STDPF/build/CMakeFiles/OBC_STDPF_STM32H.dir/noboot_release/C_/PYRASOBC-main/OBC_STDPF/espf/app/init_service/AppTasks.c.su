@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/app/init_service/AppTasks.c:102:6:AppTask_Init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/app/init_service/AppTasks.c:118:10:get_uptime_seconds	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/app/init_service/AppTasks.c:192:13:apptask_update_obc_data	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/app/init_service/AppTasks.c:126:13:app_task	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/app/init_service/AppTasks.c:218:6:vApplicationTickHook	0	static

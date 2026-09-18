@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/readline/readline.c:91:13:mp_hal_erase_line_from_cursor	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/readline/readline.c:75:13:mp_hal_move_cursor_back	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/readline/readline.c:58:14:str_dup_maybe	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/readline/readline.c:54:6:readline_init0	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/readline/readline.c:529:6:readline_note_newline	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/readline/readline.c:539:6:readline_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/readline/readline.c:568:6:readline_push_history	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/readline/readline.c:141:5:readline_process_char	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/readline/readline.c:557:5:readline	8	static

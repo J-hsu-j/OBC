@@ -1,0 +1,2 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objpolyiter.c:42:17:polymorph_it_iternext	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objpolyiter.c:67:17:mp_obj_polymorph_iter_del	8	static

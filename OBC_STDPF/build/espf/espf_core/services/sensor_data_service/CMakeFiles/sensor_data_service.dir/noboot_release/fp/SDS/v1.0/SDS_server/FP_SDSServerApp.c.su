@@ -1,0 +1,8 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSServerApp.c:379:13:SDS_setSensRegRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSServerApp.c:312:13:SDS_getSensRegRequestHandlerImpl	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSServerApp.c:246:13:SDS_getSensErrRequestHandlerImpl	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSServerApp.c:200:13:SDS_getSensStateRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSServerApp.c:137:13:SDS_getSensReadFreqRequestHandlerImpl	88	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSServerApp.c:86:13:SDS_setSensReadFreqRequestHandlerImpl	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSServerApp.c:64:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSServerApp.c:448:6:SDSServerAppInit	8	static

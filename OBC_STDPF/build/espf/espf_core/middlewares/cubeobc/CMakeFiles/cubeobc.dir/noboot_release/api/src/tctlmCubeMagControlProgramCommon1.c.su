@@ -1,0 +1,12 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeMagControlProgramCommon1.c:21:11:tctlmCubeMagControlProgramCommon1_setConfig	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeMagControlProgramCommon1.c:60:11:tctlmCubeMagControlProgramCommon1_setMmcConfig	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeMagControlProgramCommon1.c:108:11:tctlmCubeMagControlProgramCommon1_setSamplePrimary	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeMagControlProgramCommon1.c:128:11:tctlmCubeMagControlProgramCommon1_setMmcCalibration	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeMagControlProgramCommon1.c:185:11:tctlmCubeMagControlProgramCommon1_getMmcCalibration	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeMagControlProgramCommon1.c:284:11:tctlmCubeMagControlProgramCommon1_getConfig	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeMagControlProgramCommon1.c:349:11:tctlmCubeMagControlProgramCommon1_getPrimaryMagMeasurementRaw	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeMagControlProgramCommon1.c:410:11:tctlmCubeMagControlProgramCommon1_getState	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeMagControlProgramCommon1.c:470:11:tctlmCubeMagControlProgramCommon1_getMmcConfig	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeMagControlProgramCommon1.c:566:11:tctlmCubeMagControlProgramCommon1_getPrimaryMagMeasurement	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeMagControlProgramCommon1.c:627:11:tctlmCubeMagControlProgramCommon1_getPrimaryMagTemp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeMagControlProgramCommon1.c:671:11:tctlmCubeMagControlProgramCommon1_getPrimaryMagDiagnostics	48	static

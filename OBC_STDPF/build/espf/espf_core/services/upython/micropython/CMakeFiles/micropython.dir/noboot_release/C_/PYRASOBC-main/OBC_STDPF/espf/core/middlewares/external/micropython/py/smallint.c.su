@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/smallint.c:29:6:mp_small_int_mul_overflow	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/smallint.c:55:10:mp_small_int_modulo	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/smallint.c:64:10:mp_small_int_floor_divide	0	static

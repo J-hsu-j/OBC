@@ -1,0 +1,2 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched_commands.c:65:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/src/onboard_sched_commands.c:79:6:onboard_sched_commands_execute_command	64	static

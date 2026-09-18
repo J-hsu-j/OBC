@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fdir_srv/src/fdir_srv_log.c:138:13:fdir_srv_vlog	328	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fdir_srv/src/fdir_srv_log.c:97:6:fdir_srv_log_if_not_same	12	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fdir_srv/src/fdir_srv_log.c:108:6:fdir_srv_log_if_raised	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fdir_srv/src/fdir_srv_log.c:119:6:fdir_srv_log_if_clear	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fdir_srv/src/fdir_srv_log.c:130:6:fdir_srv_log	16	static

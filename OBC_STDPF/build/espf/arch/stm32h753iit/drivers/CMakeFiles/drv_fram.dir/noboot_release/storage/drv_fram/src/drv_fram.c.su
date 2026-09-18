@@ -1,0 +1,16 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/storage/drv_fram/src/drv_fram.c:292:13:FRAM_MspInit	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/storage/drv_fram/src/drv_fram.c:310:13:FRAM_MspDeInit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/storage/drv_fram/src/drv_fram.c:223:13:ExtFram_Transfer	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/storage/drv_fram/src/drv_fram.c:259:16:ExtFram_SafeRead	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/storage/drv_fram/src/drv_fram.c:44:6:FRAM_Init	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/storage/drv_fram/src/drv_fram.c:86:6:FRAM_DeInit	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/storage/drv_fram/src/drv_fram.c:111:6:FRAM_WriteEnable	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/storage/drv_fram/src/drv_fram.c:119:6:FRAM_WriteDisable	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/storage/drv_fram/src/drv_fram.c:127:6:FRAM_WriteStatusReg	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/storage/drv_fram/src/drv_fram.c:135:9:FRAM_ReadStatusReg	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/storage/drv_fram/src/drv_fram.c:145:6:FRAM_ReadData	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/storage/drv_fram/src/drv_fram.c:152:6:FRAM_FastReadData	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/storage/drv_fram/src/drv_fram.c:157:6:FRAM_WriteData	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/storage/drv_fram/src/drv_fram.c:184:6:FRAM_EnSleep	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/storage/drv_fram/src/drv_fram.c:192:6:FRAM_Wake	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/storage/drv_fram/src/drv_fram.c:197:6:FRAM_Read_DevID	16	static

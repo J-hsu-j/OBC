@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCommonTransfer1.c:21:11:tctlmCommonTransfer1_setFrame	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCommonTransfer1.c:55:11:tctlmCommonTransfer1_setTransferFrame	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCommonTransfer1.c:90:11:tctlmCommonTransfer1_getFrame	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCommonTransfer1.c:139:11:tctlmCommonTransfer1_getFrameInfo	48	static

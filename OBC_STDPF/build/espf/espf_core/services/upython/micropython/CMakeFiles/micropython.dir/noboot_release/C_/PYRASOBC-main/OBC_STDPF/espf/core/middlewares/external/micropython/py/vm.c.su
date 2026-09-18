@@ -1,0 +1,2 @@
+C:/PYRASOBC-main/OBC_STDPF/build/../espf/core/middlewares/external/micropython/py/bc.h:311:22:mp_bytecode_get_source_line	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/vm.c:204:21:mp_execute_bytecode	136	static

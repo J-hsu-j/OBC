@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/es_sxband/es_sxband_config.c:21:6:es_sxband_config_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/es_sxband/es_sxband_config.c:26:21:es_sxband_config_get_usart_hnd	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/es_sxband/es_sxband_config.c:31:6:es_sxband_config_uart_init	256	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/es_sxband/es_sxband_config.c:112:6:es_sxband_config_uart_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/es_sxband/es_sxband_config.c:131:6:es_sxband_config_usart_irq	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/es_sxband/es_sxband_config.c:136:6:es_sxband_config_dma_rx_irq	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/es_sxband/es_sxband_config.c:141:6:es_sxband_config_dma_tx_irq	8	static

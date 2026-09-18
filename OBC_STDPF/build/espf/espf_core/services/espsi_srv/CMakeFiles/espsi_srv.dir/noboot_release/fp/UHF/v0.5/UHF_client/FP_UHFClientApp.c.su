@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/UHF/v0.5/UHF_client/FP_UHFClientApp.c:125:13:UHF_ReadCountersResponseHandlerImpl	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/UHF/v0.5/UHF_client/FP_UHFClientApp.c:104:13:UHF_ExBeaconSetSendResponseHandlerImpl	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/UHF/v0.5/UHF_client/FP_UHFClientApp.c:78:13:UHF_ReadNumberOfRxPacketsResponseHandlerImpl	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/UHF/v0.5/UHF_client/FP_UHFClientApp.c:58:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/UHF/v0.5/UHF_client/FP_UHFClientApp.c:156:6:UHFClientAppInit	8	static

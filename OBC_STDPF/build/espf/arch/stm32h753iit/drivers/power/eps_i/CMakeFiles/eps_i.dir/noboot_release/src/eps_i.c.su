@@ -1,0 +1,12 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/src/eps_i.c:107:20:eps_i_run	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/src/eps_i.c:112:20:eps_i_stop	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/src/eps_i.c:229:13:eps_i_init_memory	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/src/eps_i.c:117:20:eps_i_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/src/eps_i.c:254:13:eps_i_init_os	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/src/eps_i.c:82:20:eps_i_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/src/eps_i.c:270:13:eps_i_task	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/src/eps_i.c:131:6:eps_i_set_channel_output	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/src/eps_i.c:152:6:eps_i_get_channel_outputs	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/src/eps_i.c:159:10:eps_i_get_last_request_seq_id	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/src/eps_i.c:164:10:eps_i_get_config_from_channel	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_i/src/eps_i.c:201:6:eps_i_info_to_datacache	8	static

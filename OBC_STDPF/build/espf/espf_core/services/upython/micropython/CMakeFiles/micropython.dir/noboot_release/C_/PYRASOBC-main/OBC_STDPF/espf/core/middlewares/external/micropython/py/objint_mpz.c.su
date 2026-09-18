@@ -1,0 +1,16 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint_mpz.c:77:15:mp_obj_int_new_mpz	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint_mpz.c:92:7:mp_obj_int_formatted_impl	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint_mpz.c:109:10:mp_obj_int_from_bytes_impl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint_mpz.c:115:6:mp_obj_int_to_bytes_impl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint_mpz.c:121:5:mp_obj_int_sign	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint_mpz.c:142:10:mp_obj_int_unary_op	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint_mpz.c:383:10:mp_obj_new_int_from_ll	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint_mpz.c:376:10:mp_obj_new_int	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint_mpz.c:389:10:mp_obj_new_int_from_ull	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint_mpz.c:395:10:mp_obj_new_int_from_uint	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint_mpz.c:404:10:mp_obj_new_int_from_str_len	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint_mpz.c:411:10:mp_obj_int_get_truncated	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint_mpz.c:421:10:mp_obj_int_get_checked	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint_mpz.c:175:10:mp_obj_int_binary_op	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint_mpz.c:436:11:mp_obj_int_get_uint_checked	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objint_mpz.c:453:12:mp_obj_int_as_float_impl	8	static

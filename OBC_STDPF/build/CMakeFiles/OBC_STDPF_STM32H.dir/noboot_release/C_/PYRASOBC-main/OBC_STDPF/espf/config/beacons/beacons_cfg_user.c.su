@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/beacons/beacons_cfg_user.c:82:9:beacons_get_op_mode	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/beacons/beacons_cfg_user.c:91:9:beacons_cfg_get_active_preset	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/beacons/beacons_cfg_user.c:143:6:beacons_cfg_restore_active_preset	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/beacons/beacons_cfg_user.c:149:6:beacons_cfg_set_active_preset	0	static

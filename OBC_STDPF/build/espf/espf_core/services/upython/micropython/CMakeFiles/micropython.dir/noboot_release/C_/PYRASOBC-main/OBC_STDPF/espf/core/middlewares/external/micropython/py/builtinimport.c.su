@@ -1,0 +1,10 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/builtinimport.c:345:13:unregister_module_from_nlr_jump_callback	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/builtinimport.c:262:13:evaluate_relative_import	48	dynamic
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/builtinimport.c:60:25:stat_path	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/builtinimport.c:77:25:stat_file_py_or_mpy	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/builtinimport.c:101:25:stat_module	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/builtinimport.c:116:25:stat_top_level	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/builtinimport.c:167:13:do_execute_raw_code	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/builtinimport.c:198:13:do_load	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/builtinimport.c:358:17:process_import_at_level	328	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/builtinimport.c:522:10:mp_builtin___import___default	40	static

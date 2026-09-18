@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/FWUPD_Handler_Cfg.c:198:13:lz7_handler	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/FWUPD_Handler_Cfg.c:187:13:tle_handler	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/FWUPD_Handler_Cfg.c:60:17:process_file_footer	600	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/FWUPD_Handler_Cfg.c:177:13:default_file_handler	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/FWUPD_Handler_Cfg.c:133:13:handle_file_ext	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/FWUPD_Handler_Cfg.c:50:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/FWUPD_Handler_Cfg.c:217:6:FWUPD_Handler_Cfg_HandleTransferComplete	80	static

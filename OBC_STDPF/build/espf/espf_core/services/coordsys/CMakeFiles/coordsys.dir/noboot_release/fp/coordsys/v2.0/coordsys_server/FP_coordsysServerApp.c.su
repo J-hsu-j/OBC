@@ -1,0 +1,17 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:771:13:coordsys_load_coordsys_configRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:734:13:coordsys_save_coordsys_configRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:690:13:coordsys_get_magnetorquer_frame_statusRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:645:13:coordsys_get_magnetorquer_frameRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:596:13:coordsys_set_magnetorquer_frameRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:552:13:coordsys_get_coarse_sun_sensor_frame_statusRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:504:13:coordsys_get_coarse_sun_sensor_frameRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:452:13:coordsys_set_coarse_sun_sensor_frameRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:408:13:coordsys_get_magnetometer_frame_statusRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:363:13:coordsys_get_magnetometer_frameRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:314:13:coordsys_set_magnetometer_frameRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:270:13:coordsys_get_gyroscope_frame_statusRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:217:13:coordsys_get_gyroscope_frameRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:168:13:coordsys_set_gyroscope_frameRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:110:13:coordsys_get_statusRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:78:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/coordsys/fp/coordsys/v2.0/coordsys_server/FP_coordsysServerApp.c:813:6:coordsysServerAppInit	8	static

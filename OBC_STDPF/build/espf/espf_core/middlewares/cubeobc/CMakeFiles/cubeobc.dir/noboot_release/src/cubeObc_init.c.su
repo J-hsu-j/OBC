@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_init.c:34:11:cubeObc_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_init.c:45:6:cubeObc_getVersion	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_init.c:52:6:cubeObc_getSystemVersion	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/src/cubeObc_init.c:59:4:cubeObc_getHostAddress	0	static

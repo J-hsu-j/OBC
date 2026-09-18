@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/MacServices/v0.1/MacServices_server/FP_MacServicesProtocolServer.c:110:13:fs_getMacBusTerminationSettingReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/MacServices/v0.1/MacServices_server/FP_MacServicesProtocolServer.c:140:13:fs_setMacBusTerminationSettingReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/MacServices/v0.1/MacServices_server/FP_MacServicesProtocolServer.c:170:13:fs_setMacAddressReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/MacServices/v0.1/MacServices_server/FP_MacServicesProtocolServer.c:99:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/MacServices/v0.1/MacServices_server/FP_MacServicesProtocolServer.c:206:6:MacServices_registerServerApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/MacServices/v0.1/MacServices_server/FP_MacServicesProtocolServer.c:211:36:MacServices_getServerProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/MacServices/v0.1/MacServices_server/FP_MacServicesProtocolServer.c:216:19:MacServices_getMacBusTerminationSettingResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/MacServices/v0.1/MacServices_server/FP_MacServicesProtocolServer.c:268:19:MacServices_setMacBusTerminationSettingResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/MacServices/v0.1/MacServices_server/FP_MacServicesProtocolServer.c:314:19:MacServices_setMacAddressResp	48	static

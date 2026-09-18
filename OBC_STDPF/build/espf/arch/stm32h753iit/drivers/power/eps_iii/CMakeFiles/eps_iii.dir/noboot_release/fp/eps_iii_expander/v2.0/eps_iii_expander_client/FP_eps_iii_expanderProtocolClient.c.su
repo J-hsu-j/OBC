@@ -1,0 +1,15 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_expander/v2.0/eps_iii_expander_client/FP_eps_iii_expanderProtocolClient.c:142:13:fs_get_telemetryResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_expander/v2.0/eps_iii_expander_client/FP_eps_iii_expanderProtocolClient.c:172:13:fs_h1_channels_controlResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_expander/v2.0/eps_iii_expander_client/FP_eps_iii_expanderProtocolClient.c:202:13:fs_gpio_controlResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_expander/v2.0/eps_iii_expander_client/FP_eps_iii_expanderProtocolClient.c:232:13:fs_interconnect_controlResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_expander/v2.0/eps_iii_expander_client/FP_eps_iii_expanderProtocolClient.c:262:13:fs_release_5vResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_expander/v2.0/eps_iii_expander_client/FP_eps_iii_expanderProtocolClient.c:292:13:fs_release_controlResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_expander/v2.0/eps_iii_expander_client/FP_eps_iii_expanderProtocolClient.c:136:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_expander/v2.0/eps_iii_expander_client/FP_eps_iii_expanderProtocolClient.c:328:6:eps_iii_expander_registerClientApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_expander/v2.0/eps_iii_expander_client/FP_eps_iii_expanderProtocolClient.c:333:36:eps_iii_expander_getClientProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_expander/v2.0/eps_iii_expander_client/FP_eps_iii_expanderProtocolClient.c:338:19:eps_iii_expander_get_telemetryReq	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_expander/v2.0/eps_iii_expander_client/FP_eps_iii_expanderProtocolClient.c:386:19:eps_iii_expander_h1_channels_controlReq	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_expander/v2.0/eps_iii_expander_client/FP_eps_iii_expanderProtocolClient.c:442:19:eps_iii_expander_gpio_controlReq	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_expander/v2.0/eps_iii_expander_client/FP_eps_iii_expanderProtocolClient.c:498:19:eps_iii_expander_interconnect_controlReq	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_expander/v2.0/eps_iii_expander_client/FP_eps_iii_expanderProtocolClient.c:554:19:eps_iii_expander_release_5vReq	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_expander/v2.0/eps_iii_expander_client/FP_eps_iii_expanderProtocolClient.c:610:19:eps_iii_expander_release_controlReq	64	static

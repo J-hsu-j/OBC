@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/solar_panels/src/sp_service.c:185:20:sp_run	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/solar_panels/src/sp_service.c:191:20:sp_stop	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/solar_panels/src/sp_service.c:197:20:sp_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/solar_panels/src/sp_service.c:126:20:sp_init	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/solar_panels/src/sp_service.c:253:13:sp_service_task	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/solar_panels/src/sp_service.c:218:6:sp_response_received	8	static

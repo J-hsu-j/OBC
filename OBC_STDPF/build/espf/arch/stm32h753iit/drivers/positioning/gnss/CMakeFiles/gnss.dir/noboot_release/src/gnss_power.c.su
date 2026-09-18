@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_power.c:56:6:gnss_power_on	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_power.c:70:6:gnss_power_off	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/positioning/gnss/src/gnss_power.c:85:6:gnss_power_is_on	8	static

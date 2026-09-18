@@ -1,0 +1,13 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Persistor.c:52:13:fs_vInit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Persistor.c:59:13:fs_bGetPendingTransferInfo	592	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Persistor.c:93:13:fs_u32GetStartingPosForTransfer	128	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Persistor.c:28:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Persistor.c:128:23:FWUPD_Persistor_GetPartialTransferInfo	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Persistor.c:150:23:FWUPD_Persistor_StartNewTransfer	600	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Persistor.c:205:23:FWUPD_Persistor_CommitBuffer	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Persistor.c:267:23:FWUPD_Persistor_FinalizeTransfer	600	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Persistor.c:293:23:FWUPD_Persistor_PrepareImage	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Persistor.c:317:23:FWUPD_Persistor_VerifyImage	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Persistor.c:378:23:FWUPD_Persistor_DiscardPendingUpdate	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Persistor.c:386:19:FWUPD_Persistor_GetDownloadedImageFileName	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Persistor.c:391:13:FWUPD_Persistor_GetStorageDir	0	static

@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/fp/obc_micropython/v1.1/obc_micropython_server/FP_obc_micropythonProtocolServer.c:99:13:fs_RequestScriptExecutionReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/fp/obc_micropython/v1.1/obc_micropython_server/FP_obc_micropythonProtocolServer.c:129:13:fs_GetScriptExecStatusReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/fp/obc_micropython/v1.1/obc_micropython_server/FP_obc_micropythonProtocolServer.c:88:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/fp/obc_micropython/v1.1/obc_micropython_server/FP_obc_micropythonProtocolServer.c:165:6:obc_micropython_registerServerApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/fp/obc_micropython/v1.1/obc_micropython_server/FP_obc_micropythonProtocolServer.c:170:36:obc_micropython_getServerProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/fp/obc_micropython/v1.1/obc_micropython_server/FP_obc_micropythonProtocolServer.c:175:19:obc_micropython_RequestScriptExecutionResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/fp/obc_micropython/v1.1/obc_micropython_server/FP_obc_micropythonProtocolServer.c:227:19:obc_micropython_GetScriptExecStatusResp	136	static

@@ -1,0 +1,15 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_transfer.c:471:18:fs_start_blocking_upload_to_boot	80	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_transfer.c:614:18:fs_start_blocking_upload_to_appl	88	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_transfer.c:744:13:fs_start_blocking_transfer	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_transfer.c:802:13:fs_transfer_task	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_transfer.c:67:11:cubeadcs_gen2_transfer_init	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_transfer.c:137:11:cubeadcs_gen2_transfer_evt	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_transfer.c:182:11:cubeadcs_gen2_transfer_evt_status	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_transfer.c:205:11:cubeadcs_gen2_transfer_tlm	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_transfer.c:250:11:cubeadcs_gen2_transfer_tlm_status	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_transfer.c:273:11:cubeadcs_gen2_transfer_img_direct	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_transfer.c:321:11:cubeadcs_gen2_transfer_img_direct_status	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_transfer.c:340:11:cubeadcs_gen2_transfer_boot_cube_space_file	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_transfer.c:378:11:cubeadcs_gen2_transfer_boot_cube_space_file_status	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_transfer.c:401:11:cubeadcs_gen2_transfer_appl_cube_space_file	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_transfer.c:443:11:cubeadcs_gen2_transfer_appl_cube_space_file_status	16	static

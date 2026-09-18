@@ -1,0 +1,10 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/src/fault_persistor.c:259:13:fp_iter_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/src/fault_persistor.c:293:13:fp_iter_has_records	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/src/fault_persistor.c:67:6:fault_persistor_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/src/fault_persistor.c:75:6:fault_persistor_get_info	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/src/fault_persistor.c:88:6:fault_persistor_store	176	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/src/fault_persistor.c:166:6:fault_persistor_read_single	176	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/src/fault_persistor.c:271:13:fp_iter_next	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/src/fault_persistor.c:125:6:fault_persistor_read_all	184	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/src/fault_persistor.c:196:6:fault_persistor_dump_to_file	752	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/src/fault_persistor.c:239:6:fault_persistor_clear	184	static

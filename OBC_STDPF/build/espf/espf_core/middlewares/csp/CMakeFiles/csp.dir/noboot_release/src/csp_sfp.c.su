@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_sfp.c:47:30:csp_sfp_header_remove	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_sfp.c:69:5:csp_sfp_send_own_memcpy	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_sfp.c:123:5:csp_sfp_recv_fp	72	static

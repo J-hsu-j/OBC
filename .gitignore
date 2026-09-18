@@ -1,7 +1,7 @@
 .metadata/
 
 # Build outputs
-OBC_STDPF/build/
+# OBC_STDPF/build/
 *.o
 *.obj
 *.a
@@ -16,7 +16,7 @@ OBC_STDPF/build/
 .metadata/
 
 # Build outputs
-OBC_STDPF/build/
+# OBC_STDPF/build/
 *.o
 *.obj
 *.a
@@ -31,7 +31,7 @@ OBC_STDPF/build/
 .metadata/
 
 # Build outputs
-OBC_STDPF/build/
+# OBC_STDPF/build/
 *.o
 *.obj
 *.a

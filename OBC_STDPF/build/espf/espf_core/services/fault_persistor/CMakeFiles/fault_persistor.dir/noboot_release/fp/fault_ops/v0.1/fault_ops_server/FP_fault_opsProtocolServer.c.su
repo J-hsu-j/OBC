@@ -1,0 +1,13 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsProtocolServer.c:132:13:fs_get_fault_infoReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsProtocolServer.c:160:13:fs_read_fault_by_index_rawReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsProtocolServer.c:190:13:fs_clear_all_faultsReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsProtocolServer.c:218:13:fs_simulate_faultReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsProtocolServer.c:248:13:fs_read_fault_by_indexReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsProtocolServer.c:121:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsProtocolServer.c:284:6:fault_ops_registerServerApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsProtocolServer.c:289:36:fault_ops_getServerProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsProtocolServer.c:294:19:fault_ops_get_fault_infoResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsProtocolServer.c:346:19:fault_ops_read_fault_by_index_rawResp	200	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsProtocolServer.c:403:19:fault_ops_clear_all_faultsResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsProtocolServer.c:453:19:fault_ops_simulate_faultResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/fault_persistor/fp/fault_ops/v0.1/fault_ops_server/FP_fault_opsProtocolServer.c:499:19:fault_ops_read_fault_by_indexResp	200	static

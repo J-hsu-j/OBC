@@ -1,0 +1,14 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_mag_cfg.c:226:28:sensor_mag_prim_get_state	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_mag_cfg.c:233:16:sensor_mag_prim_get_last_error	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_mag_cfg.c:264:28:sensor_mag_sec_get_state	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_mag_cfg.c:271:16:sensor_mag_sec_get_last_error	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_mag_cfg.c:167:24:sensor_mag_conv_raw_data_to_T	96	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_mag_cfg.c:124:24:sensor_mag_prim_get_data_in_T	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_mag_cfg.c:145:24:sensor_mag_sec_get_data_in_T	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_mag_cfg.c:307:24:sensor_mag_set_register	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_mag_cfg.c:282:24:sensor_mag_get_register	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_mag_cfg.c:215:24:sensor_mag_prim_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_mag_cfg.c:253:24:sensor_mag_sec_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_mag_cfg.c:202:24:sensor_mag_prim_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_mag_cfg.c:240:24:sensor_mag_sec_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_mag_cfg.c:29:1:cmp_logger_def_init	0	static

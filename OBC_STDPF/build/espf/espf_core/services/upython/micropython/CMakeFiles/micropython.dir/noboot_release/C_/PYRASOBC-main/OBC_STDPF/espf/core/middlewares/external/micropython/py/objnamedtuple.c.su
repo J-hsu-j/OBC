@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objnamedtuple.c:63:13:namedtuple_print	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objnamedtuple.c:37:8:mp_obj_namedtuple_find_field	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objnamedtuple.c:71:13:namedtuple_attr	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objnamedtuple.c:94:17:namedtuple_make_new	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objnamedtuple.c:145:27:mp_obj_new_namedtuple_base	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objnamedtuple.c:154:17:mp_obj_new_namedtuple_type	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/objnamedtuple.c:171:17:new_namedtuple_type	24	static

@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sys_conf/sys_conf.c:170:13:eps_compatibility_check	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sys_conf/sys_conf.c:221:13:adcs_compatibility_check	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sys_conf/sys_conf.c:143:13:module_compatibility_check	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sys_conf/sys_conf.c:77:6:sys_conf_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sys_conf/sys_conf.c:131:6:sys_conf_is_valid	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sys_conf/sys_conf.c:119:6:sys_conf_is_module_active	8	static

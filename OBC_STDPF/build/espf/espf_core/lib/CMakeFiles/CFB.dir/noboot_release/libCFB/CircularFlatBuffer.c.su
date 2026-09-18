@@ -1,0 +1,8 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libCFB/CircularFlatBuffer.c:20:24:fs_GetFreeBytes	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libCFB/CircularFlatBuffer.c:36:24:fs_GetUsedBytes	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libCFB/CircularFlatBuffer.c:43:18:CircularBuf_Init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libCFB/CircularFlatBuffer.c:85:18:CircularBuf_Append	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libCFB/CircularFlatBuffer.c:141:10:CircularBuf_GetNextBufferPtr	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libCFB/CircularFlatBuffer.c:218:6:CircularBuf_ReleaseLastBufferPtr	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libCFB/CircularFlatBuffer.c:245:10:CircularBuf_ReadNextCommitBuffer	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libCFB/CircularFlatBuffer.c:254:10:CircularBuf_GetMaxByteCountReached	0	static

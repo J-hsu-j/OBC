@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_batt_pack/v2.0/eps_iii_batt_pack_client/FP_eps_iii_batt_packProtocolClient.c:82:13:fs_get_telemetryResp	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_batt_pack/v2.0/eps_iii_batt_pack_client/FP_eps_iii_batt_packProtocolClient.c:76:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_batt_pack/v2.0/eps_iii_batt_pack_client/FP_eps_iii_batt_packProtocolClient.c:118:6:eps_iii_batt_pack_registerClientApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_batt_pack/v2.0/eps_iii_batt_pack_client/FP_eps_iii_batt_packProtocolClient.c:123:36:eps_iii_batt_pack_getClientProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/fp/eps_iii_batt_pack/v2.0/eps_iii_batt_pack_client/FP_eps_iii_batt_packProtocolClient.c:128:19:eps_iii_batt_pack_get_telemetryReq	56	static

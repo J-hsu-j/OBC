@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/src/nvm_cfg.c:49:1:NVM_Cfg_EnterCriticalSection	8	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/src/nvm_cfg.c:89:1:NVM_Cfg_LeaveCriticalSection	8	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/src/nvm_cfg.c:121:6:NVM_Cfg_Init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/src/nvm_cfg.c:128:6:NVM_Cfg_VerifyLayout	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/src/nvm_cfg.c:136:6:NVM_Cfg_PrepareLayoutUpgrade	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/src/nvm_cfg.c:154:6:NVM_Cfg_ReportTaskAlive	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/src/nvm_cfg.c:160:6:NVM_Cfg_WriteBlock	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/src/nvm_cfg.c:166:6:NVM_Cfg_ReadBlock	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/src/nvm_cfg.c:173:1:NVM_Cfg_GetMaxPhysBlockSize	0	static

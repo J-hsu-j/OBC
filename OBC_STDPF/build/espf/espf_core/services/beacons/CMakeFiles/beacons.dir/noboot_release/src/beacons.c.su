@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/src/beacons.c:219:20:beacons_trigger_hsm	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/src/beacons.c:75:6:beacons_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/src/beacons.c:104:6:beacons_start	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/src/beacons.c:141:6:beacons_stop	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/src/beacons.c:147:6:beacons_confirm_sink_send	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/src/beacons.c:155:6:beacons_load_config	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/src/beacons.c:164:13:beacons_task	8	static

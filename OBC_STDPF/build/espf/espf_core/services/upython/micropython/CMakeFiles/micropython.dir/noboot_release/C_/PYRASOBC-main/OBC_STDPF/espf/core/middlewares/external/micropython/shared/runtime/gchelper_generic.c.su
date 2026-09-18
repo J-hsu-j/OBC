@@ -1,0 +1,2 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/runtime/gchelper_generic.c:164:13:gc_helper_get_regs	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/shared/runtime/gchelper_generic.c:175:18:gc_helper_collect_regs_and_stack	168	static

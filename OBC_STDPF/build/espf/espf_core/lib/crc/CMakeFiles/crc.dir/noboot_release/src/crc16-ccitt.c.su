@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/crc/src/crc16-ccitt.c:115:10:crc16_ccitt_table_ex	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/crc/src/crc16-ccitt.c:110:10:crc16_ccitt_table	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/crc/src/crc16-ccitt.c:134:10:crc16_ccitt_calc	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/crc/src/crc16-ccitt.c:172:10:CRC16_8	0	static

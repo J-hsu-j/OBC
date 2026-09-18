@@ -1,0 +1,11 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_io.c:50:16:csp_socket	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_io.c:109:14:csp_accept	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_io.c:125:16:csp_read	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_io.c:168:5:csp_send_direct	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_io.c:264:5:csp_send	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_io.c:285:5:csp_send_prio	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_io.c:290:5:csp_transaction_persistent	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_io.c:328:5:csp_transaction_w_opts	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_io.c:342:16:csp_recvfrom	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_io.c:354:5:csp_sendto	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/csp/src/csp_io.c:403:5:csp_sendto_reply	24	static

@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/build/../espf/config/ESPLATFORM_NETWORK_STACK/inc/ESCP_CommandsLocalConf.h:118:1:comm_gw_cp_get_cmd_hnd	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_cp.c:141:13:comm_gw_cp_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_cp.c:148:13:comm_gw_is_valid_ctx	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_cp.c:164:13:comm_gw_cp_send	88	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_gw/src/comm_gw_cp.c:52:1:cmp_logger_def_init	0	static

@@ -1,0 +1,13 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/task_stat/v0.1/task_stat_server/FP_task_statServerApp.c:496:13:task_stat_get_latest_task_statRequestHandlerImpl	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/task_stat/v0.1/task_stat_server/FP_task_statServerApp.c:458:13:task_stat_get_free_heapRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/task_stat/v0.1/task_stat_server/FP_task_statServerApp.c:420:13:task_stat_set_configuration_per_task_idRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/task_stat/v0.1/task_stat_server/FP_task_statServerApp.c:373:13:task_stat_get_configuration_per_task_idRequestHandlerImpl	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/task_stat/v0.1/task_stat_server/FP_task_statServerApp.c:338:13:task_stat_set_configuration_global_defaultsRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/task_stat/v0.1/task_stat_server/FP_task_statServerApp.c:302:13:task_stat_set_configuration_global_id_fileRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/task_stat/v0.1/task_stat_server/FP_task_statServerApp.c:266:13:task_stat_set_configuration_global_sampling_periodRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/task_stat/v0.1/task_stat_server/FP_task_statServerApp.c:230:13:task_stat_set_configuration_global_priorityRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/task_stat/v0.1/task_stat_server/FP_task_statServerApp.c:194:13:task_stat_set_configuration_global_loggingRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/task_stat/v0.1/task_stat_server/FP_task_statServerApp.c:158:13:task_stat_set_configuration_global_enableRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/task_stat/v0.1/task_stat_server/FP_task_statServerApp.c:103:13:task_stat_get_configurationRequestHandlerImpl	216	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/task_stat/v0.1/task_stat_server/FP_task_statServerApp.c:75:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/task_stat/v0.1/task_stat_server/FP_task_statServerApp.c:544:6:task_statServerAppInit	8	static

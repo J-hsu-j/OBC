@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/fp/payload_ctrl/v2.0/payload_ctrl_server/FP_payload_ctrlProtocolServer.c:111:13:fs_start_payloadReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/fp/payload_ctrl/v2.0/payload_ctrl_server/FP_payload_ctrlProtocolServer.c:141:13:fs_stop_payloadReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/fp/payload_ctrl/v2.0/payload_ctrl_server/FP_payload_ctrlProtocolServer.c:171:13:fs_get_payload_infoReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/fp/payload_ctrl/v2.0/payload_ctrl_server/FP_payload_ctrlProtocolServer.c:100:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/fp/payload_ctrl/v2.0/payload_ctrl_server/FP_payload_ctrlProtocolServer.c:207:6:payload_ctrl_registerServerApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/fp/payload_ctrl/v2.0/payload_ctrl_server/FP_payload_ctrlProtocolServer.c:212:36:payload_ctrl_getServerProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/fp/payload_ctrl/v2.0/payload_ctrl_server/FP_payload_ctrlProtocolServer.c:217:19:payload_ctrl_start_payloadResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/fp/payload_ctrl/v2.0/payload_ctrl_server/FP_payload_ctrlProtocolServer.c:267:19:payload_ctrl_stop_payloadResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/fp/payload_ctrl/v2.0/payload_ctrl_server/FP_payload_ctrlProtocolServer.c:317:19:payload_ctrl_get_payload_infoResp	48	static

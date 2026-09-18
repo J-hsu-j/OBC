@@ -1,0 +1,15 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/trace/src/trace.c:407:6:trace_op_get_module_info	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/trace/src/trace.c:119:6:trace_init	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/trace/src/trace.c:235:6:trace_serve_chan	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/trace/src/trace.c:267:6:trace_get_chan_active	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/trace/src/trace.c:477:13:fs_send_data_to_channels	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/trace/src/trace.c:154:6:trace	308	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/trace/src/trace.c:283:13:trace_get_chan_name	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/trace/src/trace.c:291:6:trace_set_channel_level	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/trace/src/trace.c:309:6:trace_set_all_channels_level	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/trace/src/trace.c:329:6:trace_get_channel_info	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/trace/src/trace.c:349:6:trace_set_channel_active	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/trace/src/trace.c:368:6:trace_set_all_channels_active	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/trace/src/trace.c:388:6:trace_op_set_active_flag	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/trace/src/trace.c:396:6:trace_op_set_level	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/trace/src/trace.c:417:6:trace_perform_module_op	40	static

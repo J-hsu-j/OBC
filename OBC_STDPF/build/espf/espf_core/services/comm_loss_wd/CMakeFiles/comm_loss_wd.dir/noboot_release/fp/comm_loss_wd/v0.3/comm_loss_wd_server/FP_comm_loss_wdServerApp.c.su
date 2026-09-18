@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_loss_wd/fp/comm_loss_wd/v0.3/comm_loss_wd_server/FP_comm_loss_wdServerApp.c:210:13:comm_loss_wd_get_wd_statRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_loss_wd/fp/comm_loss_wd/v0.3/comm_loss_wd_server/FP_comm_loss_wdServerApp.c:171:13:comm_loss_wd_get_wd_timeoutRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_loss_wd/fp/comm_loss_wd/v0.3/comm_loss_wd_server/FP_comm_loss_wdServerApp.c:124:13:comm_loss_wd_set_wd_enableRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_loss_wd/fp/comm_loss_wd/v0.3/comm_loss_wd_server/FP_comm_loss_wdServerApp.c:77:13:comm_loss_wd_set_wd_timeoutRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/comm_loss_wd/fp/comm_loss_wd/v0.3/comm_loss_wd_server/FP_comm_loss_wdServerApp.c:253:6:comm_loss_wdServerAppInit	8	static

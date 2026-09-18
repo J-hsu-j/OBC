@@ -1,0 +1,15 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configProtocolServer.c:146:13:fs_set_channel_trace_levelReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configProtocolServer.c:176:13:fs_get_channel_infoReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configProtocolServer.c:204:13:fs_set_channel_active_statusReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configProtocolServer.c:234:13:fs_set_module_active_statusReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configProtocolServer.c:264:13:fs_set_module_trace_levelReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configProtocolServer.c:294:13:fs_get_module_infoReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configProtocolServer.c:135:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configProtocolServer.c:330:6:trace_level_config_registerServerApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configProtocolServer.c:335:36:trace_level_config_getServerProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configProtocolServer.c:340:19:trace_level_config_set_channel_trace_levelResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configProtocolServer.c:390:19:trace_level_config_get_channel_infoResp	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configProtocolServer.c:453:19:trace_level_config_set_channel_active_statusResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configProtocolServer.c:503:19:trace_level_config_set_module_active_statusResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configProtocolServer.c:553:19:trace_level_config_set_module_trace_levelResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/trace_level_config/fp/trace_level_config/v0.1/trace_level_config_server/FP_trace_level_configProtocolServer.c:603:19:trace_level_config_get_module_infoResp	160	static

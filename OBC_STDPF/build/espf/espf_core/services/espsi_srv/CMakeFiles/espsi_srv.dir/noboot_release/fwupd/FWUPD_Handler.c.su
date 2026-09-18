@@ -1,0 +1,12 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Handler.c:462:13:fs_bIsUpdateHeaderValid	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Handler.c:204:19:fs_vPostSmEvent	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Handler.c:578:13:fs_vOnESFWUPD_GoFirmwareUpdate	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Handler.c:569:16:fs_vOnESFWUPD_CheckFirmwareBundle	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Handler.c:217:13:fs_vPersistPendingData	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Handler.c:409:36:OnESFWUPD_RequestBundleBuffer	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Handler.c:478:16:fs_vOnESFWUPD_OnNewChunk	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Handler.c:161:13:fs_vInitSm	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Handler.c:270:13:fs_vTriggerSmEvent	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Handler.c:133:13:fs_vFWUPD_Handler_Task	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Handler.c:46:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fwupd/FWUPD_Handler.c:586:6:FWUPD_Handler_Init	8	static

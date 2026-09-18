@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_sched/src/sxband_cmd_iter_file.c:55:13:read_data_and_verify	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_sched/src/sxband_cmd_iter_file.c:108:23:file_iter_reset	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_sched/src/sxband_cmd_iter_file.c:129:6:file_iter_has_next	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_sched/src/sxband_cmd_iter_file.c:149:23:file_iter_next	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sxband_sched/src/sxband_cmd_iter_file.c:64:31:sxband_cmd_iter_file_init_ctx	24	static

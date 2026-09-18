@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_queue.c:33:6:MAC_QUEUE_vTXQueueAdd	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_queue.c:82:20:MAC_QUEUE_vTXQueuePop	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/comm/espsi_drv/src/esps_drv_queue.c:104:6:MAC_QUEUE_vTXQueueComplete	8	static

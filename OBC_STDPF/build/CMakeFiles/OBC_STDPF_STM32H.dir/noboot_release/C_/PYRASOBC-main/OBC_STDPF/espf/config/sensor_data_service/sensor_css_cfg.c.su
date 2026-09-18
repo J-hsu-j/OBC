@@ -1,0 +1,8 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_css_cfg.c:143:28:sensor_css_get_state	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_css_cfg.c:150:16:sensor_css_get_last_error	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_css_cfg.c:182:24:sensor_css_set_register	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_css_cfg.c:161:24:sensor_css_get_register	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_css_cfg.c:89:24:sensor_css_get_data_raw	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_css_cfg.c:132:24:sensor_css_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_css_cfg.c:119:24:sensor_css_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/sensor_data_service/sensor_css_cfg.c:29:1:cmp_logger_def_init	0	static

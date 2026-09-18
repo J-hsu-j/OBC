@@ -1,0 +1,10 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_queue.c:347:13:telemetry_queue_lock	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_queue.c:354:13:telemetry_queue_unlock	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_queue.c:69:6:telemetry_queue_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_queue.c:92:6:telemetry_queue_push	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_queue.c:156:10:telemetry_queue_pop	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_queue.c:215:10:telemetry_queue_peek	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_queue.c:259:6:telemetry_queue_get_stats	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_queue.c:279:6:telemetry_reset_stats	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_queue.c:295:6:telemetry_queue_update_stats	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry_queue.c:335:6:telemetry_queue_reached_threshold	0	static

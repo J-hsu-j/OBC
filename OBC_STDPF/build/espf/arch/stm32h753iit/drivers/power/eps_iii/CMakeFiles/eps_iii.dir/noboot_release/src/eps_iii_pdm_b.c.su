@@ -1,0 +1,7 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/src/eps_iii_pdm_b.c:327:26:send_ch_cmd	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/src/eps_iii_pdm_b.c:97:6:eps_iii_pdm_b_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/src/eps_iii_pdm_b.c:113:6:eps_iii_pdm_b_process_fdir_faults	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/src/eps_iii_pdm_b.c:188:6:eps_iii_pdm_b_get_telemetry_notif	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/src/eps_iii_pdm_b.c:208:6:eps_iii_pdm_b_A_B_control_notif	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/src/eps_iii_pdm_b.c:248:6:eps_iii_pdm_b_set_channel_output	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/src/eps_iii_pdm_b.c:285:6:eps_iii_pdm_b_get_channel_output	32	static

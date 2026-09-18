@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/src/eps_iii_bp.c:215:13:eps_iii_bp_fdir_checks	96	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/src/eps_iii_bp.c:98:6:eps_iii_bp_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/src/eps_iii_bp.c:113:6:eps_iii_bp_process_fdir_faults	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/power/eps_iii/src/eps_iii_bp.c:189:6:eps_iii_bp_get_telemetry_notif	80	static

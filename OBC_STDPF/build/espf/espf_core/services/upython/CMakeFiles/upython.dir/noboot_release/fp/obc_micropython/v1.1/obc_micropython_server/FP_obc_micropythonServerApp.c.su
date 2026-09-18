@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/fp/obc_micropython/v1.1/obc_micropython_server/FP_obc_micropythonServerApp.c:131:13:obc_micropython_GetScriptExecStatusRequestHandlerImpl	192	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/fp/obc_micropython/v1.1/obc_micropython_server/FP_obc_micropythonServerApp.c:85:13:obc_micropython_RequestScriptExecutionRequestHandlerImpl	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/fp/obc_micropython/v1.1/obc_micropython_server/FP_obc_micropythonServerApp.c:56:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/fp/obc_micropython/v1.1/obc_micropython_server/FP_obc_micropythonServerApp.c:215:6:obc_micropythonServerAppInit	8	static

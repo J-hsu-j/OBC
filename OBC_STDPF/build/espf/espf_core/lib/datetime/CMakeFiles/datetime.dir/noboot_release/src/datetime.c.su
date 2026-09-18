@@ -1,0 +1,13 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libdatetime/src/datetime.c:28:13:datetime_is_leap_year	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libdatetime/src/datetime.c:33:13:datetime_is_valid_month	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libdatetime/src/datetime.c:38:13:datetime_is_valid_year	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libdatetime/src/datetime.c:43:16:datetime_days_in_month	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libdatetime/src/datetime.c:87:6:datetime_is_valid_time	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libdatetime/src/datetime.c:98:6:datetime_is_valid_date	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libdatetime/src/datetime.c:113:16:datetime_wday	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libdatetime/src/datetime.c:135:6:datetime_now	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libdatetime/src/datetime.c:142:13:datetime_to_unix	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libdatetime/src/datetime.c:181:13:datetime_to_unix_now	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libdatetime/src/datetime.c:188:21:datetime_to_unix_precise_now	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libdatetime/src/datetime.c:203:6:datetime_unix_to_tstamp	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libdatetime/src/datetime.c:237:6:datetime_decrement_timestamp	40	static

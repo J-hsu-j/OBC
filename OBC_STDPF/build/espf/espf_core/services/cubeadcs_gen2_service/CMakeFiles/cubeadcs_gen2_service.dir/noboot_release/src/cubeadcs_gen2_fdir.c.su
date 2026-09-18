@@ -1,0 +1,10 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_fdir.c:294:13:cubeadcs_gen2_fdir_generic_handler_critical	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_fdir.c:306:13:cubeadcs_gen2_fdir_generic_handler_non_critical	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_fdir.c:320:13:fs_cubeadcs_gen2_fdir_lock_err	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_fdir.c:340:13:fs_cubeadcs_gen2_fdir_unlock_err	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_fdir.c:161:6:cubeadcs_gen2_fdir_init_os	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_fdir.c:172:6:cubeadcs_gen2_fdir_exec	80	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_fdir.c:213:6:cubeadcs_gen2_fdir_get_errors	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_fdir.c:231:6:cubeadcs_gen2_fdir_clear_errors	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_fdir.c:247:6:cubeadcs_gen2_fdir_get_fdir_ctx	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/aocs/cubeadcs_gen2/src/cubeadcs_gen2_fdir.c:265:6:cubeadcs_gen2_fdir_clear_fdir_ctx_handlers	8	static

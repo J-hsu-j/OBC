@@ -1,0 +1,8 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/tp/ESSA_Stack_TP_Layer.c:61:13:MACTL_Task	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/tp/ESSA_Stack_TP_Layer.c:56:13:OnESTL_Notification	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/tp/ESSA_Stack_TP_Layer.c:51:13:OnESTL_Exception	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/tp/ESSA_Stack_TP_Layer.c:90:14:ESSA_Stack_TP_Layer_GetMainThreadHandle	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/tp/ESSA_Stack_TP_Layer.c:95:6:ESSA_Stack_TP_Layer_Init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/tp/ESSA_Stack_TP_Layer.c:117:6:ESSA_Stack_TP_Layer_PrepareThreadWait	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/tp/ESSA_Stack_TP_Layer.c:130:19:ESSA_Stack_TP_Layer_ThreadWaitForEvent	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/tp/ESSA_Stack_TP_Layer.c:163:6:ESSA_Stack_TP_Layer_ReleaseThreadWait	8	static

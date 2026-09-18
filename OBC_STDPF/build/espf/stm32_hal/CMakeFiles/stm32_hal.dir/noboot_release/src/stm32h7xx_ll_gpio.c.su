@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/hal/src/stm32h7xx_ll_gpio.c:105:13:LL_GPIO_DeInit	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/hal/src/stm32h7xx_ll_gpio.c:201:13:LL_GPIO_Init	16	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/hal/src/stm32h7xx_ll_gpio.c:275:6:LL_GPIO_StructInit	0	static

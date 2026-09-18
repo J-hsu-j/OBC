@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/MacServices/v0.1/MacServices_server/FP_MacServicesServerApp.c:159:13:MacServices_setMacAddressRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/MacServices/v0.1/MacServices_server/FP_MacServicesServerApp.c:118:13:MacServices_setMacBusTerminationSettingRequestHandlerImpl	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/MacServices/v0.1/MacServices_server/FP_MacServicesServerApp.c:73:13:MacServices_getMacBusTerminationSettingRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/MacServices/v0.1/MacServices_server/FP_MacServicesServerApp.c:53:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/espsi/fp/MacServices/v0.1/MacServices_server/FP_MacServicesServerApp.c:206:6:MacServicesServerAppInit	8	static

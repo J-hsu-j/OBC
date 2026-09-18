@@ -1,0 +1,13 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/fp/onboard_sched/v0.1/onboard_sched_server/FP_onboard_schedProtocolServer.c:132:13:fs_set_scheduler_stateReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/fp/onboard_sched/v0.1/onboard_sched_server/FP_onboard_schedProtocolServer.c:162:13:fs_get_scheduler_stateReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/fp/onboard_sched/v0.1/onboard_sched_server/FP_onboard_schedProtocolServer.c:190:13:fs_set_active_scheduleReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/fp/onboard_sched/v0.1/onboard_sched_server/FP_onboard_schedProtocolServer.c:220:13:fs_get_active_scheduleReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/fp/onboard_sched/v0.1/onboard_sched_server/FP_onboard_schedProtocolServer.c:248:13:fs_get_next_slotReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/fp/onboard_sched/v0.1/onboard_sched_server/FP_onboard_schedProtocolServer.c:121:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/fp/onboard_sched/v0.1/onboard_sched_server/FP_onboard_schedProtocolServer.c:282:6:onboard_sched_registerServerApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/fp/onboard_sched/v0.1/onboard_sched_server/FP_onboard_schedProtocolServer.c:287:36:onboard_sched_getServerProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/fp/onboard_sched/v0.1/onboard_sched_server/FP_onboard_schedProtocolServer.c:292:19:onboard_sched_set_scheduler_stateResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/fp/onboard_sched/v0.1/onboard_sched_server/FP_onboard_schedProtocolServer.c:342:19:onboard_sched_get_scheduler_stateResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/fp/onboard_sched/v0.1/onboard_sched_server/FP_onboard_schedProtocolServer.c:392:19:onboard_sched_set_active_scheduleResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/fp/onboard_sched/v0.1/onboard_sched_server/FP_onboard_schedProtocolServer.c:442:19:onboard_sched_get_active_scheduleResp	112	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/onboard_sched/fp/onboard_sched/v0.1/onboard_sched_server/FP_onboard_schedProtocolServer.c:523:19:onboard_sched_get_next_slotResp	48	static

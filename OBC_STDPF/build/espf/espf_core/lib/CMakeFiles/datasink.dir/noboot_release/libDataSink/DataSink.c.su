@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libDataSink/DataSink.c:24:13:append_formatted_buf_va	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libDataSink/DataSink.c:49:6:notify_buf_complete	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libDataSink/DataSink.c:62:6:append_formatted_buf	12	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libDataSink/DataSink.c:73:6:append_buf	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libDataSink/DataSink.c:101:6:commit_buf	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libDataSink/DataSink.c:112:6:commit_buf_direct	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libDataSink/DataSink.c:121:6:commit_formatted_buf	20	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libDataSink/DataSink.c:133:6:start_multi_buf_seq	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libDataSink/DataSink.c:141:6:commit_multi_buf_seq	8	static

@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/drv_watchdog/src/drv_iwdg.c:31:6:drv_iwdg_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/drv_watchdog/src/drv_iwdg.c:70:10:drv_iwdg_get_max_timeout	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/drv_watchdog/src/drv_iwdg.c:75:10:drv_iwdg_get_current_timeout	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/drv_watchdog/src/drv_iwdg.c:80:6:drv_iwdg_refresh	8	static

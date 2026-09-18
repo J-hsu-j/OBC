@@ -1,0 +1,17 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:155:13:fs_getBeaconGeneralConfigReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:183:13:fs_setBeaconGeneralConfigReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:213:13:fs_getBeaconPresetConfigReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:241:13:fs_setBeaconPresetConfigReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:271:13:fs_setActivePresetReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:301:13:fs_getActivePresetReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:329:13:fs_restoreActivePresetReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:144:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:363:6:Beacons_registerServerApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:368:36:Beacons_getServerProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:373:19:Beacons_getBeaconGeneralConfigResp	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:432:19:Beacons_setBeaconGeneralConfigResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:482:19:Beacons_getBeaconPresetConfigResp	168	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:541:19:Beacons_setBeaconPresetConfigResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:598:19:Beacons_setActivePresetResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:650:19:Beacons_getActivePresetResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/beacons/fp/Beacons/v1.0/Beacons_server/FP_BeaconsProtocolServer.c:700:19:Beacons_restoreActivePresetResp	48	static

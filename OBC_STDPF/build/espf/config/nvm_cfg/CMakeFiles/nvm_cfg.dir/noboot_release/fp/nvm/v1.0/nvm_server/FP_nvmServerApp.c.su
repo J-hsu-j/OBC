@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/fp/nvm/v1.0/nvm_server/FP_nvmServerApp.c:66:13:nvm_restore_defaultsRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/fp/nvm/v1.0/nvm_server/FP_nvmServerApp.c:48:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/nvm/fp/nvm/v1.0/nvm_server/FP_nvmServerApp.c:115:6:nvmServerAppInit	8	static

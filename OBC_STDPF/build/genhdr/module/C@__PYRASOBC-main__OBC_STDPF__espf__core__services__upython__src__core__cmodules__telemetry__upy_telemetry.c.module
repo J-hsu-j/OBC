@@ -1,0 +1,1 @@
+MP_REGISTER_MODULE(MP_QSTR_upy_telemetry, upy_telemetry_user_cmodule);

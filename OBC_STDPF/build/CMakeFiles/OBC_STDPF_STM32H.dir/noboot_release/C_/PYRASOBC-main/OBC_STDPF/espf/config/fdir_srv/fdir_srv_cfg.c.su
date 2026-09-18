@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/fdir_srv/fdir_srv_cfg.c:355:29:fdir_action_func_dummy_beta	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/fdir_srv/fdir_srv_cfg.c:363:29:fdir_action_func_dummy_gamma	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/fdir_srv/fdir_srv_cfg.c:347:29:fdir_action_func_dummy_alpha	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/fdir_srv/fdir_srv_cfg.c:208:13:get_fault_id_name	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/fdir_srv/fdir_srv_cfg.c:217:13:get_agent_id_name	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/fdir_srv/fdir_srv_cfg.c:336:6:fdir_srv_cfg_sys_level_update_notif	8	static

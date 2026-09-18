@@ -1,0 +1,11 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/exeh/src/es_exeh.c:312:13:fs_vStoreException	32	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/exeh/src/es_exeh.c:454:13:fs_bPersistExceptions	592	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/exeh/src/es_exeh.c:58:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/exeh/src/es_exeh.c:102:6:EXEH_vException	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/exeh/src/es_exeh.c:145:10:EXEH_u32GetExceptionCount	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/exeh/src/es_exeh.c:181:10:EXEH_u32GetExceptions	16	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/exeh/src/es_exeh.c:203:6:EXEH_bInit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/exeh/src/es_exeh.c:245:6:EXEH_bStartPersistorTask	120	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/exeh/src/es_exeh.c:272:6:EXEH_InitModuleFileName	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/exeh/src/es_exeh.c:385:6:EXEH_ForcePersistExceptions	88	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/exeh/src/es_exeh.c:487:13:fs_vEXEHPersistor_Task	8	static

@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/build/../espf/arch/stm32h753iit/hal/inc/stm32h7xx_ll_usart.h:1876:22:LL_USART_SetBaudRate	4	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/hal/src/stm32h7xx_ll_usart.c:129:13:LL_USART_DeInit	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/hal/src/stm32h7xx_ll_usart.c:242:13:LL_USART_Init	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/hal/src/stm32h7xx_ll_usart.c:378:6:LL_USART_StructInit	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/hal/src/stm32h7xx_ll_usart.c:405:13:LL_USART_ClockInit	4	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/hal/src/stm32h7xx_ll_usart.c:452:6:LL_USART_ClockStructInit	0	static

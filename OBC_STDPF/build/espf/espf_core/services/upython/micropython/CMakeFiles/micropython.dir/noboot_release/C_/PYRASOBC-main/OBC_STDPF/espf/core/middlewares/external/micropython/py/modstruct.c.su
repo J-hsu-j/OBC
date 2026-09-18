@@ -1,0 +1,8 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modstruct.c:55:13:get_fmt_type	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modstruct.c:74:18:get_fmt_num	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modstruct.c:85:15:calc_size_items	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modstruct.c:115:17:struct_calcsize	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modstruct.c:123:17:struct_unpack_from	56	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modstruct.c:183:13:struct_pack_into_internal	72	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modstruct.c:222:17:struct_pack	40	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/modstruct.c:234:17:struct_pack_into	40	static

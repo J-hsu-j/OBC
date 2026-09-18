@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/trace_config/src/trace_config.c:312:13:thread_file	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/trace_config/src/trace_config.c:288:13:thread_uart	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/trace_config/src/trace_config.c:355:17:channel_data_send_to_file	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/trace_config/src/trace_config.c:336:17:channel_data_send_to_uart	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/trace_config/src/trace_config.c:418:13:trace_uart_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/trace_config/src/trace_config.c:213:6:trace_config_init	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/trace_config/src/trace_config.c:246:14:trace_lock_new	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/trace_config/src/trace_config.c:258:6:trace_lock_acquire	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/trace_config/src/trace_config.c:270:6:trace_lock_release	8	static

@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_Stack_Facade.c:44:13:fs_vESSA_SP_Task	8	static
+C:/PYRASOBC-main/OBC_STDPF/build/../espf/config/ESPLATFORM_NETWORK_STACK/inc/ESSA_StackConfigApps.h:45:6:ESSA_Stack_Services_Init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_Stack_Facade.c:67:6:ESSA_Stack_Facade_Init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_Stack_Facade.c:99:9:ESSATMAC_GetModuleAddr	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/ESPLATFORM_NETWORK_STACK/src/ESSA_Stack_Facade.c:106:13:ESSA_Stack_Facade_Is_Init	0	static

@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/emitglue.c:54:16:mp_emit_glue_new_raw_code	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/emitglue.c:63:6:mp_emit_glue_assign_bytecode	4	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/emitglue.c:173:10:mp_make_function_from_raw_code	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/micropython/py/emitglue.c:221:10:mp_make_closure_from_raw_code	16	static

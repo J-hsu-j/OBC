@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeSenseCommon1.c:21:11:tctlmCubeSenseCommon1_setCamSettings	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeSenseCommon1.c:59:11:tctlmCubeSenseCommon1_setCamAutoAdjust	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeSenseCommon1.c:95:11:tctlmCubeSenseCommon1_getHealthTlm	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/middlewares/external/libcubeobc/api/src/tctlmCubeSenseCommon1.c:188:11:tctlmCubeSenseCommon1_getConfig	48	static

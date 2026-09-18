@@ -1,0 +1,2 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/io/dat_inputs/DAT_Inputs.c:84:15:Magnitometers_LIS3MDL_Init	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/io/dat_inputs/DAT_Inputs.c:133:15:Magnitometers_LIS3MDL_Read_Data	32	static

@@ -1,0 +1,16 @@
+C:/PYRASOBC-main/OBC_STDPF/build/../espf/arch/arm/cmsis/include/core_cm7.h:2156:34:__NVIC_SystemReset	0	static,ignoring_inline_asm
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon.c:343:22:task_mon_check_tasks	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon.c:54:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon.c:125:6:task_mon_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon.c:212:6:task_mon_i_am_alive	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon.c:224:6:task_mon_set_task_policy	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon.c:233:6:task_mon_task_initialized	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon.c:241:9:task_mon_check_task_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon.c:259:6:task_mon_check_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon.c:268:10:task_mon_get_free_stack	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon.c:277:6:task_mon_immediate_reset	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon.c:373:13:task_mon_manage_delayed_reset	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon.c:286:6:task_mon_low_stack_check	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon.c:156:6:task_mon_task	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon.c:308:6:task_mon_low_total_heap_check	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/taskmon/src/taskmon.c:322:6:task_mon_trigger_delayed_reset	0	static

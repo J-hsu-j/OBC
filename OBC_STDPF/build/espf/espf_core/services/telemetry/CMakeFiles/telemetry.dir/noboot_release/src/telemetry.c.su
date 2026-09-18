@@ -1,0 +1,10 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry.c:318:17:calc_gcd	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry.c:281:13:update_os_task_period	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry.c:266:20:telemetry_trigger_hsm	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry.c:59:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry.c:106:6:telemetry_init	24	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry.c:160:6:telemetry_start	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry.c:174:6:telemetry_stop	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry.c:188:6:telemetry_is_started	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry.c:204:6:telemetry_load_config	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/telemetry/src/telemetry.c:233:13:telemetry_task	16	static

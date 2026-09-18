@@ -1,0 +1,9 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/main.c:327:17:handle_uncaught_exception	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/main.c:318:13:stderr_print_strn	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/main.c:73:1:cmp_logger_def_init	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/main.c:109:6:gc_collect	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/main.c:137:6:nlr_jump_fail	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/main.c:151:10:import_module	96	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/main.c:200:5:DEBUG_printf	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/main.c:209:6:init_es_fm_mng_fs	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/upython/src/core/main.c:256:18:upy_run	16	dynamic

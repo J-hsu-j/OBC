@@ -1,0 +1,4 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/fp/payload_ctrl/v2.0/payload_ctrl_server/FP_payload_ctrlServerApp.c:164:13:payload_ctrl_get_payload_infoRequestHandlerImpl	32	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/fp/payload_ctrl/v2.0/payload_ctrl_server/FP_payload_ctrlServerApp.c:120:13:payload_ctrl_stop_payloadRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/fp/payload_ctrl/v2.0/payload_ctrl_server/FP_payload_ctrlServerApp.c:72:13:payload_ctrl_start_payloadRequestHandlerImpl	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/payload_ctrl/fp/payload_ctrl/v2.0/payload_ctrl_server/FP_payload_ctrlServerApp.c:226:6:payload_ctrlServerAppInit	8	static

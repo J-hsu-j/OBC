@@ -1,0 +1,5 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/drv_mcu_temperature/src/drv_mcu_temperature.c:139:13:fs_msp_init	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/drv_mcu_temperature/src/drv_mcu_temperature.c:148:13:fs_msp_deinit	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/drv_mcu_temperature/src/drv_mcu_temperature.c:30:23:drv_mcu_temp_init	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/drv_mcu_temperature/src/drv_mcu_temperature.c:77:23:drv_mcu_temp_deinit	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/drv_mcu_temperature/src/drv_mcu_temperature.c:93:23:drv_mcu_temp_get	16	static

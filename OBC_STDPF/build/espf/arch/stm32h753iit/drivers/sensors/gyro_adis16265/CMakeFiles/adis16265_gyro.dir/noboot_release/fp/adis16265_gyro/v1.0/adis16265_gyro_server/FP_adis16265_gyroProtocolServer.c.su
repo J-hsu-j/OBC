@@ -1,0 +1,11 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroProtocolServer.c:120:13:fs_set_gyroscope_configReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroProtocolServer.c:150:13:fs_get_gyroscope_configReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroProtocolServer.c:178:13:fs_save_gyroscope_configReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroProtocolServer.c:206:13:fs_load_gyroscope_configReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroProtocolServer.c:109:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroProtocolServer.c:240:6:adis16265_gyro_registerServerApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroProtocolServer.c:245:36:adis16265_gyro_getServerProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroProtocolServer.c:250:19:adis16265_gyro_set_gyroscope_configResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroProtocolServer.c:300:19:adis16265_gyro_get_gyroscope_configResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroProtocolServer.c:356:19:adis16265_gyro_save_gyroscope_configResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/arch/stm32h753iit/drivers/sensors/gyro_adis16265/fp/adis16265_gyro/v1.0/adis16265_gyro_server/FP_adis16265_gyroProtocolServer.c:406:19:adis16265_gyro_load_gyroscope_configResp	48	static

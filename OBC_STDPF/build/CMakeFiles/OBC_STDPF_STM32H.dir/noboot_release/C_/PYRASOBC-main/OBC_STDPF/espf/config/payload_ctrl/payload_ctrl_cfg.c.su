@@ -1,0 +1,3 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/config/payload_ctrl/payload_ctrl_cfg.c:135:13:payload_sxband_state_notify	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/payload_ctrl/payload_ctrl_cfg.c:109:38:payload_ctrl_cfg_get	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/config/payload_ctrl/payload_ctrl_cfg.c:121:6:payload_ctrl_cfg_is_payload_mode	8	static

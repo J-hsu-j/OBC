@@ -1,0 +1,15 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSProtocolServer.c:146:13:fs_setSensReadFreqReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSProtocolServer.c:176:13:fs_getSensReadFreqReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSProtocolServer.c:204:13:fs_getSensStateReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSProtocolServer.c:234:13:fs_getSensErrReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSProtocolServer.c:264:13:fs_getSensRegReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSProtocolServer.c:294:13:fs_setSensRegReq	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSProtocolServer.c:135:13:fs_HandleData	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSProtocolServer.c:330:6:SDS_registerServerApi	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSProtocolServer.c:335:36:SDS_getServerProtocolDescriptor	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSProtocolServer.c:340:19:SDS_setSensReadFreqResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSProtocolServer.c:390:19:SDS_getSensReadFreqResp	64	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSProtocolServer.c:456:19:SDS_getSensStateResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSProtocolServer.c:508:19:SDS_getSensErrResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSProtocolServer.c:566:19:SDS_getSensRegResp	48	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/services/sensor_data_service/fp/SDS/v1.0/SDS_server/FP_SDSProtocolServer.c:618:19:SDS_setSensRegResp	48	static

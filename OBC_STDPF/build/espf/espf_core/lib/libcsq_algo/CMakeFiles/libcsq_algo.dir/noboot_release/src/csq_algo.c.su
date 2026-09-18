@@ -1,0 +1,6 @@
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libcsq_algo/src/csq_algo.c:39:6:csq_algo_clear	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libcsq_algo/src/csq_algo.c:125:19:csq_algo_peek	8	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libcsq_algo/src/csq_algo.c:140:10:csq_algo_get_free	0	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libcsq_algo/src/csq_algo.c:48:6:csq_algo_push	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libcsq_algo/src/csq_algo.c:78:6:csq_algo_pop	16	static
+C:/PYRASOBC-main/OBC_STDPF/espf/core/lib/libcsq_algo/src/csq_algo.c:101:6:csq_algo_reserve	16	static
